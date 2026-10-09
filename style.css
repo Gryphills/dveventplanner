@@ -1,0 +1,146 @@
+p {
+  margin:8px;
+}
+#calctotals::before {
+  font-weight: bold; font-size:large;
+  content:
+  "Total Cost:  "
+  url("https://static.wikia.nocookie.net/dragonvale/images/8/80/Spice_template.png/revision/latest/scale-to-width-down/17?cb=20171110043118")
+  " ";
+}
+.itemprice::before {
+  content: " " url("https://static.wikia.nocookie.net/dragonvale/images/8/80/Spice_template.png/revision/latest/scale-to-width-down/17?cb=20171110043118") " ";
+}
+.item {
+  max-width:200px;
+  width:200px;
+  margin: 5px;
+  background-color: #b8ad9b;
+  border: 3px solid #584e3f;
+  border-radius: 10px;
+  padding: 4px;
+  padding-top: 2px;
+  padding-bottom:8px;
+  color: #333;
+  text-align:center;
+  display: flex;
+  flex-direction: column;
+}
+.withcount {
+    background-color: rgb(173, 164, 211);
+    border: 5px solid rgb(37, 7, 87);
+}
+.hidden {
+  display:none !important;
+}
+.itemname {
+  font-size: x-large;
+  font-weight: bold;
+  margin: 8px;
+  margin-top: 0px;
+}
+.itemimage {
+  width: 100%;
+  height: 100%; 
+  object-fit: contain; 
+  max-height: 200px;
+}
+.iteminner {
+  background-color: #bdbdbd;
+  border: 3px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 5px;
+}
+.rare {
+  background-color: #72a9ec;
+  border: 3px solid #08254d;
+  .pressed {
+    background-color: #5893db;
+    border: 2px solid #08254d;
+  }
+}
+.epic {
+  background-color: #a86de5;
+  border: 3px solid #442a5f;
+  .pressed {
+    background-color: #a86de5;
+    border: 2px solid #442a5f;
+  }
+}
+.rift {
+
+}
+.ghost {
+
+}
+.evolution {
+
+}
+.elementicon {
+
+}
+.nighttime {
+
+}
+.sectionicon {
+  border-radius: 5px;
+  width:50px;
+  height:50px;
+  position:absolute;
+  top:-25px;
+  left:-30px;
+  background-size: cover;
+}
+.tricksandtreats {
+  background-image: url('https://i.postimg.cc/L8H9sLNc/tricksandtreats.png');
+}
+.haunted {
+  background-image: url('https://i.postimg.cc/sgVj27TC/haunted.png');
+}
+.occult {
+  background-image: url('https://i.postimg.cc/BnqSvHm9/occult.png');
+}
+.ominous {
+  background-image: url('https://i.postimg.cc/htSDGT2q/ominous.png');
+}
+.otherworldly {
+  background-image: url('https://i.postimg.cc/Z5Tbqpwm/otherworldly.png');
+}
+.summons {
+  background-image: url('https://i.postimg.cc/mgbLrCms/summons.png');
+}
+
+
+.want {
+  .iteminner {
+    background-color: #bcb8f5;
+    border: 3px solid #442a5f;
+  }
+}
+.buttons {
+  background-color: #bdbdbd;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px auto;
+  cursor: pointer;
+  border: 2px solid #777777;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.pressed {
+    background-color: #353535;
+    color: white;
+}
+.duo {
+  position: relative;
+  width: 45%;
+  height: 50%;
+  object-fit: contain; 
+  max-height: 200px;
+  max-width: 60%;
+  flex-wrap: 
+  margin:3px;
+}
