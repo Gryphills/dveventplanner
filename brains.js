@@ -2261,6 +2261,38 @@
   }
 }
 
-function buildTemplate(name, type, section, price, imgposted, rarity, combonice, special) {
-  
+function buildTemplate(itemName, type, section="", price="n/a", special="", imgposted, rarity="", combonice="" ) {
+
+  let newHtml = `<div class="item ${type} ${rarity}">
+  <div class="iteminner">
+    <div class='sectionicon ${section}'>
+    <p class="itemname">${itemName}</p>
+    <div style='flex'>`
+    if (imgposted.length == 1) {
+      newHtml += `<img class="itemimage" src="${imgposted[i]}">`
+    } else {
+      for (i=0;i<imgposted.length;i++){
+        newHtml += `<img class="itemimage duo" src="${imgposted[i]}">`
+      }
+    }
+
+    newHtml += `</div>
+    <p>${special}</p>
+    
+    <p class="itemprice">${price}</p>
+    <label style='height: 20px;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;&nbsp;</label>
+    
+    <div style="display: flex; flex-wrap: wrap; padding: 5px;">
+      <input class="buttons" type="button" value="Want" data-toggled="0">
+      <input class="buttons" type="button" value="Have" data-toggled="0">
+      <input class="buttons" type="button" value="Meh" data-toggled="0">
+    </div>`
+    if (type == 'dragon') {
+      newHtml += `<p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
+      <p class='combo'>${combonice}</p>`
+    }
+     newHtml += `<div>
+      </div>
+      </div>
+      </div>`
 }
