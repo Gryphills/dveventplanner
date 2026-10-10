@@ -2805,13 +2805,13 @@ function loadSetup() {
     let cardEl = document.querySelector(`div[name="${itemsWithStatus[i]}"`);
     if (cardEl) {
       let itemthing = halloweenObj[itemsWithStatus[i]]
-      console.log(itemthing)
+      console.log(itemsWithStatus[i], itemthing)
       if (!itemthing) {return}
       let status = halloweenObj[itemsWithStatus[i]].status;
       if (status) {
         if (status != "neutral") {
           let sortbuttons = cardEl.querySelector('.sortbuttons').children;
-          console.log(sortbuttons, status)
+          //console.log(sortbuttons, status)
           if (status == 'want') {sortbuttons[0].click()}
           else if (status == 'have') {sortbuttons[1].click()}
           else if (status == 'ignore') {sortbuttons[2].click()}
