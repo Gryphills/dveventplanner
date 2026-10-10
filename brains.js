@@ -172,7 +172,7 @@ let eventData = {
       "https://i.postimg.cc/VLWZzCSk/Delight-Dragon-Adult.webp"
     ]
   },
-  "Dracomancy": {
+  /*"Dracomancy": {
     "rarity": "EPIC",
     "comboNice": "BONE + SCOURGE",
     "comboArray": [
@@ -195,7 +195,7 @@ let eventData = {
       "https://i.postimg.cc/wMFnwfm7/Dracomancy-Dragon-Adult3.webp",
       "https://i.postimg.cc/MHtg9PQT/Dracomancy-Dragon-Adult4.webp"
     ]
-  },
+  },*/
   "Exterrean": {
     "rarity": "EPIC",
     "comboNice": "AMALGAMATE + SCOURGE",
