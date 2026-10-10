@@ -3599,16 +3599,20 @@ function checkForBreeds(elArray) {
   for (d=0;d<dragonsNames.length;d++) {
     let check = eventData[dragonsNames[d]];
     let allowed = true;
-    console.log(dragonsNames[d], 'checking....?', check.comboArray)
-    for (c=0;c<check.comboArray.length;c++) {
-      console.log('check ')
-      console.log(`it's ${elArray.includes(check.comboArray[c])} that elarry (${elArray}) includes ${check.comboArray[c]}`)
-      if (!elArray.includes(check.comboArray[c])) {
-        allowed = false;
+    //console.log(dragonsNames[d], 'checking....?', check.comboArray)
+    if (check.comboArray) {
+      for (c=0;c<check.comboArray.length;c++) {
+        if (allowed) {
+          //console.log('check ')
+          //console.log(`it's ${elArray.includes(check.comboArray[c])} that elarry (${elArray}) includes ${check.comboArray[c]}`)
+          if (!elArray.includes(check.comboArray[c])) {
+            allowed = false;
+          }
+        }
       }
-    }
-    if (allowed) {
-      possibleOthers.push(dragonsNames[d])
+      if (allowed) {
+        possibleOthers.push(dragonsNames[d])
+      }
     }
   }
   return possibleOthers;
