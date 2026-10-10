@@ -3357,8 +3357,8 @@ function buildTemplate(itemName, itemObj) {
     newHtml += `</div></div>
     <p>${special}</p>
     <div>
-    <p class="itemprice" font-size:14px;font-weight:bold;>${price}</p>
-    <label style='height: 20px; justify-items:center; font-size:14px; font-style:italic; align-items: center;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;</label>
+    <p class="itemprice" style="font-size:14px;font-weight:bold;">${price}</p>
+    <label style='height: 20px; justify-content:center; font-size:14px; font-style:italic; align-items: center;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;</label>
     
     <div class="sortbuttons" style="display: flex; flex-wrap: wrap; padding: 5px;">
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0" value="Want" onclick="sortbuttonsClicked(this, 'want')">
