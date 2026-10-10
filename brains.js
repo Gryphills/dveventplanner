@@ -2773,6 +2773,7 @@ function sortbuttonsClicked(element, label) {
       }
     }
     htmElements[label].div.appendChild(card)
+    console.log(htmElements[label].div)
   } else {
     element.dataset.toggled = 0
     element.classList.remove('pressed');
