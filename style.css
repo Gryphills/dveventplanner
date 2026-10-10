@@ -69,6 +69,9 @@ body {
     background-color: #5893db;
     border: 2px solid #08254d;
   }
+  .iteminner {
+    background-color: #c5d4f0;
+  }
 }
 .epic {
   background-color: #a86de5;
@@ -76,6 +79,9 @@ body {
   .pressed {
     background-color: #a86de5;
     border: 2px solid #442a5f;
+  }
+  .iteminner {
+    background-color: #cac5f0;
   }
 }
 .rift {
@@ -97,8 +103,8 @@ body {
   margin:2px;
   padding:2px;
   border-radius: 5px;
-  background-color: #c8c5e3;
-  border: 2px solid #1a182b;
+  background-color: #a09edf70;
+  border: 1px solid white;
   
 }
 .sectionicon {
