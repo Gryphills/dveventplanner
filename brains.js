@@ -2625,10 +2625,10 @@ function buildTemplate(itemName, itemObj) {
     <div style='flex'>`
   console.log(imgposted)
     if (imgposted.length == 1) {
-      newHtml += `<img class="itemimage" src="${imgposted[i]}" alt="${itemName}">`
+      newHtml += `<img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
     } else {
-      for (i=0;i<imgposted.length;i++){
-        newHtml += `<img class="itemimage duo" src="${imgposted[i]}">`
+      for (j=0;j<imgposted.length;j++){
+        newHtml += `<img class="itemimage duo" src="${imgposted[j]}">`
       }
     }
 
@@ -2674,6 +2674,7 @@ function saveStatus(itemname, status) {
   localStorage.setItem('dvEvents', JSON.stringify(eventObj))
 }
 
+let safetyCycle = 0;
 function cycleItems() {
   let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
   if (!eventObj) {
@@ -2684,15 +2685,15 @@ function cycleItems() {
   let itemNames = Object.getOwnPropertyNames(eventData)
   console.log("length of " , itemNames.length);
   console.log(itemNames)
-  let charlatancount = 0;
+  //let charlatancount = 0;
   for (i=0; i < itemNames.length; i++){
     let thisItem = eventData[itemNames[i]]
     console.log(itemNames[i], i)
-    if (itemNames[i] == 'Charlatan') {
-      charlatancount += 1
+    if (i == 0) {
+      safetyCycle += 1
     }
-    if (charlatancount > 3 || i==20) {
-      console.log('ohGOD');
+    if (safetyCycle > 1) {
+      console.log('ohGOD we in a LOOP!');
       break;
     }
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
