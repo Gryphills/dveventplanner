@@ -3636,7 +3636,7 @@ function checkAllCombos() {
         let newhtml = `<details class="possibleothers"><summary>Possible Others w this combo</summary>
         <div> `
         for (p=0;p<possibleOthers.length;p++) {
-          newhtml += `<div class='imgstack'><img src=${eventData[possibleOthers[p]].imgposted[0]}><p>${possibleOthers[p]}</p></div>`
+          newhtml += `<div class='imgstack'><img loading="lazy" src=${eventData[possibleOthers[p]].imgposted[0]}><p>${possibleOthers[p]}</p></div>`
         }
         newhtml += `</div></details>`
         let card = document.querySelector(`div[data-name="${dragons[i]}"]`)
