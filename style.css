@@ -147,14 +147,32 @@ body {
     color: white;
 }
 .duo {
-  position: relative;
+  /*position: absolute;
   width: 45%;
-  height: 50%;
+  height: 50%;*/
   object-fit: contain; 
-  max-height: 200px;
-  max-width: 60%;
+  max-height: 180px;
+  max-width: 70%;
   margin:3px;
 }
+.duoback {
+  position: relative;
+  width: 100%;
+  left: -19;
+  width: 85%;
+  height: 180px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+.duofront {
+  position: absolute;
+  width: 100%;
+  height: 180px;
+  right: -19;
+  bottom: 0;
+  cursor: pointer;
+}
+
 .details {
   text-align: center;
   border-radius: 20px;
