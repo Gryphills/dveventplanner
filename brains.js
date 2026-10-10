@@ -2801,8 +2801,12 @@ function loadSetup() {
   let halloweenObj = eventObj.halloween26;
   let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
   for (i=0;i<itemsWithStatus.length;i++) {
+    
     let cardEl = document.querySelector(`div[name="${itemsWithStatus[i]}"`);
     if (cardEl) {
+      let itemthing = halloweenObj[itemsWithStatus[i]]
+      console.log(itemthing)
+      if (!itemthing) {return}
       let status = halloweenObj[itemsWithStatus[i]].status;
       if (status) {
         if (status != "neutral") {
