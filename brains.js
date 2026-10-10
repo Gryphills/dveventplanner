@@ -2607,8 +2607,8 @@ function buildTemplate(itemName, itemObj) {
   if (itemObj.rarity) {
     rarity=itemObj.rarity.toLowerCase()
   }
-  if (itemObj.combonice){
-    combonice = itemObj.combonice
+  if (itemObj.comboNice){
+    combonice = itemObj.comboNice
   }
   if (type == 'dragon') {
     itemName = itemName + " Dragon";
