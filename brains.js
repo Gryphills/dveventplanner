@@ -2682,10 +2682,11 @@ function cycleItems() {
   }
   let halloween26 = eventObj.halloween26
   let itemNames = Object.getOwnPropertyNames(halloween26)
+  console.log("length of " , itemNames.length);
   for (i=0;i<itemNames.length;i++){
     let thisItem = halloween26[itemNames[i]]
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
-    document.querySelector('.neutraldiv').appendChild(itemHtmElement)
+    document.getElementById('neutraldiv').appendChild(itemHtmElement)
 
     itemHtmElement.querySelector('.purchasenum').addEventListener('input', function(e) {
       saveCount(itemNames[i], e.currentTarget.value)
