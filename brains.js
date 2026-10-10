@@ -3527,7 +3527,7 @@ function loadSetup() {
     let itemName = itemsWithStatus[k]
     let allNames = Object.getOwnPropertyNames(eventData);
     if (allNames.includes(itemName)) {
-      let cardEl = document.querySelector(`div[data-name="${itemName}"`);
+      let cardEl = document.querySelector(`div[data-name="${itemName}"]`);
       let itemthing = halloweenObj[itemsWithStatus[k]]
       //console.log("Got the name,," , itemName, itemsWithStatus[k], itemthing, cardEl)
       if (cardEl) {
@@ -3581,6 +3581,60 @@ function toggleVis(thisbutton, type) {
   }
 }
 
+let dragonsNames = []
+function getDragonNames() {
+  let names = Object.getOwnPropertyNames(halloweenEventData)
+  dragonsNames = []
+  for (i=0;i<names.length; i++) {
+    if (halloweenEventData[names[i]].type == 'dragon') {
+      dragonsNames.push(names[i])
+    }
+  }
+}
+
+
+function checkForBreeds(comboArray) {
+  let possibleOthers = []
+  for (d=0;d<dragonsNames.length;d++) {
+    let check = halloweenEventData[dragonsNames[d]];
+    let allowed = true;
+    for (c=0;c<check.comboArray;c++) {
+      if (!comboArray.includes(check.comboArray[c])) {
+        allowed = false
+      }
+    }
+    if (allowed) {
+      possibleOthers.push(dragonsNames[d])
+    }
+  }
+  return possibleOthers;
+}
+
+
+function checkAllCombos() {
+  let names = Object.getOwnPropertyNames(halloweenEventData)
+  let dragons = []
+  for (i=0;i<names.length; i++) {
+    if (halloweenEventData[names[i]].type == 'dragon') {
+      dragons.push(names[i])
+    }
+  }
+  
+  for (i=0;i<dragons.length; i++) {
+    let possibleOthers = checkForBreeds(halloweenEventData[dragons[i]].comboEls)
+    if (possibleOthers.length > 0) {
+      let newhtml = `<details class="possibleothers"><summary>Possible Others w this combo</summary>
+      <div> `
+      for (p=0;p<possibleOthers.length;p++) {
+        newhtml += `<div class='imgstack'><img src=${halloweenEventData[possibleOthers[p]].imgposted[0]}><p>${possibleOthers[p]}</p></div>`
+      }
+      newhtml += `</div></details>`
+    }
+    let card = document.querySelect(`div[data-name="${dragons[i]}"]`)
+    card.querySelect('.breedinginfo').innerHtml += newhtml;
+  }
+}
+
 function flipViews(element) {
   let frontEl = element.parentElement.children[1]
   let backEl = element.parentElement.children[0]
@@ -3601,6 +3655,8 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
   cycleItems()
   loadSetup()
+  getDragonNames()
+  checkAllCombos()
   let decobutton = document.getElementById('decobutton')
   decobutton.dispatchEvent(new Event('click'));
 });
