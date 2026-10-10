@@ -2626,14 +2626,17 @@ function buildTemplate(itemName, itemObj) {
   <div class="iteminner">
     <div class='sectionicon ${section}'></div>
     <p class="itemname">${itemName}</p>
-    <div style='display:flex;'>`
+    `
   //console.log(imgposted)
     if (imgposted.length == 1) {
-      newHtml += `<img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
+      newHtml += `<div style='display:flex;'><img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
     } else {
-      for (j=0;j<imgposted.length;j++){
-        newHtml += `<img class="itemimage duo" src="${imgposted[j]}">`
-      }
+    
+      newHtml += `<div style='display: flex; position: relative; height: 220px;'>
+        <img class="itemimage duoback" onclick="flipViews(this)" src="${imgposted[1]}">
+        <img class="itemimage duofront" onclick="flipViews(this)" src="${imgposted[0]}">
+        </div>
+        <div><p style="font-style:italic;">(Day View)</p>`
     }
 
     newHtml += `</div>
