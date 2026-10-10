@@ -2795,7 +2795,7 @@ function sortbuttonsClicked(element, label) {
 
 function loadSetup() {
   let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
-  if (!eventObj) {
+  if (!eventObj || eventObj == {}) {
     localStorage.setItem('dvEvents', JSON.stringify({"halloween26": {}}));
   }
   let halloweenObj = eventObj.halloween26;
