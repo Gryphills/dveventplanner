@@ -2620,7 +2620,7 @@ function buildTemplate(itemName, itemObj) {
   }
   let newHtml = `<div name="${itemID}" class="item ${type} ${rarity}">
   <div class="iteminner">
-    <div class='sectionicon ${section}'>
+    <div class='sectionicon ${section}'></div>
     <p class="itemname">${itemName}</p>
     <div style='flex'>`
     if (imgposted.length == 1) {
