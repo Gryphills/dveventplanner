@@ -141,39 +141,28 @@ p {
   object-fit: contain; 
   max-height: 200px;
   max-width: 60%;
-  flex-wrap: 
   margin:3px;
 }
-#wantdiv {
+.details {
   text-align: center;
+  border-radius: 20px;
+  padding: 7px;
+  margin: 7px;
+}
+.wantdet {
   background-color: rgb(173, 164, 211);
-  border: 5px solid rgb(37, 7, 87);
-  border-radius: 1rem;
-  padding: 10px;
-  margin: 10px;
+  border: 3px solid rgb(37, 7, 87);
 }
-#neutraldiv {
-  text-align: center;
+.neutraldet {
   background-color: rgb(249, 240, 225);
-  border: 4px solid rgb(156, 143, 168);
-  border-radius: 1rem;
-  padding: 10px;
-  margin: 10px;
+  border: 3px solid rgb(156, 143, 168);
 }
-#havediv {
-  text-align: center;
+.havedet {
   background-color: rgb(249, 240, 225);
-  border: 4px solid rgb(98, 63, 155);
-  border-radius: 1rem;
-  padding: 10px;
-  margin: 10px;
+  border: 3px solid rgb(98, 63, 155);
 }
-#ignorediv {
-  text-align: center;
+.ignoredet {
   background-color: rgb(249, 240, 225);
-  border: 4px solid rgb(156, 143, 168);
-  border-radius: 1rem;
-  padding: 10px;
-  margin: 10px;
+  border: 3px solid rgb(156, 143, 168);
   opacity: 0.85;
 }
