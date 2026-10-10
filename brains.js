@@ -2667,6 +2667,10 @@ function saveCount(itemname, count) {
 }
 function saveStatus(itemname, status) {
   let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  if (itemname == undefined) {
+    console.log("???? HUH?");
+    return;
+  }
   if (!eventObj.halloween26[itemname]) {
     eventObj.halloween26[itemname] = {}
   }
@@ -2785,7 +2789,7 @@ function sortbuttonsClicked(element, label) {
     element.classList.remove('pressed');
     htmElements.neutral.div.appendChild(card)
   }
-  
+  console.log(card.name)
   saveStatus(card.name, label)
 }
 
@@ -2803,6 +2807,7 @@ function loadSetup() {
       if (status) {
         if (status != "neutral") {
           let sortbuttons = cardEl.querySelector('.sortbuttons').children;
+          console.log(sortbuttons, status)
           if (status == 'want') {sortbuttons[0].click()}
           else if (status == 'have') {sortbuttons[1].click()}
           else if (status == 'ignore') {sortbuttons[2].click()}
