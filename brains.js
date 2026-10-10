@@ -3593,13 +3593,14 @@ function getDragonNames() {
 }
 
 
-function checkForBreeds(comboArray) {
+function checkForBreeds(elArray) {
   let possibleOthers = []
   for (d=0;d<dragonsNames.length;d++) {
     let check = eventData[dragonsNames[d]];
     let allowed = true;
     for (c=0;c<check.comboArray;c++) {
-      if (!comboArray.includes(check.comboArray[c])) {
+      console.log(`it's ${elArray.includes(check.comboArray[c])} that elarry (${elArray}) includes ${check.comboArray[c]}`)
+      if (!elArray.includes(check.comboArray[c])) {
         allowed = false
       }
     }
@@ -3623,7 +3624,7 @@ function checkAllCombos() {
   for (i=0;i<dragons.length; i++) {
     let possibleOthers = checkForBreeds(eventData[dragons[i]].comboEls)
     if (possibleOthers.length > 0) {
-      console.log(dragons[i], possibleOthers)
+      //console.log(dragons[i], possibleOthers)
       let newhtml = `<details style='display:none;' class="possibleothers"><summary>Possible Others w this combo</summary>
       <div> `
       for (p=0;p<possibleOthers.length;p++) {
