@@ -2670,7 +2670,7 @@ function saveStatus(itemname, status) {
   if (!eventObj.halloween26[itemname]) {
     eventObj.halloween26[itemname] = {}
   }
-  eventObj.halloween26[itemname].status = count
+  eventObj.halloween26[itemname].status = status
   localStorage.setItem('dvEvents', JSON.stringify(eventObj))
 }
 
