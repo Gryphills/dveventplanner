@@ -2734,7 +2734,7 @@ function cycleItems() {
           newhtml += `<img src="${thisItem.imgposted[0]}" width="30px" style="object-fit: contain; height: 100%;  width: 100%;">`
         }
         newhtml += `</div>`
-        listItem.innerHTML = newhtml
+        listItem.innerHTML += newhtml
       } else {
         e.currentTarget.closest('.item').classList.remove('withcount');
         if (calcDiv.querySelector(`#${idText}`)) {
