@@ -2681,10 +2681,10 @@ function cycleItems() {
     eventObj = JSON.parse(localStorage.getItem('dvEvents'))
   }
   let halloween26 = eventObj.halloween26
-  let itemNames = Object.getOwnPropertyNames(halloween26)
+  let itemNames = Object.getOwnPropertyNames(eventData)
   console.log("length of " , itemNames.length);
   for (i=0;i<itemNames.length;i++){
-    let thisItem = halloween26[itemNames[i]]
+    let thisItem = eventData[itemNames[i]]
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
 
@@ -2771,22 +2771,31 @@ function sortbuttonsClicked(element, label) {
 }
 
 function loadSetup() {
-  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
   if (!eventObj) {
-    localStorage.setItem('dvEvents', JSON.stringify({"halloween26": {}}))
+    localStorage.setItem('dvEvents', JSON.stringify({"halloween26": {}}));
   }
   let halloweenObj = eventObj.halloween26;
   let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
   for (i=0;i<itemsWithStatus.length;i++) {
-    let cardEl = document.querySelector(`div[name="${itemsWithStatus[i]}"`)
+    let cardEl = document.querySelector(`div[name="${itemsWithStatus[i]}"`);
     if (cardEl) {
-      let status = halloweenObj[itemsWithStatus[i]].status
-      if (status != "neutral") {
-        let sortbuttons = cardEl.querySelector('.sortbuttons').children
-        if (status == 'want') {sortbuttons[0].click()}
-        else if (status == 'have') {sortbuttons[1].click()}
-        else if (status == 'ignore') {sortbuttons[2].click()}
+      let status = halloweenObj[itemsWithStatus[i]].status;
+      if (status) {
+        if (status != "neutral") {
+          let sortbuttons = cardEl.querySelector('.sortbuttons').children;
+          if (status == 'want') {sortbuttons[0].click()}
+          else if (status == 'have') {sortbuttons[1].click()}
+          else if (status == 'ignore') {sortbuttons[2].click()}
+        }
       }
+      let count = halloweenObj[itemsWithStatus[i]].count;
+      if (count) {
+        let number = cardEl.querySelector('.purchasenum');
+        number.value = Number(count);
+        number.dispatchEvent(new Event('input'));
+      }
+      
     }
   }
 }
@@ -2798,7 +2807,7 @@ function updateCalculationTotal() {
   for (let i=0;i<itemList.length;i++) {
     total += Number(itemList[i].dataset.subcost)
   }
-  calcTotalEl.textContent = total.toString()
+  calcTotalEl.textContent = total.toString();
 }
 
 function toggleVis(thisbutton, type) {
