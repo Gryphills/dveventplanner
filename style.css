@@ -12,11 +12,12 @@ body {
   " ";
 }
 .itemprice::before {
+  font-weight: bold;
   content: " " url("https://i.postimg.cc/wM2WQ1sf/Candy-template.webp") " ";
 }
 .item {
-  max-width:200px;
-  width:200px;
+  max-width:260px;
+  width:250px;
   margin: 5px;
   margin-bottom:10px;
   background-color: #b8ad9b;
@@ -29,6 +30,11 @@ body {
   text-align:center;
   display: flex;
   flex-direction: column;
+  .itemprice::before {
+    font-weight: bold;
+    font-size:14px;
+    content: "Cost: " url("https://i.postimg.cc/wM2WQ1sf/Candy-template.webp") " ";
+  }
 }
 .withcount {
     background-color: rgb(173, 164, 211);
@@ -46,7 +52,7 @@ body {
 .itemimage {
   width: 100%;
   object-fit: contain; 
-  max-height: 190px;
+  max-height: 240px;
 }
 .iteminner {
   background-color: #bdbdbd;
@@ -86,6 +92,14 @@ body {
 }
 .nighttime {
 
+}
+.breedinginfo {
+  margin:2px;
+  padding:2px;
+  border-radius: 5px;
+  background-color: #c8c5e3;
+  border: 2px solid #1a182b;
+  
 }
 .sectionicon {
   border-radius: 5px;
@@ -129,9 +143,10 @@ body {
   }
 }
 .buttons {
-  background-color: #bdbdbd;
+  background-color: #b6c2d1;
   color: black;
-  padding: 5px;
+  padding: 7px;
+  min-width: 65px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -143,7 +158,7 @@ body {
   font-family: Tahoma, Verdana, sans-serif;
 }
 .pressed {
-    background-color: #353535;
+    background-color: #483163;
     color: white;
 }
 .duo {
