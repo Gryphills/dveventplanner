@@ -3583,10 +3583,10 @@ function toggleVis(thisbutton, type) {
 
 let dragonsNames = []
 function getDragonNames() {
-  let names = Object.getOwnPropertyNames(halloweenEventData)
+  let names = Object.getOwnPropertyNames(eventData)
   dragonsNames = []
   for (i=0;i<names.length; i++) {
-    if (halloweenEventData[names[i]].type == 'dragon') {
+    if (eventData [names[i]].type == 'dragon') {
       dragonsNames.push(names[i])
     }
   }
@@ -3596,7 +3596,7 @@ function getDragonNames() {
 function checkForBreeds(comboArray) {
   let possibleOthers = []
   for (d=0;d<dragonsNames.length;d++) {
-    let check = halloweenEventData[dragonsNames[d]];
+    let check = eventData[dragonsNames[d]];
     let allowed = true;
     for (c=0;c<check.comboArray;c++) {
       if (!comboArray.includes(check.comboArray[c])) {
@@ -3612,21 +3612,21 @@ function checkForBreeds(comboArray) {
 
 
 function checkAllCombos() {
-  let names = Object.getOwnPropertyNames(halloweenEventData)
+  let names = Object.getOwnPropertyNames(eventData )
   let dragons = []
   for (i=0;i<names.length; i++) {
-    if (halloweenEventData[names[i]].type == 'dragon') {
+    if (eventData[names[i]].type == 'dragon') {
       dragons.push(names[i])
     }
   }
   
   for (i=0;i<dragons.length; i++) {
-    let possibleOthers = checkForBreeds(halloweenEventData[dragons[i]].comboEls)
+    let possibleOthers = checkForBreeds(eventData[dragons[i]].comboEls)
     if (possibleOthers.length > 0) {
       let newhtml = `<details class="possibleothers"><summary>Possible Others w this combo</summary>
       <div> `
       for (p=0;p<possibleOthers.length;p++) {
-        newhtml += `<div class='imgstack'><img src=${halloweenEventData[possibleOthers[p]].imgposted[0]}><p>${possibleOthers[p]}</p></div>`
+        newhtml += `<div class='imgstack'><img src=${eventData[possibleOthers[p]].imgposted[0]}><p>${possibleOthers[p]}</p></div>`
       }
       newhtml += `</div></details>`
     }
