@@ -3623,6 +3623,7 @@ function checkAllCombos() {
   for (i=0;i<dragons.length; i++) {
     let possibleOthers = checkForBreeds(eventData[dragons[i]].comboEls)
     if (possibleOthers.length > 0) {
+      console.log(, dragons[i], possibleOthers)
       let newhtml = `<details class="possibleothers"><summary>Possible Others w this combo</summary>
       <div> `
       for (p=0;p<possibleOthers.length;p++) {
@@ -3630,7 +3631,10 @@ function checkAllCombos() {
       }
       newhtml += `</div></details>`
       let card = document.querySelector(`div[data-name="${dragons[i]}"]`)
-      card.querySelector('.breedinginfo').innerHtml += newhtml;
+      if (!card) {console.log(`?? couldn't fine card for ${dragons[i]}`)}
+      //let newhtmEl = document.createElement('div');
+      //newhtmEl.innerHTML
+      card.querySelector('.breedinginfo').innerHTML += newhtml;
     }
   }
 }
