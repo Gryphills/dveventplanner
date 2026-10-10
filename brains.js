@@ -3599,10 +3599,12 @@ function checkForBreeds(elArray) {
   for (d=0;d<dragonsNames.length;d++) {
     let check = eventData[dragonsNames[d]];
     let allowed = true;
+    console.log('checking....?')
     for (c=0;c<check.comboArray;c++) {
+      console.log('check ' + check.comboArray[c])
       console.log(`it's ${elArray.includes(check.comboArray[c])} that elarry (${elArray}) includes ${check.comboArray[c]}`)
       if (!elArray.includes(check.comboArray[c])) {
-        allowed = false
+        allowed = false;
       }
     }
     if (allowed) {
