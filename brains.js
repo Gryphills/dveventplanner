@@ -2827,5 +2827,7 @@ function toggleVis(thisbutton, type) {
   }
 }
 
-cycleItems()
-loadSetup()
+document.addEventListener("DOMContentLoaded", function() {
+  cycleItems()
+  loadSetup()
+}
