@@ -2683,10 +2683,17 @@ function cycleItems() {
   let itemNames = Object.getOwnPropertyNames(eventData)
   console.log("length of " , itemNames.length);
   console.log(itemNames)
-  
-  for (i=0;i<10;i++){//itemNames.length;i++){
+  let charlatancount = 0;
+  for (i=0; i< 10; i++){//itemNames.length;i++){
     let thisItem = eventData[itemNames[i]]
     console.log(itemNames[i], i)
+    if (itemNames[i] == 'Charlatan') {
+      charlatancount += 1
+    }
+    if (charlatancount > 5) {
+      console.log('ohGOD');
+      break;
+    }
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
 
@@ -2728,7 +2735,7 @@ function cycleItems() {
       }
       updateCalculationTotal();
     })
-    console.log('done w ' + itemNames[i])
+    console.log('done w ' + itemNames[i] + '; charlatancount is ' + charlatancount.toString())
   }
 }
 
