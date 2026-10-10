@@ -5,11 +5,11 @@ p {
   font-weight: bold; font-size:large;
   content:
   "Total Cost:  "
-  url("https://static.wikia.nocookie.net/dragonvale/images/8/80/Spice_template.png/revision/latest/scale-to-width-down/17?cb=20171110043118")
+  url("https://i.postimg.cc/wM2WQ1sf/Candy-template.webp")
   " ";
 }
 .itemprice::before {
-  content: " " url("https://static.wikia.nocookie.net/dragonvale/images/8/80/Spice_template.png/revision/latest/scale-to-width-down/17?cb=20171110043118") " ";
+  content: " " url("https://i.postimg.cc/wM2WQ1sf/Candy-template.webp") " ";
 }
 .item {
   max-width:200px;
