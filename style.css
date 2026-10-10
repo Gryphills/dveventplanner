@@ -89,6 +89,7 @@ p {
   width: 30px;
   height: 30px;
   position: absolute;
+  display:none;
   /*top: -12px;
   left: -15px;*/
   bottom: -12px;
