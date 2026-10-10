@@ -26,7 +26,6 @@ p {
   text-align:center;
   display: flex;
   flex-direction: column;
-  height: 95%;
 }
 .withcount {
     background-color: rgb(173, 164, 211);
@@ -52,7 +51,7 @@ p {
   border-radius: 10px;
   padding: 5px;
   position: relative;
-  height: inherit;
+  height: 100%;
 }
 .rare {
   background-color: #72a9ec;
