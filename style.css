@@ -16,8 +16,8 @@ body {
   content: " " url("https://i.postimg.cc/wM2WQ1sf/Candy-template.webp") " ";
 }
 .item {
-  max-width:260px;
-  width:250px;
+  max-width:300px;
+  width:300px;
   margin: 5px;
   margin-bottom:10px;
   background-color: #b8ad9b;
@@ -143,6 +143,8 @@ body {
 }
 
 .possibleothers {
+  padding-top:8px;
+  padding-bottom:8px;
   font-size:14px;
   font-style:italic;
   div {
