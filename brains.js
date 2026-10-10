@@ -2684,7 +2684,7 @@ function cycleItems() {
   console.log("length of " , itemNames.length);
   console.log(itemNames)
   let charlatancount = 0;
-  for (i=0; i< 10; i++){//itemNames.length;i++){
+  for (i=0; i < 15; i++){//itemNames.length;i++){
     let thisItem = eventData[itemNames[i]]
     console.log(itemNames[i], i)
     if (itemNames[i] == 'Charlatan') {
@@ -2698,6 +2698,7 @@ function cycleItems() {
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
 
     itemHtmElement.querySelector('.purchasenum').addEventListener('change', function(e) {
+      console.log('changed number!');
       saveCount(itemNames[i], e.currentTarget.value)
       let idText = itemNames[i].trim().replaceAll(' ', "-")
       idText = idText.replaceAll(`'`, '')
@@ -2837,8 +2838,10 @@ function toggleVis(thisbutton, type) {
   }
 }
 
+
 document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
   cycleItems()
   //loadSetup()
 });
+
