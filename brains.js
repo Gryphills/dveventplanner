@@ -2815,7 +2815,7 @@ function loadSetup() {
     if (allNames.includes(itemName)) {
       let cardEl = document.querySelector(`div[data-name="${itemName}"`);
       let itemthing = halloweenObj[itemsWithStatus[k]]
-      console.log("Got the name,," , itemName, itemsWithStatus[k], itemthing, cardEl)
+      //console.log("Got the name,," , itemName, itemsWithStatus[k], itemthing, cardEl)
       if (cardEl) {
         //if (!itemthing) {return}
         let status = itemthing.status;
@@ -2830,16 +2830,12 @@ function loadSetup() {
         }
         let count = itemthing.count;
         if (count) {
-          console.log('found count!')
+          //console.log('found count!')
           let number = cardEl.querySelector('.purchasenum');
           number.value = Number(count);
           number.dispatchEvent(new Event('change'));
-        } else {
-          console.log('no count for ' + itemName)
         }
       }
-    } else {
-      console.log(`couldn't find ${itemName}`)
     }
   }
 }
