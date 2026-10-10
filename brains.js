@@ -229,7 +229,7 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "special": "Evolves 4 times as you upgrade the Ominous Digsite",
+    "special": "Evolves as you upgrade the Ominous Digsite",
     "price": "1000",
     "type": "dragon",
     "section": "OTHERWORLDLY",
@@ -2873,7 +2873,10 @@ let eventData = {
   "Ominous Digsite": {
     "price": "2000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/zXyYRGTv/Ominous-Digsite-Base.webp"
+    ]
   },
   "Eerie Cemetary": {
     "price": "3500",
@@ -2883,7 +2886,10 @@ let eventData = {
   "Coven Hut": {
     "price": "3500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/ncXfQhqz/Coven-Hut.webp"
+    ]
   },
   "The Dark Manor": {
     "price": "3500",
@@ -2953,7 +2959,10 @@ let eventData = {
   "Witch Hut": {
     "price": "200",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/FsYXJH0r/Witch-Hut.webp"
+    ]
   },
   "Spooky Fence (center)": {
     "price": "200",
@@ -2973,7 +2982,10 @@ let eventData = {
   "Eerie Fog": {
     "price": "250",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/SNnbzxc4/Eerie-Fog.webp"
+    ]
   },
   "Gloominaire": {
     "price": "400",
@@ -2983,7 +2995,10 @@ let eventData = {
   "Whitbee's Lantern": {
     "price": "800",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/PrCn851j/Whitbee-s-Lantern.webp"
+    ]
   },
   "Spooky Tree": {
     "price": "800",
@@ -2993,7 +3008,10 @@ let eventData = {
   "Pumpkin Party": {
     "price": "800",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/XNH0JCBX/Pumpkin-Party.webp"
+    ]
   },
   "Cursed Clock": {
     "price": "800",
@@ -3003,7 +3021,10 @@ let eventData = {
   "Broom-Eating Tree": {
     "price": "800",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/CMPV1qnK/Broom-Eating-Tree.webp"
+    ]
   },
   "Fated Fount": {
     "price": "960",
@@ -3033,7 +3054,10 @@ let eventData = {
   "Candy Cauldron": {
     "price": "1400",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/dQHK1yZQ/Candy-Cauldron.webp"
+    ]
   },
   "Wisp Lantern": {
     "price": "1440",
@@ -3043,7 +3067,10 @@ let eventData = {
   "Scarecrow": {
     "price": "1440",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/Pf3kxwvd/Scarecrow.webp"
+    ]
   },
   "The Portal": {
     "price": "1500",
@@ -3053,7 +3080,10 @@ let eventData = {
   "Boouquet": {
     "price": "1750",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/ZY7hRdv4/Boouquet.webp"
+    ]
   },
   "Infernal Pit": {
     "price": "1750",
@@ -3063,7 +3093,10 @@ let eventData = {
   "Oozing Pit": {
     "price": "1750",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/sf6RXhGz/Oozing-Pit.webp"
+    ]
   },
   "Candelabra": {
     "price": "1800",
@@ -3073,7 +3106,10 @@ let eventData = {
   "Haunted Tree": {
     "price": "2000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/G3712yTC/Haunted-Tree.webp"
+    ]
   },
   "Grim Inn": {
     "price": "2250",
@@ -3083,7 +3119,10 @@ let eventData = {
   "Tower Hollow": {
     "price": "2300",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/2jcf6ZLR/Tower-Hollow.webp"
+    ]
   },
   "Whitbee's Castle": {
     "price": "2500",
@@ -3093,7 +3132,10 @@ let eventData = {
   "The Guardian's Gate": {
     "price": "2500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/RCszFHJr/The-Guardian-s-Gate.webp"
+    ]
   },
   "Hidden Habitat": {
     "price": "1200",
@@ -3103,17 +3145,26 @@ let eventData = {
   "Spooky Habitat": {
     "price": "2400",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/RCszFH6k/Spooky-Habitat.webp"
+    ]
   },
   "Melody Habitat": {
     "price": "1000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/xjxSCzJW/Large-Melody-Habitat.webp"
+    ]
   },
   "Large Melody Habitat": {
     "price": "1500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/xjxSCzJW/Large-Melody-Habitat.webp"
+    ]
   },
   "Giant Melody Habitat": {
     "price": "3000",
@@ -3123,7 +3174,11 @@ let eventData = {
   "Rift Habitat": {
     "price": "2500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/jqgr57wF/Giant-Rift-Habitat.webp",
+      "https://i.postimg.cc/zDt1BgbM/Rift-Habitat.webp"
+    ]
   },
   "Large Rift Habitat": {
     "price": "5000",
@@ -3133,17 +3188,26 @@ let eventData = {
   "Giant Rift Habitat": {
     "price": "7500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/jqgr57wF/Giant-Rift-Habitat.webp"
+    ]
   },
   "Apocalypse Habitat": {
     "price": "2500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/v8qdBVgK/Large-Apocalypse-Habitat.webp"
+    ]
   },
   "Large Apocalypse Habitat": {
     "price": "5000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/v8qdBVgK/Large-Apocalypse-Habitat.webp"
+    ]
   },
   "Giant Apocalypse Habitat": {
     "price": "8000",
@@ -3183,7 +3247,10 @@ let eventData = {
   "Plant Generator": {
     "price": "8000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/D0MVY931/Plant-Generator.webp"
+    ]
   },
   "Star Generator": {
     "price": "9000",
@@ -3193,7 +3260,10 @@ let eventData = {
   "Prismatic Pantheon": {
     "price": "8000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/xjxSCzJt/Prismatic-Pantheon.webp"
+    ]
   },
   "Effigy of the Leaf": {
     "price": "1950",
@@ -3223,7 +3293,10 @@ let eventData = {
   "Witch's Cauldron": {
     "price": "300",
     "type": "deco",
-    "section": "TRICKS & TREATS"
+    "section": "TRICKS & TREATS",
+    "imgposted": [
+      "https://i.postimg.cc/hv5F3kRz/Witch-s-Cauldron.webp"
+    ]
   }
 }
 
