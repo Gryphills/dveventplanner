@@ -3630,8 +3630,8 @@ function checkAllCombos() {
       }
       newhtml += `</div></details>`
     }
-    let card = document.querySelect(`div[data-name="${dragons[i]}"]`)
-    card.querySelect('.breedinginfo').innerHtml += newhtml;
+    let card = document.querySelector(`div[data-name="${dragons[i]}"]`)
+    card.querySelector('.breedinginfo').innerHtml += newhtml;
   }
 }
 
