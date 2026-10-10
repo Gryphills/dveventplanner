@@ -4,8 +4,8 @@ let eventData = {
     "comboNice": "RUST + dark + fire",
     "comboArray": [
       "RUST",
-      "dark",
-      "fire"
+      "Dark",
+      "Fire"
     ],
     "breedingElements": [
       "Metal1",
@@ -18,14 +18,17 @@ let eventData = {
     "section": "LIMITED",
     "imgposted": [
       "https://i.postimg.cc/MpXJFStW/Torment-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Water",
+      "Metal",
+      "Dark",
+      "Fire"
     ]
   },
   "Hollowjaw": {
     "rarity": "RARE",
     "comboNice": "CLONE ONLY",
-    "comboArray": [
-      "CLONE ONLY"
-    ],
     "breedingElements": [
       "Dark1",
       "Earth1",
@@ -41,9 +44,6 @@ let eventData = {
   "Eggony": {
     "rarity": "RARE",
     "comboNice": "CLONE ONLY",
-    "comboArray": [
-      "CLONE ONLY"
-    ],
     "breedingElements": [
       "Fire1",
       "Earth1",
@@ -72,6 +72,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/rFNZqrd0/Awoo-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Cold",
+      "Dark",
+      "plant",
+      "cold",
+      "lightning"
     ]
   },
   "Barbarous": {
@@ -92,6 +100,15 @@ let eventData = {
     "section": "SUMMONS",
     "imgposted": [
       "https://i.postimg.cc/MKm3zQcc/Barbarous-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "earth",
+      "cold",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Candycorn": {
@@ -99,7 +116,7 @@ let eventData = {
     "comboNice": "AMBROSIA + hidden",
     "comboArray": [
       "AMBROSIA",
-      "hidden"
+      "Hidden"
     ],
     "breedingElements": [
       "Plant",
@@ -110,6 +127,13 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/kXvY7bV2/Candycorn-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Hidden"
     ]
   },
   "Cerberus": {
@@ -130,6 +154,13 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/jd43R7W5/Cerberus-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Lightning",
+      "Water",
+      "Fire",
+      "Earth"
     ]
   },
   "Charlatan": {
@@ -150,15 +181,23 @@ let eventData = {
     "section": "SUMMONS",
     "imgposted": [
       "https://i.postimg.cc/BQB7JK8v/Charlatan-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Cold",
+      "Lightning",
+      "Metal",
+      "Earth",
+      "Cold"
     ]
   },
   "Delight": {
     "rarity": "EPIC",
     "comboNice": "plant + fire + cold",
     "comboArray": [
-      "plant",
-      "fire",
-      "cold"
+      "Plant",
+      "Fire",
+      "Cold"
     ],
     "breedingElements": [
       "Plant",
@@ -170,9 +209,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/VLWZzCSk/Delight-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Cold"
     ]
   },
-  /*"Dracomancy": {
+  "Dracomancy": {
     "rarity": "EPIC",
     "comboNice": "BONE + SCOURGE",
     "comboArray": [
@@ -185,17 +229,25 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "special": "Evolves as you upgrade the Ominous Digsite",
+    "special": "Evolves 4 times as you upgrade the Ominous Digsite",
     "price": "1000",
     "type": "dragon",
     "section": "OTHERWORLDLY",
     "imgposted": [
-      "https://i.postimg.cc/PJK0S3wv/Dracomancy-Dragon-Adult1.webp",
-      "https://i.postimg.cc/fy518299/Dracomancy-Dragon-Adult2.webp",
-      "https://i.postimg.cc/wMFnwfm7/Dracomancy-Dragon-Adult3.webp",
+      //"https://i.postimg.cc/PJK0S3wv/Dracomancy-Dragon-Adult1.webp",
+      //"https://i.postimg.cc/fy518299/Dracomancy-Dragon-Adult2.webp",
+      //"https://i.postimg.cc/wMFnwfm7/Dracomancy-Dragon-Adult3.webp",
       "https://i.postimg.cc/MHtg9PQT/Dracomancy-Dragon-Adult4.webp"
+    ],
+    "comboEls": [
+      "earth",
+      "fire",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
-  },*/
+  },
   "Exterrean": {
     "rarity": "EPIC",
     "comboNice": "AMALGAMATE + SCOURGE",
@@ -213,6 +265,15 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/sD4H3hBD/Exterrean-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Dark",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Fury": {
@@ -235,6 +296,19 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/hPB3FrGm/Fury-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Cold",
+      "Lightning",
+      "Metal",
+      "Plant",
+      "Earth",
+      "Cold",
+      "Lightning",
+      "Air",
+      "Metal"
     ]
   },
   "Greymatter": {
@@ -258,6 +332,15 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/WbvfRn4k/Greymatter-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Air",
+      "Metal",
+      "Fire",
+      "Earth",
+      "Lightning",
+      "Dark"
     ]
   },
   "Heavy Metal": {
@@ -277,6 +360,13 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/X7bDM8vB/Heavy-Metal-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Lightning",
+      "Lightning",
+      "Metal"
     ]
   },
   "Hydnellum": {
@@ -296,6 +386,12 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/rFkY6JpD/Hydnellum-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold",
+      "Apocalypse"
     ]
   },
   "Hyperion": {
@@ -318,6 +414,18 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/5NVkc3tY/Hyperion-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Earth",
+      "Cold",
+      "Lightning",
+      "Air",
+      "Metal",
+      "Lightning",
+      "Water",
+      "Metal",
+      "Dark"
     ]
   },
   "Iden": {
@@ -338,6 +446,16 @@ let eventData = {
     "imgposted": [
       "https://i.postimg.cc/TY6H89Ph/Iden-Dragon-Adult.webp",
       "https://i.postimg.cc/GhCS0Qp2/Iden-Dragon-Adult-Night.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark",
+      "Plant",
+      "Cold",
+      "Lightning",
+      "Dark"
     ]
   },
   "Kage": {
@@ -359,6 +477,15 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/PrjFG4qq/Kage-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "plant",
+      "earth",
+      "cold",
+      "Plant",
+      "Fire",
+      "Lightning"
     ]
   },
   "Macabre": {
@@ -379,6 +506,13 @@ let eventData = {
     "section": "SUMMONS",
     "imgposted": [
       "https://i.postimg.cc/pXH1NZdL/Macabre-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "cold",
+      "earth",
+      "Plant",
+      "Air",
+      "Metal"
     ]
   },
   "Narcis": {
@@ -386,8 +520,8 @@ let eventData = {
     "comboNice": "OUROBOROS + metal + dark",
     "comboArray": [
       "OUROBOROS",
-      "metal",
-      "dark"
+      "Metal",
+      "Dark"
     ],
     "breedingElements": [
       "Lightning",
@@ -400,6 +534,12 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/X7bDM8v7/Narcis-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Lightning",
+      "Water",
+      "Metal",
+      "Dark"
     ]
   },
   "Nightmare": {
@@ -419,6 +559,12 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/hPB3FrG4/Nightmare-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Air",
+      "Dark",
+      "Water",
+      "Dark"
     ]
   },
   "Ocular": {
@@ -438,6 +584,15 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/sDr0Fc2V/Ocular-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Lightning",
+      "Water",
+      "Metal",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Omen": {
@@ -458,6 +613,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/fTNg4KbM/Omen-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Cold",
+      "Lightning",
+      "Plant",
+      "Cold",
+      "Lightning",
+      "Metal"
     ]
   },
   "Punk": {
@@ -479,6 +642,14 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/15QYxHzP/Punk-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "earth",
+      "cold",
+      "plant",
+      "cold",
+      "lightning"
     ]
   },
   "Reaper": {
@@ -497,6 +668,16 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/m2s6xwr4/Reaper-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Righteous": {
@@ -504,8 +685,8 @@ let eventData = {
     "comboNice": "SUN + light + fire",
     "comboArray": [
       "SUN",
-      "light",
-      "fire"
+      "Light",
+      "Fire"
     ],
     "breedingElements": [
       "Fire",
@@ -516,6 +697,12 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/Kv2sXNY2/Righteous-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Cold",
+      "Lightning",
+      "Light",
+      "Fire"
     ]
   },
   "Scourge": {
@@ -536,6 +723,16 @@ let eventData = {
     "section": "SUMMONS",
     "imgposted": [
       "https://i.postimg.cc/X7bDM8v4/Scourge-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "earth",
+      "cold",
+      "Plant",
+      "Fire",
+      "Cold",
+      "Lightning",
+      "Metal"
     ]
   },
   "Scout": {
@@ -543,7 +740,7 @@ let eventData = {
     "comboNice": "VALOR + hidden",
     "comboArray": [
       "VALOR",
-      "hidden"
+      "Hidden"
     ],
     "breedingElements": [
       "Plant",
@@ -555,6 +752,12 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/65X1s0QN/Scout-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Air",
+      "Metal",
+      "Hidden"
     ]
   },
   "Shackle": {
@@ -562,8 +765,8 @@ let eventData = {
     "comboNice": "KAGE + metal + dark",
     "comboArray": [
       "KAGE",
-      "metal",
-      "dark"
+      "Metal",
+      "Dark"
     ],
     "breedingElements": [
       "Plant",
@@ -579,6 +782,15 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/m2s6xwrW/Shackle-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Lightning",
+      "Metal",
+      "Dark"
     ]
   },
   "Tartarus": {
@@ -598,6 +810,13 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/tCjm05gQ/Tartarus-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Metal",
+      "Dark",
+      "Earth",
+      "Dark"
     ]
   },
   "Techno": {
@@ -618,6 +837,14 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/65X1s0Qs/Techno-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Lightning",
+      "Water",
+      "Plant",
+      "Water",
+      "Light",
+      "Dark"
     ]
   },
   "Tickles": {
@@ -637,15 +864,24 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/8PSn8Hz2/Tickles-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Valor": {
     "rarity": "EPIC",
     "comboNice": "plant + metal + air",
     "comboArray": [
-      "plant",
-      "metal",
-      "air"
+      "Plant",
+      "Metal",
+      "Air"
     ],
     "breedingElements": [
       "Plant",
@@ -657,6 +893,11 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/L6p0dT8w/Valor-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Metal",
+      "Air"
     ]
   },
   "W*ndy": {
@@ -677,6 +918,14 @@ let eventData = {
     "imgposted": [
       "https://i.postimg.cc/HW5PPKTm/Windy-Dragon-Adult.webp",
       "https://i.postimg.cc/PrjFG450/Windy-Dragon-Adult-Night.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark",
+      "earth",
+      "fire"
     ]
   },
   "Zombie": {
@@ -696,6 +945,12 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/VL8HyRkT/Zombie-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Air",
+      "Metal",
+      "Plant",
+      "Air"
     ]
   },
   "Amalgamate": {
@@ -703,9 +958,9 @@ let eventData = {
     "comboNice": "BONE + earth + fire + dark",
     "comboArray": [
       "BONE",
-      "earth",
-      "fire",
-      "dark"
+      "Earth",
+      "Fire",
+      "Dark"
     ],
     "breedingElements": [
       "Fire",
@@ -717,6 +972,13 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/15QYxH3j/Amalgamate-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "earth",
+      "fire",
+      "Earth",
+      "Fire",
+      "Dark"
     ]
   },
   "Ambrosia": {
@@ -737,15 +999,22 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/RCfbb8vB/Ambrosia-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Plant",
+      "Fire",
+      "Cold"
     ]
   },
   "Bog": {
     "rarity": "RARE",
     "comboNice": "water + plant + fire",
     "comboArray": [
-      "water",
-      "plant",
-      "fire"
+      "Water",
+      "Plant",
+      "Fire"
     ],
     "breedingElements": [
       "water",
@@ -757,14 +1026,19 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/fWXggFMh/Bog-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Water",
+      "Plant",
+      "Fire"
     ]
   },
   "Bone": {
     "rarity": "RARE",
     "comboNice": "earth + fire",
     "comboArray": [
-      "earth",
-      "fire"
+      "Earth",
+      "Fire"
     ],
     "breedingElements": [
       "earth",
@@ -775,6 +1049,10 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/8kWnn3Tg/Bone-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Fire"
     ]
   },
   "Brainiac": {
@@ -782,8 +1060,8 @@ let eventData = {
     "comboNice": "KWALL + water + dark",
     "comboArray": [
       "KWALL",
-      "water",
-      "dark"
+      "Water",
+      "Dark"
     ],
     "breedingElements": [
       "Water",
@@ -795,6 +1073,12 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/PfZFFcds/Brainiac-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Water",
+      "Light",
+      "Dark"
     ]
   },
   "Brood": {
@@ -815,6 +1099,16 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/tRPmmf90/Brood-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth",
+      "Lightning",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Bruntal": {
@@ -822,7 +1116,7 @@ let eventData = {
     "comboNice": "WRATH + dark",
     "comboArray": [
       "WRATH",
-      "dark"
+      "Dark"
     ],
     "breedingElements": [
       "Plant",
@@ -835,16 +1129,22 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/MZRrr4qC/Bruntal-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Lightning",
+      "Dark"
     ]
   },
   "Combustion": {
     "rarity": "RARE",
     "comboNice": "fire + air + metal + dark",
     "comboArray": [
-      "fire",
-      "air",
-      "metal",
-      "dark"
+      "Fire",
+      "Air",
+      "Metal",
+      "Dark"
     ],
     "breedingElements": [
       "fire",
@@ -857,15 +1157,21 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/1R6YYTsb/Combustion-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Air",
+      "Metal",
+      "Dark"
     ]
   },
   "Decay": {
     "rarity": "RARE",
     "comboNice": "fire + earth + cold",
     "comboArray": [
-      "fire",
-      "earth",
-      "cold"
+      "Fire",
+      "Earth",
+      "Cold"
     ],
     "breedingElements": [
       "fire",
@@ -877,6 +1183,11 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/ryWYYbM3/Decay-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold"
     ]
   },
   "Dortal": {
@@ -897,6 +1208,15 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/NGTPPVBn/Dortal-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Water",
+      "Light",
+      "Dark",
+      "Plant",
+      "Air",
+      "Dark"
     ]
   },
   "Dracabra": {
@@ -917,6 +1237,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/7P7QQcwt/Dracabra-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "plant",
+      "cold",
+      "lightning",
+      "fire",
+      "earth",
+      "cold"
     ]
   },
   "Drack-o-Lantern": {
@@ -937,6 +1265,15 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/pV8117RG/Drack-o-Lantern-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "plant",
+      "fire",
+      "earth",
+      "Plant",
+      "Fire",
+      "Earth",
+      "Dark"
     ]
   },
   "Dragpir": {
@@ -944,7 +1281,7 @@ let eventData = {
     "comboNice": "W*NDY + dark",
     "comboArray": [
       "W*NDY",
-      "dark"
+      "Dark"
     ],
     "breedingElements": [
       "Earth",
@@ -956,6 +1293,12 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/05mHH3Pt/Dragpir-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Dumi": {
@@ -975,16 +1318,23 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/fWXggFD8/Dumi-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "plant",
+      "fire",
+      "earth",
+      "earth",
+      "fire"
     ]
   },
   "Eldritch": {
     "rarity": "RARE",
     "comboNice": "fire + plant + earth + cold",
     "comboArray": [
-      "fire",
-      "plant",
-      "earth",
-      "cold"
+      "Fire",
+      "Plant",
+      "Earth",
+      "Cold"
     ],
     "breedingElements": [
       "fire",
@@ -997,6 +1347,12 @@ let eventData = {
     "section": "SUMMONS",
     "imgposted": [
       "https://i.postimg.cc/8kWnn3Nt/Eldritch-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Plant",
+      "Earth",
+      "Cold"
     ]
   },
   "Eww": {
@@ -1017,6 +1373,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/T2mHHSfQ/Eww-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Water",
+      "Dark",
+      "Plant",
+      "Air",
+      "Light",
+      "Dark"
     ]
   },
   "Fortified": {
@@ -1037,6 +1401,15 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/3rpbb6YB/Fortified-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "earth",
+      "cold",
+      "fire",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Funis": {
@@ -1057,6 +1430,13 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/SQ8tt5kG/Funis-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Light",
+      "water",
+      "plant",
+      "fire"
     ]
   },
   "Gatren": {
@@ -1077,14 +1457,23 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/L4f00723/Gatren-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "plant",
+      "earth",
+      "cold",
+      "fire",
+      "earth",
+      "cold"
     ]
   },
   "Ghost": {
     "rarity": "RARE",
     "comboNice": "earth + cold",
     "comboArray": [
-      "earth",
-      "cold"
+      "Earth",
+      "Cold"
     ],
     "breedingElements": [
       "earth",
@@ -1095,6 +1484,10 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/h4x33wc8/Ghost-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Cold"
     ]
   },
   "Gourd": {
@@ -1115,16 +1508,22 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/dQdSSXw8/Gourd-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth",
+      "Dark"
     ]
   },
   "Grimoire": {
     "rarity": "RARE",
     "comboNice": "cold + air + light + dark",
     "comboArray": [
-      "cold",
-      "air",
-      "light",
-      "dark"
+      "Cold",
+      "Air",
+      "Light",
+      "Dark"
     ],
     "breedingElements": [
       "cold",
@@ -1137,15 +1536,21 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/44tFFMsp/Grimoire-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Cold",
+      "Air",
+      "Light",
+      "Dark"
     ]
   },
   "Infernus": {
     "rarity": "RARE",
     "comboNice": "fire + cold + water",
     "comboArray": [
-      "fire",
-      "cold",
-      "water"
+      "Fire",
+      "Cold",
+      "Water"
     ],
     "breedingElements": [
       "fire",
@@ -1157,15 +1562,20 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/SQ8tt5k8/Infernus-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Cold",
+      "Water"
     ]
   },
   "Kwall": {
     "rarity": "RARE",
     "comboNice": "plant + water + light",
     "comboArray": [
-      "plant",
-      "water",
-      "light"
+      "Plant",
+      "Water",
+      "Light"
     ],
     "breedingElements": [
       "Plant",
@@ -1179,6 +1589,11 @@ let eventData = {
     "imgposted": [
       "https://i.postimg.cc/zDWPPM8h/Kwall-Dragon-Adult.webp",
       "https://i.postimg.cc/wMhfytwM/Kwall-Dragon-Adult-Night.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Water",
+      "Light"
     ]
   },
   "Love": {
@@ -1186,7 +1601,7 @@ let eventData = {
     "comboNice": "FLOWER + lightning",
     "comboArray": [
       "FLOWER",
-      "lightning"
+      "Lightning"
     ],
     "breedingElements": [
       "Plant",
@@ -1198,15 +1613,20 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/1XpCngv4/Love-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Lightning"
     ]
   },
   "Lycan": {
     "rarity": "RARE",
     "comboNice": "plant + cold + lightning",
     "comboArray": [
-      "plant",
-      "cold",
-      "lightning"
+      "Plant",
+      "Cold",
+      "Lightning"
     ],
     "breedingElements": [
       "plant",
@@ -1218,6 +1638,11 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/J0b6Dypn/Lycan-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Cold",
+      "Lightning"
     ]
   },
   "Machina": {
@@ -1225,8 +1650,8 @@ let eventData = {
     "comboNice": "COMBUSTION + metal + lightning",
     "comboArray": [
       "COMBUSTION",
-      "metal",
-      "lightning"
+      "Metal",
+      "Lightning"
     ],
     "breedingElements": [
       "Fire",
@@ -1239,6 +1664,14 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/nrvRjs3h/Machina-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "air",
+      "metal",
+      "dark",
+      "Metal",
+      "Lightning"
     ]
   },
   "Magma": {
@@ -1260,6 +1693,13 @@ let eventData = {
     "imgposted": [
       "https://i.postimg.cc/6qdj27MQ/Magma-Dragon-Adult.webp",
       "https://i.postimg.cc/6qdj27M5/Magma-Dragon-Adult-Night.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "fire",
+      "cold",
+      "water"
     ]
   },
   "Malefice": {
@@ -1279,6 +1719,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/PJm3pLSf/Malefice-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Cold",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Dark"
     ]
   },
   "Maw": {
@@ -1298,6 +1746,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/HnQZcJ6Y/Maw-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "plant",
+      "fire",
+      "earth",
+      "plant",
+      "fire",
+      "earth"
     ]
   },
   "Mirhor": {
@@ -1318,16 +1774,22 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/vTWqg10G/Mirhor-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Dark",
+      "Metal",
+      "Light"
     ]
   },
   "Nesting": {
     "rarity": "RARE",
     "comboNice": "fire + plant + earth + cold",
     "comboArray": [
-      "fire",
-      "plant",
-      "earth",
-      "cold"
+      "Fire",
+      "Plant",
+      "Earth",
+      "Cold"
     ],
     "breedingElements": [
       "fire",
@@ -1340,15 +1802,21 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/tJhSZ1By/Nesting-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Plant",
+      "Earth",
+      "Cold"
     ]
   },
   "Nether": {
     "rarity": "RARE",
     "comboNice": "fire + metal + earth",
     "comboArray": [
-      "fire",
-      "metal",
-      "earth"
+      "Fire",
+      "Metal",
+      "Earth"
     ],
     "breedingElements": [
       "fire",
@@ -1360,37 +1828,46 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/kGx16VTm/Nether-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Metal",
+      "Earth"
     ]
   },
   "Nosferatu": {
     "rarity": "RARE",
-    "comboNice": `earth + cold + fire 
-      **Breed at Night**`,
+    "comboNice": "earth + cold + fire **NIGHT**",
     "comboArray": [
-      "earth",
-      "cold",
-      "fire"
+      "Earth",
+      "Cold",
+      "Fire"
     ],
     "breedingElements": [
       "earth",
       "cold",
       "fire"
     ],
-    "special": "",
+    "special": "NIGHT",
     "price": "2275",
     "type": "dragon",
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/qq8bht1d/Nosferatu-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Cold",
+      "Fire"
     ]
   },
   "Oni": {
     "rarity": "RARE",
     "comboNice": "fire + earth + cold",
     "comboArray": [
-      "fire",
-      "earth",
-      "cold"
+      "Fire",
+      "Earth",
+      "Cold"
     ],
     "breedingElements": [
       "fire",
@@ -1402,15 +1879,20 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/MHyPMc9w/Oni-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth",
+      "Cold"
     ]
   },
   "Ortreat": {
     "rarity": "RARE",
     "comboNice": "plant + fire + earth",
     "comboArray": [
-      "plant",
-      "fire",
-      "earth"
+      "Plant",
+      "Fire",
+      "Earth"
     ],
     "breedingElements": [
       "plant",
@@ -1422,6 +1904,11 @@ let eventData = {
     "section": "TRICKS & TREATS",
     "imgposted": [
       "https://i.postimg.cc/WzMWFD5L/Ortreat-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth"
     ]
   },
   "Pit": {
@@ -1429,8 +1916,8 @@ let eventData = {
     "comboNice": "DECAY + dark + fire",
     "comboArray": [
       "DECAY",
-      "dark",
-      "fire"
+      "Dark",
+      "Fire"
     ],
     "breedingElements": [
       "Fire",
@@ -1443,15 +1930,22 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/6qdj27Ms/Pit-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "earth",
+      "cold",
+      "Dark",
+      "Fire"
     ]
   },
   "Plumpkin": {
     "rarity": "RARE",
     "comboNice": "plant + fire + earth",
     "comboArray": [
-      "plant",
-      "fire",
-      "earth"
+      "Plant",
+      "Fire",
+      "Earth"
     ],
     "breedingElements": [
       "plant",
@@ -1463,6 +1957,11 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/XqwHGZQR/Plumpkin-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth"
     ]
   },
   "Rotblossom": {
@@ -1484,6 +1983,14 @@ let eventData = {
     "imgposted": [
       "https://i.postimg.cc/mkQXzc8K/Rotblossom-Dragon-Adult.webp",
       "https://i.postimg.cc/NF1J9ypW/Rotblossom-Dragon-Adult-Night.webp"
+    ],
+    "comboEls": [
+      "earth",
+      "plant",
+      "cold",
+      "fire",
+      "earth",
+      "cold"
     ]
   },
   "Sinking": {
@@ -1491,8 +1998,8 @@ let eventData = {
     "comboNice": "SPIRIT + dark + water",
     "comboArray": [
       "SPIRIT",
-      "dark",
-      "water"
+      "Dark",
+      "Water"
     ],
     "breedingElements": [
       "Earth",
@@ -1505,14 +2012,20 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/zvntbL0Q/Sinking-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Cold",
+      "Dark",
+      "Water"
     ]
   },
   "Spectre": {
     "rarity": "RARE",
     "comboNice": "cold + earth",
     "comboArray": [
-      "cold",
-      "earth"
+      "Cold",
+      "Earth"
     ],
     "breedingElements": [
       "cold",
@@ -1523,6 +2036,10 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/NF1J9ypV/Spectre-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Cold",
+      "Earth"
     ]
   },
   "Spirit": {
@@ -1541,6 +2058,12 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/Gtk78BqV/Spirit-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "earth",
+      "cold",
+      "cold",
+      "earth"
     ]
   },
   "Spooker": {
@@ -1548,8 +2071,8 @@ let eventData = {
     "comboNice": "ONI + dark + air",
     "comboArray": [
       "ONI",
-      "dark",
-      "air"
+      "Dark",
+      "Air"
     ],
     "breedingElements": [
       "Fire",
@@ -1561,15 +2084,22 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/T1r7LyC4/Spooker-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "fire",
+      "earth",
+      "cold",
+      "Dark",
+      "Air"
     ]
   },
   "Thicket": {
     "rarity": "RARE",
     "comboNice": "earth + plant + cold",
     "comboArray": [
-      "earth",
-      "plant",
-      "cold"
+      "Earth",
+      "Plant",
+      "Cold"
     ],
     "breedingElements": [
       "earth",
@@ -1581,15 +2111,20 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/XqwHGZQD/Thicket-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Plant",
+      "Cold"
     ]
   },
   "Trick": {
     "rarity": "RARE",
     "comboNice": "plant + fire + earth",
     "comboArray": [
-      "plant",
-      "fire",
-      "earth"
+      "Plant",
+      "Fire",
+      "Earth"
     ],
     "breedingElements": [
       "plant",
@@ -1601,6 +2136,11 @@ let eventData = {
     "section": "TRICKS & TREATS",
     "imgposted": [
       "https://i.postimg.cc/7hgsGCmt/Trick-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth"
     ]
   },
   "Vampir": {
@@ -1621,6 +2161,14 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/4yzL7KB8/Vampir-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "earth",
+      "cold",
+      "fire",
+      "Plant",
+      "Air",
+      "Metal"
     ]
   },
   "Yaga": {
@@ -1641,6 +2189,12 @@ let eventData = {
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/3NgS4ynt/Yaga-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "dark",
+      "plant",
+      "Earth",
+      "Cold"
     ]
   },
   "Chromacorn": {
@@ -1668,6 +2222,28 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/J0b6DyPP/Chromacorn-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Plant",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Lightning",
+      "Water",
+      "Air",
+      "Metal",
+      "Light",
+      "Dark",
+      "Plant",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Lightning",
+      "Water",
+      "Air",
+      "Metal",
+      "Light",
+      "Dark"
     ]
   },
   "Nox": {
@@ -1687,53 +2263,65 @@ let eventData = {
     "section": "OMINOUS",
     "imgposted": [
       "https://i.postimg.cc/3NgS4yn9/Nox-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Light",
+      "Dark",
+      "Lightning",
+      "Dark"
     ]
   },
   "Etch": {
     "rarity": "RARE",
-    "comboNice": `dark + plant
-    **PERMANENT**`,
+    "comboNice": "dark + plant**PERMANENT**",
     "comboArray": [
-      "dark",
-      "plant"
+      "Dark",
+      "Plant"
     ],
     "breedingElements": [
       "dark",
       "plant"
     ],
-    "special": "(PERMANENT)",
+    "special": "PERMANENT",
     "price": "6720",
     "type": "dragon",
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/D0VpwQdt/Etch-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Dark",
+      "Plant"
     ]
   },
   "Midnight": {
     "rarity": "EPIC",
-    "comboNice": `MOON + dark
-    **Breed at Night**`,
+    "comboNice": "MOON + dark",
     "comboArray": [
       "MOON",
-      "dark"
+      "Dark"
     ],
     "breedingElements": [
       "Earth",
       "Cold",
       "Dark"
     ],
-    "special": "(PERMANENT)",
+    "special": "NIGHT,PERMANENT",
     "price": "3750",
     "type": "dragon",
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/BbW7n5cy/Midnight-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Cold",
+      "Lightning",
+      "Dark"
     ]
   },
   "Misfortune": {
     "rarity": "EPIC",
-    "comboNice": `Treasure + Apocalypse
-    **Breed at Night**`,
+    "comboNice": "Treasure + Apocalypse",
     "comboArray": [
       "Treasure",
       "Apocalypse"
@@ -1745,12 +2333,16 @@ let eventData = {
       "Lightning",
       "Metal"
     ],
-    "special": "(PERMANENT)",
+    "special": "NIGHT,PERMANENT",
     "price": "2999",
     "type": "dragon",
     "section": "OTHERWORLDLY",
     "imgposted": [
       "https://i.postimg.cc/1Xx730c2/Misfortune-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Treasure",
+      "Apocalypse"
     ]
   },
   "Ghostly Bone": {
@@ -1769,6 +2361,10 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/sxFHgP9N/Ghostly-Bone-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Fire",
+      "Earth"
     ]
   },
   "Ghostly Decay": {
@@ -1787,6 +2383,11 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/T18N3jqJ/Ghostly-Decay-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "GHOSTLY EARTH",
+      "GHOSTLY FIRE",
+      "Cold"
     ]
   },
   "Ghostly Ghost": {
@@ -1805,6 +2406,10 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/SR01xL7r/Ghostly-Ghost-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Cold",
+      "Earth"
     ]
   },
   "Ghostly Glacier": {
@@ -1823,6 +2428,10 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/kGrYgNFy/Ghostly-Glacier-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Cold"
     ]
   },
   "Ghostly Lava": {
@@ -1841,6 +2450,10 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/rs6ZwGCg/Ghostly-Lava-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Fire"
     ]
   },
   "Ghostly Mountain": {
@@ -1859,6 +2472,10 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/QCLYdgkm/Ghostly-Mountain-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Cold"
     ]
   },
   "Ghostly Nosferatu": {
@@ -1877,6 +2494,11 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/mkxpg3Nm/Ghostly-Nosferatu-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "GHOSTLY EARTH",
+      "GHOSTLY COLD",
+      "Fire"
     ]
   },
   "Ghostly Obsidian": {
@@ -1895,6 +2517,10 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/Y0cDCNfb/Ghostly-Obsidian-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Earth",
+      "Fire"
     ]
   },
   "Ghostly Oni": {
@@ -1913,6 +2539,11 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/903gQPt8/Ghostly-Oni-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "GHOSTLY EARTH",
+      "GHOSTLY FIRE",
+      "Cold"
     ]
   },
   "Ghostly Spectre": {
@@ -1931,6 +2562,10 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/1Xx730c7/Ghostly-Spectre-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "Cold",
+      "Earth"
     ]
   },
   "Ghostly Spirit": {
@@ -1949,6 +2584,12 @@ let eventData = {
     "section": "HAUNTED",
     "imgposted": [
       "https://i.postimg.cc/gj9t2yqB/Ghostly-Spirit-Dragon-Adult.webp"
+    ],
+    "comboEls": [
+      "GHOSTLY COLD",
+      "GHOSTLY EARTH",
+      "GHOSTLY COLD",
+      "GHOSTLY EARTH"
     ]
   },
   "Corrupticorn": {
