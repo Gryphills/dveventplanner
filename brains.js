@@ -2789,20 +2789,20 @@ function updateCalculationTotal() {
   calcTotalEl.textContent = total.toString()
 }
 
-function toggleVis(this, type) {
+function toggleVis(thisbutton, type) {
   let cardsOfType = document.querySelectorAll(`.${type}`)
-  if (this.dataset.toggled == 0) {
+  if (thisbutton.dataset.toggled == 0) {
     for (i=0;i<cardsOfType.length;i++) {
       cardsOfType[i].classList.remove("hidden")
     }
-    this.dataset.toggled = 1
-    this.classList.add('pressed')
+    thisbutton.dataset.toggled = 1
+    thisbutton.classList.add('pressed')
   } else {
     for (i=0;i<cardsOfType.length;i++) {
       cardsOfType[i].classList.add("hidden")
     }
-    this.dataset.toggled = 0
-    this.classList.remove('pressed')
+    thisbutton.dataset.toggled = 0
+    thisbutton.classList.remove('pressed')
   }
 }
 
