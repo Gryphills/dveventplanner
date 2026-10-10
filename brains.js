@@ -2813,3 +2813,4 @@ function toggleVis(thisbutton, type) {
 }
 
 cycleItems()
+loadSetup()
