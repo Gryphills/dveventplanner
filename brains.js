@@ -2832,6 +2832,7 @@ function loadSetup() {
       }
     } else {
       console.log(`couldn't find ${itemName}`)
+    }
   }
 }
 
