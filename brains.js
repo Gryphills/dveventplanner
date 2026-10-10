@@ -2682,6 +2682,8 @@ function cycleItems() {
   let halloween26 = eventObj.halloween26
   let itemNames = Object.getOwnPropertyNames(eventData)
   console.log("length of " , itemNames.length);
+  console.log(itemNames)
+  /*
   for (i=0;i<itemNames.length;i++){
     let thisItem = eventData[itemNames[i]]
     console.log(itemNames[i])
@@ -2726,7 +2728,7 @@ function cycleItems() {
       }
       updateCalculationTotal();
     })
-  }
+  }*/
 }
 
 function sortbuttonsClicked(element, label) {
