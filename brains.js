@@ -3633,7 +3633,7 @@ function checkAllCombos() {
       let possibleOthers = checkForBreeds(eventData[dragons[i]].comboEls)
       if (possibleOthers.length > 0) {
         //console.log(dragons[i], possibleOthers)
-        let newhtml = `<details style='display:none;' class="possibleothers"><summary>Possible Others w this combo</summary>
+        let newhtml = `<details class="possibleothers"><summary>Possible Others w this combo</summary>
         <div> `
         for (p=0;p<possibleOthers.length;p++) {
           newhtml += `<div class='imgstack'><img src=${eventData[possibleOthers[p]].imgposted[0]}><p>${possibleOthers[p]}</p></div>`
