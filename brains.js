@@ -2632,17 +2632,17 @@ function buildTemplate(itemName, itemObj) {
       newHtml += `<div style='display:flex;'><img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
     } else {
     
-      newHtml += `<div style='display: flex; position: relative; height: 220px;'>
+      newHtml += `<p style="font-style:italic;">Day View</p>
+      <p style="font-size:small;font-style:italic;">(click img to swap views)</p>
+      <div style='display: flex; position: relative; height: 220px;'>
         <img class="itemimage duoback" onclick="flipViews(this)" src="${imgposted[1]}">
-        <img class="itemimage duofront" onclick="flipViews(this)" src="${imgposted[0]}">
-        </div>
-        <div><p style="font-style:italic;">(Day View)</p>`
+        <img class="itemimage duofront" onclick="flipViews(this)" src="${imgposted[0]}">`
     }
 
     newHtml += `</div>
     <p>${special}</p>
     
-    <p class="itemprice">${price}</p>
+    <p class="itemprice" font-size:14px;font-weight:bold;>${price}</p>
     <label style='height: 20px;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;&nbsp;</label>
     
     <div class="sortbuttons" style="display: flex; flex-wrap: wrap; padding: 5px;">
@@ -2868,6 +2868,21 @@ function toggleVis(thisbutton, type) {
     thisbutton.dataset.toggled = 0
     thisbutton.classList.remove('pressed')
   }
+}
+
+function flipViews(element) {
+  let frontEl = element.parentElement.children[1]
+  let backEl = element.parentElement.children[0]
+  let toBackSrc = frontEl.src;
+  let toFrontSrc = backEl.src;
+  let p = element.parentElement.previousElementSibling.previousElementSibling
+  if (toFrontSrc.includes('Night.webp') {
+    p.textContent = "Night View";
+  } else {
+    p.textContent = "Day View";
+  }
+  frontEl.src = toFrontSrc;
+  backEl.src = toBackSrc;
 }
 
 
