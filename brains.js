@@ -2602,7 +2602,7 @@ function buildTemplate(itemName, itemObj) {
     special = itemObj.special
    }
   if (itemObj.imgposted) {
-    imgposted =itemObj.imgposted
+    imgposted = itemObj.imgposted
   }
   if (itemObj.rarity) {
     rarity=itemObj.rarity.toLowerCase()
@@ -2623,6 +2623,7 @@ function buildTemplate(itemName, itemObj) {
     <div class='sectionicon ${section}'></div>
     <p class="itemname">${itemName}</p>
     <div style='flex'>`
+  console.log(imgposted)
     if (imgposted.length == 1) {
       newHtml += `<img class="itemimage" src="${imgposted[i]}" alt="${itemName}">`
     } else {
@@ -2684,13 +2685,13 @@ function cycleItems() {
   console.log("length of " , itemNames.length);
   console.log(itemNames)
   let charlatancount = 0;
-  for (i=0; i < 15; i++){//itemNames.length;i++){
+  for (i=0; i < itemNames.length; i++){
     let thisItem = eventData[itemNames[i]]
     console.log(itemNames[i], i)
     if (itemNames[i] == 'Charlatan') {
       charlatancount += 1
     }
-    if (charlatancount > 5) {
+    if (charlatancount > 3 || i==20) {
       console.log('ohGOD');
       break;
     }
@@ -2698,7 +2699,7 @@ function cycleItems() {
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
 
     itemHtmElement.querySelector('.purchasenum').addEventListener('change', function(e) {
-      console.log('changed number!');
+      //console.log('changed number!');
       saveCount(itemNames[i], e.currentTarget.value)
       let idText = itemNames[i].trim().replaceAll(' ', "-")
       idText = idText.replaceAll(`'`, '')
