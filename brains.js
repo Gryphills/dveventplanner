@@ -2768,7 +2768,7 @@ function sortbuttonsClicked(element, label) {
     element.dataset.toggled = 1
     element.classList.add('pressed')
     for (i=0;i<htmElements.buttonArray.length; i++) {
-      if (buttonArray[i] != label) {
+      if (htmElements.buttonArray[i] != label) {
         htmElements[buttonArray[i]].button.dataset.toggled = 0;
         htmElements[buttonArray[i]].button.classList.remove('pressed')
       }
