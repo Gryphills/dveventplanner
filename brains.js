@@ -2582,7 +2582,13 @@ let eventData = {
   }
 }
 
-
+function checkData() {
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  if (!eventObj) {
+    localStorage.setItem('dvEvents', JSON.stringify({"halloween26": {}}))
+  }
+}
+checkData()
 
 function buildTemplate(itemName, itemObj) {
   let itemID = itemName
