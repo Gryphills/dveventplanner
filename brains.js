@@ -2877,7 +2877,7 @@ function flipViews(element) {
   let toBackSrc = frontEl.src;
   let toFrontSrc = backEl.src;
   let p = element.parentElement.previousElementSibling.previousElementSibling
-  if (toFrontSrc.includes('Night.webp') {
+  if (toFrontSrc.includes('Night.webp')) {
     p.textContent = "Night View";
   } else {
     p.textContent = "Day View";
