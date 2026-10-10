@@ -3629,9 +3629,9 @@ function checkAllCombos() {
         newhtml += `<div class='imgstack'><img src=${eventData[possibleOthers[p]].imgposted[0]}><p>${possibleOthers[p]}</p></div>`
       }
       newhtml += `</div></details>`
+      let card = document.querySelector(`div[data-name="${dragons[i]}"]`)
+      card.querySelector('.breedinginfo').innerHtml += newhtml;
     }
-    let card = document.querySelector(`div[data-name="${dragons[i]}"]`)
-    card.querySelector('.breedinginfo').innerHtml += newhtml;
   }
 }
 
