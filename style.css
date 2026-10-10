@@ -15,16 +15,18 @@ p {
   max-width:200px;
   width:200px;
   margin: 5px;
+  margin-bottom:10px;
   background-color: #b8ad9b;
   border: 3px solid #584e3f;
   border-radius: 10px;
   padding: 4px;
   padding-top: 2px;
-  padding-bottom:8px;
+  padding-bottom: 10px;
   color: #333;
   text-align:center;
   display: flex;
   flex-direction: column;
+  height: 95%;
 }
 .withcount {
     background-color: rgb(173, 164, 211);
@@ -41,9 +43,8 @@ p {
 }
 .itemimage {
   width: 100%;
-  height: 100%; 
   object-fit: contain; 
-  max-height: 200px;
+  max-height: 190px;
 }
 .iteminner {
   background-color: #bdbdbd;
@@ -51,6 +52,7 @@ p {
   border-radius: 10px;
   padding: 5px;
   position: relative;
+  height: inherit;
 }
 .rare {
   background-color: #72a9ec;
@@ -85,12 +87,14 @@ p {
 }
 .sectionicon {
   border-radius: 5px;
-  width:50px;
-  height:50px;
-  position:absolute;
-  top:-25px;
-  left:-30px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  /*top: -12px;
+  left: -15px;*/
+  bottom: -12px;
   background-size: cover;
+  opacity:0.8;
 }
 .tricksandtreats {
   background-image: url('https://i.postimg.cc/L8H9sLNc/tricksandtreats.png');
