@@ -2410,3 +2410,18 @@ function loadSetup() {
     }
   }
 }
+
+function toggleVis(this, type) {
+  let cardsOfType = document.querySelectorAll(`.${type}`)
+  if (this.dataset.toggled == 0) {
+    for (i=0;i<cardsOfType.length;i++) {
+      cardsOfType[i].classList.remove("hidden")
+    }
+    this.dataset.toggled = 1
+  } else {
+    for (i=0;i<cardsOfType.length;i++) {
+      cardsOfType[i].classList.add("hidden")
+    }
+    this.dataset.toggled = 0
+  }
+}
