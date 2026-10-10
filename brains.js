@@ -2783,13 +2783,13 @@ function sortbuttonsClicked(element, label) {
       }
     }
     htmElements[label].div.appendChild(card)
-    console.log(htmElements[label].div)
+    //console.log(htmElements[label].div)
   } else {
     element.dataset.toggled = 0
     element.classList.remove('pressed');
     htmElements.neutral.div.appendChild(card)
   }
-  console.log(card, card.dataset.name)
+  //console.log(card, card.dataset.name)
   saveStatus(card.dataset.name, label)
 }
 
@@ -2817,7 +2817,7 @@ function loadSetup() {
           else if (status == 'ignore') {sortbuttons[2].click()}
         }
       }
-      let count = halloweenObj[itemsWithStatus[i]].count;
+      let count = itemthing.count;
       if (count) {
         let number = cardEl.querySelector('.purchasenum');
         number.value = Number(count);
