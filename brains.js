@@ -1,4 +1,4 @@
-{
+let eventData = {
   "Awoo": {
     "rarity": "EPIC",
     "comboNice": "MIDNIGHT + LYCAN",
@@ -2261,15 +2261,60 @@
   }
 }
 
-function buildTemplate(itemName, type, section="", price="n/a", special="", imgposted, rarity="", combonice="" ) {
 
-  let newHtml = `<div class="item ${type} ${rarity}">
+
+function cycleItems() {
+  let itemNames = Object.getOwnPropertyNames(eventData)
+  for (i=0;i<itemNames.length;i++){
+    let thisItem = eventData[itemNames[i]]
+    let itemHtmElement = buildTemplate(itemNames[i], thisItem)
+    document.querySelector('.neutraldiv').appendChild(itemHtmElement)
+    itemHtmElement.querySelector('.purchasenum').addEventListener('input', function(e) {
+      //blah blah do the calcs
+    })
+  }
+}
+
+cycleItems();
+    
+
+function buildTemplate(itemName, itemObj) {
+  let itemID = itemName
+  let type = itemObj.type
+  let section = itemObj.section
+  let price = itemObj.price
+  let special=""
+  let imgposted = ""
+  let rarity = ""
+  let combonice = "" 
+  if (itemObj.special) {
+    special = itemObj.special
+   }
+  if (itemObj.imgposted) {
+    imgposted =itemObj.imgposted
+  }
+  if (itemObj.rarity) {
+    rarity=itemObj.rarity.toLowerCase()
+  }
+  if (itemObj.combonice){
+    combonice = itemObj.combonice
+  }
+  if (type == 'dragon') {
+    itemName = itemName + " Dragon";
+  }
+  let sectionclasses = ["tricksandtreats" , "haunted", "occult", "ominous", "otherworldly", "summons"]
+  if (section == 'TRICKS & TREATS') {
+    section = 'tricksandtreats';
+  } else {
+    section = section.toLowerCase()
+  }
+  let newHtml = `<div name="${itemID}" class="item ${type} ${rarity}">
   <div class="iteminner">
     <div class='sectionicon ${section}'>
     <p class="itemname">${itemName}</p>
     <div style='flex'>`
     if (imgposted.length == 1) {
-      newHtml += `<img class="itemimage" src="${imgposted[i]}">`
+      newHtml += `<img class="itemimage" src="${imgposted[i]}" alt="${itemName}">`
     } else {
       for (i=0;i<imgposted.length;i++){
         newHtml += `<img class="itemimage duo" src="${imgposted[i]}">`
@@ -2282,10 +2327,10 @@ function buildTemplate(itemName, type, section="", price="n/a", special="", imgp
     <p class="itemprice">${price}</p>
     <label style='height: 20px;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;&nbsp;</label>
     
-    <div style="display: flex; flex-wrap: wrap; padding: 5px;">
-      <input class="buttons" type="button" value="Want" data-toggled="0">
-      <input class="buttons" type="button" value="Have" data-toggled="0">
-      <input class="buttons" type="button" value="Meh" data-toggled="0">
+    <div class="sortbuttons" style="display: flex; flex-wrap: wrap; padding: 5px;">
+      <input class="buttons" type="button" name="sortbuttons" data-toggled = "0" value="Want" onclick="sortbuttonsClicked(this, 'want')">
+      <input class="buttons" type="button" name="sortbuttons" data-toggled = "0"  value="Have" onclick="sortbuttonsClicked(this, 'have')">
+      <input class="buttons" type="button" name="sortbuttons" data-toggled = "0"  value="Meh" onclick="sortbuttonsClicked(this, 'ignore')">
     </div>`
     if (type == 'dragon') {
       newHtml += `<p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
@@ -2295,4 +2340,73 @@ function buildTemplate(itemName, type, section="", price="n/a", special="", imgp
       </div>
       </div>
       </div>`
+
+  let htmElement = document.createElement('div');
+  htmElement.innerHTML = newHtml;
+  return htmElement;
+}
+
+
+
+function sortbuttonsClicked(element, label) {
+  let card = element.closest('.item')
+  let htmElements = {
+    want: {
+      button: element.parentElement.children[0],
+      div: document.getElementById('wantdiv')
+    },
+    have: {
+      button: element.parentElement.children[1],
+      div: document.getElementById('havediv')
+    },
+    ignore: {
+      button: element.parentElement.children[2],
+      div: document.getElementById('ignorediv')
+    },
+    neutral: {
+      div: document.getElementById('neutraldiv')
+    },
+    buttonArray: ['want', 'have', 'ignore']
+  }
+
+  if (element.dataset.toggled == 0) {
+    element.dataset.toggled = 1
+    element.classList.add('pressed')
+    for (i=0;i<htmElements.buttonArray.length; i++) {
+      if (buttonArray[i] != label) {
+        htmElements[buttonArray[i]].button.dataset.toggled = 0;
+        htmElements[buttonArray[i]].button.classList.remove('pressed')
+      }
+    }
+    htmElements[label].div.appendChild(card)
+  } else {
+    element.dataset.toggled = 0
+    element.classList.remove('pressed');
+    htmElements.neutral.div.appendChild(card)
+  }
+  
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  eventObj.halloween26[itemId].status = label;
+  localStorage.setItem('dvEvents', JSON.stringify(eventObj))
+}
+
+function loadSetup() {
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  if (!eventObj) {
+    localStorage.setItem('dvEvents', JSON.stringify({"halloween26": {}}))
+  }
+  let halloweenObj = eventObj.halloween26;
+  let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
+  for (i=0;i<itemsWithStatus.length;i++) {
+    let cardEl = document.querySelector(`div[name="${itemsWithStatus[i]}"`)
+    if (cardEl) {
+      let status = halloweenObj[itemsWithStatus[i]].status
+      if (status != "neutral") {
+        let sortbuttons = cardEl.querySelector('.sortbuttons').children
+        if (status == 'want') {sortbuttons[0].click()}
+        else if (status == 'have') {sortbuttons[1].click()}
+        else if (status == 'ignore') {sortbuttons[2].click()}
+      }
+    }
+  }
 }
