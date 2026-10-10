@@ -2772,8 +2772,8 @@ function sortbuttonsClicked(element, label) {
     element.classList.add('pressed')
     for (i=0;i<htmElements.buttonArray.length; i++) {
       if (htmElements.buttonArray[i] != label) {
-        htmElements[buttonArray[i]].button.dataset.toggled = 0;
-        htmElements[buttonArray[i]].button.classList.remove('pressed')
+        htmElements[htmElements.buttonArray[i]].button.dataset.toggled = 0;
+        htmElements[htmElements.buttonArray[i]].button.classList.remove('pressed')
       }
     }
     htmElements[label].div.appendChild(card)
