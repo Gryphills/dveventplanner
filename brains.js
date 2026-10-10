@@ -3594,6 +3594,7 @@ function getDragonNames() {
 
 
 function checkForBreeds(elArray) {
+  console.log('checking!')
   let possibleOthers = []
   for (d=0;d<dragonsNames.length;d++) {
     let check = eventData[dragonsNames[d]];
