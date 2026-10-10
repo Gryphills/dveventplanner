@@ -2623,7 +2623,7 @@ function buildTemplate(itemName, itemObj) {
     <div class='sectionicon ${section}'></div>
     <p class="itemname">${itemName}</p>
     <div style='display:flex;'>`
-  console.log(imgposted)
+  //console.log(imgposted)
     if (imgposted.length == 1) {
       newHtml += `<img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
     } else {
@@ -2683,7 +2683,7 @@ function cycleItems() {
   }
   let halloween26 = eventObj.halloween26
   let itemNames = Object.getOwnPropertyNames(eventData)
-  console.log("length of " , itemNames.length);
+  //console.log("length of " , itemNames.length);
   for (i=0; i < itemNames.length; i++){
     let thisItem = eventData[itemNames[i]]
     if (i == 0) {
