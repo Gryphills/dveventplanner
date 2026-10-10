@@ -2647,7 +2647,7 @@ function buildTemplate(itemName, itemObj) {
       newHtml += `<p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
       <p class='combo'>${combonice}</p>`
     }
-     newHtml += `<div>
+     newHtml += `</div>
       </div>
       </div>
       </div>`
@@ -2729,10 +2729,12 @@ function cycleItems() {
           listItem.textContent += ` Dragon`
         }
         listItem.dataset.subcost = calculated;
-        listItem.innerHTML += `<div style='width: 35px; height: 35px;  display: inline-block;  vertical-align: center; margin-left: 8px;'>`
+        let newhtml = `<div style='width: 35px; height: 35px;  display: inline-block;  vertical-align: center; margin-left: 8px;'>`
         if (thisItem.imgposted) {
-          listItem.innerHTML += `<img src="${thisItem.imgposted[0]}" width="30px" style="object-fit: contain; height: 100%;  width: 100%;">`
+          newhtml += `<img src="${thisItem.imgposted[0]}" width="30px" style="object-fit: contain; height: 100%;  width: 100%;">`
         }
+        newhtml += `</div>`
+        listItem.innerHTML = newhtml
       } else {
         itemHtmElement.classList.remove('withcount');
         if (calcDiv.querySelector(`#${idText}`)) {
@@ -2784,7 +2786,7 @@ function sortbuttonsClicked(element, label) {
     htmElements.neutral.div.appendChild(card)
   }
   
-  saveStatus(itemId, label)
+  saveStatus(card.name, label)
 }
 
 function loadSetup() {
