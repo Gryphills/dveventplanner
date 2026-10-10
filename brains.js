@@ -2683,10 +2683,11 @@ function cycleItems() {
   let itemNames = Object.getOwnPropertyNames(eventData)
   console.log("length of " , itemNames.length);
   console.log(itemNames)
-  /*
+  
   for (i=0;i<itemNames.length;i++){
     let thisItem = eventData[itemNames[i]]
-    console.log(itemNames[i])
+    console.log(itemNames[i], i)
+  }/*
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
 
