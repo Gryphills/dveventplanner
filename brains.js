@@ -2697,6 +2697,9 @@ function cycleItems() {
       break;
     }
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
+    if (!itemHtmElement.classList.includes('item')) {
+      itemHtmElement = itemHtmElement.querySelector('.item')
+    }
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
     let numberEl =  itemHtmElement.querySelector('.purchasenum')
     numberEl.dataset.itemName = itemNames[i]
@@ -2710,7 +2713,7 @@ function cycleItems() {
       idText = idText.replaceAll(`:`, '')
       let calcDiv = document.getElementById('itemstobuy');
       if (e.currentTarget.value != 0) {
-        itemHtmElement.classList.add('withcount');
+         e.currentTarget.closest('.item').classList.add('withcount');
         let listItem;
         if (!calcDiv.querySelector(`#${idText}`)) {
           listItem = document.createElement('p');
@@ -2736,7 +2739,7 @@ function cycleItems() {
         newhtml += `</div>`
         listItem.innerHTML = newhtml
       } else {
-        itemHtmElement.classList.remove('withcount');
+        e.currentTarget.closest('.item').classList.remove('withcount');
         if (calcDiv.querySelector(`#${idText}`)) {
           calcDiv.querySelector(`#${idText}`).remove();
         }
