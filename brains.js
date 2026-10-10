@@ -2851,5 +2851,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
   cycleItems()
   loadSetup()
+  let decobutton = document.querySelector(`button [onclick="toggleVis(this, 'deco')"]`)
+  decobutton.dispatchEvent(new Event('click'));
 });
 
