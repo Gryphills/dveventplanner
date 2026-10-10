@@ -2618,7 +2618,7 @@ function buildTemplate(itemName, itemObj) {
   } else {
     section = section.toLowerCase()
   }
-  let newHtml = `<div name="${itemID}" class="item ${type} ${rarity}">
+  let newHtml = `<div name="${itemID}" data-name="${itemID}" class="item ${type} ${rarity}">
   <div class="iteminner">
     <div class='sectionicon ${section}'></div>
     <p class="itemname">${itemName}</p>
@@ -2789,8 +2789,8 @@ function sortbuttonsClicked(element, label) {
     element.classList.remove('pressed');
     htmElements.neutral.div.appendChild(card)
   }
-  console.log(card, card.tagName)
-  saveStatus(card.tagName, label)
+  console.log(card, card.dataset.name)
+  saveStatus(card.dataset.name, label)
 }
 
 function loadSetup() {
