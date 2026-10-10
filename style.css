@@ -173,24 +173,23 @@ body {
   width: 45%;
   height: 50%;*/
   object-fit: contain; 
-  max-height: 180px;
-  max-width: 70%;
+  max-height: 190px;
+  max-width: 80%;
   margin:3px;
 }
 .duoback {
   position: relative;
-  width: 100%;
-  left: -19;
-  width: 85%;
-  height: 180px;
+  left: -19px;
+  width: 70%;
+  height: 190px;
   opacity: 0.4;
   cursor: pointer;
 }
 .duofront {
   position: absolute;
   width: 100%;
-  height: 180px;
-  right: -19;
+  height: 190px;
+  right: -19px;
   bottom: 0;
   cursor: pointer;
 }
