@@ -2698,11 +2698,14 @@ function cycleItems() {
     }
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
+    let numberEl =  itemHtmElement.querySelector('.purchasenum')
+    numberEl.dataset.itemName = itemNames[i]
 
-    itemHtmElement.querySelector('.purchasenum').addEventListener('change', function(e) {
+    numberEl.addEventListener('change', function(e) {
+      let itemName = e.currentTarget.dataset.itemName
       //console.log('changed number!');
-      saveCount(itemNames[i], e.currentTarget.value)
-      let idText = itemNames[i].trim().replaceAll(' ', "-")
+      saveCount(itemName, e.currentTarget.value)
+      let idText = itemName.trim().replaceAll(' ', "-")
       idText = idText.replaceAll(`'`, '')
       idText = idText.replaceAll(`:`, '')
       let calcDiv = document.getElementById('itemstobuy');
@@ -2721,7 +2724,7 @@ function cycleItems() {
         let calculated = 0
         calculated = Number(thisItem.price) * Number(e.currentTarget.value)
         
-        listItem.textContent = `${calculated} - ${e.currentTarget.value}x ${itemNames[i]}`;
+        listItem.textContent = `${calculated} - ${e.currentTarget.value}x ${itemName}`;
         if (thisItem.type == "dragon") {
           listItem.textContent += ` Dragon`
         }
