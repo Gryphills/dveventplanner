@@ -61,6 +61,7 @@ body {
   padding: 5px;
   position: relative;
   height: 100%;
+  display:grid;
 }
 .rare {
   background-color: #72a9ec;
@@ -105,7 +106,7 @@ body {
   border-radius: 5px;
   background-color: #a09edf70;
   border: 1px solid white;
-  
+  align-content: center;
 }
 .sectionicon {
   border-radius: 5px;
