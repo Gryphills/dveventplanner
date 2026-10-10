@@ -2684,11 +2684,8 @@ function cycleItems() {
   let halloween26 = eventObj.halloween26
   let itemNames = Object.getOwnPropertyNames(eventData)
   console.log("length of " , itemNames.length);
-  console.log(itemNames)
-  //let charlatancount = 0;
   for (i=0; i < itemNames.length; i++){
     let thisItem = eventData[itemNames[i]]
-    console.log(itemNames[i], i)
     if (i == 0) {
       safetyCycle += 1
     }
@@ -2697,8 +2694,8 @@ function cycleItems() {
       break;
     }
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
-    if (!itemHtmElement.classList.includes('item')) {
-      itemHtmElement = itemHtmElement.querySelector('.item')
+    if (!itemHtmElement.classList.contains('item')) {
+      itemHtmElement = itemHtmElement.querySelector('.item');
     }
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
     let numberEl =  itemHtmElement.querySelector('.purchasenum')
@@ -2853,6 +2850,6 @@ function toggleVis(thisbutton, type) {
 document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
   cycleItems()
-  //loadSetup()
+  loadSetup()
 });
 
