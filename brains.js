@@ -2588,7 +2588,6 @@ function checkData() {
     localStorage.setItem('dvEvents', JSON.stringify({"halloween26": {}}))
   }
 }
-checkData()
 
 function buildTemplate(itemName, itemObj) {
   let itemID = itemName
@@ -2685,10 +2684,11 @@ function cycleItems() {
   console.log("length of " , itemNames.length);
   for (i=0;i<itemNames.length;i++){
     let thisItem = eventData[itemNames[i]]
+    console.log(itemNames[i])
     let itemHtmElement = buildTemplate(itemNames[i], thisItem)
     document.getElementById('neutraldiv').appendChild(itemHtmElement)
 
-    itemHtmElement.querySelector('.purchasenum').addEventListener('input', function(e) {
+    itemHtmElement.querySelector('.purchasenum').addEventListener('change', function(e) {
       saveCount(itemNames[i], e.currentTarget.value)
       let idText = itemNames[i].trim().replaceAll(' ', "-")
       idText = idText.replaceAll(`'`, '')
@@ -2793,7 +2793,7 @@ function loadSetup() {
       if (count) {
         let number = cardEl.querySelector('.purchasenum');
         number.value = Number(count);
-        number.dispatchEvent(new Event('input'));
+        number.dispatchEvent(new Event('change'));
       }
       
     }
@@ -2828,6 +2828,7 @@ function toggleVis(thisbutton, type) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  console.log('loaded dom!')
   cycleItems()
-  loadSetup()
+  //loadSetup()
 });
