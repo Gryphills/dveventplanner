@@ -2797,35 +2797,41 @@ function loadSetup() {
   let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
   if (!eventObj || eventObj == {}) {
     localStorage.setItem('dvEvents', JSON.stringify({"halloween26": {}}));
+    eventObj = {"halloween26": {}}
   }
   let halloweenObj = eventObj.halloween26;
   let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
   for (k=0;k<itemsWithStatus.length;k++) {
-    
-    let cardEl = document.querySelector(`div[data-name="${itemsWithStatus[k]}"`);
-    let itemthing = halloweenObj[itemsWithStatus[k]]
-    console.log(itemsWithStatus[k], itemthing, cardEl)
-    if (cardEl) {
-      //if (!itemthing) {return}
-      let status = halloweenObj[itemsWithStatus[i]].status;
-      if (status) {
-        if (status != "neutral") {
-          let sortbuttons = cardEl.querySelector('.sortbuttons').children;
-          //console.log(sortbuttons, status)
-          if (status == 'want') {sortbuttons[0].click()}
-          else if (status == 'have') {sortbuttons[1].click()}
-          else if (status == 'ignore') {sortbuttons[2].click()}
+    let itemName = itemsWithStatus[k]
+    let allNames = Object.getOwnPropertyNames(eventData);
+    if (allNames.includes(itemName)) {
+      let cardEl = document.querySelector(`div[data-name="${itemName}"`);
+      let itemthing = halloweenObj[itemsWithStatus[k]]
+      console.log("Got the name,," , itemName, itemsWithStatus[k], itemthing, cardEl)
+      if (cardEl) {
+        //if (!itemthing) {return}
+        let status = itemthing.status;
+        if (status) {
+          if (status != "neutral") {
+            let sortbuttons = cardEl.querySelector('.sortbuttons').children;
+            //console.log(sortbuttons, status)
+            if (status == 'want') {sortbuttons[0].click()}
+            else if (status == 'have') {sortbuttons[1].click()}
+            else if (status == 'ignore') {sortbuttons[2].click()}
+          }
+        }
+        let count = itemthing.count;
+        if (count) {
+          console.log('found count!')
+          let number = cardEl.querySelector('.purchasenum');
+          number.value = Number(count);
+          number.dispatchEvent(new Event('change'));
+        } else {
+          console.log('no count for ' + itemName)
         }
       }
-      let count = itemthing.count;
-      if (count) {
-        console.log('found count!')
-        let number = cardEl.querySelector('.purchasenum');
-        number.value = Number(count);
-        number.dispatchEvent(new Event('change'));
-      }
-      
-    }
+    } else {
+      console.log(`couldn't find ${itemName}`)
   }
 }
 
