@@ -2675,7 +2675,12 @@ function saveStatus(itemname, status) {
 }
 
 function cycleItems() {
-  let halloween26 = JSON.parse(localStorage.getItem('dvEvents')).halloween26
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  if (!eventObj) {
+    checkData()
+    eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  }
+  let halloween26 = eventObj.halloween26
   let itemNames = Object.getOwnPropertyNames(halloween26)
   for (i=0;i<itemNames.length;i++){
     let thisItem = halloween26[itemNames[i]]
