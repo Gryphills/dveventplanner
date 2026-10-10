@@ -1180,7 +1180,7 @@ let eventData = {
       "fire"
     ],
     "special": "NIGHT",
-    "imgposted": "https://i.postimg.cc/mkxpg3Nm/Ghostly-Nosferatu-Dragon-Adult.webp",
+    "imgposted": "https://i.postimg.cc/qq8bht1d/Nosferatu-Dragon-Adult.webp",
     "price": "2275",
     "type": "dragon",
     "section": "OTHERWORLDLY"
@@ -1198,7 +1198,7 @@ let eventData = {
       "earth",
       "cold"
     ],
-    "imgposted": "https://i.postimg.cc/903gQPt8/Ghostly-Oni-Dragon-Adult.webp",
+    "imgposted": "https://i.postimg.cc/MHyPMc9w/Oni-Dragon-Adult.webp",
     "price": "2000",
     "type": "dragon",
     "section": "OTHERWORLDLY"
@@ -1306,7 +1306,7 @@ let eventData = {
       "cold",
       "earth"
     ],
-    "imgposted": "https://i.postimg.cc/1Xx730c7/Ghostly-Spectre-Dragon-Adult.webp",
+    "imgposted": "https://i.postimg.cc/NF1J9ypV/Spectre-Dragon-Adult.webp",
     "price": "2150",
     "type": "dragon",
     "section": "OTHERWORLDLY"
@@ -1322,7 +1322,7 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/gj9t2yqB/Ghostly-Spirit-Dragon-Adult.webp",
+    "imgposted": "https://i.postimg.cc/Gtk78BqV/Spirit-Dragon-Adult.webp",
     "price": "6080",
     "type": "dragon",
     "section": "OMINOUS"
