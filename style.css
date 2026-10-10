@@ -1,6 +1,9 @@
 p {
   margin:8px;
 }
+body {
+  font-family: Tahoma, Verdana, sans-serif;
+}
 #calctotals::before {
   font-weight: bold; font-size:large;
   content:
@@ -137,6 +140,7 @@ p {
   border: 2px solid #777777;
   border-radius: 5px;
   font-weight: bold;
+  font-family: Tahoma, Verdana, sans-serif;
 }
 .pressed {
     background-color: #353535;
