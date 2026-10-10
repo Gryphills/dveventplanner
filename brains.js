@@ -2625,6 +2625,7 @@ function buildTemplate(itemName, itemObj) {
   let newHtml = `<div name="${itemID}" data-name="${itemID}" class="item ${type} ${rarity}">
   <div class="iteminner">
     <div class='sectionicon ${section}'></div>
+    <div>
     <p class="itemname">${itemName}</p>
     `
   //console.log(imgposted)
@@ -2639,20 +2640,20 @@ function buildTemplate(itemName, itemObj) {
         <img class="itemimage duofront" onclick="flipViews(this)" src="${imgposted[0]}">`
     }
 
-    newHtml += `</div>
+    newHtml += `</div></div>
     <p>${special}</p>
-    
+    <div>
     <p class="itemprice" font-size:14px;font-weight:bold;>${price}</p>
-    <label style='height: 20px;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;&nbsp;</label>
+    <label style='height: 20px; justify-items:center; font-size:14px; font-style:italic; align-items: center;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;</label>
     
     <div class="sortbuttons" style="display: flex; flex-wrap: wrap; padding: 5px;">
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0" value="Want" onclick="sortbuttonsClicked(this, 'want')">
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0"  value="Have" onclick="sortbuttonsClicked(this, 'have')">
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0"  value="Meh" onclick="sortbuttonsClicked(this, 'ignore')">
-    </div>`
+    </div></div>`
     if (type == 'dragon') {
-      newHtml += `<p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
-      <p class='combo'>${combonice}</p>`
+      newHtml += `<div class="breedinginfo"><p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
+      <p class='combo'>${combonice}</p></div>`
     }
      newHtml += `</div>
       </div>
