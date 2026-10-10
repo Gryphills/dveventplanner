@@ -2800,13 +2800,13 @@ function loadSetup() {
   }
   let halloweenObj = eventObj.halloween26;
   let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
-  for (i=0;i<itemsWithStatus.length;i++) {
+  for (k=0;k<itemsWithStatus.length;k++) {
     
-    let cardEl = document.querySelector(`div[name="${itemsWithStatus[i]}"`);
+    let cardEl = document.querySelector(`div[data-name="${itemsWithStatus[k]}"`);
+    let itemthing = halloweenObj[itemsWithStatus[k]]
+    console.log(itemsWithStatus[k], itemthing, cardEl)
     if (cardEl) {
-      let itemthing = halloweenObj[itemsWithStatus[i]]
-      console.log(itemsWithStatus[i], itemthing)
-      if (!itemthing) {return}
+      //if (!itemthing) {return}
       let status = halloweenObj[itemsWithStatus[i]].status;
       if (status) {
         if (status != "neutral") {
@@ -2819,6 +2819,7 @@ function loadSetup() {
       }
       let count = itemthing.count;
       if (count) {
+        console.log('found count!')
         let number = cardEl.querySelector('.purchasenum');
         number.value = Number(count);
         number.dispatchEvent(new Event('change'));
