@@ -1837,7 +1837,7 @@ let eventData = {
   },
   "Nosferatu": {
     "rarity": "RARE",
-    "comboNice": "earth + cold + fire\n**Breed at Night**",
+    "comboNice": `earth + cold + fire\n**Breed at Night**`,
     "comboArray": [
       "Earth",
       "Cold",
@@ -2273,7 +2273,7 @@ let eventData = {
   },
   "Etch": {
     "rarity": "RARE",
-    "comboNice": "dark + plant**PERMANENT**",
+    "comboNice": `dark + plant\n**PERMANENT**`,
     "comboArray": [
       "Dark",
       "Plant"
@@ -2296,7 +2296,7 @@ let eventData = {
   },
   "Midnight": {
     "rarity": "EPIC",
-    "comboNice": "MOON + dark \n**Breed at Night**"",
+    "comboNice": `MOON + dark \n**Breed at Night**`,
     "comboArray": [
       "MOON",
       "Dark"
@@ -2321,7 +2321,7 @@ let eventData = {
   },
   "Misfortune": {
     "rarity": "EPIC",
-    "comboNice": "Treasure + Apocalypse\n**Breed at Night**"",
+    "comboNice": `Treasure + Apocalypse\n**Breed at Night**`,
     "comboArray": [
       "Treasure",
       "Apocalypse"
