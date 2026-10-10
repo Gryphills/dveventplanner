@@ -144,3 +144,36 @@ p {
   flex-wrap: 
   margin:3px;
 }
+#wantdiv {
+  text-align: center;
+  background-color: rgb(173, 164, 211);
+  border: 5px solid rgb(37, 7, 87);
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 10px;
+}
+#neutraldiv {
+  text-align: center;
+  background-color: rgb(249, 240, 225);
+  border: 4px solid rgb(156, 143, 168);
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 10px;
+}
+#havediv {
+  text-align: center;
+  background-color: rgb(249, 240, 225);
+  border: 4px solid rgb(98, 63, 155);
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 10px;
+}
+#ignorediv {
+  text-align: center;
+  background-color: rgb(249, 240, 225);
+  border: 4px solid rgb(156, 143, 168);
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 10px;
+  opacity: 0.85;
+}
