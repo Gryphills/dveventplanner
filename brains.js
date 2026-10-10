@@ -1,4 +1,61 @@
 let eventData = {
+  "Torment": {
+    "rarity": "RARE",
+    "comboNice": "RUST + dark + fire",
+    "comboArray": [
+      "RUST",
+      "dark",
+      "fire"
+    ],
+    "breedingElements": [
+      "Metal1",
+      "Water1",
+      "Dark1",
+      "Fire"
+    ],
+    "price": "15250",
+    "type": "dragon",
+    "section": "LIMITED",
+    "imgposted": [
+      "https://i.postimg.cc/MpXJFStW/Torment-Dragon-Adult.webp"
+    ]
+  },
+  "Hollowjaw": {
+    "rarity": "RARE",
+    "comboNice": "CLONE ONLY",
+    "comboArray": [
+      "CLONE ONLY"
+    ],
+    "breedingElements": [
+      "Dark1",
+      "Earth1",
+      "Plant"
+    ],
+    "price": "15150",
+    "type": "dragon",
+    "section": "LIMITED",
+    "imgposted": [
+      "https://i.postimg.cc/P5NnRjKT/Hollowjaw-Dragon-Adult.webp"
+    ]
+  },
+  "Eggony": {
+    "rarity": "RARE",
+    "comboNice": "CLONE ONLY",
+    "comboArray": [
+      "CLONE ONLY"
+    ],
+    "breedingElements": [
+      "Fire1",
+      "Earth1",
+      "Dark"
+    ],
+    "price": "14000",
+    "type": "dragon",
+    "section": "LIMITED",
+    "imgposted": [
+      "https://i.postimg.cc/jSCYFbvT/Eggony-Dragon-Adult.webp"
+    ]
+  },
   "Awoo": {
     "rarity": "EPIC",
     "comboNice": "MIDNIGHT + LYCAN",
@@ -10,10 +67,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/rFNZqrd0/Awoo-Dragon-Adult.webp",
     "price": "13500",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/rFNZqrd0/Awoo-Dragon-Adult.webp"
+    ]
   },
   "Barbarous": {
     "rarity": "EPIC",
@@ -28,10 +87,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/MKm3zQcc/Barbarous-Dragon-Adult.webp",
     "price": "9600",
     "type": "dragon",
-    "section": "SUMMONS"
+    "section": "SUMMONS",
+    "imgposted": [
+      "https://i.postimg.cc/MKm3zQcc/Barbarous-Dragon-Adult.webp"
+    ]
   },
   "Candycorn": {
     "rarity": "EPIC",
@@ -44,10 +105,12 @@ let eventData = {
       "Plant",
       "Light"
     ],
-    "imgposted": "https://i.postimg.cc/kXvY7bV2/Candycorn-Dragon-Adult.webp",
     "price": "16500",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/kXvY7bV2/Candycorn-Dragon-Adult.webp"
+    ]
   },
   "Cerberus": {
     "rarity": "EPIC",
@@ -62,10 +125,12 @@ let eventData = {
       "Lightning",
       "Water"
     ],
-    "imgposted": "https://i.postimg.cc/jd43R7W5/Cerberus-Dragon-Adult.webp",
     "price": "4500",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/jd43R7W5/Cerberus-Dragon-Adult.webp"
+    ]
   },
   "Charlatan": {
     "rarity": "EPIC",
@@ -80,10 +145,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/BQB7JK8v/Charlatan-Dragon-Adult.webp",
     "price": "8100",
     "type": "dragon",
-    "section": "SUMMONS"
+    "section": "SUMMONS",
+    "imgposted": [
+      "https://i.postimg.cc/BQB7JK8v/Charlatan-Dragon-Adult.webp"
+    ]
   },
   "Delight": {
     "rarity": "EPIC",
@@ -98,10 +165,12 @@ let eventData = {
       "Fire",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/VLWZzCSk/Delight-Dragon-Adult.webp",
     "price": "3750",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/VLWZzCSk/Delight-Dragon-Adult.webp"
+    ]
   },
   "Dracomancy": {
     "rarity": "EPIC",
@@ -116,9 +185,16 @@ let eventData = {
       "Cold",
       "Dark"
     ],
+    "special": "Evolves as you upgrade the Ominous Digsite",
     "price": "1000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/PJK0S3wv/Dracomancy-Dragon-Adult1.webp",
+      "https://i.postimg.cc/fy518299/Dracomancy-Dragon-Adult2.webp",
+      "https://i.postimg.cc/wMFnwfm7/Dracomancy-Dragon-Adult3.webp",
+      "https://i.postimg.cc/MHtg9PQT/Dracomancy-Dragon-Adult4.webp"
+    ]
   },
   "Exterrean": {
     "rarity": "EPIC",
@@ -132,10 +208,12 @@ let eventData = {
       "Earth",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/sD4H3hBD/Exterrean-Dragon-Adult.webp",
     "price": "18500",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/sD4H3hBD/Exterrean-Dragon-Adult.webp"
+    ]
   },
   "Fury": {
     "rarity": "EPIC",
@@ -152,10 +230,12 @@ let eventData = {
       "Air",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/hPB3FrGm/Fury-Dragon-Adult.webp",
     "price": "8560",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/hPB3FrGm/Fury-Dragon-Adult.webp"
+    ]
   },
   "Greymatter": {
     "rarity": "EPIC",
@@ -173,10 +253,12 @@ let eventData = {
       "Metal",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/WbvfRn4k/Greymatter-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/WbvfRn4k/Greymatter-Dragon-Adult.webp"
+    ]
   },
   "Heavy Metal": {
     "rarity": "EPIC",
@@ -190,10 +272,12 @@ let eventData = {
       "Lightning",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/X7bDM8vB/Heavy-Metal-Dragon-Adult.webp",
     "price": "9600",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/X7bDM8vB/Heavy-Metal-Dragon-Adult.webp"
+    ]
   },
   "Hydnellum": {
     "rarity": "EPIC",
@@ -207,10 +291,12 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/rFkY6JpD/Hydnellum-Dragon-Adult.webp",
     "price": "14640",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/rFkY6JpD/Hydnellum-Dragon-Adult.webp"
+    ]
   },
   "Hyperion": {
     "rarity": "EPIC",
@@ -227,10 +313,12 @@ let eventData = {
       "Air",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/5NVkc3tY/Hyperion-Dragon-Adult.webp",
     "price": "9500",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/5NVkc3tY/Hyperion-Dragon-Adult.webp"
+    ]
   },
   "Iden": {
     "rarity": "EPIC",
@@ -244,10 +332,13 @@ let eventData = {
       "Air",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/TY6H89Ph/Iden-Dragon-Adult.webp",
     "price": "7960",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/TY6H89Ph/Iden-Dragon-Adult.webp",
+      "https://i.postimg.cc/GhCS0Qp2/Iden-Dragon-Adult-Night.webp"
+    ]
   },
   "Kage": {
     "rarity": "EPIC",
@@ -263,10 +354,12 @@ let eventData = {
       "Cold",
       "Lightning"
     ],
-    "imgposted": "https://i.postimg.cc/PrjFG4qq/Kage-Dragon-Adult.webp",
     "price": "13680",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/PrjFG4qq/Kage-Dragon-Adult.webp"
+    ]
   },
   "Macabre": {
     "rarity": "EPIC",
@@ -281,10 +374,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/pXH1NZdL/Macabre-Dragon-Adult.webp",
     "price": "10400",
     "type": "dragon",
-    "section": "SUMMONS"
+    "section": "SUMMONS",
+    "imgposted": [
+      "https://i.postimg.cc/pXH1NZdL/Macabre-Dragon-Adult.webp"
+    ]
   },
   "Narcis": {
     "rarity": "EPIC",
@@ -300,10 +395,12 @@ let eventData = {
       "Metal",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/X7bDM8v7/Narcis-Dragon-Adult.webp",
     "price": "7000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/X7bDM8v7/Narcis-Dragon-Adult.webp"
+    ]
   },
   "Nightmare": {
     "rarity": "EPIC",
@@ -317,10 +414,12 @@ let eventData = {
       "Air",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/hPB3FrG4/Nightmare-Dragon-Adult.webp",
     "price": "2200",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/hPB3FrG4/Nightmare-Dragon-Adult.webp"
+    ]
   },
   "Ocular": {
     "rarity": "EPIC",
@@ -334,10 +433,12 @@ let eventData = {
       "Lightning",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/sDr0Fc2V/Ocular-Dragon-Adult.webp",
     "price": "7800",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/sDr0Fc2V/Ocular-Dragon-Adult.webp"
+    ]
   },
   "Omen": {
     "rarity": "EPIC",
@@ -352,10 +453,12 @@ let eventData = {
       "Lightning",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/fTNg4KbM/Omen-Dragon-Adult.webp",
     "price": "5000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/fTNg4KbM/Omen-Dragon-Adult.webp"
+    ]
   },
   "Punk": {
     "rarity": "EPIC",
@@ -371,10 +474,12 @@ let eventData = {
       "Cold",
       "Lightning"
     ],
-    "imgposted": "https://i.postimg.cc/15QYxHzP/Punk-Dragon-Adult.webp",
     "price": "10000",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/15QYxHzP/Punk-Dragon-Adult.webp"
+    ]
   },
   "Reaper": {
     "rarity": "EPIC",
@@ -387,10 +492,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/m2s6xwr4/Reaper-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/m2s6xwr4/Reaper-Dragon-Adult.webp"
+    ]
   },
   "Righteous": {
     "rarity": "EPIC",
@@ -404,10 +511,12 @@ let eventData = {
       "Fire",
       "Light"
     ],
-    "imgposted": "https://i.postimg.cc/Kv2sXNY2/Righteous-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/Kv2sXNY2/Righteous-Dragon-Adult.webp"
+    ]
   },
   "Scourge": {
     "rarity": "EPIC",
@@ -422,10 +531,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/X7bDM8v4/Scourge-Dragon-Adult.webp",
     "price": "8900",
     "type": "dragon",
-    "section": "SUMMONS"
+    "section": "SUMMONS",
+    "imgposted": [
+      "https://i.postimg.cc/X7bDM8v4/Scourge-Dragon-Adult.webp"
+    ]
   },
   "Scout": {
     "rarity": "EPIC",
@@ -439,10 +550,12 @@ let eventData = {
       "Air",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/65X1s0QN/Scout-Dragon-Adult.webp",
     "price": "6480",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/65X1s0QN/Scout-Dragon-Adult.webp"
+    ]
   },
   "Shackle": {
     "rarity": "EPIC",
@@ -461,10 +574,12 @@ let eventData = {
       "Metal",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/m2s6xwrW/Shackle-Dragon-Adult.webp",
     "price": "12500",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/m2s6xwrW/Shackle-Dragon-Adult.webp"
+    ]
   },
   "Tartarus": {
     "rarity": "EPIC",
@@ -478,10 +593,12 @@ let eventData = {
       "Earth",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/tCjm05gQ/Tartarus-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/tCjm05gQ/Tartarus-Dragon-Adult.webp"
+    ]
   },
   "Techno": {
     "rarity": "EPIC",
@@ -496,10 +613,12 @@ let eventData = {
       "Water",
       "Light"
     ],
-    "imgposted": "https://i.postimg.cc/65X1s0Qs/Techno-Dragon-Adult.webp",
     "price": "11500",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/65X1s0Qs/Techno-Dragon-Adult.webp"
+    ]
   },
   "Tickles": {
     "rarity": "EPIC",
@@ -513,10 +632,12 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/8PSn8Hz2/Tickles-Dragon-Adult.webp",
     "price": "17000",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/8PSn8Hz2/Tickles-Dragon-Adult.webp"
+    ]
   },
   "Valor": {
     "rarity": "EPIC",
@@ -531,10 +652,12 @@ let eventData = {
       "Air",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/L6p0dT8w/Valor-Dragon-Adult.webp",
     "price": "2200",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/L6p0dT8w/Valor-Dragon-Adult.webp"
+    ]
   },
   "W*ndy": {
     "rarity": "EPIC",
@@ -548,10 +671,13 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/HW5PPKTm/Windy-Dragon-Adult.webp",
     "price": "7000",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/HW5PPKTm/Windy-Dragon-Adult.webp",
+      "https://i.postimg.cc/PrjFG450/Windy-Dragon-Adult-Night.webp"
+    ]
   },
   "Zombie": {
     "rarity": "EPIC",
@@ -565,10 +691,12 @@ let eventData = {
       "Air",
       "Metal"
     ],
-    "imgposted": "https://i.postimg.cc/VL8HyRkT/Zombie-Dragon-Adult.webp",
     "price": "6080",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/VL8HyRkT/Zombie-Dragon-Adult.webp"
+    ]
   },
   "Amalgamate": {
     "rarity": "RARE",
@@ -584,10 +712,12 @@ let eventData = {
       "Earth",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/15QYxH3j/Amalgamate-Dragon-Adult.webp",
     "price": "12960",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/15QYxH3j/Amalgamate-Dragon-Adult.webp"
+    ]
   },
   "Ambrosia": {
     "rarity": "RARE",
@@ -602,10 +732,12 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/RCfbb8vB/Ambrosia-Dragon-Adult.webp",
     "price": "3500",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/RCfbb8vB/Ambrosia-Dragon-Adult.webp"
+    ]
   },
   "Bog": {
     "rarity": "RARE",
@@ -620,10 +752,12 @@ let eventData = {
       "plant",
       "fire"
     ],
-    "imgposted": "https://i.postimg.cc/fWXggFMh/Bog-Dragon-Adult.webp",
     "price": "2275",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/fWXggFMh/Bog-Dragon-Adult.webp"
+    ]
   },
   "Bone": {
     "rarity": "RARE",
@@ -636,10 +770,12 @@ let eventData = {
       "earth",
       "fire"
     ],
-    "imgposted": "https://i.postimg.cc/8kWnn3Tg/Bone-Dragon-Adult.webp",
     "price": "760",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/8kWnn3Tg/Bone-Dragon-Adult.webp"
+    ]
   },
   "Brainiac": {
     "rarity": "RARE",
@@ -654,10 +790,12 @@ let eventData = {
       "Light",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/PfZFFcds/Brainiac-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/PfZFFcds/Brainiac-Dragon-Adult.webp"
+    ]
   },
   "Brood": {
     "rarity": "RARE",
@@ -672,10 +810,12 @@ let eventData = {
       "Lightning",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/tRPmmf90/Brood-Dragon-Adult.webp",
     "price": "12000",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/tRPmmf90/Brood-Dragon-Adult.webp"
+    ]
   },
   "Bruntal": {
     "rarity": "RARE",
@@ -690,10 +830,12 @@ let eventData = {
       "Lightning",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/MZRrr4qC/Bruntal-Dragon-Adult.webp",
     "price": "16000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/MZRrr4qC/Bruntal-Dragon-Adult.webp"
+    ]
   },
   "Combustion": {
     "rarity": "RARE",
@@ -710,10 +852,12 @@ let eventData = {
       "metal",
       "dark"
     ],
-    "imgposted": "https://i.postimg.cc/1R6YYTsb/Combustion-Dragon-Adult.webp",
     "price": "7450",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/1R6YYTsb/Combustion-Dragon-Adult.webp"
+    ]
   },
   "Decay": {
     "rarity": "RARE",
@@ -728,10 +872,12 @@ let eventData = {
       "earth",
       "cold"
     ],
-    "imgposted": "https://i.postimg.cc/ryWYYbM3/Decay-Dragon-Adult.webp",
     "price": "6080",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/ryWYYbM3/Decay-Dragon-Adult.webp"
+    ]
   },
   "Dortal": {
     "rarity": "RARE",
@@ -746,10 +892,12 @@ let eventData = {
       "Light",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/NGTPPVBn/Dortal-Dragon-Adult.webp",
     "price": "8560",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/NGTPPVBn/Dortal-Dragon-Adult.webp"
+    ]
   },
   "Dracabra": {
     "rarity": "RARE",
@@ -764,10 +912,12 @@ let eventData = {
       "Earth",
       "Lightning"
     ],
-    "imgposted": "https://i.postimg.cc/7P7QQcwt/Dracabra-Dragon-Adult.webp",
     "price": "1900",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/7P7QQcwt/Dracabra-Dragon-Adult.webp"
+    ]
   },
   "Drack-o-Lantern": {
     "rarity": "RARE",
@@ -782,10 +932,12 @@ let eventData = {
       "Earth",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/pV8117RG/Drack-o-Lantern-Dragon-Adult.webp",
     "price": "13500",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/pV8117RG/Drack-o-Lantern-Dragon-Adult.webp"
+    ]
   },
   "Dragpir": {
     "rarity": "RARE",
@@ -799,10 +951,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/05mHH3Pt/Dragpir-Dragon-Adult.webp",
     "price": "12000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/05mHH3Pt/Dragpir-Dragon-Adult.webp"
+    ]
   },
   "Dumi": {
     "rarity": "RARE",
@@ -816,10 +970,12 @@ let eventData = {
       "Fire",
       "Earth"
     ],
-    "imgposted": "https://i.postimg.cc/fWXggFD8/Dumi-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/fWXggFD8/Dumi-Dragon-Adult.webp"
+    ]
   },
   "Eldritch": {
     "rarity": "RARE",
@@ -836,10 +992,12 @@ let eventData = {
       "earth",
       "cold"
     ],
-    "imgposted": "https://i.postimg.cc/8kWnn3Nt/Eldritch-Dragon-Adult.webp",
     "price": "11500",
     "type": "dragon",
-    "section": "SUMMONS"
+    "section": "SUMMONS",
+    "imgposted": [
+      "https://i.postimg.cc/8kWnn3Nt/Eldritch-Dragon-Adult.webp"
+    ]
   },
   "Eww": {
     "rarity": "RARE",
@@ -854,10 +1012,12 @@ let eventData = {
       "Air",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/T2mHHSfQ/Eww-Dragon-Adult.webp",
     "price": "13000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/T2mHHSfQ/Eww-Dragon-Adult.webp"
+    ]
   },
   "Fortified": {
     "rarity": "RARE",
@@ -872,10 +1032,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/3rpbb6YB/Fortified-Dragon-Adult.webp",
     "price": "17500",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/3rpbb6YB/Fortified-Dragon-Adult.webp"
+    ]
   },
   "Funis": {
     "rarity": "RARE",
@@ -890,10 +1052,12 @@ let eventData = {
       "Water",
       "Light"
     ],
-    "imgposted": "https://i.postimg.cc/SQ8tt5kG/Funis-Dragon-Adult.webp",
     "price": "7360",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/SQ8tt5kG/Funis-Dragon-Adult.webp"
+    ]
   },
   "Gatren": {
     "rarity": "RARE",
@@ -908,10 +1072,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/L4f00723/Gatren-Dragon-Adult.webp",
     "price": "4800",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/L4f00723/Gatren-Dragon-Adult.webp"
+    ]
   },
   "Ghost": {
     "rarity": "RARE",
@@ -924,10 +1090,12 @@ let eventData = {
       "earth",
       "cold"
     ],
-    "imgposted": "https://i.postimg.cc/h4x33wc8/Ghost-Dragon-Adult.webp",
     "price": "1140",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/h4x33wc8/Ghost-Dragon-Adult.webp"
+    ]
   },
   "Gourd": {
     "rarity": "RARE",
@@ -942,10 +1110,12 @@ let eventData = {
       "Earth",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/dQdSSXw8/Gourd-Dragon-Adult.webp",
     "price": "2200",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/dQdSSXw8/Gourd-Dragon-Adult.webp"
+    ]
   },
   "Grimoire": {
     "rarity": "RARE",
@@ -962,10 +1132,12 @@ let eventData = {
       "light",
       "dark"
     ],
-    "imgposted": "https://i.postimg.cc/44tFFMsp/Grimoire-Dragon-Adult.webp",
     "price": "8000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/44tFFMsp/Grimoire-Dragon-Adult.webp"
+    ]
   },
   "Infernus": {
     "rarity": "RARE",
@@ -980,10 +1152,12 @@ let eventData = {
       "cold",
       "water"
     ],
-    "imgposted": "https://i.postimg.cc/SQ8tt5k8/Infernus-Dragon-Adult.webp",
     "price": "7680",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/SQ8tt5k8/Infernus-Dragon-Adult.webp"
+    ]
   },
   "Kwall": {
     "rarity": "RARE",
@@ -999,10 +1173,13 @@ let eventData = {
       "Light",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/zDWPPM8h/Kwall-Dragon-Adult.webp",
     "price": "5600",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/zDWPPM8h/Kwall-Dragon-Adult.webp",
+      "https://i.postimg.cc/wMhfytwM/Kwall-Dragon-Adult-Night.webp"
+    ]
   },
   "Love": {
     "rarity": "RARE",
@@ -1016,10 +1193,12 @@ let eventData = {
       "Fire",
       "Lightning"
     ],
-    "imgposted": "https://i.postimg.cc/1XpCngv4/Love-Dragon-Adult.webp",
     "price": "1140",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/1XpCngv4/Love-Dragon-Adult.webp"
+    ]
   },
   "Lycan": {
     "rarity": "RARE",
@@ -1034,10 +1213,12 @@ let eventData = {
       "cold",
       "lightning"
     ],
-    "imgposted": "https://i.postimg.cc/J0b6Dypn/Lycan-Dragon-Adult.webp",
     "price": "6080",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/J0b6Dypn/Lycan-Dragon-Adult.webp"
+    ]
   },
   "Machina": {
     "rarity": "RARE",
@@ -1053,10 +1234,12 @@ let eventData = {
       "Metal",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/nrvRjs3h/Machina-Dragon-Adult.webp",
     "price": "16000",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/nrvRjs3h/Machina-Dragon-Adult.webp"
+    ]
   },
   "Magma": {
     "rarity": "RARE",
@@ -1071,10 +1254,13 @@ let eventData = {
       "Cold",
       "Water"
     ],
-    "imgposted": "https://i.postimg.cc/6qdj27MQ/Magma-Dragon-Adult.webp",
     "price": "12000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/6qdj27MQ/Magma-Dragon-Adult.webp",
+      "https://i.postimg.cc/6qdj27M5/Magma-Dragon-Adult-Night.webp"
+    ]
   },
   "Malefice": {
     "rarity": "RARE",
@@ -1088,10 +1274,12 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/PJm3pLSf/Malefice-Dragon-Adult.webp",
     "price": "5800",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/PJm3pLSf/Malefice-Dragon-Adult.webp"
+    ]
   },
   "Maw": {
     "rarity": "RARE",
@@ -1105,10 +1293,12 @@ let eventData = {
       "Fire",
       "Earth"
     ],
-    "imgposted": "https://i.postimg.cc/HnQZcJ6Y/Maw-Dragon-Adult.webp",
     "price": "6000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/HnQZcJ6Y/Maw-Dragon-Adult.webp"
+    ]
   },
   "Mirhor": {
     "rarity": "RARE",
@@ -1123,10 +1313,12 @@ let eventData = {
       "Light",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/vTWqg10G/Mirhor-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/vTWqg10G/Mirhor-Dragon-Adult.webp"
+    ]
   },
   "Nesting": {
     "rarity": "RARE",
@@ -1143,10 +1335,12 @@ let eventData = {
       "earth",
       "cold"
     ],
-    "imgposted": "https://i.postimg.cc/tJhSZ1By/Nesting-Dragon-Adult.webp",
     "price": "6080",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/tJhSZ1By/Nesting-Dragon-Adult.webp"
+    ]
   },
   "Nether": {
     "rarity": "RARE",
@@ -1161,10 +1355,12 @@ let eventData = {
       "metal",
       "earth"
     ],
-    "imgposted": "https://i.postimg.cc/kGx16VTm/Nether-Dragon-Adult.webp",
     "price": "2250",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/kGx16VTm/Nether-Dragon-Adult.webp"
+    ]
   },
   "Nosferatu": {
     "rarity": "RARE",
@@ -1180,10 +1376,12 @@ let eventData = {
       "fire"
     ],
     "special": "NIGHT",
-    "imgposted": "https://i.postimg.cc/qq8bht1d/Nosferatu-Dragon-Adult.webp",
     "price": "2275",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/qq8bht1d/Nosferatu-Dragon-Adult.webp"
+    ]
   },
   "Oni": {
     "rarity": "RARE",
@@ -1198,10 +1396,12 @@ let eventData = {
       "earth",
       "cold"
     ],
-    "imgposted": "https://i.postimg.cc/MHyPMc9w/Oni-Dragon-Adult.webp",
     "price": "2000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/MHyPMc9w/Oni-Dragon-Adult.webp"
+    ]
   },
   "Ortreat": {
     "rarity": "RARE",
@@ -1216,10 +1416,12 @@ let eventData = {
       "fire",
       "earth"
     ],
-    "imgposted": "https://i.postimg.cc/WzMWFD5L/Ortreat-Dragon-Adult.webp",
     "price": "5000",
     "type": "dragon",
-    "section": "TRICKS & TREATS"
+    "section": "TRICKS & TREATS",
+    "imgposted": [
+      "https://i.postimg.cc/WzMWFD5L/Ortreat-Dragon-Adult.webp"
+    ]
   },
   "Pit": {
     "rarity": "RARE",
@@ -1235,10 +1437,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/6qdj27Ms/Pit-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/6qdj27Ms/Pit-Dragon-Adult.webp"
+    ]
   },
   "Plumpkin": {
     "rarity": "RARE",
@@ -1253,10 +1457,12 @@ let eventData = {
       "fire",
       "earth"
     ],
-    "imgposted": "https://i.postimg.cc/XqwHGZQR/Plumpkin-Dragon-Adult.webp",
     "price": "7500",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/XqwHGZQR/Plumpkin-Dragon-Adult.webp"
+    ]
   },
   "Rotblossom": {
     "rarity": "RARE",
@@ -1271,10 +1477,13 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/mkQXzc8K/Rotblossom-Dragon-Adult.webp",
     "price": "12640",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/mkQXzc8K/Rotblossom-Dragon-Adult.webp",
+      "https://i.postimg.cc/NF1J9ypW/Rotblossom-Dragon-Adult-Night.webp"
+    ]
   },
   "Sinking": {
     "rarity": "RARE",
@@ -1290,10 +1499,12 @@ let eventData = {
       "Water",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/zvntbL0Q/Sinking-Dragon-Adult.webp",
     "price": "15000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/zvntbL0Q/Sinking-Dragon-Adult.webp"
+    ]
   },
   "Spectre": {
     "rarity": "RARE",
@@ -1306,10 +1517,12 @@ let eventData = {
       "cold",
       "earth"
     ],
-    "imgposted": "https://i.postimg.cc/NF1J9ypV/Spectre-Dragon-Adult.webp",
     "price": "2150",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/NF1J9ypV/Spectre-Dragon-Adult.webp"
+    ]
   },
   "Spirit": {
     "rarity": "RARE",
@@ -1322,10 +1535,12 @@ let eventData = {
       "Earth",
       "Cold"
     ],
-    "imgposted": "https://i.postimg.cc/Gtk78BqV/Spirit-Dragon-Adult.webp",
     "price": "6080",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/Gtk78BqV/Spirit-Dragon-Adult.webp"
+    ]
   },
   "Spooker": {
     "rarity": "RARE",
@@ -1340,10 +1555,12 @@ let eventData = {
       "Air",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/T1r7LyC4/Spooker-Dragon-Adult.webp",
     "price": "13000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/T1r7LyC4/Spooker-Dragon-Adult.webp"
+    ]
   },
   "Thicket": {
     "rarity": "RARE",
@@ -1358,10 +1575,12 @@ let eventData = {
       "plant",
       "cold"
     ],
-    "imgposted": "https://i.postimg.cc/XqwHGZQD/Thicket-Dragon-Adult.webp",
     "price": "1000",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/XqwHGZQD/Thicket-Dragon-Adult.webp"
+    ]
   },
   "Trick": {
     "rarity": "RARE",
@@ -1376,10 +1595,12 @@ let eventData = {
       "fire",
       "earth"
     ],
-    "imgposted": "https://i.postimg.cc/7hgsGCmt/Trick-Dragon-Adult.webp",
     "price": "5000",
     "type": "dragon",
-    "section": "TRICKS & TREATS"
+    "section": "TRICKS & TREATS",
+    "imgposted": [
+      "https://i.postimg.cc/7hgsGCmt/Trick-Dragon-Adult.webp"
+    ]
   },
   "Vampir": {
     "rarity": "RARE",
@@ -1394,10 +1615,12 @@ let eventData = {
       "Cold",
       "Air"
     ],
-    "imgposted": "https://i.postimg.cc/4yzL7KB8/Vampir-Dragon-Adult.webp",
     "price": "8320",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/4yzL7KB8/Vampir-Dragon-Adult.webp"
+    ]
   },
   "Yaga": {
     "rarity": "RARE",
@@ -1412,10 +1635,12 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "imgposted": "https://i.postimg.cc/3NgS4ynt/Yaga-Dragon-Adult.webp",
     "price": "15500",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/3NgS4ynt/Yaga-Dragon-Adult.webp"
+    ]
   },
   "Chromacorn": {
     "rarity": "RIFT EXCLUSIVE",
@@ -1437,10 +1662,12 @@ let eventData = {
       "Dark"
     ],
     "special": "RIFT ONLY",
-    "imgposted": "https://i.postimg.cc/J0b6DyPP/Chromacorn-Dragon-Adult.webp",
     "price": "6100",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/J0b6DyPP/Chromacorn-Dragon-Adult.webp"
+    ]
   },
   "Nox": {
     "rarity": "RIFT EXCLUSIVE",
@@ -1454,29 +1681,34 @@ let eventData = {
       "Dark"
     ],
     "special": "RIFT ONLY",
-    "imgposted": "https://i.postimg.cc/3NgS4yn9/Nox-Dragon-Adult.webp",
     "price": "8760",
     "type": "dragon",
-    "section": "OMINOUS"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/3NgS4yn9/Nox-Dragon-Adult.webp"
+    ]
   },
   "Etch": {
-    "rarity": "PERMANENT",
-    "comboNice": "dark + plant",
+    "rarity": "RARE",
+    "comboNice": "dark + plant**PERMANENT**",
     "comboArray": [
       "dark",
-      "plant"
+      "plant**PERMANENT**"
     ],
     "breedingElements": [
       "dark",
       "plant"
     ],
-    "imgposted": "https://i.postimg.cc/D0VpwQdt/Etch-Dragon-Adult.webp",
+    "special": "PERMANENT",
     "price": "6720",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/D0VpwQdt/Etch-Dragon-Adult.webp"
+    ]
   },
   "Midnight": {
-    "rarity": "PERMANENT",
+    "rarity": "EPIC",
     "comboNice": "MOON + dark",
     "comboArray": [
       "MOON",
@@ -1487,14 +1719,16 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "special": "NIGHT",
-    "imgposted": "https://i.postimg.cc/BbW7n5cy/Midnight-Dragon-Adult.webp",
+    "special": "NIGHT,PERMANENT",
     "price": "3750",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/BbW7n5cy/Midnight-Dragon-Adult.webp"
+    ]
   },
   "Misfortune": {
-    "rarity": "PERMANENT",
+    "rarity": "EPIC",
     "comboNice": "Treasure + Apocalypse",
     "comboArray": [
       "Treasure",
@@ -1507,11 +1741,13 @@ let eventData = {
       "Lightning",
       "Metal"
     ],
-    "special": "NIGHT",
-    "imgposted": "https://i.postimg.cc/1Xx730c2/Misfortune-Dragon-Adult.webp",
+    "special": "NIGHT,PERMANENT",
     "price": "2999",
     "type": "dragon",
-    "section": "OTHERWORLDLY"
+    "section": "OTHERWORLDLY",
+    "imgposted": [
+      "https://i.postimg.cc/1Xx730c2/Misfortune-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Bone": {
     "rarity": "GHOSTLY",
@@ -1524,10 +1760,12 @@ let eventData = {
       "GHOSTLY FIRE",
       "GHOSTLY EARTH"
     ],
-    "imgposted": "https://i.postimg.cc/sxFHgP9N/Ghostly-Bone-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/sxFHgP9N/Ghostly-Bone-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Decay": {
     "rarity": "GHOSTLY",
@@ -1540,10 +1778,12 @@ let eventData = {
       "GHOSTLY OBSIDIAN",
       "GHOSTLY COLD"
     ],
-    "imgposted": "https://i.postimg.cc/T18N3jqJ/Ghostly-Decay-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/T18N3jqJ/Ghostly-Decay-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Ghost": {
     "rarity": "GHOSTLY",
@@ -1556,10 +1796,12 @@ let eventData = {
       "GHOSTLY COLD",
       "GHOSTLY EARTH"
     ],
-    "imgposted": "https://i.postimg.cc/SR01xL7r/Ghostly-Ghost-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/SR01xL7r/Ghostly-Ghost-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Glacier": {
     "rarity": "GHOSTLY",
@@ -1572,10 +1814,12 @@ let eventData = {
       "GHOSTLY EARTH",
       "GHOSTLY COLD"
     ],
-    "imgposted": "https://i.postimg.cc/kGrYgNFy/Ghostly-Glacier-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/kGrYgNFy/Ghostly-Glacier-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Lava": {
     "rarity": "GHOSTLY",
@@ -1588,10 +1832,12 @@ let eventData = {
       "GHOSTLY EARTH",
       "GHOSTLY FIRE"
     ],
-    "imgposted": "https://i.postimg.cc/rs6ZwGCg/Ghostly-Lava-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/rs6ZwGCg/Ghostly-Lava-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Mountain": {
     "rarity": "GHOSTLY",
@@ -1604,10 +1850,12 @@ let eventData = {
       "GHOSTLY EARTH",
       "GHOSTLY COLD"
     ],
-    "imgposted": "https://i.postimg.cc/QCLYdgkm/Ghostly-Mountain-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/QCLYdgkm/Ghostly-Mountain-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Nosferatu": {
     "rarity": "GHOSTLY",
@@ -1620,10 +1868,12 @@ let eventData = {
       "GHOSTLY MOUNTAIN",
       "GHOSTLY FIRE"
     ],
-    "imgposted": "https://i.postimg.cc/mkxpg3Nm/Ghostly-Nosferatu-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/mkxpg3Nm/Ghostly-Nosferatu-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Obsidian": {
     "rarity": "GHOSTLY",
@@ -1636,10 +1886,12 @@ let eventData = {
       "GHOSTLY EARTH",
       "GHOSTLY FIRE"
     ],
-    "imgposted": "https://i.postimg.cc/Y0cDCNfb/Ghostly-Obsidian-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/Y0cDCNfb/Ghostly-Obsidian-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Oni": {
     "rarity": "GHOSTLY",
@@ -1652,10 +1904,12 @@ let eventData = {
       "GHOSTLY LAVA",
       "GHOSTLY COLD"
     ],
-    "imgposted": "https://i.postimg.cc/903gQPt8/Ghostly-Oni-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/903gQPt8/Ghostly-Oni-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Spectre": {
     "rarity": "GHOSTLY",
@@ -1668,10 +1922,12 @@ let eventData = {
       "GHOSTLY COLD",
       "GHOSTLY EARTH"
     ],
-    "imgposted": "https://i.postimg.cc/1Xx730c7/Ghostly-Spectre-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/1Xx730c7/Ghostly-Spectre-Dragon-Adult.webp"
+    ]
   },
   "Ghostly Spirit": {
     "rarity": "GHOSTLY",
@@ -1684,25 +1940,130 @@ let eventData = {
       "GHOSTLY GHOST",
       "GHOSTLY SPECTRE"
     ],
-    "imgposted": "https://i.postimg.cc/gj9t2yqB/Ghostly-Spirit-Dragon-Adult.webp",
     "price": "2750",
     "type": "dragon",
-    "section": "HAUNTED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/gj9t2yqB/Ghostly-Spirit-Dragon-Adult.webp"
+    ]
   },
-  "Torment": {
-    "price": "15250",
+  "Corrupticorn": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from Chromacorn when all 10 different Flames of Corruption are in your park",
+    "breedingElements": [
+      "Plant",
+      "Fire",
+      "Earth",
+      "Cold",
+      "Lightning",
+      "Water",
+      "Air",
+      "Metal",
+      "Light",
+      "Dark"
+    ],
+    "price": "9550",
     "type": "dragon",
-    "section": "LIMITED"
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/sg1CNrKR/Corrupticorn-Dragon-Adult.webp"
+    ]
   },
-  "Eggony": {
-    "price": "14000",
+  "Ghostly Cold": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from COLD when the Effigy of the Frost is in your park",
+    "breedingElements": [
+      "Cold"
+    ],
+    "price": "2750",
     "type": "dragon",
-    "section": "LIMITED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/RZqxDBGx/Ghostly-Cold-Dragon-Adult.webp"
+    ]
   },
-  "Hollowjaw": {
-    "price": "15150",
+  "Ghostly Earth": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from EARTH when the Effigy of the Ground is in your park",
+    "breedingElements": [
+      "Earth"
+    ],
+    "price": "2750",
     "type": "dragon",
-    "section": "LIMITED"
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/vZDwNsXF/Ghostly-Earth-Dragon-Adult.webp"
+    ]
+  },
+  "Ghostly Fire": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from FIRE when the Effigy of the Flame is in your park",
+    "breedingElements": [
+      "Fire"
+    ],
+    "price": "2750",
+    "type": "dragon",
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/JztC2Lxf/Ghostly-Fire-Dragon-Adult.webp"
+    ]
+  },
+  "Ghostly Plant": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from PLANT when the Effigy of the Leaf is in your park",
+    "breedingElements": [
+      "Plant"
+    ],
+    "price": "2750",
+    "type": "dragon",
+    "section": "HAUNTED",
+    "imgposted": [
+      "https://i.postimg.cc/t47GMjkw/Ghostly-Plant-Dragon-Adult.webp"
+    ]
+  },
+  "Porcelain": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from BONE when all 10 different Ornaments of Porcelain are in your park",
+    "breedingElements": [
+      "Fire",
+      "Earth"
+    ],
+    "price": "7150",
+    "type": "dragon",
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/t47GMjD0/Porcelain-Dragon-Adult.webp"
+    ]
+  },
+  "Umbra": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from SCOUT when all 10 different Tents are in your park",
+    "breedingElements": [
+      "Earth",
+      "Cold",
+      "Dark"
+    ],
+    "price": "9550",
+    "type": "dragon",
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/4xnRSgPj/Umbra-Dragon-Adult.webp"
+    ]
+  },
+  "Wrath": {
+    "rarity": "EVOLUTION",
+    "comboNice": "Evolve from LOVE when all 10 different Tendrils of Wrath are in your park",
+    "breedingElements": [
+      "Plant",
+      "Fire",
+      "Lightning"
+    ],
+    "price": "7950",
+    "type": "dragon",
+    "section": "OMINOUS",
+    "imgposted": [
+      "https://i.postimg.cc/y8WCbHjr/Wrath-Dragon-Adult.webp"
+    ]
   },
   "Circle of Whispers": {
     "price": "1666",
@@ -1728,26 +2089,6 @@ let eventData = {
     "price": "750",
     "type": "deco",
     "section": "OTHERWORLDLY"
-  },
-  "Porcelain": {
-    "price": "7150",
-    "type": "dragon",
-    "section": "OMINOUS"
-  },
-  "Wrath": {
-    "price": "7950",
-    "type": "dragon",
-    "section": "OMINOUS"
-  },
-  "Corrupticorn": {
-    "price": "9550",
-    "type": "dragon",
-    "section": "OMINOUS"
-  },
-  "Umbra": {
-    "price": "9550",
-    "type": "dragon",
-    "section": "OMINOUS"
   },
   "Charlatan dragon head": {
     "price": "500",
@@ -2229,26 +2570,6 @@ let eventData = {
     "type": "deco",
     "section": "HAUNTED"
   },
-  "Ghostly Plant": {
-    "price": "2750",
-    "type": "dragon",
-    "section": "HAUNTED"
-  },
-  "Ghostly Fire": {
-    "price": "2750",
-    "type": "dragon",
-    "section": "HAUNTED"
-  },
-  "Ghostly Earth": {
-    "price": "2750",
-    "type": "dragon",
-    "section": "HAUNTED"
-  },
-  "Ghostly Cold": {
-    "price": "2750",
-    "type": "dragon",
-    "section": "HAUNTED"
-  },
   "Jack-o-Lantern": {
     "price": "200",
     "type": "deco",
@@ -2262,21 +2583,6 @@ let eventData = {
 }
 
 
-
-function cycleItems() {
-  let itemNames = Object.getOwnPropertyNames(eventData)
-  for (i=0;i<itemNames.length;i++){
-    let thisItem = eventData[itemNames[i]]
-    let itemHtmElement = buildTemplate(itemNames[i], thisItem)
-    document.querySelector('.neutraldiv').appendChild(itemHtmElement)
-    itemHtmElement.querySelector('.purchasenum').addEventListener('input', function(e) {
-      //blah blah do the calcs
-    })
-  }
-}
-
-cycleItems();
-    
 
 function buildTemplate(itemName, itemObj) {
   let itemID = itemName
@@ -2302,7 +2608,6 @@ function buildTemplate(itemName, itemObj) {
   if (type == 'dragon') {
     itemName = itemName + " Dragon";
   }
-  let sectionclasses = ["tricksandtreats" , "haunted", "occult", "ominous", "otherworldly", "summons"]
   if (section == 'TRICKS & TREATS') {
     section = 'tricksandtreats';
   } else {
@@ -2346,9 +2651,74 @@ function buildTemplate(itemName, itemObj) {
   return htmElement;
 }
 
+function saveCount(itemname, count) {
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  if (!eventObj.halloween26[itemname]) {
+    eventObj.halloween26[itemname] = {}
+  }
+  eventObj.halloween26[itemname].count = count
+  localStorage.setItem('dvEvents', JSON.stringify(eventObj))
+}
+function saveStatus(itemname, status) {
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
+  if (!eventObj.halloween26[itemname]) {
+    eventObj.halloween26[itemname] = {}
+  }
+  eventObj.halloween26[itemname].status = count
+  localStorage.setItem('dvEvents', JSON.stringify(eventObj))
+}
 
+function cycleItems() {
+  let halloween26 = JSON.parse(localStorage.getItem('dvEvents')).halloween26
+  let itemNames = Object.getOwnPropertyNames(halloween26)
+  for (i=0;i<itemNames.length;i++){
+    let thisItem = halloween26[itemNames[i]]
+    let itemHtmElement = buildTemplate(itemNames[i], thisItem)
+    document.querySelector('.neutraldiv').appendChild(itemHtmElement)
+
+    itemHtmElement.querySelector('.purchasenum').addEventListener('input', function(e) {
+      saveCount(itemNames[i], e.currentTarget.value)
+      let idText = itemNames[i].trim().replaceAll(' ', "-")
+      idText = idText.replaceAll(`'`, '')
+      idText = idText.replaceAll(`:`, '')
+      let calcDiv = document.getElementById('itemstobuy');
+      if (e.currentTarget.value != 0) {
+        itemHtmElement.classList.add('withcount');
+        let listItem;
+        if (!calcDiv.querySelector(`#${idText}`)) {
+          listItem = document.createElement('p');
+          listItem.classList.add('itemprice');
+          calcDiv.appendChild(listItem);
+          listItem.id = idText;
+
+        } else {
+          listItem = calcDiv.querySelector(`#${idText}`)
+        }
+        let calculated = 0
+        calculated = Number(thisItem.price) * Number(e.currentTarget.value)
+        
+        listItem.textContent = `${calculated} - ${e.currentTarget.value}x ${itemNames[i]}`;
+        if (thisItem.type == "dragon") {
+          listItem.textContent += ` Dragon`
+        }
+        listItem.dataset.subcost = calculated;
+        listItem.innerHTML += `<div style='width: 35px; height: 35px;  display: inline-block;  vertical-align: center; margin-left: 8px;'>`
+        if (thisItem.imgposted) {
+          listItem.innerHTML += `<img src="${thisItem.imgposted[0]}" width="30px" style="object-fit: contain; height: 100%;  width: 100%;">`
+        }
+      } else {
+        itemHtmElement.classList.remove('withcount');
+        if (calcDiv.querySelector(`#${idText}`)) {
+          calcDiv.querySelector(`#${idText}`).remove();
+        }
+      }
+      updateCalculationTotal();
+    })
+  }
+}
 
 function sortbuttonsClicked(element, label) {
+
   let card = element.closest('.item')
   let htmElements = {
     want: {
@@ -2385,9 +2755,7 @@ function sortbuttonsClicked(element, label) {
     htmElements.neutral.div.appendChild(card)
   }
   
-  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
-  eventObj.halloween26[itemId].status = label;
-  localStorage.setItem('dvEvents', JSON.stringify(eventObj))
+  saveStatus(itemId, label)
 }
 
 function loadSetup() {
@@ -2411,6 +2779,16 @@ function loadSetup() {
   }
 }
 
+function updateCalculationTotal() {
+  let itemList = document.getElementById('itemstobuy').children;
+  let calcTotalEl = document.getElementById('calctotals');
+  let total = 0;
+  for (let i=0;i<itemList.length;i++) {
+    total += Number(itemList[i].dataset.subcost)
+  }
+  calcTotalEl.textContent = total.toString()
+}
+
 function toggleVis(this, type) {
   let cardsOfType = document.querySelectorAll(`.${type}`)
   if (this.dataset.toggled == 0) {
@@ -2425,3 +2803,5 @@ function toggleVis(this, type) {
     this.dataset.toggled = 0
   }
 }
+
+cycleItems()
