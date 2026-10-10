@@ -2622,7 +2622,7 @@ function buildTemplate(itemName, itemObj) {
   <div class="iteminner">
     <div class='sectionicon ${section}'></div>
     <p class="itemname">${itemName}</p>
-    <div style='flex'>`
+    <div style='display:flex;'>`
   console.log(imgposted)
     if (imgposted.length == 1) {
       newHtml += `<img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
