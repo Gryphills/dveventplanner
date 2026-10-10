@@ -2789,8 +2789,8 @@ function sortbuttonsClicked(element, label) {
     element.classList.remove('pressed');
     htmElements.neutral.div.appendChild(card)
   }
-  console.log(card.name)
-  saveStatus(card.name, label)
+  console.log(card, card.tagName)
+  saveStatus(card.tagName, label)
 }
 
 function loadSetup() {
