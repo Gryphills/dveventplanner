@@ -218,3 +218,11 @@ body {
   border: 3px solid rgb(156, 143, 168);
   opacity: 0.85;
 }
+
+.maindivs {
+  padding-top: 15px;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
