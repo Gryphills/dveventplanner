@@ -2830,4 +2830,4 @@ function toggleVis(thisbutton, type) {
 document.addEventListener("DOMContentLoaded", function() {
   cycleItems()
   loadSetup()
-}
+});
