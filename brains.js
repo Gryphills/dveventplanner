@@ -1837,7 +1837,7 @@ let eventData = {
   },
   "Nosferatu": {
     "rarity": "RARE",
-    "comboNice": "earth + cold + fire **NIGHT**",
+    "comboNice": "earth + cold + fire\n**Breed at Night**",
     "comboArray": [
       "Earth",
       "Cold",
@@ -1848,7 +1848,7 @@ let eventData = {
       "cold",
       "fire"
     ],
-    "special": "NIGHT",
+    //"special": "NIGHT",
     "price": "2275",
     "type": "dragon",
     "section": "OTHERWORLDLY",
@@ -2296,7 +2296,7 @@ let eventData = {
   },
   "Midnight": {
     "rarity": "EPIC",
-    "comboNice": "MOON + dark",
+    "comboNice": "MOON + dark \n**Breed at Night**"",
     "comboArray": [
       "MOON",
       "Dark"
@@ -2306,7 +2306,7 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "special": "NIGHT,PERMANENT",
+    "special": "PERMANENT",
     "price": "3750",
     "type": "dragon",
     "section": "OTHERWORLDLY",
@@ -2321,7 +2321,7 @@ let eventData = {
   },
   "Misfortune": {
     "rarity": "EPIC",
-    "comboNice": "Treasure + Apocalypse",
+    "comboNice": "Treasure + Apocalypse\n**Breed at Night**"",
     "comboArray": [
       "Treasure",
       "Apocalypse"
