@@ -2851,7 +2851,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
   cycleItems()
   loadSetup()
-  let decobutton = document.getElementById('decobutton`)
+  let decobutton = document.getElementById('decobutton')
   decobutton.dispatchEvent(new Event('click'));
 });
 
