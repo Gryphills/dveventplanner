@@ -2738,7 +2738,7 @@ function cycleItems() {
       }
       updateCalculationTotal();
     })
-    console.log('done w ' + itemNames[i] + '; charlatancount is ' + charlatancount.toString())
+    //console.log('done w ' + itemNames[i] + '; charlatancount is ' + charlatancount.toString())
   }
 }
 
