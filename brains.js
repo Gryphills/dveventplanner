@@ -3386,6 +3386,7 @@ function buildTemplate(itemName, itemObj) {
     <div class='sectionicon ${section}'></div>
     <div>
     <p class="itemname">${itemName}</p>
+    <p>${special}</p>
     `
   //console.log(imgposted)
     if (imgposted.length == 1) {
@@ -3400,7 +3401,6 @@ function buildTemplate(itemName, itemObj) {
     }
 
     newHtml += `</div></div>
-    <p>${special}</p>
     <div>
     <p class="itemprice" style="font-size:14px;font-weight:bold;">${price}</p>
     <label style='height: 20px; justify-content:center; font-size:14px; font-style:italic; align-items: center;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;</label>
