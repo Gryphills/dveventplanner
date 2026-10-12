@@ -1,4 +1,4 @@
-let eventData = {
+/*let eventData = {
   "Torment": {
     "rarity": "RARE",
     "comboNice": "RUST + dark + fire",
@@ -3298,7 +3298,8 @@ let eventData = {
       "https://i.postimg.cc/hv5F3kRz/Witch-s-Cauldron.webp"
     ]
   }
-}
+}*/
+
 
 function checkData() {
   let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
