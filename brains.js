@@ -3481,14 +3481,19 @@ function sortbuttonsClicked(element, label) {
       button: element.parentElement.children[0],
       div: document.getElementById('wantdiv')
     },
-    have: {
+    buy: {
       button: element.parentElement.children[1],
+      div: document.getElementById('potentialpurchaselist')
+    },
+    have: {
+      button: element.parentElement.children[2],
       div: document.getElementById('havediv')
     },
     ignore: {
-      button: element.parentElement.children[2],
+      button: element.parentElement.children[3],
       div: document.getElementById('ignorediv')
     },
+    
     neutral: {
       div: document.getElementById('neutraldiv')
     },
@@ -3510,6 +3515,13 @@ function sortbuttonsClicked(element, label) {
     element.dataset.toggled = 0
     element.classList.remove('pressed');
     htmElements.neutral.div.appendChild(card)
+  }
+  if (label == "buy") {
+    card.querySelector('breedinginfo').style.display = "none"
+    card.
+  }
+  else {
+    card.querySelector('breedinginfo').style.display = "block"
   }
   //console.log(card, card.dataset.name)
   saveStatus(card.dataset.name, label)
