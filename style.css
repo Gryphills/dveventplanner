@@ -250,9 +250,12 @@ body {
 #potentialpurchaselist {
   .item {
     scale:85%;
-    max-width:92%
+    width:auto;
   }
   .breedinginfo {
     display:none;
+  }
+  .itemimage {
+    max-height: 100px;
   }
 }
