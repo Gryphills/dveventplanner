@@ -2756,31 +2756,31 @@ let eventData = {
     "price": "1666",
     "type": "deco",
     "section": "LIMITED",
-    "imgposted" ["https://i.postimg.cc/hPpqzzfY/Circleof-Whispers.webp"]
+    "imgposted": ["https://i.postimg.cc/hPpqzzfY/Circleof-Whispers.webp"]
   },
   "Rusty Path": {
     "price": "300",
     "type": "deco",
     "section": "LIMITED",
-    "imgposted" ["https://i.postimg.cc/65YN22yD/Rusty-Path.webp"]
+    "imgposted": ["https://i.postimg.cc/65YN22yD/Rusty-Path.webp"]
   },
   "The All-Seeing": {
     "price": "1250",
     "type": "deco",
     "section": "LIMITED",
-    "imgposted" ["https://i.postimg.cc/Ghq188H6/The-All-Seeing.webp"]
+    "imgposted": ["https://i.postimg.cc/Ghq188H6/The-All-Seeing.webp"]
   },
   "Summoning Chest of Day": {
     "price": "750",
     "type": "deco",
     "section": "OTHERWORLDLY",
-    "imgposted" ["https://i.postimg.cc/TYCXLLK8/Summoning-Chest-Of-Day.webp"]
+    "imgposted": ["https://i.postimg.cc/TYCXLLK8/Summoning-Chest-Of-Day.webp"]
   },
   "Summoning Chest of Night": {
     "price": "750",
     "type": "deco",
     "section": "OTHERWORLDLY",
-    "imgposted" ["https://i.postimg.cc/KvJykkR6/Summoning-Chest-Of-Night.webp"]
+    "imgposted": ["https://i.postimg.cc/KvJykkR6/Summoning-Chest-Of-Night.webp"]
   
   },
   "Charlatan Shroud Pieces": {
