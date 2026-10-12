@@ -1,3 +1,6 @@
+import { eventData } from "eventData.js";
+
+
 /*let eventData = {
   "Torment": {
     "rarity": "RARE",
