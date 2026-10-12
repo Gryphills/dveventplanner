@@ -1,4 +1,4 @@
-const eventData = {
+export const eventData = {
   "Torment": {
     "rarity": "RARE",
     "comboNice": "RUST + dark + fire",
