@@ -1,19 +1,19 @@
-import { eventData } from "eventData.js";
+//import { eventData } from "eventData.js";
 
 
-/*let eventData = {
+let eventData = {
   "Torment": {
     "rarity": "RARE",
     "comboNice": "RUST + dark + fire",
-    "comboArray": [
-      "RUST",
-      "Dark",
-      "Fire"
-    ],
     "breedingElements": [
       "Metal1",
       "Water1",
       "Dark1",
+      "Fire"
+    ],
+    "comboArray": [
+      "RUST",
+      "Dark",
       "Fire"
     ],
     "price": "15250",
@@ -25,13 +25,14 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Water",
       "Metal",
+      "RUST",
       "Dark",
       "Fire"
     ]
   },
   "Hollowjaw": {
     "rarity": "RARE",
-    "comboNice": "CLONE ONLY",
+    "comboNice": "CLONE ONLY w 10% chance",
     "breedingElements": [
       "Dark1",
       "Earth1",
@@ -46,7 +47,7 @@ import { eventData } from "eventData.js";
   },
   "Eggony": {
     "rarity": "RARE",
-    "comboNice": "CLONE ONLY",
+    "comboNice": "CLONE ONLY w 10% chance",
     "breedingElements": [
       "Fire1",
       "Earth1",
@@ -62,13 +63,13 @@ import { eventData } from "eventData.js";
   "Awoo": {
     "rarity": "EPIC",
     "comboNice": "MIDNIGHT + LYCAN",
-    "comboArray": [
-      "MIDNIGHT",
-      "LYCAN"
-    ],
     "breedingElements": [
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "MIDNIGHT",
+      "LYCAN"
     ],
     "price": "13500",
     "type": "dragon",
@@ -80,23 +81,24 @@ import { eventData } from "eventData.js";
       "Earth",
       "Cold",
       "Dark",
-      "plant",
-      "cold",
-      "lightning"
+      "MIDNIGHT",
+      "Plant",
+      "Lightning",
+      "LYCAN"
     ]
   },
   "Barbarous": {
     "rarity": "EPIC",
     "comboNice": "ONI + RAGNAROK",
-    "comboArray": [
-      "ONI",
-      "RAGNAROK"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "ONI",
+      "RAGNAROK"
     ],
     "price": "9600",
     "type": "dragon",
@@ -105,25 +107,24 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/MKm3zQcc/Barbarous-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "earth",
-      "cold",
       "Fire",
       "Earth",
       "Cold",
-      "Dark"
+      "ONI",
+      "Dark",
+      "RAGNAROK"
     ]
   },
   "Candycorn": {
     "rarity": "EPIC",
     "comboNice": "AMBROSIA + hidden",
-    "comboArray": [
-      "AMBROSIA",
-      "Hidden"
-    ],
     "breedingElements": [
       "Plant",
       "Light"
+    ],
+    "comboArray": [
+      "AMBROSIA",
+      "Hidden"
     ],
     "price": "16500",
     "type": "dragon",
@@ -136,21 +137,22 @@ import { eventData } from "eventData.js";
       "Fire",
       "Earth",
       "Cold",
+      "AMBROSIA",
       "Hidden"
     ]
   },
   "Cerberus": {
     "rarity": "EPIC",
     "comboNice": "HYDRA + OBSIDIAN",
-    "comboArray": [
-      "HYDRA",
-      "OBSIDIAN"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Lightning",
       "Water"
+    ],
+    "comboArray": [
+      "HYDRA",
+      "OBSIDIAN"
     ],
     "price": "4500",
     "type": "dragon",
@@ -162,22 +164,23 @@ import { eventData } from "eventData.js";
       "Earth",
       "Lightning",
       "Water",
+      "HYDRA",
       "Fire",
-      "Earth"
+      "OBSIDIAN"
     ]
   },
   "Charlatan": {
     "rarity": "EPIC",
     "comboNice": "APOCALYPSE + SPIRIT",
-    "comboArray": [
-      "APOCALYPSE",
-      "SPIRIT"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "APOCALYPSE",
+      "SPIRIT"
     ],
     "price": "8100",
     "type": "dragon",
@@ -190,19 +193,20 @@ import { eventData } from "eventData.js";
       "Cold",
       "Lightning",
       "Metal",
+      "APOCALYPSE",
       "Earth",
-      "Cold"
+      "SPIRIT"
     ]
   },
   "Delight": {
     "rarity": "EPIC",
     "comboNice": "plant + fire + cold",
-    "comboArray": [
+    "breedingElements": [
       "Plant",
       "Fire",
       "Cold"
     ],
-    "breedingElements": [
+    "comboArray": [
       "Plant",
       "Fire",
       "Cold"
@@ -222,10 +226,6 @@ import { eventData } from "eventData.js";
   "Dracomancy": {
     "rarity": "EPIC",
     "comboNice": "BONE + SCOURGE",
-    "comboArray": [
-      "BONE",
-      "SCOURGE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
@@ -233,35 +233,36 @@ import { eventData } from "eventData.js";
       "Dark"
     ],
     "special": "Evolves as you upgrade the Ominous Digsite",
+    "comboArray": [
+      "BONE",
+      "SCOURGE"
+    ],
     "price": "1000",
     "type": "dragon",
     "section": "OTHERWORLDLY",
     "imgposted": [
-      //"https://i.postimg.cc/PJK0S3wv/Dracomancy-Dragon-Adult1.webp",
-      //"https://i.postimg.cc/fy518299/Dracomancy-Dragon-Adult2.webp",
-      //"https://i.postimg.cc/wMFnwfm7/Dracomancy-Dragon-Adult3.webp",
       "https://i.postimg.cc/MHtg9PQT/Dracomancy-Dragon-Adult4.webp"
     ],
     "comboEls": [
-      "earth",
-      "fire",
-      "Fire",
       "Earth",
+      "Fire",
+      "BONE",
       "Cold",
-      "Dark"
+      "Dark",
+      "SCOURGE"
     ]
   },
   "Exterrean": {
     "rarity": "EPIC",
     "comboNice": "AMALGAMATE + SCOURGE",
-    "comboArray": [
-      "AMALGAMATE",
-      "SCOURGE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Dark"
+    ],
+    "comboArray": [
+      "AMALGAMATE",
+      "SCOURGE"
     ],
     "price": "18500",
     "type": "dragon",
@@ -273,19 +274,14 @@ import { eventData } from "eventData.js";
       "Fire",
       "Earth",
       "Dark",
-      "Fire",
-      "Earth",
+      "AMALGAMATE",
       "Cold",
-      "Dark"
+      "SCOURGE"
     ]
   },
   "Fury": {
     "rarity": "EPIC",
     "comboNice": "MISFORTUNE + SNOWPOCALYPSE",
-    "comboArray": [
-      "MISFORTUNE",
-      "SNOWPOCALYPSE"
-    ],
     "breedingElements": [
       "Plant",
       "Earth",
@@ -293,6 +289,10 @@ import { eventData } from "eventData.js";
       "Lightning",
       "Air",
       "Metal"
+    ],
+    "comboArray": [
+      "MISFORTUNE",
+      "SNOWPOCALYPSE"
     ],
     "price": "8560",
     "type": "dragon",
@@ -306,21 +306,15 @@ import { eventData } from "eventData.js";
       "Cold",
       "Lightning",
       "Metal",
-      "Plant",
+      "MISFORTUNE",
       "Earth",
-      "Cold",
-      "Lightning",
       "Air",
-      "Metal"
+      "SNOWPOCALYPSE"
     ]
   },
   "Greymatter": {
     "rarity": "EPIC",
     "comboNice": "ZOMBIE + BROOD",
-    "comboArray": [
-      "ZOMBIE",
-      "BROOD"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
@@ -329,6 +323,10 @@ import { eventData } from "eventData.js";
       "Air",
       "Metal",
       "Dark"
+    ],
+    "comboArray": [
+      "ZOMBIE",
+      "BROOD"
     ],
     "price": "15000",
     "type": "dragon",
@@ -340,23 +338,25 @@ import { eventData } from "eventData.js";
       "Plant",
       "Air",
       "Metal",
+      "ZOMBIE",
       "Fire",
       "Earth",
       "Lightning",
-      "Dark"
+      "Dark",
+      "BROOD"
     ]
   },
   "Heavy Metal": {
     "rarity": "EPIC",
     "comboNice": "WRATH + THRASHER",
-    "comboArray": [
-      "WRATH",
-      "THRASHER"
-    ],
     "breedingElements": [
       "Plant",
       "Lightning",
       "Metal"
+    ],
+    "comboArray": [
+      "WRATH",
+      "THRASHER"
     ],
     "price": "9600",
     "type": "dragon",
@@ -368,21 +368,22 @@ import { eventData } from "eventData.js";
       "Plant",
       "Fire",
       "Lightning",
-      "Lightning",
-      "Metal"
+      "WRATH",
+      "Metal",
+      "THRASHER"
     ]
   },
   "Hydnellum": {
     "rarity": "EPIC",
     "comboNice": "W*NDY + Apocalypse",
-    "comboArray": [
-      "W*NDY",
-      "Apocalypse"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold"
+    ],
+    "comboArray": [
+      "W*NDY",
+      "Apocalypse"
     ],
     "price": "14640",
     "type": "dragon",
@@ -394,16 +395,13 @@ import { eventData } from "eventData.js";
       "Fire",
       "Earth",
       "Cold",
+      "W*NDY",
       "Apocalypse"
     ]
   },
   "Hyperion": {
     "rarity": "EPIC",
     "comboNice": "FURY + NARCIS",
-    "comboArray": [
-      "FURY",
-      "NARCIS"
-    ],
     "breedingElements": [
       "Plant",
       "Earth",
@@ -411,6 +409,10 @@ import { eventData } from "eventData.js";
       "Lightning",
       "Air",
       "Metal"
+    ],
+    "comboArray": [
+      "FURY",
+      "NARCIS"
     ],
     "price": "9500",
     "type": "dragon",
@@ -425,23 +427,23 @@ import { eventData } from "eventData.js";
       "Lightning",
       "Air",
       "Metal",
-      "Lightning",
+      "FURY",
       "Water",
-      "Metal",
-      "Dark"
+      "Dark",
+      "NARCIS"
     ]
   },
   "Iden": {
     "rarity": "EPIC",
     "comboNice": "CHARLATAN + NIGHTBLOOM",
-    "comboArray": [
-      "CHARLATAN",
-      "NIGHTBLOOM"
-    ],
     "breedingElements": [
       "Plant",
       "Air",
       "Dark"
+    ],
+    "comboArray": [
+      "CHARLATAN",
+      "NIGHTBLOOM"
     ],
     "price": "7960",
     "type": "dragon",
@@ -455,25 +457,25 @@ import { eventData } from "eventData.js";
       "Earth",
       "Cold",
       "Dark",
+      "CHARLATAN",
       "Plant",
-      "Cold",
       "Lightning",
-      "Dark"
+      "NIGHTBLOOM"
     ]
   },
   "Kage": {
     "rarity": "EPIC",
     "comboNice": "ELDRITCH + WRATH",
-    "comboArray": [
-      "ELDRITCH",
-      "WRATH"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Cold",
       "Lightning"
+    ],
+    "comboArray": [
+      "ELDRITCH",
+      "WRATH"
     ],
     "price": "13680",
     "type": "dragon",
@@ -482,27 +484,27 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/PrjFG4qq/Kage-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "plant",
-      "earth",
-      "cold",
-      "Plant",
       "Fire",
-      "Lightning"
+      "Plant",
+      "Earth",
+      "Cold",
+      "ELDRITCH",
+      "Lightning",
+      "WRATH"
     ]
   },
   "Macabre": {
     "rarity": "EPIC",
     "comboNice": "SPECTRE + ZOMBIE",
-    "comboArray": [
-      "SPECTRE",
-      "ZOMBIE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "SPECTRE",
+      "ZOMBIE"
     ],
     "price": "10400",
     "type": "dragon",
@@ -511,24 +513,26 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/pXH1NZdL/Macabre-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "cold",
-      "earth",
+      "Cold",
+      "Earth",
+      "SPECTRE",
       "Plant",
       "Air",
-      "Metal"
+      "Metal",
+      "ZOMBIE"
     ]
   },
   "Narcis": {
     "rarity": "EPIC",
     "comboNice": "OUROBOROS + metal + dark",
-    "comboArray": [
-      "OUROBOROS",
-      "Metal",
-      "Dark"
-    ],
     "breedingElements": [
       "Lightning",
       "Water",
+      "Metal",
+      "Dark"
+    ],
+    "comboArray": [
+      "OUROBOROS",
       "Metal",
       "Dark"
     ],
@@ -542,20 +546,21 @@ import { eventData } from "eventData.js";
       "Lightning",
       "Water",
       "Metal",
+      "OUROBOROS",
       "Dark"
     ]
   },
   "Nightmare": {
     "rarity": "EPIC",
     "comboNice": "HOWL + ABYSS",
-    "comboArray": [
-      "HOWL",
-      "ABYSS"
-    ],
     "breedingElements": [
       "Water",
       "Air",
       "Dark"
+    ],
+    "comboArray": [
+      "HOWL",
+      "ABYSS"
     ],
     "price": "2200",
     "type": "dragon",
@@ -566,21 +571,22 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Air",
       "Dark",
+      "HOWL",
       "Water",
-      "Dark"
+      "ABYSS"
     ]
   },
   "Ocular": {
     "rarity": "EPIC",
     "comboNice": "CYCLOPS + BARBAROUS",
-    "comboArray": [
-      "CYCLOPS",
-      "BARBAROUS"
-    ],
     "breedingElements": [
       "Fire",
       "Lightning",
       "Metal"
+    ],
+    "comboArray": [
+      "CYCLOPS",
+      "BARBAROUS"
     ],
     "price": "7800",
     "type": "dragon",
@@ -592,24 +598,26 @@ import { eventData } from "eventData.js";
       "Lightning",
       "Water",
       "Metal",
+      "CYCLOPS",
       "Fire",
       "Earth",
       "Cold",
-      "Dark"
+      "Dark",
+      "BARBAROUS"
     ]
   },
   "Omen": {
     "rarity": "EPIC",
     "comboNice": "MOON + APOCALYPSE",
-    "comboArray": [
-      "MOON",
-      "APOCALYPSE"
-    ],
     "breedingElements": [
       "Plant",
       "Cold",
       "Lightning",
       "Metal"
+    ],
+    "comboArray": [
+      "MOON",
+      "APOCALYPSE"
     ],
     "price": "5000",
     "type": "dragon",
@@ -620,25 +628,25 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Cold",
       "Lightning",
+      "MOON",
       "Plant",
-      "Cold",
-      "Lightning",
-      "Metal"
+      "Metal",
+      "APOCALYPSE"
     ]
   },
   "Punk": {
     "rarity": "EPIC",
     "comboNice": "DECAY + LYCAN",
-    "comboArray": [
-      "DECAY",
-      "LYCAN"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Cold",
       "Lightning"
+    ],
+    "comboArray": [
+      "DECAY",
+      "LYCAN"
     ],
     "price": "10000",
     "type": "dragon",
@@ -647,24 +655,25 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/15QYxHzP/Punk-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "earth",
-      "cold",
-      "plant",
-      "cold",
-      "lightning"
+      "Fire",
+      "Earth",
+      "Cold",
+      "DECAY",
+      "Plant",
+      "Lightning",
+      "LYCAN"
     ]
   },
   "Reaper": {
     "rarity": "EPIC",
     "comboNice": "MACABRE + SCOURGE",
-    "comboArray": [
-      "MACABRE",
-      "SCOURGE"
-    ],
     "breedingElements": [
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "MACABRE",
+      "SCOURGE"
     ],
     "price": "15000",
     "type": "dragon",
@@ -677,23 +686,21 @@ import { eventData } from "eventData.js";
       "Earth",
       "Cold",
       "Dark",
-      "Fire",
-      "Earth",
-      "Cold",
-      "Dark"
+      "MACABRE",
+      "SCOURGE"
     ]
   },
   "Righteous": {
     "rarity": "EPIC",
     "comboNice": "SUN + light + fire",
+    "breedingElements": [
+      "Fire",
+      "Light"
+    ],
     "comboArray": [
       "SUN",
       "Light",
       "Fire"
-    ],
-    "breedingElements": [
-      "Fire",
-      "Light"
     ],
     "price": "15000",
     "type": "dragon",
@@ -704,6 +711,7 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Cold",
       "Lightning",
+      "SUN",
       "Light",
       "Fire"
     ]
@@ -711,15 +719,15 @@ import { eventData } from "eventData.js";
   "Scourge": {
     "rarity": "EPIC",
     "comboNice": "DECAY + MISFORTUNE",
-    "comboArray": [
-      "DECAY",
-      "MISFORTUNE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "DECAY",
+      "MISFORTUNE"
     ],
     "price": "8900",
     "type": "dragon",
@@ -728,27 +736,27 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/X7bDM8v4/Scourge-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "earth",
-      "cold",
-      "Plant",
       "Fire",
+      "Earth",
       "Cold",
+      "DECAY",
+      "Plant",
       "Lightning",
-      "Metal"
+      "Metal",
+      "MISFORTUNE"
     ]
   },
   "Scout": {
     "rarity": "EPIC",
     "comboNice": "VALOR + hidden",
-    "comboArray": [
-      "VALOR",
-      "Hidden"
-    ],
     "breedingElements": [
       "Plant",
       "Air",
       "Metal"
+    ],
+    "comboArray": [
+      "VALOR",
+      "Hidden"
     ],
     "price": "6480",
     "type": "dragon",
@@ -760,23 +768,24 @@ import { eventData } from "eventData.js";
       "Plant",
       "Air",
       "Metal",
+      "VALOR",
       "Hidden"
     ]
   },
   "Shackle": {
     "rarity": "EPIC",
     "comboNice": "KAGE + metal + dark",
-    "comboArray": [
-      "KAGE",
-      "Metal",
-      "Dark"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Cold",
       "Lightning",
+      "Metal",
+      "Dark"
+    ],
+    "comboArray": [
+      "KAGE",
       "Metal",
       "Dark"
     ],
@@ -792,6 +801,7 @@ import { eventData } from "eventData.js";
       "Earth",
       "Cold",
       "Lightning",
+      "KAGE",
       "Metal",
       "Dark"
     ]
@@ -799,14 +809,14 @@ import { eventData } from "eventData.js";
   "Tartarus": {
     "rarity": "EPIC",
     "comboNice": "STYGIAN + CAVE",
-    "comboArray": [
-      "STYGIAN",
-      "CAVE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Dark"
+    ],
+    "comboArray": [
+      "STYGIAN",
+      "CAVE"
     ],
     "price": "15000",
     "type": "dragon",
@@ -818,22 +828,23 @@ import { eventData } from "eventData.js";
       "Fire",
       "Metal",
       "Dark",
+      "STYGIAN",
       "Earth",
-      "Dark"
+      "CAVE"
     ]
   },
   "Techno": {
     "rarity": "EPIC",
     "comboNice": "SURGE + KWALL",
-    "comboArray": [
-      "SURGE",
-      "KWALL"
-    ],
     "breedingElements": [
       "Plant",
       "Lightning",
       "Water",
       "Light"
+    ],
+    "comboArray": [
+      "SURGE",
+      "KWALL"
     ],
     "price": "11500",
     "type": "dragon",
@@ -844,23 +855,24 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Lightning",
       "Water",
+      "SURGE",
       "Plant",
-      "Water",
       "Light",
-      "Dark"
+      "Dark",
+      "KWALL"
     ]
   },
   "Tickles": {
     "rarity": "EPIC",
     "comboNice": "HYDNELLUM + MACABRE",
-    "comboArray": [
-      "HYDNELLUM",
-      "MACABRE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold"
+    ],
+    "comboArray": [
+      "HYDNELLUM",
+      "MACABRE"
     ],
     "price": "17000",
     "type": "dragon",
@@ -872,24 +884,23 @@ import { eventData } from "eventData.js";
       "Fire",
       "Earth",
       "Cold",
-      "Fire",
-      "Earth",
-      "Cold",
-      "Dark"
+      "HYDNELLUM",
+      "Dark",
+      "MACABRE"
     ]
   },
   "Valor": {
     "rarity": "EPIC",
     "comboNice": "plant + metal + air",
-    "comboArray": [
-      "Plant",
-      "Metal",
-      "Air"
-    ],
     "breedingElements": [
       "Plant",
       "Air",
       "Metal"
+    ],
+    "comboArray": [
+      "Plant",
+      "Metal",
+      "Air"
     ],
     "price": "2200",
     "type": "dragon",
@@ -906,14 +917,14 @@ import { eventData } from "eventData.js";
   "W*ndy": {
     "rarity": "EPIC",
     "comboNice": "MACABRE + BONE",
-    "comboArray": [
-      "MACABRE",
-      "BONE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold"
+    ],
+    "comboArray": [
+      "MACABRE",
+      "BONE"
     ],
     "price": "7000",
     "type": "dragon",
@@ -927,21 +938,21 @@ import { eventData } from "eventData.js";
       "Earth",
       "Cold",
       "Dark",
-      "earth",
-      "fire"
+      "MACABRE",
+      "BONE"
     ]
   },
   "Zombie": {
     "rarity": "EPIC",
     "comboNice": "METEOR + POLLEN",
-    "comboArray": [
-      "METEOR",
-      "POLLEN"
-    ],
     "breedingElements": [
       "Plant",
       "Air",
       "Metal"
+    ],
+    "comboArray": [
+      "METEOR",
+      "POLLEN"
     ],
     "price": "6080",
     "type": "dragon",
@@ -952,22 +963,23 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Air",
       "Metal",
+      "METEOR",
       "Plant",
-      "Air"
+      "POLLEN"
     ]
   },
   "Amalgamate": {
     "rarity": "RARE",
     "comboNice": "BONE + earth + fire + dark",
+    "breedingElements": [
+      "Fire",
+      "Earth",
+      "Dark"
+    ],
     "comboArray": [
       "BONE",
       "Earth",
       "Fire",
-      "Dark"
-    ],
-    "breedingElements": [
-      "Fire",
-      "Earth",
       "Dark"
     ],
     "price": "12960",
@@ -977,25 +989,24 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/15QYxH3j/Amalgamate-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "earth",
-      "fire",
       "Earth",
       "Fire",
+      "BONE",
       "Dark"
     ]
   },
   "Ambrosia": {
     "rarity": "RARE",
     "comboNice": "FLOWER + DELIGHT",
-    "comboArray": [
-      "FLOWER",
-      "DELIGHT"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Cold"
+    ],
+    "comboArray": [
+      "FLOWER",
+      "DELIGHT"
     ],
     "price": "3500",
     "type": "dragon",
@@ -1006,23 +1017,23 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Plant",
       "Fire",
-      "Plant",
-      "Fire",
-      "Cold"
+      "FLOWER",
+      "Cold",
+      "DELIGHT"
     ]
   },
   "Bog": {
     "rarity": "RARE",
     "comboNice": "water + plant + fire",
-    "comboArray": [
+    "breedingElements": [
       "Water",
       "Plant",
       "Fire"
     ],
-    "breedingElements": [
-      "water",
-      "plant",
-      "fire"
+    "comboArray": [
+      "Water",
+      "Plant",
+      "Fire"
     ],
     "price": "2275",
     "type": "dragon",
@@ -1039,13 +1050,13 @@ import { eventData } from "eventData.js";
   "Bone": {
     "rarity": "RARE",
     "comboNice": "earth + fire",
-    "comboArray": [
+    "breedingElements": [
       "Earth",
       "Fire"
     ],
-    "breedingElements": [
-      "earth",
-      "fire"
+    "comboArray": [
+      "Earth",
+      "Fire"
     ],
     "price": "760",
     "type": "dragon",
@@ -1061,14 +1072,14 @@ import { eventData } from "eventData.js";
   "Brainiac": {
     "rarity": "RARE",
     "comboNice": "KWALL + water + dark",
-    "comboArray": [
-      "KWALL",
-      "Water",
-      "Dark"
-    ],
     "breedingElements": [
       "Water",
       "Light",
+      "Dark"
+    ],
+    "comboArray": [
+      "KWALL",
+      "Water",
       "Dark"
     ],
     "price": "15000",
@@ -1081,21 +1092,22 @@ import { eventData } from "eventData.js";
       "Plant",
       "Water",
       "Light",
-      "Dark"
+      "Dark",
+      "KWALL"
     ]
   },
   "Brood": {
     "rarity": "RARE",
     "comboNice": "DRACABRA + GATREN",
-    "comboArray": [
-      "DRACABRA",
-      "GATREN"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Lightning",
       "Dark"
+    ],
+    "comboArray": [
+      "DRACABRA",
+      "GATREN"
     ],
     "price": "12000",
     "type": "dragon",
@@ -1108,23 +1120,23 @@ import { eventData } from "eventData.js";
       "Fire",
       "Earth",
       "Lightning",
-      "Fire",
-      "Earth",
+      "DRACABRA",
       "Cold",
-      "Dark"
+      "Dark",
+      "GATREN"
     ]
   },
   "Bruntal": {
     "rarity": "RARE",
     "comboNice": "WRATH + dark",
-    "comboArray": [
-      "WRATH",
-      "Dark"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Lightning",
+      "Dark"
+    ],
+    "comboArray": [
+      "WRATH",
       "Dark"
     ],
     "price": "16000",
@@ -1137,23 +1149,24 @@ import { eventData } from "eventData.js";
       "Plant",
       "Fire",
       "Lightning",
+      "WRATH",
       "Dark"
     ]
   },
   "Combustion": {
     "rarity": "RARE",
     "comboNice": "fire + air + metal + dark",
-    "comboArray": [
+    "breedingElements": [
       "Fire",
       "Air",
       "Metal",
       "Dark"
     ],
-    "breedingElements": [
-      "fire",
-      "air",
-      "metal",
-      "dark"
+    "comboArray": [
+      "Fire",
+      "Air",
+      "Metal",
+      "Dark"
     ],
     "price": "7450",
     "type": "dragon",
@@ -1171,15 +1184,15 @@ import { eventData } from "eventData.js";
   "Decay": {
     "rarity": "RARE",
     "comboNice": "fire + earth + cold",
-    "comboArray": [
+    "breedingElements": [
       "Fire",
       "Earth",
       "Cold"
     ],
-    "breedingElements": [
-      "fire",
-      "earth",
-      "cold"
+    "comboArray": [
+      "Fire",
+      "Earth",
+      "Cold"
     ],
     "price": "6080",
     "type": "dragon",
@@ -1196,15 +1209,15 @@ import { eventData } from "eventData.js";
   "Dortal": {
     "rarity": "RARE",
     "comboNice": "KWALL + IDEN",
-    "comboArray": [
-      "KWALL",
-      "IDEN"
-    ],
     "breedingElements": [
       "Plant",
       "Air",
       "Light",
       "Dark"
+    ],
+    "comboArray": [
+      "KWALL",
+      "IDEN"
     ],
     "price": "8560",
     "type": "dragon",
@@ -1217,23 +1230,23 @@ import { eventData } from "eventData.js";
       "Water",
       "Light",
       "Dark",
-      "Plant",
+      "KWALL",
       "Air",
-      "Dark"
+      "IDEN"
     ]
   },
   "Dracabra": {
     "rarity": "RARE",
     "comboNice": "LYCAN + DECAY",
-    "comboArray": [
-      "LYCAN",
-      "DECAY"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Lightning"
+    ],
+    "comboArray": [
+      "LYCAN",
+      "DECAY"
     ],
     "price": "1900",
     "type": "dragon",
@@ -1242,26 +1255,27 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/7P7QQcwt/Dracabra-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "plant",
-      "cold",
-      "lightning",
-      "fire",
-      "earth",
-      "cold"
+      "Plant",
+      "Cold",
+      "Lightning",
+      "LYCAN",
+      "Fire",
+      "Earth",
+      "DECAY"
     ]
   },
   "Drack-o-Lantern": {
     "rarity": "RARE",
     "comboNice": "PLUMPKIN + GOURD",
-    "comboArray": [
-      "PLUMPKIN",
-      "GOURD"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Dark"
+    ],
+    "comboArray": [
+      "PLUMPKIN",
+      "GOURD"
     ],
     "price": "13500",
     "type": "dragon",
@@ -1270,25 +1284,24 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/pV8117RG/Drack-o-Lantern-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "plant",
-      "fire",
-      "earth",
       "Plant",
       "Fire",
       "Earth",
-      "Dark"
+      "PLUMPKIN",
+      "Dark",
+      "GOURD"
     ]
   },
   "Dragpir": {
     "rarity": "RARE",
     "comboNice": "W*NDY + dark",
-    "comboArray": [
-      "W*NDY",
-      "Dark"
-    ],
     "breedingElements": [
       "Earth",
       "Cold",
+      "Dark"
+    ],
+    "comboArray": [
+      "W*NDY",
       "Dark"
     ],
     "price": "12000",
@@ -1301,20 +1314,21 @@ import { eventData } from "eventData.js";
       "Fire",
       "Earth",
       "Cold",
+      "W*NDY",
       "Dark"
     ]
   },
   "Dumi": {
     "rarity": "RARE",
     "comboNice": "TRICK + BONE",
-    "comboArray": [
-      "TRICK",
-      "BONE"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth"
+    ],
+    "comboArray": [
+      "TRICK",
+      "BONE"
     ],
     "price": "15000",
     "type": "dragon",
@@ -1323,27 +1337,27 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/fWXggFD8/Dumi-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "plant",
-      "fire",
-      "earth",
-      "earth",
-      "fire"
+      "Plant",
+      "Fire",
+      "Earth",
+      "TRICK",
+      "BONE"
     ]
   },
   "Eldritch": {
     "rarity": "RARE",
     "comboNice": "fire + plant + earth + cold",
-    "comboArray": [
+    "breedingElements": [
       "Fire",
       "Plant",
       "Earth",
       "Cold"
     ],
-    "breedingElements": [
-      "fire",
-      "plant",
-      "earth",
-      "cold"
+    "comboArray": [
+      "Fire",
+      "Plant",
+      "Earth",
+      "Cold"
     ],
     "price": "11500",
     "type": "dragon",
@@ -1361,15 +1375,15 @@ import { eventData } from "eventData.js";
   "Eww": {
     "rarity": "RARE",
     "comboNice": "OOZE + DORTAL",
-    "comboArray": [
-      "OOZE",
-      "DORTAL"
-    ],
     "breedingElements": [
       "Plant",
       "Water",
       "Air",
       "Dark"
+    ],
+    "comboArray": [
+      "OOZE",
+      "DORTAL"
     ],
     "price": "13000",
     "type": "dragon",
@@ -1380,24 +1394,25 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Water",
       "Dark",
+      "OOZE",
       "Plant",
       "Air",
       "Light",
-      "Dark"
+      "DORTAL"
     ]
   },
   "Fortified": {
     "rarity": "RARE",
     "comboNice": "NOSFERATU + GATREN",
-    "comboArray": [
-      "NOSFERATU",
-      "GATREN"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "NOSFERATU",
+      "GATREN"
     ],
     "price": "17500",
     "type": "dragon",
@@ -1406,27 +1421,26 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/3rpbb6YB/Fortified-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "earth",
-      "cold",
-      "fire",
-      "Fire",
       "Earth",
       "Cold",
-      "Dark"
+      "Fire",
+      "NOSFERATU",
+      "Dark",
+      "GATREN"
     ]
   },
   "Funis": {
     "rarity": "RARE",
     "comboNice": "WICK + BOG",
-    "comboArray": [
-      "WICK",
-      "BOG"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Water",
       "Light"
+    ],
+    "comboArray": [
+      "WICK",
+      "BOG"
     ],
     "price": "7360",
     "type": "dragon",
@@ -1437,23 +1451,24 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Fire",
       "Light",
-      "water",
-      "plant",
-      "fire"
+      "WICK",
+      "Water",
+      "Plant",
+      "BOG"
     ]
   },
   "Gatren": {
     "rarity": "RARE",
     "comboNice": "ELDRITCH + ONI",
-    "comboArray": [
-      "ELDRITCH",
-      "ONI"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "ELDRITCH",
+      "ONI"
     ],
     "price": "4800",
     "type": "dragon",
@@ -1462,25 +1477,24 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/L4f00723/Gatren-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "plant",
-      "earth",
-      "cold",
-      "fire",
-      "earth",
-      "cold"
+      "Fire",
+      "Plant",
+      "Earth",
+      "Cold",
+      "ELDRITCH",
+      "ONI"
     ]
   },
   "Ghost": {
     "rarity": "RARE",
     "comboNice": "earth + cold",
-    "comboArray": [
+    "breedingElements": [
       "Earth",
       "Cold"
     ],
-    "breedingElements": [
-      "earth",
-      "cold"
+    "comboArray": [
+      "Earth",
+      "Cold"
     ],
     "price": "1140",
     "type": "dragon",
@@ -1496,15 +1510,15 @@ import { eventData } from "eventData.js";
   "Gourd": {
     "rarity": "RARE",
     "comboNice": "PEPPER + ROOT",
-    "comboArray": [
-      "PEPPER",
-      "ROOT"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Dark"
+    ],
+    "comboArray": [
+      "PEPPER",
+      "ROOT"
     ],
     "price": "2200",
     "type": "dragon",
@@ -1515,24 +1529,26 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Plant",
       "Fire",
+      "PEPPER",
       "Earth",
-      "Dark"
+      "Dark",
+      "ROOT"
     ]
   },
   "Grimoire": {
     "rarity": "RARE",
     "comboNice": "cold + air + light + dark",
-    "comboArray": [
-      "Cold",
-      "Air",
-      "Light",
-      "Dark"
-    ],
     "breedingElements": [
       "cold",
       "air",
       "light",
       "dark"
+    ],
+    "comboArray": [
+      "Cold",
+      "Air",
+      "Light",
+      "Dark"
     ],
     "price": "8000",
     "type": "dragon",
@@ -1550,15 +1566,15 @@ import { eventData } from "eventData.js";
   "Infernus": {
     "rarity": "RARE",
     "comboNice": "fire + cold + water",
-    "comboArray": [
+    "breedingElements": [
       "Fire",
       "Cold",
       "Water"
     ],
-    "breedingElements": [
-      "fire",
-      "cold",
-      "water"
+    "comboArray": [
+      "Fire",
+      "Cold",
+      "Water"
     ],
     "price": "7680",
     "type": "dragon",
@@ -1575,16 +1591,16 @@ import { eventData } from "eventData.js";
   "Kwall": {
     "rarity": "RARE",
     "comboNice": "plant + water + light",
-    "comboArray": [
-      "Plant",
-      "Water",
-      "Light"
-    ],
     "breedingElements": [
       "Plant",
       "Water",
       "Light",
       "Dark"
+    ],
+    "comboArray": [
+      "Plant",
+      "Water",
+      "Light"
     ],
     "price": "5600",
     "type": "dragon",
@@ -1602,13 +1618,13 @@ import { eventData } from "eventData.js";
   "Love": {
     "rarity": "RARE",
     "comboNice": "FLOWER + lightning",
-    "comboArray": [
-      "FLOWER",
-      "Lightning"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
+      "Lightning"
+    ],
+    "comboArray": [
+      "FLOWER",
       "Lightning"
     ],
     "price": "1140",
@@ -1620,21 +1636,22 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Plant",
       "Fire",
+      "FLOWER",
       "Lightning"
     ]
   },
   "Lycan": {
     "rarity": "RARE",
     "comboNice": "plant + cold + lightning",
-    "comboArray": [
+    "breedingElements": [
       "Plant",
       "Cold",
       "Lightning"
     ],
-    "breedingElements": [
-      "plant",
-      "cold",
-      "lightning"
+    "comboArray": [
+      "Plant",
+      "Cold",
+      "Lightning"
     ],
     "price": "6080",
     "type": "dragon",
@@ -1651,16 +1668,16 @@ import { eventData } from "eventData.js";
   "Machina": {
     "rarity": "RARE",
     "comboNice": "COMBUSTION + metal + lightning",
-    "comboArray": [
-      "COMBUSTION",
-      "Metal",
-      "Lightning"
-    ],
     "breedingElements": [
       "Fire",
       "Lightning",
       "Metal",
       "Dark"
+    ],
+    "comboArray": [
+      "COMBUSTION",
+      "Metal",
+      "Lightning"
     ],
     "price": "16000",
     "type": "dragon",
@@ -1669,26 +1686,26 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/nrvRjs3h/Machina-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "air",
-      "metal",
-      "dark",
+      "Fire",
+      "Air",
       "Metal",
+      "Dark",
+      "COMBUSTION",
       "Lightning"
     ]
   },
   "Magma": {
     "rarity": "RARE",
     "comboNice": "LAVA + INFERNUS",
-    "comboArray": [
-      "LAVA",
-      "INFERNUS"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Water"
+    ],
+    "comboArray": [
+      "LAVA",
+      "INFERNUS"
     ],
     "price": "12000",
     "type": "dragon",
@@ -1700,22 +1717,23 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Fire",
       "Earth",
-      "fire",
-      "cold",
-      "water"
+      "LAVA",
+      "Cold",
+      "Water",
+      "INFERNUS"
     ]
   },
   "Malefice": {
     "rarity": "RARE",
     "comboNice": "SPIRIT + SCOURGE",
-    "comboArray": [
-      "SPIRIT",
-      "SCOURGE"
-    ],
     "breedingElements": [
       "Plant",
       "Earth",
       "Cold"
+    ],
+    "comboArray": [
+      "SPIRIT",
+      "SCOURGE"
     ],
     "price": "5800",
     "type": "dragon",
@@ -1726,23 +1744,23 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Earth",
       "Cold",
+      "SPIRIT",
       "Fire",
-      "Earth",
-      "Cold",
-      "Dark"
+      "Dark",
+      "SCOURGE"
     ]
   },
   "Maw": {
     "rarity": "RARE",
     "comboNice": "TRICK + ORTREAT",
-    "comboArray": [
-      "TRICK",
-      "ORTREAT"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth"
+    ],
+    "comboArray": [
+      "TRICK",
+      "ORTREAT"
     ],
     "price": "6000",
     "type": "dragon",
@@ -1751,26 +1769,25 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/HnQZcJ6Y/Maw-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "plant",
-      "fire",
-      "earth",
-      "plant",
-      "fire",
-      "earth"
+      "Plant",
+      "Fire",
+      "Earth",
+      "TRICK",
+      "ORTREAT"
     ]
   },
   "Mirhor": {
     "rarity": "RARE",
     "comboNice": "DUNGEON + MIRROR",
-    "comboArray": [
-      "DUNGEON",
-      "MIRROR"
-    ],
     "breedingElements": [
       "Fire",
       "Metal",
       "Light",
       "Dark"
+    ],
+    "comboArray": [
+      "DUNGEON",
+      "MIRROR"
     ],
     "price": "15000",
     "type": "dragon",
@@ -1781,24 +1798,26 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Fire",
       "Dark",
+      "DUNGEON",
       "Metal",
-      "Light"
+      "Light",
+      "MIRROR"
     ]
   },
   "Nesting": {
     "rarity": "RARE",
     "comboNice": "fire + plant + earth + cold",
-    "comboArray": [
-      "Fire",
-      "Plant",
-      "Earth",
-      "Cold"
-    ],
     "breedingElements": [
       "fire",
       "plant",
       "earth",
       "cold"
+    ],
+    "comboArray": [
+      "Fire",
+      "Plant",
+      "Earth",
+      "Cold"
     ],
     "price": "6080",
     "type": "dragon",
@@ -1816,15 +1835,15 @@ import { eventData } from "eventData.js";
   "Nether": {
     "rarity": "RARE",
     "comboNice": "fire + metal + earth",
-    "comboArray": [
-      "Fire",
-      "Metal",
-      "Earth"
-    ],
     "breedingElements": [
       "fire",
       "metal",
       "earth"
+    ],
+    "comboArray": [
+      "Fire",
+      "Metal",
+      "Earth"
     ],
     "price": "2250",
     "type": "dragon",
@@ -1840,18 +1859,18 @@ import { eventData } from "eventData.js";
   },
   "Nosferatu": {
     "rarity": "RARE",
-    "comboNice": `earth + cold + fire\n**Breed at Night**`,
+    "comboNice": "earth + cold + fire **Breed at Night**",
+    "breedingElements": [
+      "Earth",
+      "Cold",
+      "Fire"
+    ],
+    "special": "Breed at Night",
     "comboArray": [
       "Earth",
       "Cold",
       "Fire"
     ],
-    "breedingElements": [
-      "earth",
-      "cold",
-      "fire"
-    ],
-    //"special": "NIGHT",
     "price": "2275",
     "type": "dragon",
     "section": "OTHERWORLDLY",
@@ -1867,15 +1886,15 @@ import { eventData } from "eventData.js";
   "Oni": {
     "rarity": "RARE",
     "comboNice": "fire + earth + cold",
-    "comboArray": [
+    "breedingElements": [
       "Fire",
       "Earth",
       "Cold"
     ],
-    "breedingElements": [
-      "fire",
-      "earth",
-      "cold"
+    "comboArray": [
+      "Fire",
+      "Earth",
+      "Cold"
     ],
     "price": "2000",
     "type": "dragon",
@@ -1892,15 +1911,15 @@ import { eventData } from "eventData.js";
   "Ortreat": {
     "rarity": "RARE",
     "comboNice": "plant + fire + earth",
-    "comboArray": [
+    "breedingElements": [
       "Plant",
       "Fire",
       "Earth"
     ],
-    "breedingElements": [
-      "plant",
-      "fire",
-      "earth"
+    "comboArray": [
+      "Plant",
+      "Fire",
+      "Earth"
     ],
     "price": "5000",
     "type": "dragon",
@@ -1917,16 +1936,16 @@ import { eventData } from "eventData.js";
   "Pit": {
     "rarity": "RARE",
     "comboNice": "DECAY + dark + fire",
-    "comboArray": [
-      "DECAY",
-      "Dark",
-      "Fire"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "DECAY",
+      "Dark",
+      "Fire"
     ],
     "price": "15000",
     "type": "dragon",
@@ -1935,25 +1954,25 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/6qdj27Ms/Pit-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "earth",
-      "cold",
-      "Dark",
-      "Fire"
+      "Fire",
+      "Earth",
+      "Cold",
+      "DECAY",
+      "Dark"
     ]
   },
   "Plumpkin": {
     "rarity": "RARE",
     "comboNice": "plant + fire + earth",
-    "comboArray": [
+    "breedingElements": [
       "Plant",
       "Fire",
       "Earth"
     ],
-    "breedingElements": [
-      "plant",
-      "fire",
-      "earth"
+    "comboArray": [
+      "Plant",
+      "Fire",
+      "Earth"
     ],
     "price": "7500",
     "type": "dragon",
@@ -1970,15 +1989,15 @@ import { eventData } from "eventData.js";
   "Rotblossom": {
     "rarity": "RARE",
     "comboNice": "THICKET + DECAY",
-    "comboArray": [
-      "THICKET",
-      "DECAY"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
       "Earth",
       "Cold"
+    ],
+    "comboArray": [
+      "THICKET",
+      "DECAY"
     ],
     "price": "12640",
     "type": "dragon",
@@ -1988,27 +2007,27 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/NF1J9ypW/Rotblossom-Dragon-Adult-Night.webp"
     ],
     "comboEls": [
-      "earth",
-      "plant",
-      "cold",
-      "fire",
-      "earth",
-      "cold"
+      "Earth",
+      "Plant",
+      "Cold",
+      "THICKET",
+      "Fire",
+      "DECAY"
     ]
   },
   "Sinking": {
     "rarity": "RARE",
     "comboNice": "SPIRIT + dark + water",
-    "comboArray": [
-      "SPIRIT",
-      "Dark",
-      "Water"
-    ],
     "breedingElements": [
       "Earth",
       "Cold",
       "Water",
       "Dark"
+    ],
+    "comboArray": [
+      "SPIRIT",
+      "Dark",
+      "Water"
     ],
     "price": "15000",
     "type": "dragon",
@@ -2019,6 +2038,7 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Earth",
       "Cold",
+      "SPIRIT",
       "Dark",
       "Water"
     ]
@@ -2026,13 +2046,13 @@ import { eventData } from "eventData.js";
   "Spectre": {
     "rarity": "RARE",
     "comboNice": "cold + earth",
-    "comboArray": [
+    "breedingElements": [
       "Cold",
       "Earth"
     ],
-    "breedingElements": [
-      "cold",
-      "earth"
+    "comboArray": [
+      "Cold",
+      "Earth"
     ],
     "price": "2150",
     "type": "dragon",
@@ -2048,13 +2068,13 @@ import { eventData } from "eventData.js";
   "Spirit": {
     "rarity": "RARE",
     "comboNice": "GHOST + SPECTRE",
-    "comboArray": [
-      "GHOST",
-      "SPECTRE"
-    ],
     "breedingElements": [
       "Earth",
       "Cold"
+    ],
+    "comboArray": [
+      "GHOST",
+      "SPECTRE"
     ],
     "price": "6080",
     "type": "dragon",
@@ -2063,24 +2083,24 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/Gtk78BqV/Spirit-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "earth",
-      "cold",
-      "cold",
-      "earth"
+      "Earth",
+      "Cold",
+      "GHOST",
+      "SPECTRE"
     ]
   },
   "Spooker": {
     "rarity": "RARE",
     "comboNice": "ONI + dark + air",
-    "comboArray": [
-      "ONI",
-      "Dark",
-      "Air"
-    ],
     "breedingElements": [
       "Fire",
       "Air",
       "Dark"
+    ],
+    "comboArray": [
+      "ONI",
+      "Dark",
+      "Air"
     ],
     "price": "13000",
     "type": "dragon",
@@ -2089,9 +2109,10 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/T1r7LyC4/Spooker-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "fire",
-      "earth",
-      "cold",
+      "Fire",
+      "Earth",
+      "Cold",
+      "ONI",
       "Dark",
       "Air"
     ]
@@ -2099,15 +2120,15 @@ import { eventData } from "eventData.js";
   "Thicket": {
     "rarity": "RARE",
     "comboNice": "earth + plant + cold",
-    "comboArray": [
+    "breedingElements": [
       "Earth",
       "Plant",
       "Cold"
     ],
-    "breedingElements": [
-      "earth",
-      "plant",
-      "cold"
+    "comboArray": [
+      "Earth",
+      "Plant",
+      "Cold"
     ],
     "price": "1000",
     "type": "dragon",
@@ -2124,15 +2145,15 @@ import { eventData } from "eventData.js";
   "Trick": {
     "rarity": "RARE",
     "comboNice": "plant + fire + earth",
-    "comboArray": [
+    "breedingElements": [
       "Plant",
       "Fire",
       "Earth"
     ],
-    "breedingElements": [
-      "plant",
-      "fire",
-      "earth"
+    "comboArray": [
+      "Plant",
+      "Fire",
+      "Earth"
     ],
     "price": "5000",
     "type": "dragon",
@@ -2149,15 +2170,15 @@ import { eventData } from "eventData.js";
   "Vampir": {
     "rarity": "RARE",
     "comboNice": "NOSFERATU + ZOMBIE",
-    "comboArray": [
-      "NOSFERATU",
-      "ZOMBIE"
-    ],
     "breedingElements": [
       "Fire",
       "Earth",
       "Cold",
       "Air"
+    ],
+    "comboArray": [
+      "NOSFERATU",
+      "ZOMBIE"
     ],
     "price": "8320",
     "type": "dragon",
@@ -2166,26 +2187,28 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/4yzL7KB8/Vampir-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "earth",
-      "cold",
-      "fire",
+      "Earth",
+      "Cold",
+      "Fire",
+      "NOSFERATU",
       "Plant",
       "Air",
-      "Metal"
+      "Metal",
+      "ZOMBIE"
     ]
   },
   "Yaga": {
     "rarity": "RARE",
     "comboNice": "ETCH + SPIRIT",
-    "comboArray": [
-      "ETCH",
-      "SPIRIT"
-    ],
     "breedingElements": [
       "Plant",
       "Earth",
       "Cold",
       "Dark"
+    ],
+    "comboArray": [
+      "ETCH",
+      "SPIRIT"
     ],
     "price": "15500",
     "type": "dragon",
@@ -2194,19 +2217,17 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/3NgS4ynt/Yaga-Dragon-Adult.webp"
     ],
     "comboEls": [
-      "dark",
-      "plant",
+      "Dark",
+      "Plant",
+      "ETCH",
       "Earth",
-      "Cold"
+      "Cold",
+      "SPIRIT"
     ]
   },
   "Chromacorn": {
     "rarity": "RIFT EXCLUSIVE",
     "comboNice": "RAINBOW + DOUBLE RAINBOW",
-    "comboArray": [
-      "RAINBOW",
-      "DOUBLE RAINBOW"
-    ],
     "breedingElements": [
       "Plant",
       "Fire",
@@ -2220,6 +2241,10 @@ import { eventData } from "eventData.js";
       "Dark"
     ],
     "special": "RIFT ONLY",
+    "comboArray": [
+      "RAINBOW",
+      "DOUBLE RAINBOW"
+    ],
     "price": "6100",
     "type": "dragon",
     "section": "OMINOUS",
@@ -2237,30 +2262,22 @@ import { eventData } from "eventData.js";
       "Metal",
       "Light",
       "Dark",
-      "Plant",
-      "Fire",
-      "Earth",
-      "Cold",
-      "Lightning",
-      "Water",
-      "Air",
-      "Metal",
-      "Light",
-      "Dark"
+      "RAINBOW",
+      "DOUBLE RAINBOW"
     ]
   },
   "Nox": {
     "rarity": "RIFT EXCLUSIVE",
     "comboNice": "ANTUMBRA + VOLTAIC",
-    "comboArray": [
-      "ANTUMBRA",
-      "VOLTAIC"
-    ],
     "breedingElements": [
       "Light",
       "Dark"
     ],
     "special": "RIFT ONLY",
+    "comboArray": [
+      "ANTUMBRA",
+      "VOLTAIC"
+    ],
     "price": "8760",
     "type": "dragon",
     "section": "OMINOUS",
@@ -2270,22 +2287,23 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Light",
       "Dark",
+      "ANTUMBRA",
       "Lightning",
-      "Dark"
+      "VOLTAIC"
     ]
   },
   "Etch": {
     "rarity": "RARE",
-    "comboNice": `dark + plant\n**PERMANENT**`,
+    "comboNice": "dark + plant **PERMANENT**",
+    "breedingElements": [
+      "Dark",
+      "Plant"
+    ],
+    "special": "PERMANENT",
     "comboArray": [
       "Dark",
       "Plant"
     ],
-    "breedingElements": [
-      "dark",
-      "plant"
-    ],
-    "special": "PERMANENT",
     "price": "6720",
     "type": "dragon",
     "section": "OTHERWORLDLY",
@@ -2299,17 +2317,17 @@ import { eventData } from "eventData.js";
   },
   "Midnight": {
     "rarity": "EPIC",
-    "comboNice": `MOON + dark \n**Breed at Night**`,
-    "comboArray": [
-      "MOON",
-      "Dark"
-    ],
+    "comboNice": "MOON + dark",
     "breedingElements": [
       "Earth",
       "Cold",
       "Dark"
     ],
-    "special": "PERMANENT",
+    "special": "Breed at Night, PERMANENT",
+    "comboArray": [
+      "MOON",
+      "Dark"
+    ],
     "price": "3750",
     "type": "dragon",
     "section": "OTHERWORLDLY",
@@ -2319,16 +2337,13 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "Cold",
       "Lightning",
+      "MOON",
       "Dark"
     ]
   },
   "Misfortune": {
     "rarity": "EPIC",
-    "comboNice": `Treasure + Apocalypse\n**Breed at Night**`,
-    "comboArray": [
-      "Treasure",
-      "Apocalypse"
-    ],
+    "comboNice": "Treasure + Apocalypse",
     "breedingElements": [
       "Plant",
       "Fire",
@@ -2336,7 +2351,11 @@ import { eventData } from "eventData.js";
       "Lightning",
       "Metal"
     ],
-    "special": "NIGHT,PERMANENT",
+    "special": "Breed at Night, PERMANENT",
+    "comboArray": [
+      "Treasure",
+      "Apocalypse"
+    ],
     "price": "2999",
     "type": "dragon",
     "section": "OTHERWORLDLY",
@@ -2351,11 +2370,11 @@ import { eventData } from "eventData.js";
   "Ghostly Bone": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY FIRE + GHOSTLY EARTH",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY FIRE",
       "GHOSTLY EARTH"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY FIRE",
       "GHOSTLY EARTH"
     ],
@@ -2367,17 +2386,19 @@ import { eventData } from "eventData.js";
     ],
     "comboEls": [
       "Fire",
-      "Earth"
+      "GHOSTLY FIRE",
+      "Earth",
+      "GHOSTLY EARTH"
     ]
   },
   "Ghostly Decay": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY OBSIDIAN + GHOSTLY COLD",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY OBSIDIAN",
       "GHOSTLY COLD"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY OBSIDIAN",
       "GHOSTLY COLD"
     ],
@@ -2390,17 +2411,19 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "GHOSTLY EARTH",
       "GHOSTLY FIRE",
-      "Cold"
+      "GHOSTLY OBSIDIAN",
+      "Cold",
+      "GHOSTLY COLD"
     ]
   },
   "Ghostly Ghost": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY COLD + GHOSTLY EARTH",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY COLD",
       "GHOSTLY EARTH"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY COLD",
       "GHOSTLY EARTH"
     ],
@@ -2412,17 +2435,19 @@ import { eventData } from "eventData.js";
     ],
     "comboEls": [
       "Cold",
-      "Earth"
+      "GHOSTLY COLD",
+      "Earth",
+      "GHOSTLY EARTH"
     ]
   },
   "Ghostly Glacier": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY EARTH + GHOSTLY COLD",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY EARTH",
       "GHOSTLY COLD"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY EARTH",
       "GHOSTLY COLD"
     ],
@@ -2434,17 +2459,19 @@ import { eventData } from "eventData.js";
     ],
     "comboEls": [
       "Earth",
-      "Cold"
+      "GHOSTLY EARTH",
+      "Cold",
+      "GHOSTLY COLD"
     ]
   },
   "Ghostly Lava": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY EARTH + GHOSTLY FIRE",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY EARTH",
       "GHOSTLY FIRE"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY EARTH",
       "GHOSTLY FIRE"
     ],
@@ -2456,17 +2483,19 @@ import { eventData } from "eventData.js";
     ],
     "comboEls": [
       "Earth",
-      "Fire"
+      "GHOSTLY EARTH",
+      "Fire",
+      "GHOSTLY FIRE"
     ]
   },
   "Ghostly Mountain": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY EARTH + GHOSTLY COLD",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY EARTH",
       "GHOSTLY COLD"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY EARTH",
       "GHOSTLY COLD"
     ],
@@ -2478,17 +2507,19 @@ import { eventData } from "eventData.js";
     ],
     "comboEls": [
       "Earth",
-      "Cold"
+      "GHOSTLY EARTH",
+      "Cold",
+      "GHOSTLY COLD"
     ]
   },
   "Ghostly Nosferatu": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY MOUNTAIN + GHOSTLY FIRE",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY MOUNTAIN",
       "GHOSTLY FIRE"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY MOUNTAIN",
       "GHOSTLY FIRE"
     ],
@@ -2501,17 +2532,19 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "GHOSTLY EARTH",
       "GHOSTLY COLD",
-      "Fire"
+      "GHOSTLY MOUNTAIN",
+      "Fire",
+      "GHOSTLY FIRE"
     ]
   },
   "Ghostly Obsidian": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY EARTH + GHOSTLY FIRE",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY EARTH",
       "GHOSTLY FIRE"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY EARTH",
       "GHOSTLY FIRE"
     ],
@@ -2523,17 +2556,19 @@ import { eventData } from "eventData.js";
     ],
     "comboEls": [
       "Earth",
-      "Fire"
+      "GHOSTLY EARTH",
+      "Fire",
+      "GHOSTLY FIRE"
     ]
   },
   "Ghostly Oni": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY LAVA + GHOSTLY COLD",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY LAVA",
       "GHOSTLY COLD"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY LAVA",
       "GHOSTLY COLD"
     ],
@@ -2546,17 +2581,19 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "GHOSTLY EARTH",
       "GHOSTLY FIRE",
-      "Cold"
+      "GHOSTLY LAVA",
+      "Cold",
+      "GHOSTLY COLD"
     ]
   },
   "Ghostly Spectre": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY COLD + GHOSTLY EARTH",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY COLD",
       "GHOSTLY EARTH"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY COLD",
       "GHOSTLY EARTH"
     ],
@@ -2568,17 +2605,19 @@ import { eventData } from "eventData.js";
     ],
     "comboEls": [
       "Cold",
-      "Earth"
+      "GHOSTLY COLD",
+      "Earth",
+      "GHOSTLY EARTH"
     ]
   },
   "Ghostly Spirit": {
     "rarity": "GHOSTLY",
     "comboNice": "GHOSTLY GHOST + GHOSTLY SPECTRE",
-    "comboArray": [
+    "breedingElements": [
       "GHOSTLY GHOST",
       "GHOSTLY SPECTRE"
     ],
-    "breedingElements": [
+    "comboArray": [
       "GHOSTLY GHOST",
       "GHOSTLY SPECTRE"
     ],
@@ -2591,8 +2630,8 @@ import { eventData } from "eventData.js";
     "comboEls": [
       "GHOSTLY COLD",
       "GHOSTLY EARTH",
-      "GHOSTLY COLD",
-      "GHOSTLY EARTH"
+      "GHOSTLY GHOST",
+      "GHOSTLY SPECTRE"
     ]
   },
   "Corrupticorn": {
@@ -2861,17 +2900,27 @@ import { eventData } from "eventData.js";
   "Old One's Conduit": {
     "price": "1800",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/DwdyYYN8/Old-One-s-Conduit.webp"
+    ]
   },
   "Old One's Reach": {
     "price": "1500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/P5zrFF7L/Old-One-s-Reach.webp"
+    ]
   },
   "Astral Glimpse": {
     "price": "1600",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/BncQwwz1/Astral-Glimpse.webp",
+      "https://i.postimg.cc/MpbKrrLM/Astral-Glimpse-Night.webp"
+    ]
   },
   "Ominous Digsite": {
     "price": "2000",
@@ -2897,7 +2946,10 @@ import { eventData } from "eventData.js";
   "The Dark Manor": {
     "price": "3500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/x1yTFFZm/The-Dark-Manor.webp"
+    ]
   },
   "Talon Black Cube": {
     "price": "200",
@@ -2957,7 +3009,10 @@ import { eventData } from "eventData.js";
   "Overgrown Path": {
     "price": "200",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/RZzZdzgf/Overgrown-Path.webp"
+    ]
   },
   "Witch Hut": {
     "price": "200",
@@ -2993,7 +3048,10 @@ import { eventData } from "eventData.js";
   "Gloominaire": {
     "price": "400",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/W1P18P5k/Gloominaire.webp"
+    ]
   },
   "Whitbee's Lantern": {
     "price": "800",
@@ -3006,7 +3064,10 @@ import { eventData } from "eventData.js";
   "Spooky Tree": {
     "price": "800",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/T3qYHHsV/Spooky-Tree.webp"
+    ]
   },
   "Pumpkin Party": {
     "price": "800",
@@ -3019,7 +3080,10 @@ import { eventData } from "eventData.js";
   "Cursed Clock": {
     "price": "800",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/QdrdmrfW/Cursed-Clock.webp"
+    ]
   },
   "Broom-Eating Tree": {
     "price": "800",
@@ -3032,7 +3096,10 @@ import { eventData } from "eventData.js";
   "Fated Fount": {
     "price": "960",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/fRhRCh8d/Fated-Fount.webp"
+    ]
   },
   "Pool of Screams": {
     "price": "1000",
@@ -3042,7 +3109,10 @@ import { eventData } from "eventData.js";
   "Sunken Dragon": {
     "price": "1000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/9QjQbjLw/Sunken-Dragon.webp"
+    ]
   },
   "Jill-o-Lantern": {
     "price": "1200",
@@ -3052,7 +3122,10 @@ import { eventData } from "eventData.js";
   "Wailing Well": {
     "price": "1400",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/13Z3BZvn/Wailing-Well.webp"
+    ]
   },
   "Candy Cauldron": {
     "price": "1400",
@@ -3065,7 +3138,10 @@ import { eventData } from "eventData.js";
   "Wisp Lantern": {
     "price": "1440",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/9QtFNNkT/Wisp-Lantern.webp"
+    ]
   },
   "Scarecrow": {
     "price": "1440",
@@ -3078,7 +3154,10 @@ import { eventData } from "eventData.js";
   "The Portal": {
     "price": "1500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/wjcTbbrc/The-Portal-Animation.webp"
+    ]
   },
   "Boouquet": {
     "price": "1750",
@@ -3091,7 +3170,10 @@ import { eventData } from "eventData.js";
   "Infernal Pit": {
     "price": "1750",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/FHgsnn6V/Infernal-Pit-Animation.webp"
+    ]
   },
   "Oozing Pit": {
     "price": "1750",
@@ -3104,7 +3186,10 @@ import { eventData } from "eventData.js";
   "Candelabra": {
     "price": "1800",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/4xbNFF01/Candelabra.webp"
+    ]
   },
   "Haunted Tree": {
     "price": "2000",
@@ -3117,7 +3202,10 @@ import { eventData } from "eventData.js";
   "Grim Inn": {
     "price": "2250",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/6pL511P1/Grim-Inn.webp"
+    ]
   },
   "Tower Hollow": {
     "price": "2300",
@@ -3130,7 +3218,10 @@ import { eventData } from "eventData.js";
   "Whitbee's Castle": {
     "price": "2500",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/2SF8XXtH/Whitbee-s-Castle-During-Event.webp"
+    ]
   },
   "The Guardian's Gate": {
     "price": "2500",
@@ -3143,7 +3234,10 @@ import { eventData } from "eventData.js";
   "Hidden Habitat": {
     "price": "1200",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/Sx7NttPg/Hidden-Habitat.webp"
+    ]
   },
   "Spooky Habitat": {
     "price": "2400",
@@ -3158,7 +3252,9 @@ import { eventData } from "eventData.js";
     "type": "deco",
     "section": "OCCULT",
     "imgposted": [
-      "https://i.postimg.cc/xjxSCzJW/Large-Melody-Habitat.webp"
+      "https://i.postimg.cc/xjxSCzJW/Large-Melody-Habitat.webp",
+      "https://i.postimg.cc/wjcTbbrV/Giant-Melody-Habitat.webp",
+      "https://i.postimg.cc/dVmtSSf6/Melody-Habitat.webp"
     ]
   },
   "Large Melody Habitat": {
@@ -3172,7 +3268,10 @@ import { eventData } from "eventData.js";
   "Giant Melody Habitat": {
     "price": "3000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/wjcTbbrV/Giant-Melody-Habitat.webp"
+    ]
   },
   "Rift Habitat": {
     "price": "2500",
@@ -3258,7 +3357,10 @@ import { eventData } from "eventData.js";
   "Star Generator": {
     "price": "9000",
     "type": "deco",
-    "section": "OCCULT"
+    "section": "OCCULT",
+    "imgposted": [
+      "https://i.postimg.cc/qvXMZZFD/Star-Generator.webp"
+    ]
   },
   "Prismatic Pantheon": {
     "price": "8000",
@@ -3301,8 +3403,7 @@ import { eventData } from "eventData.js";
       "https://i.postimg.cc/hv5F3kRz/Witch-s-Cauldron.webp"
     ]
   }
-}*/
-
+}
 
 function checkData() {
   let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
