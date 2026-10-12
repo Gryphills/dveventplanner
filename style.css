@@ -247,3 +247,12 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+#potentialpurchaselist {
+  .item {
+    scale:85%;
+    max-width:92%
+  }
+  .breedinglist {
+    display:none;
+  }
+}
