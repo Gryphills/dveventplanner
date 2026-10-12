@@ -2846,6 +2846,7 @@ let eventData = {
     ]
   },
   "Eerie Cemetary": {
+    "special": "Produces treats every 23H",
     "price": "3500",
     "type": "deco",
     "section": "OCCULT",
@@ -2855,6 +2856,7 @@ let eventData = {
 
   },
   "Coven Hut": {
+    "special": "Produces treats every 23H",
     "price": "3500",
     "type": "deco",
     "section": "OCCULT",
@@ -2863,6 +2865,7 @@ let eventData = {
     ]
   },
   "The Dark Manor": {
+    "special": "Produces treats every 23H",
     "price": "3500",
     "type": "deco",
     "section": "OCCULT",
@@ -3272,6 +3275,7 @@ let eventData = {
     "imgposted": ["https://i.postimg.cc/0QJ4Vr5b/Eerie-Island-Theme-With-Portal.webp"]
   },
   "Plant Generator": {
+    "special": "2% earnings boost for plant dragons on same island",
     "price": "8000",
     "type": "deco",
     "section": "OCCULT",
@@ -3280,6 +3284,8 @@ let eventData = {
     ]
   },
   "Star Generator": {
+    
+    "special": "20% earnings boost for zodiac dragons on same island",
     "price": "9000",
     "type": "deco",
     "section": "OCCULT",
