@@ -3362,6 +3362,7 @@ function buildTemplate(itemName, itemObj) {
     
     <div class="sortbuttons" style="display: flex; flex-wrap: wrap; padding: 5px;">
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0" value="Want" onclick="sortbuttonsClicked(this, 'want')">
+      <input class="buttons" type="button" name="sortbuttons" data-toggled = "0" value="Buy" onclick="sortbuttonsClicked(this, 'buy')">
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0"  value="Have" onclick="sortbuttonsClicked(this, 'have')">
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0"  value="Meh" onclick="sortbuttonsClicked(this, 'ignore')">
     </div></div>`
@@ -3493,11 +3494,10 @@ function sortbuttonsClicked(element, label) {
       button: element.parentElement.children[3],
       div: document.getElementById('ignorediv')
     },
-    
     neutral: {
       div: document.getElementById('neutraldiv')
     },
-    buttonArray: ['want', 'have', 'ignore']
+    buttonArray: ['want', 'buy', 'have', 'ignore']
   }
 
   if (element.dataset.toggled == 0) {
@@ -3516,13 +3516,13 @@ function sortbuttonsClicked(element, label) {
     element.classList.remove('pressed');
     htmElements.neutral.div.appendChild(card)
   }
-  if (label == "buy") {
+  /*if (label == "buy") {
     card.querySelector('breedinginfo').style.display = "none"
     card.
   }
   else {
     card.querySelector('breedinginfo').style.display = "block"
-  }
+  }*/
   //console.log(card, card.dataset.name)
   saveStatus(card.dataset.name, label)
 }
@@ -3550,8 +3550,9 @@ function loadSetup() {
             let sortbuttons = cardEl.querySelector('.sortbuttons').children;
             //console.log(sortbuttons, status)
             if (status == 'want') {sortbuttons[0].click()}
-            else if (status == 'have') {sortbuttons[1].click()}
-            else if (status == 'ignore') {sortbuttons[2].click()}
+            else if (status == 'buy') {sortbuttons[1].click()}
+            else if (status == 'have') {sortbuttons[2].click()}
+            else if (status == 'ignore') {sortbuttons[3].click()}
           }
         }
         let count = itemthing.count;
