@@ -4126,7 +4126,6 @@ function flipViews(element) {
   backEl.src = toBackSrc;
 }
 
-
 document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
   addToData()
