@@ -4052,10 +4052,11 @@ function getDragonNames() {
 }
 
 
-function checkForBreeds(elArray) {
+function checkForBreeds(elArray, exempt = "") {
   console.log('checking!')
   let possibleOthers = []
   for (d=0;d<dragonsNames.length;d++) {
+   if (dragonsNames[d] != exempt){
     let check = eventData[dragonsNames[d]];
     let allowed = true;
     //console.log(dragonsNames[d], 'checking....?', check.comboArray)
@@ -4073,6 +4074,7 @@ function checkForBreeds(elArray) {
         possibleOthers.push(dragonsNames[d])
       }
     }
+   }
   }
   return possibleOthers;
 }
@@ -4089,7 +4091,7 @@ function checkAllCombos() {
   
   for (i=0;i<dragons.length; i++) {
     if (eventData[dragons[i]].comboEls) {
-      let possibleOthers = checkForBreeds(eventData[dragons[i]].comboEls)
+      let possibleOthers = checkForBreeds(eventData[dragons[i]].comboEls, dragons[i])
       if (possibleOthers.length > 0) {
         //console.log(dragons[i], possibleOthers)
         let newhtml = `<details class="possibleothers"><summary>Possible Others w this combo</summary>
@@ -4126,6 +4128,7 @@ function flipViews(element) {
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
+  addToData()
   cycleItems()
   loadSetup()
   getDragonNames()
