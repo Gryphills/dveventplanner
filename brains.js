@@ -4008,9 +4008,7 @@ function buildTemplate(itemName, itemObj) {
     <input class="favbutton" type="button" name="sortbuttons" data-toggled = "0" value="♡" onclick="sortbuttonsClicked(this, 'fav')">
     <div>
     <p class="itemname">${itemName}</p>`
-    if (special != "") {
-      newHtml += `<p>${special}</p>`
-    }
+    
      if (size != "") {
       newHtml += `<p>${size}</p>`
     }
@@ -4042,15 +4040,20 @@ function buildTemplate(itemName, itemObj) {
       <input class="buttons" type="button" name="sortbuttons" data-toggled = "0"  value="Meh" onclick="sortbuttonsClicked(this, 'ignore')">
     </div></div>`
     if (type == 'dragon') {
-      newHtml += `<div class="breedinginfo"><p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
+      newHtml += `<div class="breedinginfo">
+      <p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
+      <br>
       <p class='combo'>${combonice}</p>`
+      if (special != "") {
+        newHtml += `<p>${special}</p>`
+      }
       if (breedTimes != "") {
         newHtml += `<p style="font-size:small;font-style:italic;">${breedTimes}</p>`
       }
       if (odds != "") {
         newHtml += `<p style="font-size:small;font-style:italic;">${odds}</p>`
       }
-      newHtml += `</div>`
+      newHtml += `<br></div>`
     }
      newHtml += `</div>
       </div>
