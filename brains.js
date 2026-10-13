@@ -3735,7 +3735,7 @@ function addToData() {
  let points = Object.getOwnPropertyNames(dataAdditions)
   for (i=0;i<points.length;i++) {
    if (dataAdditions[points[i]].breedTimes) {
-    dataAdditions[points[i]].breedTimes = dataAdditions[points[i]].breedTimes.replaceAll('hm', 'h'
+    dataAdditions[points[i]].breedTimes = dataAdditions[points[i]].breedTimes.replaceAll('hm', 'h')
     eventData[points[i]].breedTimes = dataAdditions[points[i]].breedTimes
    }
    if (dataAdditions[points[i]].odds) {
