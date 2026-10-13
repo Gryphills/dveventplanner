@@ -2294,12 +2294,12 @@ let eventData = {
   },
   "Etch": {
     "rarity": "RARE",
-    "comboNice": "dark + plant **PERMANENT**",
+    "comboNice": "dark + plant",
     "breedingElements": [
       "Dark",
       "Plant"
     ],
-    "special": "PERMANENT",
+    "avail": "PERMANENT",
     "comboArray": [
       "Dark",
       "Plant"
@@ -2323,7 +2323,8 @@ let eventData = {
       "Cold",
       "Dark"
     ],
-    "special": "Breed at Night, PERMANENT",
+    "special": "Breed at Night",
+   "avail": "PERMANENT",
     "comboArray": [
       "MOON",
       "Dark"
@@ -2351,7 +2352,8 @@ let eventData = {
       "Lightning",
       "Metal"
     ],
-    "special": "Breed at Night, PERMANENT",
+    "special": "Breed at Night",
+   "avail": "PERMANENT",
     "comboArray": [
       "Treasure",
       "Apocalypse"
@@ -3731,6 +3733,216 @@ let dataAdditions =
   }
 }
 
+let decoAdditions = {
+  "Circle of Whispers": {
+    "size": "4 x 4"
+  },
+  "Rusty Path": {
+    "avail": "PERMANENT",
+    "size": "1 x 1 (path)"
+  },
+  "The All-Seeing": {
+    "size": "2 x 2"
+  },
+  "Old One's Conduit": {
+    "size": "2 x 2"
+  },
+  "Old One's Reach": {
+    "size": "2 x 2"
+  },
+  "Astral Glimpse": {
+    "size": "5 x 5"
+  },
+  "Ominous Digsite": {
+    "size": "3 x 3"
+  },
+  "Eerie Cemetary": {
+    "size": "5 x 5"
+  },
+  "Coven Hut": {
+    "size": "4 x 4"
+  },
+  "The Dark Manor": {
+    "size": "8 x 8"
+  },
+  "Small Rib Left/Right": {
+    "size": "1 x 1"
+  },
+  "Large Rib Left/Right": {
+    "size": "1 x 2"
+  },
+  "Small Spine": {
+    "size": "1 x 1"
+  },
+  "Large Spine": {
+    "size": "2 x 1"
+  },
+  "Small Skull": {
+    "size": "2 x 2"
+  },
+  "Large Skull": {
+    "size": "3 x 3"
+  },
+  "Bone Path": {
+    "size": "1 X 1 (path)"
+  },
+  "Overgrown Path": {
+    "size": "1 x 1 (path)"
+  },
+  "Witch Hut": {
+    "size": "2 x 2"
+  },
+  "Spooky Fence": {
+    "size": "1 x 1"
+  },
+  "Eerie Fog": {
+    "size": "1 x 1"
+  },
+  "Gloominaire": {
+    "size": "1 x 1"
+  },
+  "Whitbee's Lantern": {
+    "size": "2 x 2"
+  },
+  "Spooky Tree": {
+    "size": "4 x 4"
+  },
+  "Pumpkin Party": {
+    "size": "3 x 3"
+  },
+  "Cursed Clock": {
+    "size": "2 x 2"
+  },
+  "Broom-Eating Tree": {
+    "size": "2 x 2"
+  },
+  "Fated Fount": {
+    "size": "3 x 3"
+  },
+  "Pool of Screams": {
+    "size": "2 x 2"
+  },
+  "Sunken Dragon": {
+    "size": "3 x 5"
+  },
+  "Jill-o-Lantern": {
+    "size": "2 x 2"
+  },
+  "Wailing Well": {
+    "size": "2 x 2"
+  },
+  "Candy Cauldron": {
+    "size": "3 x 3"
+  },
+  "Wisp Lantern": {
+    "size": "2 x 2"
+  },
+  "Scarecrow": {
+    "size": "1 x 1"
+  },
+  "The Portal": {
+    "size": "3 x 2"
+  },
+  "Boouquet": {
+    "size": "2 x 2"
+  },
+  "Infernal Pit": {
+    "size": "5 x 3"
+  },
+  "Oozing Pit": {
+    "size": "5 x 3"
+  },
+  "Candelabra": {
+    "size": "2 x 2"
+  },
+  "Haunted Tree": {
+    "size": "2 x 2"
+  },
+  "Grim Inn": {
+    "size": "3 x 3"
+  },
+  "Tower Hollow": {
+    "size": "4 x 4"
+  },
+  "Whitbee's Castle": {
+    "size": "5 x 5"
+  },
+  "The Guardian's Gate": {
+    "size": "2 x 2"
+  },
+  "Spooky Habitat": {
+    "size": "5 X 5"
+  },
+  "Melody Habitat": {
+    "size": "3 X 3"
+  },
+  "Large Melody Habitat": {
+    "size": "4 X 4"
+  },
+  "Giant Melody Habitat": {
+    "size": "6 X 6"
+  },
+  "Rift Habitat": {
+    "size": "3 X 3"
+  },
+  "Large Rift Habitat": {
+    "size": "4 X 4"
+  },
+  "Giant Rift Habitat": {
+    "size": "5 x 5"
+  },
+  "Apocalypse Habitat": {
+    "avail": "PERMANENT",
+    "size": "5 X 5"   
+  },
+  "Large Apocalypse Habitat": {
+    "avail": "PERMANENT",
+    "size": "7 X 7"
+  },
+  "Giant Apocalypse Habitat": {
+    "size": "8 X 8"
+  },
+  "Plant Generator": {
+    "size": "3 X 3"
+  },
+  "Star Generator": {
+    "size": "1 X 1"
+  },
+  "Prismatic Pantheon": {
+    "size": "3 X 3"
+  },
+  "Effigy of the Leaf": {
+    "size": "1 x 1"
+  },
+  "Effigy of the Flame": {
+    "size": "1 x 1"
+  },
+  "Effigy of the Ground": {
+    "size": "1 x 1"
+  },
+  "Effigy of the Frost": {
+    "size": "1 x 1"
+  },
+  "Jack-O-Lantern": {
+    "size": "2 x 2"
+  },
+  "Witch's Cauldron": {
+    "size": "2 x 2"
+  }
+}
+
+function addToDataDecos() {
+ let points = Object.getOwnPropertyNames(decoAdditions)
+  for (i=0;i<points.length;i++) {
+   if (decoAdditions[points[i]].size) {
+    eventData[points[i]].size = decoAdditions[points[i]].size
+   }
+   if (decoAdditions[points[i]].avail) {
+    eventData[points[i]].avail = decoAdditions[points[i]].avail
+   }
+  }
+}
+
 function addToData() {
  let points = Object.getOwnPropertyNames(dataAdditions)
   for (i=0;i<points.length;i++) {
@@ -3762,6 +3974,8 @@ function buildTemplate(itemName, itemObj) {
   let combonice = "" 
   let breedTimes = ""
   let odds = ""
+  let size = ""
+  let avail = ""
   if (itemObj.special) {
     special = itemObj.special
    }
@@ -3797,16 +4011,23 @@ function buildTemplate(itemName, itemObj) {
     if (special != "") {
       newHtml += `<p>${special}</p>`
     }
+     if (size != "") {
+      newHtml += `<p>${size}</p>`
+    }
+     if (avail != "") {
+      newHtml += `<p><strong>${avail.toUpperCase()}</strong></p>`
+    }
+    
   //console.log(imgposted)
     if (imgposted.length == 1) {
-      newHtml += `<div style='display:flex;'><img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
+      newHtml += `<div style='display:flex;'><img loading="lazy" class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
     } else {
     
       newHtml += `<p style="font-style:italic;">Day View</p>
       <p style="font-size:small;font-style:italic;">(click img to swap views)</p>
       <div style='display: flex; position: relative; height: 220px;'>
-        <img class="itemimage duoback" onclick="flipViews(this)" src="${imgposted[1]}">
-        <img class="itemimage duofront" onclick="flipViews(this)" src="${imgposted[0]}">`
+        <img loading="lazy" class="itemimage duoback" onclick="flipViews(this)" src="${imgposted[1]}">
+        <img loading="lazy" class="itemimage duofront" onclick="flipViews(this)" src="${imgposted[0]}">`
     }
 
     newHtml += `</div></div>
