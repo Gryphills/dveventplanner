@@ -259,3 +259,7 @@ body {
     max-height: 100px;
   }
 }
+.combo {
+  font-weight:bold;
+  font-size:18px;
+}
