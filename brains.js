@@ -3791,6 +3791,7 @@ function buildTemplate(itemName, itemObj) {
   let newHtml = `<div name="${itemID}" data-name="${itemID}" class="item ${type} ${rarity}">
   <div class="iteminner">
     <div class='sectionicon ${section}'></div>
+    <input class="favbutton" type="button" name="sortbuttons" data-toggled = "0" value="♡" onclick="sortbuttonsClicked(this, 'fav')">
     <div>
     <p class="itemname">${itemName}</p>`
     if (special != "") {
@@ -3938,6 +3939,10 @@ function sortbuttonsClicked(element, label) {
 
   let card = element.closest('.item')
   let htmElements = {
+    fav: {
+      button: card.querySelector('.favbutton'),
+      div: document.getElementById('wantdiv')
+    },
     want: {
       button: element.parentElement.children[0],
       div: document.getElementById('wantdiv')
@@ -3963,18 +3968,33 @@ function sortbuttonsClicked(element, label) {
   if (element.dataset.toggled == 0) {
     element.dataset.toggled = 1
     element.classList.add('pressed')
-    for (i=0;i<htmElements.buttonArray.length; i++) {
-      if (htmElements.buttonArray[i] != label) {
-        htmElements[htmElements.buttonArray[i]].button.dataset.toggled = 0;
-        htmElements[htmElements.buttonArray[i]].button.classList.remove('pressed')
+    if (label != "fav") {
+      for (i=0;i<htmElements.buttonArray.length; i++) {
+        if (htmElements.buttonArray[i] != label) {
+          htmElements[htmElements.buttonArray[i]].button.dataset.toggled = 0;
+          htmElements[htmElements.buttonArray[i]].button.classList.remove('pressed')
+        }
       }
+    } else {
+      element.value = "♥"
     }
     htmElements[label].div.appendChild(card)
     //console.log(htmElements[label].div)
   } else {
     element.dataset.toggled = 0
     element.classList.remove('pressed');
-    htmElements.neutral.div.appendChild(card)
+    if (label == "fav") {
+      element.value = "♡"
+      for (i=0;i<htmElements.buttonArray.length; i++) {
+        if (htmElements[htmElements.buttonArray[i]].button.dataset.toggled == 1) {
+         htmElements[htmElements.buttonArray[i]].div.appendChild(card)
+        }
+      }
+    } else {
+      htmElements.neutral.div.appendChild(card)
+      label = 'neutral'
+    }
+    
   }
   /*if (label == "buy") {
     card.querySelector('breedinginfo').style.display = "none"
@@ -4013,6 +4033,7 @@ function loadSetup() {
             else if (status == 'buy') {sortbuttons[1].click()}
             else if (status == 'have') {sortbuttons[2].click()}
             else if (status == 'ignore') {sortbuttons[3].click()}
+            if (status == 'fav') {cardEl.querySelector('.favbutton').click()}
           }
         }
         let count = itemthing.count;
@@ -4138,6 +4159,7 @@ function flipViews(element) {
   frontEl.src = toFrontSrc;
   backEl.src = toBackSrc;
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
