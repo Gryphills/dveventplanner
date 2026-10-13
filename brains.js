@@ -3345,6 +3345,391 @@ let eventData = {
   }
 }
 
+let dataAdditions = {
+  "Awoo": {
+    "breedTimes": "20h / 16h",
+    "odds": "Base: 3.65%\nCoop Clone: 1%"
+  },
+  "Barbarous": {
+    "breedTimes": "13h45m / 11h",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Candycorn": {
+    "breedTimes": "23h / 18h24m",
+    "odds": "Base: 3.45%\nCoop Clone: 1%"
+  },
+  "Cerberus": {
+    "breedTimes": "33h / 26h24m",
+    "odds": "Base: 3%\nCoop Clone: 2%"
+  },
+  "Charlatan": {
+    "breedTimes": "16h / 12h48m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Delight": {
+    "breedTimes": "36h / 28h48m",
+    "odds": "Base: 3%\nCoop Clone: 1%"
+  },
+  "Dracomancy": {
+    "breedTimes": "21h / 16h48m",
+    "odds": "Base: undefined\nCoop Clone: undefined"
+  },
+  "Exterrean": {
+    "breedTimes": "26h / 20h48m",
+    "odds": "Base: 5%\nCoop Clone: 5%"
+  },
+  "Fury": {
+    "breedTimes": "46h / 36h48m",
+    "odds": "Base: 3%\nCoop Clone: 1%"
+  },
+  "Greymatter": {
+    "breedTimes": "23h / 18h24m",
+    "odds": "Base: 4.1%\nCoop Clone: 5%"
+  },
+  "Heavy Metal": {
+    "breedTimes": "26h / 20h48m",
+    "odds": "Base: 3.8%\nCoop Clone: 1.5%"
+  },
+  "Hydnellum": {
+    "breedTimes": "24h / 19h12m",
+    "odds": "Base: 4%\nCoop Clone: 1%"
+  },
+  "Hyperion": {
+    "breedTimes": "70h / 56h",
+    "odds": "Base: 2%\nCoop Clone: 1.5%"
+  },
+  "Iden": {
+    "breedTimes": "24h / 19h12m"
+  },
+  "Kage": {
+    "breedTimes": "23h / 18h24m",
+    "odds": "Base: 4%\nCoop Clone: 1%"
+  },
+  "Macabre": {
+    "breedTimes": "16h39m / 13h19m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Narcis": {
+    "breedTimes": "28hm / 22h24m",
+    "odds": "Base: 4.5%\nCoop Clone: 10%"
+  },
+  "Nightmare": {
+    "breedTimes": "36h28m / 29h10m",
+    "odds": "Base: 4%\nCoop Clone: 2%"
+  },
+  "Ocular": {
+    "breedTimes": "23hm / 18h24m",
+    "odds": "Base: 2%\nCoop Clone: 1.5%"
+  },
+  "Omen": {
+    "breedTimes": "27hm / 21h36m",
+    "odds": "Base: 3%\nCoop Clone: 2%"
+  },
+  "Punk": {
+    "breedTimes": "26hm / 20h48m",
+    "odds": "Base: 3.8%\nCoop Clone: 1.5%"
+  },
+  "Reaper": {
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 3%\nCoop Clone: 1%"
+  },
+  "Righteous": {
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 3%\nCoop Clone: 1%"
+  },
+  "Scourge": {
+    "breedTimes": "11h30m / 9h12m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Scout": {
+    "breedTimes": "24hm / 19h12m"
+  },
+  "Shackle": {
+    "breedTimes": "22hm / 17h36m",
+    "odds": "Base: 4.15%\nCoop Clone: 10%"
+  },
+  "Tartarus": {
+    "breedTimes": "18hm / 14h24m",
+    "odds": "Base: 3.2%\nCoop Clone: 1%"
+  },
+  "Techno": {
+    "breedTimes": "26hm / 20h48m",
+    "odds": "Base: 3.8%\nCoop Clone: 1.5%"
+  },
+  "Tickles": {
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 4.45%\nCoop Clone: 5%"
+  },
+  "Valor": {
+    "breedTimes": "34hm / 27h12m",
+    "odds": "Base: 3%\nCoop Clone: 1%"
+  },
+  "W*ndy": {
+    "breedTimes": "22hm / 17h36m"
+  },
+  "Zombie": {
+    "breedTimes": "20hm / 16hm",
+    "odds": "Base: 3%\nCoop Clone: 1%"
+  },
+  "Amalgamate": {
+    "breedTimes": "20hm / 16hm",
+    "odds": "Base: 3.1%\nCoop Clone: 10%"
+  },
+  "Ambrosia": {
+    "breedTimes": "23hm / 18h24m",
+    "odds": "Base: 5%\nCoop Clone: 4%"
+  },
+  "Bog": {
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 4%\nCoop Clone: 0%"
+  },
+  "Bone": {
+    "breedTimes": "10hm / 8hm",
+    "odds": "Base: 5%\nCoop Clone: 4%"
+  },
+  "Brainiac": {
+    "breedTimes": "20hm / 16hm",
+    "odds": "Base: 3.4%\nCoop Clone: 10%"
+  },
+  "Brood": {
+    "breedTimes": "14hm / 11h12m",
+    "odds": "Base: 3.1%\nCoop Clone: 10%"
+  },
+  "Bruntal": {
+    "breedTimes": "20hm / 16hm",
+    "odds": "Base: 4%\nCoop Clone: 10%"
+  },
+  "Combustion": {
+    "breedTimes": "60hm / 48hm",
+    "odds": "Base: 2%\nCoop Clone: 1.5%"
+  },
+  "Decay": {
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 4%\nCoop Clone: 0%"
+  },
+  "Dortal": {
+    "breedTimes": "17hm / 13h36m",
+    "odds": "Base: 3.5%\nCoop Clone: 10%"
+  },
+  "Dracabra": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Drack-o-Lantern": {
+    "breedTimes": "18hm / 14h24m",
+    "odds": "Base: 4.15%\nCoop Clone: 10%"
+  },
+  "Dragpir": {
+    "breedTimes": "16hm / 12h48m",
+    "odds": "Base: 4.75%\nCoop Clone: 10%"
+  },
+  "Dumi": {
+    "breedTimes": "19hm / 15h12m",
+    "odds": "Base: 3.4%\nCoop Clone: 10%"
+  },
+  "Eldritch": {
+    "breedTimes": "24hm / 19h12m"
+  },
+  "Eww": {
+    "breedTimes": "16hm / 12h48m",
+    "odds": "Base: 4.65%\nCoop Clone: 10%"
+  },
+  "Fortified": {
+    "breedTimes": "20hm / 16hm",
+    "odds": "Base: 4.5%\nCoop Clone: 10%"
+  },
+  "Funis": {
+    "breedTimes": "16hm / 12h48m",
+    "odds": "Base: 5%\nCoop Clone: 10%"
+  },
+  "Gatren": {
+    "breedTimes": "19hm / 15h12m",
+    "odds": "Base: 3%\nCoop Clone: 1.5%"
+  },
+  "Ghost": {
+    "breedTimes": "15h30m / 12h24m",
+    "odds": "Base: 5%\nCoop Clone: 4%"
+  },
+  "Gourd": {
+    "breedTimes": "30h51m / 24h41m",
+    "odds": "Base: 4%\nCoop Clone: 3%"
+  },
+  "Grimoire": {
+    "breedTimes": "18hm / 14h24m",
+    "odds": "Base: 3.2%\nCoop Clone: 10%"
+  },
+  "Infernus": {
+    "breedTimes": "16hm / 12h48m",
+    "odds": "Base: 2%\nCoop Clone: 10%"
+  },
+  "Kwall": {
+    "breedTimes": "19hm / 15h12m"
+  },
+  "Love": {
+    "breedTimes": "5hm / 4hm",
+    "odds": "Base: 4%\nCoop Clone: 3%"
+  },
+  "Lycan": {
+    "breedTimes": "24hm / 19h12m"
+  },
+  "Machina": {
+    "breedTimes": "17hm / 13h36m",
+    "odds": "Base: 4.8%\nCoop Clone: 10%"
+  },
+  "Magma": {
+    "breedTimes": "20hm / 16hm"
+  },
+  "Malefice": {
+    "breedTimes": "19hm / 15h12m",
+    "odds": "Base: 3%\nCoop Clone: 1.5%"
+  },
+  "Maw": {
+    "breedTimes": "20hm / 16hm",
+    "odds": "Base: 3%\nCoop Clone: 1.5%"
+  },
+  "Mirhor": {
+    "breedTimes": "17hm / 13h36m",
+    "odds": "Base: 3.3%\nCoop Clone: 10%"
+  },
+  "Nesting": {
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 2%\nCoop Clone: 1.5%"
+  },
+  "Nether": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Nosferatu": {
+    "breedTimes": "13hm / 10h24m",
+    "odds": "Base: 2%\nCoop Clone: 1.5%"
+  },
+  "Oni": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Ortreat": {
+    "breedTimes": "15hm / 12hm",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Pit": {
+    "breedTimes": "20hm / 16hm",
+    "odds": "Base: 3.3%\nCoop Clone: 10%"
+  },
+  "Plumpkin": {
+    "breedTimes": "19hm / 15h12m",
+    "odds": "Base: 5%\nCoop Clone: 2%"
+  },
+  "Rotblossom": {
+    "breedTimes": "15hm / 12hm"
+  },
+  "Sinking": {
+    "breedTimes": "19hm / 15h12m",
+    "odds": "Base: 3.5%\nCoop Clone: 10%"
+  },
+  "Spectre": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Spirit": {
+    "breedTimes": "15hm / 12hm",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Spooker": {
+    "breedTimes": "14hm / 11h12m",
+    "odds": "Base: 4.55%\nCoop Clone: 10%"
+  },
+  "Thicket": {
+    "breedTimes": "15hm / 12hm",
+    "odds": "Base: 4%\nCoop Clone: 0%"
+  },
+  "Trick": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 4%\nCoop Clone: 1.5%"
+  },
+  "Vampir": {
+    "breedTimes": "18h45m / 15hm",
+    "odds": "Base: 3.2%\nCoop Clone: 10%"
+  },
+  "Yaga": {
+    "breedTimes": "17hm / 13h36m",
+    "odds": "Base: 4%\nCoop Clone: 10%"
+  },
+  "Chromacorn": {
+    "odds": "Base: 0.5%"
+  },
+  "Nox": {
+    "odds": "Base: 3%"
+  },
+  "Etch": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 5%\nCoop Clone: 10%"
+  },
+  "Midnight": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 1%\nCoop Clone: 1%"
+  },
+  "Misfortune": {
+    "breedTimes": "46hm / 36h48m",
+    "odds": "Base: 2.5%\nCoop Clone: 1%"
+  },
+  "Ghostly Bone": {
+    "breedTimes": "10hm / 8hm",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Decay": {
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Ghost": {
+    "breedTimes": "15h30m / 12h24m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Glacier": {
+    "breedTimes": "11hm / 8h48m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Lava": {
+    "breedTimes": "11hm / 8h48m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Mountain": {
+    "breedTimes": "15hm / 12hm",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Nosferatu": {
+    "breedTimes": "13hm / 10h24m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Obsidian": {
+    "breedTimes": "9hm / 7h12m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Oni": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Spectre": {
+    "breedTimes": "12hm / 9h36m",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  },
+  "Ghostly Spirit": {
+    "breedTimes": "15hm / 12hm",
+    "odds": "Base: 3%\nCoop Clone: 10%"
+  }
+}
+
+function addToData() {
+ let points = Object.getOwnPropertyNames(dataAdditions)
+  for (i=0;i<points.length;i++) {
+   if (dataAdditions[points[i]].breedTimes) {
+    eventData[points[i]].breedTimes = dataAdditions[points[i]].breedTimes
+   }
+   if (dataAdditions[points[i]].odds) {
+    eventData[points[i]].odds = dataAdditions[points[i]].odds
+   }
+  }
+}
+
 function checkData() {
   let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
   if (!eventObj) {
@@ -3361,6 +3746,8 @@ function buildTemplate(itemName, itemObj) {
   let imgposted = ""
   let rarity = ""
   let combonice = "" 
+  let breedTimes = ""
+  let odds = ""
   if (itemObj.special) {
     special = itemObj.special
    }
@@ -3372,6 +3759,12 @@ function buildTemplate(itemName, itemObj) {
   }
   if (itemObj.comboNice){
     combonice = itemObj.comboNice
+  }
+  if (itemObj.odds){
+    odds = itemObj.odds
+  }
+  if (itemObj.breedTimes){
+    breedTimes = itemObj.breedTimes
   }
   if (type == 'dragon') {
     itemName = itemName + " Dragon";
@@ -3385,9 +3778,10 @@ function buildTemplate(itemName, itemObj) {
   <div class="iteminner">
     <div class='sectionicon ${section}'></div>
     <div>
-    <p class="itemname">${itemName}</p>
-    <p>${special}</p>
-    `
+    <p class="itemname">${itemName}</p>`
+    if (special != "") {
+      newHtml += `<p>${special}</p>`
+    }
   //console.log(imgposted)
     if (imgposted.length == 1) {
       newHtml += `<div style='display:flex;'><img class="itemimage" src="${imgposted[0]}" alt="${itemName}">`
@@ -3413,7 +3807,14 @@ function buildTemplate(itemName, itemObj) {
     </div></div>`
     if (type == 'dragon') {
       newHtml += `<div class="breedinginfo"><p style='font-weight:bold;margin-top:5px;'>Breeding Info:</p>
-      <p class='combo'>${combonice}</p></div>`
+      <p class='combo'>${combonice}</p>`
+      if (breedTimes != "") {
+        newHtml += `<p>${breedTimes}</p>`
+      }
+      if (odds != "") {
+        newHtml += `<p>${odds}</p>`
+      }
+      newHtml += `</div>`
     }
      newHtml += `</div>
       </div>
