@@ -113,12 +113,11 @@ body {
   width: 30px;
   height: 30px;
   position: absolute;
-  display:none;
-  /*top: -12px;
-  left: -15px;*/
-  bottom: -12px;
+  display: none;
+  top: 26px;
+  right: -16px;
   background-size: cover;
-  opacity:0.8;
+  opacity: 0.5;
 }
 .tricksandtreats {
   background-image: url('https://i.postimg.cc/L8H9sLNc/tricksandtreats.png');
