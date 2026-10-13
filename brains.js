@@ -3941,7 +3941,7 @@ function sortbuttonsClicked(element, label) {
   let htmElements = {
     fav: {
       button: card.querySelector('.favbutton'),
-      div: document.getElementById('wantdiv')
+      div: document.getElementById('favdiv')
     },
     want: {
       button: element.parentElement.children[0],
