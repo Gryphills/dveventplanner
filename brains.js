@@ -3984,11 +3984,19 @@ function sortbuttonsClicked(element, label) {
     element.dataset.toggled = 0
     element.classList.remove('pressed');
     if (label == "fav") {
+      let hit = false;
       element.value = "♡"
       for (i=0;i<htmElements.buttonArray.length; i++) {
+       //console.log()
+       console.log(`cycling, this is ${htmElements.buttonArray[i]}:` htmElements[htmElements.buttonArray[i]].button, htmElements[htmElements.buttonArray[i]].button.dataset.toggled)
         if (htmElements[htmElements.buttonArray[i]].button.dataset.toggled == 1) {
          htmElements[htmElements.buttonArray[i]].div.appendChild(card)
+         hit=true;
         }
+      }
+      if (!hit) {
+       htmElements.neutral.div.appendChild(card)
+       label = 'neutral'
       }
     } else {
       htmElements.neutral.div.appendChild(card)
