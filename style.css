@@ -263,3 +263,17 @@ body {
   font-weight:bold;
   font-size:18px;
 }
+.favbutton {
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  font-size:30px;
+  /*display:none;
+  bottom: -12px;
+  top: -12px;
+  background-size: cover;
+  opacity:0.8;
+  left: -15px;*/
+  right: -15px;
+}
