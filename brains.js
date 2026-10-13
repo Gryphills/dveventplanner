@@ -3988,7 +3988,7 @@ function sortbuttonsClicked(element, label) {
       element.value = "♡"
       for (i=0;i<htmElements.buttonArray.length; i++) {
        //console.log()
-       console.log(`cycling, this is ${htmElements.buttonArray[i]}:` htmElements[htmElements.buttonArray[i]].button, htmElements[htmElements.buttonArray[i]].button.dataset.toggled)
+       console.log(`cycling, this is ${htmElements.buttonArray[i]}:`, htmElements[htmElements.buttonArray[i]].button, htmElements[htmElements.buttonArray[i]].button.dataset.toggled)
         if (htmElements[htmElements.buttonArray[i]].button.dataset.toggled == 1) {
          htmElements[htmElements.buttonArray[i]].div.appendChild(card)
          hit=true;
