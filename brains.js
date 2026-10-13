@@ -3373,7 +3373,7 @@ let dataAdditions =
   },
   "Dracomancy": {
     "breedTimes": "21h / 16h48m",
-    "odds": "Base: undefined / Coop Clone: undefined"
+    "odds": "Base: 4.5% / Coop Clone: 1%"
   },
   "Exterrean": {
     "breedTimes": "26h / 20h48m",
@@ -3400,7 +3400,8 @@ let dataAdditions =
     "odds": "Base: 2% / Coop Clone: 1.5%"
   },
   "Iden": {
-    "breedTimes": "24h / 19h12m"
+    "breedTimes": "24h / 19h12m",
+   "odds": "Base: 2% / Coop Clone: 1.5%"
   },
   "Kage": {
     "breedTimes": "23h / 18h24m",
@@ -3443,7 +3444,8 @@ let dataAdditions =
     "odds": "Base: 4% / Coop Clone: 1.5%"
   },
   "Scout": {
-    "breedTimes": "24hm / 19h12m"
+    "breedTimes": "24hm / 19h12m",
+   "odds": "Base: 2% / Coop Clone: 1%"
   },
   "Shackle": {
     "breedTimes": "22hm / 17h36m",
@@ -3466,7 +3468,8 @@ let dataAdditions =
     "odds": "Base: 3% / Coop Clone: 1%"
   },
   "W*ndy": {
-    "breedTimes": "22hm / 17h36m"
+    "breedTimes": "22hm / 17h36m",
+   "odds": "Base:2% / Coop Clone: 1.5%"
   },
   "Zombie": {
     "breedTimes": "20hm / 16hm",
@@ -3529,7 +3532,8 @@ let dataAdditions =
     "odds": "Base: 3.4% / Coop Clone: 10%"
   },
   "Eldritch": {
-    "breedTimes": "24hm / 19h12m"
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 4% / Coop Clone: 1.5%"
   },
   "Eww": {
     "breedTimes": "16hm / 12h48m",
@@ -3564,21 +3568,24 @@ let dataAdditions =
     "odds": "Base: 2% / Coop Clone: 10%"
   },
   "Kwall": {
-    "breedTimes": "19hm / 15h12m"
+    "breedTimes": "19hm / 15h12m",
+   "odds": "Base: 3% / Coop Clone: 1.5%"
   },
   "Love": {
     "breedTimes": "5hm / 4hm",
     "odds": "Base: 4% / Coop Clone: 3%"
   },
   "Lycan": {
-    "breedTimes": "24hm / 19h12m"
+    "breedTimes": "24hm / 19h12m",
+    "odds": "Base: 4% / Coop Clone: 1.5%"
   },
   "Machina": {
     "breedTimes": "17hm / 13h36m",
     "odds": "Base: 4.8% / Coop Clone: 10%"
   },
   "Magma": {
-    "breedTimes": "20hm / 16hm"
+    "breedTimes": "20hm / 16hm",
+   "odds": "Base: 4.25% / Coop Clone: 10%"
   },
   "Malefice": {
     "breedTimes": "19hm / 15h12m",
@@ -3612,6 +3619,10 @@ let dataAdditions =
     "breedTimes": "15hm / 12hm",
     "odds": "Base: 4% / Coop Clone: 1.5%"
   },
+ "Torment": {
+    "breedTimes": "22h / 17h36m",
+    "odds": "Base: 5% / Coop Clone: 10%"
+  },
   "Pit": {
     "breedTimes": "20hm / 16hm",
     "odds": "Base: 3.3% / Coop Clone: 10%"
@@ -3621,7 +3632,8 @@ let dataAdditions =
     "odds": "Base: 5% / Coop Clone: 2%"
   },
   "Rotblossom": {
-    "breedTimes": "15hm / 12hm"
+    "breedTimes": "15hm / 12hm",
+    "odds": "Base: 3% / Coop Clone: 10%"
   },
   "Sinking": {
     "breedTimes": "19hm / 15h12m",
@@ -3723,6 +3735,7 @@ function addToData() {
  let points = Object.getOwnPropertyNames(dataAdditions)
   for (i=0;i<points.length;i++) {
    if (dataAdditions[points[i]].breedTimes) {
+    dataAdditions[points[i]].breedTimes = dataAdditions[points[i]].breedTimes.replaceAll('hm', 'h'
     eventData[points[i]].breedTimes = dataAdditions[points[i]].breedTimes
    }
    if (dataAdditions[points[i]].odds) {
