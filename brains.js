@@ -3934,11 +3934,15 @@ let decoAdditions = {
 function addToDataDecos() {
  let points = Object.getOwnPropertyNames(decoAdditions)
   for (i=0;i<points.length;i++) {
-   if (decoAdditions[points[i]].size) {
-    eventData[points[i]].size = decoAdditions[points[i]].size
-   }
-   if (decoAdditions[points[i]].avail) {
-    eventData[points[i]].avail = decoAdditions[points[i]].avail
+   if (eventData[points[i]]) {
+     if (decoAdditions[points[i]].size) {
+      eventData[points[i]].size = decoAdditions[points[i]].size
+     }
+     if (decoAdditions[points[i]].avail) {
+      eventData[points[i]].avail = decoAdditions[points[i]].avail
+     }
+   } else {
+     console.log('cant find ' + points[i])
    }
   }
 }
