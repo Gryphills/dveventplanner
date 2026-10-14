@@ -3923,7 +3923,7 @@ let decoAdditions = {
   "Effigy of the Frost": {
     "size": "1 x 1"
   },
-  "Jack-O-Lantern": {
+  "Jack-o-Lantern": {
     "size": "2 x 2"
   },
   "Witch's Cauldron": {
