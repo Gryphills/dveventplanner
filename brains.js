@@ -3998,6 +3998,12 @@ function buildTemplate(itemName, itemObj) {
   if (itemObj.breedTimes){
     breedTimes = itemObj.breedTimes
   }
+ if (itemObj.size){
+    odds = itemObj.size
+  }
+  if (itemObj.avail){
+    breedTimes = itemObj.avail
+  }
   if (type == 'dragon') {
     itemName = itemName + " Dragon";
   }
