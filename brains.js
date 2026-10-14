@@ -3792,7 +3792,7 @@ let decoAdditions = {
   "Witch Hut": {
     "size": "2 x 2"
   },
-  "Spooky Fence": {
+  "Spooky Fence (center/left/right)": {
     "size": "1 x 1"
   },
   "Eerie Fog": {
