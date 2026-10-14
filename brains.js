@@ -4396,6 +4396,7 @@ function flipViews(element) {
 document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
   addToData()
+  addToDataDecos()
   cycleItems()
   loadSetup()
   getDragonNames()
