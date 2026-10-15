@@ -3956,7 +3956,6 @@ let fixlinksArray = [`https://i.postimg.cc/cCFMSCcf/Apocalypse-Theme.webp`,
 `https://i.postimg.cc/90QFvQ0Q/Eldritch-Dragon-Adult-Macabre.webp`,
 `https://i.postimg.cc/vTZHpZTH/Eldritch-Dragon-Adult-Scourge.webp`]
 
-fixLinks()
 
 function fixLinks() {
  let test = `https://i.postimg.cc/j2MQb2hP/Autumn-Theme.webp`
@@ -4450,9 +4449,14 @@ function flipViews(element) {
   backEl.src = toBackSrc;
 }
 
+function removeCover() {
+  document.getElementsByClassName('oopsie').style.display = 'none'
+}
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log('loaded dom!')
+  removeCover()
+  fixLinks()
   addToData()
   addToDataDecos()
   cycleItems()
