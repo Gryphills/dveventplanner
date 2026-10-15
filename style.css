@@ -281,3 +281,13 @@ body {
   border-color: #cac5f0;
   text-align: center;
 }
+
+.oopsie {
+  width:100vw;
+  height: 100vh;
+  position:fixed;
+  background-color: rgba(249, 240, 225, 0.64);
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+}
