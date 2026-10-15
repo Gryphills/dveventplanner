@@ -3973,7 +3973,11 @@ let fixlinksArray = [`https://i.postimg.cc/7YDgG76k/Summoning-Chest-Of-Day.webp`
 `https://i.postimg.cc/V6fJs9gp/Fated-Fount.webp`,
 `https://i.postimg.cc/vBY487hP/Pool-Of-Screams-Animation.webp`,
 `https://i.postimg.cc/vBY487hS/Sunken-Dragon.webp`,
-`https://i.postimg.cc/mDLPZ3j5/Wailing-Well.webp`]
+`https://i.postimg.cc/mDLPZ3j5/Wailing-Well.webp`,
+`https://i.postimg.cc/ZqMqZk9v/Giant-Apocalypse-Habitat.webp`,
+`https://i.postimg.cc/BvVvsW88/Grim-Inn.webp`,
+`https://i.postimg.cc/PqRqhGLp/Rusty-Path.webp`,
+`https://i.postimg.cc/FKBKmtfY/Whitbee-s-Castle.webp`]
 
 
 function fixLinks() {
