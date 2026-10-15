@@ -290,4 +290,6 @@ body {
   color: black;
   font-size: larger;
   font-weight: bold;
+  text-align:center;
+  vertical-align:center;
 }
