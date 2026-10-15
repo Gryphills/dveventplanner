@@ -3930,55 +3930,10 @@ let decoAdditions = {
   }
 }
 
-let fixlinksArray = `https://i.postimg.cc/q7bFjD8t/Apocalypse-Habitat.webp
-https://i.postimg.cc/XJrzhK8B/Apocalypse-Theme.webp
-https://i.postimg.cc/mr2q3W1v/Artificial-Bone.webp
-https://i.postimg.cc/25ct29nt/Astral-Glimpse.webp
-https://i.postimg.cc/s26LwH50/Astral-Glimpse-Night.webp
-https://i.postimg.cc/W3dHKmnF/Autumn-Theme.webp
-https://i.postimg.cc/fb2PBqxZ/Candelabra.webp
-https://i.postimg.cc/BvQy5fPH/Circleof-Whispers.webp
-https://i.postimg.cc/6Q5SVx4P/Cursed-Clock.webp
-https://i.postimg.cc/765Wc1VP/Dark-Island-Theme-With-Portal.webp
-https://i.postimg.cc/N0JnpCRV/Eerie-Cemetery.webp
-https://i.postimg.cc/FRYBqbZz/Eerie-Island-Theme-With-Portal.webp
-https://i.postimg.cc/765Wc1V2/Effigy-Of-The-Ground.webp
-https://i.postimg.cc/PxCRcb4Z/Effigy-Of-The-Leaf.webp
-https://i.postimg.cc/Jns2g3q5/Eldritch-Dragon-Adult-Barbarous.webp
-https://i.postimg.cc/9MDnSPpd/Eldritch-Dragon-Adult-Charlatan.webp
-https://i.postimg.cc/Kz1HV7N5/Eldritch-Dragon-Adult-Macabre.webp
-https://i.postimg.cc/qRN5YcLc/Eldritch-Dragon-Adult-Scourge.webp
-https://i.postimg.cc/rpFbG2Rn/Fated-Fount.webp
-https://i.postimg.cc/mrXn8pQz/Giant-Apocalypse-Habitat.webp
-https://i.postimg.cc/q7bFjD8p/Giant-Melody-Habitat.webp
-https://i.postimg.cc/YSqVNBLV/Gloominaire.webp
-https://i.postimg.cc/Gp7fqgkH/Grim-Inn.webp
-https://i.postimg.cc/DzjNBpqy/Hidden-Habitat.webp
-https://i.postimg.cc/Pq372Vmk/Infernal-Pit-Animation.webp
-https://i.postimg.cc/XJrzhK89/Jack-O-Lantern.webp
-https://i.postimg.cc/DzjNBpqS/Large-Rift-Habitat.webp
-https://i.postimg.cc/R0sYXpcH/Lightning-Island-Theme-With-Portal.webp
-https://i.postimg.cc/fb2PBqxw/Melody-Habitat.webp
-https://i.postimg.cc/rpFbG2tL/Old-One-s-Conduit.webp
-https://i.postimg.cc/Jh4g3CBL/Old-One-s-Reach.webp
-https://i.postimg.cc/Jh4g3CHS/Overgrown-Path.webp
-https://i.postimg.cc/FKsqbXkT/Pool-Of-Screams-Animation.webp
-https://i.postimg.cc/W4bKmcJR/Pumpermelon-Orange.webp
-https://i.postimg.cc/0N23G1KC/Rusty-Path.webp
-https://i.postimg.cc/5tNG5WQT/Spooky-Fence-Corner.webp
-https://i.postimg.cc/j5DF96XS/Spooky-Island-Theme-With-Portal.webp
-https://i.postimg.cc/Zq7QVsrk/Spooky-Tree.webp
-https://i.postimg.cc/638mSV0G/Star-Generator.webp
-https://i.postimg.cc/zfXMwYH7/Summoning-Chest-Of-Day.webp
-https://i.postimg.cc/q7MYcH6L/Summoning-Chest-Of-Night.webp
-https://i.postimg.cc/BvQy5fP7/Sunken-Dragon.webp
-https://i.postimg.cc/Ls67kFZF/Talon-Black.webp
-https://i.postimg.cc/6Q5SVx4f/The-All-Seeing.webp
-https://i.postimg.cc/VNGhDZXp/The-Dark-Manor.webp
-https://i.postimg.cc/1zCdJ7ph/The-Portal-Animation.webp
-https://i.postimg.cc/QMxPgZK6/Wailing-Well.webp
-https://i.postimg.cc/s26LwHpX/Whitbee-s-Castle-During-Event.webp
-https://i.postimg.cc/9f8kJgys/Wisp-Lantern.webp`.split('\n')
+let fixlinksArray = `https://i.postimg.cc/qqvM9vq7/Eldritch-Dragon-Adult-Barbarous.webp
+https://i.postimg.cc/kGgXkgGM/Eldritch-Dragon-Adult-Charlatan.webp
+https://i.postimg.cc/90QFvQ0Q/Eldritch-Dragon-Adult-Macabre.webp
+https://i.postimg.cc/vTZHpZTH/Eldritch-Dragon-Adult-Scourge.webp`.split('\n')
 
 function fixLinks() {
  let names = Object.getOwnPropertyNames(eventData);
