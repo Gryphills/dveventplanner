@@ -3956,6 +3956,8 @@ https://i.postimg.cc/kGgXkgGM/Eldritch-Dragon-Adult-Charlatan.webp
 https://i.postimg.cc/90QFvQ0Q/Eldritch-Dragon-Adult-Macabre.webp
 https://i.postimg.cc/vTZHpZTH/Eldritch-Dragon-Adult-Scourge.webp`.split('\n')
 
+fixLinks()
+
 function fixLinks() {
  let names = Object.getOwnPropertyNames(eventData);
  for (i=0;i<names.length;i++) {
