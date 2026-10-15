@@ -3930,7 +3930,9 @@ let decoAdditions = {
   }
 }
 
-let fixlinksArray = [`https://i.postimg.cc/cCFMSCcf/Apocalypse-Theme.webp`,
+let fixlinksArray = [`https://i.postimg.cc/7YDgG76k/Summoning-Chest-Of-Day.webp`,
+`https://i.postimg.cc/yYBFg9dC/Summoning-Chest-Of-Night.webp`,
+`https://i.postimg.cc/cCFMSCcf/Apocalypse-Theme.webp`,
 `https://i.postimg.cc/j2MQb2hP/Autumn-Theme.webp`,
 `https://i.postimg.cc/tJBtjJzC/Candelabra.webp`,
 `https://i.postimg.cc/cCFMSCcg/Dark-Island-Theme-With-Portal.webp`,
