@@ -3956,7 +3956,24 @@ let fixlinksArray = [`https://i.postimg.cc/7YDgG76k/Summoning-Chest-Of-Day.webp`
 `https://i.postimg.cc/qqvM9vq7/Eldritch-Dragon-Adult-Barbarous.webp`,
 `https://i.postimg.cc/kGgXkgGM/Eldritch-Dragon-Adult-Charlatan.webp`,
 `https://i.postimg.cc/90QFvQ0Q/Eldritch-Dragon-Adult-Macabre.webp`,
-`https://i.postimg.cc/vTZHpZTH/Eldritch-Dragon-Adult-Scourge.webp`]
+`https://i.postimg.cc/vTZHpZTH/Eldritch-Dragon-Adult-Scourge.webp`,
+`https://i.postimg.cc/pr1h69D7/Circleof-Whispers.webp`,
+`https://i.postimg.cc/sx0QNBpt/Old-One-s-Conduit.webp`,
+`https://i.postimg.cc/VvHrVSjx/Old-One-s-Reach.webp`,
+`https://i.postimg.cc/6q12m7dF/The-All-Seeing.webp`,
+`https://i.postimg.cc/XJLy91Xq/Artificial-Bone.webp`,
+`https://i.postimg.cc/Y9RmQDjq/Overgrown-Path.webp`,
+`https://i.postimg.cc/fLC0YqkR/Pumpermelon-Orange.webp`,
+`https://i.postimg.cc/wv2sD433/Talon-Black.webp`,
+`https://i.postimg.cc/MG8cNJjC/Astral-Glimpse.webp`,
+`https://i.postimg.cc/g0PwQb61/Astral-Glimpse-Night.webp`,
+`https://i.postimg.cc/Gp1BVnsV/Gloominaire.webp`,
+`https://i.postimg.cc/FKQf8XJ2/Spooky-Fence-Corner.webp`,
+`https://i.postimg.cc/SsSnQLdP/Cursed-Clock.webp`,
+`https://i.postimg.cc/V6fJs9gp/Fated-Fount.webp`,
+`https://i.postimg.cc/vBY487hP/Pool-Of-Screams-Animation.webp`,
+`https://i.postimg.cc/vBY487hS/Sunken-Dragon.webp`,
+`https://i.postimg.cc/mDLPZ3j5/Wailing-Well.webp`]
 
 
 function fixLinks() {
