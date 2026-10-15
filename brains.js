@@ -4077,6 +4077,9 @@ function buildTemplate(itemName, itemObj) {
      if (avail != "") {
       newHtml += `<p><strong>${avail.toUpperCase()}</strong></p>`
     }
+ if (special != "" && type=='dragon') {
+      newHtml += `<p>${special}</p>`
+    }
     
   //console.log(imgposted)
     if (imgposted.length == 1) {
@@ -4090,7 +4093,13 @@ function buildTemplate(itemName, itemObj) {
         <img loading="lazy" class="itemimage duofront" onclick="flipViews(this)" src="${imgposted[0]}">`
     }
 
-    newHtml += `</div></div>
+    newHtml += `</div>`
+
+    if (special != "" && type=='deco') {
+      newHtml += `<p>${special}</p>`
+    }
+ 
+     newHtml += `</div>
     <div>
     <p class="itemprice" style="font-size:14px;font-weight:bold;">${price}</p>
     <label style='height: 20px; justify-content:center; font-size:14px; font-style:italic; align-items: center;  display:flex; flex-direction: row-reverse;'> <input class='purchasenum' type="number" style='width:50%;'>Purchase: &nbsp;</label>
