@@ -3964,17 +3964,20 @@ function fixLinks() {
  console.log(`>>${test}<< "test!!`)
  let names = Object.getOwnPropertyNames(eventData);
  for (i=0;i<names.length;i++) {
-   let oldlink = eventData[names[i]].imgposted
-  console.log(oldlink, "; oldlink")
+   let oldlinkArr = eventData[names[i]].imgposted
+   for (k=0;k<oldlinkArr.length;k++) {
+   let oldlink = oldlinkArr[k];
+   //console.log(oldlink, "; oldlink")
    for (j=0;j<fixlinksArray.length;j++) {
      let linkname = fixlinksArray[j].split('/')
      linkname = linkname[linkname.length-1]
      if (oldlink.includes(linkname)) {
-       eventData[names[i]].imgposted = fixlinksArray[j];
-      console.log('got it!', linkname)
+       eventData[names[i]].imgposted[k] = fixlinksArray[j];
+       //console.log('got it!', linkname)
        break;
      }
    }
+  }
  }
 }
 
