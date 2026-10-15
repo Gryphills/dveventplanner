@@ -4453,7 +4453,7 @@ function flipViews(element) {
 }
 
 function removeCover() {
-  document.getElementsByClassName('oopsie').style.display = 'none'
+  document.getElementsByClassName('oopsie')[0].style.display = 'none'
 }
 
 document.addEventListener("DOMContentLoaded", function() {
