@@ -3930,7 +3930,28 @@ let decoAdditions = {
   }
 }
 
-let fixlinksArray = `https://i.postimg.cc/qqvM9vq7/Eldritch-Dragon-Adult-Barbarous.webp
+let fixlinksArray = `https://i.postimg.cc/cCFMSCcf/Apocalypse-Theme.webp
+https://i.postimg.cc/j2MQb2hP/Autumn-Theme.webp
+https://i.postimg.cc/tJBtjJzC/Candelabra.webp
+https://i.postimg.cc/cCFMSCcg/Dark-Island-Theme-With-Portal.webp
+https://i.postimg.cc/gjzqQ83r/Eerie-Cemetery.webp
+https://i.postimg.cc/SRg7hRG9/Eerie-Island-Theme-With-Portal.webp
+https://i.postimg.cc/mkmNskSY/Effigy-Of-The-Ground.webp
+https://i.postimg.cc/3NtCTNZC/Effigy-Of-The-Leaf.webp
+https://i.postimg.cc/rsfCks9w/Giant-Melody-Habitat.webp
+https://i.postimg.cc/cCFMSCcC/Hidden-Habitat.webp
+https://i.postimg.cc/T1tq61c2/Infernal-Pit-Animation.webp
+https://i.postimg.cc/sxT9rxJP/Jack-O-Lantern.webp
+https://i.postimg.cc/4yWbgy1n/Large-Rift-Habitat.webp
+https://i.postimg.cc/3NtCTNZk/Lightning-Island-Theme-With-Portal.webp
+https://i.postimg.cc/1XvcQXKt/Melody-Habitat.webp
+https://i.postimg.cc/qq1XTqG3/Spooky-Island-Theme-With-Portal.webp
+https://i.postimg.cc/0jkdFD7M/Spooky-Tree.webp
+https://i.postimg.cc/rsfCks9S/Star-Generator.webp
+https://i.postimg.cc/zvzS6KTy/The-Dark-Manor.webp
+https://i.postimg.cc/SRS73CcY/The-Portal-Animation.webp
+https://i.postimg.cc/Fzrg830f/Wisp-Lantern.webp
+https://i.postimg.cc/qqvM9vq7/Eldritch-Dragon-Adult-Barbarous.webp
 https://i.postimg.cc/kGgXkgGM/Eldritch-Dragon-Adult-Charlatan.webp
 https://i.postimg.cc/90QFvQ0Q/Eldritch-Dragon-Adult-Macabre.webp
 https://i.postimg.cc/vTZHpZTH/Eldritch-Dragon-Adult-Scourge.webp`.split('\n')
