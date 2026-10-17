@@ -3963,7 +3963,13 @@ let fixlinksArray = [`https://i.postimg.cc/mrkQBV1p/Apocalypse-Habitat.webp`,
 `https://i.postimg.cc/pLqDw3rJ/Summoning-Chest-Of-Day.webp`,
 `https://i.postimg.cc/y8vFM2xF/Summoning-Chest-Of-Night.webp`,
 `https://i.postimg.cc/L8NzcG5D/Sunken-Dragon.webp`,
-`https://i.postimg.cc/BnMxrRbN/Wailing-Well.webp`]
+`https://i.postimg.cc/BnMxrRbN/Wailing-Well.webp`,
+`https://i.postimg.cc/1tvMdFDD/Astral-Glimpse.webp`,
+`https://i.postimg.cc/3Rt9qG2g/Astral-Glimpse-Night.webp`,
+`https://i.postimg.cc/85ZwYvLW/Pumpermelon-Orange.webp`,
+`https://i.postimg.cc/DZx5NG1L/Talon-Black.webp`,
+`https://i.postimg.cc/tTBDc6FV/Whitbee-s-Castle.webp`,
+`https://i.postimg.cc/9ML1k9yd/Wisp-Lantern.webp`]
 
 
 function fixLinks() {
