@@ -3979,10 +3979,6 @@ https://i.postimg.cc/sx7GJsDk/Astral-Glimpse-Night.webp`,
 
 
 function fixLinks() {
- let test = `https://i.postimg.cc/j2MQb2hP/Autumn-Theme.webp`
- test = test.split('/');
- test = test[test.length-1]
- console.log(`>>${test}<< "test!!`)
  let names = Object.getOwnPropertyNames(eventData);
  for (i=0;i<names.length;i++) {
    let oldlinkArr = eventData[names[i]].imgposted
@@ -4336,6 +4332,14 @@ function loadSetup() {
     eventObj = {"halloween26": {}}
   }
   let halloweenObj = eventObj.halloween26;
+  if (halloweenObj.vis) {
+    if (halloweenObj.vis.decos == 1) {
+      document.getElementById('decobutton').click()
+    }
+    if (halloweenObj.vis.dragons == 0) {
+      document.getElementById('dragonvisbutton').click()
+    }
+  }
   let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
   for (k=0;k<itemsWithStatus.length;k++) {
     let itemName = itemsWithStatus[k]
@@ -4381,6 +4385,7 @@ function updateCalculationTotal() {
 }
 
 function toggleVis(thisbutton, type) {
+  let eventObj = JSON.parse(localStorage.getItem('dvEvents'))
   let cardsOfType = document.querySelectorAll(`.${type}`)
   if (thisbutton.dataset.toggled == 0) {
     for (i=0;i<cardsOfType.length;i++) {
@@ -4395,6 +4400,15 @@ function toggleVis(thisbutton, type) {
     thisbutton.dataset.toggled = 0
     thisbutton.classList.remove('pressed')
   }
+  if (!eventObj.halloween26.vis) {
+    eventObj.halloween26.vis = {"dragons": 1, "decos": 0}
+  }
+  if (thisbutton.id == 'dragonvisbutton') {
+    eventObj.halloween26.vis.dragons = thisbutton.dataset.toggled;
+  } else {
+    eventObj.halloween26.vis.decos = thisbutton.dataset.toggled;
+  }
+  localStorage.setItem('dvEvents', JSON.stringify(eventObj))
 }
 
 let dragonsNames = []
@@ -4438,7 +4452,7 @@ function checkForBreeds(elArray, exempt = "") {
 
 
 function checkAllCombos() {
-  let names = Object.getOwnPropertyNames(eventData )
+  let names = Object.getOwnPropertyNames(eventData)
   let dragons = []
   for (i=0;i<names.length; i++) {
     if (eventData[names[i]].type == 'dragon') {
