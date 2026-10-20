@@ -3973,8 +3973,8 @@ https://i.postimg.cc/sx7GJsDk/Astral-Glimpse-Night.webp`,
 `https://i.postimg.cc/HnX8tdkp/Eerie-Cemetery.webp`,
 `https://i.postimg.cc/SRCYGkxq/The-Dark-Manor.webp`,
 `https://i.postimg.cc/C5kn4Sxw/The-Portal-Animation.webp`,
- `https://i.postimg.cc/JhFyVGsf/Rusty-Path.webp`,
-`https://i.postimg.cc/hGYJWfX6/The-All-Seeing.webp`
+ `https://i.postimg.cc/Y2TDV5zW/Rusty-Path.webp`,
+`https://i.postimg.cc/nVNS5yGj/The-All-Seeing.webp`
 ]
 
 
