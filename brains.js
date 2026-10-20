@@ -3142,7 +3142,7 @@ let eventData = {
     "type": "deco",
     "section": "OCCULT",
     "imgposted": [
-      "https://i.postimg.cc/2SF8XXtH/Whitbee-s-Castle-During-Event.webp"
+      `https://i.postimg.cc/tTBDc6FV/Whitbee-s-Castle.webp`
     ]
   },
   "The Guardian's Gate": {
@@ -3222,7 +3222,7 @@ let eventData = {
     "type": "deco",
     "section": "OCCULT",
     "imgposted": [
-      "https://i.postimg.cc/v8qdBVgK/Large-Apocalypse-Habitat.webp"
+      "https://i.postimg.cc/mrkQBV1p/Apocalypse-Habitat.webp"
     ]
   },
   "Large Apocalypse Habitat": {
@@ -3238,7 +3238,7 @@ let eventData = {
     "type": "deco",
     "section": "OCCULT",
     "imgposted": [
-      "https://i.postimg.cc/W3Jy5tpp/Giant-Apocalypse-Habitat.webp"]
+      `https://i.postimg.cc/yNxFsn3b/Giant-Apocalypse-Habitat.webp`]
   },
   "Dark Island Theme": {
     "price": "1000",
@@ -3930,7 +3930,7 @@ let decoAdditions = {
   }
 }
 
-let fixlinksArray = [`https://i.postimg.cc/mrkQBV1p/Apocalypse-Habitat.webp`,
+let fixlinksArray = [
 `https://i.postimg.cc/Xvqw4xyM/Apocalypse-Theme.webp`,
 `https://i.postimg.cc/q7q84Q6P/Autumn-Theme.webp`,
 `https://i.postimg.cc/xd8KngN5/Candelabra.webp`,
@@ -3944,7 +3944,6 @@ let fixlinksArray = [`https://i.postimg.cc/mrkQBV1p/Apocalypse-Habitat.webp`,
 `https://i.postimg.cc/xdZLCHLW/Eldritch-Dragon-Adult-Macabre.webp`,
 `https://i.postimg.cc/N0nRMTRS/Eldritch-Dragon-Adult-Scourge.webp`,
 `https://i.postimg.cc/htp9kNv2/Fated-Fount.webp`,
-`https://i.postimg.cc/yNxFsn3b/Giant-Apocalypse-Habitat.webp`,
 `https://i.postimg.cc/1zXpsMVM/Giant-Melody-Habitat.webp`,
 `https://i.postimg.cc/SKRWkVYC/Gloominaire.webp`,
 `https://i.postimg.cc/q7q84Q6m/Grim-Inn.webp`,
@@ -3968,8 +3967,15 @@ let fixlinksArray = [`https://i.postimg.cc/mrkQBV1p/Apocalypse-Habitat.webp`,
 `https://i.postimg.cc/3Rt9qG2g/Astral-Glimpse-Night.webp`,
 `https://i.postimg.cc/85ZwYvLW/Pumpermelon-Orange.webp`,
 `https://i.postimg.cc/DZx5NG1L/Talon-Black.webp`,
-`https://i.postimg.cc/tTBDc6FV/Whitbee-s-Castle.webp`,
-`https://i.postimg.cc/9ML1k9yd/Wisp-Lantern.webp`]
+`https://i.postimg.cc/9ML1k9yd/Wisp-Lantern.webp`,
+`https://i.postimg.cc/zvKHk8Gr/Astral-Glimpse.webp
+https://i.postimg.cc/sx7GJsDk/Astral-Glimpse-Night.webp`,
+`https://i.postimg.cc/HnX8tdkp/Eerie-Cemetery.webp`,
+`https://i.postimg.cc/SRCYGkxq/The-Dark-Manor.webp`,
+`https://i.postimg.cc/C5kn4Sxw/The-Portal-Animation.webp`,
+ `https://i.postimg.cc/JhFyVGsf/Rusty-Path.webp`,
+`https://i.postimg.cc/hGYJWfX6/The-All-Seeing.webp`
+]
 
 
 function fixLinks() {
