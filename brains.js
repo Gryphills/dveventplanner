@@ -4333,12 +4333,15 @@ function loadSetup() {
   }
   let halloweenObj = eventObj.halloween26;
   if (halloweenObj.vis) {
-    if (halloweenObj.vis.decos == 1) {
+    if (halloweenObj.vis.decos == 0) {
       document.getElementById('decobutton').click()
     }
     if (halloweenObj.vis.dragons == 0) {
       document.getElementById('dragonvisbutton').click()
     }
+  } else {
+    let decobutton = document.getElementById('decobutton')
+    decobutton.click();
   }
   let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
   for (k=0;k<itemsWithStatus.length;k++) {
@@ -4507,12 +4510,8 @@ document.addEventListener("DOMContentLoaded", function() {
   addToData()
   addToDataDecos()
   cycleItems()
-  let decobutton = document.getElementById('decobutton')
-  decobutton.dispatchEvent(new Event('click'));
   loadSetup()
   getDragonNames()
   checkAllCombos()
-  
-  
 });
 
