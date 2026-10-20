@@ -4334,14 +4334,14 @@ function loadSetup() {
   let halloweenObj = eventObj.halloween26;
   if (halloweenObj.vis) {
     if (halloweenObj.vis.decos == 0) {
-      document.getElementById('decobutton').click()
+      document.getElementById('decobutton').dispatchEvent(new Event('click'));
     }
     if (halloweenObj.vis.dragons == 0) {
-      document.getElementById('dragonvisbutton').click()
+      document.getElementById('dragonvisbutton').dispatchEvent(new Event('click'));
     }
   } else {
-    let decobutton = document.getElementById('decobutton')
-    decobutton.click();
+    let decobutton = document.getElementById('decobutton');
+    decobutton.dispatchEvent(new Event('click'));
   }
   let itemsWithStatus = Object.getOwnPropertyNames(halloweenObj);
   for (k=0;k<itemsWithStatus.length;k++) {
