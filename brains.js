@@ -4507,10 +4507,12 @@ document.addEventListener("DOMContentLoaded", function() {
   addToData()
   addToDataDecos()
   cycleItems()
+  let decobutton = document.getElementById('decobutton')
+  decobutton.dispatchEvent(new Event('click'));
   loadSetup()
   getDragonNames()
   checkAllCombos()
-  let decobutton = document.getElementById('decobutton')
-  decobutton.dispatchEvent(new Event('click'));
+  
+  
 });
 
