@@ -4403,10 +4403,10 @@ function toggleVis(thisbutton, type) {
   if (!eventObj.halloween26.vis) {
     eventObj.halloween26.vis = {"dragons": 1, "decos": 0}
   }
-  if (thisbutton.id == 'dragonvisbutton') {
-    eventObj.halloween26.vis.dragons = thisbutton.dataset.toggled;
-  } else {
+  if (thisbutton.id == 'decobutton') {
     eventObj.halloween26.vis.decos = thisbutton.dataset.toggled;
+  } else {
+    eventObj.halloween26.vis.dragons = thisbutton.dataset.toggled;
   }
   localStorage.setItem('dvEvents', JSON.stringify(eventObj))
 }
