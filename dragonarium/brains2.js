@@ -57,13 +57,16 @@ function favouriteCard(button) {
     el.parentElement.appendChild(el);
   }
   dragonarium[el.name].fav = button.dataset.toggle;
+  console.log(button.dataset.toggle, el.name)
   saveData()
 }
 
 function wantCard(button) {
+  radioOtherButtons(button)
   let el = button.closest('.dragonCard');
   if (Number(el.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
+    dragonarium[el.name].status = 'want';
     if (el.classList.contains('favourite')) {
       wantDiv.children[0].before(el)
     } else {
@@ -71,19 +74,51 @@ function wantCard(button) {
     }
   } else {
     button.dataset.toggle = 0;
+    dragonarium[el.name].status = 'init';
     if (el.classList.contains('favourite')) {
       initDiv.children[0].before(el)
     } else {
       initDiv.appendChild(el)
     }
   }
-  dragonarium[el.name].fav = button.dataset.toggle;
+  
+  console.log(button.dataset.toggle, el.name)
   saveData()
+}
+
+function radioOtherButtons(clicked) {
+  let safety = 25
+  let prev = clicked.previousElementSibling;
+  while (prev) {
+    if (!prev.classList.contains('favc') {
+      prev.dataset.toggle = 0;
+      prev.classList.remove('toggled')
+    }
+    prev = prev.previousElementSibling
+    safety -= 1;
+    if (safety < 0) {
+      console.log("AAAA")
+      break;
+    }
+  }
+  let next = clicked.nextElementSibling;
+  while (next) {
+    next.dataset.toggle = 0;
+    next.classList.remove('toggled')
+    next = next.nextElementSibling;
+    safety -= 1;
+    if (safety < 0) {
+      console.log("AAAA")
+      break;
+    }
+  }
 }
 
 function haveCard(button) {
   let el = button.closest('.dragonCard');
+  radioOtherButtons(button)
   if (Number(button.dataset.toggle) == 0) {
+    dragonarium[el.name].status = 'have';
     if (el.classList.contains('favourite')) {
       haveDiv.children[0].before(el)
     } else {
@@ -91,13 +126,13 @@ function haveCard(button) {
     }
   } else {
     button.dataset.toggle = 0;
+    dragonarium[el.name].status = 'init';
     if (el.classList.contains('favourite')) {
       initDiv.children[0].before(el)
     } else {
       initDiv.appendChild(el)
     }
   }
-  dragonarium[el.name].fav = button.dataset.toggle;
   saveData()
 }
 
@@ -105,6 +140,7 @@ function shadowCard(button) {
   let el = button.closest('.dragonCard');
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
+    dragonarium[el.name].status = 'shadow';
     if (el.classList.contains('favourite')) {
       shadowDiv.children[0].before(el)
     } else {
@@ -112,26 +148,64 @@ function shadowCard(button) {
     }
   } else {
     button.dataset.toggle = 0;
+    dragonarium[el.name].status = 'init';
     if (el.classList.contains('favourite')) {
       initDiv.children[0].before(el)
     } else {
       initDiv.appendChild(el)
     }
   }
-  dragonarium[el.name].fav = button.dataset.toggle;
   saveData()
+}
+
+function hideOwned(el) {
+  console.log('hiding/showing!');
+  let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
+  if (Number(el.dataset.toggle) == 0) {
+    el.dataset.toggle = 1;
+    el.classList.add('toggled')
+    for (const card of cardsDiv) {
+      card.querySelector('.perm').classList.add('hidden');
+    }
+  } else {
+    el.dataset.toggle = 0
+    el.classList.remove('toggled')
+    for (const card of cardsDiv) {
+      card.querySelector('.perm').classList.remove('hidden');
+    }
+  }
+}
+
+function hidePermanent(el) {
+  console.log('hiding/showing!');
+  let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
+  if (Number(el.dataset.toggle) == 0) {
+    el.dataset.toggle = 1;
+    el.classList.add('toggled')
+    for (const card of cardsDiv) {
+      card.querySelector('.perm').classList.add('hidden');
+    }
+  } else {
+    el.dataset.toggle = 0
+    el.classList.remove('toggled')
+    for (const card of cardsDiv) {
+      card.querySelector('.perm').classList.remove('hidden');
+    }
+  }
 }
 
 function hideBreeds(el) {
   console.log('hiding/showing!');
   let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
-  if (Number(el.dataset.toggle) == 1) {
-    el.dataset.toggle = 0;
+  if (Number(el.dataset.toggle) == 0) {
+    el.dataset.toggle = 1;
+    el.classList.add('toggled')
     for (const card of cardsDiv) {
       card.querySelector('.breedingInfo').classList.add('hidden');
     }
   } else {
-    el.dataset.toggle = 1
+    el.dataset.toggle = 0
+    el.classList.remove('toggled')
     for (const card of cardsDiv) {
       card.querySelector('.breedingInfo').classList.remove('hidden');
     }
@@ -146,6 +220,8 @@ function buildDragonCard(name, data) {
       cardhtml += ` limited unavail`
     } else if (data.limited == "A") {
       cardhtml += `limited avail`
+    } else {
+      cardhtml += `perm`
     }
   cardhtml += `" name="${name}">
     <div class="minibuttons">
@@ -249,7 +325,7 @@ function addCheckListeners() {
   let checks = Array.from(document.querySelectorAll('.hideBreedsButton'));
   for (const check of checks) {
     console.log(check);
-    check.addEventListener("click", function(e){hideBreeds(e)});
+    check.addEventListener("click", function(e){hideBreeds(e.currentTarget)});
   }
 }
 
