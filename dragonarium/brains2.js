@@ -24,6 +24,8 @@ function setTabs() {
   let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
   for (const tabButton of tabButtArr) {
     tabButton.addEventListener('click', function(e) {
+      dragonarium.openTab = e.currentTarget.dataset.key;
+      saveData();
       let tabButtArr = Array.from(document.querySelector('.tab-button').parentNode.children)
       let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
       for (i=0;i<tabButtArr.length;i++) {
@@ -39,6 +41,12 @@ function setTabs() {
         }
       }
     })
+  }
+  if (dragonarium.openTab) {
+    let button = tabButtArr.querySelector(`[data-key="${dragonarium.openTab}"]`)
+    if (button) {
+      button.click();
+    }
   }
 }
 
@@ -66,7 +74,7 @@ function favouriteCard(button) {
       }
     }
   }
-  dragonarium[el.id].fav = button.dataset.toggle;
+  //dragonarium[el.id].fav = button.dataset.toggle;
   saveData()
 }
 
@@ -91,7 +99,7 @@ function wantCard(button) {
     }
   }
   
-  console.log(button.dataset.toggle, el.name)
+  //console.log(button.dataset.toggle, el.name)
   saveData()
 }
 
@@ -191,6 +199,8 @@ function hideUnavail(el) {
       card.classList.remove('hidden');
     }
   }
+  dragonarium.hideUnavail = el.dataset.toggle
+  saveData()
 }
 
 function hidePerm(el) {
@@ -209,6 +219,8 @@ function hidePerm(el) {
       card.classList.remove('hidden');
     }
   }
+  dragonarium.hidePerm = el.dataset.toggle
+  saveData()
 }
 
 function hideBreeds(el) {
@@ -229,6 +241,8 @@ function hideBreeds(el) {
       card.querySelector('.breedinginfo').classList.remove('hidden');
     }
   }
+  dragonarium.hideBreeds = el.dataset.toggle
+  saveData()
 }
 
 let chartRef = [
@@ -403,6 +417,10 @@ function makeCards() {
   }
 }
 
+function clickInitButtons() {
+  
+}
+
 function addCheckListeners() {
   let checks = Array.from(document.querySelectorAll('.hideBreedsButton'));
   for (const check of checks) {
@@ -432,6 +450,7 @@ document.addEventListener("DOMContentLoaded", function() {
     shadowDiv = document.querySelector('#shadowCards');
     setTabs();
     makeCards();
+    clickInitButtons():
     document.querySelector('.oopsie').style.display = 'none';
 });
 
