@@ -196,7 +196,7 @@ function hidePerm(el) {
 }
 
 function hideBreeds(el) {
-  console.log('hiding/showing!');
+  console.log('hiding/showing!', cardsDiv[0]);
   let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
