@@ -129,11 +129,11 @@ body {
     min-height: 200px;
     height: fit-content;
   
-    .available {
+    .avail {
       background-color: #83b5d3;
       border: 3px solid #1d3052;
     }
-    .unavailable {
+    .unavail {
       opacity: .6;
       background-color: grey;
       border: 3px solid rgb(92, 92, 92);
@@ -225,6 +225,7 @@ body {
     text-size:x-large;
     line-height:30px;
 }
+
 
 .multi {
   /*position: absolute;
