@@ -36,6 +36,8 @@ body {
     background-color: #3e295f;
     color: white;
     border-radius: 8px;
+    width:30px;
+    height:30px;
 }
 
 .tab-buttons {
