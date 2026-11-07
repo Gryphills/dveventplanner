@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function() {
     shadowDiv = document.querySelector('#shadowCards');
     setTabs();
     makeCards();
-    clickInitButtons():
+    clickInitButtons();
     document.querySelector('.oopsie').style.display = 'none';
 });
 
