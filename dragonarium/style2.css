@@ -155,15 +155,33 @@ body {
         cursor: pointer;
         border: 2px solid #584e3f;
         line-height: 40px;
+        position:relative;
     }
     .toggled {
         background-color: #442a5f;
         color:#cac5f0;
     }
 }
+.tooltip {
+    display:block;
+    background-color: #3e295f;
+    border: 1px solid #cac5f0;
+    padding:2px;
+    font-size:small;
+    color:#cac5f0;
+    position: absolute;
+    right: -2px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -webkit-transition: opacity 1s ease-in-out;
+}
 .minibutton:hover {
   .tooltip {
-    display:block;
+    opacity: 1.0;
+    transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
   }
 }
 .limited.avail::before {
@@ -190,20 +208,10 @@ body {
     height:30px;
     text-size:x-large;
 }
-.tooltip {
-    display: none;
-    background-color: #3e295f;
-    border: 1px solid #cac5f0;
-    padding:2px;
-    font-size:small;
-    color:#cac5f0;
-    position: relative;
-    right: -1px;
 
-    .active {
-        display:block;
-    }
-}
+
+
+
 
 
 
