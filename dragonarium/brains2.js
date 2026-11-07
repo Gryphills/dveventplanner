@@ -20,10 +20,10 @@ function saveData() {
 }
 
 function setTabs() {
-  for (const tabButton of document.querySelectorAll('.tab-button')) {
+  let tabButtArr = Array.from(document.querySelector('.tab-button').parentNode.children)
+  let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
+  for (const tabButton of tabButtArr) {
     tabButton.addEventListener('click', function(e) {
-      let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
-      let tabButtArr = Array.from(document.querySelector('.tab').parentNode.children)
       for (i=0;i<tabButtArr.length;i++) {
         let tabButton = tabButtArr[i]
         tabButton.classList.remove('open')
