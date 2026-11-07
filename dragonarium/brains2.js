@@ -379,10 +379,7 @@ function makeCards() {
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
     }
-    if (Number(dragonarium[dragonName].fav) == 1) {
-      card.querySelector('.favc').click()
-    }
-    else if (dragonarium[dragonName].status == "init") {
+    if (dragonarium[dragonName].status == "init") {
         initDiv.appendChild(card);
     }
     else if (dragonarium[dragonName].status == "have" || dragonarium[dragonName].status == "acquired" ) {
@@ -399,6 +396,9 @@ function makeCards() {
     else {
       console.log('???? what was that?', dragonName, " has a status of ", dragonarium[dragonName].status);
       initDiv.appendChild(card);
+    }
+    if (Number(dragonarium[dragonName].fav) == 1) {
+      card.querySelector('.favc').click()
     }
   }
 }
