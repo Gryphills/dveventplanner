@@ -366,12 +366,14 @@ function makeCards() {
     card = card.children[0]
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
-      initDiv.appendChild(card);
+    }
+    if (Number(dragonarium[dragonName].fav) == 1) {
+      card.querySelector('.favc').click()
     }
     else if (dragonarium[dragonName].status == "init") {
         initDiv.appendChild(card);
     }
-    else if (dragonarium[dragonName].status == "acquired") {
+    else if (dragonarium[dragonName].status == "have") {
       card.querySelector('.havec').click();
     }
     else if (dragonarium[dragonName].status == "want") {
@@ -384,11 +386,6 @@ function makeCards() {
     }
     else {
       console.log('???? what');
-    }
-    if (Number(dragonarium[dragonName].fav) == 1) {
-      card.querySelector('.favc').click()
-      //card.parentElement.children[0].before(card);
-      //card.classList.add('favourite')
     }
   }
 }
