@@ -139,7 +139,7 @@ function hideBreeds(el) {
 function buildDragonCard(name, data) {
   console.log(name, data)
  let cardhtml = 
- `<div class="dragonCard" name=${name}>
+ `<div class="dragonCard" name="${name}">
     <div class="minibuttons">
         <div class="minibutton favc" data-toggle=0 onclick="favouriteCard(this)" style="background-color: #bcb8f5; margin-bottom:25px;">❤<div class="tooltip">Favourite</div></div>
         <div class="minibutton wantc" data-toggle=0 onclick="wantCard(this)" style="background-color: #bcb8f5;">✦<div class="tooltip">Want</div></div>
@@ -147,7 +147,7 @@ function buildDragonCard(name, data) {
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" style="background-color: #bcb8f5;">🗡<div class="tooltip">Shadow Realm</div></div>
     </div>`
     if (data.limited == "Y") {
-      cardhtml +=`<div class="limited">&#10711;</div>`
+      cardhtml += `<div class="limited">&#10711;</div>`
     }
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
     if (data.images) {
@@ -177,7 +177,7 @@ function buildDragonCard(name, data) {
     if (data.combo['special']) {
       if (data.combo['special'].includes('Evolve')) {
         cardhtml += `${data.combo.special}`
-        skipThing = true
+        skipThing = true;
       }
     }
     if (!skipThing) {
