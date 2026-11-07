@@ -53,6 +53,7 @@ function favouriteCard(button) {
     el.parentElement.appendChild(el);
   }
   dragonarium[el.name].fav = button.dataset.toggle;
+  saveData()
 }
 
 function wantCard(button) {
@@ -73,6 +74,7 @@ function wantCard(button) {
     }
   }
   dragonarium[el.name].fav = button.dataset.toggle;
+  saveData()
 }
 
 function haveCard(button) {
@@ -92,6 +94,7 @@ function haveCard(button) {
     }
   }
   dragonarium[el.name].fav = button.dataset.toggle;
+  saveData()
 }
 
 function shadowCard(button) {
@@ -112,6 +115,20 @@ function shadowCard(button) {
     }
   }
   dragonarium[el.name].fav = button.dataset.toggle;
+  saveData()
+}
+
+function hideBreeds(el) {
+  let cardsDiv = el.closest('.settings-buttons').nextElementSibling;
+  if (el.checked) {
+    for (const card of cardsDiv.children) {
+      card.querySelector('.breedingInfo').classList.add('hidden')
+    }
+  } else {
+    for (const card of cardsDiv.children) {
+      card.querySelector('.breedingInfo').classList.remove('hidden')
+    }
+  }
 }
 
 function buildDragonCard(name, data) {
@@ -176,8 +193,9 @@ function buildDragonCard(name, data) {
       cardhtml +=   `</div>
       </div>`
     }
-    
-    return cardhtml;
+    let cardEl = document.createElement('div');
+    cardEl.innerHTML = cardhtml;
+    return cardEl;
 
 }
 
