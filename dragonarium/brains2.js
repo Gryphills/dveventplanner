@@ -145,7 +145,7 @@ function buildDragonCard(name, data) {
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" style="background-color: #bcb8f5;">🗡<div class="tooltip">Shadow Realm</div></div>
     </div>`
     if (data.limited == "Y") {
-      cardhtml +=`<div class="limited"></div>`
+      cardhtml +=`<div class="limited">&#10711;</div>`
     }
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
     if (data.images) {
