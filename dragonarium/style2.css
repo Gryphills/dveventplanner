@@ -129,14 +129,14 @@ body {
     min-height: 200px;
     height: fit-content;
   
-    .avail {
-      background-color: #83b5d3;
-      border: 3px solid #1d3052;
+    .limited {
+      background-color: #83b5d3; !important;
+      border: 3px solid #1d3052; !important;
     }
     .unavail {
-      opacity: .6;
-      background-color: grey;
-      border: 3px solid rgb(92, 92, 92);
+      opacity: .6 !important;
+      background-color: grey; !important;
+      border: 3px solid rgb(92, 92, 92); !important;
     }
     .favourite {
         background-color: #c0a4ec;
@@ -217,7 +217,7 @@ body {
     position:absolute;
     top:-15px;
     left:-15px;
-    background-color: #969696;
+    background-color: lightgrey;
     color: grey;
     border-radius: 8px;
     width:30px;
