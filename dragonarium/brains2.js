@@ -90,7 +90,7 @@ function radioOtherButtons(clicked) {
   let safety = 25
   let prev = clicked.previousElementSibling;
   while (prev) {
-    if (!prev.classList.contains('favc') {
+    if (!prev.classList.contains('favc')) {
       prev.dataset.toggle = 0;
       prev.classList.remove('toggled')
     }
