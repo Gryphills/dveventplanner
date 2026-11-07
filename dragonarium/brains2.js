@@ -204,19 +204,19 @@ function hidePerm(el) {
 function hideBreeds(el) {
   
   let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
-  console.log('hiding/showing!', cardsDiv[0]);
+  //console.log('hiding/showing!', cardsDiv[0]);
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
     console.log(cardsDiv[0])
     for (const card of cardsDiv) {
-      card.querySelector('.breedingInfo').classList.add('hidden');
+      card.querySelector('.breedinginfo').classList.add('hidden');
     }
   } else {
     el.dataset.toggle = 0
     el.classList.remove('toggled')
     for (const card of cardsDiv) {
-      card.querySelector('.breedingInfo').classList.remove('hidden');
+      card.querySelector('.breedinginfo').classList.remove('hidden');
     }
   }
 }
@@ -256,6 +256,9 @@ let chartRef = [
     'ZoZodiac'
   ]
 
+function cycleViews(frontImg) {
+  
+}
 
 function buildDragonCard(name, data) {
   //console.log(name, data)
@@ -304,7 +307,7 @@ function buildDragonCard(name, data) {
          cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
       }
     }
-    cardhtml += `<div class="breedinginfo">`
+    cardhtml += `<div class="">`
 
     let skipThing = false;
     if (data.combo['special']) {
