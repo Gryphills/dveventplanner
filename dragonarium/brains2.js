@@ -63,8 +63,8 @@ function favouriteCard(button) {
     el.classList.remove("favourite");
     button.dataset.toggle = 0;
     let next = el.nextElementSibling;
-    if (next.classList.contains('favourite') {
-      while (next.classList.contains('favourite') {
+    if (next.classList.contains('favourite')) {
+      while (next.classList.contains('favourite')) {
         next = next.nextElementSibling;
       }
       if (!next) {
