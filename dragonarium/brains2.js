@@ -139,7 +139,7 @@ function hideBreeds(el) {
 }
 
 function buildDragonCard(name, data) {
-  console.log(name, data)
+  //console.log(name, data)
   let cardhtml = 
  `<div class="dragonCard" name="${name}">
     <div class="minibuttons">
