@@ -24,6 +24,8 @@ function setTabs() {
   let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
   for (const tabButton of tabButtArr) {
     tabButton.addEventListener('click', function(e) {
+      let tabButtArr = Array.from(document.querySelector('.tab-button').parentNode.children)
+      let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
       for (i=0;i<tabButtArr.length;i++) {
         let tabButton = tabButtArr[i]
         tabButton.classList.remove('open')
@@ -234,7 +236,7 @@ function makeCards() {
 }
 
 function addCheckListeners() {
-  let checks = Array.from(document.querySelectorAll('input [type="checkbox"]'));
+  let checks = Array.from(document.querySelectorAll('.hideBreedsButton'));
   for (const check of checks) {
     check.addEventListener("click", hideBreeds(el));
   }
@@ -249,8 +251,8 @@ document.addEventListener("DOMContentLoaded", function() {
     wantDiv = document.querySelector('#wantCards');
     haveDiv = document.querySelector('#haveCards');
     shadowDiv = document.querySelector('#shadowCards');
-    setTabs()
+    setTabs();
     makeCards();
-    document.querySelector('.oopsie').style.display = 'none'
+    document.querySelector('.oopsie').style.display = 'none';
 });
 
