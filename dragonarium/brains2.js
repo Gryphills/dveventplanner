@@ -24,11 +24,13 @@ function setTabs() {
     tabButton.addEventListener('click', function(e) {
       let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
       let tabButtArr = Array.from(document.querySelector('.tab').parentNode.children)
-      for (const tabButton of document.querySelectorAll('.tab-button')) {
+      for (i=0;i<tabButtArr.length;i++) {
+        let tabButton = tabButtArr[i]
         tabButton.classList.remove('open')
       }
       e.currentTarget.classList.add('open')
-      for (const tabdiv of document.querySelectorAll) {
+      for (i=0;i<tabDivArr.length;i++) {
+        let tabdiv = tabDivArr[i]
         tabdiv.classList.remove('open')
         if (tabArr.indexOf(tabDivArr) == (tabButtArr.indexOf(e.currentTarget))) {
           tabdiv.classList.add('open')
