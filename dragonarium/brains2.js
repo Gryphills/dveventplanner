@@ -325,17 +325,17 @@ function makeCards() {
 function addCheckListeners() {
   let checks = Array.from(document.querySelectorAll('.hideBreedsButton'));
   for (const check of checks) {
-    console.log(check);
+    //console.log(check);
     check.addEventListener("click", function(e){hideBreeds(e.currentTarget)});
   }
-  let checks = Array.from(document.querySelectorAll('.hideUnavailButton'));
+  checks = Array.from(document.querySelectorAll('.hideUnavailButton'));
   for (const check of checks) {
-    console.log(check);
+    //console.log(check);
     check.addEventListener("click", function(e){hideUnavail(e.currentTarget)});
   }
-  let checks = Array.from(document.querySelectorAll('.hidePermButton'));
+  checks = Array.from(document.querySelectorAll('.hidePermButton'));
   for (const check of checks) {
-    console.log(check);
+    //console.log(check);
     check.addEventListener("click", function(e){hidePerm(e.currentTarget)});
   }
 }
