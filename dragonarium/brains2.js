@@ -201,6 +201,7 @@ function hideBreeds(el) {
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
+    console.log(cardsDiv[0]
     for (const card of cardsDiv) {
       card.querySelector('.breedingInfo').classList.add('hidden');
     }
@@ -250,12 +251,14 @@ function buildDragonCard(name, data) {
           </div>
         </div>`
       }
-      else {
+      else if (imgCount == 1) {
         cardhtml += `<div class="itemimage"` 
-        if (Object.getOwnPropertyNames(data.images)[0] == "temp") {
-            cardhtml += ` style="max-width:100px;max-height:100px;" `
-        }
+        //if (Object.getOwnPropertyNames(data.images)[0] == "temp") {
+        //    cardhtml += ` style="max-width:100px;max-height:100px;" `
+        //}
         cardhtml += `><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}" ></div>`
+      } else {
+         cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;></div>` 
       }
     }
     cardhtml += `<div class="breedinginfo">`
@@ -286,8 +289,9 @@ function buildDragonCard(name, data) {
       cardhtml +=   `</div>
       </div>`
     }
-    let cardEl = document.createElement('div');
-    cardEl.innerHTML = cardhtml;
+    let cardDiv = document.createElement('div');
+    cardDiv.innerHTML = cardhtml;
+    let cardEl = cardDiv.children[0]
     return cardEl;
 
 }
