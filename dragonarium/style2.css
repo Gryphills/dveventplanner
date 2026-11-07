@@ -156,6 +156,10 @@ body {
         border: 2px solid #584e3f;
         line-height: 40px;
     }
+    .toggled {
+        background-color: #442a5f;
+        color:#cac5f0;
+    }
 }
 .limited.avail::before {
     content: '&#10711;';
