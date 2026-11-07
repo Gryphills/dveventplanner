@@ -103,6 +103,7 @@ body {
     flex-wrap: wrap;
     position: relative;
     padding:4px;
+    justify-content: center;
 }
 .dragonCard {
     position: relative;
