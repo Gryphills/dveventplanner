@@ -135,8 +135,8 @@ body {
       border: 3px solid #557049;
     }
 .dragonCard.unavail {
-      opacity: .6;
-      background-color: grey; 
+      
+      background-color: #aba7a7; 
       border: 3px solid rgb(92, 92, 92); 
     }
 .dragonCard.favourite {
