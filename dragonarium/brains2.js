@@ -385,7 +385,8 @@ function makeCards() {
       card.querySelector('.shadowc').click();
     }
     else {
-      console.log('???? what');
+      console.log('???? what was that?', dragonName, " has a status of ", dragonarium[dragonName].status);
+      initDiv.appendChild(card);
     }
   }
 }
