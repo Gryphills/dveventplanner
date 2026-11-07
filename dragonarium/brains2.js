@@ -116,6 +116,9 @@ function radioOtherButtons(clicked) {
 
 function haveCard(button) {
   let el = button.closest('.dragonCard');
+  console.log(button)
+  console.log(el)
+  console.log(el.name)
   radioOtherButtons(button)
   if (Number(button.dataset.toggle) == 0) {
     if (!dragonarium[`${el.name}`]) {
@@ -140,6 +143,7 @@ function haveCard(button) {
 }
 
 function shadowCard(button) {
+  
   let el = button.closest('.dragonCard');
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
