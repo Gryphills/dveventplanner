@@ -141,16 +141,20 @@ function hideBreeds(el) {
 function buildDragonCard(name, data) {
   //console.log(name, data)
   let cardhtml = 
- `<div class="dragonCard" name="${name}">
+ `<div class="dragonCard `
+    if (data.limited == "Y") {
+      cardhtml += ` limited unavail`
+    } else if (data.limited == "A") {
+      cardhtml += `limited avail`
+    }
+  cardhtml += `" name="${name}">
     <div class="minibuttons">
         <div class="minibutton favc" data-toggle=0 onclick="favouriteCard(this)" style="background-color: #bcb8f5; margin-bottom:25px;">❤<div class="tooltip">Favourite</div></div>
         <div class="minibutton wantc" data-toggle=0 onclick="wantCard(this)" style="background-color: #bcb8f5;">✦<div class="tooltip">Want</div></div>
         <div class="minibutton havec" data-toggle=0 onclick="haveCard(this)" style="background-color: #bcb8f5;">✔<div class="tooltip">Acquired</div></div>
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" style="background-color: #bcb8f5;">🗡<div class="tooltip">Shadow Realm</div></div>
     </div>`
-    if (data.limited == "Y") {
-      cardhtml += `<div class="limited">&#10711;</div>`
-    }
+    
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
     if (data.images) {
       let imgCount = Object.getOwnPropertyNames(data.images).length
