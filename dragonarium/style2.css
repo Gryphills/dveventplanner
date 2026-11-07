@@ -102,32 +102,32 @@ body {
         margin: 5px;
     }
 }
-
+#wantCards {
+        .wantc {
+            background-color: #442a5f;
+            color:#cac5f0;
+        }
+}
+#haveCards {
+        .havec {
+            background-color: #442a5f;
+            color:#cac5f0;
+        }
+}
+#shadowCards {
+        .shadowc {
+            background-color: #442a5f;
+            color:#cac5f0;
+        }
+}
 .dragonCards {
     display: flex;
     flex-wrap: wrap;
     position: relative;
     padding:4px;
     justify-content: center;
-    #wantCards {
-        .wantc {
-            background-color: #442a5f;
-            color:#cac5f0;
-        }
-    }
-    #haveCards {
-        .havec {
-            background-color: #442a5f;
-            color:#cac5f0;
-        }
-    }
-    #shadowCards {
-        .shadowc {
-            background-color: #442a5f;
-            color:#cac5f0;
-        }
-    }
 }
+
 .dragonCard {
     position: relative;
     max-width:300px;
