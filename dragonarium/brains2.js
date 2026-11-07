@@ -229,11 +229,18 @@ function makeCards() {
   }
 }
 
+function addCheckListeners() {
+  let checks = document.querySelectorAll('input [type="checkbox"]');
+  for (const check of checks) {
+    check.addEventListener("click", hideBreeds(el));
+  }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').innerText);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
+    addCheckListeners();
     initDiv = document.querySelector('#unacquiredCards');
     wantDiv = document.querySelector('#wantCards');
     haveDiv = document.querySelector('#haveCards');
