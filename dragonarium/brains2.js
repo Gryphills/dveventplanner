@@ -125,7 +125,7 @@ function shadowCard(button) {
 function hideBreeds(el) {
   console.log('hiding/showing!');
   let cardsDiv = el.closest('.settings-buttons').nextElementSibling;
-  if (el.checked) {
+  if (Number(el.dataset.toggle) = 1) {
     for (const card of cardsDiv.children) {
       card.querySelector('.breedingInfo').classList.add('hidden')
     }
@@ -171,7 +171,7 @@ function buildDragonCard(name, data) {
         cardhtml += `<div class="itemimage"><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}"></div>`
       }
     }
-    cardhtml += `<div class="breedinginfo hidden">`
+    cardhtml += `<div class="breedinginfo">`
 
     let skipThing = false;
     if (data.combo['special']) {
