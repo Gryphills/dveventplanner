@@ -45,6 +45,11 @@ body {
     .hidden {
         display: none;
     }
+    a {
+        color: #000000b0;
+        font-style: normal;
+        cursor: normal;
+    }
 }
 
 .limited {
@@ -117,7 +122,7 @@ body {
     padding: 4px;
     padding-top: 2px;
     padding-bottom: 8px;
-    color: #333;
+    color: #000000b0;
     text-align:center;
     display: flex;
     flex-direction: column;
@@ -195,7 +200,7 @@ body {
   }
 }
 .limited.avail::before {
-    content: '\&#10711;';
+    content: '⧗';
     position:absolute;
     top:-15px;
     left:-15px;
@@ -208,7 +213,7 @@ body {
     line-height:30px;
 }
 .limited.unavail::before {
-    content: '\&#10711;';
+    content: '⧗';
     position:absolute;
     top:-15px;
     left:-15px;
