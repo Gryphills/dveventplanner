@@ -87,6 +87,7 @@ body {
 }
 .settings-buttons {
     display: flex;
+    justify-content: center;
     label {
         margin: 5px;
     }
