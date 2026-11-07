@@ -19,23 +19,24 @@ function saveData() {
   localStorage.setItem("dvEvents", JSON.stringify(eventObj));
 }
 
-for (const tabButton of document.querySelectorAll('.tab-button')) {
-  tabButton.addEventListener('click', function(e) {
-    let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
-    let tabButtArr = Array.from(document.querySelector('.tab').parentNode.children)
-    for (const tabButton of document.querySelectorAll('.tab-button')) {
-      tabButton.classList.remove('open')
-    }
-    e.currentTarget.classList.add('open')
-    for (const tabdiv of document.querySelectorAll) {
-      tabdiv.classList.remove('open')
-      if (tabArr.indexOf(tabDivArr) == (tabButtArr.indexOf(e.currentTarget))) {
-        tabdiv.classList.add('open')
+function setTabs() {
+  for (const tabButton of document.querySelectorAll('.tab-button')) {
+    tabButton.addEventListener('click', function(e) {
+      let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
+      let tabButtArr = Array.from(document.querySelector('.tab').parentNode.children)
+      for (const tabButton of document.querySelectorAll('.tab-button')) {
+        tabButton.classList.remove('open')
       }
-    }
-  })
+      e.currentTarget.classList.add('open')
+      for (const tabdiv of document.querySelectorAll) {
+        tabdiv.classList.remove('open')
+        if (tabArr.indexOf(tabDivArr) == (tabButtArr.indexOf(e.currentTarget))) {
+          tabdiv.classList.add('open')
+        }
+      }
+    })
+  }
 }
-
 
 
 
@@ -219,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
     wantDiv = document.querySelector('#wantCards');
     haveDiv = document.querySelector('#haveCards');
     shadowDiv = document.querySelector('#shadowCards');
+    setTabs()
     makeCards();
 });
 
