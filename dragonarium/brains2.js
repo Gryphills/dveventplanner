@@ -118,6 +118,9 @@ function haveCard(button) {
   let el = button.closest('.dragonCard');
   radioOtherButtons(button)
   if (Number(button.dataset.toggle) == 0) {
+    if (!dragonarium[`${el.name}`]) {
+      console.log('cant find ', el.name)
+    }
     dragonarium[el.name].status = 'have';
     if (el.classList.contains('favourite')) {
       haveDiv.children[0].before(el)
