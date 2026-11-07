@@ -170,7 +170,11 @@ function buildDragonCard(name, data) {
         </div>`
       }
       else {
-        cardhtml += `<div class="itemimage"><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}"></div>`
+        cardhtml += `<div class="itemimage"` 
+        if (Object.getOwnPropertyNames(data.images)[0] == "temp") {
+            cardhtml += ` style="max-width:100px;max-height:100px;" `
+        }
+        cardhtml += `><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}" ></div>`
       }
     }
     cardhtml += `<div class="breedinginfo">`
