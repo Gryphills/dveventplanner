@@ -52,7 +52,7 @@ body {
     }
 }
 
-.limited {
+/*.limited {
     position:absolute;
     top:-15px;
     left:-15px;
@@ -62,7 +62,7 @@ body {
     width:30px;
     height:30px;
     text-size:x-large;
-}
+}*/
 
 .tab-buttons {
     display: flex;
