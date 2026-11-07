@@ -126,10 +126,12 @@ function hideBreeds(el) {
   console.log('hiding/showing!');
   let cardsDiv = el.closest('.settings-buttons').nextElementSibling;
   if (Number(el.dataset.toggle) = 1) {
+    el.dataset.toggle = 0
     for (const card of cardsDiv.children) {
       card.querySelector('.breedingInfo').classList.add('hidden')
     }
   } else {
+    el.dataset.toggle = 1
     for (const card of cardsDiv.children) {
       card.querySelector('.breedingInfo').classList.remove('hidden')
     }
@@ -138,7 +140,7 @@ function hideBreeds(el) {
 
 function buildDragonCard(name, data) {
   console.log(name, data)
- let cardhtml = 
+  let cardhtml = 
  `<div class="dragonCard" name="${name}">
     <div class="minibuttons">
         <div class="minibutton favc" data-toggle=0 onclick="favouriteCard(this)" style="background-color: #bcb8f5; margin-bottom:25px;">❤<div class="tooltip">Favourite</div></div>
