@@ -109,6 +109,24 @@ body {
     position: relative;
     padding:4px;
     justify-content: center;
+    #wantCards {
+        .wantc {
+            background-color: #442a5f;
+            color:#cac5f0;
+        }
+    }
+    #haveCards {
+        .havec {
+            background-color: #442a5f;
+            color:#cac5f0;
+        }
+    }
+    #shadowCards {
+        .shadowc {
+            background-color: #442a5f;
+            color:#cac5f0;
+        }
+    }
 }
 .dragonCard {
     position: relative;
@@ -142,6 +160,10 @@ body {
         background-color: #c0a4ec;
         border: 3px solid #3e295f;
         color: #3e295f;
+        .favbutton {
+            background-color: #442a5f;
+            color:#cac5f0;
+        }
     }
 .dragonCard.shadow {
         opacity: .7;
