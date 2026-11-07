@@ -138,9 +138,7 @@ function haveCard(button) {
   //console.log(el.name)
   radioOtherButtons(button)
   if (Number(button.dataset.toggle) == 0) {
-    if (!dragonarium[`${el.id}`]) {
-      console.log('cant find ', el.name)
-    }
+    button.dataset.toggle = 1;
     dragonarium[el.id].status = 'have';
     if (el.classList.contains('favourite')) {
       haveDiv.children[0].before(el)
