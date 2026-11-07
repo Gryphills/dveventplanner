@@ -298,27 +298,34 @@ function buildDragonCard(name, data) {
 
 
 function makeCards() {
+  if (!eventObj.dragonarium) {
+      eventObj.dragonarium = {};
+      dragonarium = {};
+  } if (!dragonarium) {
+    dragonarium = {};
+  }
+  
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
-    if (!eventObj.dragonarium) {
-      eventObj.dragonarium = {};
+    if (!dragonarium[dragonName]) {
+      dragonarium[dragonName] = {
     }
-    if (!eventObj.dragonarium[dragonName]) {
-      eventObj.dragonarium[dragonName] = {"fav": 0, "status": "unacquired"};
+    if (!dragonarium[dragonName]) {
+      dragonarium[dragonName] = {"fav": 0, "status": "init"};
       initDiv.appendChild(card);
     }
-    else if (eventObj.dragonarium[dragonName].status == "acquired") {
+    else if (dragonarium[dragonName].status == "acquired") {
       card.querySelector('.havec').click();
     }
-    else if (eventObj.dragonarium[dragonName].status == "want") {
+    else if (dragonarium[dragonName].status == "want") {
       wantDiv.appendChild(card);
       card.querySelector('.wantc').click();
     }
-    else if (eventObj.dragonarium[dragonName].status == "shadow") {
+    else if (dragonarium[dragonName].status == "shadow") {
       shadowDiv.appendChild(card);
       card.querySelector('.shadowc').click();
     }
-    if (Number(eventObj.dragonarium[dragonName].fav) == 1) {
+    if (Number(dragonarium[dragonName].fav) == 1) {
       card.querySelector('.favc').click()
       //card.parentElement.children[0].before(card);
       //card.classList.add('favourite')
