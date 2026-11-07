@@ -20,9 +20,10 @@ body {
 }
 
 .breedinginfo {
-    margin-top:8px;
+   
     display:block;
     margin:2px;
+    margin-top:8px;
     padding:2px;
     border-radius: 5px;
     background-color: #a09edf70;
