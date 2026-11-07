@@ -183,7 +183,7 @@ function buildDragonCard(name, data) {
       }
     }
     if (!skipThing) {
-      cardhtml += `<h4>Breeding Info:</h4><br>`
+      cardhtml += `<h4>Breeding Info:</h4>`
       if (data.combo['special']) {
         cardhtml += `<h3>${data.combo.special}</h3>`
       }
