@@ -234,7 +234,7 @@ function makeCards() {
 }
 
 function addCheckListeners() {
-  let checks = document.querySelectorAll('input [type="checkbox"]');
+  let checks = Array.from(document.querySelectorAll('input [type="checkbox"]'));
   for (const check of checks) {
     check.addEventListener("click", hideBreeds(el));
   }
