@@ -339,8 +339,8 @@ function buildDragonCard(name, data) {
     }
     let cardDiv = document.createElement('div');
     cardDiv.innerHTML = cardhtml;
-    let cardEl = cardDiv.children[0]
-    return cardEl;
+    //let cardEl = cardDiv.children[0]
+    return cardDiv;
 
 }
 
@@ -355,12 +355,16 @@ function makeCards() {
   
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
+    card = card.children[0]
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {};
     }
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
       initDiv.appendChild(card);
+    }
+    else if (dragonarium[dragonName].status == "init") {
+        initDiv.appendChild(card);
     }
     else if (dragonarium[dragonName].status == "acquired") {
       card.querySelector('.havec').click();
