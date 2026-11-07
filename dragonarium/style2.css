@@ -128,27 +128,26 @@ body {
     flex-direction: column;
     min-height: 200px;
     height: fit-content;
-  
-    .limited {
-      background-color: #83b5d3; !important;
-      border: 3px solid #1d3052; !important;
+}
+.dragonCard.limited {
+      background-color: #83b5d3; 
+      border: 3px solid #1d3052; 
     }
-    .unavail {
-      opacity: .6 !important;
-      background-color: grey; !important;
-      border: 3px solid rgb(92, 92, 92); !important;
+.dragonCard.unavail {
+      opacity: .6;
+      background-color: grey; 
+      border: 3px solid rgb(92, 92, 92); 
     }
-    .favourite {
+.dragonCard.favourite {
         background-color: #c0a4ec;
         border: 3px solid #3e295f;
         color: #3e295f;
     }
-    .shadow {
+.dragonCard.shadow {
         opacity: .7;
         background-color: #858585;
         color:black;
     }
-}
 .minibuttons {
     position: absolute;
     right:-16px;
