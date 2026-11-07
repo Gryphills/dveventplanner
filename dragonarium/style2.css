@@ -38,10 +38,10 @@ body {
 
 .tab-buttons {
     display: flex;
-    height:50px;
+    height: 50px;
     width: 100%;
     text-align: center;
-    justify-content:center;
+    justify-content: center;
   
     .tab-button {
       font-weight: bold;
@@ -110,6 +110,7 @@ body {
 .minibuttons {
     position: absolute;
     right:-16px;
+  
     .minibutton {
         width:30px;
         height:30px;
