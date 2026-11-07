@@ -47,7 +47,8 @@ body {
     min-width: 15%;
     width:100%;
     min-height:30px;
-
+}
+.tab-buttons {
     .open {
         font-size:larger;
         background-color: #442a5f;
