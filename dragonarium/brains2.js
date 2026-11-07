@@ -357,13 +357,10 @@ function makeCards() {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     card = card.children[0]
     if (!dragonarium[dragonName]) {
-      dragonarium[dragonName] = {};
-    }
-    if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
       initDiv.appendChild(card);
     }
-    else if (dragonarium[dragonName].status == "init") {
+    else if (dragonarium[dragonName].status == "init" || ) {
         initDiv.appendChild(card);
     }
     else if (dragonarium[dragonName].status == "acquired") {
@@ -376,6 +373,9 @@ function makeCards() {
     else if (dragonarium[dragonName].status == "shadow") {
       shadowDiv.appendChild(card);
       card.querySelector('.shadowc').click();
+    }
+    else {
+      console.log('???? what');
     }
     if (Number(dragonarium[dragonName].fav) == 1) {
       card.querySelector('.favc').click()
