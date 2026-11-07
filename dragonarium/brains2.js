@@ -56,7 +56,7 @@ function favouriteCard(button) {
     button.dataset.toggle = 0;
     el.parentElement.appendChild(el);
   }
-  dragonarium[el.name].fav = button.dataset.toggle;
+  dragonarium[el.id].fav = button.dataset.toggle;
   console.log(button.dataset.toggle, el.name)
   saveData()
 }
@@ -66,7 +66,7 @@ function wantCard(button) {
   let el = button.closest('.dragonCard');
   if (Number(el.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
-    dragonarium[el.name].status = 'want';
+    dragonarium[el.id].status = 'want';
     if (el.classList.contains('favourite')) {
       wantDiv.children[0].before(el)
     } else {
@@ -74,7 +74,7 @@ function wantCard(button) {
     }
   } else {
     button.dataset.toggle = 0;
-    dragonarium[el.name].status = 'init';
+    dragonarium[el.id].status = 'init';
     if (el.classList.contains('favourite')) {
       initDiv.children[0].before(el)
     } else {
@@ -116,15 +116,15 @@ function radioOtherButtons(clicked) {
 
 function haveCard(button) {
   let el = button.closest('.dragonCard');
-  console.log(button)
-  console.log(el)
-  console.log(el.name)
+  //console.log(button)
+  //console.log(el)
+  //console.log(el.name)
   radioOtherButtons(button)
   if (Number(button.dataset.toggle) == 0) {
-    if (!dragonarium[`${el.name}`]) {
+    if (!dragonarium[`${el.id}`]) {
       console.log('cant find ', el.name)
     }
-    dragonarium[el.name].status = 'have';
+    dragonarium[el.id].status = 'have';
     if (el.classList.contains('favourite')) {
       haveDiv.children[0].before(el)
     } else {
@@ -132,7 +132,7 @@ function haveCard(button) {
     }
   } else {
     button.dataset.toggle = 0;
-    dragonarium[el.name].status = 'init';
+    dragonarium[el.id].status = 'init';
     if (el.classList.contains('favourite')) {
       initDiv.children[0].before(el)
     } else {
@@ -147,7 +147,7 @@ function shadowCard(button) {
   let el = button.closest('.dragonCard');
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
-    dragonarium[el.name].status = 'shadow';
+    dragonarium[el.id].status = 'shadow';
     if (el.classList.contains('favourite')) {
       shadowDiv.children[0].before(el)
     } else {
@@ -155,7 +155,7 @@ function shadowCard(button) {
     }
   } else {
     button.dataset.toggle = 0;
-    dragonarium[el.name].status = 'init';
+    dragonarium[el.id].status = 'init';
     if (el.classList.contains('favourite')) {
       initDiv.children[0].before(el)
     } else {
