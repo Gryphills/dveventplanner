@@ -240,6 +240,7 @@ function makeCards() {
 function addCheckListeners() {
   let checks = Array.from(document.querySelectorAll('.hideBreedsButton'));
   for (const check of checks) {
+    console.log(check);
     check.addEventListener("click", hideBreeds(check));
   }
 }
