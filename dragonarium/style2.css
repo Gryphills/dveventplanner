@@ -161,6 +161,11 @@ body {
         color:#cac5f0;
     }
 }
+.minibutton:hover {
+  .tooltip {
+    display:block;
+  }
+}
 .limited.avail::before {
     content: '&#10711;';
     position:absolute;
@@ -197,8 +202,6 @@ body {
 
     .active {
         display:block;
-        
-
     }
 }
 
