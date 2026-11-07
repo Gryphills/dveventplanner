@@ -211,5 +211,5 @@ function makeCards() {
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!')
     makeCards();
-}
+});
 
