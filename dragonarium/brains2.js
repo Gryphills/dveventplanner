@@ -258,7 +258,7 @@ function buildDragonCard(name, data) {
         //}
         cardhtml += `><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}" ></div>`
       } else {
-         cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;></div>` 
+         cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
       }
     }
     cardhtml += `<div class="breedinginfo">`
