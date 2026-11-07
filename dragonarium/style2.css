@@ -116,6 +116,7 @@ body {
         height:30px;
         margin-bottom: 4px;
         font-size: x-large;
+        border-radius: 5px;
     }
 }
 .tooltip {
