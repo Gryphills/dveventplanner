@@ -46,9 +46,10 @@ body {
       border:2px solid #442a5f;
       color:#442a5f;
       padding:10px;
+      
       min-width: 15%;
-      width:100%;
-      min-height:30px;
+      width: fit-content;
+      margin: 1px;
     }
     .open {
         font-size:larger;
