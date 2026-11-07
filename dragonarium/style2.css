@@ -195,7 +195,7 @@ body {
   }
 }
 .limited.avail::before {
-    content: '&#10711;';
+    content: '\&#10711;';
     position:absolute;
     top:-15px;
     left:-15px;
@@ -207,7 +207,7 @@ body {
     text-size:x-large;
 }
 .limited.unavail::before {
-    content: '&#10711;';
+    content: '\&#10711;';
     position:absolute;
     top:-15px;
     left:-15px;
