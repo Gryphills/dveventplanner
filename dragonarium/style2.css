@@ -119,7 +119,16 @@ body {
     text-align:center;
     display: flex;
     flex-direction: column;
-  
+    min-height: 200px;
+    .available {
+      background-color: #83b5d3;
+      border: 3px solid #1d3052;
+    }
+    .unavailable {
+      opacity: .6;
+      background-color: grey;
+      border: 3px solid rgb(92, 92, 92);
+    }
     .favourite {
         background-color: #c0a4ec;
         border: 3px solid #3e295f;
@@ -135,6 +144,7 @@ body {
     position: absolute;
     right:-16px;
     z-index: 1;
+    top: -15px;
   
     .minibutton {
         width:40px;
@@ -144,7 +154,32 @@ body {
         border-radius: 5px;
         cursor: pointer;
         border: 2px solid #584e3f;
+        line-height: 40px;
     }
+}
+.limited.avail::before {
+    content: '&#10711;';
+    position:absolute;
+    top:-15px;
+    left:-15px;
+    background-color: #8355cc;
+    color: white;
+    border-radius: 8px;
+    width:30px;
+    height:30px;
+    text-size:x-large;
+}
+.limited.unavail::before {
+    content: '&#10711;';
+    position:absolute;
+    top:-15px;
+    left:-15px;
+    background-color: #969696;
+    color: grey;
+    border-radius: 8px;
+    width:30px;
+    height:30px;
+    text-size:x-large;
 }
 .tooltip {
     display: none;
