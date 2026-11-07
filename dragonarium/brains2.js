@@ -1,10 +1,13 @@
 
-let allDragonData = JSON.parse(document.getElementById('dragondata').innerText);
-let allDragonNames = Object.getOwnPropertyNames(allDragonData);
-let initDiv = document.querySelector('#unacquiredCards');
-let wantDiv = document.querySelector('#wantCards');
-let haveDiv = document.querySelector('#haveCards');
-let shadowDiv = document.querySelector('#shadowCards');
+
+
+let allDragonData ;
+let allDragonNames;
+let initDiv;
+let wantDiv ;
+let haveDiv ;
+let shadowDiv ;
+
 let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
 if (!eventObj.dragonarium) {
   eventObj.dragonarium = {}
@@ -209,7 +212,13 @@ function makeCards() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log('loaded dom!')
+    console.log('loaded dom!');
+    allDragonData = JSON.parse(document.getElementById('dragondata').innerText);
+    allDragonNames = Object.getOwnPropertyNames(allDragonData);
+    initDiv = document.querySelector('#unacquiredCards');
+    wantDiv = document.querySelector('#wantCards');
+    haveDiv = document.querySelector('#haveCards');
+    shadowDiv = document.querySelector('#shadowCards');
     makeCards();
 });
 
