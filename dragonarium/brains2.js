@@ -214,6 +214,42 @@ function hideBreeds(el) {
   }
 }
 
+let chartRef = [
+    'P Plant',
+    'F Fire',
+    'E Earth',
+    'C Cold',
+    'W Water',
+    'L Lightning',
+    'A Air',
+    'M Metal',
+    'I Light',
+    'D Dark',
+    'R Rift',
+    'AaAllPrimaries',
+    'ApApocalypse',
+    'AuAura',
+    'ChChrysalis',
+    'CrCrystalline',
+    'DrDream',
+    'GaGalactic',
+    'GeGemstone',
+    'HiHidden',
+    'MeMelody',
+    'MhMonolith',
+    'OlOlympus',
+    'OrOrnamental',
+    'RbRainbow',
+    'SeSeasonal',
+    'SnSnowflake',
+    'SuSun',
+    'MoMoon',
+    'SfSurface',
+    'TrTreasure',
+    'ZoZodiac'
+  ]
+
+
 function buildDragonCard(name, data) {
   //console.log(name, data)
   let cardhtml = 
@@ -225,7 +261,7 @@ function buildDragonCard(name, data) {
     } else {
       cardhtml += `perm`
     }
-  cardhtml += `" name="${name}">
+  cardhtml += `" name="${name}" id="${name}">
     <div class="minibuttons">
         <div class="minibutton favc" data-toggle=0 onclick="favouriteCard(this)" style="background-color: #bcb8f5; margin-bottom:25px;">❤<div class="tooltip">Favourite</div></div>
         <div class="minibutton wantc" data-toggle=0 onclick="wantCard(this)" style="background-color: #bcb8f5;">✦<div class="tooltip">Want</div></div>
@@ -276,14 +312,26 @@ function buildDragonCard(name, data) {
         cardhtml += `<h3>${data.combo.special}</h3>`
       }
       if (data.combo['requirements']) {
-        cardhtml += `<h3>${data.combo.requirements}</h3>`
+        let cleanedReq = ''
+        for (const req of data.combo.requirements) {
+            if (chartRef.includes(req)) {
+                cleanedReq = req.substring(2)
+            } else {
+                cleanedReq = `<a class="specific-breeding-req" href="#${req}">${req}</a>`
+            }
+            if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
+                cleanedReq += ' + '
+            }
+        }
+        
+        cardhtml += `<h3>${cleanedReq}</h3>`
       }
       if (data.combo['times']) {
         cardhtml += `<p>${data.times}</p>`
       }
       if (data.breedingOdds) {
         if (data.breedingOdds.base) {
-          cardhtml += `<p>Base: ${data.breedingOdds.base} / Coop Clone: ${data.breedingOdds.social}</p><br>`
+          cardhtml += `<p>Base Odds: ${data.breedingOdds.base} / Coop Clone: ${data.breedingOdds.social}</p><br>`
         }
       }
       cardhtml +=   `</div>
