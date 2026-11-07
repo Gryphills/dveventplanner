@@ -199,7 +199,8 @@ function hideUnavail(el) {
       card.classList.remove('hidden');
     }
   }
-  dragonarium.hideUnavail = el.dataset.toggle
+  let id = el.closest('.settings-buttons').nextElementSibling.id
+  dragonarium[id].hideUnavail = el.dataset.toggle
   saveData()
 }
 
@@ -219,7 +220,8 @@ function hidePerm(el) {
       card.classList.remove('hidden');
     }
   }
-  dragonarium.hidePerm = el.dataset.toggle
+  let id = el.closest('.settings-buttons').nextElementSibling.id
+  dragonarium[id].hidePerm = el.dataset.toggle
   saveData()
 }
 
@@ -241,7 +243,8 @@ function hideBreeds(el) {
       card.querySelector('.breedinginfo').classList.remove('hidden');
     }
   }
-  dragonarium.hideBreeds = el.dataset.toggle
+  let id = el.closest('.settings-buttons').nextElementSibling.id
+  dragonarium[id].hideBreeds = el.dataset.toggle
   saveData()
 }
 
