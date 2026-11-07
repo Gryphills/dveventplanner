@@ -54,7 +54,17 @@ function favouriteCard(button) {
   } else {
     el.classList.remove("favourite");
     button.dataset.toggle = 0;
-    el.parentElement.appendChild(el);
+    let next = el.nextElementSibling;
+    if (next.classList.contains('favourite') {
+      while (next.classList.contains('favourite') {
+        next = next.nextElementSibling;
+      }
+      if (!next) {
+        el.parentElement.appendChild(el);
+      } else {
+        next.before(el);
+      }
+    }
   }
   dragonarium[el.id].fav = button.dataset.toggle;
   saveData()
