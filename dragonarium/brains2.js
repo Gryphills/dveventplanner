@@ -307,7 +307,7 @@ function buildDragonCard(name, data) {
          cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
       }
     }
-    cardhtml += `<div class="">`
+    cardhtml += `<div class="breedinginfo">`
 
     let skipThing = false;
     if (data.combo['special']) {
