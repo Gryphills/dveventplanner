@@ -8,6 +8,8 @@ body {
 
 .sortbutton {
   padding:10px;
+  margin: 10px;
+  border-radius: 8px;
   display: inline;
   background-color: #cac5f0;
   border:2px solid #442a5f;
@@ -120,6 +122,7 @@ body {
     flex-direction: column;
     min-height: 200px;
     height: fit-content;
+  
     .available {
       background-color: #83b5d3;
       border: 3px solid #1d3052;
@@ -151,7 +154,7 @@ body {
         height:40px;
         margin-bottom: 4px;
         font-size: x-large;
-        border-radius: 5px;
+        border-radius: 10px;
         cursor: pointer;
         border: 2px solid #584e3f;
         line-height: 40px;
@@ -165,12 +168,15 @@ body {
 .tooltip {
     display:block;
     background-color: #3e295f;
-    border: 1px solid #cac5f0;
-    padding:2px;
+    border: 2px solid #cac5f0;
+    padding:5px;
     font-size:small;
     color:#cac5f0;
     position: absolute;
     right: -2px;
+    top:0px;
+    width: fit-content;
+    border-radius: 5px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
