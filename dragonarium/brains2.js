@@ -134,6 +134,7 @@ function hideBreeds(el) {
 }
 
 function buildDragonCard(name, data) {
+  console.log(name, data)
  let cardhtml = 
  `<div class="dragonCard" name=${name}>
     <div class="minibuttons">
@@ -146,27 +147,27 @@ function buildDragonCard(name, data) {
       cardhtml +=`<div class="limited"></div>`
     }
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
-    
-    let imgCount = Object.getOwnPropertyNames(data.images).length
-    if (imgCount > 1) {
-      cardhtml += `<div style="display: flex; position: relative; height: 220px;">
-        <div class="multiimgback">`
-        for (const img of Object.getOwnPropertyNames(data.images)) {
-          if (img != "Adult") {
-            cardhtml += `<img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${data.images[img]}">`
+    if (data.images) {
+      let imgCount = Object.getOwnPropertyNames(data.images).length
+      if (imgCount > 1) {
+        cardhtml += `<div style="display: flex; position: relative; height: 220px;">
+          <div class="multiimgback">`
+          for (const img of Object.getOwnPropertyNames(data.images)) {
+            if (img != "Adult") {
+              cardhtml += `<img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${data.images[img]}">`
+            }
           }
-        }
-          
-        cardhtml += `</div>
-        <div class="multiimgfront">
-          <img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${data.images.Adult}">
-        </div>
-      </div>`
+            
+          cardhtml += `</div>
+          <div class="multiimgfront">
+            <img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${data.images.Adult}">
+          </div>
+        </div>`
+      }
+      else {
+        cardhtml += `<div class="itemimage"><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}"></div>`
+      }
     }
-    else {
-      cardhtml += `<div class="itemimage"><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}"></div>`
-    }
-    
     cardhtml += `<div class="breedinginfo hidden">`
 
     let skipThing = false;
