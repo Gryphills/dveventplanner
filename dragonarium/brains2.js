@@ -47,7 +47,7 @@ function setTabs() {
 
 function favouriteCard(button) {
   let el = button.closest('.dragonCard');
-  if (Number(el.dataset.toggle) == 0) {
+  if (Number(button.dataset.toggle) == 0) {
     el.classList.add("favourite");
     button.dataset.toggle = 1;
     el.parentElement.children[0].before(el);
@@ -57,14 +57,13 @@ function favouriteCard(button) {
     el.parentElement.appendChild(el);
   }
   dragonarium[el.id].fav = button.dataset.toggle;
-  console.log(button.dataset.toggle, el.name)
   saveData()
 }
 
 function wantCard(button) {
   radioOtherButtons(button)
   let el = button.closest('.dragonCard');
-  if (Number(el.dataset.toggle) == 0) {
+  if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
     dragonarium[el.id].status = 'want';
     if (el.classList.contains('favourite')) {
