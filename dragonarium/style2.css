@@ -50,7 +50,7 @@ body {
     min-height:30px;
   }
 }
-.tab-button {
+.tab-buttons {
     .open {
         font-size:larger;
         background-color: #442a5f;
