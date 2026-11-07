@@ -27,7 +27,7 @@ body {
     margin-top:8px;
     padding:2px;
     border-radius: 5px;
-    background-color: #a09edf70;
+    background-color: #574f5d5c;
     /*border: 1px solid white;*/
     align-content: center;
     p {
@@ -173,11 +173,14 @@ body {
     font-size:small;
     color:#cac5f0;
     position: absolute;
-    right: -4px;
-    top:0px;
-    width: fit-content;
+    right: 46px;
+    top: 2px;
+    width: 100px;
     border-radius: 5px;
     opacity: 0;
+    height: 20px;
+    line-height: 20px;
+  
     transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
     -webkit-transition: opacity 1s ease-in-out;
