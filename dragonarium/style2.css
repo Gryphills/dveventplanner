@@ -50,7 +50,7 @@ body {
       border:2px solid #442a5f;
       color:#442a5f;
       padding:10px;
-      
+      cursor: pointer;
       min-width: 18%;
       width: fit-content;
       margin: 1px;
@@ -96,6 +96,7 @@ body {
     text-align:center;
     display: flex;
     flex-direction: column;
+  
     .favourite {
         background-color: #c0a4ec;
         border: 3px solid #3e295f;
@@ -117,6 +118,7 @@ body {
         margin-bottom: 4px;
         font-size: x-large;
         border-radius: 5px;
+        cursor: pointer;
     }
 }
 .tooltip {
