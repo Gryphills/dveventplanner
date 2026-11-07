@@ -360,7 +360,7 @@ function makeCards() {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
       initDiv.appendChild(card);
     }
-    else if (dragonarium[dragonName].status == "init" || ) {
+    else if (dragonarium[dragonName].status == "init") {
         initDiv.appendChild(card);
     }
     else if (dragonarium[dragonName].status == "acquired") {
