@@ -158,38 +158,39 @@ function shadowCard(button) {
   saveData()
 }
 
-function hideOwned(el) {
+function hideUnavail(el) {
   console.log('hiding/showing!');
-  let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
+  let cards = Array.from(el.closest('.settings-buttons').nextElementSibling.querySelectorAll('.unavail'));
+  
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
-    for (const card of cardsDiv) {
-      card.querySelector('.perm').classList.add('hidden');
+    for (const card of cards) {
+      card.classList.add('hidden');
     }
   } else {
     el.dataset.toggle = 0
     el.classList.remove('toggled')
-    for (const card of cardsDiv) {
-      card.querySelector('.perm').classList.remove('hidden');
+    for (const card of cards) {
+      card.classList.remove('hidden');
     }
   }
 }
 
-function hidePermanent(el) {
+function hidePerm(el) {
   console.log('hiding/showing!');
-  let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
+  let cards = Array.from(el.closest('.settings-buttons').nextElementSibling.querySelectorAll('.perm'));
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
-    for (const card of cardsDiv) {
-      card.querySelector('.perm').classList.add('hidden');
+    for (const card of cards) {
+      card.classList.add('hidden');
     }
   } else {
     el.dataset.toggle = 0
     el.classList.remove('toggled')
-    for (const card of cardsDiv) {
-      card.querySelector('.perm').classList.remove('hidden');
+    for (const card of cards) {
+      card.classList.remove('hidden');
     }
   }
 }
@@ -326,6 +327,16 @@ function addCheckListeners() {
   for (const check of checks) {
     console.log(check);
     check.addEventListener("click", function(e){hideBreeds(e.currentTarget)});
+  }
+  let checks = Array.from(document.querySelectorAll('.hideUnavailButton'));
+  for (const check of checks) {
+    console.log(check);
+    check.addEventListener("click", function(e){hideUnavail(e.currentTarget)});
+  }
+  let checks = Array.from(document.querySelectorAll('.hidePermButton'));
+  for (const check of checks) {
+    console.log(check);
+    check.addEventListener("click", function(e){hidePerm(e.currentTarget)});
   }
 }
 
