@@ -315,9 +315,9 @@ function buildDragonCard(name, data) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (chartRef.includes(req)) {
-                cleanedReq = req.substring(2)
+                cleanedReq += req.substring(2)
             } else {
-                cleanedReq = `<a class="specific-breeding-req" href="#${req}">${req}</a>`
+                cleanedReq += `<a class="specific-breeding-req" href="#${req}">${req}</a>`
             }
             if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
                 cleanedReq += ' + '
