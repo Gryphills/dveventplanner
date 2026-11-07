@@ -201,7 +201,7 @@ function hideBreeds(el) {
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
-    console.log(cardsDiv[0]
+    console.log(cardsDiv[0])
     for (const card of cardsDiv) {
       card.querySelector('.breedingInfo').classList.add('hidden');
     }
