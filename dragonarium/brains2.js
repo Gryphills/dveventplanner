@@ -373,7 +373,7 @@ function makeCards() {
     else if (dragonarium[dragonName].status == "init") {
         initDiv.appendChild(card);
     }
-    else if (dragonarium[dragonName].status == "have") {
+    else if (dragonarium[dragonName].status == "have" || dragonarium[dragonName].status == "acquired" ) {
       card.querySelector('.havec').click();
     }
     else if (dragonarium[dragonName].status == "want") {
