@@ -34,7 +34,7 @@ function setTabs() {
       for (i=0;i<tabDivArr.length;i++) {
         let tabdiv = tabDivArr[i]
         tabdiv.classList.remove('open')
-        if (tabArr.indexOf(tabDivArr) == (tabButtArr.indexOf(e.currentTarget))) {
+        if (tabDivArr.indexOf(tabdiv) == (tabButtArr.indexOf(e.currentTarget))) {
           tabdiv.classList.add('open')
         }
       }
