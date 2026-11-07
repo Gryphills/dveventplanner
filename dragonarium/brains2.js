@@ -127,12 +127,12 @@ function hideBreeds(el) {
   let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
   if (Number(el.dataset.toggle) == 1) {
     el.dataset.toggle = 0;
-    for (const card of cardsDiv.children) {
+    for (const card of cardsDiv) {
       card.querySelector('.breedingInfo').classList.add('hidden');
     }
   } else {
     el.dataset.toggle = 1
-    for (const card of cardsDiv.children) {
+    for (const card of cardsDiv) {
       card.querySelector('.breedingInfo').classList.remove('hidden');
     }
   }
