@@ -121,6 +121,7 @@ function shadowCard(button) {
 }
 
 function hideBreeds(el) {
+  console.log('hiding/showing!');
   let cardsDiv = el.closest('.settings-buttons').nextElementSibling;
   if (el.checked) {
     for (const card of cardsDiv.children) {
