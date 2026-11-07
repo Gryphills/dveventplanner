@@ -401,8 +401,9 @@ function addCheckListeners() {
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
-    allDragonData = JSON.parse(document.getElementById('dragondata').innerText);
+    allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
+    console.log(allDragonNames[0])
     addCheckListeners();
     initDiv = document.querySelector('#unacquiredCards');
     wantDiv = document.querySelector('#wantCards');
