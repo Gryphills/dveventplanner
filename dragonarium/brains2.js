@@ -212,10 +212,10 @@ function makeCards() {
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     if (!eventObj.dragonarium) {
-      eventObj.dragonarium = {}
+      eventObj.dragonarium = {};
     }
     if (!eventObj.dragonarium[dragonName]) {
-      eventObj.dragonarium[dragonName] = {"fav": 0, "status": "unacquired"}
+      eventObj.dragonarium[dragonName] = {"fav": 0, "status": "unacquired"};
       initDiv.appendChild(card);
     }
     else if (eventObj.dragonarium[dragonName].status == "acquired") {
