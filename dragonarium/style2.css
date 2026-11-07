@@ -11,12 +11,11 @@ body {
   display: inline;
   background-color: #cac5f0;
   border:2px solid #442a5f;
-  .toggled {
+  cursor: pointer;
+}
+.toggled {
     background-color: #442a5f;
     color:#cac5f0;
-  }
-  cursor: pointer;
-  
 }
 
 .breedinginfo {
@@ -120,6 +119,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 200px;
+    height: fit-content;
     .available {
       background-color: #83b5d3;
       border: 3px solid #1d3052;
