@@ -33,7 +33,9 @@ body {
     position:absolute;
     top:-15px;
     left:-15px;
-
+    background-color: #3e295f;
+    color: white;
+    border-radius: 8px;
 }
 
 .tab-buttons {
