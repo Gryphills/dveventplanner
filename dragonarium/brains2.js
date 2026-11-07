@@ -308,7 +308,7 @@ function makeCards() {
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     if (!dragonarium[dragonName]) {
-      dragonarium[dragonName] = {
+      dragonarium[dragonName] = {};
     }
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
