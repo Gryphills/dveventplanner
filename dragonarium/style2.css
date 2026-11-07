@@ -143,11 +143,14 @@ body {
         background-color: #c0a4ec;
         border: 3px solid #3e295f;
         color: #3e295f;
-        .favbutton {
+        .favc {
             background-color: #442a5f;
             color:#cac5f0;
         }
     }
+.favc {
+  margin-bottom: 25px;
+}
 .dragonCard.shadow {
         opacity: .7;
         background-color: #858585;
