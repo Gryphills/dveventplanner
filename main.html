@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <script src="brains.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:rgb(249, 240, 225);">
+<div style="display: flex; flex-wrap: wrap-reverse; background-color: rgb(249, 240, 225); padding: 5px; min-height: 100vh;">
+    <div id="tab-buttons" class="tab-buttons">
+        <div class="tab-button hidden">Breeding Tester</div>
+        <div class="tab-button hidden">Multi-Parent Finder</div>
+        <div class="tab-button">Want</div>
+        <div class="tab-button open">Unacquired</div>
+        <div class="tab-button">Acquired</div>
+        <div class="tab-button">Shadow Realm</div>
+    </div>
+    <div id="tabs" class="tabs">
+        <div class="tab">
+            Breeding Tester
+        </div>
+        <div class="tab">
+            Multi-Parent Finder
+        </div>
+        <div class="tab">
+            Want
+        </div>
+        <div class="tab open" id="unacquiredDiv">
+            Unacquired
+            <div class="settings-buttons">
+                <label><input type="checkbox"> &nbps; Hide Breeding Info</label>
+            </div>
+            <div class="dragonCards">
+
+            </div>
+        </div>
+        <div class="tab">
+            Acquired
+        </div>
+        <div class="tab">
+            Shadow Realm
+        </div>
+    </div>
+
+
+
+    <div style="display:none; width: 25%; text-align: left; margin: 10px;">
+        <div style="text-align:center;">
+            <button id="dragonvisbutton"  style="margin:auto; display:inline; padding:10px; margin:10px;" class="buttons pressed" data-toggled="1" onclick="toggleVis(this, 'dragon')">Toggle Dragon Visibility</button><br>
+            <button id='decobutton' style="margin:auto; display:inline; padding:10px; margin:10px;" class="buttons" data-toggled="1" onclick="toggleVis(this, 'deco')">Toggle Deco Visibility</button>
+        </div>
+        <br/>
+        <div style="background-color: rgb(173, 164, 211); border: 4px solid rgb(37, 7, 87); border-radius: 0.5rem; padding: 10px; margin: 10px;">
+            <div id="itemstobuy">
+            </div>
+            <p style="font-weight: bold; font-size: large;" id="calctotals">0</p>
+        </div>
+        <br>
+        <div style="background-color: rgb(173, 164, 211); border: 4px solid rgb(37, 7, 87); border-radius: 0.5rem; padding: 10px; margin: 10px;">
+            <p>Potential Purchases:</p>
+            <div id="potentialpurchaselist"></div>
+        </div>
+    </div>
+
+
+  
+</div>
+  <div class='oopsie'>
+    <p>Yuh oh! If you see this, the javascript is erroring,<br>which might mean this page is actively getting updated.<br>Try again in a minute or so!</p>
+  </div>
+  <div style="display:none;">
+    Insert all the bullshit from the spreadsheet lmao
+  </div>
+</body>
