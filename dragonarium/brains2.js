@@ -431,7 +431,7 @@ function buildDragonCard(name, data) {
       if (data.combo['requirements']) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
-            if (elementChard.basics.includes(req)) {
+            if (elementChart.basics.includes(req)) {
                 cleanedReq += req.substring(2)
             } else {
                 cleanedReq += `<a class="specific-breeding-req" href="#${req}">${req}</a>`
