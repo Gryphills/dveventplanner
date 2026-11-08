@@ -43,7 +43,7 @@ function setTabs() {
     })
   }
   if (dragonarium.openTab) {
-    let button = document.querySelector('.tab-button').parentNode.children.querySelector(`[data-key="${dragonarium.openTab}"]`)
+    let button = document.querySelector('.tab-button').parentNode.querySelector(`[data-key="${dragonarium.openTab}"]`)
     if (button) {
       button.click();
     }
