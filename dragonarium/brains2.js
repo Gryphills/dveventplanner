@@ -530,7 +530,7 @@ function processDragonData() {
   let exclude = ["Tiamat", "Bahamut", "Gaia", "Ts'aishen", "Kairos"]
   for (const dragon of allDragonNames) {
     if (!exclude.includes(dragon)) {
-      allDragonData[dragon] = processData(dragon)
+      //allDragonData[dragon] = processData(dragon)
     } else {
       delete allDragonData[dragon];
       allDragonNames.splice(allDragonNames.indexOf(dragon), 1)
