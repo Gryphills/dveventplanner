@@ -258,41 +258,110 @@ function hideBreeds(el) {
     console.log(id);
   }
 }
-
-let chartRef = [
+let chartRef = {
+        P: 'P Plant',
+        F: 'F Fire',
+        E: 'E Earth',
+        C: 'C Cold',
+        W: 'W Water',
+        L: 'L Lightning',
+        A: 'A Air',
+        M: 'M Metal',
+        I: 'I Light',
+        D: 'D Dark',
+        R: 'R Rift',
+        Ap: 'ApApocalypse',
+        Au: 'AuAura',
+        Ch: 'ChChrysalis',
+        Cr: 'CrCrystalline',
+        Dr: 'DrDream',
+        Ga: 'GaGalactic',
+        Ge: 'GeGemstone',
+        Hi: 'HiHidden',
+        Me: 'MeMelody',
+        Mh: 'MhMonolith',
+        Ol: 'OlOlympus',
+        Or: 'OrOrnamental',
+        Rb: 'RbRainbow',
+        Se: 'SeSeasonal',
+        Sn: 'SnSnowflake',
+        Su: 'SuSun',
+        Mo: 'MoMoon',
+        Sf: 'SfSurface',
+        Tr: 'TrTreasure',
+        Zo: 'ZoZodiac'
+  }
+  //let chartRef = {
+let elementChart = {
+  epic: [
+    'Ap',
+    'Au',
+    'Ch',
+    'Cr',
+    'Dr',
+    'Ga',
+    'Ge',
+    'Hi',
+    'Me',
+    'Mh',
+    'Ol',
+    'Or',
+    'Rb',
+    'Se',
+    'Sn',
+    'Su',
+    'Mo',
+    'Sf',
+    'Tr',
+    'Zo'
+  ],
+  prims: [
+    'P',
+    'F',
+    'E',
+    'C',
+    'W',
+    'L',
+    'A',
+    'M',
+    'I',
+    'D',
+    'R'
+  ],
+  basics : [
     'P Plant',
-    'F Fire',
-    'E Earth',
-    'C Cold',
-    'W Water',
-    'L Lightning',
-    'A Air',
-    'M Metal',
-    'I Light',
-    'D Dark',
-    'R Rift',
-    'AaAllPrimaries',
-    'ApApocalypse',
-    'AuAura',
-    'ChChrysalis',
-    'CrCrystalline',
-    'DrDream',
-    'GaGalactic',
-    'GeGemstone',
-    'HiHidden',
-    'MeMelody',
-    'MhMonolith',
-    'OlOlympus',
-    'OrOrnamental',
-    'RbRainbow',
-    'SeSeasonal',
-    'SnSnowflake',
-    'SuSun',
-    'MoMoon',
-    'SfSurface',
-    'TrTreasure',
-    'ZoZodiac'
+        'F Fire',
+       'E Earth',
+        'C Cold',
+        'W Water',
+        'L Lightning',
+        'A Air',
+        'M Metal',
+         'I Light',
+         'D Dark',
+         'R Rift',
+         'ApApocalypse',
+         'AuAura',
+         'ChChrysalis',
+        'CrCrystalline',
+         'DrDream',
+       'GaGalactic',
+         'GeGemstone',
+         'HiHidden',
+         'MeMelody',
+         'MhMonolith',
+         'OlOlympus',
+        'OrOrnamental',
+        'RbRainbow',
+        'SeSeasonal',
+        'SnSnowflake',
+        'SuSun',
+         'MoMoon',
+        'SfSurface',
+        'TrTreasure',
+       'ZoZodiac'
   ]
+}
 
 function cycleViews(frontImg) {
   
@@ -362,7 +431,7 @@ function buildDragonCard(name, data) {
       if (data.combo['requirements']) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
-            if (chartRef.includes(req)) {
+            if (elementChard.basics.includes(req)) {
                 cleanedReq += req.substring(2)
             } else {
                 cleanedReq += `<a class="specific-breeding-req" href="#${req}">${req}</a>`
@@ -458,7 +527,14 @@ function addCheckListeners() {
 
 
 function processDragonData() {
-
+  let exclude = ["Tiamat", "Bahamut", "Gaia", "Ts'aishen", "Kairos"]
+  for (const dragon of allDragonData) {
+    if (!exclude.includes(dragon.name)) {
+      allDragonData[dragon] = processData(dragon)
+    } else {
+      delete allDragonData[dragon];
+    }
+  }
 }
 
 
@@ -466,8 +542,9 @@ function processData(row) {
   if (row.avail != '') {
     row.limited = "A"
   }
-  processCombo(row);
-  processElsAndHabitats(row);
+  row = processCombo(row);
+  row = processElsAndHabitats(row);
+  return row;
 }
 
 function processCombo(row) {
@@ -551,7 +628,7 @@ function processElsAndHabitats(row) {
   row.elements = []
   if (elementLetters.includes("All")) {
     for (const prim of elementChart.prims) {
-      row.elements.push(chartRef[primCheck]);
+      row.elements.push(chartRef[prim]);
     }
     elementLetters.replace('All', ' ');
 
