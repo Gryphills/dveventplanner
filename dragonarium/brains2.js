@@ -74,7 +74,7 @@ function favouriteCard(button) {
       }
     }
   }
-  //dragonarium[el.id].fav = button.dataset.toggle;
+  dragonarium[el.id].fav = button.dataset.toggle;
   saveData()
 }
 
