@@ -685,7 +685,7 @@ function processElsAndHabitats(row) {
 
 
 function getDragonImgs() {
-  for (const node of Array.from(document.getElementById('dragonimgs').childNodes) {
+  for (const node of Array.from(document.getElementById('dragonimgs').childNodes)) {
     if (node.textContent) {
       let url = node.textContent;
       let dragonName = url.split('/')[url.split('/').length - 1].replace('.webp', '');
