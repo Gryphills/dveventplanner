@@ -242,8 +242,12 @@ function hideBreeds(el) {
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
-  dragonarium[id].hideBreeds = el.dataset.toggle
-  saveData()
+  if (dragonarium[id]) {
+    dragonarium[id].hideBreeds = el.dataset.toggle
+    saveData()
+  } else {
+    console.log(id);
+  }
 }
 
 let chartRef = [
