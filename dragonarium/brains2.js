@@ -453,10 +453,167 @@ function addCheckListeners() {
   }
 }
 
+
+
+
+
+function processDragonData() {
+
+}
+
+
+function processData(row) {
+  if (row.avail != '') {
+    row.limited = "A"
+  }
+  processCombo(row);
+  processElsAndHabitats(row);
+}
+
+function processCombo(row) {
+  //combo  = {output, requirements, special/notes}
+  let comboFin = {};
+  let comboData = row.combo
+  
+  let readyforSplits = true;
+  if (comboData.includes('[')) {
+    let special = row.combo.split('[')[1];
+    special = special.split(']')[0];
+    comboFin['special'] = special;
+    comboData = comboData.split('[')[0];
+
+    if (!comboData.includes('+')) {
+      readyforSplits = false;
+    } else {
+      comboData = comboData.substring(0, comboData.length - 1)
+    }
+  } 
+  if (comboData.includes('Evolve')) {
+    comboFin['special'] = comboData;
+    readyforSplits = false;
+  } 
+  else if (comboData.includes('(')) {
+    comboFin['special'] = comboData + `\n pls hold for better info on this guy!`;
+    readyforSplits = false;
+  } 
+  
+  if (readyforSplits) {
+    comboFin.requirements = []
+    comboFin.output = []
+    let comboArr = row.combo.split('+')
+    let chartRefArr = Object.getOwnPropertyNames(chartRef)
+    
+    for (const datapoint of comboArr) {
+      if (datapoint.trim().length > 2) {
+        //let special = isUpperCase(datapoint.trim())
+        if (chartRefArr.includes(datapoint.trim())) {
+          comboFin.requirements.push(chartRef[datapoint.trim()]);
+          comboFin.output.push(chartRef[datapoint.trim()]);
+        } else {
+          comboFin.requirements.push(datapoint);
+          comboFin.output.push(datapoint);
+          let requirementEls = getRequirementEls(datapoint.trim())
+          for (const el of requirementEls) {
+            comboFin.requirements.push(el)
+          }
+        }
+      }
+    }
+    let outputNoDups = []
+    for (const item of comboFin.output) {
+      if (!outputNoDups.includes(item)) {
+        outputNoDups.push(item)
+      }
+    }
+    comboFin.output = outputNoDups;
+  }
+  return comboFin;
+}
+
+function getRequirementEls(requirementName) {
+  for (i=0;i<allDragonNames.length;i++) {
+    if (dragonNames[i] == requirement){
+      console.log('yeah got em!');
+      let rowStuff = processElsAndHabitats(allDragonData[allDragonNames[i]])
+      return rowStuff.elements
+    }
+  }
+}
+
+function processElsAndHabitats(row) {
+  let elementChart = {
+    epic: [],
+    prims: []
+  }
+  let chartRef = {}
+
+  let elementLetters = row.elements;
+  row.elements = []
+  if (elementLetters.includes("All")) {
+    for (const prim of elementChart.prims) {
+      row.elements.push(chartRef[primCheck]);
+    }
+    elementLetters.replace('All', ' ');
+
+  } else {
+    for (const epicCheck of elementChart.epic) {
+      if (elementLetters.includes(epicCheck)) {
+        row.elements.push(chartRef[epicCheck]);
+        elementLetters.replace(epicCheck, ' ');
+      }
+    }
+    for (const primCheck of elementChart.prims) {
+      if (elementLetters.includes(primCheck)) {
+        row.elements.push(chartRef[primCheck]);
+        elementLetters.replace(primCheck, ' ');
+      }
+    }
+  }
+
+  let habitatLetters = row.habitats;
+  row.habitats = []
+  for (const epicCheck of elementChart.epic) {
+    if (habitatLetters.includes(epicCheck)) {
+      row.habitats.push(chartRef[epicCheck]);
+      habitatLetters.replace(epicCheck, ' ');
+      if (!row.elements.includes(chartRef[epicCheck])) {
+        row.elements.push(chartRef[epicCheck])
+      }
+    }
+  }
+  for (const primCheck of elementChart.prims) {
+    if (habitatLetters.includes(primCheck)) {
+      row.habitats.push(chartRef[primCheck]);
+      habitatLetters.replace(primCheck, ' ');
+      if (!row.elements.includes(chartRef[primCheck])) {
+        row.elements.push(chartRef[primCheck])
+      }
+    }
+  }
+
+  //remove dups in the elements
+  let elementsNoDups = []
+  for (const item of row.elements) {
+    if (!elementsNoDups.includes(item)) {
+      elementsNoDups.push(item)
+    }
+  }
+  row.elements = elementsNoDups;
+
+  return row;
+}
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
+    processDragonData();
     addCheckListeners();
     initDiv = document.querySelector('#initCards');
     wantDiv = document.querySelector('#wantCards');
