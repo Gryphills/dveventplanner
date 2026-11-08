@@ -97,6 +97,7 @@ function wantCard(button) {
     } else {
       initDiv.appendChild(el)
     }
+    //el.closest('.dragonCards').previousElementSibling
   }
   
   //console.log(button.dataset.toggle, el.name)
@@ -683,7 +684,29 @@ function processElsAndHabitats(row) {
 
 
 
-
+function getDragonImgs() {
+  for (const node of Array.from(document.getElementById('dragonimgs').childNodes) {
+    if (node.textContent) {
+      let url = node.textContent;
+      let dragonName = url.split('/')[url.split('/').length - 1].replace('.webp', '');
+      let imgType = dragonName.split('Dragon-Adult')[dragonName.split('Dragon-Adult').length - 1].replace('-', ' ');
+      dragonName = "Adu" + dragonName.split('-Dragon-Adu')[0].replace('-', ' ');
+      //let imgType = fileWords[fileWords.length - 1]
+      if (imgType.includes("Adult") && imgType.length == 6) {
+        dragonName = dragonName + ' ' + imgType[5];
+        imgType = "Adult"
+      }
+      if (allDragonData[dragonName]) {
+        if (!allDragonData[dragonName].images) {
+          allDragonData[dragonName].images = {}
+        }
+        allDragonData[dragonName].images[imgType] = url
+      } else {
+        console.log('!! couldnt find img for ', dragonName)
+      }
+    }
+  }
+}
 
 
 
@@ -691,7 +714,9 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
+    
     processDragonData();
+    //getDragonImgs();
     addCheckListeners();
     initDiv = document.querySelector('#initCards');
     wantDiv = document.querySelector('#wantCards');
