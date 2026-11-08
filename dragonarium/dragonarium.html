@@ -22,10 +22,24 @@
         <div class="tab">
             Breeding Tester
         </div>
+
+      
         <div class="tab" id="multiparents">
             Multi-Parent Finder 
-          <div class="targetdragons"></div>
+            <div class="targetdragons">
+                
+                <label>Search for target Dragon: <input class="search" type="text" data-key="targetcards"></label> 
+                <div data-toggle=0 class="hidePermButton sortbutton" >Hide Permanent Dragons</div>
+                <div class="dragonCards" id="targetcards">
+                </div>
+            </div>
+            <div class="possiblepairs">
+                <h4>Parent pairs are only suggested from dragons you own in the "have" section.</h4>
+                <div class="pairsholder"></div>
+            </div>
         </div>
+
+      
         <div class="tab">
           <div class="settings-buttons">
                 <div data-toggle=0 class="hideBreedsButton sortbutton" >Hide Breeding Info</div>
