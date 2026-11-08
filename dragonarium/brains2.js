@@ -84,7 +84,7 @@ function wantCard(button) {
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
     dragonarium[el.id].status = 'want';
-    if (el.classList.contains('favourite')) {
+    if (el.classList.contains('favourite') && wantDiv.children.length > 0) {
       wantDiv.children[0].before(el)
     } else {
       wantDiv.appendChild(el)
@@ -92,7 +92,7 @@ function wantCard(button) {
   } else {
     button.dataset.toggle = 0;
     dragonarium[el.id].status = 'init';
-    if (el.classList.contains('favourite')) {
+    if (el.classList.contains('favourite') && initDiv.children.length > 0) {
       initDiv.children[0].before(el)
     } else {
       initDiv.appendChild(el)
@@ -140,7 +140,7 @@ function haveCard(button) {
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
     dragonarium[el.id].status = 'have';
-    if (el.classList.contains('favourite')) {
+    if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
       haveDiv.children[0].before(el)
     } else {
       haveDiv.appendChild(el)
@@ -148,7 +148,7 @@ function haveCard(button) {
   } else {
     button.dataset.toggle = 0;
     dragonarium[el.id].status = 'init';
-    if (el.classList.contains('favourite')) {
+    if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
       initDiv.children[0].before(el)
     } else {
       initDiv.appendChild(el)
@@ -163,7 +163,7 @@ function shadowCard(button) {
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
     dragonarium[el.id].status = 'shadow';
-    if (el.classList.contains('favourite')) {
+    if (el.classList.contains('favourite') && shadowDiv.children.length > 0) {
       shadowDiv.children[0].before(el)
     } else {
       shadowDiv.appendChild(el)
@@ -171,7 +171,7 @@ function shadowCard(button) {
   } else {
     button.dataset.toggle = 0;
     dragonarium[el.id].status = 'init';
-    if (el.classList.contains('favourite')) {
+    if (el.classList.contains('favourite') && shadowDiv.children.length > 0) {
       initDiv.children[0].before(el)
     } else {
       initDiv.appendChild(el)
