@@ -449,7 +449,7 @@ document.addEventListener("DOMContentLoaded", function() {
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
     addCheckListeners();
-    initDiv = document.querySelector('#unacquiredCards');
+    initDiv = document.querySelector('#initCards');
     wantDiv = document.querySelector('#wantCards');
     haveDiv = document.querySelector('#haveCards');
     shadowDiv = document.querySelector('#shadowCards');
