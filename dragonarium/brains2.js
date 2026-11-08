@@ -443,7 +443,7 @@ function buildDragonCard(name, data) {
         
         cardhtml += `<h3>${cleanedReq}</h3>`
       }
-      if (data.combo['times']) {
+      if (data.times) {
         cardhtml += `<p>${data.times}</p>`
       }
       if (data.breedingOdds) {
