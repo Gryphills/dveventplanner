@@ -198,6 +198,9 @@ function hideUnavail(el) {
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
+  if (!dragonarium[id]) {
+    dragonarium[id] = {}
+  }
   dragonarium[id].hideUnavail = el.dataset.toggle
   saveData()
 }
@@ -219,6 +222,9 @@ function hidePerm(el) {
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
+  if (!dragonarium[id]) {
+    dragonarium[id] = {}
+  }
   dragonarium[id].hidePerm = el.dataset.toggle
   saveData()
 }
@@ -242,6 +248,9 @@ function hideBreeds(el) {
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
+  if (!dragonarium[id]) {
+    dragonarium[id] = {}
+  }
   if (dragonarium[id]) {
     dragonarium[id].hideBreeds = el.dataset.toggle
     saveData()
