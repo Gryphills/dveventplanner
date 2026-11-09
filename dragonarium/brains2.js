@@ -737,10 +737,10 @@ function processCombo(comboData) {
               console.log('oops no ', datapoint)
             } else {          //getRequirementEls(datapoint.trim())
               for (const el of requirementEls) {
-                      if (specificReqInternalEls.includes(el) {
+                      if (specificReqInternalEls.includes(el)) {
                         specificReqInternalEls.push(el)
                       }
-                      if (!comboFin.output.includes(el) {
+                      if (!comboFin.output.includes(el)) {
                         comboFin.output.push(el)
                       }
               }
