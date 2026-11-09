@@ -519,6 +519,12 @@ function buildDragonCard(name, data) {
     } else {
       cardhtml += ` perm`
     }
+    if (data.combo.raw) {
+            console.log('why do we have raw for ', name)
+        data.combo = processCombo(data.combo.raw)
+            allDragonData[name].combo = data.combo;
+            console.log(name, "'s combo should now be ", data.combo, allDragonData[name].combo)
+    }
      if (data.combo.special) {
              if (data.combo.special.includes("Evolve")) {
                       cardhtml += ` evolution `
