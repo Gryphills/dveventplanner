@@ -683,9 +683,8 @@ function processElsAndHabitats(row) {
 }
 
 
-
 function getDragonImgs() {
-  for (const node of Array.from(document.getElementById('dragonimgs').childNodes)) {
+  for (const node of Array.from(document.getElementById('dragonurls').childNodes)) {
     if (node.textContent) {
       let url = node.textContent;
       let dragonName = url.split('/')[url.split('/').length - 1].replace('.webp', '');
@@ -714,9 +713,8 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
-    
+    allDragonImgs = JSON.parse(document.getElementById('dragonurls'));
     processDragonData();
-    //getDragonImgs();
     addCheckListeners();
     initDiv = document.querySelector('#initCards');
     wantDiv = document.querySelector('#wantCards');
