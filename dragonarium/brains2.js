@@ -688,7 +688,7 @@ function addCheckListeners() {
 function processDragonData() {
   let exclude = ["Tiamat", "Bahamut", "Gaia", "Ts'aishen", "Kairos"]
   for (const dragon of allDragonNames) {
-    if (!exclude.includes(dragon) && dragon.includes("Ghostly") {
+    if (!exclude.includes(dragon) && dragon.includes("Ghostly")) {
       allDragonData[dragon].limited = ""
     } else {
       delete allDragonData[dragon];
