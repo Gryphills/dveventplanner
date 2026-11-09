@@ -10,6 +10,74 @@ let haveDiv ;
 let shadowDiv ;
 let backOne = "backtotop";
 
+
+let chartRef = {
+        P: 'P Plant',
+        F: 'F Fire',
+        E: 'E Earth',
+        C: 'C Cold',
+        W: 'W Water',
+        L: 'L Lightning',
+        A: 'A Air',
+        M: 'M Metal',
+        I: 'I Light',
+        D: 'D Dark',
+        R: 'R Rift',
+        Ap: 'ApApocalypse',
+        Au: 'AuAura',
+        Ch: 'ChChrysalis',
+        Cr: 'CrCrystalline',
+        Dr: 'DrDream',
+        Ga: 'GaGalactic',
+        Ge: 'GeGemstone',
+        Hi: 'HiHidden',
+        Me: 'MeMelody',
+        Mh: 'MhMonolith',
+        Ol: 'OlOlympus',
+        Or: 'OrOrnamental',
+        Rb: 'RbRainbow',
+        Se: 'SeSeasonal',
+        Sn: 'SnSnowflake',
+        Su: 'SuSun',
+        Mo: 'MoMoon',
+        Sf: 'SfSurface',
+        Tr: 'TrTreasure',
+        Zo: 'ZoZodiac'
+  }
+  //let chartRef = {
+let elementChart = {
+  epic: [
+    'Ap',
+    'Au',
+    'Ch',
+    'Cr',
+    'Dr',
+    'Ga',
+    'Ge',
+    'Hi',
+    'Me',
+    'Mh',
+    'Ol',
+    'Or',
+    'Rb',
+    'Se',
+    'Sn',
+    'Su',
+    'Mo',
+    'Sf',
+    'Tr',
+    'Zo'
+  ],
+  prims: ['P',    'F',    'E',    'C',    'W',    'L',    'A',    'M',    'I',    'D',    'R'],
+  basics : [
+  'P Plant',  'F Fire',  'E Earth',  'C Cold',  'W Water',  'L Lightning',  'A Air',  'M Metal',  'I Light',  'D Dark',
+  'Plant',  'Fire',  'Earth',  'Cold',  'Water',  'Lightning',  'Air',  'Metal',  'Light',  'Dark',
+  'R Rift',
+  'ApApocalypse',  'AuAura',  'ChChrysalis',  'CrCrystalline',  'DrDream',  'GaGalactic',  'GeGemstone',  'HiHidden',  'MeMelody',  'MhMonolith',  
+  'OlOlympus',  'OrOrnamental',  'RbRainbow',  'SeSeasonal',  'SnSnowflake',  'SuSun',  'MoMoon',  'SfSurface',  'TrTreasure',  'ZoZodiac'
+  ]
+}
+
 let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
 if (!eventObj.dragonarium) {
   eventObj.dragonarium = {}
@@ -329,110 +397,6 @@ function hideBreeds(el) {
     console.log(id);
   }
 }
-let chartRef = {
-        P: 'P Plant',
-        F: 'F Fire',
-        E: 'E Earth',
-        C: 'C Cold',
-        W: 'W Water',
-        L: 'L Lightning',
-        A: 'A Air',
-        M: 'M Metal',
-        I: 'I Light',
-        D: 'D Dark',
-        R: 'R Rift',
-        Ap: 'ApApocalypse',
-        Au: 'AuAura',
-        Ch: 'ChChrysalis',
-        Cr: 'CrCrystalline',
-        Dr: 'DrDream',
-        Ga: 'GaGalactic',
-        Ge: 'GeGemstone',
-        Hi: 'HiHidden',
-        Me: 'MeMelody',
-        Mh: 'MhMonolith',
-        Ol: 'OlOlympus',
-        Or: 'OrOrnamental',
-        Rb: 'RbRainbow',
-        Se: 'SeSeasonal',
-        Sn: 'SnSnowflake',
-        Su: 'SuSun',
-        Mo: 'MoMoon',
-        Sf: 'SfSurface',
-        Tr: 'TrTreasure',
-        Zo: 'ZoZodiac'
-  }
-  //let chartRef = {
-let elementChart = {
-  epic: [
-    'Ap',
-    'Au',
-    'Ch',
-    'Cr',
-    'Dr',
-    'Ga',
-    'Ge',
-    'Hi',
-    'Me',
-    'Mh',
-    'Ol',
-    'Or',
-    'Rb',
-    'Se',
-    'Sn',
-    'Su',
-    'Mo',
-    'Sf',
-    'Tr',
-    'Zo'
-  ],
-  prims: [
-    'P',
-    'F',
-    'E',
-    'C',
-    'W',
-    'L',
-    'A',
-    'M',
-    'I',
-    'D',
-    'R'
-  ],
-  basics : [
-    'P Plant',
-        'F Fire',
-       'E Earth',
-        'C Cold',
-        'W Water',
-        'L Lightning',
-        'A Air',
-        'M Metal',
-         'I Light',
-         'D Dark',
-         'R Rift',
-         'ApApocalypse',
-         'AuAura',
-         'ChChrysalis',
-        'CrCrystalline',
-         'DrDream',
-       'GaGalactic',
-         'GeGemstone',
-         'HiHidden',
-         'MeMelody',
-         'MhMonolith',
-         'OlOlympus',
-        'OrOrnamental',
-        'RbRainbow',
-        'SeSeasonal',
-        'SnSnowflake',
-        'SuSun',
-         'MoMoon',
-        'SfSurface',
-        'TrTreasure',
-       'ZoZodiac'
-  ]
-}
 
 function cycleViews(imgEl) {
   let imgsFront = imgEl.parentElement.querySelector('.multiimgfront')
@@ -455,6 +419,11 @@ function cycleViews(imgEl) {
   }
   
 }
+
+
+
+
+
 
 function buildDragonCard(name, data) {
   //console.log(name, data)
@@ -652,16 +621,6 @@ function processDragonData() {
   }
 }
 
-
-/*function processData(row) {
-  if (row.avail != '') {
-    row.limited = "A"
-  }
-  row = processCombo(row);
-  row = processElsAndHabitats(row);
-  return row;
-}*/
-
 function processCombo(comboData) {
   //combo  = {output, requirements, special/notes}
   let comboFin = {};
@@ -694,12 +653,14 @@ function processCombo(comboData) {
     let comboArr = comboData.split('+')
     let chartRefArr = Object.getOwnPropertyNames(chartRef)
     
-    for (const datapoint of comboArr) {
+    for (const data of comboArr) {
+      datapoint = data.trim()
       if (datapoint.trim().length > 2) {
+        datapoint = datapoint.charAt(0).toUpperCase() + datapoint.substring(1)
         //let special = isUpperCase(datapoint.trim())
-        if (chartRefArr.includes(datapoint.trim())) {
-          comboFin.requirements.push(chartRef[datapoint.trim()]);
-          comboFin.output.push(chartRef[datapoint.trim()]);
+        if (chartRefArr.includes(datapoint)) {
+          comboFin.requirements.push(chartRef[datapoint]);
+          comboFin.output.push(chartRef[datapoint]);
         } else {
           comboFin.requirements.push(datapoint);
           comboFin.output.push(datapoint);
