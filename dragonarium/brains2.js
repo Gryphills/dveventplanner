@@ -640,10 +640,14 @@ function processDragonData() {
       delete allDragonData[dragon];
       allDragonNames.splice(allDragonNames.indexOf(dragon), 1)
     }
-    if (allDragonData[dragon].combo) {
-      //console.log(dragon, dragon.combo
-      let comboTemp =  processCombo(allDragonData[dragon].combo.raw);
-      allDragonData[dragon].combo = comboTemp;
+    if (allDragonData[dragon]) {
+      if (allDragonData[dragon].combo) {
+        //console.log(dragon, dragon.combo
+        let comboTemp =  processCombo(allDragonData[dragon].combo.raw);
+        allDragonData[dragon].combo = comboTemp;
+      }
+    } else {
+      console.log('okay wtf? ', dragon)
     }
   }
 }
