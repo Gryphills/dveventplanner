@@ -765,7 +765,7 @@ function processCombo(comboData) {
     comboFin.output = outputNoDups;
     comboFin.requirements = requirementNoDups;
   }
-        if (comboData.includes('onolith') {
+        if (comboData.includes('onolith')) {
                 console.log('Monolith reqs got ', comboFin)
         }
   return comboFin;
