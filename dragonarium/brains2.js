@@ -746,7 +746,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
-    allDragonImgs = JSON.parse(document.getElementById('dragonurls'));
+    allDragonImgs = JSON.parse(document.getElementById('dragonurls').textContent);
     processDragonData();
     addCheckListeners();
     initDiv = document.querySelector('#initCards');
