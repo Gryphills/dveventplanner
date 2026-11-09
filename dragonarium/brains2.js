@@ -764,6 +764,7 @@ function processCombo(comboData) {
       }
     }
     comboFin.output = outputNoDups;
+    comboFin.requirements = requirementNoDups;
   }
   //console.log('processed reqs got ', comboFin)
   return comboFin;
