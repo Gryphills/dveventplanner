@@ -578,7 +578,7 @@ function buildDragonCard(name, data) {
         skipThing = true;
       }
     } else if (data.rarity == "Galaxy") {
-        cardhtml += `<div style="background-image:url('${elementIcons.Galactic}'); vertical-align: center; display: inline-block; height:22px; width: 22px; background-size: contain; background-repeat: no-repeat;"></div>`
+        cardhtml += `<div class="el-img" style="background-image:url('${elementIcons.Galactic}');"></div>`
         cardhtml += `Galaxy Dragon; Clone in Coop`;
         //skipThing = true;
     }
@@ -591,9 +591,18 @@ function buildDragonCard(name, data) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
-                cleanedReq +=  `<div style="background-image:url('${elementIcons[req.substring(2)]}'); vertical-align: center; display: inline-block; height:22px; width: 22px; background-size: contain; background-repeat: no-repeat;"></div>`+ req.substring(2)
+                cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>`+ req.substring(2)
             } else {
-                cleanedReq += `<a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}</a>`
+                cleanedReq += `<a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}`
+                    if (allDragonData[req]) {
+                        cleanedReq += `<span class="internal-el-imgs">`
+                        for (const el of allDragonData[req].elements) {
+                                `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
+                        }
+                         cleanedReq += `</span>`
+                    }
+                
+                cleanedReq += `</a>`
             }
             if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
                 cleanedReq += ' + '
