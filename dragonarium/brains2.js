@@ -682,8 +682,6 @@ function processDragonData() {
         let comboTemp =  processCombo(allDragonData[dragon].combo.raw);
         allDragonData[dragon].combo = comboTemp;
       }
-    } else {
-      console.log('okay wtf? ', dragon)
     }
   }
 }
