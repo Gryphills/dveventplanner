@@ -482,10 +482,11 @@ function buildDragonCard(name, data) {
       cardhtml +=   `</div>
       </div>`
     }
-    console.log(cardhtml)
-    let cardEl = document.createElement('div');
-    cardEl.outerHTML = cardhtml;
-    //let cardEl = cardDiv.children[0]
+    
+    let cardDiv = document.createElement('div');
+    cardDiv.innerHTML = cardhtml;
+    let cardEl = cardDiv.children[0]
+    console.log(cardhtml, cardDiv, cardEl)
     return cardEl;
 
 }
