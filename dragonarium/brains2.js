@@ -572,7 +572,7 @@ function buildDragonCard(name, data) {
         skipThing = true;
       }
     } else if (data.rarity == "Galaxy") {
-        carthtml += `<div style="background-image:url('${elementIcons.Galactic}'); vertical-align: center; display: inline-block; height:22px; width: 22px; background-size: contain; background-repeat: no-repeat;"></div>`
+        cardhtml += `<div style="background-image:url('${elementIcons.Galactic}'); vertical-align: center; display: inline-block; height:22px; width: 22px; background-size: contain; background-repeat: no-repeat;"></div>`
         cardhtml += `Galaxy Dragon; Clone in Coop`;
         //skipThing = true;
     }
