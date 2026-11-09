@@ -888,6 +888,10 @@ function createTargetCards() {
   let targetCardDiv = document.querySelector('.targetcards')
   for (const dragonName of allDragonNames) {
     if (allDragonData[dragonName].limited != 'Y') {
+      if (!allDragonImgs[dragonName]) {
+              console.log(':( no img for ', dragonName)
+              continue;
+      }
       let targetCardHtml = 
       `<div class='targetcard ${dragonName}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
           <div class="itemimage targetimage">
