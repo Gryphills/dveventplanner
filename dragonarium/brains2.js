@@ -466,8 +466,8 @@ function hideBreeds(el) {
 }
 
 function cycleViews(imgEl) {
-  let imgsFront = imgEl.parentElement.querySelector('.multiimgfront')
-  let imgsBack = imgEl.parentElement.querySelector('.multiimgback')
+  let imgsFront = imgEl.parentElement.parentElement.querySelector('.multiimgfront')
+  let imgsBack = imgEl.parentElement.parentElement.querySelector('.multiimgback')
   let imgarray = imgsFront.dataset.imgarray
   imgarray.push(imgarray.shift())
   for (const img of imgArray) {
@@ -477,7 +477,7 @@ function cycleViews(imgEl) {
       imgsBack.children[imgArray.indexOf(img) - 1].src = img
     }
   }
-  let viewLabel = imgEl.parentElement.parentElement.querySelector('.viewname')
+  let viewLabel = imgEl.parentElement.parentElement.parentElement.querySelector('.viewname')
   let type = imgarray[0].split('dult')[1].replace('.webp', '');
   if (!type || type.length < 2){
     viewLabel.textContent = "Day/Normal Form"
@@ -499,11 +499,16 @@ function buildDragonCard(name, data) {
   let cardhtml = 
  `<div class="dragonCard `
     if (data.limited == "Y") {
-      cardhtml += ` limited unavail`
+      cardhtml += ` limited unavail `
     } else if (data.limited == "A") {
       cardhtml += `limited avail`
     } else {
-      cardhtml += `perm`
+      cardhtml += ` perm`
+    }
+     if (data.combo.special) {
+             if (data.combo.special.includes("Evolve") {
+                      cardhtml += ` evolution `
+             }
     }
   cardhtml += `" name="${name}" id="${name}">
     <div class="minibuttons">
@@ -608,9 +613,9 @@ function makeCards() {
     //console.log(card)
     if (card.querySelector('.multiimgfront')) {
         let multiArray = []
-          multiArray.push(card.querySelector('.multiimgfront').firstChild.src)
+          multiArray.push(card.querySelector('.multiimgfront').firstChild.firstChild.src)
         for (const img of Array.from(card.querySelector('.multiimgback'))) {
-            multiArray.push(img.firstChild.src)
+            multiArray.push(img.firstChild.firstChild.src)
         }
       card.querySelector('.multiimgfront').dataset.imgarray = JSON.stringify(multiArray)
     }
@@ -670,8 +675,8 @@ function addCheckListeners() {
 function processDragonData() {
   let exclude = ["Tiamat", "Bahamut", "Gaia", "Ts'aishen", "Kairos"]
   for (const dragon of allDragonNames) {
-    if (!exclude.includes(dragon)) {
-      //allDragonData[dragon] = processData(dragon)
+    if (!exclude.includes(dragon) && dragon.includes("Ghostly") {
+      allDragonData[dragon].limited = ""
     } else {
       delete allDragonData[dragon];
       allDragonNames.splice(allDragonNames.indexOf(dragon), 1)
