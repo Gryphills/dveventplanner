@@ -472,6 +472,9 @@ function clickInitButtons() {
                 for (const button of buttons) {
                         let id = tab.querySelector('.dragonCards').id
                         let sortType = button.classList[0].substring(0, button.classList[0].length - 6);
+                        if (Number(dragonarium[id][sortType]) == 1) {
+                                button.click()
+                        }
                 }
         }
 }
