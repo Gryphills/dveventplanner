@@ -1139,7 +1139,7 @@ function parentTemplate(parent) {
         let parenthtml = `<a href="#${parentLeft.name}">
                   <div class='parent'>
                           <div class="itemimg">
-                                  <img src="${}">
+                                  <img>
                           </div>
                           <h5>${parentLeft.name}</h5>
                           <div class="internal-el-imgs">`
