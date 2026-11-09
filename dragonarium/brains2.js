@@ -699,7 +699,7 @@ function processCombo(comboData) {
         } else {
           comboFin.requirements.push(datapoint);
           comboFin.output.push(datapoint);
-          let requirementEls = allDragonData[datapoint]
+          let requirementEls = allDragonData[datapoint].elements
           if (!requirementEls) {
             console.log('oops no ', datapoint)
           } else {          //getRequirementEls(datapoint.trim())
