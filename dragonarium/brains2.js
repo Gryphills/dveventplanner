@@ -63,6 +63,7 @@ let chartRef = {
         crystalline:	"CrCrystalline",
         dream	:	"DrDream",
         galactic:	"GaGalactic",
+        galaxy:	        "GaGalactic",
         gemstone:	"GeGemstone",
         hidden	:	"HiHidden",
         melody	:	"MeMelody",
