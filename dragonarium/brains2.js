@@ -557,9 +557,7 @@ function buildDragonCard(name, data) {
       if (data.combo['special']) {
         cardhtml += `<h3>${data.combo.special}</h3>`
       }
-      console.log(data.combo)
       if (data.combo['requirements']) {
-        console.log(data.combo.requirements)
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
@@ -718,6 +716,7 @@ function processCombo(comboData) {
   if (readyforSplits) {
     comboFin.requirements = []
     comboFin.output = []
+    let specificReqInternalEls = []
     let comboArr = comboData.split('+')
     let chartRefArr = Object.getOwnPropertyNames(chartRef)
     
@@ -738,7 +737,12 @@ function processCombo(comboData) {
               console.log('oops no ', datapoint)
             } else {          //getRequirementEls(datapoint.trim())
               for (const el of requirementEls) {
-                comboFin.output.push(el)
+                      if (specificReqInternalEls.includes(el) {
+                        specificReqInternalEls.push(el)
+                      }
+                      if (!comboFin.output.includes(el) {
+                        comboFin.output.push(el)
+                      }
               }
             }
           } else {
@@ -753,9 +757,15 @@ function processCombo(comboData) {
         outputNoDups.push(item)
       }
     }
+    let requirementNoDups = [];
+    for (const item of comboFin.requirements) {
+      if (!requirementNoDups.includes(item) && specificReqInternalEls.includes(item)) {
+        requirementNoDups.push(item)
+      }
+    }
     comboFin.output = outputNoDups;
   }
-  console.log('processed reqs got ', comboFin)
+  //console.log('processed reqs got ', comboFin)
   return comboFin;
 }
 
