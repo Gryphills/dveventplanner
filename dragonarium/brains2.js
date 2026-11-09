@@ -699,13 +699,17 @@ function processCombo(comboData) {
         } else {
           comboFin.requirements.push(datapoint);
           comboFin.output.push(datapoint);
-          let requirementEls = allDragonData[datapoint].elements
-          if (!requirementEls) {
-            console.log('oops no ', datapoint)
-          } else {          //getRequirementEls(datapoint.trim())
-            for (const el of requirementEls) {
-              comboFin.requirements.push(el)
+          if (allDragonData[datapoint] {
+            let requirementEls = allDragonData[datapoint].elements
+            if (!requirementEls) {
+              console.log('oops no ', datapoint)
+            } else {          //getRequirementEls(datapoint.trim())
+              for (const el of requirementEls) {
+                comboFin.requirements.push(el)
+              }
             }
+          } else {
+            console.log('cant get els for ', datapoint)
           }
         }
       }
@@ -992,12 +996,15 @@ function updateTargetSearch() {
 }
 
 function sortPairIntoArray(pairObj, validPairs) {
-  for (const pair of validPairs) {
-    if (pair.targetsMet.length > pairObj.targetsMet.length) {
-      validPairs.splice(validPairs.indexOf(pair) + 1, 0, pairObj)
+
+  for (i=0;i<validPairs.length;i++) {
+    let pair = validPairs[i]
+    if (pairObj.targetsMet.length > pair.targetsMet.length) {
+      validPairs.splice(validPairs.indexOf(pair), 0, pairObj)
+      return validPairs;
     }
   }
-  return validPairs
+  return validPairs;
 }
 
 
