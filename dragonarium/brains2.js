@@ -62,7 +62,7 @@ function setTabs() {
   if (dragonarium.openTab) {
     let button = document.querySelector('.tab-button').parentNode.querySelector(`[data-key="${dragonarium.openTab}"]`)
     if (button) {
-      button.click();
+      button.;
     }
   }
 }
@@ -482,10 +482,10 @@ function buildDragonCard(name, data) {
       cardhtml +=   `</div>
       </div>`
     }
-    let cardDiv = document.createElement('div');
-    cardDiv.outerHTML = cardhtml;
+    let cardEl = document.createElement('div');
+    cardEl.outerHTML = cardhtml;
     //let cardEl = cardDiv.children[0]
-    return cardDiv;
+    return cardEl;
 
 }
 
@@ -500,6 +500,8 @@ function makeCards() {
   
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
+    document.appendChild(card)
+    console.log(card)
     if (card.querySelector('.multiimgfront')) {
         let multiArray = [card.querySelector('.multiimgfront').firstChild.src]
         for (const img of card.querySelector('.multiimgback')) {
@@ -514,7 +516,7 @@ function makeCards() {
         initDiv.appendChild(card);
     }
     else if (dragonarium[dragonName].status == "have" || dragonarium[dragonName].status == "acquired" ) {
-      card.querySelector('.havec').click();
+      card.querySelector('.havec').;
     }
     else if (dragonarium[dragonName].status == "want") {
       wantDiv.appendChild(card);
