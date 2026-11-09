@@ -112,6 +112,38 @@ let elementChart = {
   ]
 }
 
+let elementIcons = {
+        Air:	        'https://i.postimg.cc/J4d5RKb9/Icon-Air.webp',
+        Apocalypse:	'https://i.postimg.cc/zXPFqpCB/Icon-Apocalypse.webp',
+        Aura:	        'https://i.postimg.cc/MKrmzt7K/Icon-Aura.webp',
+        Chrysalis:	'https://i.postimg.cc/Yqyzt86S/Icon-Chrysalis.webp',
+        Cold:	        'https://i.postimg.cc/HsP9T3wT/Icon-Cold.webp',
+        Dark:	        'https://i.postimg.cc/FHdgzcpN/Icon-Dark.webp',
+        Dream:	        'https://i.postimg.cc/L8YB5fD4/Icon-Dream.webp',
+        Earth:	        'https://i.postimg.cc/Hkc4n5zL/Icon-Earth.webp',
+        Fire:	        'https://i.postimg.cc/8zJBcW45/Icon-Fire.webp',
+        Galactic:	'https://i.postimg.cc/BnLcbDp8/Icon-Galaxy.webp',
+        Hidden:	        'https://i.postimg.cc/T3Lq1m0W/Icon-Hidden.webp',
+        Light:	        'https://i.postimg.cc/jSwQ2NcP/Icon-Light.webp',
+        Lightning:	'https://i.postimg.cc/x1Jy8H5L/Icon-Lightning.webp',
+        Melody:	        'https://i.postimg.cc/JzDc0JxQ/Icon-Melody.webp',
+        Metal:	        'https://i.postimg.cc/XYGcqFLx/Icon-Metal.webp',
+        Monolith:	'https://i.postimg.cc/FHdgzcpD/Icon-Monolith.webp',
+        Moon:	        'https://i.postimg.cc/XYGcqFLs/Icon-Moon.webp',
+        Olympus:	'https://i.postimg.cc/0yTGwQXG/Icon-Olympus.webp',
+        Ornamental:	'https://i.postimg.cc/Z5GPdRsL/Icon-Ornamental.webp',
+        Plant:	        'https://i.postimg.cc/sgkPhXHm/Icon-Plant.webp',
+        Rainbow:	'https://i.postimg.cc/6pkVv3bz/Icon-Rainbow.webp',
+        Seasonal:	'https://i.postimg.cc/Cx3Cq1rr/Icon-Seasonal.webp',
+        Snowflake:	'https://i.postimg.cc/pLwQFTcS/Icon-Snowflake.webp',
+        Sun:	        'https://i.postimg.cc/x1wGzCp7/Icon-Sun.webp',
+        Surface:	'https://i.postimg.cc/13k0qt72/Icon-Surface.webp',
+        Treasure:	'https://i.postimg.cc/8z2d65ng/Icon-Treasure.webp',
+        Water:	        'https://i.postimg.cc/fRG79Lgh/Icon-Water.webp',
+        Zodiac:	        'https://i.postimg.cc/vZJ7VBSb/Icon-Zodiac.webp',
+        Rift:	        'https://i.postimg.cc/3w0Cw3dH/Icon-Rift.webp'
+}
+
 let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
 if (!eventObj.dragonarium) {
   eventObj.dragonarium = {}
@@ -454,7 +486,9 @@ function cycleViews(imgEl) {
   
 }
 
-
+function navToDragon(dragonName) {
+        
+}
 
 
 
@@ -529,9 +563,9 @@ function buildDragonCard(name, data) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
-                cleanedReq += req.substring(2)
+                cleanedReq +=  `<div style="background-image:url('${elementIcons[req.substring(2)]}'); height:22px; width:22px; background-size: contain;"></div>`+ req.substring(2)
             } else {
-                cleanedReq += `<a class="specific-breeding-req" href="#${req}">${req}</a>`
+                cleanedReq += `<a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}</a>`
             }
             if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
                 cleanedReq += ' + '
