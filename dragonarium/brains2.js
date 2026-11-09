@@ -364,8 +364,18 @@ let elementChart = {
   ]
 }
 
-function cycleViews(frontImg) {
-  
+function cycleViews(imgEl) {
+  let imgsFront = imgEl.getParent.querySelector('.multiimgfront')
+  let imgsBack = imgEl.getParent.querySelector('.multiimgback')
+  let imgarray = imgsFront.dataset.imgarray
+  imgarray.push(imgarray.shift())
+  for (const img of imgArray) {
+    if (imgArray.indexOf(img) == 0) {
+      imgsFront.firstChild.src = img
+    } else {
+      imgsBack.children[imgArray.indexOf(img) - 1].src = img
+    }
+  }
 }
 
 function buildDragonCard(name, data) {
@@ -456,7 +466,7 @@ function buildDragonCard(name, data) {
       </div>`
     }
     let cardDiv = document.createElement('div');
-    cardDiv.innerHTML = cardhtml;
+    cardDiv.outerHTML = cardhtml;
     //let cardEl = cardDiv.children[0]
     return cardDiv;
 
@@ -473,7 +483,13 @@ function makeCards() {
   
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
-    card = card.children[0]
+    if (card.querySelector('.multiimgfront')) {
+        let multiArray = [card.querySelector('.multiimgfront').firstChild.src]
+        for (const img of card.querySelector('.multiimgback') {
+            multiArray.push(img.src)
+        }
+      card.querySelector('.multiimgfront').dataset.imgarray = multiArray
+    }
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
     }
