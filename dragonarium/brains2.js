@@ -69,26 +69,50 @@ function setTabs() {
 
 
 
+function sortCards(div) {
+  let permCards = div.querySelectorAll('.perm')
+  let availCards = div.querySelectorAll('.avail')
+  let unavailCards = div.querySelectorAll('.unavail')
+  
+  //favs just leave where they are, and we will append after.
+  for (const card of availCards) {
+    div.appendChild(card)
+  }
+  for (const card of permCards) {
+    div.appendChild(card)
+  }
+  for (const card of unavailCards) {
+    div.appendChild(card)
+  }
+  
+}
+
 
 function favouriteCard(button) {
   let el = button.closest('.dragonCard');
   if (Number(button.dataset.toggle) == 0) {
     el.classList.add("favourite");
     button.dataset.toggle = 1;
-    el.parentElement.children[0].before(el);
+    el.parentElement.firstChild.before(el);
   } else {
     el.classList.remove("favourite");
     button.dataset.toggle = 0;
-    let next = el.nextElementSibling;
-    if (next.classList.contains('favourite')) {
-      while (next.classList.contains('favourite')) {
-        next = next.nextElementSibling;
+    if (el.classList.contains('avail')) {
+      let next = el.nextElementSibling;
+      if (next.classList.contains('favourite')) {
+        while (next.classList.contains('favourite')) {
+          next = next.nextElementSibling;
+        }
+        if (!next) {
+          el.parentElement.appendChild(el);
+        } else {
+          next.before(el);
+        }
       }
-      if (!next) {
-        el.parentElement.appendChild(el);
-      } else {
-        next.before(el);
-      }
+    } else if (el.classList.contains('unavail')) {
+      el.parentElement.appendChild(el);
+    } else {
+      sortCards(el.parentElement);
     }
   }
   dragonarium[el.id].fav = button.dataset.toggle;
@@ -103,16 +127,22 @@ function wantCard(button) {
     dragonarium[el.id].status = 'want';
     if (el.classList.contains('favourite') && wantDiv.children.length > 0) {
       wantDiv.children[0].before(el)
+    } else if (el.classList.contains('unavail')) {
+      wantDiv.appendChild(el)
     } else {
       wantDiv.appendChild(el)
+      sortCards(wantDiv);
     }
   } else {
     button.dataset.toggle = 0;
     dragonarium[el.id].status = 'init';
     if (el.classList.contains('favourite') && initDiv.children.length > 0) {
       initDiv.children[0].before(el)
+    } else if (el.classList.contains('unavail')) {
+      initDiv.appendChild(el)
     } else {
       initDiv.appendChild(el)
+      sortCards(initDiv);
     }
     //el.closest('.dragonCards').previousElementSibling
   }
@@ -120,6 +150,69 @@ function wantCard(button) {
   //console.log(button.dataset.toggle, el.name)
   saveData()
 }
+
+
+function haveCard(button) {
+  let el = button.closest('.dragonCard');
+  //console.log(button)
+  //console.log(el)
+  //console.log(el.name)
+  radioOtherButtons(button)
+  if (Number(button.dataset.toggle) == 0) {
+    button.dataset.toggle = 1;
+    dragonarium[el.id].status = 'have';
+    if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
+      haveDiv.children[0].before(el)
+    } else if (el.classList.contains('unavail')) {
+      haveDiv.appendChild(el)
+    } else {
+      haveDiv.appendChild(el)
+      sortCards(haveDiv);
+    }
+  } else {
+    button.dataset.toggle = 0;
+    dragonarium[el.id].status = 'init';
+    if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
+      initDiv.children[0].before(el)
+    } else if (el.classList.contains('unavail')) {
+      initDiv.appendChild(el)
+    } else {
+      initDiv.appendChild(el)
+      sortCards(initDiv);
+    }
+  }
+  saveData()
+}
+
+function shadowCard(button) {
+  
+  let el = button.closest('.dragonCard');
+  if (Number(button.dataset.toggle) == 0) {
+    button.dataset.toggle = 1;
+    dragonarium[el.id].status = 'shadow';
+    if (el.classList.contains('favourite') && shadowDiv.children.length > 0) {
+      shadowDiv.children[0].before(el)
+    } else if (el.classList.contains('unavail')) {
+      shadowDiv.appendChild(el)
+    } else {
+      shadowDiv.appendChild(el)
+      sortCards(shadowDiv);
+    }
+  } else {
+    button.dataset.toggle = 0;
+    dragonarium[el.id].status = 'init';
+    if (el.classList.contains('favourite') && shadowDiv.children.length > 0) {
+      initDiv.children[0].before(el)
+    } else if (el.classList.contains('unavail')) {
+      initDiv.appendChild(el)
+    } else {
+      initDiv.appendChild(el)
+      sortCards(initDiv);
+    }
+  }
+  saveData()
+}
+
 
 function radioOtherButtons(clicked) {
   let safety = 25
@@ -149,54 +242,8 @@ function radioOtherButtons(clicked) {
   }
 }
 
-function haveCard(button) {
-  let el = button.closest('.dragonCard');
-  //console.log(button)
-  //console.log(el)
-  //console.log(el.name)
-  radioOtherButtons(button)
-  if (Number(button.dataset.toggle) == 0) {
-    button.dataset.toggle = 1;
-    dragonarium[el.id].status = 'have';
-    if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
-      haveDiv.children[0].before(el)
-    } else {
-      haveDiv.appendChild(el)
-    }
-  } else {
-    button.dataset.toggle = 0;
-    dragonarium[el.id].status = 'init';
-    if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
-      initDiv.children[0].before(el)
-    } else {
-      initDiv.appendChild(el)
-    }
-  }
-  saveData()
-}
 
-function shadowCard(button) {
-  
-  let el = button.closest('.dragonCard');
-  if (Number(button.dataset.toggle) == 0) {
-    button.dataset.toggle = 1;
-    dragonarium[el.id].status = 'shadow';
-    if (el.classList.contains('favourite') && shadowDiv.children.length > 0) {
-      shadowDiv.children[0].before(el)
-    } else {
-      shadowDiv.appendChild(el)
-    }
-  } else {
-    button.dataset.toggle = 0;
-    dragonarium[el.id].status = 'init';
-    if (el.classList.contains('favourite') && shadowDiv.children.length > 0) {
-      initDiv.children[0].before(el)
-    } else {
-      initDiv.appendChild(el)
-    }
-  }
-  saveData()
-}
+
 
 function hideUnavail(el) {
   console.log('hiding/showing!');
