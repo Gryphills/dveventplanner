@@ -622,23 +622,26 @@ function processDragonData() {
       delete allDragonData[dragon];
       allDragonNames.splice(allDragonNames.indexOf(dragon), 1)
     }
+    if (dragon.combo) {
+      let comboTemp =  processCombo(dragon.combo.raw);
+      dragon.combo = comboTemp;
+    }
   }
 }
 
 
-function processData(row) {
+/*function processData(row) {
   if (row.avail != '') {
     row.limited = "A"
   }
   row = processCombo(row);
   row = processElsAndHabitats(row);
   return row;
-}
+}*/
 
-function processCombo(row) {
+function processCombo(comboData) {
   //combo  = {output, requirements, special/notes}
   let comboFin = {};
-  let comboData = row.combo
   
   let readyforSplits = true;
   if (comboData.includes('[')) {
@@ -704,6 +707,8 @@ function getRequirementEls(requirementName) {
     }
   }
 }
+
+
 
 function processElsAndHabitats(row) {
   let elementChart = {
@@ -792,6 +797,8 @@ function getDragonImgs() {
     }
   }
 }*/
+
+
 
 
 
