@@ -664,7 +664,7 @@ function processCombo(comboData) {
   
   let readyforSplits = true;
   if (comboData.includes('[')) {
-    let special = row.combo.split('[')[1];
+    let special = comboData.split('[')[1];
     special = special.split(']')[0];
     comboFin['special'] = special;
     comboData = comboData.split('[')[0];
@@ -687,7 +687,7 @@ function processCombo(comboData) {
   if (readyforSplits) {
     comboFin.requirements = []
     comboFin.output = []
-    let comboArr = row.combo.split('+')
+    let comboArr = comboData.split('+')
     let chartRefArr = Object.getOwnPropertyNames(chartRef)
     
     for (const datapoint of comboArr) {
