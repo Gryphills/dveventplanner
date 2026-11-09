@@ -429,8 +429,8 @@ let elementChart = {
 }
 
 function cycleViews(imgEl) {
-  let imgsFront = imgEl.getParent.querySelector('.multiimgfront')
-  let imgsBack = imgEl.getParent.querySelector('.multiimgback')
+  let imgsFront = imgEl.parentElement.querySelector('.multiimgfront')
+  let imgsBack = imgEl.parentElement.querySelector('.multiimgback')
   let imgarray = imgsFront.dataset.imgarray
   imgarray.push(imgarray.shift())
   for (const img of imgArray) {
@@ -469,7 +469,7 @@ function buildDragonCard(name, data) {
           <div class="multiimgback">`
           for (const img of Object.getOwnPropertyNames(allDragonImgs[name])) {
             if (img != "Adult") {
-              cardhtml += `<img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${allDragonImgs[name][img]}">`
+              cardhtml += `<img loading="lazy" class="itemimage multi" onclick="cycleViews(this) src="${allDragonImgs[name][img]}">`
             }
           }
             
