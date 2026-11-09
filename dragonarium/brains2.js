@@ -506,7 +506,7 @@ function buildDragonCard(name, data) {
       cardhtml += ` perm`
     }
      if (data.combo.special) {
-             if (data.combo.special.includes("Evolve") {
+             if (data.combo.special.includes("Evolve")) {
                       cardhtml += ` evolution `
              }
     }
