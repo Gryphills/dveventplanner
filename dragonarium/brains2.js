@@ -8,6 +8,7 @@ let initDiv;
 let wantDiv ;
 let haveDiv ;
 let shadowDiv ;
+let backOne = "backtotop";
 
 let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
 if (!eventObj.dragonarium) {
@@ -18,6 +19,21 @@ let dragonarium = eventObj.dragonarium
 function saveData() {
   eventObj.dragonarium = dragonarium;
   localStorage.setItem("dvEvents", JSON.stringify(eventObj));
+}
+
+
+function setbackup() {
+  let backupbutton = document.querySelector('.gobackupbutton');
+  backupbutton.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (window.location.href.split('#').length > 1) {
+      if (window.location.href.split('#')[1] == backOne) {
+        backOne = "backtotop"
+      }
+    }
+    e.currentTarget.href = backOne;
+    e.currentTarget.click();
+  })
 }
 
 function setTabs() {
