@@ -500,7 +500,7 @@ function makeCards() {
   
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
-    document.appendChild(card)
+    initDiv.appendChild(card)
     console.log(card)
     if (card.querySelector('.multiimgfront')) {
         let multiArray = [card.querySelector('.multiimgfront').firstChild.src]
@@ -512,9 +512,9 @@ function makeCards() {
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
     }
-    if (dragonarium[dragonName].status == "init") {
+    /*if (dragonarium[dragonName].status == "init") {
         initDiv.appendChild(card);
-    }
+    }*/
     else if (dragonarium[dragonName].status == "have" || dragonarium[dragonName].status == "acquired" ) {
       card.querySelector('.havec').click();
     }
@@ -526,10 +526,10 @@ function makeCards() {
       shadowDiv.appendChild(card);
       card.querySelector('.shadowc').click();
     }
-    else {
-      console.log('???? what was that?', dragonName, " has a status of ", dragonarium[dragonName].status);
+    /*else {
+      //console.log('???? what was that?', dragonName, " has a status of ", dragonarium[dragonName].status);
       initDiv.appendChild(card);
-    }
+    }*/
     if (Number(dragonarium[dragonName].fav) == 1) {
       card.querySelector('.favc').click()
     }
