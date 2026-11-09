@@ -711,6 +711,7 @@ function processDragonData() {
 }
 
 function processCombo(comboData) {
+        
   //combo  = {output, requirements, special/notes}
   let comboFin = {};
   
@@ -789,8 +790,11 @@ function processCombo(comboData) {
     comboFin.output = outputNoDups;
     comboFin.requirements = requirementNoDups;
   }
-        if (comboData.requirements == [ "MhMonolith" ]) {
-                comboData.requirements = [ "MhMonolith", "MhMonolith" ]
+  if (comboData.requirements == [ "MhMonolith" ]) {
+        comboData.requirements = [ "MhMonolith", "MhMonolith" ]
+  }
+        if (comboData.includes('Clairvoyant') {
+                console.log(comboFin)
         }
   return comboFin;
 }
