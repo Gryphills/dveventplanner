@@ -415,7 +415,7 @@ function buildDragonCard(name, data) {
     </div>`
     
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
-    if (data.images) {
+    if (allDragonImgs[name]) {
       let imgCount = Object.getOwnPropertyNames(allDragonImgs[name]).length
       if (imgCount > 1) {
         cardhtml += `<div style="display: flex; position: relative; height: 220px;">
@@ -441,6 +441,8 @@ function buildDragonCard(name, data) {
       } else {
          cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
       }
+    } else {
+      cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
     }
     cardhtml += `<div class="breedinginfo">`
 
@@ -486,7 +488,7 @@ function buildDragonCard(name, data) {
     let cardDiv = document.createElement('div');
     cardDiv.innerHTML = cardhtml;
     let cardEl = cardDiv.children[0]
-    console.log(cardhtml, cardDiv, cardEl)
+    //console.log(cardhtml, cardDiv, cardEl)
     return cardEl;
 
 }
@@ -503,7 +505,7 @@ function makeCards() {
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     initDiv.appendChild(card)
-    console.log(card)
+    //console.log(card)
     if (card.querySelector('.multiimgfront')) {
         let multiArray = [card.querySelector('.multiimgfront').firstChild.src]
         for (const img of card.querySelector('.multiimgback')) {
