@@ -563,7 +563,7 @@ function buildDragonCard(name, data) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
-                cleanedReq +=  `<div style="background-image:url('${elementIcons[req.substring(2)]}'); height:22px; width:22px; background-size: contain;"></div>`+ req.substring(2)
+                cleanedReq +=  `<div style="background-image:url('${elementIcons[req.substring(2)]}'); display: inline-block; height:22px; width: 22px; background-size: contain; background-repeat: no-repeat;"></div>`+ req.substring(2)
             } else {
                 cleanedReq += `<a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}</a>`
             }
