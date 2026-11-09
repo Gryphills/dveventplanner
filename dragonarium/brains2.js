@@ -683,7 +683,7 @@ function processCombo(comboData) {
               console.log('oops no ', datapoint)
             } else {          //getRequirementEls(datapoint.trim())
               for (const el of requirementEls) {
-                comboFin.requirements.push(el)
+                comboFin.output.push(el)
               }
             }
           } else {
