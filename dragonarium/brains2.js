@@ -468,7 +468,7 @@ function hideBreeds(el) {
 function clickInitButtons() {
         let tabs = [wantDiv, initDiv, haveDiv, shadowDiv]
         for (const tab of tabs) {
-                let buttons = tab.querySelectorAll('.sortbutton)
+                let buttons = tab.querySelectorAll('.sortbutton')
                 for (const button of buttons) {
                         let id = tab.querySelector('.dragonCards').id
                         let sortType = button.classList[0].substring(0, button.classList[0].length - 6);
