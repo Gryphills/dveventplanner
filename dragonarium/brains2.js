@@ -23,6 +23,19 @@ let chartRef = {
         I: 'I Light',
         D: 'D Dark',
         R: 'R Rift',
+        
+        plant: 'P Plant',
+        fire: 'F Fire',
+        earth: 'E Earth',
+        cold: 'C Cold',
+        water: 'W Water',
+        lightning: 'L Lightning',
+        air: 'A Air',
+        metal: 'M Metal',
+        light: 'I Light',
+        dark: 'D Dark',
+        rift: 'R Rift',
+        
         Ap: 'ApApocalypse',
         Au: 'AuAura',
         Ch: 'ChChrysalis',
@@ -71,7 +84,7 @@ let elementChart = {
   prims: ['P',    'F',    'E',    'C',    'W',    'L',    'A',    'M',    'I',    'D',    'R'],
   basics : [
   'P Plant',  'F Fire',  'E Earth',  'C Cold',  'W Water',  'L Lightning',  'A Air',  'M Metal',  'I Light',  'D Dark',
-  'Plant',  'Fire',  'Earth',  'Cold',  'Water',  'Lightning',  'Air',  'Metal',  'Light',  'Dark',
+  
   'R Rift',
   'ApApocalypse',  'AuAura',  'ChChrysalis',  'CrCrystalline',  'DrDream',  'GaGalactic',  'GeGemstone',  'HiHidden',  'MeMelody',  'MhMonolith',  
   'OlOlympus',  'OrOrnamental',  'RbRainbow',  'SeSeasonal',  'SnSnowflake',  'SuSun',  'MoMoon',  'SfSurface',  'TrTreasure',  'ZoZodiac'
@@ -655,8 +668,8 @@ function processCombo(comboData) {
     
     for (const data of comboArr) {
       datapoint = data.trim()
-      if (datapoint.trim().length > 2) {
-        datapoint = datapoint.charAt(0).toUpperCase() + datapoint.substring(1)
+      if (datapoint.length > 2) {
+        //datapoint = datapoint.charAt(0).toUpperCase() + datapoint.substring(1)
         //let special = isUpperCase(datapoint.trim())
         if (chartRefArr.includes(datapoint)) {
           comboFin.requirements.push(chartRef[datapoint]);
