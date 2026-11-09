@@ -399,8 +399,6 @@ body {
 }
 
 
-
-
 .details {
   text-align: center;
   border-radius: 20px;
@@ -410,6 +408,20 @@ body {
 
 
 
+
+
+
+
+#multiparents {
+  text-align: center;
+}
+
+.multiparentcards {
+  background-color: #b8ad9b;
+  border: 3px solid #584e3f;
+  padding: 15px;
+  border-radius: 8px;
+}
 
 .targetcard {
     position: relative;
@@ -427,12 +439,18 @@ body {
     text-align:center;
     min-height: 150px;
     height: fit-content;
-    
 }
+.targetcard.favourite {
+    background-color: #cac5f0;
+    color:#442a5f;
+    border: 3px solid #442a5f;
+}
+
 .targets-selected {
   .targetcard {
     background-color: #442a5f;
     color:#cac5f0;
+    border: 3px solid #cac5f0;
   }
 }
 
@@ -441,6 +459,18 @@ body {
   max-height: 150px;
 }
 
+.searchlabel {
+  font-weight: bold;
+  color: #442a5f;
+  .search {
+    background-color: #cac5f0;
+    color: #442a5f;
+    border: 2px solid #442a5f;
+    border-radius: 4px;
+    padding: 5px;
+    font-weight: bold;
+  }
+}
 
 .oopsie {
   width:100vw;
