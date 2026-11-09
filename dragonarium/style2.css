@@ -257,32 +257,36 @@ body {
   width: 45%;
   height: 50%;*/
   object-fit: contain; 
-  max-height: 190px;
   max-width: 80%;
   margin:3px;
+  max-height: 190px;
 }
 .multiimgback {
   position: absolute;
   top:0px;
-  left:0px;
+  left: -5px;
   display:flex;
+  max-width:100%;
   .multi {
       position: relative;
-      /*left: -19px;*/
-      width: 70%;
-      height: 190px;
+      /*left: -19px;
+      width: 70%;*/
+      
       opacity: 0.4;
       cursor: pointer;
-      margin-left: -19px;
-      margin-right: -19px;
-      top:0px;
+      margin-left: -10px;
+      margin-right: -110px;
+      top: 0px;
+      max-width: 190px;
+    
+    
   }
 }
 .multiimgfront {
   position: absolute;
   width: 80%;
-  height: 190px;
-  right: -19px;
+  max-height: 190px;
+  right: -5px;
   bottom: 0;
   cursor: pointer;
 }
