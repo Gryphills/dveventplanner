@@ -465,6 +465,17 @@ function hideBreeds(el) {
   }
 }
 
+function clickInitButtons() {
+        let tabs = [wantDiv, initDiv, haveDiv, shadowDiv]
+        for (const tab of tabs) {
+                let buttons = tab.querySelectorAll('.sortbutton)
+                for (const button of buttons) {
+                        let id = tab.querySelector('.dragonCards').id
+                        let sortType = button.classList[0].substring(0, button.classList[0].length - 6);
+                }
+        }
+}
+
 function cycleViews(imgEl) {
   let imgsFront = imgEl.parentElement.parentElement.querySelector('.multiimgfront')
   let imgsBack = imgEl.parentElement.parentElement.querySelector('.multiimgback')
@@ -650,9 +661,7 @@ function makeCards() {
   }
 }
 
-function clickInitButtons() {
-  
-}
+
 
 function addCheckListeners() {
   let checks = Array.from(document.querySelectorAll('.hideBreedsButton'));
