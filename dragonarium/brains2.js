@@ -631,7 +631,7 @@ function makeCards() {
     //console.log(card)
     if (card.querySelector('.multiimgfront')) {
         let multiArray = []
-          multiArray.push(card.querySelector('.multiimgfront').firstChild.firstChild.src)
+          multiArray.push(card.querySelector('.multiimgfront').firstChild.src)
         for (const img of Array.from(card.querySelector('.multiimgback'))) {
             multiArray.push(img.firstChild.firstChild.src)
         }
