@@ -265,6 +265,7 @@ body {
   position: absolute;
   top:0px;
   left:0px;
+  display:flex;
   .multi {
       position: relative;
       /*left: -19px;*/
@@ -273,6 +274,7 @@ body {
       opacity: 0.4;
       cursor: pointer;
       margin-left: -19px;
+      margin-right: -19px;
       top:0px;
   }
 }
