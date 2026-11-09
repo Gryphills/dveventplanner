@@ -557,6 +557,10 @@ function buildDragonCard(name, data) {
         cardhtml += `${data.combo.special}`
         skipThing = true;
       }
+    } else if (data.rarity == "Galaxy") {
+        carthtml += `<div style="background-image:url('${elementIcons.Galactic}'); vertical-align: center; display: inline-block; height:22px; width: 22px; background-size: contain; background-repeat: no-repeat;"></div>`
+        cardhtml += `Galaxy Dragon; Clone in Coop`;
+        skipThing = true;
     }
     if (!skipThing) {
       cardhtml += `<h4>Breeding Info:</h4>`
