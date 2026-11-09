@@ -819,7 +819,216 @@ function getDragonImgs() {
 }*/
 
 
+/////////////////////TARGETING YAY////////////////////////////
 
+
+
+function searchListeners() {
+  for (const input of Array.from(document.querySelectorAll('.search'))) {
+    input.addEventListener('input', function(e) {
+      let key = e.currentTarget.dataset.key;
+      let cardHolder = input.closest('.tab').querySelector('#'+key);
+      for (const card of Array.from(cardHolder.children)) {
+        if (e.currentTarget.value && e.currentTarget.value != ' ') {
+          if (!card.id.includes(e.currentTarget.value.trim())) {
+            card.classList.add('hidden');
+          } else {
+            card.classList.remove('hidden');
+          }
+        }
+      }
+    })
+  }
+}
+
+
+
+function createTargetCards() {
+  let targetCardDiv = document.querySelector('.targetcards')
+  for (const dragonName of allDragonNames) {
+    if (allDragonData[dragonName].limited != 'Y') {
+      let targetCardHtml = 
+      `<div class='targetcard ${dragonName}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
+          <div class="itemimage targetimage">
+              <img loading="lazy" src="${allDragonImgs[dragonName].Adult}" >
+          </div>
+          <h2 class="itemname">${dragonName} Dragon</h2>
+      </div>`;
+
+      let cardEl = document.createElement('div');
+      cardEl.outerHTML = targetCardHtml;
+      
+      if (!allDragonData[dragonName].limited) {
+        cardEl.classList.add('perm');
+      }
+      if (dragonarium[dragonName].fav) {
+        cardEl.classList.add('favourite');
+        if (targetCardDiv.children.length == 0) {
+          targetCardDiv.appendChild(cardEl);
+        } else {
+          targetCardDiv.children[0].appendChild(cardEl);
+        }
+      } else {
+        targetCardDiv.appendChild(cardEl);
+      }
+    }
+  }
+}
+
+function updateTargetCard(dragonName) {
+  let targetCardDiv = document.querySelector('.targetdragons')
+  let targetCard = targetCardDiv.querySelector(`.${dragonName}`)
+
+  if (targetCard.dataset.fav != dragonarium[dragonName].fav) {
+    if (Number(dragonarium[dragonName].fav) == 1) {
+      targetCard.classList.add('favourite')
+      targetCard.parentElement.firstChild.before(targetCard);
+    } else {
+      targetCard.classList.remove('favourite')
+      let next = el.nextElementSibling;
+      if (next.classList.contains('favourite')) {
+        while (next.classList.contains('favourite')) {
+          next = next.nextElementSibling;
+        }
+        if (!next) {
+          el.parentElement.appendChild(el);
+        } else {
+          next.before(el);
+        }
+      }
+    }
+  }
+  targetCard.dataset.status = dragonarium[dragonName].status;
+  if (targetCard.dataset.status == 'shadow') {
+    targetCard.classList.add('shadow')
+  } else {
+    targetCard.classList.remove('shadow')
+  }
+  targetCard.dataset.fav = dragonarium[dragonName].fav;
+}
+
+function targetSelect(element) {
+  let swapDiv;
+  if (element.closest('.targets-selected')) {
+    swapDiv = element.closest('.targets-selected').previousElementSibling;
+  } else {
+    swapDiv = element.closest('.targetdragons').nextElementSibling;
+  }
+  if (element.classList.contains('favourite')) {
+    if (swapDiv.children.length > 0) {
+      swapDiv.firstChild.before(element);
+    } else {
+      swapDiv.appendChild(element);
+    }
+  } else {
+    swapDiv.appendChild(element);
+  }
+}
+
+function updateTargetSearch() {
+  let targetCardDiv = document.querySelector('.targets-selected');
+  let possiblepairdiv = document.querySelector('.possiblepairs')
+
+  let targets = []
+  let allRequirements = []
+
+  for (const target of Array.from(targetCardDiv.children)) {
+    let dragonName = target.dataset.dragonName
+    targets.push(dragonName);
+    let dragonRequires = allDragonData[dragonName].combo.requirements
+    for (const needed of dragonRequires) {
+      if (!allRequirements.includes(needed)) {
+        allRequirements.push(needed);
+      }
+    }
+  }
+  //now we haveall our required stuff, and all our targets. lets start with uh
+  let haveDragonNodes = haveDiv.children
+  let haveDragonsToCheck = []
+  for (const child of haveDragonNodes) {
+    haveDragonsToCheck.push(child.id);
+  }
+  
+  let validPairs = []
+
+  for (i=0;i<haveDragonsToCheck.length;i++) {
+    let dragonName = haveDragonsToCheck.pop()
+    let parentLeft = allDragonData[dragonName]
+    
+    if (parentLeft.combo.output) {
+      for (const otherParentName of haveDragonsToCheck) {
+
+        let otherOutput = allDragonData[otherParentName].combo.output;
+        let pairingElOutput = []
+        pairingElOutput = pairingElOutput.concat(parentLeft.combo.output)
+        if (otherOutput) {
+          for (const outputEl of otherOutput) {
+            if (!pairingElOutput.includes(outputEl)) {
+              pairingElOutput.push(outputEl)
+            }
+          }
+          let targetsMet = checkEachTarget(targets, pairingElOutput);
+          if (targetsMet.length > 1) {
+            let pairObj = {
+              parentLeft: parentLeft.name,
+              parentRight : otherParentName,
+              targetsMet: targetsMet
+            }
+            if (validPairs.length > 0) {
+              validPairs = sortPairIntoArray(pairObj, validPairs)
+            } else {
+              validPairs.push(pairObj)
+            }
+          }
+        }
+      }
+    }
+  }
+  //yay we checked ALL the possible pairs! Hopefully that doesn't completely eat the computer to do mSJHDgfsd
+}
+
+function sortPairIntoArray(pairObj, validPairs) {
+  for (const pair of validPairs) {
+    if (pair.targetsMet.length > pairObj.targetsMet.length) {
+      validPairs.splice(validPairs.indexOf(pair) + 1, 0, pairObj)
+    }
+  }
+  return validPairs
+}
+
+
+function checkEachTarget(targets, pairingElOutput) {
+  let targetsMet = []
+  for (const target of targets) {
+    if (checkTargetReq(target, pairingElOutput)) {
+      targetsMet.push(target)
+      if (targetsMet.length == targets.length) {
+        return targetsMet;
+      }
+    }
+  }
+  return targetsMet;
+}
+
+function checkTargetReq(target, pairingElOutput) {
+  let targetRequirements = allDragonData[target].combo.requirements;
+  let metReqs = [];
+  for (const req of targetRequirements) {
+    if (pairingElOutput.includes(req)) {
+      metReqs.push(req);
+      if (metReqs.length == targetRequirements.length) {
+        return true;
+      }
+    }
+  }
+  if (metReqs.length != targetRequirements.length) {
+    return false;
+  }
+}
+
+function pairTemplate(parentLeft, parentRight) {
+  `<div class="pairing"><div>${parentLeft.name} + ${parentRight.name} = </div>/div>`
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
