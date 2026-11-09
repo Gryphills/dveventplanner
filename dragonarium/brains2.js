@@ -476,7 +476,7 @@ function buildDragonCard(name, data) {
         cardhtml += `<p class="viewname" style="font-weight:bold;font-size:medium;">Day/Regular View</p><p>(click to cycle views)</p><div style="display: flex; position: relative; height: 220px;">
           <div class="multiimgback">`
           for (const img of Object.getOwnPropertyNames(allDragonImgs[name])) {
-            console.log(img, allDragonImgs[name][img])
+            //console.log(img, allDragonImgs[name][img])
             if (img != "Adult") {
               cardhtml += `<div><img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src='${allDragonImgs[name][img]}'></div>`
             }
@@ -514,6 +514,7 @@ function buildDragonCard(name, data) {
       if (data.combo['special']) {
         cardhtml += `<h3>${data.combo.special}</h3>`
       }
+      console.log(data.combo)
       if (data.combo['requirements']) {
         console.log(data.combo.requirements)
         let cleanedReq = ''
@@ -706,6 +707,7 @@ function processCombo(comboData) {
     }
     comboFin.output = outputNoDups;
   }
+  console.log('processed reqs got ', comboFin)
   return comboFin;
 }
 
