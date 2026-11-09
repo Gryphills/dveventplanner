@@ -759,7 +759,7 @@ function processCombo(comboData) {
     }
     let requirementNoDups = [];
     for (const item of comboFin.requirements) {
-      if (!requirementNoDups.includes(item) && specificReqInternalEls.includes(item)) {
+      if (!requirementNoDups.includes(item) && !specificReqInternalEls.includes(item)) {
         requirementNoDups.push(item)
       }
     }
