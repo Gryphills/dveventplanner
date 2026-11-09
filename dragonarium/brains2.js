@@ -468,6 +468,7 @@ function buildDragonCard(name, data) {
         cardhtml += `<div style="display: flex; position: relative; height: 220px;">
           <div class="multiimgback">`
           for (const img of Object.getOwnPropertyNames(allDragonImgs[name])) {
+            console.log(img, allDragonImgs[name][img])
             if (img != "Adult") {
               cardhtml += `<img loading="lazy" class="itemimage multi" onclick="cycleViews(this) src="${allDragonImgs[name][img]}">`
             }
@@ -555,11 +556,12 @@ function makeCards() {
     initDiv.appendChild(card)
     //console.log(card)
     if (card.querySelector('.multiimgfront')) {
-        let multiArray = [card.querySelector('.multiimgfront').firstChild.src]
+        let multiArray = []
+          multiArray.push(card.querySelector('.multiimgfront').firstChild.src)
         for (const img of Array.from(card.querySelector('.multiimgback'))) {
             multiArray.push(img.src)
         }
-      card.querySelector('.multiimgfront').dataset.imgarray = multiArray
+      card.querySelector('.multiimgfront').dataset.imgarray = JSON.stringify(multiArray)
     }
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
