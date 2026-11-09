@@ -55,7 +55,28 @@ let chartRef = {
         Mo: 'MoMoon',
         Sf: 'SfSurface',
         Tr: 'TrTreasure',
-        Zo: 'ZoZodiac'
+        Zo: 'ZoZodiac',
+
+        apocalypse	:	"ApApocalypse",
+        aura	:	"	AuAura",
+        chrysalis	:	"ChChrysalis",
+        crystalline	:	"CrCrystalline",
+        dream	:	"	DrDream",
+        galactic	:	"GaGalactic",
+        gemstone	:	"GeGemstone",
+        hidden	:	"HiHidden",
+        melody	:	"Me	Melody",
+        monolith	:	"Mh	Monolith",
+        olympus	:	"Ol	Olympus",
+        ornamental	:	"OrOrnamental",
+        rainbow	:	"RbRainbow",
+        seasonal	:	"SeSeasonal",
+        snowflake	:	"SnSnowflake",
+        sun	:	"SuSun",
+        moon	:	"MoMoon",
+        surface	:	"SfSurface",
+        treasure	:	"TrTreasure",
+        zodiac	:	"ZoZodiac",
   }
   //let chartRef = {
 let elementChart = {
