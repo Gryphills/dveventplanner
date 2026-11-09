@@ -1093,6 +1093,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sortCards(wantDiv);
     sortCards(haveDiv);
     sortCards(shadowDiv);
+    createTargetCards()
     document.querySelector('.oopsie').style.display = 'none';
 });
 
