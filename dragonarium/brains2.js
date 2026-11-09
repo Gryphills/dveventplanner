@@ -440,6 +440,14 @@ function cycleViews(imgEl) {
       imgsBack.children[imgArray.indexOf(img) - 1].src = img
     }
   }
+  let viewLabel = imgEl.parentElement.parentElement.querySelector('.viewname')
+  let type = imgarray[0].split('dult')[1].replace('.webp', '');
+  if (!type || type.length < 2){
+    viewLabel.textContent = "Day/Normal Form"
+  } else {
+    viewLabel.textContent = type + " Form"
+  }
+  
 }
 
 function buildDragonCard(name, data) {
@@ -465,7 +473,7 @@ function buildDragonCard(name, data) {
     if (allDragonImgs[name]) {
       let imgCount = Object.getOwnPropertyNames(allDragonImgs[name]).length
       if (imgCount > 1) {
-        cardhtml += `<div style="display: flex; position: relative; height: 220px;">
+        cardhtml += `<p class="viewname" style="font-weight:bold;font-size:medium;">Day/Regular View</p><p>(click to cycle views)</p><div style="display: flex; position: relative; height: 220px;">
           <div class="multiimgback">`
           for (const img of Object.getOwnPropertyNames(allDragonImgs[name])) {
             console.log(img, allDragonImgs[name][img])
@@ -819,6 +827,10 @@ document.addEventListener("DOMContentLoaded", function() {
     setTabs();
     makeCards();
     clickInitButtons();
+    sortCards(initDiv);
+    sortCards(wantDiv);
+    sortCards(haveDiv);
+    sortCards(shadowDiv);
     document.querySelector('.oopsie').style.display = 'none';
 });
 
