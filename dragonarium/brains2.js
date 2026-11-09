@@ -699,9 +699,13 @@ function processCombo(comboData) {
         } else {
           comboFin.requirements.push(datapoint);
           comboFin.output.push(datapoint);
-          let requirementEls = getRequirementEls(datapoint.trim())
-          for (const el of requirementEls) {
-            comboFin.requirements.push(el)
+          let requirementEls = allDragonData[datapoint]
+          if (!requirementEls) {
+            console.log('oops no ', datapoint)
+          } else {          //getRequirementEls(datapoint.trim())
+            for (const el of requirementEls) {
+              comboFin.requirements.push(el)
+            }
           }
         }
       }
@@ -718,15 +722,15 @@ function processCombo(comboData) {
   return comboFin;
 }
 
-function getRequirementEls(requirementName) {
+/*function getRequirementEls(requirementName) {
   for (i=0;i<allDragonNames.length;i++) {
-    if (dragonNames[i] == requirement){
+    if (allDragonNames[i] == requirement){
       console.log('yeah got em!');
       let rowStuff = processElsAndHabitats(allDragonData[allDragonNames[i]])
       return rowStuff.elements
     }
   }
-}
+}*/
 
 
 
