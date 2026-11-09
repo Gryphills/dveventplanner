@@ -691,8 +691,11 @@ function addCheckListeners() {
 function processDragonData() {
   let exclude = ["Tiamat", "Bahamut", "Gaia", "Ts'aishen", "Kairos"]
   for (const dragon of allDragonNames) {
-    if (!exclude.includes(dragon) && dragon.includes("Ghostly")) {
-      allDragonData[dragon].limited = ""
+    if (!exclude.includes(dragon)) {
+        if (dragon.includes("Ghostly")) {
+                allDragonData[dragon].limited = "";
+                allDragonData[dragon].rarity = "Ghostly";
+        }
     } else {
       delete allDragonData[dragon];
       allDragonNames.splice(allDragonNames.indexOf(dragon), 1)
