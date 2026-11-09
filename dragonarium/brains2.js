@@ -808,7 +808,7 @@ function processCombo(comboData) {
   if (comboData.requirements == [ "MhMonolith" ]) {
         comboData.requirements = [ "MhMonolith", "MhMonolith" ]
   }
-        if (comboData.includes('Clairvoyant') {
+        if (comboData.includes('Clairvoyant')) {
                 console.log(comboFin)
         }
   return comboFin;
