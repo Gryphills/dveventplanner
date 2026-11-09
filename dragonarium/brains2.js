@@ -486,7 +486,7 @@ function makeCards() {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     if (card.querySelector('.multiimgfront')) {
         let multiArray = [card.querySelector('.multiimgfront').firstChild.src]
-        for (const img of card.querySelector('.multiimgback') {
+        for (const img of card.querySelector('.multiimgback')) {
             multiArray.push(img.src)
         }
       card.querySelector('.multiimgfront').dataset.imgarray = multiArray
