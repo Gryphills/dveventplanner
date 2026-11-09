@@ -506,6 +506,7 @@ function buildDragonCard(name, data) {
         cardhtml += `<h3>${data.combo.special}</h3>`
       }
       if (data.combo['requirements']) {
+        console.log(data.combo.requirements)
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
