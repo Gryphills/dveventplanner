@@ -374,52 +374,6 @@ body {
     }
   
 }
-.iteminner {
-  background-color: #bdbdbd;
-  border: 3px solid #2a2a2a;
-  border-radius: 10px;
-  padding: 5px;
-  position: relative;
-  height: 100%;
-  display:grid;
-}
-.rare {
-  background-color: #72a9ec;
-  border: 3px solid #08254d;
-  .pressed {
-    background-color: #5893db;
-    border: 2px solid #08254d;
-  }
-  .iteminner {
-    background-color: #c5d4f0;
-  }
-}
-.epic {
-  background-color: #a86de5;
-  border: 3px solid #442a5f;
-  .pressed {
-    background-color: #a86de5;
-    border: 2px solid #442a5f;
-  }
-  .iteminner {
-    background-color: #cac5f0;
-  }
-}
-.rift {
-
-}
-.ghost {
-
-}
-.evolution {
-
-}
-.elementicon {
-
-}
-.nighttime {
-
-}
 
 
 .possibleothers {
@@ -445,56 +399,7 @@ body {
 }
 
 
-.want {
-  .iteminner {
-    background-color: #bcb8f5;
-    border: 3px solid #442a5f;
-  }
-}
-.buttons {
-  background-color: #b6c2d1;
-  color: black;
-  padding: 7px;
-  min-width: 65px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 2px auto;
-  cursor: pointer;
-  border: 2px solid #777777;
-  border-radius: 5px;
-  font-weight: bold;
-  font-family: Tahoma, Verdana, sans-serif;
-}
-.pressed {
-    background-color: #483163;
-    color: white;
-}
-.duo {
-  /*position: absolute;
-  width: 45%;
-  height: 50%;*/
-  object-fit: contain; 
-  max-height: 190px;
-  max-width: 80%;
-  margin:3px;
-}
-.duoback {
-  position: relative;
-  left: -19px;
-  width: 70%;
-  height: 190px;
-  opacity: 0.4;
-  cursor: pointer;
-}
-.duofront {
-  position: absolute;
-  width: 100%;
-  height: 190px;
-  right: -19px;
-  bottom: 0;
-  cursor: pointer;
-}
+
 
 .details {
   text-align: center;
@@ -502,64 +407,40 @@ body {
   padding: 7px;
   margin: 7px;
 }
-.wantdet {
-  background-color: rgb(173, 164, 211);
-  border: 3px solid rgb(37, 7, 87);
-}
-.neutraldet {
-  background-color: rgb(249, 240, 225);
-  border: 3px solid rgb(156, 143, 168);
-}
-.havedet {
-  background-color: rgb(249, 240, 225);
-  border: 3px solid rgb(98, 63, 155);
-}
-.ignoredet {
-  background-color: rgb(249, 240, 225);
-  border: 3px solid rgb(156, 143, 168);
-  opacity: 0.85;
-}
 
-.maindivs {
-  padding-top: 15px;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
+
+
+
+.targetcard {
+    position: relative;
+    max-width:200px;
+    width:150px;
+    margin: 15px;
+    margin-bottom:8px;
+    background-color: #b8ad9b;
+    border: 3px solid #584e3f;
+    border-radius: 8px;
+    padding: 4px;
+    padding-top: 2px;
+    padding-bottom: 8px;
+    color: #000000b0;
+    text-align:center;
+    min-height: 150px;
+    height: fit-content;
+    
 }
-#potentialpurchaselist {
-  .item {
-    scale:85%;
-    width:auto;
-  }
-  .breedinginfo {
-    display:none;
-  }
-  .itemimage {
-    max-height: 100px;
+.targets-selected {
+  .targetcard {
+    background-color: #442a5f;
+    color:#cac5f0;
   }
 }
 
-.favbutton {
-  border-radius: 25px;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  font-size: 40px;
-  /*display:none;
-  bottom: -12px;
-  
-  background-size: cover;
-  opacity:0.8;
-  left: -15px;*/
-  top: -16px;
-  right: -16px;
-  line-height: 0px;
-  background-color: #cac5f0;
-  border-color: #cac5f0;
-  text-align: center;
-  margin-bottom:25px;
+.targetimage {
+  max-width: 150px;
+  max-height: 150px;
 }
+
 
 .oopsie {
   width:100vw;
