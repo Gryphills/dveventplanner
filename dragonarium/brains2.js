@@ -3,6 +3,7 @@
 
 let allDragonData ;
 let allDragonNames;
+let allDragonImgs ;
 let initDiv;
 let wantDiv ;
 let haveDiv ;
@@ -399,19 +400,19 @@ function buildDragonCard(name, data) {
     
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
     if (data.images) {
-      let imgCount = Object.getOwnPropertyNames(data.images).length
+      let imgCount = Object.getOwnPropertyNames(allDragonImgs[name]).length
       if (imgCount > 1) {
         cardhtml += `<div style="display: flex; position: relative; height: 220px;">
           <div class="multiimgback">`
-          for (const img of Object.getOwnPropertyNames(data.images)) {
+          for (const img of Object.getOwnPropertyNames(allDragonImgs[name])) {
             if (img != "Adult") {
-              cardhtml += `<img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${data.images[img]}">`
+              cardhtml += `<img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${allDragonImgs[name][img]}">`
             }
           }
             
           cardhtml += `</div>
           <div class="multiimgfront">
-            <img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${data.images.Adult}">
+            <img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src="${allDragonImgs[name].Adult}">
           </div>
         </div>`
       }
@@ -420,7 +421,7 @@ function buildDragonCard(name, data) {
         //if (Object.getOwnPropertyNames(data.images)[0] == "temp") {
         //    cardhtml += ` style="max-width:100px;max-height:100px;" `
         //}
-        cardhtml += `><img loading="lazy" src="${data.images[Object.getOwnPropertyNames(data.images)[0]]}" ></div>`
+        cardhtml += `><img loading="lazy" src="${allDragonImgs[name][Object.getOwnPropertyNames(allDragonImgs[name])[0]]}" ></div>`
       } else {
          cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
       }
@@ -698,7 +699,7 @@ function processElsAndHabitats(row) {
   return row;
 }
 
-
+/*
 function getDragonImgs() {
   for (const node of Array.from(document.getElementById('dragonurls').childNodes)) {
     if (node.textContent) {
@@ -721,7 +722,7 @@ function getDragonImgs() {
       }
     }
   }
-}
+}*/
 
 
 
