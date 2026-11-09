@@ -76,13 +76,19 @@ function sortCards(div) {
   
   //favs just leave where they are, and we will append after.
   for (const card of availCards) {
-    div.appendChild(card)
+    if (!card.classList.contains('favourite') {
+      div.appendChild(card)
+    }
   }
   for (const card of permCards) {
-    div.appendChild(card)
+    if (!card.classList.contains('favourite') {
+      div.appendChild(card)
+    }
   }
   for (const card of unavailCards) {
-    div.appendChild(card)
+    if (!card.classList.contains('favourite') {
+      div.appendChild(card)
+    }
   }
   
 }
