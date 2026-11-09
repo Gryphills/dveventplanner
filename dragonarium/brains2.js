@@ -1130,9 +1130,26 @@ function checkTargetReq(target, pairingElOutput) {
 }
 
 function pairTemplate(parentLeft, parentRight) {
-  `<div class="pairing"><div>${parentLeft.name} + ${parentRight.name} = </div>/div>`
+  let htmlTemplate = `<div class="pairing">`
+          
+  `<div> + ${parentRight.name} = </div>/div>`
 }
 
+function parentTemplate(parent) {
+        let parenthtml = `<a href="#${parentLeft.name}">
+                  <div class='parent'>
+                          <div class="itemimg">
+                                  <img src="${}">
+                          </div>
+                          <h5>${parentLeft.name}</h5>
+                          <div class="internal-el-imgs">`
+          for (const el of parentLeft.elements) {
+                htmlTemplate += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
+          }
+          htmlTemplate += `</div>
+                  </div>
+          </a>`
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
