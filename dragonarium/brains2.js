@@ -442,7 +442,7 @@ function hideBreeds(el) {
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
-    console.log(cardsDiv[0])
+    //console.log(cardsDiv[0])
     for (const card of cardsDiv) {
       card.querySelector('.breedinginfo').classList.add('hidden');
     }
@@ -461,7 +461,7 @@ function hideBreeds(el) {
     dragonarium[id].hideBreeds = el.dataset.toggle
     saveData()
   } else {
-    console.log(id);
+    console.log('smth weird with ', id);
   }
 }
 
@@ -521,10 +521,10 @@ function buildDragonCard(name, data) {
       cardhtml += ` perm`
     }
     if (data.combo.raw) {
-            console.log('why do we have raw for ', name)
+            //console.log('why do we have raw for ', name)
         data.combo = processCombo(data.combo.raw)
             allDragonData[name].combo = data.combo;
-            console.log(name, "'s combo should now be ", data.combo, allDragonData[name].combo)
+            //console.log(name, "'s combo should now be ", data.combo, allDragonData[name].combo)
     }
      if (data.combo.special) {
              if (data.combo.special.includes("Evolve")) {
@@ -546,9 +546,9 @@ function buildDragonCard(name, data) {
         let imgArray = Object.values(allDragonImgs[name])
         imgArray.splice(imgArray.indexOf(allDragonImgs[name].Adult), 1)
         imgArray = [ allDragonImgs[name].Adult ].concat(imgArray)
-        console.log(imgArray)
+        //console.log(imgArray)
               
-        cardhtml += `<p class="viewname" style="font-weight:bold;font-size:medium;">Day/Regular View</p><p>(click to cycle views)</p><div style="display: flex; position: relative; height: 220px;">
+        cardhtml += `<p class="viewname" style="font-weight:bold;font-size:medium;">Day/Regular View</p><p style="font-size:smaller;font-style:italic;">(click to cycle views)</p><div style="display: flex; position: relative; height: 220px;">
           <div class="multiimgback">`
           for (const img of Object.getOwnPropertyNames(allDragonImgs[name])) {
             //console.log(img, allDragonImgs[name][img])
@@ -558,8 +558,8 @@ function buildDragonCard(name, data) {
           }
             
           cardhtml += `</div>
-          <div class="multiimgfront">
-            <img loading="lazy" data-imgarray="${imgArray}" class="itemimage multi" onclick="cycleViews(this)" src='${allDragonImgs[name].Adult}'>
+          <div class="multiimgfront" data-imgarray="${imgArray}">
+            <img loading="lazy"  class="itemimage multi" onclick="cycleViews(this)" src='${allDragonImgs[name].Adult}'>
           </div>
         </div>`
       }
@@ -985,7 +985,7 @@ function createTargetCards() {
         if (targetCardDiv.children.length == 0) {
           targetCardDiv.appendChild(cardEl);
         } else {
-          targetCardDiv.children[0].appendChild(cardEl);
+          targetCardDiv.children[0].after(cardEl);
         }
       } else {
         targetCardDiv.appendChild(cardEl);
@@ -1048,7 +1048,7 @@ function targetSelect(element) {
   if (element.closest('.targets-selected')) {
     swapDiv = element.closest('.targets-selected').previousElementSibling;
   } else {
-    swapDiv = element.closest('.targetdragons').nextElementSibling;
+    swapDiv = element.closest('.targetcards').nextElementSibling;
   }
   if (element.classList.contains('favourite')) {
     if (swapDiv.children.length > 0) {
