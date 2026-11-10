@@ -970,10 +970,14 @@ function createTargetCards() {
       </div>`;
 
       let cardEl = document.createElement('div');
-      cardEl.outerHTML = targetCardHtml;
+      cardEl.innerHTML = targetCardHtml;
+      cardEl = cardEl.firstChild
       
       if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
+      }
+      if (dragonarium[dragonName].status) {
+        cardEl.classList.add('owned');
       }
       if (dragonarium[dragonName].fav) {
         cardEl.classList.add('favourite');
@@ -987,6 +991,23 @@ function createTargetCards() {
       }
     }
   }
+}
+
+function hideOwned(el) {
+   let cards = document.querySelector('#targetcards').querySelector('.owned')
+   if (el.dataset.value == 0) {
+           el.dataset.value == 1
+           el.classList.add('toggled');
+           for (const card of cards) {
+                card.classList.add('hidden')
+           }
+   } else {
+           el.dataset.value == 0
+           el.classList.remove('toggled');
+           for (const card of cards) {
+                card.classList.remove('hidden')
+           }
+   }
 }
 
 function updateTargetCard(dragonName) {
