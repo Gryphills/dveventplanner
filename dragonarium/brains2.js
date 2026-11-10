@@ -966,7 +966,7 @@ function createTargetCards() {
           <div class="itemimage targetimage">
               <img loading="lazy" src="${allDragonImgs[dragonName].Adult}">
           </div>
-          <h2 class="itemname">${dragonName} Dragon</h2>
+          <h2 class="itemname">${dragonName}</h2>
       </div>`;
 
       let cardEl = document.createElement('div');
