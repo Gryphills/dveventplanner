@@ -406,9 +406,33 @@ body {
   margin: 7px;
 }
 
+.specific-breeding-req {
+  position:relative;
+}
 
+.internal-el-imgs {
+  position:absolute;
+  top:-20px;
+  margin-left: auto;
+  margin-right: auto;
+  div {
+    vertical-align: center; 
+    display: inline-block; 
+    height:15px; 
+    width: 15px; 
+    background-size: contain; 
+    background-repeat: no-repeat;
+  }
+}
 
-
+.el-img {
+  vertical-align: center; 
+  display: inline-block; 
+  height:22px; 
+  width: 22px; 
+  background-size: contain; 
+  background-repeat: no-repeat;
+}
 
 
 
@@ -476,7 +500,6 @@ body {
   color: #442a5f;
   .search {
     background-color: #cac5f0;
-    color: #442a5f;
     border: 2px solid #442a5f;
     border-radius: 4px;
     padding: 5px;
