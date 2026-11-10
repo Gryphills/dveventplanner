@@ -494,6 +494,8 @@ body {
     height: fit-content;
   .itemname {
     font-size: medium;
+    font-weight: normal;
+    margin-top:8px;
   }
 }
 .targetcard.favourite {
