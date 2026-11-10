@@ -268,12 +268,12 @@ body {
   left: -5px;
   display:flex;
   max-width:100%;
+  opacity: 0.6;
   .multi {
       position: relative;
       /*left: -19px;
       width: 70%;*/
-      
-      opacity: 0.6;
+      filter: brightness(70%);
       cursor: pointer;
       margin-left: -10px;
       margin-right: -110px;
