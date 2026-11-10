@@ -482,8 +482,9 @@ function clickInitButtons() {
 function cycleViews(imgEl) {
   let imgsFront = imgEl.parentElement.parentElement.querySelector('.multiimgfront')
   let imgsBack = imgEl.parentElement.parentElement.querySelector('.multiimgback')
-  let imgarray = JSON.parse(imgsFront.dataset.imgarray)
+  let imgarray = imgsFront.dataset.imgarray
   imgarray.push(imgarray.shift())
+        imgsFront.dataset.imgarray = imgarray
   for (const img of imgArray) {
     if (imgArray.indexOf(img) == 0) {
       imgsFront.firstChild.src = img
@@ -542,6 +543,11 @@ function buildDragonCard(name, data) {
     if (allDragonImgs[name]) {
       let imgCount = Object.getOwnPropertyNames(allDragonImgs[name]).length
       if (imgCount > 1) {
+        let imgArray = Object.getOwnPropertyDescriptors(allDragonImgs[name])
+        imgArray.splice(imgArray.indexOf(allDragonImgs[name].Adult), 1)
+        imgArray = [ allDragonImgs[name].Adult ].concat(imgArray)
+        console.log(imgArray)
+              
         cardhtml += `<p class="viewname" style="font-weight:bold;font-size:medium;">Day/Regular View</p><p>(click to cycle views)</p><div style="display: flex; position: relative; height: 220px;">
           <div class="multiimgback">`
           for (const img of Object.getOwnPropertyNames(allDragonImgs[name])) {
@@ -553,7 +559,7 @@ function buildDragonCard(name, data) {
             
           cardhtml += `</div>
           <div class="multiimgfront">
-            <img loading="lazy" class="itemimage multi" onclick="cycleViews(this)" src='${allDragonImgs[name].Adult}'>
+            <img loading="lazy" data-imgarray="${imgArray}" class="itemimage multi" onclick="cycleViews(this)" src='${allDragonImgs[name].Adult}'>
           </div>
         </div>`
       }
@@ -646,7 +652,7 @@ function makeCards() {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     initDiv.appendChild(card)
     //console.log(card)
-    if (card.querySelector('.multiimgfront')) {
+    /*if (card.querySelector('.multiimgfront')) {
         let multiArray = []
           multiArray.push(card.querySelector('.multiimgfront').firstChild.src)
         for (const img of Array.from(card.querySelector('.multiimgback'))) {
@@ -655,7 +661,7 @@ function makeCards() {
         }
       card.querySelector('.multiimgfront').dataset.imgarray = JSON.stringify(multiArray)
             console.log('array: ', multiArray, JSON.stringify(multiArray))
-    }
+    }*/
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
     }
