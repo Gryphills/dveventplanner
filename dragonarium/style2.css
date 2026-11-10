@@ -469,7 +469,7 @@ body {
   background-color: #584e3f;
   display: flex;
   overflow-x: scroll;
-  height: 200px;
+  height: 150px;
   width: 90%;
   flex-wrap: nowrap;
   border: 3px solid #584e3f;
@@ -481,21 +481,25 @@ body {
     position: relative;
     max-width:150px;
     width:150px;
-    margin: 15px;
-    margin-bottom:8px;
+    /*margin: 15px;
+    margin-bottom:8px;*/
+    margin-bottom: 4px;
+    
     background-color: #b8ad9b;
     border: 3px solid #584e3f;
     border-radius: 8px;
     padding-top: 12px;
     padding-bottom: 8px;
-    padding-bottom: 12px;
+    /*padding-bottom: 12px;*/
     color: #000000b0;
     text-align:center;
-    height: fit-content;
+    height: 120px;
   .itemname {
     font-size: medium;
     font-weight: normal;
     margin-top:8px;
+    position:relative;
+    bottom:0px;
   }
 }
 .targetcard.favourite {
