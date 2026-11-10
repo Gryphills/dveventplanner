@@ -955,7 +955,7 @@ function searchListeners() {
 
 
 function createTargetCards() {
-  let targetCardDiv = document.querySelector('.targetcards')
+  let targetCardDiv = document.querySelector('.targetcards');
   for (const dragonName of allDragonNames) {
     if (allDragonData[dragonName].limited != 'Y') {
       if (!allDragonImgs[dragonName]) {
@@ -974,6 +974,10 @@ function createTargetCards() {
       cardEl.innerHTML = targetCardHtml;
       //console.log(cardEl, cardEl.innerHTML);
       cardEl = cardEl.children[0];
+
+      if (allDragonData[dragonName].requirements) {
+        
+      }
       
       if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
@@ -1215,6 +1219,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sortCards(haveDiv);
     sortCards(shadowDiv);
     createTargetCards()
+    searchListeners()
     document.querySelector('.oopsie').style.display = 'none';
 });
 
