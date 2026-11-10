@@ -508,6 +508,27 @@ body {
   max-height: 150px;
 }
 
+.possibletargets {
+  display:flex;
+  flex-wrap: wrap;
+  justify-contents: center;
+}
+
+.possibletarget {
+  width: fit-content;
+  max-width: 200px;
+  height: 170px;
+  padding-left: 4px;
+  padding-right: 4px;
+  p {
+    max-width: 200px;
+  }
+  img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+}
+
 .searchlabel {
   font-weight: bold;
   color: #442a5f;
