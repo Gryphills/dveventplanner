@@ -394,13 +394,13 @@ function hideUnavail(el) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
     for (const card of cards) {
-      card.classList.add('hidden');
+      card.classList.add('filterunavail');
     }
   } else {
     el.dataset.toggle = 0
     el.classList.remove('toggled')
     for (const card of cards) {
-      card.classList.remove('hidden');
+      card.classList.remove('filterunavail');
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
@@ -418,13 +418,13 @@ function hidePerm(el) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
     for (const card of cards) {
-      card.classList.add('hidden');
+      card.classList.add('filterperm');
     }
   } else {
     el.dataset.toggle = 0
     el.classList.remove('toggled')
     for (const card of cards) {
-      card.classList.remove('hidden');
+      card.classList.remove('filterperm');
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
@@ -937,13 +937,14 @@ function searchListeners() {
   for (const input of Array.from(document.querySelectorAll('.search'))) {
     input.addEventListener('input', function(e) {
       let key = e.currentTarget.dataset.key;
+        console.log(e.currentTarget.value);
       let cardHolder = input.closest('.tab').querySelector('#'+key);
       for (const card of Array.from(cardHolder.children)) {
         if (e.currentTarget.value && e.currentTarget.value != ' ') {
           if (!card.id.includes(e.currentTarget.value.trim())) {
-            card.classList.add('hidden');
+            card.classList.add('filtersearch');
           } else {
-            card.classList.remove('hidden');
+            card.classList.remove('filtersearch');
           }
         }
       }
@@ -1000,13 +1001,13 @@ function hideOwned(el) {
            el.dataset.value == 1
            el.classList.add('toggled');
            for (const card of cards) {
-                card.classList.add('hidden')
+                card.classList.add('filterowned')
            }
    } else {
            el.dataset.value == 0
            el.classList.remove('toggled');
            for (const card of cards) {
-                card.classList.remove('hidden')
+                card.classList.remove('filterowned')
            }
    }
 }
