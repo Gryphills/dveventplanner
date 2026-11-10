@@ -412,7 +412,7 @@ body {
 }
 
 .internal-el-imgs {
-  
+  opacity:0.7;
   position: absolute;
   left: -25%;
   width: 150%;
@@ -422,7 +422,7 @@ body {
   justify-self: center;
   
   div {
-    opacity:0.7;
+    
     vertical-align: center; 
     display: inline-block; 
     height:15px; 
@@ -431,11 +431,7 @@ body {
     background-repeat: no-repeat;
   }
 }
-.internal-el-imgs::hover { 
-  div {
-    opacity:1.0;
-  }
-}
+
 .el-img {
   vertical-align: center; 
   display: inline-block; 
@@ -443,6 +439,11 @@ body {
   width: 22px; 
   background-size: contain; 
   background-repeat: no-repeat;
+}
+.specific-breeding-req::hover {
+  .internal-el-imgs { 
+      opacity:1.0;
+  }
 }
 
 
