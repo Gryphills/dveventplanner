@@ -509,10 +509,18 @@ body {
 }
 
 .targets-selected {
+  padding-bottom: 6px;
+  padding-top: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: fit-content;
   .targetcard {
     background-color: #442a5f;
     color:#cac5f0;
     border: 3px solid #cac5f0;
+    
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
