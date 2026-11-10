@@ -488,6 +488,9 @@ body {
     text-align:center;
     min-height: 150px;
     height: fit-content;
+  .itemname {
+    font-size: medium;
+  }
 }
 .targetcard.favourite {
     background-color: #cac5f0;
