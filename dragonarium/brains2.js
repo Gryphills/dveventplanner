@@ -964,14 +964,15 @@ function createTargetCards() {
       let targetCardHtml = 
       `<div class='targetcard ${dragonName}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
           <div class="itemimage targetimage">
-              <img loading="lazy" src="${allDragonImgs[dragonName].Adult}" >
+              <img loading="lazy" src="${allDragonImgs[dragonName].Adult}">
           </div>
           <h2 class="itemname">${dragonName} Dragon</h2>
       </div>`;
 
       let cardEl = document.createElement('div');
       cardEl.innerHTML = targetCardHtml;
-      cardEl = cardEl.firstChild
+      console.log(cardEl, cardEl.innerHTML);
+      cardEl = cardEl.children[0];
       
       if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
