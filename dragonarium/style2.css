@@ -409,6 +409,7 @@ body {
 
 .specific-breeding-req {
   position:relative;
+  display: inline-block;
 }
 
 .internal-el-imgs {
