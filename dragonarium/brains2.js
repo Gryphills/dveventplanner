@@ -648,9 +648,11 @@ function makeCards() {
         let multiArray = []
           multiArray.push(card.querySelector('.multiimgfront').firstChild.src)
         for (const img of Array.from(card.querySelector('.multiimgback'))) {
+                console.log(img, img.firstChild.firstChild)
             multiArray.push(img.firstChild.firstChild.src)
         }
       card.querySelector('.multiimgfront').dataset.imgarray = JSON.stringify(multiArray)
+            console.log('array: ', multiArray, JSON.stringify(multiArray))
     }
     if (!dragonarium[dragonName]) {
       dragonarium[dragonName] = {"fav": 0, "status": "init"};
