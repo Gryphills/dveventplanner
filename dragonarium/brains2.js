@@ -592,6 +592,9 @@ function buildDragonCard(name, data) {
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
                 cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>`+ req.substring(2)
+            } else if (req == "Any") {
+                cleanedReq +=  `req`
+            
             } else {
                 cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}</a>`
                     if (allDragonData[req]) {
@@ -808,6 +811,8 @@ function processCombo(comboData) {
   }
   if (comboData.requirements == [ "MhMonolith" ]) {
         comboData.requirements = [ "MhMonolith", "MhMonolith" ]
+  } else if (comboFin.requirements.length == 1) {
+        comboFin.requirements.push('Any')
   }
         if (comboData.includes('Clairvoyant')) {
                 console.log(comboFin)
