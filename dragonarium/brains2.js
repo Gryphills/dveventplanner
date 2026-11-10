@@ -593,7 +593,7 @@ function buildDragonCard(name, data) {
             if (elementChart.basics.includes(req)) {
                 cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>`+ req.substring(2)
             } else {
-                cleanedReq += `<a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}`
+                cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}</a>`
                     if (allDragonData[req]) {
                         cleanedReq += `<span class="internal-el-imgs">`
                         for (const el of allDragonData[req].elements) {
@@ -601,8 +601,7 @@ function buildDragonCard(name, data) {
                         }
                          cleanedReq += `</span>`
                     }
-                
-                cleanedReq += `</a>`
+                cleanedReq += `</div>`
             }
             if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
                 cleanedReq += ' + '
