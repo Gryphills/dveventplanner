@@ -597,7 +597,7 @@ function buildDragonCard(name, data) {
                     if (allDragonData[req]) {
                         cleanedReq += `<span class="internal-el-imgs">`
                         for (const el of allDragonData[req].elements) {
-                                `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
+                                cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
                         }
                          cleanedReq += `</span>`
                     }
