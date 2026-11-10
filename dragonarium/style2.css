@@ -567,6 +567,21 @@ body {
   }
 }
 
+
+.filtersearch {
+  display:none;
+}
+.filterperm {
+  display:none;
+}
+.filterowned {
+  display:none;
+}
+.filterunavail {
+  display:none;
+}
+
+
 .oopsie {
   width:100vw;
   height: 100vh;
