@@ -544,8 +544,8 @@ function buildDragonCard(name, data) {
       let imgCount = Object.getOwnPropertyNames(allDragonImgs[name]).length
       if (imgCount > 1) {
         let imgArray = Object.getOwnPropertyDescriptors(allDragonImgs[name])
-        imgArray.splice(imgArray.indexOf(allDragonImgs[name].Adult), 1)
-        imgArray = [ allDragonImgs[name].Adult ].concat(imgArray)
+        //imgArray.splice(imgArray.indexOf(allDragonImgs[name].Adult), 1)
+        //imgArray = [ allDragonImgs[name].Adult ].concat(imgArray)
         console.log(imgArray)
               
         cardhtml += `<p class="viewname" style="font-weight:bold;font-size:medium;">Day/Regular View</p><p>(click to cycle views)</p><div style="display: flex; position: relative; height: 220px;">
