@@ -543,9 +543,9 @@ function buildDragonCard(name, data) {
     if (allDragonImgs[name]) {
       let imgCount = Object.getOwnPropertyNames(allDragonImgs[name]).length
       if (imgCount > 1) {
-        let imgArray = Object.getOwnPropertyDescriptors(allDragonImgs[name])
-        //imgArray.splice(imgArray.indexOf(allDragonImgs[name].Adult), 1)
-        //imgArray = [ allDragonImgs[name].Adult ].concat(imgArray)
+        let imgArray = Object.values(allDragonImgs[name])
+        imgArray.splice(imgArray.indexOf(allDragonImgs[name].Adult), 1)
+        imgArray = [ allDragonImgs[name].Adult ].concat(imgArray)
         console.log(imgArray)
               
         cardhtml += `<p class="viewname" style="font-weight:bold;font-size:medium;">Day/Regular View</p><p>(click to cycle views)</p><div style="display: flex; position: relative; height: 220px;">
@@ -1143,26 +1143,34 @@ function checkTargetReq(target, pairingElOutput) {
   }
 }
 
-function pairTemplate(parentLeft, parentRight) {
-  let htmlTemplate = `<div class="pairing">`
-          
-  `<div> + ${parentRight.name} = </div>/div>`
+function pairTemplate(pairObj) {
+  let htmlTemplate = `<div class="pairing"> <div class="pairparents">`
+  htmlTemplate += parentTemplate(pairObj.parentLeft);
+  htmlTemplate += `<p> + </p>`
+  htmlTemplate += parentTemplate(pairObj.parentRight);
+  htmlTemplate += `</div> <hr> <div class="possibletargets">`
+  for (const validTarget of pairObj.targetsMet) {
+    htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p></div>`
+  }
+  htmlTemplate += `</div></div>`
+  return htmlTemplate;
 }
 
 function parentTemplate(parent) {
-        let parenthtml = `<a href="#${parentLeft.name}">
-                  <div class='parent'>
-                          <div class="itemimg">
-                                  <img>
-                          </div>
-                          <h5>${parentLeft.name}</h5>
-                          <div class="internal-el-imgs">`
-          for (const el of parentLeft.elements) {
-                htmlTemplate += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
-          }
-          htmlTemplate += `</div>
-                  </div>
-          </a>`
+  let parenthtml = `<a href="#${parent.name}">
+      <div class='parent'>
+          <div class="itemimg">
+                <img src="${allDragonImgs[parent.name].Adult}">
+          </div>
+          <h5>${parent.name}</h5>
+          <div class="internal-el-imgs">`
+    for (const el of parent.elements) {
+          parenthtml += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
+    }
+    parenthtml += `</div>
+            </div>
+    </a>`
+    return parenthtml;
 }
 
 document.addEventListener("DOMContentLoaded", function() {
