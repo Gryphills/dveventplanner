@@ -57,7 +57,7 @@ body {
     h3 {
         font-weight:bold;
         font-size:18px;
-        margin-bottom: 22px;
+        margin-bottom: 27px;
     }
     .hidden {
         display: none;
@@ -413,11 +413,13 @@ body {
 
 .internal-el-imgs {
   position: absolute;
-  bottom: -20px;
-  left: 0;
-  width: 100%;
-  display:flex;
+  left: -25%;
+  width: 150%;
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  justify-self: center;
+  
   div {
     vertical-align: center; 
     display: inline-block; 
