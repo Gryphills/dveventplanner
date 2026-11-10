@@ -815,11 +815,13 @@ function processCombo(comboData) {
     comboFin.output = outputNoDups;
     comboFin.requirements = requirementNoDups;
   }
-  if (comboData.requirements == [ "MhMonolith" ]) {
-        comboData.requirements = [ "MhMonolith", "MhMonolith" ]
-  } else if (comboFin.requirements.length == 1) {
-        comboFin.requirements.push('Any')
-  }
+        if (comboFin.requirements) {
+                if (comboFin.requirements == [ "MhMonolith" ]) {
+                        comboFin.requirements = [ "MhMonolith", "MhMonolith" ]
+                } else if (comboFin.requirements.length == 1) {
+                        comboFin.requirements.push('Any')
+                }
+        }
         if (comboData.includes('Clairvoyant')) {
                 console.log(comboFin)
         }
