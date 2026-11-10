@@ -971,7 +971,7 @@ function createTargetCards() {
 
       let cardEl = document.createElement('div');
       cardEl.innerHTML = targetCardHtml;
-      console.log(cardEl, cardEl.innerHTML);
+      //console.log(cardEl, cardEl.innerHTML);
       cardEl = cardEl.children[0];
       
       if (!allDragonData[dragonName].limited) {
