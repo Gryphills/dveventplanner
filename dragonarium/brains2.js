@@ -237,7 +237,7 @@ function favouriteCard(button) {
     button.dataset.toggle = 1;
     el.parentElement.firstChild.before(el);
   } else {
-    el.classList.remove("favourite");
+    el.classList.("favourite");
     button.dataset.toggle = 0;
     if (el.classList.contains('avail')) {
       let next = el.nextElementSibling;
@@ -366,7 +366,7 @@ function radioOtherButtons(clicked) {
   while (prev) {
     if (!prev.classList.contains('favc')) {
       prev.dataset.toggle = 0;
-      prev.classList.remove('toggled')
+      prev.classList.('toggled')
     }
     prev = prev.previousElementSibling
     safety -= 1;
@@ -378,7 +378,7 @@ function radioOtherButtons(clicked) {
   let next = clicked.nextElementSibling;
   while (next) {
     next.dataset.toggle = 0;
-    next.classList.remove('toggled')
+    next.classList.('toggled')
     next = next.nextElementSibling;
     safety -= 1;
     if (safety < 0) {
@@ -403,9 +403,9 @@ function hideUnavail(el) {
     }
   } else {
     el.dataset.toggle = 0
-    el.classList.remove('toggled')
+    el.classList.('toggled')
     for (const card of cards) {
-      card.classList.remove('filterunavail');
+      card.classList.('filterunavail');
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
@@ -427,9 +427,9 @@ function hidePerm(el) {
     }
   } else {
     el.dataset.toggle = 0
-    el.classList.remove('toggled')
+    el.classList.('toggled')
     for (const card of cards) {
-      card.classList.remove('filterperm');
+      card.classList.('filterperm');
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
@@ -453,7 +453,7 @@ function hideBreeds(el) {
     }
   } else {
     el.dataset.toggle = 0
-    el.classList.remove('toggled')
+    el.classList.('toggled')
     for (const card of cardsDiv) {
       card.querySelector('.breedinginfo').classList.remove('hidden');
     }
@@ -1196,7 +1196,7 @@ function updateTargetSearch() {
   //now we need to build and add the pairs into the template thingy.
 
 
-  tempTextEl.remove();
+  //tempTextEl.remove();
 }
 
 function sortPairIntoArray(pairObj, validPairs) {
