@@ -1295,7 +1295,7 @@ function getPairingOutput(dragonLeftName, dragonRightName) {
                               pairingElementOutput.push(outputEl)
                             }
                           }
-                          console.log('pairing output for ', dragonName,  otherParentName, pairingElementOutput)
+                          console.log('pairing output for ', dragonLeftName,  dragonRightName, pairingElementOutput)
                           pairingOutputs[dragonLeftName + `//` + dragonRightName] = pairingElementOutput
                                 return pairingElementOutput
                         }
