@@ -1111,6 +1111,8 @@ function targetSelect(element) {
   updateTargetSearch()
 }
 
+let pairingOutputs = {}
+
 function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
   let possiblepairdiv = document.querySelector('.possiblepairs')
@@ -1138,7 +1140,7 @@ function updateTargetSearch() {
       }
     }
   }
-  console.log(targets, ' require ', allRequirements)
+  //console.log(targets, ' require ', allRequirements)
   //now we haveall our required stuff, and all our targets. lets start with uh
   let haveDragonNodes = haveDiv.children
   let haveDragonsToCheck = []
@@ -1163,7 +1165,7 @@ function updateTargetSearch() {
               pairingElementOutput.push(outputEl)
             }
           }
-          console.log('pairing output for ',dragonName,  otherParentName, pairingElementOutput)
+          //console.log('pairing output for ', dragonName,  otherParentName, pairingElementOutput)
           let targetsMet = checkEachTarget(targets, pairingElementOutput);
           if (targetsMet.length > 1) {
             let pairObj = {
