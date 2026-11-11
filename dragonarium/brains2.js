@@ -1061,7 +1061,7 @@ function targetSelect(element) {
     //swapDiv = element.closest('.targets-selected').previousElementSibling;
   } else {
           swapDiv = element.closest('.targetcards').nextElementSibling;
-          let copyEl = element.cloneNode()
+          let copyEl = element.cloneNode(true)
           if (element.classList.contains('favourite')) {
             if (swapDiv.children.length > 0) {
               swapDiv.firstChild.before(copyEl);
