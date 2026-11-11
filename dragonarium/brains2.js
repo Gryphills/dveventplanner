@@ -302,7 +302,7 @@ function haveCard(button) {
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
     dragonarium[el.id].status = 'have';
-    updateTargetCard(el.id)
+    //updateTargetCard(el.id)
     updatePossibleTargets()
     if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
       haveDiv.children[0].before(el)
@@ -315,7 +315,7 @@ function haveCard(button) {
   } else {
     button.dataset.toggle = 0;
     dragonarium[el.id].status = 'init';
-    updateTargetCard(el.id)
+    //updateTargetCard(el.id)
     updatePossibleTargets()
     if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
       initDiv.children[0].before(el)
