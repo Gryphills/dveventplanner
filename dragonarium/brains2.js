@@ -1133,7 +1133,7 @@ function updateTargetSearch() {
   }
   
   let validPairs = []
-
+  console.log('checking dragons we have: ', haveDragonsToCheck);
   for (i=0;i<haveDragonsToCheck.length;i++) {
     let dragonName = haveDragonsToCheck.pop()
     let parentLeft = allDragonData[dragonName]
