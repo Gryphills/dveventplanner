@@ -1010,7 +1010,7 @@ function createTargetCards() {
 
 function updatePossibleTargets() {
   let possibleTargets = document.querySelector('#targetcards').children;
-  let safety = 30
+  //let safety = 30
   for (const child of possibleTargets) {
     child.classList.remove('impossible')
     let impossible = false;
@@ -1122,6 +1122,9 @@ function updateTargetSearch() {
     possiblepairdiv.firstChild.remove()
   }
   let tempTextEl = document.createElement('p')
+  if (targetCardDiv.childElementCount < 2) {
+        tempTextEl.textContent = "Select more than one dragon!"
+  }
   tempTextEl.textContent = "Calculating pairs..."
   possiblepairdiv.appendChild(tempTextEl)
 
