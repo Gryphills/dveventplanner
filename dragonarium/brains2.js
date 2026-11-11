@@ -1022,7 +1022,7 @@ function updatePossibleTargets() {
               }
             }
           } else {
-                console.log('cant find reqs for ', req);
+                console.log('cant find reqs for ', dragonName);
           }
     if (impossible) {
       document.getElementById(dragonName).classList.add('impossible')
