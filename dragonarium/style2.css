@@ -474,14 +474,15 @@ body {
   border: 3px solid #584e3f;
   margin-bottom: 4px;
   border-radius: 6px;
+  .selected {
+    display:none;
+  }
 }
 #targetcards {
   padding-bottom: 8px;
+  
 }
 
-.selected {
-  display:none;
-}
 .targetcard {
     position: relative;
     max-width:150px;
