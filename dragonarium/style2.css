@@ -532,13 +532,20 @@ body {
     background-color: #442a5f;
     color:#cac5f0;
     border: 3px solid #cac5f0;
-    padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*padding-bottom: 8px;*/
     margin-left: 6px;
     margin-right: 6px;
     
   }
   .selected {
     display: block;
+  }
+  .targetimage {
+    max-width: 140px;
+    max-height: 140px;
   }
 }
 
