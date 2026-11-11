@@ -1011,7 +1011,7 @@ function updatePossibleTargets() {
     child.classList.remove('impossible')
     let impossible = false;
     let dragonName = child.dataset.dragonName;
-          console.log(dragonName, allDragonData[dragonName]
+          console.log(dragonName, allDragonData[dragonName])
     let dragonReqs = allDragonData[dragonName].requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
