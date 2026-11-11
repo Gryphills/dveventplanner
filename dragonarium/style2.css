@@ -477,6 +477,9 @@ body {
   .selected {
     display:none;
   }
+  .impossible {
+    display:none;
+  }
 }
 #targetcards {
   padding-bottom: 8px;
