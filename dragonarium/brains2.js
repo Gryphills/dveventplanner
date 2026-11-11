@@ -826,9 +826,6 @@ function processCombo(comboData) {
                         comboFin.requirements.push('Any')
                 }
         }
-        if (comboData.includes('Clairvoyant')) {
-                console.log(comboFin)
-        }
   return comboFin;
 }
 
