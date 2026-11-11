@@ -470,7 +470,6 @@ body {
   display: flex;
   overflow-x: scroll;
   height: 150px;
-  width: 90%;
   flex-wrap: nowrap;
   border: 3px solid #584e3f;
   margin-bottom: 4px;
@@ -485,23 +484,29 @@ body {
     margin-bottom:8px;*/
     display:flex;
     flex-direction: column;
-    margin-bottom: 4px;
     justify-content: space-between;
+    margin-bottom: 4px;
     background-color: #b8ad9b;
     border: 3px solid #584e3f;
     border-radius: 8px;
     padding-top: 12px;
-    padding-bottom: 8px;
-    /*padding-bottom: 12px;*/
+    
+    /*padding-bottom: 12px;
+    height: 120px;*/
     color: #000000b0;
     text-align:center;
-    height: 120px;
+    
   .itemname {
     font-size: medium;
     font-weight: normal;
     margin-top:8px;
     position:relative;
     bottom:0px;
+  }
+  .targetimage {
+    max-width: 120px;
+    max-height: 75px;
+    margin: 5px;
   }
 }
 .targetcard.favourite {
@@ -520,7 +525,7 @@ body {
     background-color: #442a5f;
     color:#cac5f0;
     border: 3px solid #cac5f0;
-    
+    padding-bottom: 8px;
     margin-left: 6px;
     margin-right: 6px;
   }
