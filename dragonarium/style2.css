@@ -526,8 +526,7 @@ body {
   padding-top: 6px;
   justify-content: center;
   flex-wrap: wrap;
-  /*height: fit-content;*/
-  height: 160px;
+  height: fit-content;
   .targetcard {
     background-color: #442a5f;
     color:#cac5f0;
