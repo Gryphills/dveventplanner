@@ -237,7 +237,7 @@ function favouriteCard(button) {
     button.dataset.toggle = 1;
     el.parentElement.firstChild.before(el);
   } else {
-    el.classList.("favourite");
+    el.classList.remove("favourite");
     button.dataset.toggle = 0;
     if (el.classList.contains('avail')) {
       let next = el.nextElementSibling;
@@ -366,7 +366,7 @@ function radioOtherButtons(clicked) {
   while (prev) {
     if (!prev.classList.contains('favc')) {
       prev.dataset.toggle = 0;
-      prev.classList.('toggled')
+      prev.classList.remove('toggled')
     }
     prev = prev.previousElementSibling
     safety -= 1;
@@ -378,7 +378,7 @@ function radioOtherButtons(clicked) {
   let next = clicked.nextElementSibling;
   while (next) {
     next.dataset.toggle = 0;
-    next.classList.('toggled')
+    next.classList.remove('toggled')
     next = next.nextElementSibling;
     safety -= 1;
     if (safety < 0) {
@@ -403,9 +403,9 @@ function hideUnavail(el) {
     }
   } else {
     el.dataset.toggle = 0
-    el.classList.('toggled')
+    el.classList.remove('toggled')
     for (const card of cards) {
-      card.classList.('filterunavail');
+      card.classList.remove('filterunavail');
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
@@ -427,9 +427,9 @@ function hidePerm(el) {
     }
   } else {
     el.dataset.toggle = 0
-    el.classList.('toggled')
+    el.classList.remove('toggled')
     for (const card of cards) {
-      card.classList.('filterperm');
+      card.classList.remove('filterperm');
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
@@ -453,7 +453,7 @@ function hideBreeds(el) {
     }
   } else {
     el.dataset.toggle = 0
-    el.classList.('toggled')
+    el.classList.remove('toggled')
     for (const card of cardsDiv) {
       card.querySelector('.breedinginfo').classList.remove('hidden');
     }
