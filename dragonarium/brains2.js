@@ -1006,7 +1006,7 @@ function createTargetCards() {
 
 function updatePossibleTargets() {
   let possibleTargets = document.querySelector('#targetcards').children;
-  
+  let safety = 30
   for (const child of possibleTargets) {
     child.classList.remove('impossible')
     let impossible = false;
@@ -1015,6 +1015,10 @@ function updatePossibleTargets() {
     let dragonReqs = allDragonData[dragonName].combo.requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
+                    if (safety > 0) {
+                            console.log(`is ${req} an element or a dragon?`)
+                            safety -= 1;
+                    }
               if (allDragonNames.includes(req)) {
                 if (dragonarium[req].status != 'have') {
                   child.classList.add('impossible')
