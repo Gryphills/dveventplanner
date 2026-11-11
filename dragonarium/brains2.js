@@ -1054,7 +1054,6 @@ function updateTargetCard(dragonName) {
 
 function targetSelect(element) {
   let swapDiv;
-  
   if (element.closest('.targets-selected')) {
           let dragonName = element.dataset.dragonName;
           let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName).classList.remove('selected');
@@ -1074,12 +1073,12 @@ function targetSelect(element) {
           }
           element.classList.add('selected');
   }
-  
+  updateTargetSearch()
 }
 
 function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
-  let possiblepairdiv = document.querySelector('.possiblepairs')
+  let possiblepairdiv = document.querySelector('.possiblepairs');
 
   let targets = []
   let allRequirements = []
