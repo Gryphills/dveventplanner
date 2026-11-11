@@ -1020,10 +1020,10 @@ function updatePossibleTargets() {
                   impossible = true
                 }
               }
-            } else {
+            }
+          } else {
                 console.log('cant find reqs for ', req);
           }
-    }
     if (impossible) {
       document.getElementById(dragonName).classList.add('impossible')
     }
