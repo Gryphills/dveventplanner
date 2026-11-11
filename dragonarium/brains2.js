@@ -1146,7 +1146,7 @@ function updateTargetSearch() {
   }
   
   let validPairs = []
-  console.log('checking dragons we have: ', haveDragonsToCheck);
+  //console.log('checking dragons we have: ', haveDragonsToCheck);
   for (i=0;i<haveDragonsToCheck.length;i++) {
     let dragonName = haveDragonsToCheck.pop()
     let parentLeft = allDragonData[dragonName]
@@ -1155,14 +1155,15 @@ function updateTargetSearch() {
       for (const otherParentName of haveDragonsToCheck) {
 
         let otherOutput = allDragonData[otherParentName].combo.output;
-        let pairingElOutput = []
-        pairingElOutput = pairingElOutput.concat(parentLeft.combo.output)
+        let pairingElementOutput = []
+        pairingElementOutput = pairingElementOutput.concat(parentLeft.combo.output)
         if (otherOutput) {
           for (const outputEl of otherOutput) {
-            if (!pairingElOutput.includes(outputEl)) {
-              pairingElOutput.push(outputEl)
+            if (!pairingElementOutput.includes(outputEl)) {
+              pairingElementOutput.push(outputEl)
             }
           }
+          console.log('pairing output for ',dragonName,  otherParentName, pairingElementOutput)
           let targetsMet = checkEachTarget(targets, pairingElOutput);
           if (targetsMet.length > 1) {
             let pairObj = {
@@ -1232,6 +1233,7 @@ function checkTargetReq(target, pairingElOutput) {
       }
     }
   }
+        
   if (metReqs.length != targetRequirements.length) {
     return false;
   }
