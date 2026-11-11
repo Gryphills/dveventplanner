@@ -590,7 +590,9 @@ body {
 .filterunavail {
   display:none;
 }
-
+.selected {
+  display:none;
+}
 
 .oopsie {
   width:100vw;
