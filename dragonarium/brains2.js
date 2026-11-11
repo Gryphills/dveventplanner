@@ -1012,7 +1012,7 @@ function updatePossibleTargets() {
     let impossible = false;
     let dragonName = child.dataset.dragonName;
           console.log(dragonName, allDragonData[dragonName])
-    let dragonReqs = allDragonData[dragonName].requirements;
+    let dragonReqs = allDragonData[dragonName].combo.requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
               if (allDragonNames.includes(req)) {
