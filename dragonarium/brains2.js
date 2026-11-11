@@ -1143,21 +1143,32 @@ function updateTargetSearch() {
   }
   //console.log(targets, ' require ', allRequirements)
   //now we haveall our required stuff, and all our targets. lets start with uh
-  let haveDragonNodes = haveDiv.children
+  let haveDragonNodes = haveDiv.children;
   let haveDragonsToCheck = []
   for (const child of haveDragonNodes) {
-    haveDragonsToCheck.push(child.id);
+          //if (!targets.includes(child.id)) {
+            haveDragonsToCheck.push(child.id);
+          //}
   }
   
   let validPairs = []
-  console.log('checking dragons we have: ', haveDragonsToCheck);
+  //console.log('checking dragons we have: ', haveDragonsToCheck);
+        possiblePairsa(targets[0])
+ 
+
+
+        
+   /*     
   for (i=0;i<haveDragonsToCheck.length;i++) {
     let dragonName = haveDragonsToCheck.pop()
     let parentLeft = allDragonData[dragonName]
     
     if (parentLeft.combo.output) {
       for (const otherParentName of haveDragonsToCheck) {
-        let pairingElementOutput = getPairingOutput(dragonName, otherParentName)
+        let pairingElementOutput = getPairingOutput(dragonName, otherParentName)*/
+
+
+                
         /*let otherOutput = [].concat(allDragonData[otherParentName].combo.output);
         let pairingElementOutput = [].concat(parentLeft.combo.output)
         if (otherOutput) {
@@ -1167,7 +1178,9 @@ function updateTargetSearch() {
             }
           }*/
           //console.log('pairing output for ', dragonName,  otherParentName, pairingElementOutput)
-          let targetsMet = checkEachTarget(targets, pairingElementOutput);
+          
+              
+              /*let targetsMet = checkEachTarget(targets, pairingElementOutput);
           if (targetsMet.length > 1) {
             let pairObj = {
               parentLeft: parentLeft.name,
@@ -1182,7 +1195,7 @@ function updateTargetSearch() {
           }
         }
       }
-    }
+    }*/
   
   console.log(validPairs);
   
@@ -1227,9 +1240,10 @@ function checkEachTarget(targets, pairingElOutput) {
 }
 
 function checkTargetReq(target, pairingElOutput) {
-  let targetRequirements = allDragonData[target].combo.requirements;
+  let targetRequirements = [].concat(allDragonData[target].combo.requirements);
   let metReqs = [];
-        console.log('checking ', target, targetRequirements, pairingElOutput)
+  
+        //console.log('checking ', target, targetRequirements, pairingElOutput)
   for (const req of targetRequirements) {
     if (pairingElOutput.includes(req)) {
       metReqs.push(req);
@@ -1238,6 +1252,7 @@ function checkTargetReq(target, pairingElOutput) {
       }
     }
   }
+        console.log('checking ', target, metReqs, targetRequirements, pairingElOutput)
         
   if (metReqs.length != targetRequirements.length) {
     return false;
@@ -1273,10 +1288,67 @@ function parentTemplate(parent) {
     </a>`
     return parenthtml;
 }
+///////////// testing NEW
+
+
+function possiblePairsa(dragonName) {
+  let specialGuys = [];
+  let dragonReqs = allDragonData[dragonName].combo.requirements;
+  let validPairs = []
+  if (dragonReqs) {
+    for (const req of dragonReqs) {
+          if (!elementChart.basics.includes(req)) {
+                  specialGuys.push(req)
+          }
+    }
+    if (specialGuys.length == 1) {
+          let specialGuy = allDragonData[specialGuys[0]]
+          if (specialGuy) {
+                  for (const otherParentName of haveDragonsToCheck) { 
+                    let pairingOutput = specialGuy.elements.concat(allDragonData[otherParentName].elements)
+                    let validPair = checkTargetReq(dragonName, pairingOutput)
+                    if (validPair) {
+                      console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
+                      let sorted = [specialGuys[0], otherParentName].sort()
+                      validPairs.push(`${sorted[0]}//${sorted[1]}`)
+                    }
+                  }
+          }
+    }
+  }
+  console.log(validPairs)
+}
+
+function checkTargetReqa(target, pairingElOutput) {
+  let targetRequirements = [].concat(allDragonData[target].combo.requirements);
+  let metReqs = [];
+  
+        //console.log('checking ', target, targetRequirements, pairingElOutput)
+  for (const req of targetRequirements) {
+    if (pairingElOutput.includes(req)) {
+      targetRequirements.splice(targetRequirements.indexOf(req), 1)
+      //metReqs.push(req);
+      if (targetRequirements.length == 0) {
+        return true;
+      }
+    }
+  }
+        //console.log('checking ', target, metReqs, targetRequirements, pairingElOutput)
+        
+  //if (metReqs.length != targetRequirements.length) {
+    return false;
+  //}
+}
+
+
+//////////////////end of testing new
+
 
 function getPairingOutput(dragonLeftName, dragonRightName) {
         let parentNames = [dragonLeftName, dragonRightName].sort()
-        let preMade = pairingOutputs[dragonLeftName + `//` + dragonRightName]
+        
+        //let alphabetical = parentNames[0] //ehhhh hmmm
+        //let preMade = pairingOutputs[alphabetical][parentNames[1]  <- use for when we place it inside ok
         if (preMade) {
                 return preMade
         } else {
