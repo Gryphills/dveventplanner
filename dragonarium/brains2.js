@@ -1056,6 +1056,7 @@ function targetSelect(element) {
   let swapDiv;
   if (element.closest('.targets-selected')) {
           let dragonName = element.dataset.dragonName;
+          console.log(dragonName)
           let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName).classList.remove('selected');
           element.remove()
     //swapDiv = element.closest('.targets-selected').previousElementSibling;
@@ -1066,10 +1067,10 @@ function targetSelect(element) {
             if (swapDiv.children.length > 0) {
               swapDiv.firstChild.before(copyEl);
             } else {
-              swapDiv.appendChild(element);
+              swapDiv.appendChild(copyEl);
             }
           } else {
-            swapDiv.appendChild(element);
+            swapDiv.appendChild(copyEl);
           }
           element.classList.add('selected');
   }
