@@ -1019,10 +1019,10 @@ function updatePossibleTargets() {
     let dragonReqs = allDragonData[dragonName].combo.requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
-                    if (safety > 0) {
-                            console.log(`is ${req} an element or a dragon?`)
-                            safety -= 1;
-                    }
+                    //if (safety > 0) {
+                    //        console.log(`is ${req} an element or a dragon?`)
+                    //        safety -= 1;
+                    //}
               if (allDragonNames.includes(req)) {
                 if (dragonarium[req].status != 'have') {
                   child.classList.add('impossible')
@@ -1138,6 +1138,7 @@ function updateTargetSearch() {
       }
     }
   }
+  console.log(dragonName, ' requires ', allRequirements)
   //now we haveall our required stuff, and all our targets. lets start with uh
   let haveDragonNodes = haveDiv.children
   let haveDragonsToCheck = []
@@ -1146,7 +1147,7 @@ function updateTargetSearch() {
   }
   
   let validPairs = []
-  //console.log('checking dragons we have: ', haveDragonsToCheck);
+  console.log('checking dragons we have: ', haveDragonsToCheck);
   for (i=0;i<haveDragonsToCheck.length;i++) {
     let dragonName = haveDragonsToCheck.pop()
     let parentLeft = allDragonData[dragonName]
@@ -1154,9 +1155,8 @@ function updateTargetSearch() {
     if (parentLeft.combo.output) {
       for (const otherParentName of haveDragonsToCheck) {
 
-        let otherOutput = allDragonData[otherParentName].combo.output;
-        let pairingElementOutput = []
-        pairingElementOutput = pairingElementOutput.concat(parentLeft.combo.output)
+        let otherOutput = [].concat(allDragonData[otherParentName].combo.output);
+        let pairingElementOutput = [].concat(parentLeft.combo.output)
         if (otherOutput) {
           for (const outputEl of otherOutput) {
             if (!pairingElementOutput.includes(outputEl)) {
