@@ -479,6 +479,9 @@ body {
   padding-bottom: 8px;
 }
 
+.selected {
+  display:none;
+}
 .targetcard {
     position: relative;
     max-width:150px;
@@ -523,7 +526,8 @@ body {
   padding-top: 6px;
   justify-content: center;
   flex-wrap: wrap;
-  height: fit-content;
+  /*height: fit-content;*/
+  height: 160px;
   .targetcard {
     background-color: #442a5f;
     color:#cac5f0;
@@ -531,6 +535,10 @@ body {
     padding-bottom: 8px;
     margin-left: 6px;
     margin-right: 6px;
+    
+  }
+  .selected {
+    display: block;
   }
 }
 
@@ -590,9 +598,7 @@ body {
 .filterunavail {
   display:none;
 }
-.selected {
-  display:none;
-}
+
 
 .oopsie {
   width:100vw;
