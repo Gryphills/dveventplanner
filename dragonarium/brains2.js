@@ -10,6 +10,13 @@ let haveDiv ;
 let shadowDiv ;
 let backOne = "backtotop";
 let pairingOutputs = {}
+/*
+{
+        parent1//parent2 : [possible outputs?]
+
+}
+*/
+let dragonEls = {}
 
 
 let chartRef = {
@@ -489,7 +496,7 @@ function cycleViews(imgEl) {
   let imgsBack = imgEl.parentElement.parentElement.querySelector('.multiimgback')
   let imgarray = JSON.parse(imgsFront.dataset.imgarray)
   imgarray.push(imgarray.splice(0, 1))
-        imgsFront.dataset.imgarray = JSON.stringify(imgarray(
+        imgsFront.dataset.imgarray = JSON.stringify(imgarray)
   for (const img of imgArray) {
     if (imgArray.indexOf(img) == 0) {
       imgsFront.firstChild.src = img
