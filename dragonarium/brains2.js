@@ -1196,7 +1196,7 @@ function updateTargetSearch() {
   //now we need to build and add the pairs into the template thingy.
 
 
-  tempTextEl.remove()
+  tempTextEl.remove();
 }
 
 function sortPairIntoArray(pairObj, validPairs) {
