@@ -1054,20 +1054,27 @@ function updateTargetCard(dragonName) {
 
 function targetSelect(element) {
   let swapDiv;
+  
   if (element.closest('.targets-selected')) {
-    swapDiv = element.closest('.targets-selected').previousElementSibling;
+          let dragonName = element.dataset.dragonName;
+          let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName).classList.remove('selected');
+          element.remove()
+    //swapDiv = element.closest('.targets-selected').previousElementSibling;
   } else {
-    swapDiv = element.closest('.targetcards').nextElementSibling;
+          swapDiv = element.closest('.targetcards').nextElementSibling;
+          let copyEl = element.cloneNode()
+          if (element.classList.contains('favourite')) {
+            if (swapDiv.children.length > 0) {
+              swapDiv.firstChild.before(copyEl);
+            } else {
+              swapDiv.appendChild(element);
+            }
+          } else {
+            swapDiv.appendChild(element);
+          }
+          element.classList.add('selected');
   }
-  if (element.classList.contains('favourite')) {
-    if (swapDiv.children.length > 0) {
-      swapDiv.firstChild.before(element);
-    } else {
-      swapDiv.appendChild(element);
-    }
-  } else {
-    swapDiv.appendChild(element);
-  }
+  
 }
 
 function updateTargetSearch() {
