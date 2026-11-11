@@ -9,6 +9,7 @@ let wantDiv ;
 let haveDiv ;
 let shadowDiv ;
 let backOne = "backtotop";
+let pairingOutputs = {}
 
 
 let chartRef = {
@@ -1111,7 +1112,7 @@ function targetSelect(element) {
   updateTargetSearch()
 }
 
-let pairingOutputs = {}
+
 
 function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
@@ -1156,15 +1157,15 @@ function updateTargetSearch() {
     
     if (parentLeft.combo.output) {
       for (const otherParentName of haveDragonsToCheck) {
-
-        let otherOutput = [].concat(allDragonData[otherParentName].combo.output);
+        let pairingElementOutput = getPairingOutput(dragonName, otherParentName)
+        /*let otherOutput = [].concat(allDragonData[otherParentName].combo.output);
         let pairingElementOutput = [].concat(parentLeft.combo.output)
         if (otherOutput) {
           for (const outputEl of otherOutput) {
             if (!pairingElementOutput.includes(outputEl)) {
               pairingElementOutput.push(outputEl)
             }
-          }
+          }*/
           //console.log('pairing output for ', dragonName,  otherParentName, pairingElementOutput)
           let targetsMet = checkEachTarget(targets, pairingElementOutput);
           if (targetsMet.length > 1) {
@@ -1213,6 +1214,7 @@ function sortPairIntoArray(pairObj, validPairs) {
 
 function checkEachTarget(targets, pairingElOutput) {
   let targetsMet = []
+        
   for (const target of targets) {
     if (checkTargetReq(target, pairingElOutput)) {
       targetsMet.push(target)
@@ -1227,6 +1229,7 @@ function checkEachTarget(targets, pairingElOutput) {
 function checkTargetReq(target, pairingElOutput) {
   let targetRequirements = allDragonData[target].combo.requirements;
   let metReqs = [];
+        console.log('checking ', target, targetRequirements, pairingElOutput)
   for (const req of targetRequirements) {
     if (pairingElOutput.includes(req)) {
       metReqs.push(req);
@@ -1270,6 +1273,36 @@ function parentTemplate(parent) {
     </a>`
     return parenthtml;
 }
+
+function getPairingOutput(dragonLeftName, dragonRightName) {
+        let parentNames = [dragonLeftName, dragonRightName].sort()
+        let preMade = pairingOutputs[dragonLeftName + `//` + dragonRightName]
+        if (preMade) {
+                return preMade
+        } else {
+                let haveDragonNodes = haveDiv.children
+                  let haveDragonsToCheck = []
+                  for (const child of haveDragonNodes) {
+                    haveDragonsToCheck.push(child.id);
+                  }
+                  let parentLeft = allDragonData[dragonLeftName]
+                for (const otherParentName of haveDragonsToCheck) {
+                        let otherOutput = [].concat(allDragonData[otherParentName].combo.output);
+                        let pairingElementOutput = [].concat(parentLeft.combo.output)
+                        if (otherOutput) {
+                          for (const outputEl of otherOutput) {
+                            if (!pairingElementOutput.includes(outputEl)) {
+                              pairingElementOutput.push(outputEl)
+                            }
+                          }
+                          console.log('pairing output for ', dragonName,  otherParentName, pairingElementOutput)
+                          pairingOutputs[dragonLeftName + `//` + dragonRightName] = pairingElementOutput
+                                return pairingElementOutput
+                        }
+                }
+        }
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
