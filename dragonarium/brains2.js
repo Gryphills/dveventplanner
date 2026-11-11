@@ -1015,7 +1015,7 @@ function updatePossibleTargets() {
     child.classList.remove('impossible')
     let impossible = false;
     let dragonName = child.dataset.dragonName;
-          console.log(dragonName, allDragonData[dragonName])
+          //console.log(dragonName, allDragonData[dragonName])
     let dragonReqs = allDragonData[dragonName].combo.requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
@@ -1093,7 +1093,7 @@ function targetSelect(element) {
   let swapDiv;
   if (element.closest('.targets-selected')) {
           let dragonName = element.dataset.dragonName;
-          console.log(dragonName)
+          //console.log(dragonName)
           let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName).classList.remove('selected');
           element.remove()
     //swapDiv = element.closest('.targets-selected').previousElementSibling;
