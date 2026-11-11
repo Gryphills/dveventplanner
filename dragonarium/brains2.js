@@ -1167,7 +1167,7 @@ function updateTargetSearch() {
             }
           }
           console.log('pairing output for ',dragonName,  otherParentName, pairingElementOutput)
-          let targetsMet = checkEachTarget(targets, pairingElOutput);
+          let targetsMet = checkEachTarget(targets, pairingElementOutput);
           if (targetsMet.length > 1) {
             let pairObj = {
               parentLeft: parentLeft.name,
