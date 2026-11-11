@@ -1183,14 +1183,14 @@ function updateTargetSearch() {
         }
       }
     }
-  }
+  
   console.log(validPairs);
   
   for (const pairObj of validPairs) {
-    let newPairEl = document.createElement('div')
+    let newPairEl = document.createElement('div');
     let html = pairTemplate(pairObj);
     newPairEl.outerHTML = html;
-    possiblepairdiv.appendChild(newPairEl)
+    possiblepairdiv.appendChild(newPairEl);
   }
   //yay we checked ALL the possible pairs! Hopefully that doesn't completely eat the computer to do mSJHDgfsd
   //now we need to build and add the pairs into the template thingy.
