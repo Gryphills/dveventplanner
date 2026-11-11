@@ -946,6 +946,8 @@ function searchListeners() {
           } else {
             card.classList.remove('filtersearch');
           }
+        } else {
+                card.classList.remove('filtersearch;);
         }
       }
     })
