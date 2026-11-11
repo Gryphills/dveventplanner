@@ -1012,13 +1012,17 @@ function updatePossibleTargets() {
     let impossible = false;
     let dragonName = child.dataset.dragonName;
     let dragonReqs = allDragonData[dragonName].requirements;
-    for (const req of dragonReqs) {
-      if (allDragonNames.includes(req)) {
-        if (dragonarium[req].status != 'have') {
-          child.classList.add('impossible')
-          impossible = true
-        }
-      }
+          if (dragonReqs) {
+            for (const req of dragonReqs) {
+              if (allDragonNames.includes(req)) {
+                if (dragonarium[req].status != 'have') {
+                  child.classList.add('impossible')
+                  impossible = true
+                }
+              }
+            } else {
+                console.log('cant find reqs for ', req);
+          }
     }
     if (impossible) {
       document.getElementById(dragonName).classList.add('impossible')
