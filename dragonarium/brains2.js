@@ -1001,7 +1001,31 @@ function createTargetCards() {
       }
     }
   }
+  updatePossibleTargets()
 }
+
+function updatePossibleTargets() {
+  let possibleTargets = document.querySelector('#targetcards').children;
+  
+  for (const child of possibleTargets) {
+    child.classList.remove('impossible')
+    let impossible = false;
+    let dragonName = child.dataset.dragonName;
+    let dragonReqs = allDragonData[dragonName].requirements;
+    for (const req of dragonReqs) {
+      if (allDragonNames.includes(req)) {
+        if (dragonarium[req].status != 'have') {
+          child.classList.add('impossible')
+          impossible = true
+        }
+      }
+    }
+    if (impossible) {
+      document.getElementById(dragonName).classList.add('impossible')
+    }
+  }
+}
+
 
 function hideOwned(el) {
    let cards = document.querySelector('#targetcards').querySelector('.owned')
