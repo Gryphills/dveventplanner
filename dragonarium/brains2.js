@@ -1079,7 +1079,14 @@ function targetSelect(element) {
 
 function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
-  let possiblepairdiv = document.querySelector('.possiblepairs');
+  let possiblepairdiv = document.querySelector('.possiblepairs')
+
+  while (possiblepairdiv.firstChild) {
+    possiblepairdiv.firstChild.remove()
+  }
+  let tempTextEl = document.createElement('p')
+  tempTextEl.textContent = "Calculating pairs..."
+  possiblepairdiv.appendChild(tempTextEl)
 
   let targets = []
   let allRequirements = []
@@ -1136,7 +1143,19 @@ function updateTargetSearch() {
       }
     }
   }
+  console.log(validPairs);
+  
+  for (const pairObj of validPairs) {
+    let newPairEl = document.createElement('div')
+    let html = pairTemplate(pairObj);
+    newPairEl.outerHTML = html;
+    possiblepairdiv.appendChild(newPairEl)
+  }
   //yay we checked ALL the possible pairs! Hopefully that doesn't completely eat the computer to do mSJHDgfsd
+  //now we need to build and add the pairs into the template thingy.
+
+
+  tempTextEl.remove()
 }
 
 function sortPairIntoArray(pairObj, validPairs) {
