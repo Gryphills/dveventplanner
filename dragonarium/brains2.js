@@ -487,9 +487,9 @@ function clickInitButtons() {
 function cycleViews(imgEl) {
   let imgsFront = imgEl.parentElement.parentElement.querySelector('.multiimgfront')
   let imgsBack = imgEl.parentElement.parentElement.querySelector('.multiimgback')
-  let imgarray = imgsFront.dataset.imgarray
+  let imgarray = JSON.parse(imgsFront.dataset.imgarray)
   imgarray.push(imgarray.splice(0, 1))
-        imgsFront.dataset.imgarray = imgarray
+        imgsFront.dataset.imgarray = JSON.stringify(imgarray(
   for (const img of imgArray) {
     if (imgArray.indexOf(img) == 0) {
       imgsFront.firstChild.src = img
@@ -563,7 +563,7 @@ function buildDragonCard(name, data) {
           }
             
           cardhtml += `</div>
-          <div class="multiimgfront" data-imgarray="${imgArray}">
+          <div class="multiimgfront" data-imgarray="${JSON.stringify(imgArray)}">
             <img loading="lazy"  class="itemimage multi" onclick="cycleViews(this)" src='${allDragonImgs[name].Adult}'>
           </div>
         </div>`
