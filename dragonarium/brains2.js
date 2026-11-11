@@ -941,7 +941,7 @@ function searchListeners() {
       let cardHolder = input.closest('.tab').querySelector('#'+key);
       for (const card of Array.from(cardHolder.children)) {
         if (e.currentTarget.value && e.currentTarget.value != ' ') {
-          if (!card.id.includes(e.currentTarget.value.trim())) {
+          if (!card.dataset.dragonName.includes(e.currentTarget.value.trim())) {
             card.classList.add('filtersearch');
           } else {
             card.classList.remove('filtersearch');
