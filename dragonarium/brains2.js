@@ -981,9 +981,11 @@ function createTargetCards() {
       
       if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
+        cardEl.classList.add('filterperm');
       }
       if (dragonarium[dragonName].status == 'have') {
         cardEl.classList.add('owned');
+        cardEl.classList.add('filterowned');
       }
       if (dragonarium[dragonName].fav) {
         cardEl.classList.add('favourite');
