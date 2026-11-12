@@ -1327,6 +1327,7 @@ function possiblePairsa(dragonName) {
                   specialGuys.push(req)
           }
     }
+          let haveDragonNodes = haveDiv.children;
         let haveDragonsToCheck = []
           for (const child of haveDragonNodes) {
                   //if (!targets.includes(child.id)) {
