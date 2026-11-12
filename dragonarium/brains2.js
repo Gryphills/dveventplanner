@@ -115,7 +115,7 @@ let elementChart = {
   basics : [
   'P Plant',  'F Fire',  'E Earth',  'C Cold',  'W Water',  'L Lightning',  'A Air',  'M Metal',  'I Light',  'D Dark',
   
-  'R Rift',
+  'R Rift', "Any",
   'ApApocalypse',  'AuAura',  'ChChrysalis',  'CrCrystalline',  'DrDream',  'GaGalactic',  'GeGemstone',  'HiHidden',  'MeMelody',  'MhMonolith',  
   'OlOlympus',  'OrOrnamental',  'RbRainbow',  'SeSeasonal',  'SnSnowflake',  'SuSun',  'MoMoon',  'SfSurface',  'TrTreasure',  'ZoZodiac'
   ]
@@ -1160,7 +1160,7 @@ function updateTargetSearch() {
   
   let validPairs = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
-        possiblePairsa(targets[0])
+possiblePairsa(targets[0])
  
 
 
@@ -1297,6 +1297,24 @@ function parentTemplate(parent) {
 }
 ///////////// testing NEW
 
+let dragonsInElement = {}
+
+function sortDragonsIntoEls() {
+        for (const basic of elementChart.basics) {
+                if (!dragonsInElement[basic]  && basic != "Any") {
+                        dragonsInElement[basic] = []
+                }
+        }
+        for (const dragonName of allDragonNames) {
+                if (allDragonData[dragonName]) {
+                        for (const el of allDragonData[dragonName].elements) {
+                                if (elementChart.basics.includes(el)) {
+                                        dragonsInElement[el].push(dragonName)
+                                }
+                        }
+                }
+        }
+}
 
 function possiblePairsa(dragonName) {
   let specialGuys = [];
@@ -1308,7 +1326,13 @@ function possiblePairsa(dragonName) {
                   specialGuys.push(req)
           }
     }
-    if (specialGuys.length == 1) {
+        let haveDragonsToCheck = []
+          for (const child of haveDragonNodes) {
+                  //if (!targets.includes(child.id)) {
+                    haveDragonsToCheck.push(child.id);
+                  //}
+          }
+       if (specialGuys.length == 1) {
           let specialGuy = allDragonData[specialGuys[0]]
           if (specialGuy) {
                   for (const otherParentName of haveDragonsToCheck) { 
@@ -1321,6 +1345,20 @@ function possiblePairsa(dragonName) {
                     }
                   }
           }
+    } else if (specialGuys.length == 2) {
+        let sorted = specialGuys.sort()
+        validPairs.push(`${sorted[0]}//${sorted[1]}`
+    } else {
+        /*let narrowedList = []
+        for (const req of dragonReqs) {
+                for (const d of dragonsInElement[req]) {
+                        if (!narrowedList.includes(d)) {
+                                narrowedList.push(d);
+                        }
+                }
+        }*/
+       
+       
     }
   }
   console.log(validPairs)
@@ -1389,6 +1427,7 @@ document.addEventListener("DOMContentLoaded", function() {
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
     allDragonImgs = JSON.parse(document.getElementById('dragonurls').textContent);
     processDragonData();
+    sortDragonsIntoEls()
     addCheckListeners();
     initDiv = document.querySelector('#initCards');
     wantDiv = document.querySelector('#wantCards');
