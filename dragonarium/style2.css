@@ -320,7 +320,10 @@ body {
 }
 
 
-
+.minielicon {
+  max-width: 19px;
+  max-height: 22px;
+}
 
 
 #calctotals::before {
