@@ -17,6 +17,7 @@ let pairingOutputs = {}
 }
 */
 let dragonEls = {}
+let dragonsInElement = {}
 
 
 let chartRef = {
@@ -1297,7 +1298,7 @@ function parentTemplate(parent) {
 }
 ///////////// testing NEW
 
-let dragonsInElement = {}
+
 
 function sortDragonsIntoEls() {
         for (const basic of elementChart.basics) {
