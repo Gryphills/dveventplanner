@@ -1150,7 +1150,7 @@ function hideOwned(el) {
    if (el.dataset.value == 0) {
            el.dataset.value == 1
            el.classList.add('toggled');
-           for (const card of cards) {
+           for (const card of Array.from(cards)) {
                 card.classList.add('filterowned')
            }
    } else {
