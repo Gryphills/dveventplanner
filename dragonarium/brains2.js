@@ -572,7 +572,7 @@ function buildDragonCard(name, data) {
           }
             
           cardhtml += `</div>
-          <div class="multiimgfront" data-imgarray="${JSON.stringify(imgArray)}">
+          <div class="multiimgfront" data-imgarray='${JSON.stringify(imgArray)}'>
             <img loading="lazy"  class="itemimage multi" onclick="cycleViews(this)" src='${allDragonImgs[name].Adult}'>
           </div>
         </div>`
