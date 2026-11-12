@@ -1322,7 +1322,7 @@ function possiblePairsa(dragonName) {
   let specialGuys = [];
   let dragonReqs = allDragonData[dragonName].combo.requirements;
   let validPairs = []
-  let targetsWithoutSpecialGuys = []
+  //let targetsWithoutSpecialGuys = []
   if (dragonReqs) {
           let haveDragonNodes = haveDiv.children;
           let haveDragonsToCheck = []
@@ -1355,8 +1355,8 @@ function possiblePairsa(dragonName) {
                           }
                   }
     }  else {
-       targetsWithoutSpecialGuys.push(dragonName)
-        noSpecificDragonTargets([dragonName], haveDragonsToCheck)
+       //targetsWithoutSpecialGuys.push(dragonName)
+        //noSpecificDragonTargets([dragonName], haveDragonsToCheck)
         /*let narrowedList = []
         for (const req of dragonReqs) {
                 for (const d of dragonsInElement[req]) {
@@ -1373,7 +1373,7 @@ function possiblePairsa(dragonName) {
 }
 
 
-
+/*
 function noSpecificDragonTargets(targetNames, haveDragonsToCheck) {
         let allValid = []
         for (const dr of haveDragonsToCheck) {
@@ -1406,7 +1406,7 @@ function noSpecificDragonTargets(targetNames, haveDragonsToCheck) {
         }
         console.log(allValid);
         return allValid
-}
+}*/
 
 function checkTargetReqa(target, pairingElOutput) {
   let targetRequirements = [].concat(allDragonData[target].combo.requirements);
