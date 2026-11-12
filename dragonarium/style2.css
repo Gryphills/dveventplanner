@@ -593,6 +593,7 @@ body {
 }
 
 .searchlabel {
+  margin: auto;
   font-weight: bold;
   color: #442a5f;
   .search {
