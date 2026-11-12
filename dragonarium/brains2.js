@@ -548,7 +548,6 @@ function hidePerm(el) {
 }
 
 function hideBreeds(el) {
-  
   let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
   //console.log('hiding/showing!', cardsDiv[0]);
   if (Number(el.dataset.toggle) == 0) {
@@ -621,7 +620,7 @@ function cycleViews(imgEl) {
 function buildDragonCard(name, data) {
   //console.log(name, data)
   let elements = ``
-  for (const internalEl of allDragonData[dragonName].elements) {
+  for (const internalEl of allDragonData[name].elements) {
         elements += `<img loading="lazy" src="${elementIconsObj[internalEl]}" class="minielicon">`
   }
   let cardhtml = 
