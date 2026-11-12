@@ -620,6 +620,10 @@ function cycleViews(imgEl) {
 
 function buildDragonCard(name, data) {
   //console.log(name, data)
+  let elements = ``
+  for (const internalEl of allDragonData[dragonName].elements) {
+        elements += `<img loading="lazy" src="${elementIconsObj[internalEl]}" class="minielicon">`
+  }
   let cardhtml = 
  `<div class="dragonCard `
     if (data.limited == "Y") {
@@ -689,7 +693,7 @@ function buildDragonCard(name, data) {
     } else {
       cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
     }
-    cardhtml += `<div class="breedinginfo">`
+    cardhtml += `<div style='max-height:22px;height:fit-content;display:flex; justify-content:center;'>${elements}</div>  <div class="breedinginfo">`
 
     let skipThing = false;
     if (data.combo['special']) {
