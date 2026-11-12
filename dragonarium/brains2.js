@@ -1347,7 +1347,7 @@ function possiblePairsa(dragonName) {
           }
     } else if (specialGuys.length == 2) {
         let sorted = specialGuys.sort()
-        validPairs.push(`${sorted[0]}//${sorted[1]}`
+        validPairs.push(`${sorted[0]}//${sorted[1]}`)
     } else {
         /*let narrowedList = []
         for (const req of dragonReqs) {
