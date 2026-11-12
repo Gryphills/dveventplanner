@@ -185,6 +185,7 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
                 }
                 
         }
+        console.log(dragonName)
         let inDiv = dragonarium[dragonName].status;
         document.getElementById(`tabbutton-${inDiv}`).click()
         while (!document.getElementById(`tabbutton-${inDiv}`.classList.contains('open'))) {
