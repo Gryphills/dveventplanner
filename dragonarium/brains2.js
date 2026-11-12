@@ -492,8 +492,8 @@ function clickInitButtons() {
 }
 
 function cycleViews(imgEl) {
-  let imgsFront = imgEl.parentElement.parentElement.querySelector('.multiimgfront')
-  let imgsBack = imgEl.parentElement.parentElement.querySelector('.multiimgback')
+  let imgsFront = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgfront')
+  let imgsBack = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgback')
   let imgarray = JSON.parse(imgsFront.dataset.imgarray)
   imgarray.push(imgarray.splice(0, 1))
         imgsFront.dataset.imgarray = JSON.stringify(imgarray)
