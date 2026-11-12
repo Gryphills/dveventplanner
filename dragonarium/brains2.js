@@ -123,6 +123,79 @@ let elementChart = {
   ]
 }
 
+let elIcons = `https://i.postimg.cc/J4d5RKb9/Icon-Air.webp
+https://i.postimg.cc/zXPFqpCB/Icon-Apocalypse.webp
+https://i.postimg.cc/MKrmzt7K/Icon-Aura.webp
+https://i.postimg.cc/Yqyzt86S/Icon-Chrysalis.webp
+https://i.postimg.cc/HsP9T3wT/Icon-Cold.webp
+https://i.postimg.cc/FHdgzcpN/Icon-Dark.webp
+https://i.postimg.cc/L8YB5fD4/Icon-Dream.webp
+https://i.postimg.cc/Hkc4n5zL/Icon-Earth.webp
+https://i.postimg.cc/8zJBcW45/Icon-Fire.webp
+https://i.postimg.cc/BnLcbDp8/Icon-Galaxy.webp
+https://i.postimg.cc/T3Lq1m0W/Icon-Hidden.webp
+https://i.postimg.cc/jSwQ2NcP/Icon-Light.webp
+https://i.postimg.cc/x1Jy8H5L/Icon-Lightning.webp
+https://i.postimg.cc/JzDc0JxQ/Icon-Melody.webp
+https://i.postimg.cc/XYGcqFLx/Icon-Metal.webp
+https://i.postimg.cc/FHdgzcpD/Icon-Monolith.webp
+https://i.postimg.cc/XYGcqFLs/Icon-Moon.webp
+https://i.postimg.cc/0yTGwQXG/Icon-Olympus.webp
+https://i.postimg.cc/Z5GPdRsL/Icon-Ornamental.webp
+https://i.postimg.cc/sgkPhXHm/Icon-Plant.webp
+https://i.postimg.cc/6pkVv3bz/Icon-Rainbow.webp
+https://i.postimg.cc/Cx3Cq1rr/Icon-Seasonal.webp
+https://i.postimg.cc/pLwQFTcS/Icon-Snowflake.webp
+https://i.postimg.cc/x1wGzCp7/Icon-Sun.webp
+https://i.postimg.cc/13k0qt72/Icon-Surface.webp
+https://i.postimg.cc/8z2d65ng/Icon-Treasure.webp
+https://i.postimg.cc/fRG79Lgh/Icon-Water.webp
+https://i.postimg.cc/vZJ7VBSb/Icon-Zodiac.webp`
+
+function addSortButtons() {
+        let elementIconArr = elIcons.split('\n')
+        for (const sortArea of document.querySelectorAll('.elementsort')) {
+                let innerHtml = ''
+                for (const el of elementChart.basics) {
+                        if (el != "Any") {
+                                let imgsrc = '';
+                                for (const url of elementIconArr) {
+                                        if (url.includes(el.substring(2))) {
+                                                imgsrc = url;
+                                        }
+                                }
+                                innerHtml += `<img class="elsort${el.substring(2)}" src="imgsrc" onClick="sortCardsByEl(this, '${el}')">`
+                        }
+                }
+        }
+        
+}
+
+function sortCardsByEl(el, elementName) {
+        let activeFilters = JSON.parse(el.parentElement.dataset.active)
+        if (!activeFilters) {
+                activeFilters = []
+        }
+        let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
+        if (cardsDiv) {
+                let toggled = el.dataset.toggled
+                if (toggled) {
+                        activeFilters.push(elementName)
+                                for (const card of Array.from(cardsDiv.querySelectorAll('.${elementName}'))) {
+                                        card.classList.add('.filter${elementName}')
+                                }
+                        
+                } else {
+                        activeFilters.splice(activeFilters.indexOf(elementName), 1)
+                                for (const card of Array.from(cardsDiv.querySelectorAll('.${elementName}'))) {
+                                        card.classList.remove('.filter${elementName}')
+                                }
+                                        
+                }
+        }
+        el.parentElement.dataset.active = JSON.stringify(activeFilters)
+}
+
 let elementIcons = {
         Air:	        'https://i.postimg.cc/J4d5RKb9/Icon-Air.webp',
         Apocalypse:	'https://i.postimg.cc/zXPFqpCB/Icon-Apocalypse.webp',
@@ -545,6 +618,11 @@ function buildDragonCard(name, data) {
                       cardhtml += ` evolution `
              }
     }
+    if (data.elements) {
+        for (const elem of data.elements) {
+                cardhtml += ' elem '
+        }
+    }
   cardhtml += `" name="${name}" id="${name}">
     <div class="minibuttons">
         <div class="minibutton favc" data-toggle=0 onclick="favouriteCard(this)" >❤<div class="tooltip">Favourite</div></div>
@@ -611,6 +689,9 @@ function buildDragonCard(name, data) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
+                    if (req == 'Any') {
+                        req = 'AnAny';
+                    }
                 cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>`+ req.substring(2)
             } else if (req == "Any") {
                 cleanedReq +=  `req`
@@ -1480,6 +1561,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setTabs();
     makeCards();
     clickInitButtons();
+    addSortButtons()
     sortCards(initDiv);
     sortCards(wantDiv);
     sortCards(haveDiv);
