@@ -14,12 +14,10 @@ let pairsForDragons = {}
 /*
 {
         parent1//parent2 : [possible outputs?]
-
 }
 */
         let dragonEls = {}
         let dragonsInElement = {}
-
 
 let chartRef = {
         P: 'P Plant',
@@ -714,9 +712,6 @@ function buildDragonCard(name, data) {
         let cleanedReq = ''
         for (const req of data.combo.requirements) {
             if (elementChart.basics.includes(req)) {
-                    if (req == 'Any') {
-                        req = 'AnAny';
-                    }
                 cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>`+ req.substring(2)
             } else if (req == "Any") {
                 cleanedReq +=  `req`
