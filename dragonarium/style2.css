@@ -141,7 +141,7 @@ body {
     position: relative;
     max-width:300px;
     width:300px;
-    margin: 15px;
+    margin: 20px;
     margin-bottom:8px;
     background-color: #b8ad9b;
     border: 3px solid #584e3f;
@@ -162,8 +162,8 @@ body {
     }
 .dragonCard.unavail {
       
-      background-color: #aba7a7; 
-      border: 3px solid rgb(92, 92, 92); 
+      background-color: #e3e3e3; 
+      border: 3px solid rgb(162, 162, 162); 
     }
 .dragonCard.favourite {
         background-color: #c0a4ec;
@@ -238,27 +238,27 @@ body {
     content: '⧗';
     position:absolute;
     top:-15px;
-    left:-15px;
+    left:-16px;
     background-color: #8355cc;
     color: white;
     border-radius: 8px;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     text-size:x-large;
-    line-height:30px;
+    line-height:40px;
 }
 .limited.unavail::before {
     content: '⧗';
     position:absolute;
     top:-15px;
-    left:-15px;
+    left:-16px;
     background-color: lightgrey;
     color: grey;
     border-radius: 8px;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
     text-size:x-large;
-    line-height:30px;
+    line-height:40px;
 }
 
 
