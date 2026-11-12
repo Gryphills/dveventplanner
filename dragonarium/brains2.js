@@ -591,7 +591,7 @@ function buildDragonCard(name, data) {
   //console.log(name, data)
   let elements = ``
   for (const internalEl of allDragonData[name].elements) {
-        elements += `<img loading="lazy" src="${elementIcons[internalEl.substring(2)]}" class="minielicon">`
+        elements += `<img loading="lazy" src="${elementIcons[internalEl.substring(2)]}" class="minielicon ${internalEl.substring(2)}">`
   }
   let cardhtml = 
  `<div class="dragonCard `
