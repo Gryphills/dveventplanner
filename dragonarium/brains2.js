@@ -9,15 +9,15 @@ let wantDiv ;
 let haveDiv ;
 let shadowDiv ;
 let backOne = "backtotop";
-        let pairingOutputs = {}
+let pairingOutputs = {}
 let pairsForDragons = {}
 /*
 {
         parent1//parent2 : [possible outputs?]
 }
 */
-        let dragonEls = {}
-        let dragonsInElement = {}
+let dragonEls = {}
+let dragonsInElement = {}
 
 let chartRef = {
         P: 'P Plant',
@@ -154,13 +154,13 @@ let elementIcons = {
 }
 
 function addSortButtons() {
-        let elementIconArr = elIcons.split('\n')
+        //let elementIconArr = elIcons.split('\n')
         for (const sortArea of document.querySelectorAll('.elementsort')) {
                 let innerHtml = ''
                 for (const el of elementChart.basics) {
                         if (el != "Any") {
                                 let imgsrc = '';
-                                for (const url of elementIconArr) {
+                                for (const url of Object.getOwnPropertyNames(elementIcons)) {
                                         if (url.includes(el.substring(2))) {
                                                 imgsrc = url;
                                                 elementIcons[el] = url;
@@ -489,6 +489,7 @@ function hideUnavail(el) {
   saveData()
 }
 
+
 function hidePerm(el) {
   console.log('hiding/showing!');
   let cards = Array.from(el.closest('.settings-buttons').nextElementSibling.querySelectorAll('.perm'));
@@ -512,6 +513,7 @@ function hidePerm(el) {
   dragonarium[id].hidePerm = el.dataset.toggle
   saveData()
 }
+
 
 function hideBreeds(el) {
   let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
@@ -542,6 +544,7 @@ function hideBreeds(el) {
   }
 }
 
+
 function clickInitButtons() {
         let tabs = [wantDiv, initDiv, haveDiv, shadowDiv]
         for (const tab of tabs) {
@@ -555,6 +558,7 @@ function clickInitButtons() {
                 }
         }
 }
+
 
 function cycleViews(imgEl) {
   let imgsFront = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgfront')
