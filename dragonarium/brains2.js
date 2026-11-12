@@ -1378,7 +1378,7 @@ function noSpecificDragonTargets(targetNames, haveDragonsToCheck) {
         let allValid = []
         for (const dr of haveDragonsToCheck) {
                 for (const drTwo of haveDragonsToCheck) {
-                        let pairingOutput = dr.elements.concat(allDragonData[drTwo].elements)
+                        let pairingOutput = allDragonData[dr].elements.concat(allDragonData[drTwo].elements)
                         let targetsFromPair = []
                         for (const targetN of targetNames) {
                                 let validPair = checkTargetReq(targetN, pairingOutput)
