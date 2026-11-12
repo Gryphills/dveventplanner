@@ -9,15 +9,16 @@ let wantDiv ;
 let haveDiv ;
 let shadowDiv ;
 let backOne = "backtotop";
-let pairingOutputs = {}
+        let pairingOutputs = {}
+let pairsForDragons = {}
 /*
 {
         parent1//parent2 : [possible outputs?]
 
 }
 */
-let dragonEls = {}
-let dragonsInElement = {}
+        let dragonEls = {}
+        let dragonsInElement = {}
 
 
 let chartRef = {
@@ -1161,7 +1162,7 @@ function updateTargetSearch() {
   
   let validPairs = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
-possiblePairsa(targets[0])
+  possiblePairsa(targets[0])
  
 
 
@@ -1321,36 +1322,41 @@ function possiblePairsa(dragonName) {
   let specialGuys = [];
   let dragonReqs = allDragonData[dragonName].combo.requirements;
   let validPairs = []
+  let targetsWithoutSpecialGuys = []
   if (dragonReqs) {
-    for (const req of dragonReqs) {
-          if (!elementChart.basics.includes(req)) {
-                  specialGuys.push(req)
-          }
-    }
           let haveDragonNodes = haveDiv.children;
-        let haveDragonsToCheck = []
+          let haveDragonsToCheck = []
           for (const child of haveDragonNodes) {
-                  //if (!targets.includes(child.id)) {
-                    haveDragonsToCheck.push(child.id);
-                  //}
+                          //if (!targets.includes(child.id)) {
+              haveDragonsToCheck.push(child.id);
+                          //}
           }
-       if (specialGuys.length == 1) {
-          let specialGuy = allDragonData[specialGuys[0]]
-          if (specialGuy) {
-                  for (const otherParentName of haveDragonsToCheck) { 
-                    let pairingOutput = specialGuy.elements.concat(allDragonData[otherParentName].elements)
-                    let validPair = checkTargetReq(dragonName, pairingOutput)
-                    if (validPair) {
-                      console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
-                      let sorted = [specialGuys[0], otherParentName].sort()
-                      validPairs.push(`${sorted[0]}//${sorted[1]}`)
-                    }
+            for (const req of dragonReqs) {
+                  if (!elementChart.basics.includes(req)) {
+                          specialGuys.push(req)
                   }
-          }
-    } else if (specialGuys.length == 2) {
-        let sorted = specialGuys.sort()
-        validPairs.push(`${sorted[0]}//${sorted[1]}`)
-    } else {
+            }
+               if (specialGuys.length == 2) {
+                        let sorted = specialGuys.sort()
+                        validPairs.push(`${sorted[0]}//${sorted[1]}`)
+            }
+               else if (specialGuys.length == 1) {
+                       
+                  let specialGuy = allDragonData[specialGuys[0]]
+                  if (specialGuy) {
+                          for (const otherParentName of haveDragonsToCheck) { 
+                            let pairingOutput = specialGuy.elements.concat(allDragonData[otherParentName].elements)
+                            let validPair = checkTargetReq(dragonName, pairingOutput)
+                            if (validPair) {
+                              console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
+                              let sorted = [specialGuys[0], otherParentName].sort()
+                              validPairs.push(`${sorted[0]}//${sorted[1]}`)
+                            }
+                          }
+                  }
+    }  else {
+       targetsWithoutSpecialGuys.push(dragonName)
+        noSpecificDragonTargets(dragonName, haveDragonsToCheck)
         /*let narrowedList = []
         for (const req of dragonReqs) {
                 for (const d of dragonsInElement[req]) {
@@ -1359,11 +1365,47 @@ function possiblePairsa(dragonName) {
                         }
                 }
         }*/
-       
-       
+
     }
   }
+        
   console.log(validPairs)
+}
+
+
+
+function noSpecificDragonTargets(targetNames, haveDragonsToCheck) {
+        let allValid = []
+        for (const dr of haveDragonsToCheck) {
+                for (const drTwo of haveDragonsToCheck) {
+                        let pairingOutput = dr.elements.concat(allDragonData[drTwo].elements)
+                        let targetsFromPair = []
+                        for (const targetN of targetNames) {
+                                let validPair = checkTargetReq(targetN, pairingOutput)
+                                if (validPair) {
+                                        targetsFromPair.push(targetN);
+                                        //console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
+                                        //let sorted = [specialGuys[0], otherParentName].sort()
+                                        //validPairs.push(`${sorted[0]}//${sorted[1]}`)
+                                        if (!pairsForDragons[targetN]) {
+                                                pairsForDragons[targetN] = []
+                                        }
+                                        pairsForDragons[targetN].push([dr,drTwo].sort())
+                                }
+                        }
+                        if (targetsFromPair.length > 0) {
+                                let pairObj = {
+                                   parentLeft: dr,
+                                   parentRight : drTwo,
+                                   targetsMet: targetsFromPair
+                                }
+                                console.log(pairObj)
+                                allValid.push(pairObj)
+                        }
+                }
+        }
+        console.log(allValid);
+        return allValid
 }
 
 function checkTargetReqa(target, pairingElOutput) {
