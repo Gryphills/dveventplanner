@@ -171,6 +171,26 @@ function addSortButtons() {
         
 }
 
+function jumpToDragon(dragonName, clickedEl = undefined) {
+        if (clickedEl) {
+                let back = clickedEl.closest('dragonCard')
+                if (back) {
+                        back = clickedEl.closest('dragonCard').id;
+                } if (back) {
+                        backOne = back;
+                        window.location.href = window.location.href.split('#')[0] + back
+                }
+                
+        }
+        let inDiv = dragonarium[dragonName].status;
+        document.getElementById(`tabbutton-${inDiv}`).click()
+        while (!document.getElementById(`tabbutton-${inDiv}`.classList.contains('open') {
+                console.log('opening ' , inDiv, '...')
+        }
+        window.location.href = window.location.href.split('#')[0] + dragonName
+        //document.getElementById(inDiv + 'Div')
+}
+
 function sortCardsByEl(el, elementName) {
         let activeFilters = JSON.parse(el.parentElement.dataset.active)
         if (!activeFilters) {
@@ -277,12 +297,12 @@ function setTabs() {
       }
     })
   }
-  if (dragonarium.openTab) {
+  /*if (dragonarium.openTab) {
     let button = document.querySelector('.tab-button').parentNode.querySelector(`[data-key="${dragonarium.openTab}"]`)
     if (button) {
       button.click();
     }
-  }
+  }*/
 }
 
 
@@ -589,9 +609,6 @@ function cycleViews(imgEl) {
   
 }
 
-function navToDragon(dragonName) {
-        
-}
 
 
 
@@ -697,7 +714,7 @@ function buildDragonCard(name, data) {
                 cleanedReq +=  `req`
             
             } else {
-                cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="navToDragon(${req})">${req}</a>`
+                cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon(${req}, this)">${req}</a>`
                     if (allDragonData[req]) {
                         cleanedReq += `<span class="internal-el-imgs">`
                         for (const el of allDragonData[req].elements) {
