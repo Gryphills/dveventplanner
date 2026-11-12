@@ -131,6 +131,8 @@ let elementIcons = {
         Dream:	        'https://i.postimg.cc/L8YB5fD4/Icon-Dream.webp',
         Earth:	        'https://i.postimg.cc/Hkc4n5zL/Icon-Earth.webp',
         Fire:	        'https://i.postimg.cc/8zJBcW45/Icon-Fire.webp',
+        Crystalline:    'https://i.postimg.cc/4yZnbYKk/Icon-Crystalline.webp',
+        Gemstone:       'https://i.postimg.cc/zv53Syys/Icon-Gemstone.webp',
         Galactic:	'https://i.postimg.cc/BnLcbDp8/Icon-Galaxy.webp',
         Hidden:	        'https://i.postimg.cc/T3Lq1m0W/Icon-Hidden.webp',
         Light:	        'https://i.postimg.cc/jSwQ2NcP/Icon-Light.webp',
