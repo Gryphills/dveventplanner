@@ -1356,7 +1356,7 @@ function possiblePairsa(dragonName) {
                   }
     }  else {
        targetsWithoutSpecialGuys.push(dragonName)
-        noSpecificDragonTargets(dragonName, haveDragonsToCheck)
+        noSpecificDragonTargets([dragonName], haveDragonsToCheck)
         /*let narrowedList = []
         for (const req of dragonReqs) {
                 for (const d of dragonsInElement[req]) {
