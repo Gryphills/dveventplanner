@@ -152,6 +152,10 @@ https://i.postimg.cc/8z2d65ng/Icon-Treasure.webp
 https://i.postimg.cc/fRG79Lgh/Icon-Water.webp
 https://i.postimg.cc/vZJ7VBSb/Icon-Zodiac.webp`
 
+let elementIconsObj = {
+        
+}
+
 function addSortButtons() {
         let elementIconArr = elIcons.split('\n')
         for (const sortArea of document.querySelectorAll('.elementsort')) {
@@ -162,6 +166,7 @@ function addSortButtons() {
                                 for (const url of elementIconArr) {
                                         if (url.includes(el.substring(2))) {
                                                 imgsrc = url;
+                                                elementIconsObj[el] = url;
                                         }
                                 }
                                 innerHtml += `<img class="elsort${el.substring(2)}" src="imgsrc" onClick="sortCardsByEl(this, '${el}')">`
@@ -1073,12 +1078,19 @@ function createTargetCards() {
               console.log(':( no img for ', dragonName)
               continue;
       }
+      let elements = ``
+            for (const internalEl of allDragonData[dragonName].elements) {
+                elements += `<img loading="lazy" src="${elementIconsObj[internalEl]}" class="minielicon">`
+            }
+        
+      //let breedInfo = document.querySelector(`#${dragonName}`).querySelector('h3').innerHTML <h3> ${breedInfo} </h3>
       let targetCardHtml = 
       `<div class='targetcard ${dragonName}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
           <div class="itemimage targetimage">
               <img loading="lazy" src="${allDragonImgs[dragonName].Adult}">
           </div>
           <h2 class="itemname">${dragonName}</h2>
+          <div style="display:flex; max-height:22px; height:fit-content;">${elements}</div>
       </div>`;
 
       let cardEl = document.createElement('div');
