@@ -618,7 +618,10 @@ function buildDragonCard(name, data) {
     }
     if (data.elements) {
         for (const elem of data.elements) {
-                cardhtml += ` ${elem} `
+                if (elementChart.basics.includes(elem)) {
+                        cardhtml += ` ${elem.substring(2)} `
+                }
+                
         }
     }
   cardhtml += `" name="${name}" id="${name}">
