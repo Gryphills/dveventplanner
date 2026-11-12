@@ -1055,7 +1055,7 @@ function createTargetCards() {
       }
       let elements = ``
             for (const internalEl of allDragonData[dragonName].elements) {
-                elements += `<img loading="lazy" src="${elementIconsObj[internalEl]}" class="minielicon">`
+                elements += `<img loading="lazy" src="${elementIcons[internalEl]}" class="minielicon">`
             }
         
       //let breedInfo = document.querySelector(`#${dragonName}`).querySelector('h3').innerHTML <h3> ${breedInfo} </h3>
