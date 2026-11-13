@@ -14,7 +14,7 @@
  
     <div id="tab-buttons" class="tab-buttons">
         <div  class="tab-button hidden">Breeding Tester</div>
-        <div  class="tab-button mpf">Multi-Parent Finder</div>
+        <div id="tabbutton-mpf" class="tab-button mpf">Multi-Parent Finder</div>
         <div id="tabbutton-want" data-key="want" class="tab-button">Want</div>
         <div id="tabbutton-init" data-key="init" class="tab-button open">Unacquired</div>
         <div id="tabbutton-have" data-key="have" class="tab-button">Acquired</div>
@@ -33,8 +33,9 @@
                  
                 <label class="searchlabel">Search for target Dragon: <input class="search" type="text" data-key="targetcards"></label> 
                 <div class="settings-buttons">
-                    <div data-toggle=1 class="hidePermButton sortbutton toggled" >Hide Permanent Dragons</div>
-                    <div data-toggle=1 class="hideOwnedButton sortbutton toggled" onClick="hideOwned(this)" >Hide Owned Dragons</div>
+                    <div data-toggle=1 class="showPermButton sortbutton toggled" onClick="hideTargetsWith(this, 'perm')" >Show Permanent Dragons</div>
+                    <div data-toggle=0 class="hideOwnedButton sortbutton toggled" onClick="hideTargetsWith(this, 'owned)" >Show Owned Dragons</div>
+                    <div data-toggle=0 class="hideShadowButton sortbutton toggled" onClick="hideTargetsWith(this, 'shadow')" >Show Shadow Realm Dragons</div>
                 </div>
                 <div class="targetcards" id="targetcards">
                 </div>
@@ -48,8 +49,8 @@
         </div>
 
       
-        <div class="tab">
-          <div class="settings-buttons">
+        <div class="tab" id="wantTab">
+          <div class="settings-buttons hidden">
                 <div data-toggle=0 class="hideBreedsButton sortbutton" >Hide Breeding Info</div>
                 <div data-toggle=0 class="hideUnavailButton sortbutton" >Hide Unavailable Dragons</div>
                 <div data-toggle=0 class="hidePermButton sortbutton" >Hide Permanent Dragons</div>
@@ -59,8 +60,8 @@
 
             </div>
         </div>
-        <div class="tab open" id="unacquiredDiv">
-            <div class="settings-buttons">
+        <div class="tab open" id="initDiv">
+            <div class="settings-buttons hidden">
                 <div data-toggle=0 class="hideBreedsButton sortbutton" >Hide Breeding Info</div>
                 <div data-toggle=0 class="hideUnavailButton sortbutton" >Hide Unavailable Dragons</div>
                 <div data-toggle=0 class="hidePermButton sortbutton" >Hide Permanent Dragons</div>
@@ -70,8 +71,8 @@
 
             </div>
         </div>
-        <div class="tab">
-          <div class="settings-buttons">
+        <div class="tab" id="haveTab">
+          <div class="settings-buttons hidden">
                 <div data-toggle=0 class="hideBreedsButton sortbutton" >Hide Breeding Info</div>
                 <div data-toggle=0 class="hideUnavailButton sortbutton" >Hide Unavailable Dragons</div>
                 <div data-toggle=0 class="hidePermButton sortbutton" >Hide Permanent Dragons</div>
@@ -81,16 +82,18 @@
 
             </div>
         </div>
-        <div class="tab">
+        <div class="tab" id="shadowTab">
           <div class="settings-buttons">
                 <div data-toggle=0 class="hideBreedsButton sortbutton" >Hide Breeding Info</div> <br>
-                <div data-toggle=0 class="hideUnavailButton sortbutton" >Show Limited Available Dragons</div>
-                <div data-toggle=0 class="hideUnavailButton sortbutton" >Show Unavailable Dragons</div>
-                <div data-toggle=0 class="hidePermButton sortbutton" >Show Permanent Dragons</div> <br>
-            <div class="elementsort" data-active-filters='[]'>
+                <div data-toggle=1 class="showLimitedAvail sortbutton" >Show Limited Available Dragons</div>
+                <div data-toggle=1 class="showUnavailableButton sortbutton" >Show Unavailable Dragons</div>
+                <div data-toggle=1 class="showPermButton sortbutton" >Show Permanent Dragons</div>
+                <div data-toggle=1 class="favsFirstButton sortbutton" >Favourites First</div><br>
+                <div class="elementsort"></div>
             </div>
+            <div class='searchbox'>
+              <label class="searchlabel">Search for Dragon: <input class="search" type="text" data-key="shadowCards"></label>
             </div>
-            <label class="searchlabel">Search for Dragon: <input class="search" type="text" data-key="shadowCards"></label>
             <div class="dragonCards" id="shadowCards">
             </div>
         </div>
