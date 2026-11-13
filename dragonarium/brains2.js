@@ -997,7 +997,7 @@ function processCombo(comboData) {
     comboFin.output = outputNoDups;
     //comboFin.requirements = requirementNoDups;
     if (comboFin.requirements != requirementNoDups) {
-        console.log(comboFin.requirements, requirementsNoDups)
+        console.log(comboFin.requirements, requirementNoDups)
     }
   }
         if (comboFin.requirements) {
