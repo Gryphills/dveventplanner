@@ -1035,8 +1035,10 @@ function processCombo(comboData) {
     }
     comboFin.output = outputNoDups;
     //comboFin.requirements = requirementNoDups;
-    if (comboFin.requirements.length != requirementNoDups.length) {
-        console.log(comboFin.requirements, requirementNoDups)
+    if (comboFin.requirements.length == requirementNoDups.length) {
+        
+    } else {
+        console.log('lendth is not same:', comboFin.requirements, requirementNoDups)
     }
   }
         if (comboFin.requirements) {
