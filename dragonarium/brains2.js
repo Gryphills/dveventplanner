@@ -157,20 +157,20 @@ let elementIcons = {
 
 function addSortButtons() {
         //let elementIconArr = elIcons.split('\n')
-        for (const sortArea of document.querySelectorAll('.elementsort')) {
-                let innerHtml = ''
-                for (const el of elementChart.basics) {
-                        if (el != "Any") {
-                                let imgsrc = '';
-                                for (const url of Object.getOwnPropertyNames(elementIcons)) {
-                                        if (url.includes(el.substring(2))) {
-                                                imgsrc = url;
-                                                elementIcons[el] = url;
-                                        }
+        let innerHtml = ''
+        for (const el of elementChart.basics) {
+                if (el != "Any") {
+                        let imgsrc = '';
+                        for (const url of Object.getOwnPropertyNames(elementIcons)) {
+                                if (url.includes(el.substring(2))) {
+                                        imgsrc = url;
+                                        elementIcons[el] = url;
                                 }
-                                innerHtml += `<img class="elsort${el.substring(2)}" src="${elementIcons[el]}" onClick="sortCardsByEl(this, '${el}')">`
                         }
+                        innerHtml += `<img class="elsort${el.substring(2)}" src="${elementIcons[el]}" onClick="sortCardsByEl(this, '${el}')">`
                 }
+        }
+        for (const sortArea of document.querySelectorAll('.elementsort')) {
                 sortArea.innerHTML = innerHtml;
         }
 }
