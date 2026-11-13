@@ -1445,7 +1445,7 @@ function possiblePairsa(dragonName) {
                             pairingOutput.push(otherParentName)
                             pairingOutput.push(specialGuys[0])
                             let validPair = checkTargetReq(dragonName, pairingOutput)
-                            console.log(`Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
+                            console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                             if (validPair) {
                               console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
                               let sorted = [specialGuys[0], otherParentName].sort()
