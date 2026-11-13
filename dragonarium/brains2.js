@@ -592,7 +592,7 @@ function radioOtherButtons(clicked) {
 
 
 
-
+/*
 function hideUnavail(el) {
   console.log('hiding/showing!');
   let cards = Array.from(el.closest('.tab').querySelectorAll('.unavail'));
@@ -642,7 +642,7 @@ function hidePerm(el) {
   }
   dragonarium[id].hidePerm = el.dataset.toggle
   saveData()
-}
+}*/
 
 
 function hideBreeds(el) {
@@ -1348,11 +1348,35 @@ function updateTargetCard(dragonName) {
       }
     }
   }
-  targetCard.dataset.status = dragonarium[dragonName].status;
-  if (targetCard.dataset.status == 'shadow') {
-    targetCard.classList.add('shadow')
-  } else {
-    targetCard.classList.remove('shadow')
+  if (targetCard.dataset.status != dragonarium[dragonName].status) {
+          if (dragonarium[dragonName].status == 'want') {
+            targetCard.classList.add('want')
+            //if (Number(targetCardDiv.querySelector('.showShadowButton').dataset.toggle) == 1) {
+            //     targetCard.classList.add('filterwant')
+            //}
+          } else {
+            targetCard.classList.remove('want')
+            targetCard.classList.remove('filterwant')
+          }
+          if (dragonarium[dragonName].status == 'have') {
+            targetCard.classList.add('owned')
+            if (Number(targetCardDiv.querySelector('.showOwnedButton ').dataset.toggle) == 1) {
+                 targetCard.classList.add('filterowned')
+            }
+          } else {
+            targetCard.classList.remove('owned')
+            targetCard.classList.remove('filterowned')
+          }
+          
+          if (dragonarium[dragonName].status == 'shadow') {
+            targetCard.classList.add('shadow')
+            if (Number(targetCardDiv.querySelector('.showShadowButton').dataset.toggle) == 1) {
+                 targetCard.classList.add('filtershadow')
+            }
+          } else {
+            targetCard.classList.remove('shadow')
+            targetCard.classList.remove('filtershadow')
+          }
   }
   targetCard.dataset.fav = dragonarium[dragonName].fav;
 }
