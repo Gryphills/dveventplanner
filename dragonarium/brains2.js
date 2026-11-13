@@ -1060,9 +1060,11 @@ function createTargetCards() {
               console.log(':( no img for ', dragonName)
               continue;
       }
-      let elements = ``
+        let elementsClasses = ''
+      let elementsEls = ``
             for (const internalEl of allDragonData[dragonName].elements) {
-                elements += `<img loading="lazy" src="${elementIcons[internalEl]}" class="minielicon">`
+                elementsEls += `<img loading="lazy" src="${elementIcons[internalEl.substring(2)]}" class="minielicon">`;
+                    elementsClasses += ' ' + internalEl.substring(2) + ' '
             }
         
       //let breedInfo = document.querySelector(`#${dragonName}`).querySelector('h3').innerHTML <h3> ${breedInfo} </h3>
