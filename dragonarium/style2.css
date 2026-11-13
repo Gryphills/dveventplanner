@@ -729,3 +729,98 @@ body {
   top: 0px;
   z-index: 5;
 }
+
+
+.filterPlant {
+    display: flex;
+}
+.filterFire {
+    display: flex;
+}
+.filterEarth {
+    display: flex;
+}
+.filterCold {
+    display: flex;
+}
+.filterWater {
+    display: flex;
+}
+.filterLightning {
+    display: flex;
+}
+.filterAir {
+    display: flex;
+}
+.filterMetal {
+    display: flex;
+}
+.filterLight {
+    display: flex;
+}
+.filterDark {
+    display: flex;
+}
+.filterRift {
+    display: flex;
+}
+.filterApocalypse {
+    display: flex;
+}
+.filterAura {
+    display: flex;
+}
+.filterChrysalis {
+    display: flex;
+}
+.filterCrystalline {
+    display: flex;
+}
+.filterDream {
+    display: flex;
+}
+.filterGalactic {
+    display: flex;
+}
+.filterGemstone {
+    display: flex;
+}
+.filterHidden {
+    display: flex;
+}
+.filterMelody {
+    display: flex;
+}
+.filterMonolith {
+    display: flex;
+}
+.filterOlympus {
+    display: flex;
+}
+.filterOrnamental {
+    display: flex;
+}
+.filterRainbow {
+    display: flex;
+}
+.filterSeasonal {
+    display: flex;
+}
+.filterSnowflake {
+    display: flex;
+}
+.filterSun {
+    display: flex;
+}
+.filterMoon {
+    display: flex;
+}
+.filterSurface {
+    display: flex;
+}
+.filterTreasure {
+    display: flex;
+}
+.filterZodiac {
+    display: flex;
+}
