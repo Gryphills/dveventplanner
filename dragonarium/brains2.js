@@ -1273,13 +1273,13 @@ function updateTargetSearch() {
   //for (const
 
   for (const targetName of Object.getOwnPropertyNames(pairsForEachTarget)) {
-        for (const pair of Object.getOwnPropertyNames(pairsForEachTarget[targetName])) {
-                if (Object.getOwnPropertyNames(validPairObj).includes(pair)) {
-                        validPairObj[pair].targetsMet.push(targetName)
-                } else {
-                        validPairObj[pair] = pairsForEachTarget[targetName]
-                        validPairObj[pair].targetsMet = [targetName]
+        for (const pairName of Object.getOwnPropertyNames(pairsForEachTarget[targetName])) {
+                let targetsMet = [targetName];
+                if (validPairObj[pairName]) {
+                        targetsMet = targetsMet.concat(validPairObj[pairName].targetsMet);
                 }
+                pairsForEachTarget[targetName].targetsMet = targetsMet
+                validPairObj[pairName] = pairsForEachTarget[targetName]
         }   
   }
  
