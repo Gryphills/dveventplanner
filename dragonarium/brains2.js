@@ -1285,7 +1285,12 @@ function updatePossibleTargets() {
 }
 
 function showTargetsWith(el, keyword) {  
-   let cards = document.querySelector('#targetcards').querySelectorAll(`.${keyword}`)
+   let cards 
+   if (el.closest('.tab').id == "multiparents") {
+        cards = document.querySelector('#targetcards').querySelectorAll(`.${keyword}`)
+   } else {
+        cards = el.closest('.tab').querySelectorAll(`.${keyword}`)
+   }
         
    if (el.dataset.toggle == 1) {
            el.dataset.toggle = 0
@@ -1300,7 +1305,7 @@ function showTargetsWith(el, keyword) {
                 card.classList.remove(`filter${keyword}`)
            }
    }
-        console.log('showing/hiding targets! ', keyword, el.dataset.toggle)
+        console.log('showing/hiding! ', keyword, el.dataset.toggle)
 }
 /*
 function hideOwned(el) {
