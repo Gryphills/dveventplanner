@@ -1379,7 +1379,7 @@ function updateTargetSearch() {
         }
       }
     }*/
-  
+  console.log(validPairObj);
   console.log(validPairs);
   
   /*for (const pairObj of validPairs) {
