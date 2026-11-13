@@ -164,7 +164,7 @@ let elementChart = {
   basics : [
   'P Plant',  'F Fire',  'E Earth',  'C Cold',  'W Water',  'L Lightning',  'A Air',  'M Metal',  'I Light',  'D Dark',
   
-  'R Rift', "Any",
+  'R Rift', "AnAny",
   'ApApocalypse',  'AuAura',  'ChChrysalis',  'CrCrystalline',  'DrDream',  'GaGalactic',  'GeGemstone',  'HiHidden',  'MeMelody',  'MhMonolith',  
   'OlOlympus',  'OrOrnamental',  'RbRainbow',  'SeSeasonal',  'SnSnowflake',  'SuSun',  'MoMoon',  'SfSurface',  'TrTreasure',  'ZoZodiac'
   ]
@@ -207,9 +207,14 @@ let elementIcons = {
 function addSortButtons() {
         //let elementIconArr = elIcons.split('\n')
         let innerHtml = ''
+        let styleEls = '<style>'
         for (const el of elementChart.basics) {
-                if (el != "Any") {
+                if (el != "AnAny") {
                         let imgsrc = '';
+                        let styleEls += `.filter${el.substring(2)} {
+                                display: flex;
+                        }
+                        `
                         for (const url of Object.getOwnPropertyNames(elementIcons)) {
                                 if (url.includes(el.substring(2))) {
                                         imgsrc = url;
@@ -224,6 +229,8 @@ function addSortButtons() {
         for (const sortArea of document.querySelectorAll('.elementsort')) {
                 sortArea.innerHTML = innerHtml;
         }
+        styleEls += '</style>'
+        head.appendChild(styleEls);
 }
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
@@ -772,9 +779,6 @@ function buildDragonCard(name, data) {
         for (const req of data.combo.requirements) {
                 let reqq = req
             if (elementChart.basics.includes(req)) {
-                    if (req == "Any") {
-                        reqq = "AnAny"
-                    }
                 cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>` + reqq.substring(2)
             //} else if (req == "Any") {
                 //cleanedReq +=  `req`
@@ -991,13 +995,16 @@ function processCombo(comboData) {
       }
     }
     comboFin.output = outputNoDups;
-    comboFin.requirements = requirementNoDups;
+    //comboFin.requirements = requirementNoDups;
+    if (comboFin.requirements != requirementNoDups) {
+        console.log(comboFin.requirements, requirementsNoDups)
+    }
   }
         if (comboFin.requirements) {
                 if (comboFin.requirements == [ "MhMonolith" ]) {
                         comboFin.requirements = [ "MhMonolith", "MhMonolith" ]
                 } else if (comboFin.requirements.length == 1) {
-                        comboFin.requirements.push('Any')
+                        comboFin.requirements.push('AnAny')
                 }
         }
   return comboFin;
@@ -1570,7 +1577,7 @@ function parentTemplate(parent) {
 
 function sortDragonsIntoEls() {
         for (const basic of elementChart.basics) {
-                if (!dragonsInElement[basic]  && basic != "Any") {
+                if (!dragonsInElement[basic]  && basic != "AnAny") {
                         dragonsInElement[basic] = []
                 }
         }
