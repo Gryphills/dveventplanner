@@ -1273,9 +1273,9 @@ function updatePossibleTargets() {
   }
 }
 
-function hideTargetsWith(el, keyword) {  
+function showTargetsWith(el, keyword) {  
    let cards = document.querySelector('#targetcards').querySelectorAll(`.${keyword}`)
-        console.log('hiding targets! ', keyword)
+        
    if (el.dataset.toggle == 1) {
            el.dataset.toggle == 0
            el.classList.remove('toggled');
@@ -1289,6 +1289,7 @@ function hideTargetsWith(el, keyword) {
                 card.classList.remove(`filter${keyword}`)
            }
    }
+        console.log('showing/hiding targets! ', keyword, el.dataset.toggle)
 }
 
 function hideOwned(el) {
