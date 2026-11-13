@@ -1278,9 +1278,9 @@ function updateTargetSearch() {
                 if (validPairObj[pairName]) {
                         targetsMet = targetsMet.concat(validPairObj[pairName].targetsMet);
                 }
-                pairsForEachTarget[targetName].targetsMet = targetsMet
-                console.log(pairsForEachTarget[targetName])
-                validPairObj[pairName] = pairsForEachTarget[targetName]
+                pairsForEachTarget[targetName][pairName].targetsMet = targetsMet
+                //console.log(pairsForEachTarget[targetName][)
+                validPairObj[pairName] = pairsForEachTarget[targetName][pairName]
         }   
   }
  
