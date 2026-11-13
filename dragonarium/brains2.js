@@ -254,13 +254,7 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         //document.getElementById(inDiv + 'Div')
 }
 
-let tabFilters = {
-  mpfTab: [],
-  wantTab: [],
-  initTab: [],
-  haveTab: [],
-  shadowTab: []
-}
+
 
 function sortCardsByEl(el, elementName) {
         console.log('sorting!! ', elementName)
