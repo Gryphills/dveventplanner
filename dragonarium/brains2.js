@@ -1334,6 +1334,7 @@ function checkEachTarget(targets, pairingElOutput) {
   for (const target of targets) {
     if (checkTargetReq(target, pairingElOutput)) {
       targetsMet.push(target)
+            console.log('met ', targetsMet, '; need ', targets)
       if (targetsMet.length == targets.length) {
         return targetsMet;
       }
@@ -1355,7 +1356,7 @@ function checkTargetReq(target, pairingElOutput) {
       }
     }
   }
-        console.log('checking ', target, metReqs, targetRequirements, pairingElOutput)
+        //console.log('checking ', target, metReqs, targetRequirements, pairingElOutput)
         
   if (metReqs.length != targetRequirements.length) {
     return false;
