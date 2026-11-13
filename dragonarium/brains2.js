@@ -237,6 +237,7 @@ function addSortButtons() {
                 sortArea.innerHTML = innerHtml;
         }
         let styleEl = document.createElement('style')
+        console.log(styleHtml)
         styleEl.innerHtml = styleHtml
         document.head.appendChild(styleEl);
 }
