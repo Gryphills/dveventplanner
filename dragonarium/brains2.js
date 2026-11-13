@@ -19,7 +19,7 @@ let pairsForDragons = {}
 
 
 let tabFilters = {
-  mpfTab: [],
+  multiparents: [],
   wantTab: [],
   initTab: [],
   haveTab: [],
