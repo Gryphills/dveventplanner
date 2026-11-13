@@ -1254,21 +1254,32 @@ function updateTargetSearch() {
           //}
   }
   
+  let validPairObj = {}
   let validPairs = []
+  let pairsForEachTarget = {}
   let guysWithNoSpecialGuys = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
 
   for (const target of targets) {
         let checkPairs = possiblePairsa(target)
           if (checkPairs != "NoSpecial") {
-                validPairs = sortPairIntoArray(checkPairs, validPairs)
+                pairsForEachTarget[target] = checkPairs
           } else {
                 guysWithNoSpecialGuys.push(target)
           }
           
   }
 
-  
+  for (const targetName of Object.getOwnPropertyNames(pairsForEachTarget)) {
+        for (const pair of Object.getOwnPropertyNames(pairsForEachTarget[targetName])) {
+                if (Object.getOwnPropertyNames(validPairObj).includes(pair)) {
+                        validPairObj[pair].targetsMet.push(targetName)
+                } else {
+                        validPairObj[pair] = pair
+                        validPairObj[pair].targetsMet = [targetName]
+                }
+        }   
+  }
  
 
 
@@ -1312,14 +1323,14 @@ function updateTargetSearch() {
       }
     }*/
   
-  console.log(validPairs);
+  console.log(validPairObj);
   
-  for (const pairObj of validPairs) {
+  /*for (const pairObj of validPairs) {
     let newPairEl = document.createElement('div');
     let html = pairTemplate(pairObj);
     newPairEl.outerHTML = html;
     possiblepairdiv.appendChild(newPairEl);
-  }
+  }*/
   //yay we checked ALL the possible pairs! Hopefully that doesn't completely eat the computer to do mSJHDgfsd
   //now we need to build and add the pairs into the template thingy.
 
@@ -1471,6 +1482,7 @@ function possiblePairsa(dragonName) {
                   }
     }  else {
                        console.log(dragonName, ' has no special guys :)')
+                       return "NoSpecial"
        //targetsWithoutSpecialGuys.push(dragonName)
         //noSpecificDragonTargets([dragonName], haveDragonsToCheck)
         /*let narrowedList = []
@@ -1484,8 +1496,7 @@ function possiblePairsa(dragonName) {
 
     }
   }
-        
-  console.log(validPairs)
+  return validPairs      
 }
 
 
