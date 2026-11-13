@@ -28,7 +28,6 @@ let tabFilters = {
 
 let savedSettings = {
   currentTab: 4,
-
   mpfTab: {
     hideOwned: 1,
     showPerm: 0,
@@ -1273,6 +1272,7 @@ function updatePossibleTargets() {
 
 function hideTargetsWith(el, keyword) {  
    let cards = document.querySelector('#targetcards').querySelectorAll(`.${keyword}`)
+        console.log('hiding targets! ', keyword)
    if (el.dataset.toggle == 1) {
            el.dataset.toggle == 0
            el.classList.remove('toggled');
