@@ -263,9 +263,49 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         //document.getElementById(inDiv + 'Div')
 }
 
-
-
+//NEW
 function sortCardsByEl(el, elementName) {
+        console.log('sorting!! ', elementName)
+        let tabName = el.closest('.tab').id
+        let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
+        if (cardsDiv) {
+                if (tabFilters[tabName]) {
+                        //if (tabFilters[tabName].length == 0) {
+                                //what do we do if no filters?
+                                //add filter to every el I guess?
+                                //adda filter to the cardsDiv that lets everyone be seen/not seen probably!
+                                cardsDiv.classList.add('filters-active')
+                        //}
+                        if (tabFilters[tabName].includes(elementName)) {
+                                tabFilters[tabName].splice(tabFilters[tabName].indexOf(elementName), 1)
+                                el.classList.add('desat')
+                        } else {
+                                tabFilters[tabName].push(elementName);
+                                el.classList.remove('desat')
+                        }
+                        if (tabFilters[tabName].length == 0) {
+                                cardsDiv.classList.remove('filters-active')
+                                for (const card of Array.from(cardsDiv.children)) {
+                                        classList.remove('filteredout')
+                                }
+                                
+                        } else {
+                                for (const card of Array.from(cardsDiv.children)) {
+                                        for (const filteredElName of tabFilters[tabName]) {
+                                                if (!card.classList.contains(filteredElName)) {
+                                                        card.classList.add('filteredout');
+                                                }
+                                        }
+                                }
+                        }
+                } else {
+                        console.log('waaa no tab filter knowledge of ', tabName)
+                                        
+                }
+        }
+}
+//DECOMMISSION - it is Inclsive not exclusive search
+function sortCardsByElOLD(el, elementName) {
         console.log('sorting!! ', elementName)
         let tabName = el.closest('.tab').id
         let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
@@ -289,9 +329,6 @@ function sortCardsByEl(el, elementName) {
                                 }
                                 el.classList.add('desat')
                         } else {
-                                //if (tabFilters[tabName].length == 0) {
-                                //        cardsDiv.classList.add('filters-active')
-                                //}
                                 tabFilters[tabName].push(elementName);
                                 
                                 for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
@@ -304,7 +341,6 @@ function sortCardsByEl(el, elementName) {
                                         
                 }
         }
-        //el.parentElement.dataset.active = JSON.stringify(activeFilters)
 }
 
 
