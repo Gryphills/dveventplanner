@@ -1462,8 +1462,7 @@ function possiblePairsa(dragonName) {
                               let sorted = [specialGuys[0], otherParentName].sort()
                               let pairObj = {
                                       parentLeft: specialGuys[0],
-                                      parentRight : otherParentName,
-                                      targetsMet: targetsMet
+                                      parentRight : otherParentName
                               }
                                     let newObj = 
                               validPairs[`{${sorted[0]}//${sorted[1]}`] = pairObj
