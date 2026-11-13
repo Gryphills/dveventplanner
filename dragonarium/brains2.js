@@ -1152,7 +1152,7 @@ function hideOwned(el) {
    } else {
            el.dataset.value == 0
            el.classList.remove('toggled');
-           for (const card of cards) {
+           for (const card of Array.from(cards)) {
                 card.classList.remove('filterowned')
            }
    }
