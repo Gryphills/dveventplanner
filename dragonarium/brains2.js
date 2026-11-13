@@ -1270,12 +1270,14 @@ function updateTargetSearch() {
           
   }
 
+  //for (const
+
   for (const targetName of Object.getOwnPropertyNames(pairsForEachTarget)) {
         for (const pair of Object.getOwnPropertyNames(pairsForEachTarget[targetName])) {
                 if (Object.getOwnPropertyNames(validPairObj).includes(pair)) {
                         validPairObj[pair].targetsMet.push(targetName)
                 } else {
-                        validPairObj[pair] = pairsForEachTarget[pair]
+                        validPairObj[pair] = pairsForEachTarget[targetName]
                         validPairObj[pair].targetsMet = [targetName]
                 }
         }   
