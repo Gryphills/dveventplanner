@@ -1421,14 +1421,14 @@ function pairTemplate(pairObj) {
 }
 
 function parentTemplate(parent) {
-  let parenthtml = `<a href="#${parent.name}">
+  let parenthtml = `<a href="#${parent}">
       <div class='parent'>
           <div class="itemimg">
-                <img src="${allDragonImgs[parent.name].Adult}">
+                <img src="${allDragonImgs[parent].Adult}">
           </div>
-          <h5>${parent.name}</h5>
+          <h5>${parent}</h5>
           <div class="internal-el-imgs">`
-    for (const el of parent.elements) {
+    for (const el of allDragonData[parent].elements) {
           parenthtml += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
     }
     parenthtml += `</div>
