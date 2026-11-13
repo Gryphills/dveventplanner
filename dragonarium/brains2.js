@@ -227,7 +227,7 @@ function addSortButtons() {
                                         elementIcons[el] = url;
                                 }
                         }
-                        innerHtml += `<img alt="${el.substring(2)}" title="${el.substring(2)}" class="elsort${el.substring(2)}" src="${elementIcons[el.substring(2)]}" onClick="sortCardsByEl(this, '${el.substring(2)}')">`
+                        innerHtml += `<img alt="${el.substring(2)}" title="${el.substring(2)}" class="elsort${el.substring(2)} desat" src="${elementIcons[el.substring(2)]}" onClick="sortCardsByEl(this, '${el.substring(2)}')">`
                 } else {
                         innerHtml += ` </div> <div class="elementsort">`
                 }
