@@ -1289,7 +1289,11 @@ function updateTargetSearch() {
           
         if (pair.targetsMet.length > 1) {
                 console.log(pairName, ' meets ', pair.targetsMet)
-                validPairs = sortPairIntoArray(pair, validPairs);
+                if (validPairs.length == 0) {
+                        validPairs.push(pair)
+                } else {
+                        validPairs = sortPairIntoArray(pair, validPairs);
+                }
         }
   }
 
