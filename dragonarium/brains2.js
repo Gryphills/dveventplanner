@@ -470,7 +470,7 @@ function radioOtherButtons(clicked) {
 
 function hideUnavail(el) {
   console.log('hiding/showing!');
-  let cards = Array.from(el.closest('.settings-buttons').nextElementSibling.querySelectorAll('.unavail'));
+  let cards = Array.from(el.closest('.tab').querySelectorAll('.unavail'));
   
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
