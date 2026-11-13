@@ -628,6 +628,12 @@ body {
 .filterunavail {
   display:none !important;
 }
+.filters-active {
+  .dragoncard {
+    display:none;
+  }
+}
+
 
 
 .pairing {
