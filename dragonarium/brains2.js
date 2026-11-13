@@ -213,14 +213,14 @@ let elementIcons = {
 function addSortButtons() {
         //let elementIconArr = elIcons.split('\n')
         let innerHtml = '<div class="elementsort">'
-        let styleHtml = ''
+        //let styleHtml = ''
         for (const el of elementChart.basics) {
                 if (el != "AnAny") {
                         let imgsrc = '';
-                        styleHtml += `.filter${el.substring(2)} {
-                                display: flex;
-                        }
-                        `
+                        //styleHtml += `.filter${el.substring(2)} {
+                        //        display: flex;
+                        //}
+                        //`
                         for (const url of Object.getOwnPropertyNames(elementIcons)) {
                                 if (url.includes(el.substring(2))) {
                                         imgsrc = url;
@@ -236,10 +236,10 @@ function addSortButtons() {
         for (const sortArea of document.querySelectorAll('.elementsortbox')) {
                 sortArea.innerHTML = innerHtml;
         }
-        let styleEl = document.createElement('style')
-        console.log(styleHtml)
-        styleEl.innerHtml = styleHtml
-        document.head.appendChild(styleEl);
+        //let styleEl = document.createElement('style')
+        //console.log(styleHtml)
+        //styleEl.innerHtml = styleHtml
+        //document.head.appendChild(styleEl);
 }
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
