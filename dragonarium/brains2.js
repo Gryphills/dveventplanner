@@ -1414,7 +1414,7 @@ function pairTemplate(pairObj) {
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
-  htmlTemplate += `</div> <hr> <div class="possibletargets">`
+  htmlTemplate += `</div> <div class="possibletargets"> <h4> Possible Target Results:</h4>`
   for (const validTarget of pairObj.targetsMet) {
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p></div>`
   }
