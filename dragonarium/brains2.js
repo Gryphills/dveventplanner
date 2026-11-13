@@ -1275,7 +1275,7 @@ function updateTargetSearch() {
                 if (Object.getOwnPropertyNames(validPairObj).includes(pair)) {
                         validPairObj[pair].targetsMet.push(targetName)
                 } else {
-                        validPairObj[pair] = pair
+                        validPairObj[pair] = pairsForEachTarget[pair]
                         validPairObj[pair].targetsMet = [targetName]
                 }
         }   
