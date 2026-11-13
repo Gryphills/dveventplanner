@@ -1283,13 +1283,13 @@ function showTargetsWith(el, keyword) {
    let cards = document.querySelector('#targetcards').querySelectorAll(`.${keyword}`)
         
    if (el.dataset.toggle == 1) {
-           el.dataset.toggle == 0
+           el.dataset.toggle = 0
            el.classList.remove('toggled');
            for (const card of Array.from(cards)) {
                 card.classList.add(`filter${keyword}`)
            }
    } else {
-           el.dataset.toggle == 1
+           el.dataset.toggle = 1
            el.classList.add('toggled');
            for (const card of Array.from(cards)) {
                 card.classList.remove(`filter${keyword}`)
