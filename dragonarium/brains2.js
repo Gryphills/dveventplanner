@@ -1500,18 +1500,19 @@ function updateTargetSearch() {
   }
 
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
-          let pair = validPairObj[pairName]
-          
+        let pair = validPairObj[pairName]
         if (pair.targetsMet.length > 1) {
                 console.log(pairName, ' meets ', pair.targetsMet)
                 if (validPairs.length == 0) {
                         validPairs.push(pair)
+                        console.log('pushed!')
                 } else {
+                        console.log('tosort,,,')
                         validPairs = sortPairIntoArray(pair, validPairs);
                 }
         }
   }
-
+  console.log('done sorting? ', validPairs)
         
   if (validPairs.length > 0) {
         let innerHtmlStuff = ''
@@ -1578,11 +1579,12 @@ function updateTargetSearch() {
 }
 
 function sortPairIntoArray(pairObj, validPairs) {
-
+  console.log('sorting ', pairObj)
   for (i=0;i<validPairs.length;i++) {
-    let pair = validPairs[i]
-    if (pairObj.targetsMet.length > pair.targetsMet.length) {
-      validPairs.splice(validPairs.indexOf(pair), 0, pairObj)
+    let pairing = validPairs[i]
+    if (pairObj.targetsMet.length > pairing.targetsMet.length) {
+      validPairs.splice(validPairs.indexOf(pairing), 0, pairObj)
+            console.log('is now ', validPairs)
       return validPairs;
     }
   }
