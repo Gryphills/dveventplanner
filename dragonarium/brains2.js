@@ -398,7 +398,7 @@ function favouriteCard(button) {
   if (Number(button.dataset.toggle) == 0) {
     el.classList.add("favourite");
     button.dataset.toggle = 1;
-    el.parentElement.firstChild.before(el);
+    el.parentElement.firstElementChild.before(el);
   } else {
     el.classList.remove("favourite");
     button.dataset.toggle = 0;
@@ -661,7 +661,7 @@ function cycleViews(imgEl) {
         imgsFront.dataset.imgarray = JSON.stringify(imgarray)
   for (const img of imgArray) {
     if (imgArray.indexOf(img) == 0) {
-      imgsFront.firstChild.src = img
+      imgsFront.firstElementChild.src = img
     } else {
       imgsBack.children[imgArray.indexOf(img) - 1].src = img
     }
@@ -840,10 +840,10 @@ function makeCards() {
     //console.log(card)
     /*if (card.querySelector('.multiimgfront')) {
         let multiArray = []
-          multiArray.push(card.querySelector('.multiimgfront').firstChild.src)
+          multiArray.push(card.querySelector('.multiimgfront').firstElementChild.src)
         for (const img of Array.from(card.querySelector('.multiimgback'))) {
-                console.log(img, img.firstChild.firstChild)
-            multiArray.push(img.firstChild.firstChild.src)
+                console.log(img, img.firstElementChild.firstElementChild)
+            multiArray.push(img.firstElementChild.firstElementChild.src)
         }
       card.querySelector('.multiimgfront').dataset.imgarray = JSON.stringify(multiArray)
             console.log('array: ', multiArray, JSON.stringify(multiArray))
@@ -1276,7 +1276,7 @@ function updateTargetCard(dragonName) {
   if (targetCard.dataset.fav != dragonarium[dragonName].fav) {
     if (Number(dragonarium[dragonName].fav) == 1) {
       targetCard.classList.add('favourite')
-      targetCard.parentElement.firstChild.before(targetCard);
+      targetCard.parentElement.firstElementChild.before(targetCard);
     } else {
       targetCard.classList.remove('favourite')
       let next = el.nextElementSibling;
@@ -1314,7 +1314,7 @@ function targetSelect(element) {
           let copyEl = element.cloneNode(true)
           if (element.classList.contains('favourite')) {
             if (swapDiv.children.length > 0) {
-              swapDiv.firstChild.before(copyEl);
+              swapDiv.firstElementChild.before(copyEl);
             } else {
               swapDiv.appendChild(copyEl);
             }
@@ -1332,8 +1332,8 @@ function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
   let possiblepairdiv = document.querySelector('.possiblepairs')
 
-  while (possiblepairdiv.firstChild) {
-    possiblepairdiv.firstChild.remove()
+  while (possiblepairdiv.firstElementChild) {
+    possiblepairdiv.firstElementChild.remove()
   }
   let tempTextEl = document.createElement('p')
   if (targetCardDiv.childElementCount < 2) {
@@ -1760,7 +1760,7 @@ function getSettings() {
         }
         document.getElementById('tab-buttons').children[savedSettings.currentTab].click();
         if (defaultSettings.mpfTab != savedSettings.mpfTab) {
-                let buttons = initDiv.getParent.querySelector('.settings-buttons');
+                let buttons = document.getElementById('multiparents').querySelector('.settings-buttons');
                 for (const setting of Object.keys(defaultSettings.mpfTab)) {
                         if (defaultSettings.mpfTab[setting] != savedSettings.mpfTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
@@ -1769,7 +1769,7 @@ function getSettings() {
                 }
         }
         if (defaultSettings.wantTab != savedSettings.wantTab) {
-                let buttons = initDiv.getParent.firstChild;
+                let buttons = document.getElementById('wantTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.wantTab)) {
                         if (defaultSettings.wantTab[setting] != savedSettings.wantTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
@@ -1778,7 +1778,7 @@ function getSettings() {
                 }
         }
         if (defaultSettings.initTab != savedSettings.initTab) {
-                let buttons = initDiv.getParent.firstChild;
+                let buttons = document.getElementById('initTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.initTab)) {
                         if (defaultSettings.initTab[setting] != savedSettings.initTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
@@ -1787,7 +1787,7 @@ function getSettings() {
                 }
         }
         if (defaultSettings.haveTab != savedSettings.haveTab) {
-                let buttons = initDiv.getParent.firstChild;
+                let buttons = document.getElementById('haveTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.haveTab)) {
                         if (defaultSettings.haveTab[setting] != savedSettings.haveTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
@@ -1796,7 +1796,7 @@ function getSettings() {
                 }
         }
         if (defaultSettings.shadowTab != savedSettings.shadowTab) {
-                let buttons = initDiv.getParent.firstChild;
+                let buttons = document.getElementById('shadowTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.shadowTab)) {
                         if (defaultSettings.shadowTab[setting] != savedSettings.shadowTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
