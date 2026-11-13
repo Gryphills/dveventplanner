@@ -1043,6 +1043,10 @@ function searchListeners() {
             console.log(key, cardHolder)
       for (const card of Array.from(cardHolder.children)) {
         if (e.currentTarget.value && e.currentTarget.value != ' ') {
+        if (!card.dataset.dragonName) {
+                console.log('aaa no name', card);
+                continue
+        }
           if (!card.dataset.dragonName.toLowerCase().includes(e.currentTarget.value.trim().toLowerCase())) {
             card.classList.add('filtersearch');
           } else {
