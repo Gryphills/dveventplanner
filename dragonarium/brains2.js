@@ -280,6 +280,7 @@ function sortCardsByEl(el, elementName) {
                                 tabFilters[tabName].splice(tabFilters[tabName].indexOf(elementName), 1)
                                 if (tabFilters[tabName].length == 0) {
                                         cardsDiv.classList.remove('filters-active')
+                                        
                                 } else {
                                         for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
                                                 card.classList.remove(`.filter${elementName}`)
