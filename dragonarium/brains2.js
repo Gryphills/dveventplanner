@@ -1502,7 +1502,7 @@ function updateTargetSearch() {
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
         if (pair.targetsMet.length > 1) {
-                console.log(pairName, ' meets ', pair.targetsMet)
+                //console.log(pairName, ' meets ', pair.targetsMet)
                 if (validPairs.length == 0) {
                         validPairs.push(pair)
                         //console.log('pushed!')
@@ -1512,13 +1512,18 @@ function updateTargetSearch() {
                 }
         }
   }
-  console.log('done sorting? ', validPairs)
+  //console.log('done sorting? ', validPairs)
         
   if (validPairs.length > 0) {
         let innerHtmlStuff = ''
+          let limit = 30
         for (const pair of validPairs) {
                 let htmlStuff = pairTemplate(pair)
                 innerHtmlStuff += htmlStuff
+                limit -= 1;
+                if (limit == 0) {
+                        break;
+                }
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
         document.querySelector('.possiblepairs').innerHTML = innerHtmlStuff
