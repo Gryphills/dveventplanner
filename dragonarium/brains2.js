@@ -1000,7 +1000,7 @@ function processCombo(comboData) {
     }
     comboFin.output = outputNoDups;
     //comboFin.requirements = requirementNoDups;
-    if (comboFin.requirements != requirementNoDups) {
+    if (comboFin.requirements.length != requirementNoDups.length) {
         console.log(comboFin.requirements, requirementNoDups)
     }
   }
