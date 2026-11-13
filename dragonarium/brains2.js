@@ -1643,7 +1643,7 @@ function pairTemplate(pairObj) {
 }
 
 function parentTemplate(parent) {
-  let parenthtml = `<a href="#${parent}">
+  let parenthtml = `
       <div class='parent'>
           <div class="itemimg">
                 <img src="${allDragonImgs[parent].Adult}">
@@ -1654,8 +1654,7 @@ function parentTemplate(parent) {
           parenthtml += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
     }
     parenthtml += `</div>
-            </div>
-    </a>`
+            </div>`
     return parenthtml;
 }
 ///////////// testing NEW
