@@ -124,6 +124,7 @@ body {
 .settings-buttons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     label {
         margin: 5px;
     }
@@ -682,6 +683,16 @@ body {
       max-width: 75px;
       margin-bottom: -5px;
     }
+  }
+}
+
+.elementsort {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  img {
+    width:22px;
+    height:19px;
   }
 }
 
