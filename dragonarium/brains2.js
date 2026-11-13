@@ -31,13 +31,14 @@ let savedSettings = {
 
   mpfTab: {
     hideOwned: 1,
-    hidePerm: 0,
+    showPerm: 0,
     hideShadowCards: 1,
     sortBy: 0,
     favsFirst: 1,
     suggestFromOutputs: 1
   },
    wantTab: {
+    hideBreeds: 0,
     showPerm: 1,
     showUnavailable: 1,
     showLimitedAvail: 1,
@@ -45,6 +46,7 @@ let savedSettings = {
     favsFirst: 1
   },
   initTab: {
+    hideBreeds: 0,
     showPerm: 1,
     showUnavailable: 1,
     showLimitedAvail: 1,
@@ -52,14 +54,18 @@ let savedSettings = {
     favsFirst: 1
   },
   haveTab: {
-    hideOwned: 1,
-    hidePerm: 1,
+    hideBreeds: 0,
+    showPerm: 1,
+    showUnavailable: 1,
+    showLimitedAvail: 1,
     sortBy: 0,
     favsFirst: 1
   },
   shadowTab: {
-    hideOwned: 1,
-    hidePerm: 1,
+    hideBreeds: 0,
+    showPerm: 1,
+    showUnavailable: 1,
+    showLimitedAvail: 1,
     sortBy: 0,
     favsFirst: 1
   }
