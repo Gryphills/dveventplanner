@@ -1233,7 +1233,7 @@ function updateTargetSearch() {
 
   let targets = []
   let allRequirements = []
-
+  
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
@@ -1255,6 +1255,7 @@ function updateTargetSearch() {
   }
   
   let validPairs = []
+  let guysWithNoSpecialGuys = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
   possiblePairsa(targets[0])
  
