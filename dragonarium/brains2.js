@@ -1286,8 +1286,9 @@ function updateTargetSearch() {
  
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
           let pair = validPairObj[pairName]
-          //console.log(pairName, ' meets ', pair.targetsMet)
+          
         if (pair.targetsMet.length > 1) {
+                console.log(pairName, ' meets ', pair.targetsMet)
                 validPairs = sortPairIntoArray(pair, validPairs);
         }
   }
