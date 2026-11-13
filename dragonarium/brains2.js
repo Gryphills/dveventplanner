@@ -285,7 +285,7 @@ function sortCardsByEl(el, elementName) {
                         if (tabFilters[tabName].length == 0) {
                                 cardsDiv.classList.remove('filters-active')
                                 for (const card of Array.from(cardsDiv.children)) {
-                                        classList.remove('filteredout')
+                                        card.classList.remove('filteredout')
                                 }
                                 
                         } else {
