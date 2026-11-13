@@ -1198,17 +1198,33 @@ function updatePossibleTargets() {
   }
 }
 
+function hideTargetsWith(el, keyword) {  
+   let cards = document.querySelector('#targetcards').querySelectorAll(`.${keyword}`)
+   if (el.dataset.toggle == 1) {
+           el.dataset.toggle == 0
+           el.classList.remove('toggled');
+           for (const card of Array.from(cards)) {
+                card.classList.add(`filter${keyword}`)
+           }
+   } else {
+           el.dataset.toggle == 1
+           el.classList.add('toggled');
+           for (const card of Array.from(cards)) {
+                card.classList.remove(`filter${keyword}`)
+           }
+   }
+}
 
 function hideOwned(el) {
-   let cards = document.querySelector('#targetcards').querySelector('.owned')
-   if (el.dataset.value == 0) {
-           el.dataset.value == 1
+   let cards = document.querySelector('#targetcards').querySelectorAll('.owned')
+   if (el.dataset.toggle == 0) {
+           el.dataset.toggle == 1
            el.classList.add('toggled');
            for (const card of Array.from(cards)) {
                 card.classList.add('filterowned')
            }
    } else {
-           el.dataset.value == 0
+           el.dataset.toggle == 0
            el.classList.remove('toggled');
            for (const card of Array.from(cards)) {
                 card.classList.remove('filterowned')
