@@ -1286,6 +1286,7 @@ function updateTargetSearch() {
  
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
           let pair = validPairObj[pairName]
+          console.log(pairName, ' meets ', pair.targetsMet)
         if (pair.targetsMet.length > 1) {
                 sortPairIntoArray(pair, validPairs);
         }
@@ -1477,7 +1478,7 @@ function possiblePairsa(dragonName) {
                             let validPair = checkTargetReq(dragonName, pairingOutput)
                             //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                             if (validPair) {
-                              console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
+                              //console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
                               let sorted = [specialGuys[0], otherParentName].sort()
                               let pairObj = {
                                       parentLeft: specialGuys[0],
@@ -1504,6 +1505,7 @@ function possiblePairsa(dragonName) {
 
     }
   }
+
   return validPairs      
 }
 
