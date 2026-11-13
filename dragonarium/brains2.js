@@ -247,23 +247,49 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         //document.getElementById(inDiv + 'Div')
 }
 
+let tabFilters = {
+  mpfTab: [],
+  wantTab: [],
+  initTab: [],
+  haveTab: [],
+  shadowTab: []
+}
+
 function sortCardsByEl(el, elementName) {
         console.log('sorting!! ', elementName)
-
+        let tabName = el.closest('.tab').id
         let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
         if (cardsDiv) {
-                let toggled = el.dataset.toggled
-                if (toggled) {
-                        //activeFilters.push(elementName)
+                if (tabFilters[tabName]) {
+                        if (tabFilters[tabName].length == 0) {
+                                //what do we do if no filters?
+                                //add filter to every el I guess?
+                                //adda filter to the cardsDiv that lets everyone be seen/not seen probably!
+                                cardsDiv.classList.add('filters-active')
+                        }
+                        if (tabFilters[tabName].includes(elementName)) {
+                                tabFilters[tabName].splice(tabFilters[tabName].indexOf(elementName), 1)
+                                if (tabFilters[tabName].length == 0) {
+                                        cardsDiv.classList.remove('filters-active')
+                                } else {
+                                        for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
+                                                card.classList.remove(`.filter${elementName}`)
+                                        }
+                                }
+                                el.classList.add('desat')
+                        } else {
+                                if (tabFilters[tabName].length == 0) {
+                                        cardsDiv.classList.add('filters-active')
+                                }
+                                tabFilters[tabName].push(elementName);
+                                
                                 for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
                                         card.classList.add(`.filter${elementName}`)
                                 }
-                        
+                                el.classList.remove('desat')
+                        }
                 } else {
-                        //activeFilters.splice(activeFilters.indexOf(elementName), 1)
-                                for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
-                                        card.classList.remove(`.filter${elementName}`)
-                                }
+                        console.log('waaa no tab filter knowledge of ', tabName)
                                         
                 }
         }
