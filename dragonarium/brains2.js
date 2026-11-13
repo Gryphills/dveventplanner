@@ -1284,7 +1284,11 @@ function updateTargetSearch() {
         }   
   }
  
-
+  for (const pair of validPairObj) {
+        if (pair.targetsMet.length > 1) {
+                sortPairIntoArray(pair, validPairs);
+        }
+  }
 
         
    /*     
@@ -1326,7 +1330,7 @@ function updateTargetSearch() {
       }
     }*/
   
-  console.log(validPairObj);
+  console.log(validPairs);
   
   /*for (const pairObj of validPairs) {
     let newPairEl = document.createElement('div');
