@@ -1279,6 +1279,7 @@ function updateTargetSearch() {
                         targetsMet = targetsMet.concat(validPairObj[pairName].targetsMet);
                 }
                 pairsForEachTarget[targetName].targetsMet = targetsMet
+                console.log(pairsForEachTarget[targetName])
                 validPairObj[pairName] = pairsForEachTarget[targetName]
         }   
   }
