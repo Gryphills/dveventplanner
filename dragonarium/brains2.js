@@ -208,14 +208,14 @@ function sortCardsByEl(el, elementName) {
                 let toggled = el.dataset.toggled
                 if (toggled) {
                         activeFilters.push(elementName)
-                                for (const card of Array.from(cardsDiv.querySelectorAll('.${elementName}'))) {
-                                        card.classList.add('.filter${elementName}')
+                                for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
+                                        card.classList.add(`.filter${elementName}`)
                                 }
                         
                 } else {
                         activeFilters.splice(activeFilters.indexOf(elementName), 1)
-                                for (const card of Array.from(cardsDiv.querySelectorAll('.${elementName}'))) {
-                                        card.classList.remove('.filter${elementName}')
+                                for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
+                                        card.classList.remove(`.filter${elementName}`)
                                 }
                                         
                 }
