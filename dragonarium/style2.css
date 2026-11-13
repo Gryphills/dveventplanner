@@ -379,7 +379,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 240px;
-  
+    margin-bottom: 15px;
     img {
         width: 100%;
         object-fit: contain; 
