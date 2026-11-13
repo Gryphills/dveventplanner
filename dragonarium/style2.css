@@ -701,13 +701,15 @@ body {
     }
   }
 }
-
+.elementsortbox {
+  padding:6px;
+  padding-bottom: 12px;
+}
 .elementsort {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding:6px;
-  padding-bottom: 12px;
+  
   img {
     width:19px;
     height:22px;
