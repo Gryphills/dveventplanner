@@ -731,158 +731,96 @@ body {
 }
 
 
-.filterPlant {
-    .dragonCard {
-    	display: flex;
-    }
+.filterPlant.dragonCard {
+    display: flex;
 }
-.filterFire {
-    .dragonCard {
-    	display: flex;
-    }
+.filterFire.dragonCard {
+    display: flex;
 }
-.filterEarth {
-    .dragonCard {
-    	display: flex;
-    }
+.filterEarth.dragonCard {
+    display: flex;
 }
-.filterCold {
-    .dragonCard {
-    	display: flex;
-    }
+.filterCold.dragonCard {
+    display: flex;
 }
-.filterWater {
-    .dragonCard {
-    	display: flex;
-    }
+.filterWater.dragonCard {
+    display: flex;
 }
-.filterLightning {
-    .dragonCard {
-    	display: flex;
-    }
+.filterLightning.dragonCard {
+    display: flex;
 }
-.filterAir {
-    .dragonCard {
-    	display: flex;
-    }
+.filterAir.dragonCard {
+    display: flex;
 }
-.filterMetal {
-    .dragonCard {
-    	display: flex;
-    }
+.filterMetal.dragonCard {
+    display: flex;
 }
-.filterLight {
-    .dragonCard {
-    	display: flex;
-    }
+.filterLight.dragonCard {
+    display: flex;
 }
-.filterDark {
-    .dragonCard {
-    	display: flex;
-    }
+.filterDark.dragonCard {
+    display: flex;
 }
-.filterRift {
-    .dragonCard {
-    	display: flex;
-    }
+.filterRift.dragonCard {
+    display: flex;
 }
-.filterApocalypse {
-    .dragonCard {
-    	display: flex;
-    }
+.filterApocalypse.dragonCard {
+    display: flex;
 }
-.filterAura {
-    .dragonCard {
-    	display: flex;
-    }
+.filterAura.dragonCard {
+    display: flex;
 }
-.filterChrysalis {
-    .dragonCard {
-    	display: flex;
-    }
+.filterChrysalis.dragonCard {
+    display: flex;
 }
-.filterCrystalline {
-    .dragonCard {
-    	display: flex;
-    }
+.filterCrystalline.dragonCard {
+    display: flex;
 }
-.filterDream {
-    .dragonCard {
-    	display: flex;
-    }
+.filterDream.dragonCard {
+    display: flex;
 }
-.filterGalactic {
-    .dragonCard {
-    	display: flex;
-    }
+.filterGalactic.dragonCard {
+    display: flex;
 }
-.filterGemstone {
-    .dragonCard {
-    	display: flex;
-    }
+.filterGemstone.dragonCard {
+    display: flex;
 }
-.filterHidden {
-    .dragonCard {
-    	display: flex;
-    }
+.filterHidden.dragonCard {
+    display: flex;
 }
-.filterMelody {
-    .dragonCard {
-    	display: flex;
-    }
+.filterMelody.dragonCard {
+    display: flex;
 }
-.filterMonolith {
-    .dragonCard {
-    	display: flex;
-    }
+.filterMonolith.dragonCard {
+    display: flex;
 }
-.filterOlympus {
-    .dragonCard {
-    	display: flex;
-    }
+.filterOlympus.dragonCard {
+    display: flex;
 }
-.filterOrnamental {
-    .dragonCard {
-    	display: flex;
-    }
+.filterOrnamental.dragonCard {
+    display: flex;
 }
-.filterRainbow {
-    .dragonCard {
-    	display: flex;
-    }
+.filterRainbow.dragonCard {
+    display: flex;
 }
-.filterSeasonal {
-    .dragonCard {
-    	display: flex;
-    }
+.filterSeasonal.dragonCard {
+    display: flex;
 }
-.filterSnowflake {
-    .dragonCard {
-    	display: flex;
-    }
+.filterSnowflake.dragonCard {
+    display: flex;
 }
-.filterSun {
-    .dragonCard {
-    	display: flex;
-    }
+.filterSun.dragonCard {
+    display: flex;
 }
-.filterMoon {
-    .dragonCard {
-    	display: flex;
-    }
+.filterMoon.dragonCard {
+    display: flex;
 }
-.filterSurface {
-    .dragonCard {
-    	display: flex;
-    }
+.filterSurface.dragonCard {
+    display: flex;
 }
-.filterTreasure {
-    .dragonCard {
-    	display: flex;
-    }
+.filterTreasure.dragonCard {
+    display: flex;
 }
-.filterZodiac {
-    .dragonCard {
-    	display: flex;
-    }
+.filterZodiac.dragonCard {
+    display: flex;
 }
