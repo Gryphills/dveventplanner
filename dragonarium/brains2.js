@@ -1187,6 +1187,7 @@ function searchListeners() {
 
 function createTargetCards() {
   let targetCardDiv = document.querySelector('.targetcards');
+        let lastFavCard;
   for (const dragonName of allDragonNames) {
     if (allDragonData[dragonName].limited != 'Y') {
       if (!allDragonImgs[dragonName]) {
@@ -1219,21 +1220,26 @@ function createTargetCards() {
         
       }
       
-      if (!allDragonData[dragonName].limited) {
+      /*if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
         cardEl.classList.add('filterperm');
-      }
+      }*/
       if (dragonarium[dragonName].status == 'have') {
         cardEl.classList.add('owned');
         cardEl.classList.add('filterowned');
+      }
+      if (dragonarium[dragonName].status == 'shadow') {
+        cardEl.classList.add('shadow');
+        cardEl.classList.add('filtershadow');
       }
       if (dragonarium[dragonName].fav) {
         cardEl.classList.add('favourite');
         if (targetCardDiv.children.length == 0) {
           targetCardDiv.appendChild(cardEl);
         } else {
-          targetCardDiv.children[0].after(cardEl);
+          lastFavCard.after(cardEl);
         }
+        lastFavCard = cardEl;
       } else {
         targetCardDiv.appendChild(cardEl);
       }
@@ -1291,7 +1297,7 @@ function showTargetsWith(el, keyword) {
    }
         console.log('showing/hiding targets! ', keyword, el.dataset.toggle)
 }
-
+/*
 function hideOwned(el) {
    let cards = document.querySelector('#targetcards').querySelectorAll('.owned')
    if (el.dataset.toggle == 0) {
@@ -1308,7 +1314,7 @@ function hideOwned(el) {
            }
    }
 }
-
+*/
 function updateTargetCard(dragonName) {
   let targetCardDiv = document.querySelector('.targetdragons')
   let targetCard = targetCardDiv.querySelector(`.${dragonName}`)
