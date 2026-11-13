@@ -1225,10 +1225,10 @@ function createTargetCards() {
         
       }
       
-      /*if (!allDragonData[dragonName].limited) {
+      if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
-        cardEl.classList.add('filterperm');
-      }*/
+        //cardEl.classList.add('filterperm');
+      }
       if (dragonarium[dragonName].status == 'have') {
         cardEl.classList.add('owned');
         cardEl.classList.add('filterowned');
