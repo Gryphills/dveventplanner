@@ -217,7 +217,7 @@ function addSortButtons() {
         for (const el of elementChart.basics) {
                 if (el != "AnAny") {
                         let imgsrc = '';
-                        let styleEls += `.filter${el.substring(2)} {
+                        styleEls += `.filter${el.substring(2)} {
                                 display: flex;
                         }
                         `
