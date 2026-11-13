@@ -199,30 +199,26 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
 }
 
 function sortCardsByEl(el, elementName) {
-        let activeFilters;
-        if (!el.parentElement.dataset.active) {
-                activeFilters = []
-        } else {
-                activeFilters = JSON.parse(el.parentElement.dataset.active)
-        }
+        console.log('sorting!! ', elementName)
+
         let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
         if (cardsDiv) {
                 let toggled = el.dataset.toggled
                 if (toggled) {
-                        activeFilters.push(elementName)
+                        //activeFilters.push(elementName)
                                 for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
                                         card.classList.add(`.filter${elementName}`)
                                 }
                         
                 } else {
-                        activeFilters.splice(activeFilters.indexOf(elementName), 1)
+                        //activeFilters.splice(activeFilters.indexOf(elementName), 1)
                                 for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
                                         card.classList.remove(`.filter${elementName}`)
                                 }
                                         
                 }
         }
-        el.parentElement.dataset.active = JSON.stringify(activeFilters)
+        //el.parentElement.dataset.active = JSON.stringify(activeFilters)
 }
 
 
