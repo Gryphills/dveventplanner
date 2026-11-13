@@ -1208,7 +1208,7 @@ function createTargetCards() {
         
       //let breedInfo = document.querySelector(`#${dragonName}`).querySelector('h3').innerHTML <h3> ${breedInfo} </h3>
       let targetCardHtml = 
-      `<div class='targetcard ${dragonName} ${elementsClasses}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
+      `<div class='targetcard ${dragonName.replaceAll(' ', '')} ${elementsClasses}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
           <div class="itemimage targetimage">
               <img loading="lazy" src="${allDragonImgs[dragonName].Adult}">
           </div>
@@ -1386,7 +1386,7 @@ function targetSelect(element) {
   if (element.closest('.targets-selected')) {
           let dragonName = element.dataset.dragonName;
           //console.log(dragonName)
-          let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName).classList.remove('selected');
+          let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName.replaceAll(' ', '').classList.remove('selected');
           element.remove()
     //swapDiv = element.closest('.targets-selected').previousElementSibling;
   } else {
