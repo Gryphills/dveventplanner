@@ -266,7 +266,12 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
 function sortCardsByEl(el, elementName) {
         console.log('sorting!! ', elementName)
         let tabName = el.closest('.tab').id
-        let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
+        let cardsDiv;
+        if (el.closest('.tab').id == "multiparents") {
+                cardsDiv = document.getElementById('targetcards')
+        } else {
+                cardsDiv = el.closest('.tab').querySelector('.dragonCards')
+        }
         if (cardsDiv) {
                 if (tabFilters[tabName]) {
                         //if (tabFilters[tabName].length == 0) {
