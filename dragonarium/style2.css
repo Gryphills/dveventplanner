@@ -636,8 +636,6 @@ body {
     color: #000000b0;
     text-align:center;
     display: flex;
-    flex-direction: column;
-    min-height: 200px;
     height: fit-content;
     flex-wrap:wrap;
     justify-content: center;
