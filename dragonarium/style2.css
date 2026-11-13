@@ -610,16 +610,16 @@ body {
 
 
 .filtersearch {
-  display:none;
+  display:none !important;
 }
 .filterperm {
-  display:none;
+  display:none !important;
 }
 .filterowned {
-  display:none;
+  display:none !important;
 }
 .filterunavail {
-  display:none;
+  display:none !important;
 }
 
 
