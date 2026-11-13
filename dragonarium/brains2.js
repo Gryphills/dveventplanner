@@ -526,14 +526,14 @@ function hideBreeds(el) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
     //console.log(cardsDiv[0])
-    for (const card of cardsDiv) {
-      card.querySelector('.breedinginfo').classList.add('hidden');
+    for (const breeds of Array.from(el.closest('.tab').querySelectorAll('.breedinginfo'))) {
+      breeds.classList.add('hidden');
     }
   } else {
     el.dataset.toggle = 0
     el.classList.remove('toggled')
-    for (const card of cardsDiv) {
-      card.querySelector('.breedinginfo').classList.remove('hidden');
+    for (const breeds of Array.from(el.closest('.tab').querySelectorAll('.breedinginfo'))) {
+      breeds.classList.remove('hidden');
     }
   }
   let id = el.closest('.settings-buttons').nextElementSibling.id
