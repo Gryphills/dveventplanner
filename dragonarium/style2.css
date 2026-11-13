@@ -631,6 +631,9 @@ body {
 .filtershadow {
   display:none !important;
 }
+.filteravail {
+  display:none !important;
+}
 /*.filters-active {
   .dragonCard {
     display:none;
