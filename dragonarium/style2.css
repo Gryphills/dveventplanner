@@ -629,7 +629,7 @@ body {
   display:none !important;
 }
 .filters-active {
-  .dragoncard {
+  .dragonCard {
     display:none;
   }
 }
