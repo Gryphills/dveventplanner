@@ -282,12 +282,11 @@ function sortCardsByEl(el, elementName) {
                                 tabFilters[tabName].push(elementName);
                                 el.classList.remove('desat')
                         }
+                        for (const card of Array.from(cardsDiv.children)) {
+                                card.classList.remove('filteredout')
+                        }
                         if (tabFilters[tabName].length == 0) {
                                 cardsDiv.classList.remove('filters-active')
-                                for (const card of Array.from(cardsDiv.children)) {
-                                        card.classList.remove('filteredout')
-                                }
-                                
                         } else {
                                 for (const card of Array.from(cardsDiv.children)) {
                                         for (const filteredElName of tabFilters[tabName]) {
