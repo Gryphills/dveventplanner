@@ -733,6 +733,9 @@ body {
   z-index: 5;
 }
 
+.impossible.owned {
+  display:flex;
+}
 
 .filterPlant.dragonCard {
     display: flex;
