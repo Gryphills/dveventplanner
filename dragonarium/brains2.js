@@ -1284,6 +1284,30 @@ function updateTargetSearch() {
         }   
   }
  
+
+
+
+  for (const a of haveDragonsToCheck) {
+        haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
+        for (const b of haveDragonsToCheck) {
+                let pairingOutput = allDragonData[a].elements.concat(allDragonData[b].elements)
+                for (const guy of guysWithNoSpecialGuys) {
+                        let validPair = checkTargetReq(guy, pairingOutput)
+                        //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
+                        if (validPair) {
+                              //console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
+                              let sorted = [a, b].sort()
+                              if (validPairObj[`${sorted[0]}//${sorted[1]}`]) {
+                                      validPairObj[`${sorted[0]}//${sorted[1]}`].targetsMet.push(guy)
+                              } else {
+                                      validPairObj[`${sorted[0]}//${sorted[1]}`] = { parentLeft: sorted[0], parentRight : sorted[1], targetsMet : guy }
+                              }
+                              //validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
+                        } 
+                }
+        }
+  }
+
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
           let pair = validPairObj[pairName]
           
@@ -1297,6 +1321,7 @@ function updateTargetSearch() {
         }
   }
 
+        
   if (validPairs.length > 0) {
         let innerHtmlStuff = ''
         for (const pair of validPairs) {
