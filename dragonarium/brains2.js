@@ -1309,7 +1309,7 @@ function updateTargetSearch() {
                               if (validPairObj[`${sorted[0]}//${sorted[1]}`]) {
                                       validPairObj[`${sorted[0]}//${sorted[1]}`].targetsMet.push(guy)
                               } else {
-                                      validPairObj[`${sorted[0]}//${sorted[1]}`] = { parentLeft: sorted[0], parentRight : sorted[1], targetsMet : guy }
+                                      validPairObj[`${sorted[0]}//${sorted[1]}`] = { parentLeft: sorted[0], parentRight : sorted[1], targetsMet : [guy] }
                               }
                               //validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
                         } 
@@ -1450,7 +1450,7 @@ function pairTemplate(pairObj) {
   htmlTemplate += parentTemplate(pairObj.parentRight);
   htmlTemplate += `</div> <div class="possibletargets"> <h4> Possible Target Results:</h4>`
   for (const validTarget of pairObj.targetsMet) {
-    console.log(validTarget)
+    console.log(validTarget, pairObj.targetsNet)
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p></div>`
   }
   htmlTemplate += `</div></div>`
