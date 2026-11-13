@@ -1475,8 +1475,8 @@ function possiblePairsa(dragonName) {
                                       parentLeft: specialGuys[0],
                                       parentRight : otherParentName
                               }
-                                    let newObj = 
-                              validPairs[`{${sorted[0]}//${sorted[1]}`] = pairObj
+                                    //let newObj = 
+                              validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
                             }
                           }
                   }
