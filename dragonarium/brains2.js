@@ -1386,7 +1386,7 @@ function targetSelect(element) {
   if (element.closest('.targets-selected')) {
           let dragonName = element.dataset.dragonName;
           //console.log(dragonName)
-          let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName.replaceAll(' ', '').classList.remove('selected');
+          let baseTarget = element.closest('.targets-selected').previousElementSibling.querySelector('.' + dragonName.replaceAll(' ', '')).classList.remove('selected');
           element.remove()
     //swapDiv = element.closest('.targets-selected').previousElementSibling;
   } else {
