@@ -16,6 +16,55 @@ let pairsForDragons = {}
         parent1//parent2 : [possible outputs?]
 }
 */
+
+
+let tabFilters = {
+  mpfTab: [],
+  wantTab: [],
+  initTab: [],
+  haveTab: [],
+  shadowTab: []
+}
+
+let savedSettings = {
+  currentTab: 4,
+
+  mpfTab: {
+    hideOwned: 1,
+    hidePerm: 0,
+    hideShadowCards: 1,
+    sortBy: 0,
+    favsFirst: 1,
+    suggestFromOutputs: 1
+  },
+   wantTab: {
+    showPerm: 1,
+    showUnavailable: 1,
+    showLimitedAvail: 1,
+    sortBy: 0,
+    favsFirst: 1
+  },
+  initTab: {
+    showPerm: 1,
+    showUnavailable: 1,
+    showLimitedAvail: 1,
+    sortBy: 0,
+    favsFirst: 1
+  },
+  haveTab: {
+    hideOwned: 1,
+    hidePerm: 1,
+    sortBy: 0,
+    favsFirst: 1
+  },
+  shadowTab: {
+    hideOwned: 1,
+    hidePerm: 1,
+    sortBy: 0,
+    favsFirst: 1
+  }
+}
+
 let dragonEls = {}
 let dragonsInElement = {}
 
@@ -1650,12 +1699,70 @@ function getPairingOutput(dragonLeftName, dragonRightName) {
         }
 }
 
+function getSettings() {
+        let retrievedSettings = dragonarium.savedSettings;
+        let defaultSettings = savedSettings;
+        if (retrievedSettings) {
+                savedSettings = retrievedSettings;
+        }
+        document.getElementById('tab-buttons').children[savedSettings.currentTab].click();
+        if (defaultSettings.mpfTab != retrievedSettings.mpfTab) {
+                let buttons = initDiv.getParent.querySelector('.settings-buttons');
+                for (const setting of Object.keys(defaultSettings.mpfTab)) {
+                        if (defaultSettings.mpfTab[setting] != retrievedSettings.mpfTab[setting]) {
+                                buttons.querySelector('.' + setting + 'Button').click()
+                        }
+                        
+                }
+        }
+        if (defaultSettings.wantTab != retrievedSettings.wantTab) {
+                let buttons = initDiv.getParent.firstChild;
+                for (const setting of Object.keys(defaultSettings.wantTab)) {
+                        if (defaultSettings.wantTab[setting] != retrievedSettings.wantTab[setting]) {
+                                buttons.querySelector('.' + setting + 'Button').click()
+                        }
+                        
+                }
+        }
+        if (defaultSettings.initTab != retrievedSettings.initTab) {
+                let buttons = initDiv.getParent.firstChild;
+                for (const setting of Object.keys(defaultSettings.initTab)) {
+                        if (defaultSettings.initTab[setting] != retrievedSettings.initTab[setting]) {
+                                buttons.querySelector('.' + setting + 'Button').click()
+                        }
+                        
+                }
+        }
+        if (defaultSettings.haveTab != retrievedSettings.haveTab) {
+                let buttons = initDiv.getParent.firstChild;
+                for (const setting of Object.keys(defaultSettings.haveTab)) {
+                        if (defaultSettings.haveTab[setting] != retrievedSettings.haveTab[setting]) {
+                                buttons.querySelector('.' + setting + 'Button').click()
+                        }
+                        
+                }
+        }
+        if (defaultSettings.shadowTab != retrievedSettings.shadowTab) {
+                let buttons = initDiv.getParent.firstChild;
+                for (const setting of Object.keys(defaultSettings.shadowTab)) {
+                        if (defaultSettings.shadowTab[setting] != retrievedSettings.shadowTab[setting]) {
+                                buttons.querySelector('.' + setting + 'Button').click()
+                        }
+                        
+                }
+        }
+        dragonarium.savedSettings = retrievedSettings;
+}
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
     allDragonImgs = JSON.parse(document.getElementById('dragonurls').textContent);
+    
     processDragonData();
     sortDragonsIntoEls()
     addCheckListeners();
@@ -1666,13 +1773,14 @@ document.addEventListener("DOMContentLoaded", function() {
     setTabs();
     makeCards();
     clickInitButtons();
-    addSortButtons()
+    addSortButtons();
     sortCards(initDiv);
     sortCards(wantDiv);
     sortCards(haveDiv);
     sortCards(shadowDiv);
-    createTargetCards()
-    searchListeners()
+    createTargetCards();
+    searchListeners();
+    getSettings();
     document.querySelector('.oopsie').style.display = 'none';
 });
 
