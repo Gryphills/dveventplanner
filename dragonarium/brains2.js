@@ -1037,6 +1037,7 @@ function searchListeners() {
       let key = e.currentTarget.dataset.key;
         console.log(e.currentTarget.value);
       let cardHolder = input.closest('.tab').querySelector('#'+key);
+            console.log(key, cardHolder)
       for (const card of Array.from(cardHolder.children)) {
         if (e.currentTarget.value && e.currentTarget.value != ' ') {
           if (!card.dataset.dragonName.toLowerCase().includes(e.currentTarget.value.trim().toLowerCase())) {
