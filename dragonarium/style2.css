@@ -596,6 +596,12 @@ body {
   flex-wrap: wrap;
 }
 
+.searchbox {
+  width: fit-content;
+  margin:auto;
+  
+}
+
 .searchlabel {
   margin: auto;
   font-weight: bold;
