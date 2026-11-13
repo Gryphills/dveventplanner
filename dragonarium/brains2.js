@@ -1297,6 +1297,13 @@ function updateTargetSearch() {
         }
   }
 
+  if (validPairs.length > 0) {
+        let innerHtmlStuff = ''
+        for (const pair of validPairs) {
+                let htmlStuff = pairTemplate(pair)
+        }
+        document.querySelector('.possiblepairs').innerHTML = innerHtmlStuff
+  }
         
    /*     
   for (i=0;i<haveDragonsToCheck.length;i++) {
