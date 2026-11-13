@@ -1757,52 +1757,52 @@ function getSettings() {
                 savedSettings = retrievedSettings;
         }
         document.getElementById('tab-buttons').children[savedSettings.currentTab].click();
-        if (defaultSettings.mpfTab != retrievedSettings.mpfTab) {
+        if (defaultSettings.mpfTab != savedSettings.mpfTab) {
                 let buttons = initDiv.getParent.querySelector('.settings-buttons');
                 for (const setting of Object.keys(defaultSettings.mpfTab)) {
-                        if (defaultSettings.mpfTab[setting] != retrievedSettings.mpfTab[setting]) {
+                        if (defaultSettings.mpfTab[setting] != savedSettings.mpfTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.wantTab != retrievedSettings.wantTab) {
+        if (defaultSettings.wantTab != savedSettings.wantTab) {
                 let buttons = initDiv.getParent.firstChild;
                 for (const setting of Object.keys(defaultSettings.wantTab)) {
-                        if (defaultSettings.wantTab[setting] != retrievedSettings.wantTab[setting]) {
+                        if (defaultSettings.wantTab[setting] != savedSettings.wantTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.initTab != retrievedSettings.initTab) {
+        if (defaultSettings.initTab != savedSettings.initTab) {
                 let buttons = initDiv.getParent.firstChild;
                 for (const setting of Object.keys(defaultSettings.initTab)) {
-                        if (defaultSettings.initTab[setting] != retrievedSettings.initTab[setting]) {
+                        if (defaultSettings.initTab[setting] != savedSettings.initTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.haveTab != retrievedSettings.haveTab) {
+        if (defaultSettings.haveTab != savedSettings.haveTab) {
                 let buttons = initDiv.getParent.firstChild;
                 for (const setting of Object.keys(defaultSettings.haveTab)) {
-                        if (defaultSettings.haveTab[setting] != retrievedSettings.haveTab[setting]) {
+                        if (defaultSettings.haveTab[setting] != savedSettings.haveTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.shadowTab != retrievedSettings.shadowTab) {
+        if (defaultSettings.shadowTab != savedSettings.shadowTab) {
                 let buttons = initDiv.getParent.firstChild;
                 for (const setting of Object.keys(defaultSettings.shadowTab)) {
-                        if (defaultSettings.shadowTab[setting] != retrievedSettings.shadowTab[setting]) {
+                        if (defaultSettings.shadowTab[setting] != savedSettings.shadowTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        dragonarium.savedSettings = retrievedSettings;
+        dragonarium.savedSettings = savedSettings;
 }
 
 
