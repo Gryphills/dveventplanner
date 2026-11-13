@@ -167,7 +167,7 @@ function addSortButtons() {
                                         elementIcons[el] = url;
                                 }
                         }
-                        innerHtml += `<img class="elsort${el.substring(2)}" src="${elementIcons[el]}" onClick="sortCardsByEl(this, '${el}')">`
+                        innerHtml += `<img class="elsort${el.substring(2)}" src="${elementIcons[el.substring(2)]}" onClick="sortCardsByEl(this, '${el.substring(2)}')">`
                 }
         }
         for (const sortArea of document.querySelectorAll('.elementsort')) {
