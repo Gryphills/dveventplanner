@@ -695,9 +695,9 @@ function clickInitButtons() {
 function cycleViews(imgEl) {
   let imgsFront = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgfront')
   let imgsBack = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgback')
-  let imgarray = JSON.parse(imgsFront.dataset.imgarray)
-  imgarray.push(imgarray.splice(0, 1)[0])
-        imgsFront.dataset.imgarray = JSON.stringify(imgarray)
+  let imgArray = JSON.parse(imgsFront.dataset.imgarray)
+  imgArray.push(imgarray.splice(0, 1)[0])
+        imgsFront.dataset.imgarray = JSON.stringify(imgArray)
   for (const img of imgArray) {
     if (imgArray.indexOf(img) == 0) {
       imgsFront.firstElementChild.src = img
@@ -706,7 +706,7 @@ function cycleViews(imgEl) {
     }
   }
   let viewLabel = imgEl.parentElement.parentElement.parentElement.querySelector('.viewname')
-  let type = imgarray[0].split('dult')[1].replace('.webp', '');
+  let type = imgArray[0].split('dult')[1].replace('.webp', '');
   if (!type || type.length < 2){
     viewLabel.textContent = "Day/Normal Form"
   } else {
