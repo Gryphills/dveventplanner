@@ -212,7 +212,7 @@ let elementIcons = {
 
 function addSortButtons() {
         //let elementIconArr = elIcons.split('\n')
-        let innerHtml = ''
+        let innerHtml = '<div class="elementsort">'
         let styleHtml = ''
         for (const el of elementChart.basics) {
                 if (el != "AnAny") {
@@ -229,10 +229,11 @@ function addSortButtons() {
                         }
                         innerHtml += `<img alt="${el.substring(2)}" title="${el.substring(2)}" class="elsort${el.substring(2)}" src="${elementIcons[el.substring(2)]}" onClick="sortCardsByEl(this, '${el.substring(2)}')">`
                 } else {
-                        innerHtml += `</div><div class="elementsort">`
+                        innerHtml += ` </div> <div class="elementsort">`
                 }
         }
-        for (const sortArea of document.querySelectorAll('.elementsort')) {
+        innerHtml += ` </div>`
+        for (const sortArea of document.querySelectorAll('.elementsortbox')) {
                 sortArea.innerHTML = innerHtml;
         }
         let styleEl = document.createElement('style')
