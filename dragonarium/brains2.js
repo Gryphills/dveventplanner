@@ -1069,12 +1069,12 @@ function createTargetCards() {
         
       //let breedInfo = document.querySelector(`#${dragonName}`).querySelector('h3').innerHTML <h3> ${breedInfo} </h3>
       let targetCardHtml = 
-      `<div class='targetcard ${dragonName}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
+      `<div class='targetcard ${dragonName} ${elementsClasses}' data-dragon-name="${dragonName}" data-status='${dragonarium[dragonName].status}' data-fav="${dragonarium[dragonName].fav}" onclick="targetSelect(this)">
           <div class="itemimage targetimage">
               <img loading="lazy" src="${allDragonImgs[dragonName].Adult}">
           </div>
           <h2 class="itemname">${dragonName}</h2>
-          <div style="display:flex; max-height:22px; height:fit-content;">${elements}</div>
+          <div style="display:flex; max-height:22px; height:fit-content;">${elementsClasses}</div>
       </div>`;
 
       let cardEl = document.createElement('div');
