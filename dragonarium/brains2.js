@@ -284,7 +284,7 @@ function sortCardsByEl(el, elementName) {
                                         
                                 } else {
                                         for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
-                                                card.classList.remove(`.filter${elementName}`)
+                                                card.classList.remove(`filter${elementName}`)
                                         }
                                 }
                                 el.classList.add('desat')
@@ -295,7 +295,7 @@ function sortCardsByEl(el, elementName) {
                                 tabFilters[tabName].push(elementName);
                                 
                                 for (const card of Array.from(cardsDiv.querySelectorAll(`.${elementName}`))) {
-                                        card.classList.add(`.filter${elementName}`)
+                                        card.classList.add(`filter${elementName}`)
                                 }
                                 el.classList.remove('desat')
                         }
