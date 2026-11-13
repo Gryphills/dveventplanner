@@ -498,7 +498,8 @@ function hideUnavail(el) {
 
 function hidePerm(el) {
   console.log('hiding/showing!');
-  let cards = Array.from(el.closest('.settings-buttons').nextElementSibling.querySelectorAll('.perm'));
+        let cards = Array.from(el.closest('.tab').querySelectorAll('.perm'));
+  //let cards = Array.from(el.closest('.settings-buttons').nextElementSibling.nextElementSibling.querySelectorAll('.perm'));
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
     el.classList.add('toggled')
@@ -512,7 +513,7 @@ function hidePerm(el) {
       card.classList.remove('filterperm');
     }
   }
-  let id = el.closest('.settings-buttons').nextElementSibling.id
+  let id = el.closest('.settings-buttons').nextElementSibling.nextElementSibling.id
   if (!dragonarium[id]) {
     dragonarium[id] = {}
   }
@@ -522,7 +523,9 @@ function hidePerm(el) {
 
 
 function hideBreeds(el) {
-  let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.children);
+        
+        //let cardsDiv = Array.from(el.closest('.tab'));
+  //let cardsDiv = Array.from(el.closest('.settings-buttons').nextElementSibling.nextElementSibling.children);
   //console.log('hiding/showing!', cardsDiv[0]);
   if (Number(el.dataset.toggle) == 0) {
     el.dataset.toggle = 1;
@@ -538,7 +541,7 @@ function hideBreeds(el) {
       breeds.classList.remove('hidden');
     }
   }
-  let id = el.closest('.settings-buttons').nextElementSibling.id
+  let id = el.closest('.settings-buttons').nextElementSibling.nextElementSibling.id
   if (!dragonarium[id]) {
     dragonarium[id] = {}
   }
