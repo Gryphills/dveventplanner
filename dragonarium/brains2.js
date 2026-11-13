@@ -197,9 +197,11 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
 }
 
 function sortCardsByEl(el, elementName) {
-        let activeFilters = JSON.parse(el.parentElement.dataset.active)
-        if (!activeFilters) {
+        let activeFilters;
+        if (!el.parentElement.dataset.active) {
                 activeFilters = []
+        } else {
+                activeFilters = JSON.parse(el.parentElement.dataset.active)
         }
         let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
         if (cardsDiv) {
