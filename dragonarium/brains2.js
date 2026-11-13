@@ -1696,7 +1696,10 @@ function possiblePairsa(dragonName) {
             }
                if (specialGuys.length == 2) {
                         let sorted = specialGuys.sort()
-                        validPairs.push(`${sorted[0]}//${sorted[1]}`)
+                        validPairs[`${sorted[0]}//${sorted[1]}`] = {
+                                      parentLeft: sorted[0],
+                                      parentRight : sorted[1]
+                              }
             }
                else if (specialGuys.length == 1) {
                 console.log('one special guy! ', specialGuys[0])
