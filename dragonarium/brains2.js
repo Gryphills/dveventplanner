@@ -681,15 +681,16 @@ function buildDragonCard(name, data) {
         cardhtml += `${data.combo.special}`
         skipThing = true;
       }
-    } else if (data.rarity == "Galaxy") {
-        cardhtml += `<div class="el-img" style="background-image:url('${elementIcons.Galactic}');"></div>`
-        cardhtml += `Galaxy Dragon; Clone in Coop`;
-        //skipThing = true;
-    }
+    } 
     if (!skipThing) {
       cardhtml += `<h4>Breeding Info:</h4>`
       if (data.combo['special']) {
         cardhtml += `<h3>${data.combo.special}</h3>`
+      }
+      if (data.rarity == "Galaxy" && data.name != "Rigel") {
+        cardhtml += `<div class="el-img" style="background-image:url('${elementIcons.Galactic}');"></div>`
+        cardhtml += `Galaxy Dragon; Clone in Coop`;
+        //skipThing = true;
       }
       if (data.combo['requirements']) {
         let cleanedReq = ''
