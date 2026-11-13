@@ -236,7 +236,7 @@ function addSortButtons() {
                 sortArea.innerHTML = innerHtml;
         }
         styleEls += '</style>'
-        head.appendChild(styleEls);
+        document.head.appendChild(styleEls);
 }
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
