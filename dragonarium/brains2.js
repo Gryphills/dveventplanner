@@ -182,7 +182,7 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
                         back = clickedEl.closest('dragonCard').id;
                 } if (back) {
                         backOne = back;
-                        window.location.href = window.location.href.split('#')[0] + back
+                        window.location.href = window.location.href.split('#')[0] + back.replaceAll(' ', '')
                 }
                 
         }
@@ -192,7 +192,7 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         while (!document.getElementById(`tabbutton-${inDiv}`.classList.contains('open'))) {
                 console.log('opening ' , inDiv, '...')
         }
-        window.location.href = window.location.href.split('#')[0] + dragonName
+        window.location.href = window.location.href.split('#')[0] + dragonName.replaceAll(' ', '')
         //document.getElementById(inDiv + 'Div')
 }
 
