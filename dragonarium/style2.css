@@ -634,7 +634,7 @@ body {
   }
 }
 .desat {
-  filter: saturate(5%) brightness(170%);
+  filter: saturate(5%) brightness(110%);
   opacity: 0.7;
 }
 
