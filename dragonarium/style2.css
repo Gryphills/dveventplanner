@@ -732,95 +732,157 @@ body {
 
 
 .filterPlant {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterFire {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterEarth {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterCold {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterWater {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterLightning {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterAir {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterMetal {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterLight {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterDark {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterRift {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterApocalypse {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterAura {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterChrysalis {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterCrystalline {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterDream {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterGalactic {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterGemstone {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterHidden {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterMelody {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterMonolith {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterOlympus {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterOrnamental {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterRainbow {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterSeasonal {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterSnowflake {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterSun {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterMoon {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterSurface {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterTreasure {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
 .filterZodiac {
-    display: flex;
+    .dragonCard {
+    	display: flex;
+    }
 }
