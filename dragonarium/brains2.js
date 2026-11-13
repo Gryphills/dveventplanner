@@ -213,11 +213,11 @@ let elementIcons = {
 function addSortButtons() {
         //let elementIconArr = elIcons.split('\n')
         let innerHtml = ''
-        let styleEls = '<style>'
+        let styleHtml = ''
         for (const el of elementChart.basics) {
                 if (el != "AnAny") {
                         let imgsrc = '';
-                        styleEls += `.filter${el.substring(2)} {
+                        styleHtml += `.filter${el.substring(2)} {
                                 display: flex;
                         }
                         `
@@ -235,8 +235,9 @@ function addSortButtons() {
         for (const sortArea of document.querySelectorAll('.elementsort')) {
                 sortArea.innerHTML = innerHtml;
         }
-        styleEls += '</style>'
-        document.head.appendChild(styleEls);
+        let styleEl = document.createElement('style')
+        styleEl.innerHtml = styleHtml
+        document.head.appendChild(styleEl);
 }
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
