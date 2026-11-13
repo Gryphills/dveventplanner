@@ -696,7 +696,7 @@ function cycleViews(imgEl) {
   let imgsFront = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgfront')
   let imgsBack = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgback')
   let imgArray = JSON.parse(imgsFront.dataset.imgarray)
-  imgArray.push(imgarray.splice(0, 1)[0])
+  imgArray.push(imgArray.splice(0, 1)[0])
         imgsFront.dataset.imgarray = JSON.stringify(imgArray)
   for (const img of imgArray) {
     if (imgArray.indexOf(img) == 0) {
