@@ -1435,7 +1435,7 @@ function possiblePairsa(dragonName) {
                         validPairs.push(`${sorted[0]}//${sorted[1]}`)
             }
                else if (specialGuys.length == 1) {
-                       
+                console.log('one special guy! ', specialGuys[0])
                   let specialGuy = allDragonData[specialGuys[0]]
                   if (specialGuy) {
                           for (const otherParentName of haveDragonsToCheck) { 
@@ -1449,6 +1449,7 @@ function possiblePairsa(dragonName) {
                           }
                   }
     }  else {
+                       console.log(dragonName, ' has no special guys :)')
        //targetsWithoutSpecialGuys.push(dragonName)
         //noSpecificDragonTargets([dragonName], haveDragonsToCheck)
         /*let narrowedList = []
