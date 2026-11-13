@@ -171,6 +171,7 @@ function addSortButtons() {
                                 innerHtml += `<img class="elsort${el.substring(2)}" src="${elementIcons[el]}" onClick="sortCardsByEl(this, '${el}')">`
                         }
                 }
+                sortArea.innerHTML = innerHtml;
         }
 }
 
