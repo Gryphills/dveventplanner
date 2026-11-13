@@ -628,10 +628,13 @@ body {
 .filterunavail {
   display:none !important;
 }
-.filters-active {
+/*.filters-active {
   .dragonCard {
     display:none;
   }
+}*/
+.filteredout {
+      display:none;
 }
 .desat {
   filter: saturate(5%) brightness(110%);
