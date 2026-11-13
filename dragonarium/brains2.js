@@ -1073,9 +1073,9 @@ function createTargetCards() {
           <div class="itemimage targetimage">
               <img loading="lazy" src="${allDragonImgs[dragonName].Adult}">
           </div>
-          <h2 class="itemname">${dragonName}</h2>
-          <div style="justify-content: center; display:flex; max-height:22px; height:fit-content;">${elementsEls}</div>
-      </div>`;
+          <h2 class="itemname">${dragonName}</h2>` + 
+          //<div style="justify-content: center; display:flex; max-height:22px; height:fit-content;">${elementsEls}</div>
+      `</div>`;
 
       let cardEl = document.createElement('div');
       cardEl.innerHTML = targetCardHtml;
