@@ -568,7 +568,7 @@ body {
   max-width: 100px;
   max-height: 100px;
 }
-
+/*
 .possibletargets {
   display:flex;
   flex-wrap: wrap;
@@ -589,7 +589,7 @@ body {
     object-fit: contain;
   }
 }
-
+*/
 .pairsholder {
   display: flex;
   flex-wrap: wrap;
@@ -640,6 +640,7 @@ body {
     min-height: 200px;
     height: fit-content;
     flex-wrap:wrap;
+    justify-content: center;
     .pairparents {
         display:flex;
         justify-content: center;
@@ -655,8 +656,8 @@ body {
 .parent {
   position:relative;
   img {
-    max-height: 30vh;
-    max-width: 30vw;
+    max-height: 100px;
+    max-width: 100px;
   }
   h5 {
     font-size: medium;
@@ -667,12 +668,15 @@ body {
 }
 
 .possibletargets {
-  display:flex;
   background-color: #cac5f0;
   color:#442a5f;
   border: 3px solid #442a5f;
   border-radius: 6px;
   margin:15px;
+  div {
+    display:flex;
+    flex-wrap:wrap;
+  }
   .possibletarget {
     margin:10px;
     img {
