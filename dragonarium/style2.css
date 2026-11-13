@@ -639,10 +639,12 @@ body {
     flex-direction: column;
     min-height: 200px;
     height: fit-content;
+    flex-wrap:wrap;
     .pairparents {
         display:flex;
         justify-content: center;
         padding-bottom: 20px;
+        margin: 15px;
     }
   .plus {
     font-weight: bold;
@@ -670,6 +672,7 @@ body {
   color:#442a5f;
   border: 3px solid #442a5f;
   border-radius: 6px;
+  margin:15px;
   .possibletarget {
     margin:10px;
     img {
