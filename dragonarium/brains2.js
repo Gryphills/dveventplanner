@@ -1465,7 +1465,7 @@ function possiblePairsa(dragonName) {
                                       parentRight : otherParentName,
                                       targetsMet: targetsMet
                               }
-                              validPairs[`${sorted[0]}//${sorted[1]}` : pairObj]
+                              validPairs.push(`{${sorted[0]}//${sorted[1]}` : pairObj})
                             }
                           }
                   }
