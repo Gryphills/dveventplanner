@@ -1257,7 +1257,18 @@ function updateTargetSearch() {
   let validPairs = []
   let guysWithNoSpecialGuys = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
-  possiblePairsa(targets[0])
+
+  for (const target of targets) {
+        let checkPairs = possiblePairsa(target)
+          if (checkPairs != "NoSpecial") {
+                validPairs = sortPairIntoArray(checkPairs, validPairs)
+          } else {
+                guysWithNoSpecialGuys.push(target)
+          }
+          
+  }
+
+  
  
 
 
@@ -1417,7 +1428,7 @@ function sortDragonsIntoEls() {
 function possiblePairsa(dragonName) {
   let specialGuys = [];
   let dragonReqs = allDragonData[dragonName].combo.requirements;
-  let validPairs = []
+  let validPairs = {}
   //let targetsWithoutSpecialGuys = []
   if (dragonReqs) {
           let haveDragonNodes = haveDiv.children;
@@ -1445,11 +1456,16 @@ function possiblePairsa(dragonName) {
                             pairingOutput.push(otherParentName)
                             pairingOutput.push(specialGuys[0])
                             let validPair = checkTargetReq(dragonName, pairingOutput)
-                            console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
+                            //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                             if (validPair) {
                               console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
                               let sorted = [specialGuys[0], otherParentName].sort()
-                              validPairs.push(`${sorted[0]}//${sorted[1]}`)
+                              let pairObj = {
+                                      parentLeft: specialGuys[0],
+                                      parentRight : otherParentName,
+                                      targetsMet: targetsMet
+                              }
+                              validPairs[`${sorted[0]}//${sorted[1]}` : pairObj]
                             }
                           }
                   }
