@@ -1505,9 +1505,9 @@ function updateTargetSearch() {
                 console.log(pairName, ' meets ', pair.targetsMet)
                 if (validPairs.length == 0) {
                         validPairs.push(pair)
-                        console.log('pushed!')
+                        //console.log('pushed!')
                 } else {
-                        console.log('tosort,,,')
+                        //console.log('tosort,,,')
                         validPairs = sortPairIntoArray(pair, validPairs);
                 }
         }
@@ -1579,15 +1579,16 @@ function updateTargetSearch() {
 }
 
 function sortPairIntoArray(pairObj, validPairs) {
-  console.log('sorting ', pairObj)
+  //console.log('sorting ', pairObj, ' into ' , validPairs)
   for (i=0;i<validPairs.length;i++) {
     let pairing = validPairs[i]
     if (pairObj.targetsMet.length > pairing.targetsMet.length) {
       validPairs.splice(validPairs.indexOf(pairing), 0, pairObj)
-            console.log('is now ', validPairs)
+            //console.log('is now ', validPairs)
       return validPairs;
     }
   }
+  validPairs.push(pairObj)
   return validPairs;
 }
 
