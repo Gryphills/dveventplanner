@@ -1301,6 +1301,7 @@ function updateTargetSearch() {
         let innerHtmlStuff = ''
         for (const pair of validPairs) {
                 let htmlStuff = pairTemplate(pair)
+                console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
         document.querySelector('.possiblepairs').innerHTML = innerHtmlStuff
   }
