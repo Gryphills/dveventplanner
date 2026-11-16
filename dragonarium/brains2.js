@@ -1503,20 +1503,40 @@ function updateTargetSearch() {
         let pair = validPairObj[pairName]
         if (pair.targetsMet.length > 1) {
                 //console.log(pairName, ' meets ', pair.targetsMet)
-                if (validPairs.length == 0) {
+                //if (validPairs.length == 0) {
                         validPairs.push(pair)
                         //console.log('pushed!')
-                } else {
+                //} else {
                         //console.log('tosort,,,')
-                        validPairs = sortPairIntoArray(pair, validPairs);
-                }
+                //        validPairs = sortPairIntoArray(pair, validPairs);
+                //}
         }
   }
   //console.log('done sorting? ', validPairs)
         
   if (validPairs.length > 0) {
+          let scoredPairs = []
+          for (const pair of validPairs) {
+                let outputEls = []
+                for (const el of allDragonData[pair.parentLeft].elements) {
+                        if (!outputEls.includes(el)) {
+                                outputEls.push(el)
+                        }
+                }
+                pair.outputEls = outputEls
+                pair.score = ((outputEls.length * 2) + pair.targetsMet.length) / 3
+                scoredPairs = sortPairIntoArray(pair, scoredPairs, "score")
+          }
+          validPairs = scoredPairs
+  }
+
+
+
+
+
+   if (validPairs.length > 0) {         
         let innerHtmlStuff = ''
-          let limit = 30
+        let limit = 30
         for (const pair of validPairs) {
                 let htmlStuff = pairTemplate(pair)
                 innerHtmlStuff += htmlStuff
@@ -1527,6 +1547,8 @@ function updateTargetSearch() {
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
         document.querySelector('.possiblepairs').innerHTML = innerHtmlStuff
+  } else {
+
   }
         
    /*     
@@ -1583,18 +1605,21 @@ function updateTargetSearch() {
   //tempTextEl.remove();
 }
 
-function sortPairIntoArray(pairObj, validPairs) {
+function sortPairIntoArray(pairObj, array, property) {
   //console.log('sorting ', pairObj, ' into ' , validPairs)
-  for (i=0;i<validPairs.length;i++) {
-    let pairing = validPairs[i]
-    if (pairObj.targetsMet.length > pairing.targetsMet.length) {
-      validPairs.splice(validPairs.indexOf(pairing), 0, pairObj)
-            //console.log('is now ', validPairs)
-      return validPairs;
-    }
+  for (i=0;i<array.length;i++) {
+          let pairing = array[i]
+          if (typeof(pairObj[property]) == "Array") {
+          } else {
+            if (pairObj[property] > pairing[property]) {
+              array.splice(array.indexOf(pairing), 0, pairObj)
+                    //console.log('is now ', validPairs)
+              return array;
+            }
+          }
   }
-  validPairs.push(pairObj)
-  return validPairs;
+  array.push(pairObj)
+  return array;
 }
 
 
