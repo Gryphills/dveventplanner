@@ -1179,7 +1179,7 @@ function searchListeners() {
                         dragonName = card.id
                 }
                 if (!dragonName) {
-                        console.log('cant find dragonname for card: ', card
+                        console.log('cant find dragonname for card: ', card)
                 }
                 if (!dragonName.toLowerCase().includes(e.currentTarget.value.trim().toLowerCase())) {
                     card.classList.add('filtersearch');
