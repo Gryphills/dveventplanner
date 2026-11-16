@@ -1879,7 +1879,7 @@ function getSettings() {
         if (retrievedSettings) {
                 savedSettings = retrievedSettings;
         }
-        document.getElementById('tab-buttons').children[savedSettings.currentTab].click();
+        document.getElementById('tab-buttons').children.querySelector(`[data-key="${savedSettings.currentTab}"]`.click();
         if (defaultSettings.mpfTab != savedSettings.mpfTab) {
                 let buttons = document.getElementById('multiparents').querySelector('.settings-buttons');
                 for (const setting of Object.keys(defaultSettings.mpfTab)) {
