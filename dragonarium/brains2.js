@@ -1172,11 +1172,12 @@ function searchListeners() {
                 let dragonName = card.dataset.dragonName
                 if (!dragonName) {
                         dragonName = card.tagName
-                        //console.log('aaa no name', card);
+                        console.log(dragonName, 'aaa no name', card);
                         //continue
                 }
                 if (!dragonName) {
                         dragonName = card.id
+                        console.log(dragonName, 'aaa no nameaa', card);
                 }
                 if (!dragonName) {
                         console.log('cant find dragonname for card: ', card)
@@ -1186,6 +1187,7 @@ function searchListeners() {
                 } else {
                     card.classList.remove('filtersearch');
                 }
+                console.log(dragonName)
         } else {
                 card.classList.remove('filtersearch');
         }
