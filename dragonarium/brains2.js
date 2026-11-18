@@ -1265,7 +1265,7 @@ function createTargetCards() {
         } else {
           if (!lastFavCard) {
                   let checkCard = targetCardDiv.firstElementChild
-                  while (checkCard.classList.contains('favourite') {
+                  while (checkCard.classList.contains('favourite')) {
                         checkCard = checkCard.nextElementSibling
                   }
                   if (checkCard) {
