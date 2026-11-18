@@ -1213,7 +1213,7 @@ function searchListeners() {
 
 function createTargetCards() {
   let targetCardDiv = document.querySelector('.targetcards');
-        let lastFavCard;
+  let lastFavCard;
   for (const dragonName of allDragonNames) {
     if (allDragonData[dragonName].limited != 'Y') {
       if (!allDragonImgs[dragonName]) {
@@ -1263,6 +1263,17 @@ function createTargetCards() {
         if (targetCardDiv.children.length == 0) {
           targetCardDiv.appendChild(cardEl);
         } else {
+          if (!lastFavCard) {
+                  let checkCard = targetCardDiv.firstElementChild
+                  while (checkCard.classList.contains('favourite') {
+                        checkCard = checkCard.nextElementSibling
+                  }
+                  if (checkCard) {
+                        lastFavCard = checkCard
+                  } else {
+                        lastFavCard = targetCardDiv.lastElementChild
+                  }
+          }
           lastFavCard.after(cardEl);
         }
         lastFavCard = cardEl;
