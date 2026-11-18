@@ -1957,9 +1957,11 @@ function getPairingOutput(dragonLeftName, dragonRightName) {
 function getSettings() {
         let retrievedSettings = structuredClone(savedSettings);
         let defaultSettings = structuredClone(savedSettings);
+        
         if (dragonarium.savedSettings) {
                 retrievedSettings = Object.assign(retrievedSettings, dragonarium.savedSettings);
         }
+        console.log('settings: ', retrievedSettings, defaultSettings)
         document.getElementById('tab-buttons').querySelector(`[data-key="${retrievedSettings.currentTab}"]`).click();
         if (defaultSettings.mpfTab != retrievedSettings.mpfTab) {
                 let buttons = document.getElementById('multiparents').querySelector('.settings-buttons');
