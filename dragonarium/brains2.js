@@ -1508,16 +1508,20 @@ function updateTargetSearch() {
                               if (validPairObj[`${sorted[0]}//${sorted[1]}`]) {
                                       validPairObj[`${sorted[0]}//${sorted[1]}`].targetsMet.push(guy)
                               } else {
-                                        let results = getOutputsAndOdds(sorted, pairingOutput)
-                                      console.log(`${sorted[0]}//${sorted[1]}: `, results)
-                                        validPairObj[`${sorted[0]}//${sorted[1]}`] = {
+                                       validPairObj[`${sorted[0]}//${sorted[1]}`] = {
                                                 parentLeft: sorted[0], 
                                                 parentRight : sorted[1], 
                                                 targetsMet : [guy],
-                                                multiplierOdds: results.multiplierOdds,
-                                                hybridOdds: results.hybridOdds,
-                                                breeds : results.breeds,
-                                                hybrids : results.hybrids
+                                                elOutput : pairingOutput
+                                       }
+                                        let results = getOutputsAndOdds(sorted, pairingOutput, validPairObj[`${sorted[0]}//${sorted[1]}`], "reg")
+                                        console.log(`${sorted[0]}//${sorted[1]}: `, results)
+                                        validPairObj[`${sorted[0]}//${sorted[1]}`] = results
+                                                //multiplierOdds: results.multiplierOdds,
+                                                //hybridOdds: results.hybridOdds,
+                                                //breeds : results.breeds,
+                                                //hybrids : results.hybrids,
+                                                
                                         }
                               }
                               //validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
@@ -1544,6 +1548,11 @@ function updateTargetSearch() {
   if (validPairs.length > 0) {
           let scoredPairs = []
           for (const pair of validPairs) {
+                  let pairObj = pair
+                  if (!pairObj.multiplierOdds) {
+                        let sorted = [pairObj.parentLeft, pairObj.parentRight].sort()
+                        getOutputsAndOdds(sorted, pairObj.elOutput, pairObj, "reg")
+                  }
                 /*let outputEls = []
                 for (const el of allDragonData[pair.parentLeft].elements) {
                         if (!outputEls.includes(el)) {
@@ -1553,17 +1562,17 @@ function updateTargetSearch() {
                 pair.outputEls = outputEls
                 pair.score = ((outputEls.length * 2) + pair.targetsMet.length) / 3*/
                 let oddsOfCool = 0;
-                for (const metTarget of pair.targetsMet) {
+                for (const metTarget of pairObj.targetsMet) {
                         let targetData = allDragonData[metTarget]
                         
                         if (targetData.rarity != "Hybrid") {
-                                oddsOfCool += targetData.odds.base * pair.multiplierOdds
+                                oddsOfCool += targetData.odds.base * pairObj.multiplierOdds
                         } else {
-                                oddsOfCool += pair.hybridOdds
+                                oddsOfCool += pairObj.hybridOdds
                         }
                 }
-                pair.oddsOfCool = oddsOfCool
-                scoredPairs = sortPairIntoArray(pair, scoredPairs, "oddsOfCool")
+                pairObj.oddsOfCool = oddsOfCool
+                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
           }
           validPairs = scoredPairs
   }
@@ -1661,7 +1670,8 @@ function sortPairIntoArray(pairObj, array, property) {
 }
 
 
-function getOutputsAndOdds(pairArray, pairingOutput, caveLocation) {
+function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "reg") {
+        console.log('is this firing?')
         let parentClone = "singleclone"
         if (pairArray[0] == pairArray[1]) {
                 parentClone = "doubleclone"
@@ -1697,14 +1707,16 @@ function getOutputsAndOdds(pairArray, pairingOutput, caveLocation) {
         }
         let totalCurrent = breedsOdds + clonePercentage
         let leftForHybrids = 1 - (totalCurrent - 0.99)
+        let hybridOdds = leftForHybrids / hybrids.length
         //let 
         //let 
-        return {
-                multiplierOdds: (1 - Math.min((hybridOdds + clonePercentage), 0.99))/totalCurrent,
-                hybridOdds: leftForHybrids / hybrids.length,
-                breeds : breeds,
-                hybrids : hybrids
-        }
+        
+        pairObj.hybridOdds= hybridOdds
+        pairObj.multiplierOdds= (1 - Math.min((hybridOdds + clonePercentage), 0.99))/totalCurrent
+        pairObj.breeds = breeds
+        pairObj.hybrids = hybrids
+        return pairObj;
+        
 
 }
 
