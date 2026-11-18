@@ -379,7 +379,7 @@ function setTabs() {
   let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
   for (const tabButton of tabButtArr) {
     tabButton.addEventListener('click', function(e) {
-      dragonarium..currentTab = e.currentTarget.dataset.key;
+      dragonarium.savedSettings.currentTab = e.currentTarget.dataset.key;
       saveData();
       let tabButtArr = Array.from(document.querySelector('.tab-button').parentNode.children)
       let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
