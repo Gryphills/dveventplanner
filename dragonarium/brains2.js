@@ -1682,7 +1682,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, caveLocation) {
         }
         for (const dragonName of availableDragonNames) {
                 let dragonData = allDragonData[dragonName]
-                if (!dragonData.conditions.includes "Evolve") {
+                if (!dragonData.conditions.includes("Evolve")) {
                         if (checkTargetReq(dragonName, pairingOutput)) {
                                 if (dragonData.rarity == "Hybrid") {
                                         hybrids.push(dragonData)
