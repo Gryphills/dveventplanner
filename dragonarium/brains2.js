@@ -1754,7 +1754,7 @@ function pairTemplate(pairObj) {
   htmlTemplate += parentTemplate(pairObj.parentRight);
   htmlTemplate += `</div> <div class="result-targetbox"> <h4> Possible Target Results:</h4> <div class="possibletargets"> `
   for (const validTarget of pairObj.targetsMet) {
-    console.log(validTarget, pairObj.targetsMet)
+    console.log(validTarget, allDragonData[validTarget].odds, pairObj.multiplierOdds, pairObj)
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget} (${allDragonData[validTarget].odds.base * pairObj.multiplierOdds})</p></div>`
   }
   htmlTemplate += `</div> <h4>Total Odds:</h4><p>${pairObj.oddsOfCool}</p></div></div>`
