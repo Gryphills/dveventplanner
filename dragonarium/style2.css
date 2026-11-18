@@ -719,6 +719,11 @@ body {
     p {
       font-weight: bold;
     }
+    .oddsnumber {
+      font-style: italic;
+      font-weight: normal;
+      font-size: medium;
+    }
   }
 }
 
