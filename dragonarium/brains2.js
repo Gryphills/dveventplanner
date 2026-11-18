@@ -1963,10 +1963,10 @@ function getSettings() {
         }
         console.log('settings: ', retrievedSettings, defaultSettings)
         document.getElementById('tab-buttons').querySelector(`[data-key="${retrievedSettings.currentTab}"]`).click();
-        if (defaultSettings.mpfTab != retrievedSettings.mpfTab) {
+        if (defaultSettings.multiparents != retrievedSettings.multiparents) {
                 let buttons = document.getElementById('multiparents').querySelector('.settings-buttons');
-                for (const setting of Object.keys(defaultSettings.mpfTab)) {
-                        if (defaultSettings.mpfTab[setting] != retrievedSettings.mpfTab[setting]) {
+                for (const setting of Object.keys(defaultSettings.multiparents)) {
+                        if (defaultSettings.multiparents[setting] != retrievedSettings.multiparents[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
