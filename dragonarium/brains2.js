@@ -1809,12 +1809,15 @@ function pairTemplate(pairObj) {
     let formatOdds = 0
     let targetData = allDragonData[validTarget]
     if (targetData.rarity == "Hybrid") {
-        formatOdds = pairObj.hybridOdds
-    } else if (targetData.odds.base != 0) {
-        Number(targetData.odds.base) * pairObj.multiplierOdds
+        formatOdds = Number(pairObj.hybridOdds)
+    } else if (targetData.odds.base) {
+        Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
     }
-    formatOdds = Math.round(formatOdds*100000) / 1000
     
+    formatOdds = Math.round(formatOdds*100000) / 1000
+    if (formatOdds == 0) {
+        formatOdds = "??"
+    }
         
     
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
