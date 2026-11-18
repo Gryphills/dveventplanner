@@ -1522,7 +1522,7 @@ function updateTargetSearch() {
                                                 //breeds : results.breeds,
                                                 //hybrids : results.hybrids,
                                                 
-                                        }
+                                        
                               }
                               //validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
                         }
