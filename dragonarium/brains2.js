@@ -470,6 +470,7 @@ function favouriteCard(button) {
   }
   dragonarium[el.id].fav = button.dataset.toggle;
   saveData()
+  updateTargetCard('fav', button.dataset.toggle)
 }
 
 function wantCard(button) {
@@ -1342,15 +1343,16 @@ function hideOwned(el) {
    }
 }
 */
-function updateTargetCard(dragonName) {
+function updateTargetCard(dragonName, statusId, statusNum) {
   let targetCardDiv = document.querySelector('.targetdragons')
   let targetCard = targetCardDiv.querySelector(`.${dragonName}`)
 
-  if (targetCard.dataset.fav != dragonarium[dragonName].fav) {
-    if (Number(dragonarium[dragonName].fav) == 1) {
-      targetCard.classList.add('favourite')
-      targetCard.parentElement.firstElementChild.before(targetCard);
-    } else {
+  if (statusId == "fav") {
+        targetCard.dataset.fav = statusNum;
+        if (statusNum) {
+              targetCard.classList.add('favourite')
+              targetCard.parentElement.firstElementChild.before(targetCard);
+        } else {
       targetCard.classList.remove('favourite')
       let next = el.nextElementSibling;
       if (next.classList.contains('favourite')) {
@@ -1365,12 +1367,16 @@ function updateTargetCard(dragonName) {
       }
     }
   }
-  if (targetCard.dataset.status != dragonarium[dragonName].status) {
-          if (dragonarium[dragonName].status == 'want') {
+  else {
+        if (statusId == 'want') {
             targetCard.classList.add('want')
             //if (Number(targetCardDiv.querySelector('.showShadowButton').dataset.toggle) == 1) {
             //     targetCard.classList.add('filterwant')
             //}
+            targetCard.classList.remove('owned')
+            targetCard.classList.remove('filterowned')
+            targetCard.classList.remove('shadow')
+            targetCard.classList.remove('filtershadow')
           } else {
             targetCard.classList.remove('want')
             targetCard.classList.remove('filterwant')
@@ -1380,6 +1386,10 @@ function updateTargetCard(dragonName) {
             if (Number(targetCardDiv.querySelector('.showOwnedButton ').dataset.toggle) == 1) {
                  targetCard.classList.add('filterowned')
             }
+            targetCard.classList.remove('want')
+            targetCard.classList.remove('filterwant')
+            targetCard.classList.remove('shadow')
+            targetCard.classList.remove('filtershadow')
           } else {
             targetCard.classList.remove('owned')
             targetCard.classList.remove('filterowned')
@@ -1390,12 +1400,15 @@ function updateTargetCard(dragonName) {
             if (Number(targetCardDiv.querySelector('.showShadowButton').dataset.toggle) == 1) {
                  targetCard.classList.add('filtershadow')
             }
+            targetCard.classList.remove('owned')
+            targetCard.classList.remove('filterowned')
+            targetCard.classList.remove('want')
+            targetCard.classList.remove('filterwant')
           } else {
             targetCard.classList.remove('shadow')
             targetCard.classList.remove('filtershadow')
           }
-  }
-  targetCard.dataset.fav = dragonarium[dragonName].fav;
+    }
 }
 
 function targetSelect(element) {
