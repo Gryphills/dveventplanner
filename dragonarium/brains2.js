@@ -1573,9 +1573,9 @@ function updateTargetSearch() {
                         let targetData = allDragonData[metTarget]
                         
                         if (targetData.rarity != "Hybrid") {
-                                oddsOfCool += targetData.odds.base * pairObj.multiplierOdds
+                                oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
                         } else {
-                                oddsOfCool += pairObj.hybridOdds
+                                oddsOfCool += Number(pairObj.hybridOdds)
                         }
                 }
                 pairObj.oddsOfCool = oddsOfCool
@@ -1838,7 +1838,7 @@ function possiblePairsa(dragonName) {
                         let sorted = specialGuys.sort()
                         let elOutput = []
                         for (const el of [].concat(allDragonData[specialGuys[0]].elements.concat(allDragonData[specialGuys[1]].elements))) {
-                                if (!elOutput.includes(el) {
+                                if (!elOutput.includes(el)) {
                                         elOutput.push(el)
                                 }
                         }
