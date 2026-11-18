@@ -1349,6 +1349,10 @@ function hideOwned(el) {
 function updateTargetCard(dragonName, statusId, statusNum) {
   let targetCardDiv = document.querySelector('.targetdragons')
   let targetCard = targetCardDiv.querySelector(`.${dragonName}`)
+  if (!targetCard) {
+        console.log(`cant find ${dragonName} in `, targetCardDiv)
+          return
+  }
 
   if (statusId == "fav") {
         targetCard.dataset.fav = statusNum;
