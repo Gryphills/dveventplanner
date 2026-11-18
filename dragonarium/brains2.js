@@ -1265,9 +1265,9 @@ function createTargetCards() {
         } else {
           if (!lastFavCard) {
                   let checkCard = targetCardDiv.firstElementChild
-                  //while (checkCard.classList.contains('favourite')) {
-                  //      checkCard = checkCard.nextElementSibling
-                  //}
+                  while (checkCard.classList.contains('favourite')) {
+                        checkCard = checkCard.nextElementSibling
+                  }
                   if (checkCard) {
                         lastFavCard = checkCard
                   } else {
@@ -1798,16 +1798,28 @@ function checkTargetReq(target, pairingElOutput) {
 }
 
 function pairTemplate(pairObj) {
+        
   let htmlTemplate = `<div class="pairing"> <div class="pairparents">`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
   htmlTemplate += `</div> <div class="result-targetbox"> <h4> Possible Target Results:</h4> <div class="possibletargets"> `
   for (const validTarget of pairObj.targetsMet) {
-    console.log(validTarget, allDragonData[validTarget].odds, pairObj.multiplierOdds, pairObj)
-    htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget} (${allDragonData[validTarget].odds.base * pairObj.multiplierOdds})</p></div>`
+    //console.log(validTarget, allDragonData[validTarget].odds, pairObj.multiplierOdds, pairObj)
+    let formatOdds = 0
+    let targetData = allDragonData[validTarget]
+    if (targetData.rarity == "Hybrid") {
+        formatOdds = pairObj.hybridOdds
+    } else if (targetData.odds.base != 0) {
+        Number(targetData.odds.base) * pairObj.multiplierOdds
+    }
+    formatOdds = Math.round(formatOdds*100000) / 1000
+    let oddsOfCool = Math.round(pairObj.oddsOfCool) / 1000
+        
+    
+    htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
-  htmlTemplate += `</div> <h4>Total Odds:</h4><p>${pairObj.oddsOfCool}</p></div></div>`
+  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p></div></div>`
   return htmlTemplate;
 }
 
