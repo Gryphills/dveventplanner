@@ -1750,7 +1750,7 @@ function checkTargetReq(target, pairingElOutput) {
 function pairTemplate(pairObj) {
   let htmlTemplate = `<div class="pairing"> <div class="pairparents">`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
-  htmlTemplate += `<p> + </p>`
+  htmlTemplate += `<p class="plus"> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
   htmlTemplate += `</div> <div class="result-targetbox"> <h4> Possible Target Results:</h4> <div class="possibletargets"> `
   for (const validTarget of pairObj.targetsMet) {
