@@ -1811,7 +1811,7 @@ function pairTemplate(pairObj) {
     if (targetData.rarity == "Hybrid") {
         formatOdds = Number(pairObj.hybridOdds)
     } else if (targetData.odds.base) {
-        Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
+        formatOdds = Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
     }
     
     formatOdds = Math.round(formatOdds*100000) / 1000
@@ -1819,7 +1819,7 @@ function pairTemplate(pairObj) {
         formatOdds = "??"
     }
         
-    
+    //concole.log(odds, pairObj, `we took base and multiplier, 
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
   let oddsOfCool = Math.round(pairObj.oddsOfCool) / 1000
