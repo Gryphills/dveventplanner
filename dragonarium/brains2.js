@@ -1179,14 +1179,14 @@ function searchListeners() {
       for (const card of Array.from(cardHolder.children)) {
         if (e.currentTarget.value && e.currentTarget.value != ' ') {
                 let dragonName = card.dataset.dragonName
-                if (!dragonName) {
+                /*if (!dragonName) {
                         dragonName = card.tagName
                         console.log(dragonName, 'aaa no name', card);
                         //continue
-                }
+                }*/
                 if (!dragonName) {
                         dragonName = card.id
-                        console.log(dragonName, 'aaa no nameaa', card);
+                        //console.log(dragonName, 'aaa no nameaa', card);
                 }
                 if (!dragonName) {
                         console.log('cant find dragonname for card: ', card)
