@@ -702,6 +702,9 @@ body {
   border-radius: 6px;
   margin:15px;
   padding: 10px;
+  h4 {
+    margin: 1px;
+  }
   .possibletargets {
     display:flex;
     flex-wrap:wrap;
@@ -715,18 +718,19 @@ body {
     img {
       max-height: 75px;
       max-width: 75px;
+      margin-bottom:10px;
     }
     p {
       font-weight: bold;
-    }
-    .oddsnumber {
-      font-style: italic;
-      font-weight: normal;
-      font-size: medium;
+      margin: 1px;
     }
   }
 }
-
+.oddsnumber {
+  font-style: italic;
+  font-weight: normal;
+  font-size: small;
+}
 .elementsortbox {
   padding:6px;
   padding-bottom: 12px;
