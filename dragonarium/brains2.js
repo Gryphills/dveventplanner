@@ -26,7 +26,7 @@ let tabFilters = {
   shadowTab: []
 }
 
-let savedSettings = {
+const savedSettings = {
   currentTab: 4,
   multiparents: {
     hideOwned: 1,
@@ -379,7 +379,7 @@ function setTabs() {
   let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
   for (const tabButton of tabButtArr) {
     tabButton.addEventListener('click', function(e) {
-      dragonarium.savedSettings.currentTab = e.currentTarget.dataset.key;
+      dragonarium..currentTab = e.currentTarget.dataset.key;
       saveData();
       let tabButtArr = Array.from(document.querySelector('.tab-button').parentNode.children)
       let tabDivArr = Array.from(document.querySelector('.tab').parentNode.children)
@@ -1876,58 +1876,58 @@ function getPairingOutput(dragonLeftName, dragonRightName) {
 }
 
 function getSettings() {
-        let retrievedSettings = dragonarium.savedSettings;
-        let defaultSettings = savedSettings;
-        if (retrievedSettings) {
-                savedSettings = retrievedSettings;
+        let retrievedSettings = structuredClone(savedSettings);
+        let defaultSettings = structuredClone(savedSettings);
+        if (dragonarium.savedSettings) {
+                retrievedSettings = Object.assign(retrievedSettings, dragonarium.savedSettings);
         }
-        document.getElementById('tab-buttons').querySelector(`[data-key="${savedSettings.currentTab}"]`).click();
-        if (defaultSettings.mpfTab != savedSettings.mpfTab) {
+        document.getElementById('tab-buttons').querySelector(`[data-key="${retrievedSettings.currentTab}"]`).click();
+        if (defaultSettings.mpfTab != retrievedSettings.mpfTab) {
                 let buttons = document.getElementById('multiparents').querySelector('.settings-buttons');
                 for (const setting of Object.keys(defaultSettings.mpfTab)) {
-                        if (defaultSettings.mpfTab[setting] != savedSettings.mpfTab[setting]) {
+                        if (defaultSettings.mpfTab[setting] != retrievedSettings.mpfTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.wantTab != savedSettings.wantTab) {
+        if (defaultSettings.wantTab != retrievedSettings.wantTab) {
                 let buttons = document.getElementById('wantTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.wantTab)) {
-                        if (defaultSettings.wantTab[setting] != savedSettings.wantTab[setting]) {
+                        if (defaultSettings.wantTab[setting] != retrievedSettings.wantTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.initTab != savedSettings.initTab) {
+        if (defaultSettings.initTab != retrievedSettings.initTab) {
                 let buttons = document.getElementById('initTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.initTab)) {
-                        if (defaultSettings.initTab[setting] != savedSettings.initTab[setting]) {
+                        if (defaultSettings.initTab[setting] != retrievedSettings.initTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.haveTab != savedSettings.haveTab) {
+        if (defaultSettings.haveTab != retrievedSettings.haveTab) {
                 let buttons = document.getElementById('haveTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.haveTab)) {
-                        if (defaultSettings.haveTab[setting] != savedSettings.haveTab[setting]) {
+                        if (defaultSettings.haveTab[setting] != retrievedSettings.haveTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        if (defaultSettings.shadowTab != savedSettings.shadowTab) {
+        if (defaultSettings.shadowTab != retrievedSettings.shadowTab) {
                 let buttons = document.getElementById('shadowTab').firstElementChild;
                 for (const setting of Object.keys(defaultSettings.shadowTab)) {
-                        if (defaultSettings.shadowTab[setting] != savedSettings.shadowTab[setting]) {
+                        if (defaultSettings.shadowTab[setting] != retrievedSettings.shadowTab[setting]) {
                                 buttons.querySelector('.' + setting + 'Button').click()
                         }
                         
                 }
         }
-        dragonarium.savedSettings = savedSettings;
+        dragonarium.savedSettings = retrievedSettings;
 }
 
 
