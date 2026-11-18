@@ -1464,14 +1464,15 @@ function updateTargetSearch() {
   
   let validPairObj = {}
   let validPairs = []
-  let pairsForEachTarget = {}
+  //let pairsForEachTarget = {}
   let guysWithNoSpecialGuys = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
 
   for (const target of targets) {
-        let checkPairs = possiblePairsa(target)
+        let checkPairs = possiblePairsa(target, validPairObj)
           if (checkPairs != "NoSpecial") {
-                pairsForEachTarget[target] = checkPairs
+                  Object.assign(validPairObj, checkPairs)
+                //pairsForEachTarget[target] = checkPairs
           } else {
                 guysWithNoSpecialGuys.push(target)
           }
@@ -1480,7 +1481,7 @@ function updateTargetSearch() {
 
   //for (const
 
-  for (const targetName of Object.getOwnPropertyNames(pairsForEachTarget)) {
+  /*for (const targetName of Object.getOwnPropertyNames(pairsForEachTarget)) {
         for (const pairName of Object.getOwnPropertyNames(pairsForEachTarget[targetName])) {
                 let targetsMet = [targetName];
                 if (validPairObj[pairName]) {
@@ -1490,7 +1491,7 @@ function updateTargetSearch() {
                 //console.log(pairsForEachTarget[targetName][)
                 validPairObj[pairName] = pairsForEachTarget[targetName][pairName]
         }   
-  }
+  }*/
  
 
 
@@ -1711,14 +1712,14 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                         }
                 }
         }
-        let totalCurrent = breedsOdds + clonePercentage
-        let leftForHybrids = 1 - (totalCurrent - 0.99)
-        let hybridOdds = leftForHybrids / hybrids.length
+        let totalCurrent = Number(breedsOdds) + Number(clonePercentage)
+        let leftForHybrids = 1 - (Number(totalCurrent) - 0.99)
+        let hybridOdds = Number(leftForHybrids) / hybrids.length
         //let 
         //let 
         
-        pairObj.hybridOdds= hybridOdds
-        pairObj.multiplierOdds= (1 - Math.min((hybridOdds + clonePercentage), 0.99))/totalCurrent
+        pairObj.hybridOdds = hybridOdds
+        pairObj.multiplierOdds= (1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
         pairObj.breeds = breeds
         pairObj.hybrids = hybrids
         return pairObj;
@@ -1727,7 +1728,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
 }
 
 
-
+/*@DEPRECATED
 function checkEachTarget(targets, pairingElOutput) {
   let targetsMet = []
         
@@ -1741,7 +1742,7 @@ function checkEachTarget(targets, pairingElOutput) {
     }
   }
   return targetsMet;
-}
+}*/
 
 function checkTargetReq(target, pairingElOutput) {
   let targetRequirements = [].concat(allDragonData[target].combo.requirements);
@@ -1835,9 +1836,17 @@ function possiblePairsa(dragonName) {
             }
                if (specialGuys.length == 2) {
                         let sorted = specialGuys.sort()
+                        let elOutput = []
+                        for (const el of [].concat(allDragonData[specialGuys[0]].elements.concat(allDragonData[specialGuys[1]].elements))) {
+                                if (!elOutput.includes(el) {
+                                        elOutput.push(el)
+                                }
+                        }
+                        elOutput.push(sorted[0], sorted[1])
                         validPairs[`${sorted[0]}//${sorted[1]}`] = {
                                       parentLeft: sorted[0],
-                                      parentRight : sorted[1]
+                                      parentRight : sorted[1],
+                                      elOutput : elOutput
                               }
             }
                else if (specialGuys.length == 1) {
@@ -1851,14 +1860,24 @@ function possiblePairsa(dragonName) {
                             let validPair = checkTargetReq(dragonName, pairingOutput)
                             //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                             if (validPair) {
+                                    let sorted = [specialGuys[0], otherParentName].sort()
+                                    if (validPairs[`${sorted[0]}//${sorted[1]}`]) {
+                                        validPairs[`${sorted[0]}//${sorted[1]}`].targetsMet.push(dragonName)
+                                    } else {
+                                        let pairObj = {
+                                              parentLeft: specialGuys[0],
+                                              parentRight : otherParentName,
+                                              elOutput : pairingOutput,
+                                              targetsMet: [dragonName]
+                                        }
+                                        validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
+                                    }
                               //console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
-                              let sorted = [specialGuys[0], otherParentName].sort()
-                              let pairObj = {
-                                      parentLeft: specialGuys[0],
-                                      parentRight : otherParentName
-                              }
+                              
+                              
                                     //let newObj = 
-                              validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
+                              
+                                
                             }
                           }
                   }
