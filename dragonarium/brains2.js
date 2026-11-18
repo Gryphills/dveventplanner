@@ -1752,12 +1752,12 @@ function pairTemplate(pairObj) {
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
-  htmlTemplate += `</div> <div class="possibletargets"> <h4> Possible Target Results:</h4>`
+  htmlTemplate += `</div> <div class="result-targetbox"> <h4> Possible Target Results:</h4> <div class="possibletargets"> `
   for (const validTarget of pairObj.targetsMet) {
     console.log(validTarget, pairObj.targetsNet)
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p></div>`
   }
-  htmlTemplate += `</div></div>`
+  htmlTemplate += `</div> <h4>Total Odds:</h4><p>${pairObj.oddsOfCool}</p></div></div>`
   return htmlTemplate;
 }
 
