@@ -36,7 +36,7 @@ let tabFilters = {
 }
 
 const savedSettings = {
-  currentTab: 4,
+  currentTab: 'init',
   multiparents: {
     hideOwned: 1,
     showPerm: 0,
