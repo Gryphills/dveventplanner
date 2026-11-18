@@ -1677,7 +1677,7 @@ function sortPairIntoArray(pairObj, array, property) {
 
 
 function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "reg") {
-        console.log('is this firing?')
+        console.log('is this firing?', pairObj)
         let parentClone = "singleclone"
         if (pairArray[0] == pairArray[1]) {
                 parentClone = "doubleclone"
