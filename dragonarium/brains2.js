@@ -1508,13 +1508,18 @@ function updateTargetSearch() {
                               if (validPairObj[`${sorted[0]}//${sorted[1]}`]) {
                                       validPairObj[`${sorted[0]}//${sorted[1]}`].targetsMet.push(guy)
                               } else {
-                                       validPairObj[`${sorted[0]}//${sorted[1]}`] = {
+                                      let pairingOutputCleaned = []
+                                      for (const el of pairingOutput) {
+                                        if (!pairingOutputCleaned.includes(el)) {
+                                                pairingOutputCleaned.push(el)
+                                      }
+                                        let objPair = {
                                                 parentLeft: sorted[0], 
                                                 parentRight : sorted[1], 
                                                 targetsMet : [guy],
-                                                elOutput : pairingOutput
-                                       }
-                                        let results = getOutputsAndOdds(sorted, pairingOutput, validPairObj[`${sorted[0]}//${sorted[1]}`], "reg")
+                                                elOutput : pairingOutputCleaned
+                                        }
+                                        let results = getOutputsAndOdds(sorted, pairingOutputCleaned, objPair, "reg")
                                         console.log(`${sorted[0]}//${sorted[1]}: `, results)
                                         validPairObj[`${sorted[0]}//${sorted[1]}`] = results
                                                 //multiplierOdds: results.multiplierOdds,
