@@ -1509,6 +1509,7 @@ function updateTargetSearch() {
                                       validPairObj[`${sorted[0]}//${sorted[1]}`].targetsMet.push(guy)
                               } else {
                                         let results = getOutputsAndOdds(sorted, pairingOutput)
+                                      console.log(`${sorted[0]}//${sorted[1]}: `, results)
                                         validPairObj[`${sorted[0]}//${sorted[1]}`] = {
                                                 parentLeft: sorted[0], 
                                                 parentRight : sorted[1], 
@@ -1554,6 +1555,7 @@ function updateTargetSearch() {
                 let oddsOfCool = 0;
                 for (const metTarget of pair.targetsMet) {
                         let targetData = allDragonData[metTarget]
+                        
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += targetData.odds.base * pair.multiplierOdds
                         } else {
