@@ -1512,6 +1512,7 @@ function updateTargetSearch() {
                                       for (const el of pairingOutput) {
                                         if (!pairingOutputCleaned.includes(el)) {
                                                 pairingOutputCleaned.push(el)
+                                        }
                                       }
                                         let objPair = {
                                                 parentLeft: sorted[0], 
