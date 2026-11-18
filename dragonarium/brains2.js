@@ -11,6 +11,15 @@ let shadowDiv ;
 let backOne = "backtotop";
 let pairingOutputs = {}
 let pairsForDragons = {}
+let availableDragonNames = []
+
+function sortAvailDragons() {
+        for (dragonName of allDragonNames) {
+                if (allDragonData[dragonName].limited == "" || allDragonData[dragonName].limited == "A") {
+                    availableDragonNames.push(dragonName)
+                }
+        }
+}
 /*
 {
         parent1//parent2 : [possible outputs?]
@@ -1499,10 +1508,19 @@ function updateTargetSearch() {
                               if (validPairObj[`${sorted[0]}//${sorted[1]}`]) {
                                       validPairObj[`${sorted[0]}//${sorted[1]}`].targetsMet.push(guy)
                               } else {
-                                      validPairObj[`${sorted[0]}//${sorted[1]}`] = { parentLeft: sorted[0], parentRight : sorted[1], targetsMet : [guy] }
+                                        let results = getOutputsAndOdds(sorted, pairingOutput)
+                                        validPairObj[`${sorted[0]}//${sorted[1]}`] = {
+                                                parentLeft: sorted[0], 
+                                                parentRight : sorted[1], 
+                                                targetsMet : [guy],
+                                                multiplierOdds: results.multiplierOdds,
+                                                hybridOdds: results.hybridOdds,
+                                                breeds : results.breeds,
+                                                hybrids : results.hybrids
+                                        }
                               }
                               //validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
-                        } 
+                        }
                 }
         }
   }
@@ -1525,15 +1543,25 @@ function updateTargetSearch() {
   if (validPairs.length > 0) {
           let scoredPairs = []
           for (const pair of validPairs) {
-                let outputEls = []
+                /*let outputEls = []
                 for (const el of allDragonData[pair.parentLeft].elements) {
                         if (!outputEls.includes(el)) {
                                 outputEls.push(el)
                         }
                 }
                 pair.outputEls = outputEls
-                pair.score = ((outputEls.length * 2) + pair.targetsMet.length) / 3
-                scoredPairs = sortPairIntoArray(pair, scoredPairs, "score")
+                pair.score = ((outputEls.length * 2) + pair.targetsMet.length) / 3*/
+                let oddsOfCool = 0;
+                for (const metTarget of pair.targetsMet) {
+                        let targetData = allDragonData[metTarget]
+                        if (targetData.rarity != "Hybrid") {
+                                oddsOfCool += targetData.odds.base * pair.multiplierOdds
+                        } else {
+                                oddsOfCool += pair.hybridOdds
+                        }
+                }
+                pair.oddsOfCool = oddsOfCool
+                scoredPairs = sortPairIntoArray(pair, scoredPairs, "oddsOfCool")
           }
           validPairs = scoredPairs
   }
@@ -1631,6 +1659,55 @@ function sortPairIntoArray(pairObj, array, property) {
 }
 
 
+function getOutputsAndOdds(pairArray, pairingOutput, caveLocation) {
+        let parentClone = "singleclone"
+        if (pairArray[0] == pairArray[1]) {
+                parentClone = "doubleclone"
+        }
+        let a = allDragonData[pairArray[0]]
+        let b = allDragonData[pairArray[1]]
+        let hybrids = []
+        let breeds = []
+        let breedsOdds = 0
+        let clonePercentage = 0
+        if (a.odds[parentClone]) {
+                if (a.odds[parentClone][caveLocation]) {
+                        clonePercentage += Number(a.odds[parentClone][caveLocation])
+                }
+        }
+        if (b.odds[parentClone]) {
+                if (b.odds[parentClone][caveLocation]) {
+                        clonePercentage += Number(b.odds[parentClone][caveLocation])
+                }
+        }
+        for (const dragonName of availableDragonNames) {
+                let dragonData = allDragonData[dragonName]
+                if (!dragonData.conditions.includes "Evolve") {
+                        if (checkTargetReq(dragonName, pairingOutput)) {
+                                if (dragonData.rarity == "Hybrid") {
+                                        hybrids.push(dragonData)
+                                } else {
+                                        breeds.push(dragonData)
+                                        breedsOdds += Number(dragonData.odds.base)
+                                }
+                        }
+                }
+        }
+        let totalCurrent = breedsOdds + clonePercentage
+        let leftForHybrids = 1 - (totalCurrent - 0.99)
+        //let 
+        //let 
+        return {
+                multiplierOdds: (1 - Math.min((hybridOdds + clonePercentage), 0.99))/totalCurrent,
+                hybridOdds: leftForHybrids / hybrids.length,
+                breeds : breeds,
+                hybrids : hybrids
+        }
+
+}
+
+
+
 function checkEachTarget(targets, pairingElOutput) {
   let targetsMet = []
         
@@ -1649,14 +1726,16 @@ function checkEachTarget(targets, pairingElOutput) {
 function checkTargetReq(target, pairingElOutput) {
   let targetRequirements = [].concat(allDragonData[target].combo.requirements);
   let metReqs = [];
-  
         //console.log('checking ', target, targetRequirements, pairingElOutput)
   for (const req of targetRequirements) {
     if (pairingElOutput.includes(req)) {
       metReqs.push(req);
-      if (metReqs.length == targetRequirements.length) {
+      
+    } else if (req == "R Rift") {
+            metReqs.push(req)
+    }
+    if (metReqs.length == targetRequirements.length) {
         return true;
-      }
     }
   }
         //console.log('checking ', target, metReqs, targetRequirements, pairingElOutput)
@@ -1937,6 +2016,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
+    sortAvailDragons()
     allDragonImgs = JSON.parse(document.getElementById('dragonurls').textContent);
     
     processDragonData();
