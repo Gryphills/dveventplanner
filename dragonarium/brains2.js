@@ -358,6 +358,9 @@ function sortCardsByElOLD(el, elementName) {
 
 
 let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
+if (!eventObj) {
+        eventObj = {}
+}
 if (!eventObj.dragonarium) {
   eventObj.dragonarium = {}
 }
