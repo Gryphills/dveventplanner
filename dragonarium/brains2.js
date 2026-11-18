@@ -473,7 +473,7 @@ function favouriteCard(button) {
   }
   dragonarium[el.id].fav = button.dataset.toggle;
   saveData()
-  updateTargetCard('fav', button.dataset.toggle)
+  updateTargetCard(el.id, 'fav', button.dataset.toggle)
 }
 
 function wantCard(button) {
