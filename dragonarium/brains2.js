@@ -1553,7 +1553,7 @@ function updateTargetSearch() {
                                                 elOutput : pairingOutputCleaned
                                         }
                                         let results = getOutputsAndOdds(sorted, pairingOutputCleaned, objPair, "reg")
-                                        console.log(`${sorted[0]}//${sorted[1]}: `, results)
+                                        //console.log(`${sorted[0]}//${sorted[1]}: `, results)
                                         validPairObj[`${sorted[0]}//${sorted[1]}`] = results
                                                 //multiplierOdds: results.multiplierOdds,
                                                 //hybridOdds: results.hybridOdds,
@@ -1709,7 +1709,7 @@ function sortPairIntoArray(pairObj, array, property) {
 
 
 function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "reg") {
-        console.log('is this firing?', pairObj)
+        //console.log('is this firing?', pairObj)
         let parentClone = "singleclone"
         if (pairArray[0] == pairArray[1]) {
                 parentClone = "doubleclone"
@@ -1738,7 +1738,9 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                         hybrids.push(dragonData)
                                 } else {
                                         breeds.push(dragonData)
-                                        breedsOdds += Number(dragonData.odds.base)
+                                        if (dragonData.odds.base) {
+                                                breedsOdds += Number(dragonData.odds.base)
+                                        }
                                 }
                         }
                 }
