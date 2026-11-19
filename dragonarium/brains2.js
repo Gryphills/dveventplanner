@@ -1681,7 +1681,7 @@ function updateTargetSearch() {
                 }
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
-        document.querySelector('.possiblepairs').innerHTML = innerHtmlStuff
+        document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
   } else {
 
   }
