@@ -252,7 +252,7 @@ function addSortButtons() {
 }
 
 function jumpToDragon(dragon, clickedEl = undefined) {
-        if (clickedEl) {
+        /*if (clickedEl) {
                 let back = clickedEl.closest('dragonCard')
                 if (back) {
                         back = clickedEl.closest('dragonCard').id;
@@ -261,13 +261,14 @@ function jumpToDragon(dragon, clickedEl = undefined) {
                         window.location.href = window.location.href.split('#')[0] + '#' + back.replaceAll(' ', '-')
                 }
                 
-        }
+        }*/
         //console.log(dragonName.id)
         let inDiv = dragonarium[dragonName].status;
         document.getElementById(`tabbutton-${inDiv}`).click()
         while (!document.getElementById(`tabbutton-${inDiv}`).classList.contains('open')) {
                 console.log('opening ' , inDiv, '...')
         }
+        console.log(document.getElementById(`tabbutton-${inDiv}`), ' should be open now! ')
         window.location.href = window.location.href.split('#')[0] + '#' + dragonName.replaceAll(' ', '-')
         //document.getElementById(inDiv + 'Div')
 }
