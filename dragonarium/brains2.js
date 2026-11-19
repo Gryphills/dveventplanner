@@ -250,24 +250,24 @@ function addSortButtons() {
         //document.head.appendChild(styleEl);
 }
 
-function jumpToDragon(dragonName, clickedEl = undefined) {
+function jumpToDragon(dragon, clickedEl = undefined) {
         if (clickedEl) {
                 let back = clickedEl.closest('dragonCard')
                 if (back) {
                         back = clickedEl.closest('dragonCard').id;
                 } if (back) {
                         backOne = back;
-                        window.location.href = window.location.href.split('#')[0] + back.replaceAll(' ', '')
+                        window.location.href = window.location.href.split('#')[0] + back.replaceAll(' ', '-')
                 }
                 
         }
-        console.log(dragonName.id)
-        let inDiv = dragonarium[dragonName.id].status;
+        //console.log(dragonName.id)
+        let inDiv = dragonarium[dragonName].status;
         document.getElementById(`tabbutton-${inDiv}`).click()
         while (!document.getElementById(`tabbutton-${inDiv}`).classList.contains('open')) {
                 console.log('opening ' , inDiv, '...')
         }
-        window.location.href = window.location.href.split('#')[0] + dragonName.replaceAll(' ', '')
+        window.location.href = window.location.href.split('#')[0] + dragonName.replaceAll(' ', '-')
         //document.getElementById(inDiv + 'Div')
 }
 
@@ -856,7 +856,7 @@ function buildDragonCard(name, data) {
                 //cleanedReq +=  `req`
             
             } else {
-                cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon(${req}, this)">${req}</a>`
+                cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
                     if (allDragonData[req]) {
                         cleanedReq += `<span class="internal-el-imgs">`
                         for (const el of allDragonData[req].elements) {
