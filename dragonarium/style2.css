@@ -641,10 +641,7 @@ body {
   }
 }
 */
-.pairsholder {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .searchbox {
   width: fit-content;
