@@ -16,7 +16,7 @@ let lastUpdate = 'unknown!'
 
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
-                if (allDragonData[dragonName].limited == "" || allDragonData[dragonName].limited == "A") {
+                if (allDragonData[dragonName].limited == "" || allDragonData[dragonName].limited == "A" || allDragonData[dragonName].limited == "N") {
                     availableDragonNames.push(dragonName)
                 }
         }
