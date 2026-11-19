@@ -1589,7 +1589,7 @@ function updateTargetSearch() {
         }
   }
   //console.log('done sorting? ', validPairs)
-        
+        let safety = 0
   if (validPairs.length > 0) {
           let scoredPairs = []
           for (const pair of validPairs) {
@@ -1615,9 +1615,14 @@ function updateTargetSearch() {
                         } else {
                                 oddsOfCool += Number(pairObj.hybridOdds)
                         }
+                        if (safety < 20) {
+                                safety += 1
+                                console.log(targetData.odds, pairObj)
+                          }
                 }
                 pairObj.oddsOfCool = oddsOfCool
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
+                  
           }
           validPairs = scoredPairs
   }
