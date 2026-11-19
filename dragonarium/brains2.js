@@ -1615,7 +1615,7 @@ function updateTargetSearch() {
                         let targetData = allDragonData[metTarget]
                         if (safety < 20) {
                                 safety += 1
-                                console.log(targetData.odds.base, pairObj.multiplierOdds)
+                                //console.log(targetData.odds.base, pairObj.multiplierOdds)
                         }
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
@@ -1756,13 +1756,16 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 } else {
                                         breeds.push(dragonData)
                                         if (dragonData.odds.base) {
+                                                
                                                 breedsOdds += Number(dragonData.odds.base)
+                                                console.log('breeds base is ', dragonData.odds.base, ' so breedsOdds is now ', breedsOdds)
                                         }
                                 }
                         }
                 }
         }
         let totalCurrent = Number(breedsOdds) + Number(clonePercentage)
+        console.log('current: ' , totalCurrent, ` (${Number(breedsOdds)} + ${Number(clonePercentage)}`)
         let leftForHybrids = 1 - (Number(totalCurrent) - 0.99)
         let hybridOdds = Number(leftForHybrids) / hybrids.length
         //let 
