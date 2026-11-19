@@ -1491,7 +1491,7 @@ function targetSelect(element) {
 
 function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
-  let possiblepairdiv = document.querySelector('.pairholder')
+  let possiblepairdiv = document.querySelector('.pairsholder')
 
   while (possiblepairdiv.firstElementChild) {
     possiblepairdiv.firstElementChild.remove()
