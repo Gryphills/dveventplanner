@@ -1484,7 +1484,7 @@ function targetSelect(element) {
           }
           element.classList.add('selected');
   }
-  updateTargetSearch()
+  //updateTargetSearch()
 }
 
 
@@ -1859,6 +1859,8 @@ function checkTargetReq(target, pairingElOutput) {
     return false;
   }
 }
+
+
 
 function pairTemplate(pairObj) {
  // console.log(pairObj) //WHY NO ODDS AAAAA    
