@@ -2107,7 +2107,13 @@ function getSettings() {
         let retrievedSettings = Object.assign({}, dragonarium.savedSettings)
         let defaultSettings = savedSettings;
         console.log('retrieved ', retrievedSettings)
+        if (!retrievedSettings.wantTab || !retrievedSettings.multiparents || !retrievedSettings.initTab || !retrievedSettings.haveTab || !retrievedSettings.shadowTab) {
+                
+                dragonarium.savedSettings = defaultSettings;
+                return;
+        }
         if (retrievedSettings) {
+                
                // console.log('retrieving settings: ', dragonarium.savedSettings)
                 //retrievedSettings = Object.assign(retrievedSettings, dragonarium.savedSettings);
         
@@ -2127,6 +2133,7 @@ function getSettings() {
                 if (defaultSettings.wantTab != retrievedSettings.wantTab) {
                         let buttons = document.getElementById('wantTab').firstElementChild;
                         for (const setting of Object.keys(defaultSettings.wantTab)) {
+                                
                                 if (defaultSettings.wantTab[setting] != retrievedSettings.wantTab[setting]) {
                                         buttons.querySelector('.' + setting + 'Button').click()
                                 }
