@@ -1282,7 +1282,7 @@ function createTargetCards() {
         cardEl.classList.add('weatherfireflies')
       }
       if (allDragonData[dragonName].conditions.includes('Evolve')) {
-        cardEl.classList.add('evolve')
+        cardEl.classList.add('filterevolve')
       }
       
       if (!allDragonData[dragonName].limited) {
