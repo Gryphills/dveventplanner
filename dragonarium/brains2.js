@@ -691,7 +691,7 @@ function hideBreeds(el) {
 
 
 function clickInitButtons() {
-        let tabs = [wantDiv, initDiv, haveDiv, shadowDiv]
+        /*let tabs = [wantDiv, initDiv, haveDiv, shadowDiv]
         for (const tab of tabs) {
                 let buttons = tab.querySelectorAll('.sortbutton')
                 for (const button of buttons) {
@@ -701,7 +701,7 @@ function clickInitButtons() {
                                 button.click()
                         }
                 }
-        }
+        }*/
 }
 
 
@@ -756,7 +756,7 @@ function buildDragonCard(name, data) {
   let cardhtml = 
  `<div class="dragonCard `
     if (data.limited == "Y") {
-      cardhtml += ` limited unavail `
+      cardhtml += ` limited unavail filterunavail `
     } else if (data.limited == "A") {
       cardhtml += `limited avail`
     } else {
