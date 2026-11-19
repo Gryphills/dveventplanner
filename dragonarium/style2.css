@@ -708,6 +708,7 @@ body {
   .possibletargets {
     display:flex;
     flex-wrap:wrap;
+    justify-content: center;
   }
   .possibletarget {
     margin:10px;
@@ -715,6 +716,7 @@ body {
     justify-content: end;
     display:flex;
     align-items:center;
+    
     img {
       max-height: 75px;
       max-width: 75px;
