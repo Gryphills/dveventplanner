@@ -1497,9 +1497,9 @@ function updateTargetSearch() {
     possiblepairdiv.firstElementChild.remove()
   }
   let tempTextEl = document.createElement('p')
-  if (targetCardDiv.childElementCount < 2) {
+  /*if (targetCardDiv.childElementCount < 2) {
         tempTextEl.textContent = "Select more than one dragon!"
-  }
+  }*/
   tempTextEl.textContent = "Calculating pairs, please wait a moment..."
   possiblepairdiv.appendChild(tempTextEl)
 
@@ -1614,7 +1614,7 @@ function updateTargetSearch() {
 
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
-        if (pair.targetsMet.length > 1) {
+        //if (pair.targetsMet.length > 1) {
                 //console.log(pairName, ' meets ', pair.targetsMet)
                 //if (validPairs.length == 0) {
                         validPairs.push(pair)
@@ -1623,10 +1623,10 @@ function updateTargetSearch() {
                         //console.log('tosort,,,')
                 //        validPairs = sortPairIntoArray(pair, validPairs);
                 //}
-        }
+        //}
   }
   //console.log('done sorting? ', validPairs)
-        let safety = 0
+
   if (validPairs.length > 0) {
           let scoredPairs = []
           for (const pair of validPairs) {
@@ -1646,10 +1646,7 @@ function updateTargetSearch() {
                 let oddsOfCool = 0;
                 for (const metTarget of pairObj.targetsMet) {
                         let targetData = allDragonData[metTarget]
-                        if (safety < 20) {
-                                safety += 1
-                                //console.log(targetData.odds.base, pairObj.multiplierOdds)
-                        }
+                        
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
                         } else {
@@ -1669,9 +1666,9 @@ function updateTargetSearch() {
 
 
 
-   if (validPairs.length > 0) {         
+   if (validPairs.length > 0) {
         let innerHtmlStuff = ''
-        let limit = 30
+        let limit = 50
         for (const pair of validPairs) {
                 let htmlStuff = pairTemplate(pair)
                 innerHtmlStuff += htmlStuff
@@ -1684,7 +1681,7 @@ function updateTargetSearch() {
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
         tempTextEl.remove();
   } else {
-        tempTextEl.textContent = "No pairs found that meet more than one target dragon :(!"
+        tempTextEl.textContent = "No pairs found :(! There might be something funky going on"
   }
         
    /*     
