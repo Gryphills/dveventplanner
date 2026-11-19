@@ -685,6 +685,9 @@ body {
 .filteravail {
   display:none !important;
 }
+.filtertwospecialguys {
+  display:none !important;
+}
 /*.filters-active {
   .dragonCard {
     display:none;
