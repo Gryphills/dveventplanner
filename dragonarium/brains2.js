@@ -1251,7 +1251,16 @@ function createTargetCards() {
         }
               cardEl.dataset.specialguys = specialguycount
       }
-            
+      if (allDragonData[dragonName].conditions.includes('Night') {
+        cardEl.classList.add('night')
+      } else if (allDragonData[dragonName].conditions.includes('Day') {
+        cardEl.classList.add('day')
+      }
+      if (allDragonData[dragonName].conditions.includes('Blossoms') {
+        cardEl.classList.add('weatherblossoms')
+      } else if (allDragonData[dragonName].conditions.includes('Fireflies') {
+        cardEl.classList.add('weatherfireflies')
+      }
       
       
       if (!allDragonData[dragonName].limited) {
