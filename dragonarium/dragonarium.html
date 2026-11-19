@@ -29,13 +29,17 @@
         <div class="tab" id="multiparents">
           <h2 style="text-align:center; font-style:italic;">WORK IN PROGRESS pls hold!</h2>
             <div class="targetdragons multiparentcards">
-                 
-                <label class="searchlabel">Search for target Dragon: <input class="search" type="text" data-key="targetcards"></label> 
+
+              <div class="cavebuttons" style="display:none;"> 
+                <img height="200px" src="" id="normalcavebutton">
+              </div>
+                
                 <div class="settings-buttons">
                     <div data-toggle=1 class="showPermButton sortbutton toggled" onClick="showTargetsWith(this, 'perm')" >Show Permanent Dragons</div>
                     <div data-toggle=0 class="showOwnedButton sortbutton" onClick="showTargetsWith(this, 'owned')" >Show Owned Dragons</div>
                     <div data-toggle=0 class="showShadowButton sortbutton" onClick="showTargetsWith(this, 'shadow')" >Show Shadow Realm Dragons</div>
                 </div>
+               <label class="searchlabel">Search for target Dragon: <input class="search" type="text" data-key="targetcards"></label> 
                 <div class="elementsortbox"></div>
                 <div class="targetcards" id="targetcards">
                 </div>
