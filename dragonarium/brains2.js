@@ -861,29 +861,32 @@ function buildDragonCard(name, data) {
       }
       if (data.combo['requirements']) {
         let cleanedReq = ''
-        for (const req of data.combo.requirements) {
-                let reqq = req
-            if (elementChart.basics.includes(req)) {
-                cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>` + reqq.substring(2)
-            //} else if (req == "Any") {
-                //cleanedReq +=  `req`
-            
-            } else {
-                cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
-                    if (allDragonData[req]) {
-                        cleanedReq += `<span class="internal-el-imgs">`
-                        for (const el of allDragonData[req].elements) {
-                                cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
-                        }
-                         cleanedReq += `</span>`
+              if ( data.combo.requirements[0] != data.combo.requirements[1]) {
+                for (const req of data.combo.requirements) {
+                        let reqq = req
+                    if (elementChart.basics.includes(req)) {
+                        cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>` + reqq.substring(2)
+                    //} else if (req == "Any") {
+                        //cleanedReq +=  `req`
+                    
+                    } else {
+                        cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
+                            if (allDragonData[req]) {
+                                cleanedReq += `<span class="internal-el-imgs">`
+                                for (const el of allDragonData[req].elements) {
+                                        cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
+                                }
+                                 cleanedReq += `</span>`
+                            }
+                        cleanedReq += `</div>`
                     }
-                cleanedReq += `</div>`
-            }
-            if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
-                cleanedReq += ' + '
-            }
-        }
-        
+                    if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
+                        cleanedReq += ' + '
+                    }
+                }
+              } else {
+                         cleanedReq = `Any 2 <div class="el-img" style="background-image:url('${elementIcons[data.combo.requirements[0].substring(2)]}');"></div> ${data.combo.requirements[0]} Dragons`
+              }
         cardhtml += `<h3>${cleanedReq}</h3>`
       }
       if (data.times) {
@@ -1243,6 +1246,7 @@ function searchListeners() {
 function createTargetCards() {
   let targetCardDiv = document.querySelector('.targetcards');
   let lastFavCard;
+  let lastWantCard;
   for (const dragonName of allDragonNames) {
     if (allDragonData[dragonName].limited != 'Y') {
       if (!allDragonImgs[dragonName]) {
@@ -1331,11 +1335,121 @@ function createTargetCards() {
         }
         lastFavCard = cardEl;
       } else {
-        targetCardDiv.appendChild(cardEl);
+        if (dragonarium[dragonName].status == "want") {
+          if (targetCardDiv.children.length == 0) {
+            targetCardDiv.appendChild(cardEl);
+          } else {
+                if (!lastWantCard) {
+                  let checkCard = targetCardDiv.firstElementChild
+                  while (checkCard.classList.contains('favourite')) {
+                        checkCard = checkCard.nextElementSibling
+                  }
+                  if (checkCard) {
+                          lastWantCard = checkCard
+                          while (checkCard.dataset.status = 'want') {
+                                checkCard = checkCard.nextElementSibling
+                          }
+                          if (checkCard) {
+                                lastWantCard = checkCard
+                          } else {
+                                lastWantCard = targetCardDiv.lastElementChild
+                          }
+                  } 
+                }
+             lastWantCard.after(cardEl);
+             lastWantCard = targetCardDiv.lastElementChild
+          }
+        } else {
+                targetCardDiv.appendChild(cardEl);
+        }
+        
       }
     }
   }
   updatePossibleTargets()
+}
+
+function slotElIntoTargetArray(cardEl, targetCardDiv) {
+  if (targetCardDiv.children.length == 0) {
+        targetCardDiv.appendChild(cardEl);
+        return;
+  }
+  let lastFavCard;
+  let lastWantCard;
+  let toSection = 'init'
+  let sectionOrder = ['want', 'have', 'init', 'shadow']
+  let letterIsBefore = true;
+  let dragonName = cardEl.dataset.dragonName
+  let checkCard = targetCardDiv.firstElementChild
+  
+  if (Number(dragonarium[dragonName].fav) != 1) {
+    cardEl.classList.remove('favourite');
+    while (checkCard.classList.contains('favourite')) {
+            checkCard = checkCard.nextElementSibling
+    }
+    if (!checkCard) {
+        targetCardDiv.appendChild(cardEl);
+        return;
+    }
+  }
+  for (const sectionsName of sectionOrder) {
+          while (checkCard.dataset.status == sectionsName && letterIsBefore == true) {
+                if (sectionsName == toSection) {
+                        let checkLetter = checkCard.dataset.dragonName
+                        let sorted = [checkLetter, dragonName].sort()
+                        if (sorted[0] == dragonName) {
+                                checkCard.before(cardEl)
+                                letterIsBefore = false
+                                break;
+                                
+                        } else {
+                                checkCard = checkCard.nextElementSibling
+                        }
+                } else {
+                        checkCard = checkCard.nextElementSibling
+                }
+          }
+          if (!checkCard) {
+                targetCardDiv.appendChild(cardEl);
+                return;
+          }
+  }
+  /*if (checkCard) {
+        checkCard.before(cardEl)
+  } else {*/
+        //targetCardDiv.lastElementChild.after(cardEl);
+  //}
+  //return;
+      /*  
+        //lastFavCard = cardEl;
+      } else {
+        if (dragonarium[dragonName].status == sectionName) {
+          if (targetCardDiv.children.length == 0) {
+            targetCardDiv.appendChild(cardEl);
+          } else {
+                if (!lastWantCard) {
+                  let checkCard = targetCardDiv.firstElementChild
+                  while (checkCard.classList.contains('favourite')) {
+                        checkCard = checkCard.nextElementSibling
+                  }
+                  if (checkCard) {
+                          while (checkCard.dataset.status == 'want') {
+                                  
+                                checkCard = checkCard.nextElementSibling
+                          }
+                          if (checkCard) {
+                                lastWantCard = checkCard
+                          } else {
+                                lastWantCard = targetCardDiv.lastElementChild
+                          }
+                  } 
+                }
+             lastWantCard.after(cardEl);
+             lastWantCard = targetCardDiv.lastElementChild
+          }
+        } else {
+                targetCardDiv.appendChild(cardEl);
+        }*/
 }
 
 function updatePossibleTargets() {
@@ -1346,6 +1460,11 @@ function updatePossibleTargets() {
     let impossible = false;
     let dragonName = child.dataset.dragonName;
           //console.log(dragonName, allDragonData[dragonName])
+    if (dragonarium[dragonName].status == 'have') {
+        child.classList.remove('shadow')
+        child.classList.remove('want')
+        child.classList.add('owned')
+    }
     let dragonReqs = allDragonData[dragonName].combo.requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
