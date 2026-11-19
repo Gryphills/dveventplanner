@@ -1885,7 +1885,7 @@ function pairTemplate(pairObj) {
     //console.log(targetData.odds, pairObj)
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
-  let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 1000) / 10
+  let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
   htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p></div></div>`
   return htmlTemplate;
 }
