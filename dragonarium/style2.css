@@ -29,6 +29,8 @@ body {
   margin:30px;
   width: fit-content;
   border-radius: 10px;
+  text-align:left;
+  display:inline-block;
 }
 
 .gobackupbutton {
