@@ -2045,6 +2045,7 @@ function getSettings() {
         let defaultSettings = structuredClone(savedSettings);
         
         if (dragonarium.savedSettings) {
+                console.log('retrieving settings: ', dragonarium.savedSettings)
                 retrievedSettings = Object.assign(retrievedSettings, dragonarium.savedSettings);
         }
         console.log('settings: ', retrievedSettings, defaultSettings)
