@@ -6,6 +6,17 @@ body {
   font-family: Tahoma, Verdana, sans-serif;
 }
 
+#calculateparentsbutton {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  display: inline;
+  background-color: #cac5f0;
+  border: 2px solid #442a5f;
+  cursor: pointer;
+  color: #442a5f;
+}
+
 .gobackupbutton {
   position: fixed;
   right: 15px;
