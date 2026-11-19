@@ -1901,7 +1901,13 @@ function parentTemplate(parent) {
   let parenthtml = `
       <div class='parent'>
           <div class="itemimg">
-                <img src="${allDragonImgs[parent].Adult}">
+                <img src="`
+          if (allDragonImgs[parent].Adult) {
+                  parenthtml += allDragonImgs[parent].Adult
+          } else if (allDragonImg[parent].Old) {
+                  parenthtml += allDragonImgs[parent].Old
+          }
+          parenthtml += `">
           </div>
           <h5>${parent}</h5>
           <div class="internal-el-imgs">`
