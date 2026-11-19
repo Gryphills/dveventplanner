@@ -1200,7 +1200,7 @@ function searchListeners() {
                 } else {
                     card.classList.remove('filtersearch');
                 }
-                console.log(dragonName)
+                //console.log(dragonName)
         } else {
                 card.classList.remove('filtersearch');
         }
@@ -1739,12 +1739,18 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let clonePercentage = 0
         if (a.odds[parentClone]) {
                 if (a.odds[parentClone][caveLocation]) {
-                        clonePercentage += Number(a.odds[parentClone][caveLocation])
+                        let getClone = Number(a.odds[parentClone][caveLocation])
+                        if (getClone != NaN) {
+                                clonePercentage += getClone
+                        }
                 }
         }
         if (b.odds[parentClone]) {
                 if (b.odds[parentClone][caveLocation]) {
-                        clonePercentage += Number(b.odds[parentClone][caveLocation])
+                        let getClone = Number(b.odds[parentClone][caveLocation])
+                        if (getClone != NaN) {
+                                clonePercentage += getClone
+                        }
                 }
         }
         for (const dragonName of availableDragonNames) {
@@ -1756,9 +1762,10 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 } else {
                                         breeds.push(dragonData)
                                         if (dragonData.odds.base) {
-                                                
-                                                breedsOdds += Number(dragonData.odds.base)
-                                                console.log('breeds base is ', dragonData.odds.base, ' so breedsOdds is now ', breedsOdds)
+                                                if (Number(dragonData.odds.base) != NaN) {
+                                                        breedsOdds += Number(dragonData.odds.base)
+                                                        //console.log('breeds base is ', dragonData.odds.base, ' so breedsOdds is now ', breedsOdds)
+                                                }
                                         }
                                 }
                         }
