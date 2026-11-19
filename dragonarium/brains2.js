@@ -317,7 +317,7 @@ function sortCardsByEl(el, elementName) {
         }
 }
 //DECOMMISSION - it is Inclsive not exclusive search
-function sortCardsByElOLD(el, elementName) {
+/*function sortCardsByElOLD(el, elementName) {
         console.log('sorting!! ', elementName)
         let tabName = el.closest('.tab').id
         let cardsDiv = el.closest('.tab').querySelector('.dragonCards')
@@ -354,7 +354,7 @@ function sortCardsByElOLD(el, elementName) {
                 }
         }
 }
-
+*/
 
 
 let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
@@ -1243,8 +1243,16 @@ function createTargetCards() {
       cardEl = cardEl.children[0];
 
       if (allDragonData[dragonName].requirements) {
-        
+              let specialguycount = 0
+        for (const required of allDragonData[dragonName].requirements) {
+                if (!elementChart.basics.includes(required)) {
+                        specialguycount += 1
+                }
+        }
+              cardEl.dataset.specialguys = specialguycount
       }
+            
+      
       
       if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
