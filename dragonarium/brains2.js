@@ -1177,9 +1177,9 @@ function searchListeners() {
   for (const input of Array.from(document.querySelectorAll('.search'))) {
     input.addEventListener('input', function(e) {
       let key = e.currentTarget.dataset.key;
-        console.log(e.currentTarget.value);
+        //console.log(e.currentTarget.value);
       let cardHolder = input.closest('.tab').querySelector('#'+key);
-            console.log(key, cardHolder)
+            //console.log(key, cardHolder)
       for (const card of Array.from(cardHolder.children)) {
         if (e.currentTarget.value && e.currentTarget.value != ' ') {
                 let dragonName = card.dataset.dragonName
@@ -1625,7 +1625,7 @@ function updateTargetSearch() {
                         
                 }
                 pairObj.oddsOfCool = oddsOfCool
-                  console.log(pairObj)
+                  //console.log(pairObj)
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                   
           }
@@ -1691,8 +1691,8 @@ function updateTargetSearch() {
         }
       }
     }*/
-  console.log(validPairObj);
-  console.log(validPairs);
+  //console.log(validPairObj);
+  //console.log(validPairs);
   
   /*for (const pairObj of validPairs) {
     let newPairEl = document.createElement('div');
@@ -1772,7 +1772,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 }
         }
         let totalCurrent = Number(breedsOdds) + Number(clonePercentage)
-        console.log('current: ' , totalCurrent, ` (${Number(breedsOdds)} + ${Number(clonePercentage)}`)
+        //console.log('current: ' , totalCurrent, ` (${Number(breedsOdds)} + ${Number(clonePercentage)}`)
         let leftForHybrids = 1 - (Number(totalCurrent) - 0.99)
         let hybridOdds = Number(leftForHybrids) / hybrids.length
         //let 
@@ -1782,7 +1782,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         pairObj.multiplierOdds= (1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
         pairObj.breeds = breeds
         pairObj.hybrids = hybrids
-        console.log(pairObj)
+        //console.log(pairObj)
         return pairObj;
         
 
@@ -1828,7 +1828,7 @@ function checkTargetReq(target, pairingElOutput) {
 }
 
 function pairTemplate(pairObj) {
-  console.log(pairObj) //WHY NO ODDS AAAAA    
+ // console.log(pairObj) //WHY NO ODDS AAAAA    
   let htmlTemplate = `<div class="pairing"> <div class="pairparents">`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
@@ -1927,7 +1927,7 @@ function possiblePairsa(dragonName) {
                               }
             }
                else if (specialGuys.length == 1) {
-                console.log('one special guy! ', specialGuys[0])
+                //console.log('one special guy! ', specialGuys[0])
                   let specialGuy = allDragonData[specialGuys[0]]
                   if (specialGuy) {
                           for (const otherParentName of haveDragonsToCheck) { 
@@ -1959,7 +1959,7 @@ function possiblePairsa(dragonName) {
                           }
                   }
     }  else {
-                       console.log(dragonName, ' has no special guys :)')
+                       //console.log(dragonName, ' has no special guys :)')
                        return "NoSpecial"
        //targetsWithoutSpecialGuys.push(dragonName)
         //noSpecificDragonTargets([dragonName], haveDragonsToCheck)
@@ -2062,7 +2062,7 @@ function getPairingOutput(dragonLeftName, dragonRightName) {
                               pairingElementOutput.push(outputEl)
                             }
                           }
-                          console.log('pairing output for ', dragonLeftName,  dragonRightName, pairingElementOutput)
+                          //console.log('pairing output for ', dragonLeftName,  dragonRightName, pairingElementOutput)
                           pairingOutputs[dragonLeftName + `//` + dragonRightName] = pairingElementOutput
                                 return pairingElementOutput
                         }
@@ -2075,10 +2075,10 @@ function getSettings() {
         let defaultSettings = structuredClone(savedSettings);
         
         if (dragonarium.savedSettings) {
-                console.log('retrieving settings: ', dragonarium.savedSettings)
+               // console.log('retrieving settings: ', dragonarium.savedSettings)
                 retrievedSettings = Object.assign(retrievedSettings, dragonarium.savedSettings);
         }
-        console.log('settings: ', retrievedSettings, defaultSettings)
+       // console.log('settings: ', retrievedSettings, defaultSettings)
         document.getElementById('tab-buttons').querySelector(`[data-key="${retrievedSettings.currentTab}"]`).click();
         if (defaultSettings.multiparents != retrievedSettings.multiparents) {
                 let buttons = document.getElementById('multiparents').querySelector('.settings-buttons');
