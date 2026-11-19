@@ -1281,7 +1281,9 @@ function createTargetCards() {
       } else if (allDragonData[dragonName].conditions.includes('Fireflies')) {
         cardEl.classList.add('weatherfireflies')
       }
-      
+      if (allDragonData[dragonName].conditions.includes('Evolve')) {
+        cardEl.classList.add('evolve')
+      }
       
       if (!allDragonData[dragonName].limited) {
         cardEl.classList.add('perm');
