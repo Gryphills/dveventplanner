@@ -263,6 +263,7 @@ body {
   }
 }
 .rifttrait {
+      display:none;
       background-color: transparent;
       border: 0px;
       color: #46466a69
