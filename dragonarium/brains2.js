@@ -2201,7 +2201,7 @@ document.addEventListener("DOMContentLoaded", function() {
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     lastUpdate = allDragonData.lastUpdate;
     delete allDragonData.lastUpdate;
-    document.getElementById('lastupdated').textContent = lastUpdate;
+    document.getElementById('lastupdated').textContent = 'Last Updated: ' + lastUpdate;
         
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
     sortAvailDragons()
