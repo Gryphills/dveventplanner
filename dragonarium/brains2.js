@@ -1807,7 +1807,7 @@ function checkTargetReq(target, pairingElOutput) {
 }
 
 function pairTemplate(pairObj) {
-        
+  console.log(pairObj)     
   let htmlTemplate = `<div class="pairing"> <div class="pairparents">`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
