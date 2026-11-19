@@ -1912,7 +1912,7 @@ function parentTemplate(parent) {
                 <img src="`
           if (allDragonImgs[parent].Adult) {
                   parenthtml += allDragonImgs[parent].Adult
-          } else if (allDragonImg[parent].Old) {
+          } else if (allDragonImgs[parent].Old) {
                   parenthtml += allDragonImgs[parent].Old
           }
           parenthtml += `">
