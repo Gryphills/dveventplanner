@@ -188,6 +188,7 @@ body {
     right:-16px;
     z-index: 1;
     top: -15px;
+    height: 100%;
   
     .minibutton {
         width:40px;
@@ -205,6 +206,18 @@ body {
         background-color: #442a5f;
         color:#cac5f0;
     }
+    .rifttrait {
+      background-color: transparent;
+      border: 0px;
+      color: white;
+      font-weight: bold;
+      position: absolute;
+      bottom: 0px;
+    }
+    .toggled.rifttrait {
+      color: #584e3f;
+    }
+    
 }
 .tooltip {
     display:block;
