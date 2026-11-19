@@ -774,7 +774,18 @@ function buildDragonCard(name, data) {
              if (data.combo.special.includes("Evolve")) {
                       cardhtml += ` evolution `
              }
+             if (data.combo.special.includes("night")) {
+                      cardhtml += ` breednight `
+             } else if (data.combo.special.includes("day")) {
+                      cardhtml += ` breedday `
+             }
+             if (data.combo.special.includes("blossoms")) {
+                      cardhtml += ` weatherblossoms `
+             } else if (data.combo.special.includes("fireflies")) {
+                      cardhtml += ` weatherfireflies `
+             }
     }
+
     if (data.elements) {
         for (const elem of data.elements) {
                 if (elementChart.basics.includes(elem)) {
@@ -1275,9 +1286,9 @@ function createTargetCards() {
           }
       }
       if (allDragonData[dragonName].conditions.includes('Night')) {
-        cardEl.classList.add('night')
+        cardEl.classList.add('breednight')
       } else if (allDragonData[dragonName].conditions.includes('Day')) {
-        cardEl.classList.add('day')
+        cardEl.classList.add('breedday')
       }
       if (allDragonData[dragonName].conditions.includes('Blossoms')) {
         cardEl.classList.add('weatherblossoms')
@@ -1403,7 +1414,7 @@ function updateTargetCard(dragonName, statusId, statusNum) {
   let targetCardDiv = document.querySelector('.targetdragons')
   let targetCard = targetCardDiv.querySelector(`.${dragonName}`)
   if (!targetCard) {
-        console.log(`cant find ${dragonName} in `, targetCardDiv)
+        //console.log(`cant find ${dragonName} in `, targetCardDiv)
           return
   }
 
