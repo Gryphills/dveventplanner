@@ -264,7 +264,7 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         console.log(dragonName.id)
         let inDiv = dragonarium[dragonName.id].status;
         document.getElementById(`tabbutton-${inDiv}`).click()
-        while (!document.getElementById(`tabbutton-${inDiv}`).classList.contains('open'))) {
+        while (!document.getElementById(`tabbutton-${inDiv}`).classList.contains('open')) {
                 console.log('opening ' , inDiv, '...')
         }
         window.location.href = window.location.href.split('#')[0] + dragonName.replaceAll(' ', '')
