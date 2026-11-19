@@ -206,28 +206,7 @@ body {
         background-color: #442a5f;
         color:#cac5f0;
     }
-    .rifttrait {
-      background-color: transparent;
-      border: 0px;
-      color: #46466a69
-      color: #944cdf66;
-      font-weight: bold;
-      position: absolute;
-      bottom: -35px;
-      font-size: 50px;
-      line-height: 50px;
-      width:50px;
-      height:50px;
-      cursor: pointer;
-      
-      .tooltip {
-        left: 50px;
-      }
-    }
-    .toggled.rifttrait {
-      color: #7645a9;
-      background-color: transparent;
-    }
+    
     
 }
 .tooltip {
@@ -260,6 +239,28 @@ body {
     -webkit-transition: opacity 0.5s ease-in-out;
   }
 }
+.rifttrait {
+      background-color: transparent;
+      border: 0px;
+      color: #46466a69
+      color: #944cdf66;
+      font-weight: bold;
+      position: absolute;
+      bottom: -35px;
+      font-size: 50px;
+      line-height: 50px;
+      width:50px;
+      height:50px;
+      cursor: pointer;
+      
+      .tooltip {
+        left: 50px;
+      }
+    }
+  .toggled.rifttrait {
+      color: #7645a9;
+      background-color: transparent;
+  }
 .limited.avail::before {
     content: '⧗';
     position:absolute;
