@@ -1809,15 +1809,23 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                         }
                 }
         }
-        let totalCurrent = Number(breedsOdds) + Number(clonePercentage)
+        let totalCurrent = Number(breedsOdds) //+ Number(clonePercentage)
         //console.log('current: ' , totalCurrent, ` (${Number(breedsOdds)} + ${Number(clonePercentage)}`)
-        let leftForHybrids = 1 - (Number(totalCurrent) - 0.99)
+        let leftForHybrids = 1 - Math.min((Number(totalCurrent) + Number(clonePercentage)), 0.99)
         let hybridOdds = Number(leftForHybrids) / hybrids.length
-        //let 
+        if (hybridOdds == NaN) {
+                hybridOdds = 0;
+        }
+        let totalblocked = Number(clonePercentage) + leftForHybrids
+        let leftforBreeds = 1 - totalblocked
+        let multiplierOdds = leftforBreeds / totalCurrent
+        if (multiplierOdds == NaN) {
+                multiplierOdds = 0;
+        }
         //let 
         
         pairObj.hybridOdds = hybridOdds
-        pairObj.multiplierOdds= (1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
+        pairObj.multiplierOdds = multiplierOdds //(1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
         pairObj.breeds = breeds
         pairObj.hybrids = hybrids
         //console.log(pairObj)
