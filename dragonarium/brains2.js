@@ -251,7 +251,7 @@ function addSortButtons() {
         //document.head.appendChild(styleEl);
 }
 
-function jumpToDragon(dragon, clickedEl = undefined) {
+function jumpToDragon(dragonName, clickedEl = undefined) {
         /*if (clickedEl) {
                 let back = clickedEl.closest('dragonCard')
                 if (back) {
