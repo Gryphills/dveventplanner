@@ -1502,7 +1502,14 @@ function updateTargetSearch() {
   for (const target of targets) {
         let checkPairs = possiblePairsa(target, validPairObj)
           if (checkPairs != "NoSpecial") {
-                  Object.assign(validPairObj, checkPairs)
+                  for (const pairname of Object.keys(checkPairs)) {
+                          if (validPairObj[pairname]) {
+                                validPairObj[pairname].targetsMet = validPairObj[pairname].targetsMet.push(target)
+                          } else {
+                                validPairObj[pairname] = checkPairs[pairname]  
+                          }
+                  }
+                  //Object.assign(validPairObj, checkPairs)
                 //pairsForEachTarget[target] = checkPairs
           } else {
                 guysWithNoSpecialGuys.push(target)
