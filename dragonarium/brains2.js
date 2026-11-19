@@ -1258,14 +1258,18 @@ function createTargetCards() {
       //console.log(cardEl, cardEl.innerHTML);
       cardEl = cardEl.children[0];
 
-      if (allDragonData[dragonName].requirements) {
+      if (allDragonData[dragonName].combo.requirements) {
               let specialguycount = 0
-        for (const required of allDragonData[dragonName].requirements) {
+          for (const required of allDragonData[dragonName].requirements) {
                 if (!elementChart.basics.includes(required)) {
                         specialguycount += 1
                 }
-        }
-              cardEl.dataset.specialguys = specialguycount
+          }
+          if (specialguycount > 1) {
+              cardEl.classList.add('twospecialguys')
+          } else if (specialguycount == 1) {
+              cardEl.classList.add('onespecialguy')
+          }
       }
       if (allDragonData[dragonName].conditions.includes('Night')) {
         cardEl.classList.add('night')
