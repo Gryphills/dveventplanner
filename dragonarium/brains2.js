@@ -728,7 +728,22 @@ function cycleViews(imgEl) {
   
 }
 
-
+function riftTraitButton(el) {
+        if (Number(el.dataset.toggle) = 0) {
+                el.dataset.toggle = 1
+                el.closest('.dragonCard').classList.add('rifted')
+                el.classList.add('toggled')
+                //document.querySelector('.targetdragons').querySelector('.'+ el.closest('.dragonCard').id).classList.add('rifted')
+        }
+        else {
+                el.dataset.toggle = 0
+                el.closest('.dragonCard').classList.remove('rifted')
+                el.classList.remove('toggled')
+                
+        }
+        dragonarium[el.closest('.dragonCard').id].rifted = Number(el.dataset.toggle)
+        saveData()
+}
 
 
 
@@ -774,7 +789,7 @@ function buildDragonCard(name, data) {
         <div class="minibutton havec" data-toggle=0 onclick="haveCard(this)" >✔<div class="tooltip">Acquired</div></div>
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" >🗡<div class="tooltip">Shadow Realm</div></div>
     </div>
-    <div class="minibutton rifttrait">𖦹<div class="tooltip">Rift Version Acquired</div></div>`
+    <div class="minibutton rifttrait" onclick="riftTraitButton(this)" data-toggle=0>𖦹<div class="tooltip">Rift Version Acquired</div></div>`
     
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
     if (allDragonImgs[name]) {
@@ -2093,12 +2108,13 @@ function getSettings() {
         let defaultSettings = savedSettings;
         console.log('retrieved ', retrievedSettings)
         if (retrievedSettings) {
-                
                // console.log('retrieving settings: ', dragonarium.savedSettings)
                 //retrievedSettings = Object.assign(retrievedSettings, dragonarium.savedSettings);
         
                // console.log('settings: ', retrievedSettings, defaultSettings)
-                document.getElementById('tab-buttons').querySelector(`[data-key="${retrievedSettings.currentTab}"]`).click();
+                if (retrievedSettings.currentTab) {
+                        document.getElementById('tab-buttons').querySelector(`[data-key="${retrievedSettings.currentTab}"]`).click();
+                }
                 if (defaultSettings.multiparents != retrievedSettings.multiparents) {
                         let buttons = document.getElementById('multiparents').querySelector('.settings-buttons');
                         for (const setting of Object.keys(defaultSettings.multiparents)) {
