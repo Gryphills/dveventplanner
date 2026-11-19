@@ -1471,17 +1471,17 @@ function updateTargetSearch() {
   possiblepairdiv.appendChild(tempTextEl)
 
   let targets = []
-  let allRequirements = []
+  //let allRequirements = []
   
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
-    let dragonRequires = allDragonData[dragonName].combo.requirements
-    for (const needed of dragonRequires) {
-      if (!allRequirements.includes(needed)) {
-        allRequirements.push(needed);
-      }
-    }
+    //let dragonRequires = allDragonData[dragonName].combo.requirements
+    //for (const needed of dragonRequires) {
+    //  if (!allRequirements.includes(needed)) {
+    //    allRequirements.push(needed);
+    //  }
+    //}
   }
   //console.log(targets, ' require ', allRequirements)
   //now we haveall our required stuff, and all our targets. lets start with uh
@@ -1499,8 +1499,10 @@ function updateTargetSearch() {
   let guysWithNoSpecialGuys = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
 
-  for (const target of targets) {
-        let checkPairs = possiblePairsa(target, validPairObj)
+  for (const target of Array.from(targetCardDiv.children)) {
+          let dragonName = target.dataset.dragonName
+
+        /*let checkPairs = possiblePairsa(target, validPairObj)
           if (checkPairs != "NoSpecial") {
                   for (const pairname of Object.keys(checkPairs)) {
                           if (validPairObj[pairname]) {
@@ -1511,9 +1513,9 @@ function updateTargetSearch() {
                   }
                   //Object.assign(validPairObj, checkPairs)
                 //pairsForEachTarget[target] = checkPairs
-          } else {
-                guysWithNoSpecialGuys.push(target)
-          }
+          } else {*/
+                guysWithNoSpecialGuys.push(dragonName)
+          //}
           
   }
 
@@ -1538,6 +1540,8 @@ function updateTargetSearch() {
         haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
         for (const b of haveDragonsToCheck) {
                 let pairingOutput = allDragonData[a].elements.concat(allDragonData[b].elements)
+                pairingOutput.push(a)
+                pairingOutput.push(b)
                 for (const guy of guysWithNoSpecialGuys) {
                         let validPair = checkTargetReq(guy, pairingOutput)
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
