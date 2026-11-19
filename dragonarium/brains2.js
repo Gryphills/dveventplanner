@@ -12,6 +12,7 @@ let backOne = "backtotop";
 let pairingOutputs = {}
 let pairsForDragons = {}
 let availableDragonNames = []
+let lastUpdate = 'unknown!'
 
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
@@ -2198,6 +2199,10 @@ function getSettings() {
 document.addEventListener("DOMContentLoaded", function() {
     console.log('loaded dom!');
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
+    lastUpdate = allDragonData.lastUpdate;
+    delete allDragonData.lastUpdate;
+    document.getElementById('lastupdated').textContent = lastUpdate;
+        
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
     sortAvailDragons()
     allDragonImgs = JSON.parse(document.getElementById('dragonurls').textContent);
