@@ -729,7 +729,7 @@ function cycleViews(imgEl) {
 }
 
 function riftTraitButton(el) {
-        if (Number(el.dataset.toggle) = 0) {
+        if (Number(el.dataset.toggle) == 0) {
                 el.dataset.toggle = 1
                 el.closest('.dragonCard').classList.add('rifted')
                 el.classList.add('toggled')
