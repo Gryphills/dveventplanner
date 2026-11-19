@@ -1613,18 +1613,19 @@ function updateTargetSearch() {
                 let oddsOfCool = 0;
                 for (const metTarget of pairObj.targetsMet) {
                         let targetData = allDragonData[metTarget]
-                        
+                        if (safety < 20) {
+                                safety += 1
+                                console.log(targetData.odds.base, pairObj.multiplierOdds)
+                        }
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
                         } else {
                                 oddsOfCool += Number(pairObj.hybridOdds)
                         }
-                        if (safety < 20) {
-                                safety += 1
-                                console.log(targetData.odds, pairObj)
-                          }
+                        
                 }
                 pairObj.oddsOfCool = oddsOfCool
+                  console.log(pairObj)
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                   
           }
@@ -1771,6 +1772,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         pairObj.multiplierOdds= (1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
         pairObj.breeds = breeds
         pairObj.hybrids = hybrids
+        console.log(pairObj)
         return pairObj;
         
 
@@ -1816,7 +1818,7 @@ function checkTargetReq(target, pairingElOutput) {
 }
 
 function pairTemplate(pairObj) {
-  console.log(pairObj)     
+  console.log(pairObj) //WHY NO ODDS AAAAA    
   let htmlTemplate = `<div class="pairing"> <div class="pairparents">`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
