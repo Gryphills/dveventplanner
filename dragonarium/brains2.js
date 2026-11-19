@@ -1491,7 +1491,7 @@ function targetSelect(element) {
 
 function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
-  let possiblepairdiv = document.querySelector('.possiblepairs')
+  let possiblepairdiv = document.querySelector('.pairholder')
 
   while (possiblepairdiv.firstElementChild) {
     possiblepairdiv.firstElementChild.remove()
@@ -1500,7 +1500,7 @@ function updateTargetSearch() {
   if (targetCardDiv.childElementCount < 2) {
         tempTextEl.textContent = "Select more than one dragon!"
   }
-  tempTextEl.textContent = "Calculating pairs..."
+  tempTextEl.textContent = "Calculating pairs, please wait a moment..."
   possiblepairdiv.appendChild(tempTextEl)
 
   let targets = []
@@ -1682,8 +1682,9 @@ function updateTargetSearch() {
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
+        tempTextEl.remove();
   } else {
-
+        tempTextEl.textContent = "No pairs found that meet more than one target dragon :(!"
   }
         
    /*     
@@ -1737,7 +1738,7 @@ function updateTargetSearch() {
   //now we need to build and add the pairs into the template thingy.
 
 
-  //tempTextEl.remove();
+  
 }
 
 function sortPairIntoArray(pairObj, array, property) {
