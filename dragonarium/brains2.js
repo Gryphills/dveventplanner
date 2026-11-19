@@ -1260,7 +1260,8 @@ function createTargetCards() {
 
       if (allDragonData[dragonName].combo.requirements) {
               let specialguycount = 0
-          for (const required of allDragonData[dragonName].requirements) {
+              
+          for (const required of allDragonData[dragonName].combo.requirements) {
                 if (!elementChart.basics.includes(required)) {
                         specialguycount += 1
                 }
