@@ -1614,7 +1614,7 @@ function updateTargetSearch() {
 
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
-        //if (pair.targetsMet.length > 1) {
+        if (pair.targetsMet.length > 1) {
                 //console.log(pairName, ' meets ', pair.targetsMet)
                 //if (validPairs.length == 0) {
                         validPairs.push(pair)
@@ -1623,7 +1623,7 @@ function updateTargetSearch() {
                         //console.log('tosort,,,')
                 //        validPairs = sortPairIntoArray(pair, validPairs);
                 //}
-        //}
+        }
   }
   //console.log('done sorting? ', validPairs)
 
@@ -1681,7 +1681,7 @@ function updateTargetSearch() {
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
         tempTextEl.remove();
   } else {
-        tempTextEl.textContent = "No pairs found :(! There might be something funky going on"
+        tempTextEl.textContent = "No pairs found that meet more than two targets!"
   }
         
    /*     
