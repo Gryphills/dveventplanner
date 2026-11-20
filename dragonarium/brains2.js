@@ -1739,16 +1739,23 @@ function getPairingWeights() {
                         //averageTime: settingsbox.querySelector('.weight-averagetime').value,
                         targetOdds: settingsbox.querySelector('.weight-targetodds').value,
                         newGuy: settingsbox.querySelector('.weight-newguy').value,
-                        includeShadow: settingsbox.querySelector('.includeShadow').checked
+                        //includeShadow: settingsbox.querySelector('.includeShadow').checked
                 }
         }
         return settingsWeights
 }
 function applyWeighting(settingsWeights, pairObj, targets) {
         //how do I even out these numbers?
-        let targetQuantity = pairObj.targetsMet.length / targets.length //percentage of targets met!
-        let targetOdds = pairObj.oddsOfCool //percentage of odds of cool. I feel like 15 is a very Good number? can be "100"?
-        let newGuyOdds = pairObj.newOdds
+        let maxWeighting = settingsWeights.weighting.targetQuantity + settingsWeights.weighting.targetOdds + settingsWeights.weighting.newGuy
+        let targetQuantity = (pairObj.targetsMet.length / targets.length) * settingsWeights.weighting.targetQuantity //percentage of targets met!
+        let targetOdds = ((pairObj.oddsOfCool*100) / 12) * settingsWeights.weighting.targetOdds //percentage of odds of cool. I feel like 15 is a very Good number? can be "100"? or 12?
+        let newGuyOdds = ((pairObj.newOdds*100) / 30) * settingsWeights.weighting.newGuy //lets say... 30% is 100?
+
+        let finalWeighting = (targetQuantity + targetOdds + newGuyOdds) / maxWeighting
+
+        pairObj.weightedValue = finalWeighting
+        
+        //okay
         
         return pairObj
         
@@ -1771,6 +1778,9 @@ function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
   let possiblepairdiv = document.querySelector('.pairsholder')
   let settingsWeights = getPairingWeights()
+  if (settingsWeights.pairpertarget < 1) {
+     settingsWeights.pairpertarget = 1
+  }
   //while (possiblepairdiv.firstElementChild) {
   //  possiblepairdiv.firstElementChild.remove()
   //}
@@ -1780,13 +1790,16 @@ function updateTargetSearch() {
   }*/
   //tempTextEl.textContent = "Calculating pairs, please wait a moment..."
   //possiblepairdiv.appendChild(tempTextEl)
-
+  let pairsNeededForTargets = {}
+  let pairCountTotal = 0
   let targets = []
   //let allRequirements = []
   
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
+    pairsNeededForTargets[dragonName] = settingsWeights.pairpertarget
+    pairCountTotal += 4
     //let dragonRequires = allDragonData[dragonName].combo.requirements
     //for (const needed of dragonRequires) {
     //  if (!allRequirements.includes(needed)) {
@@ -1809,10 +1822,11 @@ function updateTargetSearch() {
   //let pairsForEachTarget = {}
   let guysWithNoSpecialGuys = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
-
+  
+        
   for (const target of Array.from(targetCardDiv.children)) {
-          let dragonName = target.dataset.dragonName
-
+        let dragonName = target.dataset.dragonName
+        pairCountForTargets[dragonName] = 0
         /*let checkPairs = possiblePairsa(target, validPairObj)
           if (checkPairs != "NoSpecial") {
                   for (const pairname of Object.keys(checkPairs)) {
@@ -1825,7 +1839,7 @@ function updateTargetSearch() {
                   //Object.assign(validPairObj, checkPairs)
                 //pairsForEachTarget[target] = checkPairs
           } else {*/
-                guysWithNoSpecialGuys.push(dragonName)
+           guysWithNoSpecialGuys.push(dragonName)
           //}
           
   }
@@ -1935,24 +1949,36 @@ function updateTargetSearch() {
                 pairObj.oddsOfCool = oddsOfCool
                 pairObj = applyWeighting(settingsWeights, pairObj)
                   //console.log(pairObj)
-                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
+                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "weightedValue")
                   
           }
           validPairs = scoredPairs
   }
 
 
+  
 
-
+ 
+        
+  
 
    if (validPairs.length > 0) {
         let innerHtmlStuff = ''
-        let limit = 50
+           
         for (const pair of validPairs) {
-                let htmlStuff = pairTemplate(pair)
-                innerHtmlStuff += htmlStuff
-                limit -= 1;
-                if (limit == 0) {
+                let neededPair = 0
+                for (const targ of pair.targetsMet) {
+                        if (pairsNeededForTargets[dragonName] > 0) {
+                                neededPair += 1;
+                                pairsNeededForTargets[dragonName] -= 1
+                        }
+                }
+                if (neededPair) {
+                        let htmlStuff = pairTemplate(pair)
+                        innerHtmlStuff += htmlStuff
+                }
+                pairCountTotal -= 1;
+                if (pairCountTotal == 0) {
                         break;
                 }
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
@@ -1960,7 +1986,7 @@ function updateTargetSearch() {
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
         tempTextEl.remove();
   } else {
-        tempTextEl.textContent = "No pairs found that meet more than two targets!"
+        tempTextEl.textContent = "No pairs found that meet requirements :(!"
   }
         
    /*     
