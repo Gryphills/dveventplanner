@@ -1732,14 +1732,14 @@ function targetSelect(element) {
 function getPairingWeights() {
         let settingsbox = document.querySelector('.additionalsettings')
         let settingsWeights = {
-                minTargets: settingsbox.querySelector('.mintargets').value,
-                pairpertarget: settingsbox.querySelector('.pairpertarget').value,
+                minTargets: settingsbox.querySelector('#mintargets').value,
+                pairpertarget: settingsbox.querySelector('#pairpertarget').value,
                 weighting : {
-                        targetQuantity: settingsbox.querySelector('.weight-targetquantity').value,
-                        //averageTime: settingsbox.querySelector('.weight-averagetime').value,
-                        targetOdds: settingsbox.querySelector('.weight-targetodds').value,
-                        newGuy: settingsbox.querySelector('.weight-newguy').value,
-                        //includeShadow: settingsbox.querySelector('.includeShadow').checked
+                        targetQuantity: settingsbox.querySelector('#weight-targetquantity').value,
+                        //averageTime: settingsbox.querySelector('#weight-averagetime').value,
+                        targetOdds: settingsbox.querySelector('#weight-targetodds').value,
+                        newGuy: settingsbox.querySelector('#weight-newguy').value,
+                        //includeShadow: settingsbox.querySelector('#includeShadow').checked
                 }
         }
         return settingsWeights
