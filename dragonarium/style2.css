@@ -274,10 +274,11 @@ body {
       background-color: transparent;
   }*/
 
+.
 
 .limited.avail::before {
     content: '⧗';
-    position: relative;
+    position: absolute;
     top:-15px;
     left:-16px;
     background-color: #8355cc;
@@ -290,7 +291,7 @@ body {
 }
 .limited.unavail::before {
     content: '⧗';
-    position: relative;
+    position: absolute;
     top:-15px;
     left:-16px;
     background-color: lightgrey;
@@ -500,32 +501,34 @@ body {
   }
 }
 
-.minbutton.rifttrait {
-      background-color: transparent !important;
-      border: 0px !important;
-      margin-top: 25px;
-      background-image: url('https://i.postimg.cc/Prxvf5jc/riftbuttongrey.png');
-      background-size: cover;
-      width: 55px;
-      height: 55px;
-      position: absolute;
-      left: -6px;
-      /*color: #46466a69;
-      color: #944cdf66;
-      font-weight: bold;
-      
-      position: absolute;
-      top: 45px;
-      bottom: -35px;
-      font-size: 50px;
-      line-height: 50px;
-      width:50px;
-      height:50px;*/
-      cursor: pointer;
-      
-      .tooltip {
-        right: 55px;
-      }
+.minibuttons {
+  .minbutton.rifttrait {
+        background-color: transparent !important;
+        border: 0px !important;
+        margin-top: 25px;
+        background-image: url('https://i.postimg.cc/Prxvf5jc/riftbuttongrey.png');
+        background-size: cover;
+        width: 55px;
+        height: 55px;
+        position: absolute;
+        left: -6px;
+        /*color: #46466a69;
+        color: #944cdf66;
+        font-weight: bold;
+        
+        position: absolute;
+        top: 45px;
+        bottom: -35px;
+        font-size: 50px;
+        line-height: 50px;
+        width:50px;
+        height:50px;*/
+        cursor: pointer;
+        
+        .tooltip {
+          right: 55px;
+        }
+  }
 }
 .rifted {
   box-shadow: inset 0px 0px 15px #814eb8;
