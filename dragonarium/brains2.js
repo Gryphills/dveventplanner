@@ -1948,12 +1948,12 @@ function updateTargetSearch() {
                 }
                 pairObj.oddsOfCool = oddsOfCool
                 pairObj = applyWeighting(settingsWeights, pairObj, targets)
-                console.log(pairObj)
+                //console.log(pairObj)
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                   
           }
           validPairs = scoredPairs
-  } else {console.log('no valid pairs? tf?')}
+  } //else {console.log('no valid pairs? tf?')}
 
 
   
@@ -1964,7 +1964,7 @@ function updateTargetSearch() {
 
    if (validPairs.length > 0) {
         let innerHtmlStuff = ''
-           
+        console.log(pairCountTotal, ' total pairs I want')
         for (const pair of validPairs) {
                 let neededPair = 0
                 for (const targ of pair.targetsMet) {
@@ -1973,7 +1973,7 @@ function updateTargetSearch() {
                                 pairsNeededForTargets[dragonName] -= 1
                         }
                 }
-                if (neededPair) {
+                if (neededPair > 0) {
                         let htmlStuff = pairTemplate(pair)
                         innerHtmlStuff += htmlStuff
                 }
@@ -1984,7 +1984,7 @@ function updateTargetSearch() {
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
-        tempTextEl.remove();
+        tempTextEl.textContent = "AAA?"//.remove();
   } else {
         tempTextEl.textContent = "Having some bugs this afternoon, will fix shortly!" //"No pairs found that meet requirements :(!"
   }
