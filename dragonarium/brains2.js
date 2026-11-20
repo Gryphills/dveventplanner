@@ -1370,8 +1370,10 @@ function createTargetCards() {
       }
 
               
-      /* if (dragonarium[dragonName].fav) {
+       if (dragonarium[dragonName].fav) {
         cardEl.classList.add('favourite');
+       }
+               /*
         if (targetCardDiv.children.length == 0) {
           targetCardDiv.appendChild(cardEl);
         } else {
