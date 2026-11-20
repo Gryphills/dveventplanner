@@ -226,7 +226,7 @@ body {
         font-size: x-large;
         border-radius: 10px;
         cursor: pointer;
-        border: 2px solid #584e3f;
+        border: 2px solid #442a5f;
         line-height: 40px;
         position:relative;
         background-color: #bcb8f5;
@@ -269,13 +269,20 @@ body {
   }
 }
 .rifttrait {
-      background-color: transparent;
-      border: 0px;
-      color: #46466a69;
+      background-color: transparent !important;
+      border: 0px !important;
+      margin-top: 25px;
+      background-image: url('https://i.postimg.cc/Prxvf5jc/riftbuttongrey.png')
+      background-size: cover;
+      width: 55px;
+      height: 55px;
+      position: absolute;
+      left: -6px;
+      /*color: #46466a69;
       color: #944cdf66;
       font-weight: bold;
-      margin-top: 25px;
-      /*position: absolute;
+      
+      position: absolute;
       top: 45px;
       bottom: -35px;
       font-size: 50px;
@@ -285,7 +292,7 @@ body {
       cursor: pointer;
       
       .tooltip {
-        left: 50px;
+        right: 55px;
       }
     }
   /*.toggled.rifttrait {
@@ -295,6 +302,9 @@ body {
 
 .rifted {
   box-shadow: inset 0px 0px 15px #814eb8;
+  .rifttrait {
+    background-image: url('https://i.postimg.cc/Yq9L2CH5/riftbuttonpurplea.png')
+  }
 }
 .limited.avail::before {
     content: '⧗';
@@ -306,8 +316,8 @@ body {
     border-radius: 8px;
     width:40px;
     height:40px;
-    text-size:40px;
-    line-height:40px;
+    font-size: 35px;
+    line-height: 34px;
 }
 .limited.unavail::before {
     content: '⧗';
