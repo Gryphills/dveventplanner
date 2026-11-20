@@ -878,3 +878,21 @@ body {
 .impossible.owned {
   display:flex;
 }
+
+.cavebuttons {
+  display:flex;
+  img {
+    max-width: 200px;
+    filter: saturate(5%);
+  }
+  img::hover {
+    filter:saturate(50%);
+    transform:scale(1.1);
+  }
+  .caveselected {
+    filter: saturate(100%);
+  }
+  .caveselected::hover {
+    filter: saturate(100%);
+  }
+}
