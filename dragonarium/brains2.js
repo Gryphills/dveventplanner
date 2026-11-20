@@ -770,6 +770,9 @@ function buildDragonCard(name, data) {
     } else {
       cardhtml += ` perm`
     }
+    if (dragonarium[name].rifted == "1") {
+        cardhtml += ` rifted `
+    }
     if (data.combo.raw) {
             //console.log('why do we have raw for ', name)
         data.combo = processCombo(data.combo.raw)
