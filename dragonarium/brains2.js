@@ -1826,7 +1826,6 @@ function updateTargetSearch() {
         
   for (const target of Array.from(targetCardDiv.children)) {
         let dragonName = target.dataset.dragonName
-        pairCountForTargets[dragonName] = 0
         /*let checkPairs = possiblePairsa(target, validPairObj)
           if (checkPairs != "NoSpecial") {
                   for (const pairname of Object.keys(checkPairs)) {
