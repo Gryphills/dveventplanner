@@ -1799,7 +1799,7 @@ function updateTargetSearch() {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
     pairsNeededForTargets[dragonName] = Number(settingsWeights.pairpertarget)
-    pairCountTotal += 4
+    pairCountTotal += Number(settingsWeights.pairpertarget) + 5
     //let dragonRequires = allDragonData[dragonName].combo.requirements
     //for (const needed of dragonRequires) {
     //  if (!allRequirements.includes(needed)) {
@@ -1977,6 +1977,7 @@ function updateTargetSearch() {
 
    if (validPairs.length > 0) {
         let innerHtmlStuff = ''
+        let top10 = 10
         console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
         for (const pair of validPairs) {
                 let neededPair = 0
@@ -1987,13 +1988,14 @@ function updateTargetSearch() {
                                 pairsNeededForTargets[targ] =  pairsNeededForTargets[targ] - 1
                         }
                 }
-                if (neededPair > 0) {
+                if (neededPair > 0 || top10 > 0) {
+                        top10 -= 1
                         let htmlStuff = pairTemplate(pair)
                         innerHtmlStuff += htmlStuff
                         pairCountTotal -= 1;
                         console.log(`added ${pair.parentLeft}/${pair.parentRight}; ${pairCountTotal} pairs to go!`, pairsNeededForTargets)
                 } else {
-                        console.log(`skipping ${pair.parentLeft}/${pair.parentRight} because no targets met needed more pairs`)
+                        console.log(`skipping ${pair.parentLeft}/${pair.parentRight} because no targets met needed more pairs. Remaining: `, pairsNeededForTargets)
                 }
                 if (pairCountTotal == 0) {
                         console.log("count is now 0? breaking - ", pairsNeededForTargets)
