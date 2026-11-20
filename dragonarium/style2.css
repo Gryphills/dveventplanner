@@ -881,9 +881,14 @@ body {
 
 .cavebuttons {
   display:flex;
+  justify-content:center;
   img {
-    max-width: 200px;
+    max-height: 100px;
     filter: saturate(5%);
+    height: fit-content;
+    max-width: 100px;
+    width: 100px;
+    align-self: center;
   }
   img::hover {
     filter:saturate(50%);
