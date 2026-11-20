@@ -1905,7 +1905,7 @@ function updateTargetSearch() {
 
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
-        if (pair.targetsMet.length > Number(settingsWeights.minTargets)) {
+        if (pair.targetsMet.length > Number(settingsWeights.minTargets) - 1) {
                 //console.log(pairName, ' meets ', pair.targetsMet)
                 //if (validPairs.length == 0) {
                         validPairs.push(pair)
