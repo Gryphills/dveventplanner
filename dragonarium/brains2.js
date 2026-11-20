@@ -1379,7 +1379,7 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
   }
   let lastFavCard;
   let lastWantCard;
-  let toSection = 'init'
+  //let toSection = 'init'
   let sectionOrder = ['want', 'have', 'init', 'shadow']
   let letterIsBefore = true;
   let dragonName = cardEl.dataset.dragonName
@@ -1398,8 +1398,8 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
         cardEl.classList.add('favourite');
   }
   for (const sectionsName of sectionOrder) {
-          while (checkCard.dataset.status == sectionsName && letterIsBefore == true) {
-                if (sectionsName == toSection) {
+          while (checkCard != null && letterIsBefore == true) {
+                if (sectionsName == checkCard.dataset.status) {
                         let checkLetter = checkCard.dataset.dragonName
                         let sorted = [checkLetter, dragonName].sort()
                         if (sorted[0] == dragonName) {
