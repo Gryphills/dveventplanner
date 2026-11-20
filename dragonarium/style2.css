@@ -823,7 +823,7 @@ body {
   }
 }
 
-/*.breednight {
+.breednight {
   .breedinginfo {
     h4::after {
       content: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
@@ -860,7 +860,7 @@ body {
       top:-4px;
       left: -4px;
   }
-}*/
+}
 
 .oopsie {
   height: 200px;
