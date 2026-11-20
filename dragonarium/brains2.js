@@ -1729,11 +1729,48 @@ function targetSelect(element) {
 }
 
 
+function getPairingWeights() {
+        let settingsbox = document.querySelector('.additionalsettings')
+        let settingsWeights = {
+                minTargets: settingsbox.querySelector('.mintargets').value,
+                pairpertarget: settingsbox.querySelector('.pairpertarget').value,
+                weighting = {
+                        targetQuantity: settingsbox.querySelector('.weight-targetquantity').value,
+                        //averageTime: settingsbox.querySelector('.weight-averagetime').value,
+                        targetOdds: settingsbox.querySelector('.weight-targetodds').value,
+                        newGuy: settingsbox.querySelector('.weight-newguy').value,
+                        includeShadow: settingsbox.querySelector('.includeShadow').checked
+                }
+        }
+        return settingsWeights
+}
+function applyWeighting(settingsWeights, pairObj, targets) {
+        //how do I even out these numbers?
+        let targetQuantity = pairObj.targetsMet.length / targets.length //percentage of targets met!
+        let targetOdds = pairObj.oddsOfCool //percentage of odds of cool. I feel like 15 is a very Good number? can be "100"?
+        let newGuyOdds = pairObj.newOdds
+        
+        return pairObj
+        
+}
+/*
+        <div class="additionalsettings" style="display:none;">
+            <label>Minimum Targets:<input type="number" id="mintargets" value=2 ></label>
+            <label>Show at least <input type="number" id="pairpertarget" value=1 > valid pairs per Target</label>
+            Sorting Weight for pair qualities:
+            <label>Targets/pair <input type="number" id="weight-targetquantity" value=2 ></label>
+            <label>Lower Average Breed Time <input type="number" id="weight-averagetime" value=1 ></label>
+            <label>Odds for getting any target <input type="number" id="weight-targetodds" value=5 ></label>
+            <label>Odds for getting a dragon you don't have (target or not) <input type="number" id="weight-newguy" value=3 ></label>
+            <label>Include shadow realm dragons <input type="checkbox" id="includeShadow" checked></label>
+          </div>
+          */
 
 function updateTargetSearch() {
+
   let targetCardDiv = document.querySelector('.targets-selected');
   let possiblepairdiv = document.querySelector('.pairsholder')
-
+  let settingsWeights = getPairingWeights()
   //while (possiblepairdiv.firstElementChild) {
   //  possiblepairdiv.firstElementChild.remove()
   //}
@@ -1855,7 +1892,7 @@ function updateTargetSearch() {
 
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
-        if (pair.targetsMet.length > 1) {
+        if (pair.targetsMet.length > settingsWeights.minTargets) {
                 //console.log(pairName, ' meets ', pair.targetsMet)
                 //if (validPairs.length == 0) {
                         validPairs.push(pair)
@@ -1896,6 +1933,7 @@ function updateTargetSearch() {
                         
                 }
                 pairObj.oddsOfCool = oddsOfCool
+                pairObj = applyWeighting(settingsWeights, pairObj)
                   //console.log(pairObj)
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                   
@@ -2451,7 +2489,7 @@ function calculateParentsPressed() {
           tempTextEl.textContent = "Calculating Pairs, please wait a moment..."
           possiblepairdiv.appendChild(tempTextEl)
 
-          requestAnimationFrame(updateTargetSearch())
+          requestAnimationFrame(updateTargetSearch)
 }
 
 
