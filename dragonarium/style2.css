@@ -268,44 +268,13 @@ body {
     -webkit-transition: opacity 0.5s ease-in-out;
   }
 }
-.rifttrait {
-      background-color: transparent !important;
-      border: 0px !important;
-      margin-top: 25px;
-      background-image: url('https://i.postimg.cc/Prxvf5jc/riftbuttongrey.png')
-      background-size: cover;
-      width: 55px;
-      height: 55px;
-      position: absolute;
-      left: -6px;
-      /*color: #46466a69;
-      color: #944cdf66;
-      font-weight: bold;
-      
-      position: absolute;
-      top: 45px;
-      bottom: -35px;
-      font-size: 50px;
-      line-height: 50px;
-      width:50px;
-      height:50px;*/
-      cursor: pointer;
-      
-      .tooltip {
-        right: 55px;
-      }
-    }
+
   /*.toggled.rifttrait {
       color: #7645a9;
       background-color: transparent;
   }*/
 
-.rifted {
-  box-shadow: inset 0px 0px 15px #814eb8;
-  .rifttrait {
-    background-image: url('https://i.postimg.cc/Yq9L2CH5/riftbuttonpurplea.png')
-  }
-}
+
 .limited.avail::before {
     content: '⧗';
     position: relative;
@@ -531,8 +500,39 @@ body {
   }
 }
 
-
-
+.rifttrait {
+      background-color: transparent !important;
+      border: 0px !important;
+      margin-top: 25px;
+      background-image: url('https://i.postimg.cc/Prxvf5jc/riftbuttongrey.png')
+      background-size: cover;
+      width: 55px;
+      height: 55px;
+      position: absolute;
+      left: -6px;
+      /*color: #46466a69;
+      color: #944cdf66;
+      font-weight: bold;
+      
+      position: absolute;
+      top: 45px;
+      bottom: -35px;
+      font-size: 50px;
+      line-height: 50px;
+      width:50px;
+      height:50px;*/
+      cursor: pointer;
+      
+      .tooltip {
+        right: 55px;
+      }
+}
+.rifted {
+  box-shadow: inset 0px 0px 15px #814eb8;
+  .rifttrait {
+    background-image: url('https://i.postimg.cc/Yq9L2CH5/riftbuttonpurplea.png')
+  }
+}
 #multiparents {
   text-align: center;
 }
