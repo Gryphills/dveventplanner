@@ -735,6 +735,7 @@ function riftTraitButton(el) {
                 el.dataset.toggle = 1
                 el.closest('.dragonCard').classList.add('rifted')
                 el.classList.add('toggled')
+                el.closest('.dragonCard').querySelector('.havec').click()
                 //document.querySelector('.targetdragons').querySelector('.'+ el.closest('.dragonCard').id).classList.add('rifted')
         }
         else {
@@ -1404,10 +1405,11 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
                 if (sectionsName == checkCard.dataset.status) {
                         let checkLetter = checkCard.dataset.dragonName
                         let sorted = [checkLetter, dragonName].sort()
+                        console.log(sorted, dragonName)
                         if (sorted[1] == dragonName) {
                                 checkCard.before(cardEl)
+                                console.log(dragonName, ' goes before ', checkLetter)
                                 letterIsBefore = false
-                                break;
                                 
                         } else {
                                 checkCard = checkCard.nextElementSibling
