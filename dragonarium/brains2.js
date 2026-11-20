@@ -1871,7 +1871,7 @@ function updateTargetSearch() {
  
 
 
-
+ let stopp = []
   for (const a of haveDragonsToCheck) {
         haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
         for (const b of haveDragonsToCheck) {
@@ -1882,8 +1882,20 @@ function updateTargetSearch() {
                 let sorted = [a, b].sort()
                 for (const guy of targets) {
                         let validPair = checkTargetReq(guy, pairingOutput)
-                        if (pairingOutput.toString().includes('irefly') && pairingOutput.toString().includes('hrysalis')) {
-                                console.log('in theory, this should be dottys pair... ', pairingOutput, guy, guysWithTwoSpecialGuys)
+                        if (sorted.includes('Firefly') && sorted.includes('Chrysalis')) {
+                                console.log('in theory, this might be dottys pair...? ', sorted, guy, guysWithTwoSpecialGuys)
+                        }
+                        if (sorted.includes('Faux') && !stopp.includes('Faux')) {
+                                console.log('faux time!)
+                                stopp.push('Faux')
+                        }
+                        if (sorted.includes('Glowwing') && !stopp.includes('Glowwing')) {
+                                console.log('Glowwing time!)
+                                stopp.push('Glowwing')
+                        }
+                        if (sorted.includes('Chrysalis') && !stopp.includes('Chrysalis')) {
+                                console.log('Chrysalis time!)
+                                stopp.push('Chrysalis')
                         }
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                         if (validPair) {
