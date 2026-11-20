@@ -1734,15 +1734,15 @@ function updateTargetSearch() {
   let targetCardDiv = document.querySelector('.targets-selected');
   let possiblepairdiv = document.querySelector('.pairsholder')
 
-  while (possiblepairdiv.firstElementChild) {
-    possiblepairdiv.firstElementChild.remove()
-  }
-  let tempTextEl = document.createElement('p')
+  //while (possiblepairdiv.firstElementChild) {
+  //  possiblepairdiv.firstElementChild.remove()
+  //}
+  let tempTextEl = document.getElementById('temptextel')
   /*if (targetCardDiv.childElementCount < 2) {
         tempTextEl.textContent = "Select more than one dragon!"
   }*/
-  tempTextEl.textContent = "Calculating pairs, please wait a moment..."
-  possiblepairdiv.appendChild(tempTextEl)
+  //tempTextEl.textContent = "Calculating pairs, please wait a moment..."
+  //possiblepairdiv.appendChild(tempTextEl)
 
   let targets = []
   //let allRequirements = []
@@ -2437,7 +2437,22 @@ function getSettings() {
         dragonarium.savedSettings = retrievedSettings;
 }
 
+function calculateParentsPressed() {
+          let possiblepairdiv = document.querySelector('.pairsholder');
+        
+          while (possiblepairdiv.firstElementChild) {
+            possiblepairdiv.firstElementChild.remove()
+          }
+          let tempTextEl = document.createElement('p')
+          tempTextEl.id = "temptextel"
+          /*if (targetCardDiv.childElementCount < 2) {
+                tempTextEl.textContent = "Select more than one dragon!"
+          }*/
+          tempTextEl.textContent = "Calculating Pairs, please wait a moment..."
+          possiblepairdiv.appendChild(tempTextEl)
 
+          requestAnimationFrame(updateTargetSearch())
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
