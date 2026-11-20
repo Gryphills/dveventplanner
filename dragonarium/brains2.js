@@ -2203,9 +2203,12 @@ function pairTemplate(pairObj) {
     if (formatOdds == 0) {
         formatOdds = "??"
     }
-        
+    let additionalClasses = ''
     //console.log(targetData.odds, pairObj)
-    htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
+    if (allDragonData[validTarget].conditions != "") {
+        additionalClasses = allDragonData[validTarget].conditions
+    }
+    htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
