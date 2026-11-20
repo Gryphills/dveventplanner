@@ -1964,13 +1964,14 @@ function updateTargetSearch() {
 
    if (validPairs.length > 0) {
         let innerHtmlStuff = ''
-        console.log(pairCountTotal, ' total pairs I want')
+        console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length)
         for (const pair of validPairs) {
                 let neededPair = 0
                 for (const targ of pair.targetsMet) {
-                        if (pairsNeededForTargets[dragonName] > 0) {
+                        //console.log(
+                        if (pairsNeededForTargets[targ] > 0) {
                                 neededPair += 1;
-                                pairsNeededForTargets[dragonName] -= 1
+                                pairsNeededForTargets[targ] -= 1
                         }
                 }
                 if (neededPair > 0) {
