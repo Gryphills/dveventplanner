@@ -1734,7 +1734,7 @@ function getPairingWeights() {
         let settingsWeights = {
                 minTargets: settingsbox.querySelector('.mintargets').value,
                 pairpertarget: settingsbox.querySelector('.pairpertarget').value,
-                weighting = {
+                weighting : {
                         targetQuantity: settingsbox.querySelector('.weight-targetquantity').value,
                         //averageTime: settingsbox.querySelector('.weight-averagetime').value,
                         targetOdds: settingsbox.querySelector('.weight-targetodds').value,
