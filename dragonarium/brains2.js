@@ -1984,7 +1984,7 @@ function updateTargetSearch() {
                         //console.log(
                         if (pairsNeededForTargets[targ] > 0) {
                                 neededPair += 1;
-                                Number(pairsNeededForTargets[targ]) -= 1
+                                pairsNeededForTargets[targ] =  pairsNeededForTargets[targ] - 1
                         }
                 }
                 if (neededPair > 0) {
