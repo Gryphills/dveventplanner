@@ -1793,6 +1793,13 @@ function updateTargetSearch() {
   let pairsNeededForTargets = {}
   let pairCountTotal = 0
   let targets = []
+
+  let validPairObj = {}
+  let validPairs = []
+  //let pairsForEachTarget = {}
+  //let guysWithNoSpecialGuys = []
+  let guysWithTwoSpecialGuys = []
+  let specialPairs = []
   //let allRequirements = []
   
   for (const target of Array.from(targetCardDiv.children)) {
@@ -1800,6 +1807,11 @@ function updateTargetSearch() {
     targets.push(dragonName);
     pairsNeededForTargets[dragonName] = Number(settingsWeights.pairpertarget)
     pairCountTotal += Number(settingsWeights.pairpertarget) + 5
+    if (target.classList.contains('twospecialguys')) {
+                guysWithTwoSpecialGuys.push(dragonName)
+                pairsNeededForTargets[dragonName] = 1
+    }
+    //guysWithNoSpecialGuys.push(dragonName)
     //let dragonRequires = allDragonData[dragonName].combo.requirements
     //for (const needed of dragonRequires) {
     //  if (!allRequirements.includes(needed)) {
@@ -1817,15 +1829,10 @@ function updateTargetSearch() {
           //}
   }
   
-  let validPairObj = {}
-  let validPairs = []
-  //let pairsForEachTarget = {}
-  let guysWithNoSpecialGuys = []
-  let guysWithTwoSpecialGuys = []
-  let specialPairs = []
+  
   //console.log('checking dragons we have: ', haveDragonsToCheck);
   
-        
+  /*      
   for (const target of Array.from(targetCardDiv.children)) {
         let dragonName = target.dataset.dragonName
           if (target.classList.contains('twospecialguys')) {
@@ -1842,11 +1849,11 @@ function updateTargetSearch() {
                   }
                   //Object.assign(validPairObj, checkPairs)
                 //pairsForEachTarget[target] = checkPairs
-          } else {*/
+          } else {
            guysWithNoSpecialGuys.push(dragonName)
           //}
           
-  }
+  }*/
 
   //for (const
 
@@ -1873,12 +1880,13 @@ function updateTargetSearch() {
                 pairingOutput.push(b)
                 let specialPair = false
                 let sorted = [a, b].sort()
-                for (const guy of guysWithNoSpecialGuys) {
+                for (const guy of targets) {
                         let validPair = checkTargetReq(guy, pairingOutput)
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                         if (validPair) {
                                 if (guysWithTwoSpecialGuys.includes(guy)) {
                                         specialPair = true;
+                                        console.log('FOUND SPECIAL PAIR FOR ', guy)
                                 }
                               //console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
                               
@@ -1912,13 +1920,16 @@ function updateTargetSearch() {
                 }
                 if (specialPair) {
                         specialPairs.push(`${sorted[0]}//${sorted[1]}`)
+                        validPairObj[`${sorted[0]}//${sorted[1]}`].specialPair = true
+                        console.log('marked as special pair!')
                 }
         }
   }
-
+        //console.log(specialPairs)
+        
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
-        if (pair.targetsMet.length > Number(settingsWeights.minTargets) - 1 || specialPairs.includes(pairName)) {
+        if (pair.targetsMet.length > Number(settingsWeights.minTargets) - 1 || pair.specialPair == true) {
                 //console.log(pairName, ' meets ', pair.targetsMet)
                 //if (validPairs.length == 0) {
                         validPairs.push(pair)
@@ -1981,12 +1992,16 @@ function updateTargetSearch() {
         console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
         for (const pair of validPairs) {
                 let neededPair = 0
-                for (const targ of pair.targetsMet) {
-                        //console.log(
-                        if (pairsNeededForTargets[targ] > 0) {
-                                neededPair += 1;
-                                pairsNeededForTargets[targ] =  pairsNeededForTargets[targ] - 1
+                if (!pair.specialPair) {
+                        for (const targ of pair.targetsMet) {
+                                //console.log(
+                                if (pairsNeededForTargets[targ] > 0) {
+                                        neededPair += 1;
+                                        pairsNeededForTargets[targ] =  pairsNeededForTargets[targ] - 1
+                                }
                         }
+                } else {
+                        neededPair = 5
                 }
                 if (neededPair > 0 || top10 > 0) {
                         top10 -= 1
@@ -1995,7 +2010,7 @@ function updateTargetSearch() {
                         pairCountTotal -= 1;
                         console.log(`added ${pair.parentLeft}/${pair.parentRight}; ${pairCountTotal} pairs to go!`, pairsNeededForTargets)
                 } else {
-                        console.log(`skipping ${pair.parentLeft}/${pair.parentRight} because no targets met needed more pairs. Remaining: `, pairsNeededForTargets)
+                        //console.log(`skipping ${pair.parentLeft}/${pair.parentRight} because no targets met needed more pairs. Remaining: `, pairsNeededForTargets)
                 }
                 if (pairCountTotal == 0) {
                         console.log("count is now 0? breaking - ", pairsNeededForTargets)
@@ -2004,7 +2019,7 @@ function updateTargetSearch() {
                 
         }
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
-           console.log('html added!')
+           console.log('html added!', pairsNeededForTargets)
         //tempTextEl.textContent = "AAA?"//.remove();
   } else {
         tempTextEl.textContent = "Having some bugs this afternoon, will fix shortly!" //"No pairs found that meet requirements :(!"
