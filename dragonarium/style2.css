@@ -843,6 +843,9 @@ body {
       background-image: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
       background-size: contain;
       display: block;
+      position:absolute;
+      left: 85px;
+      margin-top: 11px;
       width: 40px;
       height: 40px;
     }
@@ -866,6 +869,9 @@ body {
       background-image: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
       background-size: contain;
       display: block;
+      position:absolute;
+      left: 85px;
+      margin-top: 11px;
       width: 40px;
       height: 40px;
     }
@@ -889,6 +895,9 @@ body {
       background-image: url("https://i.postimg.cc/nzPcRSKq/Weather-Blossoms.png");
       background-size: contain;
       display: block;
+      position:absolute;
+      left: 45px;
+      margin-top: 11px;
       width: 40px;
       height: 40px;
     }
