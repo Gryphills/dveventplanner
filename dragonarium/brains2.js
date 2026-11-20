@@ -735,7 +735,10 @@ function riftTraitButton(el) {
                 el.dataset.toggle = 1
                 el.closest('.dragonCard').classList.add('rifted')
                 el.classList.add('toggled')
-                el.closest('.dragonCard').querySelector('.havec').click()
+                let havebutton = el.closest('.dragonCard').querySelector('.havec')
+                        if (havebutton.dataset.toggle == "0") {
+                                havebutton.click()
+                        }
                 //document.querySelector('.targetdragons').querySelector('.'+ el.closest('.dragonCard').id).classList.add('rifted')
         }
         else {
