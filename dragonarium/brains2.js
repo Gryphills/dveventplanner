@@ -1977,14 +1977,14 @@ function updateTargetSearch() {
 
    if (validPairs.length > 0) {
         let innerHtmlStuff = ''
-        console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length)
+        console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
         for (const pair of validPairs) {
                 let neededPair = 0
                 for (const targ of pair.targetsMet) {
                         //console.log(
                         if (pairsNeededForTargets[targ] > 0) {
                                 neededPair += 1;
-                                pairsNeededForTargets[targ] -= 1
+                                Number(pairsNeededForTargets[targ]) -= 1
                         }
                 }
                 if (neededPair > 0) {
@@ -1992,12 +1992,14 @@ function updateTargetSearch() {
                         innerHtmlStuff += htmlStuff
                         pairCountTotal -= 1;
                         console.log(`added ${pair.parentLeft}/${pair.parentRight}; ${pairCountTotal} pairs to go!`, pairsNeededForTargets)
+                } else {
+                        console.log(`skipping ${pair.parentLeft}/${pair.parentRight} because no targets met needed more pairs`)
                 }
                 if (pairCountTotal == 0) {
                         console.log("count is now 0? breaking - ", pairsNeededForTargets)
                         break;
                 }
-                //console.log(pair, htmlStuff, '!!!!!!!!!!!')
+                
         }
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
            console.log('html added!')
