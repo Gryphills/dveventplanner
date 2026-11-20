@@ -267,28 +267,27 @@ body {
   }
 }
 .rifttrait {
-      display:none;
       background-color: transparent;
       border: 0px;
-      color: #46466a69
+      color: #46466a69;
       color: #944cdf66;
       font-weight: bold;
       position: absolute;
-      bottom: -35px;
+      /*bottom: -35px;
       font-size: 50px;
       line-height: 50px;
       width:50px;
-      height:50px;
+      height:50px;*/
       cursor: pointer;
       
       .tooltip {
         left: 50px;
       }
     }
-  .toggled.rifttrait {
+  /*.toggled.rifttrait {
       color: #7645a9;
       background-color: transparent;
-  }
+  }*/
 .limited.avail::before {
     content: '⧗';
     position: relative;
