@@ -303,6 +303,16 @@ body {
     line-height:40px;
 }
 
+.biggold::before {
+    content: '';
+    position: absolute;
+    top:35px;
+    left:-16px;
+    background-image: url('https://i.postimg.cc/X7JBNYbL/Coin-template.webp');
+    background-size: contain;
+    width:40px;
+    height:40px;
+}
 
 .multi {
   /*position: absolute;
