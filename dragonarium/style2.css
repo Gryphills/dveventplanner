@@ -189,12 +189,14 @@ body {
       border: 3px solid #557049;
     }
 .dragonCard.unavail {
-      
       background-color: #e3e3e3; 
       border: 3px solid rgb(162, 162, 162); 
+      .breedinginfo {
+          opacity: 0.7;
+      }
     }
 .dragonCard.favourite {
-        background-color: #c0a4ec;
+        background-color: #cdbde7;
         border: 3px solid #3e295f;
         color: #3e295f;
         .favc {
@@ -292,7 +294,7 @@ body {
   }*/
 
 .rifted {
-  box-shadow: inset 0px 0px 8px #814eb8;
+  box-shadow: inset 0px 0px 15px #814eb8;
 }
 .limited.avail::before {
     content: '⧗';
@@ -592,7 +594,7 @@ body {
   }
 }
 .targetcard.favourite {
-    background-color: #cac5f0;
+    background-color: #cdbde7;
     color:#442a5f;
     border: 3px solid #442a5f;
 }
