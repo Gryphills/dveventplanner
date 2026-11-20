@@ -810,7 +810,7 @@ function buildDragonCard(name, data) {
         <div class="minibutton wantc" data-toggle=0 onclick="wantCard(this)">✦<div class="tooltip">Want</div></div>
         <div class="minibutton havec" data-toggle=0 onclick="haveCard(this)" >✔<div class="tooltip">Acquired</div></div>
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" >🗡<div class="tooltip">Shadow Realm</div></div>
-        <div class="minibutton rifttrait" onclick="riftTraitButton(this)" data-toggle=0>𖦹<div class="tooltip">Rift Version Acquired</div></div>
+        <div class="minibutton rifttrait" onclick="riftTraitButton(this)" data-toggle=0><div class="tooltip">Rift Version Acquired</div></div>
     </div>`
     
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
@@ -853,6 +853,7 @@ function buildDragonCard(name, data) {
 
     let skipThing = false;
     if (data.combo['special']) {
+        data.combo.special = data.combo.special.charAt(0).toUpperCase() + data.combo.special.substring(1)
       if (data.combo['special'].includes('Evolve')) {
         cardhtml += `${data.combo.special}`
         skipThing = true;
@@ -892,10 +893,14 @@ function buildDragonCard(name, data) {
                     if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
                         cleanedReq += ' + '
                     }
+                    
+                }
+                if (data.combo.requirements.length == 1) {
+                    cleanedReq += ' + Any Dragon'
                 }
               } else {
                       //console.log(data.combo.requirements, data)
-                      cleanedReq = `Any 2 <div class="el-img" style="background-image:url('${elementIcons[data.combo.requirements[0].substring(2)]}');"></div> ${data.combo.requirements[0]} Dragons`
+                      cleanedReq = `Any 2 &nbsp;<div class="el-img" style="background-image:url('${elementIcons[data.combo.requirements[0].substring(2)]}');"></div>${data.combo.requirements[0].substring(2)} Dragons`
               }
         cardhtml += `<h3>${cleanedReq}</h3>`
       }
@@ -1095,24 +1100,29 @@ function processCombo(comboData) {
     }
     let requirementNoDups = [];
     for (const item of comboFin.requirements) {
-      if (!requirementNoDups.includes(item) && !specificReqInternalEls.includes(item) && item != "MhMonolith") {
+      if (!requirementNoDups.includes(item) && !specificReqInternalEls.includes(item)) {
         requirementNoDups.push(item)
       }
     }
     comboFin.output = outputNoDups;
-    //comboFin.requirements = requirementNoDups;
-    if (comboFin.requirements.length == requirementNoDups.length) {
+    /*if (comboFin.requirements.length != 1) {
+        comboFin.requirements = requirementNoDups;
+    }*/
+    
+    /*if (comboFin.requirements.length == requirementNoDups.length) {
         
     } else {
         console.log('lendth is not same:', comboFin.requirements, requirementNoDups)
-    }
+    }*/
   }
         if (comboFin.requirements) {
                 if (comboFin.requirements == [ "MhMonolith" ]) {
                         comboFin.requirements = [ "MhMonolith", "MhMonolith" ]
-                } else if (comboFin.requirements.length == 1) {
-                        comboFin.requirements.push('AnAny')
-                }
+                } else if (comboFin.requirements == [ "SnSnowflake" ]) {
+                        comboFin.requirements = [ "SnSnowflake", "SnSnowflake" ]
+                } //else if (comboFin.requirements.length == 1) {
+                  //      comboFin.requirements.push('AnAny')
+                //}
         }
   return comboFin;
 }
