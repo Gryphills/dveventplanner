@@ -1348,7 +1348,7 @@ function createTargetCards() {
                 }
                 lastWantCard = cardEl;
               }
-              if (dragonarium[dragonName].status == "init") {
+              else if (dragonarium[dragonName].status == "init") {
                 if (!lastInitCard) {
                         if (!lastWantCard) {
                                 if (!lastFavCard) {
@@ -1366,6 +1366,8 @@ function createTargetCards() {
                         lastInitCard.after(cardEl);
                 }
                 lastInitCard = cardEl;
+              } else {
+                  targetCardDiv.appendChild(cardEl)
               }
       }
 
