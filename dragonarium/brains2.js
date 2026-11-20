@@ -944,7 +944,7 @@ function makeCards() {
             console.log('array: ', multiArray, JSON.stringify(multiArray))
     }*/
     if (!dragonarium[dragonName]) {
-      dragonarium[dragonName] = {"fav": 0, "status": "init", "rifted": 0};
+      dragonarium[dragonName] = {"fav": 0, "status": "init", "rifted": "0"};
     }
     /*if (dragonarium[dragonName].status == "init") {
         initDiv.appendChild(card);
@@ -960,7 +960,10 @@ function makeCards() {
       shadowDiv.appendChild(card);
       card.querySelector('.shadowc').click();
     }
-    if (dragonarium[dragonName].rifted == "1") {
+    if (!dragonarium[dragonName].rifted) {
+        dragonarium[dragonName].rifted = "0"
+    }
+    else if (dragonarium[dragonName].rifted == "1") {
         card.querySelector('.rifttrait').click()
     }
     /*else {
