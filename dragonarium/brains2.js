@@ -859,7 +859,7 @@ function buildDragonCard(name, data) {
         cardhtml += `Galaxy Dragon; Clone in Coop`;
         //skipThing = true;
       }
-      if (data.combo['requirements']) {
+      if (data.combo['requirements'] && data.combo['requirements'].length > 0) {
         let cleanedReq = ''
               if ( data.combo.requirements[0] != data.combo.requirements[1]) {
                 for (const req of data.combo.requirements) {
