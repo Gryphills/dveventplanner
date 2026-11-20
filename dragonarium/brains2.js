@@ -1821,11 +1821,16 @@ function updateTargetSearch() {
   let validPairs = []
   //let pairsForEachTarget = {}
   let guysWithNoSpecialGuys = []
+  let guysWithTwoSpecialGuys = []
+  let specialPairs = {}
   //console.log('checking dragons we have: ', haveDragonsToCheck);
   
         
   for (const target of Array.from(targetCardDiv.children)) {
         let dragonName = target.dataset.dragonName
+          if (target.classList.contains('twospecialguys') {
+                guysWithTwoSpecialGuys.push(dragonName)
+          }
         /*let checkPairs = possiblePairsa(target, validPairObj)
           if (checkPairs != "NoSpecial") {
                   for (const pairname of Object.keys(checkPairs)) {
@@ -1866,12 +1871,17 @@ function updateTargetSearch() {
                 let pairingOutput = allDragonData[a].elements.concat(allDragonData[b].elements)
                 pairingOutput.push(a)
                 pairingOutput.push(b)
+                let specialPair = false
+                let sorted = [a, b].sort()
                 for (const guy of guysWithNoSpecialGuys) {
                         let validPair = checkTargetReq(guy, pairingOutput)
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                         if (validPair) {
+                                if (guysWithTwoSpecialGuys.includes(guy)) {
+                                        specialPair = true;
+                                }
                               //console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
-                              let sorted = [a, b].sort()
+                              
                               if (validPairObj[`${sorted[0]}//${sorted[1]}`]) {
                                       validPairObj[`${sorted[0]}//${sorted[1]}`].targetsMet.push(guy)
                               } else {
@@ -1900,12 +1910,15 @@ function updateTargetSearch() {
                               //validPairs[`${sorted[0]}//${sorted[1]}`] = pairObj
                         }
                 }
+                if (specialPair) {
+                        specialPairs.push(`${sorted[0]}//${sorted[1]}`)
+                }
         }
   }
 
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
-        if (pair.targetsMet.length > Number(settingsWeights.minTargets) - 1) {
+        if (pair.targetsMet.length > Number(settingsWeights.minTargets) - 1 || specialPairs.includes(pairName)) {
                 //console.log(pairName, ' meets ', pair.targetsMet)
                 //if (validPairs.length == 0) {
                         validPairs.push(pair)
@@ -1975,17 +1988,20 @@ function updateTargetSearch() {
                         }
                 }
                 if (neededPair > 0) {
+                        
                         let htmlStuff = pairTemplate(pair)
                         innerHtmlStuff += htmlStuff
                         pairCountTotal -= 1;
+                        console.log(`added ${pair.parentLeft}/${pair.parentRight}; ${pairCountTotal} pairs to go!`, pairsNeededForTargets)
                 }
                 if (pairCountTotal == 0) {
-                        tempTextEl.textContent = "count is now 0? breaking"
+                        console.log("count is now 0? breaking - ", pairsNeededForTargets)
                         break;
                 }
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
+           console.log('html added!')
         //tempTextEl.textContent = "AAA?"//.remove();
   } else {
         tempTextEl.textContent = "Having some bugs this afternoon, will fix shortly!" //"No pairs found that meet requirements :(!"
