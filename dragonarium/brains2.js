@@ -1946,7 +1946,7 @@ function updateTargetSearch() {
                         
                 }
                 pairObj.oddsOfCool = oddsOfCool
-                pairObj = applyWeighting(settingsWeights, pairObj)
+                pairObj = applyWeighting(settingsWeights, pairObj, targets)
                   //console.log(pairObj)
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "weightedValue")
                   
