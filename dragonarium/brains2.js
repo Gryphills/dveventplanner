@@ -1870,11 +1870,12 @@ function updateTargetSearch() {
   }*/
  
 
-
+ let checked = 0
  let stopp = []
   for (const a of haveDragonsToCheck) {
         haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
         for (const b of haveDragonsToCheck) {
+                checked += 1
                 let pairingOutput = allDragonData[a].elements.concat(allDragonData[b].elements)
                 pairingOutput.push(a)
                 pairingOutput.push(b)
@@ -1940,7 +1941,7 @@ function updateTargetSearch() {
                 }
         }
   }
-        //console.log(specialPairs)
+  console.log('checked ', checked, ' pairs phew!')
         
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
