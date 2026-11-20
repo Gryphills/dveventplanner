@@ -1530,10 +1530,11 @@ function updatePossibleTargets() {
   let possibleTargets = document.querySelector('#targetcards').children;
   //let safety = 30
   for (const child of possibleTargets) {
-    child.dataset.status = dragonarium[dragonName].status
+    
     child.classList.remove('impossible')
     let impossible = false;
     let dragonName = child.dataset.dragonName;
+    child.dataset.status = dragonarium[dragonName].status
           //console.log(dragonName, allDragonData[dragonName])
     if (dragonarium[dragonName].status == 'have') {
         child.classList.remove('shadow')
