@@ -1953,7 +1953,7 @@ function updateTargetSearch() {
                   
           }
           validPairs = scoredPairs
-  } else {console.log('no valid pairs? tf?')
+  } else {console.log('no valid pairs? tf?')}
 
 
   
