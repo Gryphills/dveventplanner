@@ -1919,6 +1919,7 @@ function updateTargetSearch() {
   //console.log('done sorting? ', validPairs)
 
   if (validPairs.length > 0) {
+          console.log(validPairs.length, ' valid pairs found - time to score')
           let scoredPairs = []
           for (const pair of validPairs) {
                   let pairObj = pair
@@ -1952,7 +1953,7 @@ function updateTargetSearch() {
                   
           }
           validPairs = scoredPairs
-  }
+  } else {console.log('no valid pairs? tf?')
 
 
   
