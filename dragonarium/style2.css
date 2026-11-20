@@ -272,9 +272,10 @@ body {
       color: #46466a69;
       color: #944cdf66;
       font-weight: bold;
-      position: absolute;
+      margin-top: 25px;
+      /*position: absolute;
       top: 45px;
-      /*bottom: -35px;
+      bottom: -35px;
       font-size: 50px;
       line-height: 50px;
       width:50px;
