@@ -1828,7 +1828,7 @@ function updateTargetSearch() {
         
   for (const target of Array.from(targetCardDiv.children)) {
         let dragonName = target.dataset.dragonName
-          if (target.classList.contains('twospecialguys') {
+          if (target.classList.contains('twospecialguys')) {
                 guysWithTwoSpecialGuys.push(dragonName)
           }
         /*let checkPairs = possiblePairsa(target, validPairObj)
