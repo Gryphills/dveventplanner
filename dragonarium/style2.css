@@ -504,7 +504,7 @@ body {
       background-color: transparent !important;
       border: 0px !important;
       margin-top: 25px;
-      background-image: url('https://i.postimg.cc/Prxvf5jc/riftbuttongrey.png')
+      background-image: url('https://i.postimg.cc/Prxvf5jc/riftbuttongrey.png');
       background-size: cover;
       width: 55px;
       height: 55px;
@@ -530,7 +530,7 @@ body {
 .rifted {
   box-shadow: inset 0px 0px 15px #814eb8;
   .rifttrait {
-    background-image: url('https://i.postimg.cc/Yq9L2CH5/riftbuttonpurplea.png')
+    background-image: url('https://i.postimg.cc/Yq9L2CH5/riftbuttonpurplea.png');
   }
 }
 #multiparents {
