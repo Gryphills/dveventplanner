@@ -288,6 +288,10 @@ body {
       color: #7645a9;
       background-color: transparent;
   }*/
+
+.rifted {
+  box-shadow: inset 0px 0px 8px #814eb8;
+}
 .limited.avail::before {
     content: '⧗';
     position: relative;
