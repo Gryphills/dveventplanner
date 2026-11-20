@@ -1986,7 +1986,7 @@ function updateTargetSearch() {
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
         tempTextEl.remove();
   } else {
-        tempTextEl.textContent = "No pairs found that meet requirements :(!"
+        tempTextEl.textContent = "Having some bugs this afternoon, will fix shortly!" //"No pairs found that meet requirements :(!"
   }
         
    /*     
