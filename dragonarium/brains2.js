@@ -885,6 +885,7 @@ function buildDragonCard(name, data) {
                     }
                 }
               } else {
+                      console.log(data.combo.requirements)
                          cleanedReq = `Any 2 <div class="el-img" style="background-image:url('${elementIcons[data.combo.requirements[0].substring(2)]}');"></div> ${data.combo.requirements[0]} Dragons`
               }
         cardhtml += `<h3>${cleanedReq}</h3>`
