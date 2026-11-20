@@ -770,9 +770,9 @@ function buildDragonCard(name, data) {
     } else {
       cardhtml += ` perm`
     }
-    if (dragonarium[name].rifted == "1") {
+    /*if (dragonarium[name].rifted == "1") {
         cardhtml += ` rifted `
-    }
+    }*/
     if (data.combo.raw) {
             //console.log('why do we have raw for ', name)
         data.combo = processCombo(data.combo.raw)
@@ -931,6 +931,9 @@ function makeCards() {
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     initDiv.appendChild(card)
+          if (dragonarium[dragonName].rifted == "1") {
+                card.querySelector('.rifttrait').click()
+          }
     //console.log(card)
     /*if (card.querySelector('.multiimgfront')) {
         let multiArray = []
