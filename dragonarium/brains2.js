@@ -2184,7 +2184,7 @@ function pairTemplate(pairObj) {
   }
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
-  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p><h5>Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p></div></div>`
+  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p><h5 style="margin-bottom:0px;">Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p></div></div>`
   return htmlTemplate;
 }
 
