@@ -77,6 +77,16 @@ Download DragonVale:
               <div class="targetcards targets-selected">
                 </div>
             </div>
+          <div class="additionalsettings" style="display:none;">
+            <label>Minimum Targets:<input type="number" id="mintargets" value=2 ></label>
+            <label>Show at least <input type="number" id="pairpertarget" value=1 > valid pairs per Target</label>
+            Sorting Weight for pair qualities:
+            <label>Targets/pair <input type="number" id="weight-targetquantity" value=2 ></label>
+            <label>Lower Average Breed Time <input type="number" id="weight-averagetime" value=1 ></label>
+            <label>Odds for getting any target <input type="number" id="weight-targetodds" value=5 ></label>
+            <label>Odds for getting a dragon you don't have (target or not) <input type="number" id="weight-newguy" value=3 ></label>
+            <label>Include shadow realm dragons <input type="checkbox" id="includeShadow" checked></label>
+          </div>
           <div id="calculateparentsbutton" onclick="calculateParentsPressed()">Calculate Optimal Parents</div>
             <div class="possiblepairs multiparentcards ">
                 <p style="font-style:italic;">Parent pairs are only suggested from dragons you own in the "have" section.</p>
