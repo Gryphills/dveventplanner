@@ -1882,6 +1882,9 @@ function updateTargetSearch() {
                 let sorted = [a, b].sort()
                 for (const guy of targets) {
                         let validPair = checkTargetReq(guy, pairingOutput)
+                        if (pairingOutput.toString().includes('irefly') && pairingOutput.toString().includes('hrysalis')) {
+                                console.log('in theory, this should be dottys pair... ', pairingOutput, guy, guysWithTwoSpecialGuys)
+                        }
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                         if (validPair) {
                                 if (guysWithTwoSpecialGuys.includes(guy)) {
