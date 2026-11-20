@@ -1378,8 +1378,8 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
         targetCardDiv.appendChild(cardEl);
         return;
   }
-  let lastFavCard;
-  let lastWantCard;
+  //let lastFavCard;
+  //let lastWantCard;
   //let toSection = 'init'
   let sectionOrder = ['want', 'have', 'init', 'shadow']
   let letterIsBefore = true;
@@ -1400,13 +1400,16 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
         cardEl.classList.add('favourite');
   }
   for (const sectionsName of sectionOrder) {
-          console.log(sectionsName, cardEl.dataset.status, cardEl)
+          //console.log(sectionsName, cardEl.dataset.status, cardEl)
+          let foundSection = false
           while (checkCard != null && letterIsBefore == true) {
                 if (sectionsName == checkCard.dataset.status) {
+                        foundSection = true
+                        console.log(checkCard, ' is now about to start the section of ', sectionsName, checkCard.dataset.status)
                         let checkLetter = checkCard.dataset.dragonName
                         let sorted = [checkLetter, dragonName].sort()
                         console.log(sorted, dragonName)
-                        if (sorted[1] == dragonName) {
+                        if (sorted[0] == dragonName) {
                                 checkCard.before(cardEl)
                                 console.log(dragonName, ' goes before ', checkLetter)
                                 letterIsBefore = false
@@ -1415,11 +1418,17 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
                                 checkCard = checkCard.nextElementSibling
                         }
                 } else {
+                        if (foundSection) {
+                                checkCard.after(cardEl)
+                                letterIsBefore = false
+                        }
                         checkCard = checkCard.nextElementSibling
+                        
                 }
           }
           if (!checkCard) {
                 targetCardDiv.appendChild(cardEl);
+                  console.log('idk we hit the end of the list bro')
                 return;
           }
   }
