@@ -1316,6 +1316,7 @@ function createTargetCards() {
         cardEl.classList.add('shadow');
         cardEl.classList.add('filtershadow');
       }
+      slotElIntoTargetArray(cardEl, targetCardDiv)
       /*if (dragonarium[dragonName].fav) {
         cardEl.classList.add('favourite');
         if (targetCardDiv.children.length == 0) {
@@ -1393,6 +1394,8 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
         targetCardDiv.appendChild(cardEl);
         return;
     }
+  } else {
+        cardEl.classList.add('favourite');
   }
   for (const sectionsName of sectionOrder) {
           while (checkCard.dataset.status == sectionsName && letterIsBefore == true) {
