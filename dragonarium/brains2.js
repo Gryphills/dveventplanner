@@ -1390,6 +1390,7 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
     while (checkCard.classList.contains('favourite')) {
             checkCard = checkCard.nextElementSibling
     }
+          console.log(checkCard, targetCardDiv.children)
     if (!checkCard) {
         targetCardDiv.appendChild(cardEl);
         return;
@@ -1398,11 +1399,12 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
         cardEl.classList.add('favourite');
   }
   for (const sectionsName of sectionOrder) {
+          console.log(sectionsName, cardEl.dataset.status, cardEl)
           while (checkCard != null && letterIsBefore == true) {
                 if (sectionsName == checkCard.dataset.status) {
                         let checkLetter = checkCard.dataset.dragonName
                         let sorted = [checkLetter, dragonName].sort()
-                        if (sorted[0] == dragonName) {
+                        if (sorted[1] == dragonName) {
                                 checkCard.before(cardEl)
                                 letterIsBefore = false
                                 break;
