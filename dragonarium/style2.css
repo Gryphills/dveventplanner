@@ -826,14 +826,18 @@ body {
 .breednight {
   .breedinginfo {
     h4::after {
-      content: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
+      content: ' ';
+      background-image: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
+      background-size: contain;
       display: block;
       width: 40px;
       height: 40px;
     }
   }
   .possibletarget::after {
-      content: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
+      content: ' ';
+      background-image: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
+      background-size: contain;
       display: block;
       width: 15px;
       height: 15px;
@@ -845,14 +849,18 @@ body {
 .breedday {
   .breedinginfo {
     h4::after {
-      content: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
+      content: ' ';
+      background-image: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
+      background-size: contain;
       display: block;
       width: 40px;
       height: 40px;
     }
   }
   .possibletarget::after {
-      content: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
+      content: ' ';
+      background-image: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
+      background-size: contain;
       display: block;
       width: 15px;
       height: 15px;
@@ -864,14 +872,18 @@ body {
 .weatherblossoms {
   .breedinginfo {
     h4::after {
-      content: url("https://i.postimg.cc/nzPcRSKq/Weather-Blossoms.png");
+      content: ' ';
+      background-image: url("https://i.postimg.cc/nzPcRSKq/Weather-Blossoms.png");
+      background-size: contain;
       display: block;
       width: 40px;
       height: 40px;
     }
   }
   .possibletarget::after {
-      content: url("https://i.postimg.cc/nzPcRSKq/Weather-Blossoms.png");
+      content: ' ';
+      background-image: url("https://i.postimg.cc/nzPcRSKq/Weather-Blossoms.png");
+      background-size: contain;
       display: block;
       width: 15px;
       height: 15px;
