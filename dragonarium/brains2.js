@@ -1316,7 +1316,7 @@ function createTargetCards() {
         cardEl.classList.add('shadow');
         cardEl.classList.add('filtershadow');
       }
-      if (dragonarium[dragonName].fav) {
+      /*if (dragonarium[dragonName].fav) {
         cardEl.classList.add('favourite');
         if (targetCardDiv.children.length == 0) {
           targetCardDiv.appendChild(cardEl);
@@ -1365,7 +1365,7 @@ function createTargetCards() {
                 targetCardDiv.appendChild(cardEl);
         }
         
-      }
+      }*/
     }
   }
   updatePossibleTargets()
