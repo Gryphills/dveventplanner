@@ -807,9 +807,8 @@ function buildDragonCard(name, data) {
         <div class="minibutton wantc" data-toggle=0 onclick="wantCard(this)">✦<div class="tooltip">Want</div></div>
         <div class="minibutton havec" data-toggle=0 onclick="haveCard(this)" >✔<div class="tooltip">Acquired</div></div>
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" >🗡<div class="tooltip">Shadow Realm</div></div>
-    </div>
-    
-    <div class="minibuttons" style="left:-14px;"><div class="minibutton rifttrait" onclick="riftTraitButton(this)" data-toggle=0>𖦹<div class="tooltip">Rift Version Acquired</div></div></div>`
+        <div class="minibutton rifttrait" onclick="riftTraitButton(this)" data-toggle=0>𖦹<div class="tooltip">Rift Version Acquired</div></div>
+    </div>`
     
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
     if (allDragonImgs[name]) {
