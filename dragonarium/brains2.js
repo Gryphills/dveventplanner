@@ -594,8 +594,10 @@ function radioOtherButtons(clicked) {
   }
   let next = clicked.nextElementSibling;
   while (next) {
-    next.dataset.toggle = 0;
-    next.classList.remove('toggled')
+          if (!next.classList.contains('rifttrait') {
+              next.dataset.toggle = 0;
+              next.classList.remove('toggled')
+          }
     next = next.nextElementSibling;
     safety -= 1;
     if (safety < 0) {
