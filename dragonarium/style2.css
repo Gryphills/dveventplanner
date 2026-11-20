@@ -6,6 +6,8 @@ body {
   font-family: Tahoma, Verdana, sans-serif;
 }
 
+
+
 #calculateparentsbutton {
   padding: 10px;
   margin: 3px;
@@ -31,6 +33,20 @@ body {
   border-radius: 10px;
   text-align:left;
   display:inline-block;
+}
+.additionalsettings {
+  background-color: #cac5f0;
+  border: 2px solid #442a5f;
+  color: #442a5f;
+  padding: 10px;
+  margin:30px;
+  width: fit-content;
+  border-radius: 10px;
+  text-align:center;
+  display:inline-block;
+  input {
+    max-width: 50px;
+  }
 }
 
 .gobackupbutton {
