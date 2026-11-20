@@ -1887,15 +1887,15 @@ function updateTargetSearch() {
                                 console.log('in theory, this might be dottys pair...? ', sorted, guy, guysWithTwoSpecialGuys)
                         }
                         if (sorted.includes('Faux') && !stopp.includes('Faux')) {
-                                console.log('faux time!)
+                                console.log('faux time!')
                                 stopp.push('Faux')
                         }
                         if (sorted.includes('Glowwing') && !stopp.includes('Glowwing')) {
-                                console.log('Glowwing time!)
+                                console.log('Glowwing time!')
                                 stopp.push('Glowwing')
                         }
                         if (sorted.includes('Chrysalis') && !stopp.includes('Chrysalis')) {
-                                console.log('Chrysalis time!)
+                                console.log('Chrysalis time!')
                                 stopp.push('Chrysalis')
                         }
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
