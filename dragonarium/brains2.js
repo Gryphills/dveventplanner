@@ -1249,6 +1249,7 @@ function createTargetCards() {
   let targetCardDiv = document.querySelector('.targetcards');
   let lastFavCard;
   let lastWantCard;
+  let lastInitCard;
   for (const dragonName of allDragonNames) {
     if (allDragonData[dragonName].limited != 'Y') {
       if (!allDragonImgs[dragonName]) {
@@ -1317,8 +1318,59 @@ function createTargetCards() {
         cardEl.classList.add('shadow');
         cardEl.classList.add('filtershadow');
       }
-      slotElIntoTargetArray(cardEl, targetCardDiv)
-      /*if (dragonarium[dragonName].fav) {
+      //slotElIntoTargetArray(cardEl, targetCardDiv)
+
+      if (targetCardDiv.childElementCount == 0) {
+        
+                targetCardDiv.appendChild(cardEl);
+      }
+
+      if (dragonarium[dragonName].fav == "1" || dragonarium[dragonName].fav == 1) {
+                //what
+            if (!lastFavCard) {
+                targetCardDiv.firstElementChild.before(cardEl)
+            } else {
+                lastFavCard.after(cardEl);
+            }
+            lastFavCard = cardEl;
+      } else {
+              if (dragonarium[dragonName].status == "want") {
+                if (!lastWantCard) {
+                        if (!lastFavCard) {
+                                lastWantCard = cardEl;
+                                targetCardDiv.firstElementChild.before(cardEl)
+        
+                        } else {
+                                lastFavCard.after(cardEl);
+                        }
+                } else {
+                        lastWantCard.after(cardEl);
+                }
+                lastWantCard = cardEl;
+              }
+              if (dragonarium[dragonName].status == "init") {
+                if (!lastInitCard) {
+                        if (!lastWantCard) {
+                                if (!lastFavCard) {
+                                        lastInitCard = cardEl;
+                                        targetCardDiv.firstElementChild.before(cardEl)
+                
+                                } else {
+                                        lastFavCard.after(cardEl);
+                                }
+                                
+                        } else {
+                                lastWantCard.after(cardEl);
+                        }
+                } else {
+                        lastInitCard.after(cardEl);
+                }
+                lastInitCard = cardEl;
+              }
+      }
+
+              
+      /* if (dragonarium[dragonName].fav) {
         cardEl.classList.add('favourite');
         if (targetCardDiv.children.length == 0) {
           targetCardDiv.appendChild(cardEl);
