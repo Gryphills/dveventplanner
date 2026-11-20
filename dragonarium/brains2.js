@@ -1345,6 +1345,7 @@ function createTargetCards() {
                   while (checkCard.classList.contains('favourite')) {
                         checkCard = checkCard.nextElementSibling
                   }
+                        console.log(checkCard)
                   if (checkCard) {
                           lastWantCard = checkCard
                           while (checkCard.dataset.status = 'want') {
