@@ -1732,13 +1732,13 @@ function targetSelect(element) {
 function getPairingWeights() {
         let settingsbox = document.querySelector('.additionalsettings')
         let settingsWeights = {
-                minTargets: settingsbox.querySelector('#mintargets').value,
-                pairpertarget: settingsbox.querySelector('#pairpertarget').value,
+                minTargets: Number(settingsbox.querySelector('#mintargets').value),
+                pairpertarget: Number(settingsbox.querySelector('#pairpertarget').value),
                 weighting : {
-                        targetQuantity: settingsbox.querySelector('#weight-targetquantity').value,
+                        targetQuantity: Number(settingsbox.querySelector('#weight-targetquantity').value),
                         //averageTime: settingsbox.querySelector('#weight-averagetime').value,
-                        targetOdds: settingsbox.querySelector('#weight-targetodds').value,
-                        newGuy: settingsbox.querySelector('#weight-newguy').value,
+                        targetOdds: Number(settingsbox.querySelector('#weight-targetodds').value),
+                        newGuy: Number(settingsbox.querySelector('#weight-newguy').value),
                         //includeShadow: settingsbox.querySelector('#includeShadow').checked
                 }
         }
@@ -1798,7 +1798,7 @@ function updateTargetSearch() {
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
-    pairsNeededForTargets[dragonName] = settingsWeights.pairpertarget
+    pairsNeededForTargets[dragonName] = Number(settingsWeights.pairpertarget)
     pairCountTotal += 4
     //let dragonRequires = allDragonData[dragonName].combo.requirements
     //for (const needed of dragonRequires) {
@@ -1988,7 +1988,6 @@ function updateTargetSearch() {
                         }
                 }
                 if (neededPair > 0) {
-                        
                         let htmlStuff = pairTemplate(pair)
                         innerHtmlStuff += htmlStuff
                         pairCountTotal -= 1;
