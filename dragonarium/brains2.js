@@ -1822,7 +1822,7 @@ function updateTargetSearch() {
   //let pairsForEachTarget = {}
   let guysWithNoSpecialGuys = []
   let guysWithTwoSpecialGuys = []
-  let specialPairs = {}
+  let specialPairs = []
   //console.log('checking dragons we have: ', haveDragonsToCheck);
   
         
