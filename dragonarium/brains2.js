@@ -931,9 +931,7 @@ function makeCards() {
   for (const dragonName of allDragonNames) {
     let card = buildDragonCard(dragonName, allDragonData[dragonName])
     initDiv.appendChild(card)
-          if (dragonarium[dragonName].rifted == "1") {
-                card.querySelector('.rifttrait').click()
-          }
+          
     //console.log(card)
     /*if (card.querySelector('.multiimgfront')) {
         let multiArray = []
@@ -946,7 +944,7 @@ function makeCards() {
             console.log('array: ', multiArray, JSON.stringify(multiArray))
     }*/
     if (!dragonarium[dragonName]) {
-      dragonarium[dragonName] = {"fav": 0, "status": "init"};
+      dragonarium[dragonName] = {"fav": 0, "status": "init", "rifted": 0};
     }
     /*if (dragonarium[dragonName].status == "init") {
         initDiv.appendChild(card);
@@ -961,6 +959,9 @@ function makeCards() {
     else if (dragonarium[dragonName].status == "shadow") {
       shadowDiv.appendChild(card);
       card.querySelector('.shadowc').click();
+    }
+    if (dragonarium[dragonName].rifted == "1") {
+        card.querySelector('.rifttrait').click()
     }
     /*else {
       //console.log('???? what was that?', dragonName, " has a status of ", dragonarium[dragonName].status);
