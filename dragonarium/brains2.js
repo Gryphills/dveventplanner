@@ -1977,15 +1977,16 @@ function updateTargetSearch() {
                 if (neededPair > 0) {
                         let htmlStuff = pairTemplate(pair)
                         innerHtmlStuff += htmlStuff
+                        pairCountTotal -= 1;
                 }
-                pairCountTotal -= 1;
                 if (pairCountTotal == 0) {
+                        tempTextEl.textContent = "count is now 0? breaking"
                         break;
                 }
                 //console.log(pair, htmlStuff, '!!!!!!!!!!!')
         }
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
-        tempTextEl.textContent = "AAA?"//.remove();
+        //tempTextEl.textContent = "AAA?"//.remove();
   } else {
         tempTextEl.textContent = "Having some bugs this afternoon, will fix shortly!" //"No pairs found that meet requirements :(!"
   }
