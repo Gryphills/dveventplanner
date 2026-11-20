@@ -1748,8 +1748,8 @@ function applyWeighting(settingsWeights, pairObj, targets) {
         //how do I even out these numbers?
         let maxWeighting = settingsWeights.weighting.targetQuantity + settingsWeights.weighting.targetOdds + settingsWeights.weighting.newGuy
         let targetQuantity = (pairObj.targetsMet.length / targets.length) * settingsWeights.weighting.targetQuantity //percentage of targets met!
-        let targetOdds = ((pairObj.oddsOfCool*100) / 12) * settingsWeights.weighting.targetOdds //percentage of odds of cool. I feel like 15 is a very Good number? can be "100"? or 12?
-        let newGuyOdds = ((pairObj.newOdds*100) / 30) * settingsWeights.weighting.newGuy //lets say... 30% is 100?
+        let targetOdds = ((pairObj.oddsOfCool*100) / 10) * settingsWeights.weighting.targetOdds //percentage of odds of cool. I feel like 15 is a very Good number? can be "100"? or 12?
+        let newGuyOdds = ((pairObj.newOdds*100) / 80) * settingsWeights.weighting.newGuy //lets say... 80% is 100?
 
         let finalWeighting = (targetQuantity + targetOdds + newGuyOdds) / maxWeighting
 
