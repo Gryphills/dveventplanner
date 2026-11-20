@@ -512,7 +512,7 @@ body {
 }
 
 .minibuttons {
-  rifttrait {
+  .rifttrait {
         background-color: transparent !important;
         border: 0px !important;
         margin-top: 25px;
@@ -538,6 +538,10 @@ body {
         .tooltip {
           right: 55px;
         }
+  }
+  .rifttrait.toggled {
+      background-color: transparent !important;
+      border: 0px !important;
   }
 }
 .rifted {
