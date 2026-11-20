@@ -278,7 +278,7 @@ body {
 
 .limited.avail::before {
     content: '⧗';
-    position: absolute;
+    position: relative;
     top:-15px;
     left:-16px;
     background-color: #8355cc;
