@@ -1874,7 +1874,7 @@ function updateTargetSearch() {
                   let pairObj = pair
                   if (!pairObj.multiplierOdds) {
                         let sorted = [pairObj.parentLeft, pairObj.parentRight].sort()
-                        getOutputsAndOdds(sorted, pairObj.elOutput, pairObj, "reg")
+                        pairObj = getOutputsAndOdds(sorted, pairObj.elOutput, pairObj, "reg")
                   }
                 /*let outputEls = []
                 for (const el of allDragonData[pair.parentLeft].elements) {
@@ -2007,6 +2007,8 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let b = allDragonData[pairArray[1]]
         let hybrids = []
         let breeds = []
+        let newGuys = []
+        let newOdds = 0
         let breedsOdds = 0
         let clonePercentage = 0
         if (a.odds[parentClone]) {
@@ -2029,6 +2031,9 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 let dragonData = allDragonData[dragonName]
                 if (!dragonData.conditions.includes("Evolve")) {
                         if (checkTargetReq(dragonName, pairingOutput)) {
+                                if (dragonarium[dragonName].status != 'have') {
+                                        newGuys.push(dragonName)
+                                }
                                 if (dragonData.rarity == "Hybrid") {
                                         hybrids.push(dragonData)
                                 } else {
@@ -2037,6 +2042,9 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                                 if (Number(dragonData.odds.base) != NaN) {
                                                         breedsOdds += Number(dragonData.odds.base)
                                                         //console.log('breeds base is ', dragonData.odds.base, ' so breedsOdds is now ', breedsOdds)
+                                                        if (dragonarium[dragonName].status != 'have') {
+                                                                newOdds += Number(dragonData.odds.base)
+                                                        }
                                                 }
                                         }
                                 }
@@ -2062,6 +2070,8 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         pairObj.multiplierOdds = multiplierOdds //(1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
         pairObj.breeds = breeds
         pairObj.hybrids = hybrids
+        pairObj.newOdds = newOdds
+        pairObj.newGuys = newGuys
         //console.log(pairObj)
         return pairObj;
         
@@ -2134,8 +2144,9 @@ function pairTemplate(pairObj) {
     //console.log(targetData.odds, pairObj)
     htmlTemplate += `<div class="possibletarget"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
+  let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
-  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p></div></div>`
+  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p><h5>Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p></div></div>`
   return htmlTemplate;
 }
 
