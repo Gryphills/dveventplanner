@@ -1868,13 +1868,17 @@ function updateTargetSearch() {
                 validPairObj[pairName] = pairsForEachTarget[targetName][pairName]
         }   
   }*/
+
+if (guysWithTwoSpecialGuys.length < targets.length) {
+        console.log('we have regular targets!')
+}
  
 
  let checked = 0
  let stopp = []
  let bDragons = [].concat(haveDragonsToCheck)
   for (const a of haveDragonsToCheck) {
-          
+        console.log('checking ', a, '; number ', haveDragonsToCheck.indexOf(a), 'of ', haveDragonsToCheck.length)
         //haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
         for (const b of bDragons) {
                 checked += 1
@@ -1943,6 +1947,7 @@ function updateTargetSearch() {
                 }
         }
         bDragons = bDragons.splice(bDragons.indexOf(a), 1)
+          console.log('checked all of ', a, '; moving to next guy!')
   }
   console.log('checked ', checked, ' pairs phew!', bDragons.length, haveDragonsToCheck.length)
         
