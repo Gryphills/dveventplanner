@@ -936,10 +936,12 @@ function buildDragonCard(name, data) {
                         otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[eel.substring(2)]}" data-el="${eel}" onclick="seeOtherPossible(this)">`
                  }
          }
-         `</div>
+         `       </div>
+         </div>
          <p>*only shows dragons you don't own</p>
          <div class="otherss">`
          otherhtml += '</div></details>'
+         cardhtml += otherhtml;
       }
       cardhtml +=   `</div>
       </div>`
