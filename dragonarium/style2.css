@@ -1026,3 +1026,8 @@ body {
       margin:2px;
       border: 6px solid #442a5f;
 }
+
+
+.loading {
+  color: #584e3f;
+}
