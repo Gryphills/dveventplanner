@@ -992,7 +992,7 @@ function seeOtherPossible(htmEl, elementAdded) {
                 if (htmEl.classList.contains('desat')) {
                         htmEl.classList.remove('desat')
                         htmEl.classList.add('addedel')
-                        comboOutput.push(elementAdded)
+                        //comboOutput.push(elementAdded)
                 }
                 else {
                         htmEl.classList.add('desat')
@@ -1002,7 +1002,9 @@ function seeOtherPossible(htmEl, elementAdded) {
         }
         let addedels = htmEl.querySelectorAll('.addedel')
         for (const added of Array.from(addedels)) {
-                comboOutput.push(added.dataset.el)
+                if (added.dataset.el) {
+                        comboOutput.push(added.dataset.el)
+                }
         }
         
         if (data.combo.requirements.includes('R Rift')) {
@@ -2258,7 +2260,9 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let newOdds = 0
         let breedsOdds = 0
         let clonePercentage = 0
+        let riftassumed = true
         if (pairArray[0] != "justOutputs") {
+                
                 
         
                 if (a.odds[parentClone]) {
@@ -2277,11 +2281,13 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 }
                         }
                 }
+        } else {
+                riftassumed = false
         }
         for (const dragonName of availableDragonNames) {
                 let dragonData = allDragonData[dragonName]
                 if (!dragonData.conditions.includes("Evolve")) {
-                        if (checkTargetReq(dragonName, pairingOutput)) {
+                        if (checkTargetReq(dragonName, pairingOutput, riftassumed)) {
                                 if (dragonarium[dragonName].status != 'have') {
                                         newGuys.push(dragonName)
                                 }
@@ -2347,7 +2353,7 @@ function checkEachTarget(targets, pairingElOutput) {
   return targetsMet;
 }*/
 
-function checkTargetReq(target, pairingElOutput) {
+function checkTargetReq(target, pairingElOutput, riftassumed = true) {
   let targetRequirements = [].concat(allDragonData[target].combo.requirements);
   let metReqs = [];
         //console.log('checking ', target, targetRequirements, pairingElOutput)
@@ -2355,7 +2361,7 @@ function checkTargetReq(target, pairingElOutput) {
     if (pairingElOutput.includes(req)) {
       metReqs.push(req);
       
-    } else if (req == "R Rift") {
+    } else if (req == "R Rift" && riftassumed) {
             metReqs.push(req)
     }
     if (metReqs.length == targetRequirements.length) {
