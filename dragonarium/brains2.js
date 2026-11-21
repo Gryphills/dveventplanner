@@ -254,11 +254,17 @@ function addSortButtons() {
 }
 
 
-/*
-window.onhashchange.addEventListener(function(e) {
+
+window.addEventListener('hashchange', function(e) {
         console.log('hash shanged! ', window.location.href)
- //blah blah blah
-});*/
+        let name = window.location.href.split('#')[1]
+        let lastCard = hashHistory.pop()
+        if (name != lastCard.replaceAll(' ', '-')) {
+                console.log(name , ' is NOT ', lastCard.replaceAll(' ', '-'))
+        } else {
+                console.log(name, ' IS ', lastCard.replaceAll(' ', '-')
+        }
+});
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
         /*if (clickedEl) {
@@ -274,6 +280,7 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         //console.log(dragonName.id)
         let currentDragonName = clickedEl.closest('.dragonCard').id
         hashHistory.push(currentDragonName)
+        hashHistory.push(dragonName)
         
         let inDiv = dragonarium[dragonName].status;
         document.getElementById(`tabbutton-${inDiv}`).click()
