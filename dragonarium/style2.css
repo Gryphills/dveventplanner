@@ -990,6 +990,10 @@ body {
   
 }
 
+.otherpossible {
+  padding-bottom:6px;
+}
+
 .otherpossibleguy {
   img {
     vertical-align: center;
