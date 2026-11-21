@@ -932,11 +932,12 @@ function buildDragonCard(name, data) {
                  <p>Add additional elements to results:</p>
                  <div class="elementsort">`
          for (const eel of elementChart.prims) {
-                 if (!data.combo.output.includes(eel)) {
-                        otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[eel.substring(2)]}" data-el="${eel}" onclick="seeOtherPossible(this)">`
+                 let elName = chartRef[eel]
+                 if (!data.combo.output.includes(elName)) {
+                        otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[elName.substring(2)]}" data-el="${elName}" onclick="seeOtherPossible(this)">`
                  }
          }
-         `       </div>
+         otherhtml += `</div>
          </div>
          <p>*only shows dragons you don't own</p>
          <div class="otherss">`
