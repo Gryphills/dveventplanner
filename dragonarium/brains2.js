@@ -914,7 +914,7 @@ function buildDragonCard(name, data) {
       }
       if (data.combo.requirements) {
          let otherhtml = `<details class="otherpossible" onclick = "seeOtherPossible(this)"> <summary>Other Dragons from this Combo:</summary><p>*only shows dragons you don't own</p><div>`
-         for (const eel of elementsChart.prims) {
+         for (const eel of elementChart.prims) {
                 otherhtml += `<div class="el-img" style="background-image:url('${elementIcons[eel.substring(2)]}');"></div>`
          }
          otherhtml += '</div>'
