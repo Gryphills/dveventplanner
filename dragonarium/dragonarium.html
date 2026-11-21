@@ -11,17 +11,17 @@
   <div class='oopsie'>
     <p>Yuh oh! If you see this, the script isn't working properly,<br>which might mean this page is actively getting updated.<br>Try again in a minute or so!<br><br><br>(If this message is still here after a while, message me - I may not have realized oop)</p>
   </div>
-  <div class="topinfo" style="display:flex; flex-wrap:wrap;">
+  <div  style="display:flex; width: 94%; flex-wrap:wrap;">
     <div>
-      <div class="button importdatabutton">Import Data</div>
-      <div class="topinfo  importdatadiv hidden">
+      <div class="topinfo button importdatabutton">Import Data</div>
+      <div class="importdatadiv hidden">
         <p>Be warned, importing data will overwrite all the settings stored on this browser! Only do so if you are sure.</p>
         <input id="importdatainput">
         <div class="button importdatabuttonfinal" onclick="importdatabuttonClicked(this)">Import and Overwrite Data</div>
       </div>
     </div>
     <div>
-      <div class="button exportdatabutton" onclick="exportdatabuttonClicked(this)">Export/save Data</div><br>
+      <div class=" topinfo button exportdatabutton" onclick="exportdatabuttonClicked(this)">Export/save Data</div><br>
       <p id="exportnotif"></p>
     </div>
   </div>
