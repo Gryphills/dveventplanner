@@ -974,3 +974,11 @@ body {
     filter: saturate(100%);
   }
 }
+
+.Rift {
+  box-shadow: inset 0px 0px 15px #814eb8;
+  .minibutton.rifttrait {
+    display:none !important;
+  }
+  
+}
