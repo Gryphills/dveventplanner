@@ -2273,7 +2273,7 @@ function pairTemplate(pairObj) {
     if (allDragonData[validTarget].conditions != "") {
         additionalClasses = allDragonData[validTarget].conditions
     }
-    htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
+    htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img loading="lazy" src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
@@ -2285,7 +2285,7 @@ function parentTemplate(parent) {
   let parenthtml = `
       <div class='parent'>
           <div class="itemimg">
-                <img src="`
+                <img  loading="lazy" src="`
           if (allDragonImgs[parent].Adult) {
                   parenthtml += allDragonImgs[parent].Adult
           } else if (allDragonImgs[parent].Old) {
