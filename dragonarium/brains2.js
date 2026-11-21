@@ -2109,7 +2109,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
 
 function sortPairIntoArray(pairObj, array, property) {
   let propIsArray = false
-  if (property.includes('Array') {
+  if (property.includes('Array')) {
         property = property.split('Array')[0]
         propIsArray = true
   }
