@@ -1015,12 +1015,12 @@ function seeOtherPossible(htmEl, elementAdded) {
         console.log(comboOutput, objPairStuff)
         for (const guy of objPairStuff.newGuys) {
                 if (guy != dragonName) {
-                        let imgsrc = allDragonImgs[dragonName]
+                        let imgsrc = allDragonImgs[guy].Adult
                         if (!imgsrc) {
-                                imgsrc = allDragonImgs[dragonName][Object.keys(allDragonImgs[dragonName])[0]]
+                                imgsrc = allDragonImgs[guy][Object.keys(allDragonImgs[guy])[0]]
                         }
                         otherguys += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">
-                                <h5>${dragonName}</h5></div>`
+                                <h5>${guy}</h5></div>`
                 }
         }
         possiblediv.innerHTML = otherguys 
