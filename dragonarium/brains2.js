@@ -255,10 +255,10 @@ function addSortButtons() {
 
 
 
-//window.onhashchange = hashChanged() {
-//        console.log('hash shanged! ', window.location.href)
+window.onhashchange.addEventListener(function(e) {
+        console.log('hash shanged! ', window.location.href)
  //blah blah blah
-//}
+}
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
         /*if (clickedEl) {
