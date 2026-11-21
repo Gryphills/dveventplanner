@@ -1872,9 +1872,11 @@ function updateTargetSearch() {
 
  let checked = 0
  let stopp = []
+ let bDragons = [].concat(haveDragonsToCheck)
   for (const a of haveDragonsToCheck) {
-        haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
-        for (const b of haveDragonsToCheck) {
+          
+        //haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
+        for (const b of bDragons) {
                 checked += 1
                 let pairingOutput = allDragonData[a].elements.concat(allDragonData[b].elements)
                 pairingOutput.push(a)
@@ -1894,9 +1896,9 @@ function updateTargetSearch() {
                                 console.log('Glowwing time!')
                                 stopp.push('Glowwing')
                         }
-                        if (sorted.includes('Chrysalis') && !stopp.includes('Chrysalis')) {
-                                console.log('Chrysalis time!')
-                                stopp.push('Chrysalis')
+                        if (sorted.includes('Chrysalis')) {
+                                console.log('Chrysalis time! ', sorted)
+                                //stopp.push('Chrysalis')
                         }
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                         if (validPair) {
@@ -1940,8 +1942,9 @@ function updateTargetSearch() {
                         console.log('marked as special pair!')
                 }
         }
+        bDragons = bDragons.splice(bDragons.indexOf(a), 1)
   }
-  console.log('checked ', checked, ' pairs phew!')
+  console.log('checked ', checked, ' pairs phew!', bDragons.length, haveDragonsToCheck.length)
         
   for (const pairName of Object.getOwnPropertyNames(validPairObj)) {
         let pair = validPairObj[pairName]
