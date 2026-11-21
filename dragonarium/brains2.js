@@ -254,11 +254,11 @@ function addSortButtons() {
 }
 
 
-
+/*
 window.onhashchange.addEventListener(function(e) {
         console.log('hash shanged! ', window.location.href)
  //blah blah blah
-});
+});*/
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
         /*if (clickedEl) {
