@@ -987,13 +987,17 @@ function seeOtherPossible(htmEl, elementAdded) {
         if (data.combo.requirements.includes('R Rift')) {
                 cave = 'rift'
         }
-
+        
         let possiblediv = htmEl.querySelector('.otherss')
         
         objPairStuff = getOutputsAndOdds(['justOutputs', 'awaaa'], comboOutput, objPairStuff, cave)
-        
+        console.log(comboOutput, objPairStuff)
         for (const guy of objPairStuff.newGuys) {
-                otherguys += `<div class="otherpossibleguy"><img src="${allDragonImgs[dragonName]}" loading="lazy">
+                let imgsrc = allDragonImgs[dragonName]
+                if (!imgsrc) {
+                        imgsrc = allDragonImgs[dragonName][Object.keys(allDragonImgs[dragonName])[0]]
+                }
+                otherguys += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">
                         <h5>${dragonName}</h5></div>`
         }
         possiblediv.innerHTML = otherguys
