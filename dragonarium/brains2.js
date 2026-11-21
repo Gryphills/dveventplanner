@@ -281,6 +281,15 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         let currentDragonName = clickedEl.closest('.dragonCard').id
         hashHistory.push(currentDragonName)
         hashHistory.push(dragonName)
+        let cardEl = document.getElementById(dragonName)
+
+        if (cardEl.classList.toString().includes('filtered')) {
+                for (const classname of cardEl.classList) {
+                        if (classname.includes('filtered')) {
+                                cardEl.classList.remove(classname)
+                        }
+                }
+        }
         
         let inDiv = dragonarium[dragonName].status;
         document.getElementById(`tabbutton-${inDiv}`).click()
