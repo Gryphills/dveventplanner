@@ -995,6 +995,8 @@ body {
 }
 
 .otherpossibleguy {
+  display: flex;
+  justify-content: center;
   img {
     vertical-align: center;
     max-width: 100px;
@@ -1003,6 +1005,7 @@ body {
   .h5 {
     display: inline-block;
     vertical-align: center;
+    padding-left: 8px;
   }
 }
 
