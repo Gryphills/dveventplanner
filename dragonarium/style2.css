@@ -696,6 +696,11 @@ body {
 }
 */
 
+.twospecialguys {
+  .elementsort {
+    display:none !important;
+  }
+}
 
 .searchbox {
   width: fit-content;
