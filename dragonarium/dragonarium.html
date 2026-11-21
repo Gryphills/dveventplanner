@@ -11,7 +11,7 @@
   <div class='oopsie'>
     <p>Yuh oh! If you see this, the script isn't working properly,<br>which might mean this page is actively getting updated.<br>Try again in a minute or so!<br><br><br>(If this message is still here after a while, message me - I may not have realized oop)</p>
   </div>
-  <div  style="display:flex; width: 94%; flex-wrap:wrap;">
+  <div  style="display:flex; width: 94%; flex-wrap:wrap; justify-content:center;">
     <div>
       <div class="topinfo button importdatabutton" onclick="importdatabuttonClicked(this)">Import Data</div>
       <div class="importdatadiv hidden">
@@ -114,7 +114,10 @@ Download DragonVale:
           </div></div><br>
           <div id="calculateparentsbutton" onclick="calculateParentsPressed()">Calculate Optimal Parents</div>
             <div class="possiblepairs multiparentcards ">
-                <p style="font-style:italic;">Parent pairs are only suggested from dragons you own in the "have" section.<br>Working out a couple Big Bugs today (nov 21st), this may/may not actually function<br>(this message will be removed when I am done tinkering and hopefully it works lol!)</p>
+                <p style="font-style:italic;">Parent pairs are only suggested from dragons you own in the "have" section.<br>
+                  Working out a couple Big Bugs today (nov 21st), this may/may not actually function<br>
+                  (this message will be removed when I am done tinkering and hopefully it works lol!)</p>
+              <div id="mpfloading" class="loading hidden"><h3>Calculating Optimal Pairs.....</h3><br><img src="https://postimg.cc/Q9Cpn4Md" width="150px"></div>
                 <div class="pairsholder"></div>
             </div>
         </div>
