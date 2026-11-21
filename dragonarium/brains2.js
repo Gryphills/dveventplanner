@@ -973,7 +973,12 @@ function buildDragonCard(name, data) {
 }
 
 function seeOtherPossible(htmEl, elementAdded) {
-        
+        if (htmEl.open) {
+                console.log('open!')
+                return;
+        } else {
+                console.log('notpopne')
+        }
         
         let dragonName = htmEl.closest('.dragonCard').id
         let data = allDragonData[dragonName]
@@ -995,7 +1000,7 @@ function seeOtherPossible(htmEl, elementAdded) {
                 }
                 htmEl = htmEl.closest('.otherpossible')
         }
-        let addedels = htmEl.querySelectorAll('addedel')
+        let addedels = htmEl.querySelectorAll('.addedel')
         for (const added of Array.from(addedels)) {
                 comboOutput.push(added.dataset.el)
         }
@@ -1996,7 +2001,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 let sorted = [a, b].sort()
                 for (const guy of targets) {
                         let validPair = checkTargetReq(guy, pairingOutput)
-                        if (sorted.includes('Firefly') && sorted.includes('Chrysalis')) {
+                        /*if (sorted.includes('Firefly') && sorted.includes('Chrysalis')) {
                                 console.log('in theory, this might be dottys pair...? ', sorted, guy, guysWithTwoSpecialGuys)
                         }
                         if (sorted.includes('Faux') && !stopp.includes('Faux')) {
@@ -2010,7 +2015,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         if (sorted.includes('Chrysalis')) {
                                 console.log('Chrysalis time! ', sorted)
                                 //stopp.push('Chrysalis')
-                        }
+                        }*/
                         //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                         if (validPair) {
                                 if (guysWithTwoSpecialGuys.includes(guy)) {
