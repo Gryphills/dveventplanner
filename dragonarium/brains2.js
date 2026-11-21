@@ -1958,7 +1958,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
  //let aIdx = 0
  let bDragons = [].concat(haveDragonsToCheck)
   for (const a of haveDragonsToCheck) {
-        console.log('checking ', a, '; number ', haveDragonsToCheck.indexOf(a), 'of ', haveDragonsToCheck.length, ' (', bDragons.length, ' to check against)')
+        //console.log('checking ', a, '; number ', haveDragonsToCheck.indexOf(a), 'of ', haveDragonsToCheck.length, ' (', bDragons.length, ' to check against)')
         //haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
         let bcheck = 0
         for (const b of bDragons) {
@@ -2030,7 +2030,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
         }
         
         bDragons.splice(bDragons.indexOf(a), 1)
-        console.log('checked ', bcheck, ' dragons against ', a, '; moving to next guy!')
+        //console.log('checked ', bcheck, ' dragons against ', a, '; moving to next guy!')
   }
   console.log('checked ', checked, ' pairs phew!', bDragons.length, haveDragonsToCheck.length)
         
