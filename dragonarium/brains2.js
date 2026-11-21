@@ -1878,9 +1878,11 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
  let stopp = []
  let bDragons = [].concat(haveDragonsToCheck)
   for (const a of haveDragonsToCheck) {
-        console.log('checking ', a, '; number ', haveDragonsToCheck.indexOf(a), 'of ', haveDragonsToCheck.length)
+        console.log('checking ', a, '; number ', haveDragonsToCheck.indexOf(a), 'of ', haveDragonsToCheck.length, ' (', bDragons.length, ' to check against)')
         //haveDragonsToCheck.splice(haveDragonsToCheck.indexOf(a), 1);
+          let bcheck = 0
         for (const b of bDragons) {
+                bcheck += 1
                 checked += 1
                 let pairingOutput = allDragonData[a].elements.concat(allDragonData[b].elements)
                 pairingOutput.push(a)
@@ -1946,8 +1948,9 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         console.log('marked as special pair!')
                 }
         }
+        
         bDragons = bDragons.splice(bDragons.indexOf(a), 1)
-        console.log('checked all of ', a, '; moving to next guy!')
+        console.log('checked ', bcheck, ' dragons against ', a, '; moving to next guy!')
   }
   console.log('checked ', checked, ' pairs phew!', bDragons.length, haveDragonsToCheck.length)
         
