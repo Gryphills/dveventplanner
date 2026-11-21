@@ -964,7 +964,7 @@ function seeOtherPossible(htmEl, elementAdded) {
         let cave = 'reg'
         
         let comboOutput = [].concat(data.combo.output)
-        if (!htmEl.classList.contains('otherpossible') {
+        if (!htmEl.classList.contains('otherpossible')) {
                 if (htmEl.classList.contains('desat')) {
                         htmEl.classList.remove('desat')
                         htmEl.classList.add('.addedel')
