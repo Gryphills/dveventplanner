@@ -912,6 +912,13 @@ function buildDragonCard(name, data) {
           cardhtml += `<p>Base Odds: ${data.breedingOdds.base} / Coop Clone: ${data.breedingOdds.social}</p><br>`
         }
       }
+      if (data.combo.requirements) {
+         let otherhtml = `<details class="otherpossible" onclick = "seeOtherPossible(this)"> <summary>Other Dragons from this Combo:</summary><p>*only shows dragons you don't own</p><div>`
+         for (const eel of elementsChart.prims) {
+                otherhtml += `<div class="el-img" style="background-image:url('${elementIcons[eel.substring(2)]}');"></div>`
+         }
+         otherhtml += '</div>'
+      }
       cardhtml +=   `</div>
       </div>`
     }
@@ -924,6 +931,18 @@ function buildDragonCard(name, data) {
 
 }
 
+function seeOtherPossible(htmEl) {
+        let dragonName = htmEl.closest('.dragonCard').id
+        let data = allDragonData[dragonName]
+        let objPairStuff = {}
+        let otherguys = ``
+        objPairStuff = getOutputsAndOdds(['justOutputs', 'awaaa'], data.combo.output, objPairStuff, "reg")
+        for (const guy of objPairStuff.newGuys) {
+                otherguys += `<div class="otherpossibleguy"><img src="${allDragonImgs[dragonName]}" loading="lazy">
+                        <h5>${dragonName}</h5></div>`
+        }
+        
+}
 
 function makeCards() {
   if (!eventObj.dragonarium) {
@@ -2136,6 +2155,7 @@ function sortPairIntoArray(pairObj, array, property) {
 function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "reg") {
         //console.log('is this firing?', pairObj)
         let parentClone = "singleclone"
+        
         if (pairArray[0] == pairArray[1]) {
                 parentClone = "doubleclone"
         }
@@ -2147,19 +2167,23 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let newOdds = 0
         let breedsOdds = 0
         let clonePercentage = 0
-        if (a.odds[parentClone]) {
-                if (a.odds[parentClone][caveLocation]) {
-                        let getClone = Number(a.odds[parentClone][caveLocation])
-                        if (getClone != NaN) {
-                                clonePercentage += getClone
+        if (pairArray[0] != "justOutputs") {
+                
+        
+                if (a.odds[parentClone]) {
+                        if (a.odds[parentClone][caveLocation]) {
+                                let getClone = Number(a.odds[parentClone][caveLocation])
+                                if (getClone != NaN) {
+                                        clonePercentage += getClone
+                                }
                         }
                 }
-        }
-        if (b.odds[parentClone]) {
-                if (b.odds[parentClone][caveLocation]) {
-                        let getClone = Number(b.odds[parentClone][caveLocation])
-                        if (getClone != NaN) {
-                                clonePercentage += getClone
+                if (b.odds[parentClone]) {
+                        if (b.odds[parentClone][caveLocation]) {
+                                let getClone = Number(b.odds[parentClone][caveLocation])
+                                if (getClone != NaN) {
+                                        clonePercentage += getClone
+                                }
                         }
                 }
         }
@@ -2592,6 +2616,31 @@ function calculateParentsPressed() {
 
           requestAnimationFrame(updateTargetSearch)
 }
+
+function exportdatabuttonClicked(button) {
+        saveData()
+        let toCopy = JSON.stringify(eventObj)
+        navigator.clipboard.writeText(toCopy).then(
+            () => {
+              document.getElementById('exportnotif').textContent = "Data copied to clipboard!"
+            },
+            () => {
+              document.getElementById('exportnotif').textContent = "Failed to copy data :(! waddahell"
+            },
+        );
+}
+
+/*function importdatabuttonClicked(button) {
+        
+        navigator.clipboard.writeText(toCopy).then(
+            () => {
+              document.getElementById('exportnotif').textContent = "Data copied to clipboard!"
+            },
+            () => {
+              document.getElementById('exportnotif').textContent = "Failed to copy data :(! waddahell"
+            },
+        );
+}*/
 
 
 document.addEventListener("DOMContentLoaded", function() {
