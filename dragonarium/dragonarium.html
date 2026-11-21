@@ -75,16 +75,26 @@ Download DragonVale:
               <div class="targetcards targets-selected">
                 </div>
             </div>
-          <div class="additionalsettings" style="display:none;">
-            <label>Minimum Targets:<input type="number" id="mintargets" value=2 ></label>
-            <label>Show up to <input type="number" id="pairpertarget" value=4> valid pairs per Target</label> <br>
+          <div class="additionalsettings">
+            <label>Minimum Targets:<input type="number" id="mintargets" value=2 ></label><br>
+            <label>Show at least <input type="number" id="pairpertarget" value=4> valid pairs per Target (if applicable)</label> <br>
+            <div class="hidden"><br>
+            <label>Sorting By:
+              <select id="sortingtype">
+                <option value="oddsOfTarget">Odds of getting a target</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
+            </label>
             Sorting Weight for pair qualities:<br>
-            <label>Targets/pair <input type="number" id="weight-targetquantity" value=2 ></label>
-            <label>Lower Average Breed Time <input type="number" id="weight-averagetime" value=1 ></label>
-            <label>Odds for getting any target <input type="number" id="weight-targetodds" value=5 ></label>
-            <label>Odds for getting a dragon you don't have (target or not) <input type="number" id="weight-newguy" value=3 ></label>
-            <label>Include shadow realm dragons <input type="checkbox" id="includeShadow" checked></label>
-          </div>
+            <p style="font-style:italic;">The higher the input, the more impact it makes when sorting optimal pairs</p>
+            <label>Amount of Targets hit<input type="range" min=0 max=10 id="weight-targetquantity" value=2 ></label>
+            <label>Lower Average Breed Time<input type="range" min=0 max=10 id="weight-averagetime" value=1 ></label>
+            <label>Odds for getting any target <input type="range" min=0 max=10 id="weight-targetodds" value=5 ></label>
+            <label>Odds for getting a dragon you don't have (target or not) <input type="range" min=0 max=10 id="weight-newguy" value=3 ></label>
+            
+          </div></div>
           <div id="calculateparentsbutton" onclick="calculateParentsPressed()">Calculate Optimal Parents</div>
             <div class="possiblepairs multiparentcards ">
                 <p style="font-style:italic;">Parent pairs are only suggested from dragons you own in the "have" section.<br>Working out a couple Big Bugs today (nov 20th), this may/may not actually function<br>(this message will be removed when I am done tinkering and hopefully it works lol!)</p>
