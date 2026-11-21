@@ -1385,7 +1385,12 @@ function createTargetCards() {
           }
           if (specialguycount > 1) {
               cardEl.classList.add('twospecialguys')
-              document.querySelector('#'+dragonName).classList.add('twospecialguys')
+              let card = document.getElementById(dragonName)
+              if (!card) {
+                console.log('no card sad! ', dragonName)       
+              } else {
+                      card.classList.add('twospecialguys')
+              }
           } else if (specialguycount == 1) {
               cardEl.classList.add('onespecialguy')
               document.querySelector('#'+dragonName).classList.add('onespecialguy')
