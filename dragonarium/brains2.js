@@ -236,7 +236,7 @@ function addSortButtons() {
                                         elementIcons[el] = url;
                                 }
                         }
-                        innerHtml += `<img alt="${el.substring(2)}" title="${el.substring(2)}" class="elsort${el.substring(2)} desat" src="${elementIcons[el.substring(2)]}" onClick="sortCardsByEl(this, '${el.substring(2)}')">`
+                        innerHtml += `<img loading="lazy" alt="${el.substring(2)}" title="${el.substring(2)}" class="elsort${el.substring(2)} desat" src="${elementIcons[el.substring(2)]}" onClick="sortCardsByEl(this, '${el.substring(2)}')">`
                 } else {
                         innerHtml += ` </div> <div class="elementsort">`
                 }
@@ -913,11 +913,20 @@ function buildDragonCard(name, data) {
         }
       }
       if (data.combo.requirements) {
-         let otherhtml = `<details class="otherpossible" onclick = "seeOtherPossible(this)"> <summary>Other Dragons from this Combo:</summary><p>*only shows dragons you don't own</p><div>`
+         let otherhtml = `<details class="otherpossible" onclick = "seeOtherPossible(this)">
+         <summary>Other Dragons from this Combo:</summary>
+         <div class="addelementstomix">
+                 <p>Add additional elements to results:</p>
+                 <div class="elementsort">`
          for (const eel of elementChart.prims) {
-                otherhtml += `<div class="el-img" style="background-image:url('${elementIcons[eel.substring(2)]}');"></div>`
+                 if (!data.combo.output.includes(eel)) {
+                        otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[eel.substring(2)]}" data-el="${eel}" onclick="seeOtherPossible(this)">`
+                 }
          }
-         otherhtml += '</div>'
+         `</div>
+         <p>*only shows dragons you don't own</p>
+         <div class="otherss">`
+         otherhtml += '</div></details>'
       }
       cardhtml +=   `</div>
       </div>`
@@ -931,16 +940,47 @@ function buildDragonCard(name, data) {
 
 }
 
-function seeOtherPossible(htmEl) {
+function seeOtherPossible(htmEl, elementAdded) {
+        
+        
         let dragonName = htmEl.closest('.dragonCard').id
         let data = allDragonData[dragonName]
         let objPairStuff = {}
+        
         let otherguys = ``
-        objPairStuff = getOutputsAndOdds(['justOutputs', 'awaaa'], data.combo.output, objPairStuff, "reg")
+        let cave = 'reg'
+        
+        let comboOutput = [].concat(data.combo.output)
+        if (!htmEl.classList.contains('otherpossible') {
+                if (htmEl.classList.contains('desat')) {
+                        htmEl.classList.remove('desat')
+                        htmEl.classList.add('.addedel')
+                        comboOutput.push(elementAdded)
+                }
+                else {
+                        htmEl.classList.add('desat')
+                        htmEl.classList.remove('.addedel')
+                }
+                htmEl = htmEl.closest('.otherpossible')
+        }
+        let addedels = htmEl.querySelectorAll('.addedel')
+        for (const added of Array.from(addedels)) {
+                comboOutput.push(added.dataset.el)
+        }
+        
+        if (data.combo.requirements.includes('R Rift') {
+                cave = 'rift'
+        }
+
+        let possiblediv = htmEl.querySelector('.otherss')
+        
+        objPairStuff = getOutputsAndOdds(['justOutputs', 'awaaa'], comboOutput, objPairStuff, cave)
+        
         for (const guy of objPairStuff.newGuys) {
                 otherguys += `<div class="otherpossibleguy"><img src="${allDragonImgs[dragonName]}" loading="lazy">
                         <h5>${dragonName}</h5></div>`
         }
+        possiblediv.innerHTML = otherguys
         
 }
 
@@ -1332,8 +1372,10 @@ function createTargetCards() {
           }
           if (specialguycount > 1) {
               cardEl.classList.add('twospecialguys')
+              document.querySelector('#'+dragonName).classList.add('twospecialguys')
           } else if (specialguycount == 1) {
               cardEl.classList.add('onespecialguy')
+              document.querySelector('#'+dragonName).classList.add('onespecialguy')
           }
       }
       if (allDragonData[dragonName].conditions.includes('Night')) {
@@ -2630,17 +2672,37 @@ function exportdatabuttonClicked(button) {
         );
 }
 
-/*function importdatabuttonClicked(button) {
+function importdatabuttonClicked(button) {
+        if (button.classList.contains('importdatabuttonfinal')) {
+                let input = document.querySelector('importdatainput')
+                if (input.value) {
+                        let importData = JSON.parse(input.value)
+                        let issues = false
+                        for (const key of Object.keys(dragonarium)) {
+                                if (input[key]) {
+                                        dragonarium[key] = input[key]
+                                        console.log('imported ', key, ' data!')
+                                } else {
+                                        console.error('issue importing ', key, ' data :(!')
+                                        issues = true
+                                }
+                        }
+                        if (!issues) {
+                                saveData()
+                        }
+                }
+        } else {
+                let divv = document.querySelector('.importdatadiv')
+                if (divv.classList.contains('hidden')) {
+                        divv.classList.remove('hidden')
+                        button.textContent = "Close Import Tab"
+                } else {
+                        divv.classList.add('hidden')
+                        button.textContent = "Import Data"
+                }
+        }
         
-        navigator.clipboard.writeText(toCopy).then(
-            () => {
-              document.getElementById('exportnotif').textContent = "Data copied to clipboard!"
-            },
-            () => {
-              document.getElementById('exportnotif').textContent = "Failed to copy data :(! waddahell"
-            },
-        );
-}*/
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
