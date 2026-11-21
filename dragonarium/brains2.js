@@ -2001,7 +2001,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 pairObj.oddsOfCool = oddsOfCool
                 pairObj = applyWeighting(settingsWeights, pairObj, targets)
                 //console.log(pairObj)
-                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "weightedValue")
+                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                   
           }
           validPairs = scoredPairs
@@ -2108,14 +2108,22 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
 }
 
 function sortPairIntoArray(pairObj, array, property) {
+  let propIsArray = false
+  if (property.includes('Array') {
+        property = property.split('Array')[0]
+        propIsArray = true
+  }
   //console.log('sorting ', pairObj, ' into ' , validPairs)
   for (i=0;i<array.length;i++) {
           let pairing = array[i]
-          if (typeof(pairObj[property]) == "Array") {
+          if (propIsArray) {
+              if (pairObj[property].length > pairing[property].length) {
+                      array.splice(array.indexOf(pairing), 0, pairObj)
+                      return array;
+              }
           } else {
             if (pairObj[property] > pairing[property]) {
               array.splice(array.indexOf(pairing), 0, pairObj)
-                    //console.log('is now ', validPairs)
               return array;
             }
           }
