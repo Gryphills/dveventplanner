@@ -262,7 +262,7 @@ window.addEventListener('hashchange', function(e) {
         if (name != lastCard.replaceAll(' ', '-')) {
                 console.log(name , ' is NOT ', lastCard.replaceAll(' ', '-'))
         } else {
-                console.log(name, ' IS ', lastCard.replaceAll(' ', '-')
+                console.log(name, ' IS ', lastCard.replaceAll(' ', '-'))
         }
 });
 
