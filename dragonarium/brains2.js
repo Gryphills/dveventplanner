@@ -2322,6 +2322,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         pairObj.hybrids = hybrids
         pairObj.newOdds = newOdds
         pairObj.newGuys = newGuys
+        console.log(newGuys)
         //console.log(pairObj)
         return pairObj;
         
