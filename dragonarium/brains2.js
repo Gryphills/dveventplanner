@@ -970,16 +970,16 @@ function seeOtherPossible(htmEl, elementAdded) {
         if (!htmEl.classList.contains('otherpossible')) {
                 if (htmEl.classList.contains('desat')) {
                         htmEl.classList.remove('desat')
-                        htmEl.classList.add('.addedel')
+                        htmEl.classList.add('addedel')
                         comboOutput.push(elementAdded)
                 }
                 else {
                         htmEl.classList.add('desat')
-                        htmEl.classList.remove('.addedel')
+                        htmEl.classList.remove('addedel')
                 }
                 htmEl = htmEl.closest('.otherpossible')
         }
-        let addedels = htmEl.querySelectorAll('.addedel')
+        let addedels = htmEl.querySelectorAll('addedel')
         for (const added of Array.from(addedels)) {
                 comboOutput.push(added.dataset.el)
         }
