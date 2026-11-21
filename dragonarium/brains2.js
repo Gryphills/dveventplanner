@@ -993,16 +993,18 @@ function seeOtherPossible(htmEl, elementAdded) {
         objPairStuff = getOutputsAndOdds(['justOutputs', 'awaaa'], comboOutput, objPairStuff, cave)
         console.log(comboOutput, objPairStuff)
         for (const guy of objPairStuff.newGuys) {
-                let imgsrc = allDragonImgs[dragonName]
-                if (!imgsrc) {
-                        imgsrc = allDragonImgs[dragonName][Object.keys(allDragonImgs[dragonName])[0]]
+                if (guy != dragonName) {
+                        let imgsrc = allDragonImgs[dragonName]
+                        if (!imgsrc) {
+                                imgsrc = allDragonImgs[dragonName][Object.keys(allDragonImgs[dragonName])[0]]
+                        }
+                        otherguys += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">
+                                <h5>${dragonName}</h5></div>`
                 }
-                otherguys += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">
-                        <h5>${dragonName}</h5></div>`
         }
-        possiblediv.innerHTML = otherguys
-        
+        possiblediv.innerHTML = otherguys 
 }
+
 
 function makeCards() {
   if (!eventObj.dragonarium) {
