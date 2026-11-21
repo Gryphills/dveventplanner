@@ -1947,7 +1947,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 }
         }
         bDragons = bDragons.splice(bDragons.indexOf(a), 1)
-          console.log('checked all of ', a, '; moving to next guy!')
+        console.log('checked all of ', a, '; moving to next guy!')
   }
   console.log('checked ', checked, ' pairs phew!', bDragons.length, haveDragonsToCheck.length)
         
