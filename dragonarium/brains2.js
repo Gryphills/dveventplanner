@@ -258,7 +258,7 @@ function addSortButtons() {
 window.onhashchange.addEventListener(function(e) {
         console.log('hash shanged! ', window.location.href)
  //blah blah blah
-}
+});
 
 function jumpToDragon(dragonName, clickedEl = undefined) {
         /*if (clickedEl) {
@@ -2182,7 +2182,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
   //yay we checked ALL the possible pairs! Hopefully that doesn't completely eat the computer to do mSJHDgfsd
   //now we need to build and add the pairs into the template thingy.
 
-
+  document.getElementById('mpfloading').classList.add('hidden')
   
 }
 
@@ -2673,7 +2673,7 @@ function calculateParentsPressed() {
           }*/
           tempTextEl.textContent = "Calculating Pairs, please wait a moment..."
           possiblepairdiv.appendChild(tempTextEl)
-
+          document.getElementById('mpfloading').classList.remove('hidden')
           requestAnimationFrame(updateTargetSearch)
 }
 
