@@ -11,13 +11,20 @@
   <div class='oopsie'>
     <p>Yuh oh! If you see this, the script isn't working properly,<br>which might mean this page is actively getting updated.<br>Try again in a minute or so!<br><br><br>(If this message is still here after a while, message me - I may not have realized oop)</p>
   </div>
-  <div class="button importdatabutton">Import Data</div>
-  <div class="topinfo  importdatadiv hidden">
-    <p>Be warned, importing data will overwrite all the settings stored on this browser! Only do so if you are sure.</p>
-    <input id="importdatainput">
-    <div class="button importdatabuttonfinal" onclick="importdatabuttonClicked(this)">Import and Overwrite Data</div>
+  <div class="topinfo" style="display:flex; flex-wrap:wrap;">
+    <div>
+      <div class="button importdatabutton">Import Data</div>
+      <div class="topinfo  importdatadiv hidden">
+        <p>Be warned, importing data will overwrite all the settings stored on this browser! Only do so if you are sure.</p>
+        <input id="importdatainput">
+        <div class="button importdatabuttonfinal" onclick="importdatabuttonClicked(this)">Import and Overwrite Data</div>
+      </div>
+    </div>
+    <div>
+      <div class="button exportdatabutton" onclick="exportdatabuttonClicked(this)">Export/save Data</div><br>
+      <p id="exportnotif"></p>
+    </div>
   </div>
-  <div class="button exportdatabutton" onclick="exportdatabuttonClicked(this)">Export/save Data</div> <p id="exportnotif"></p>
   
   <details class="topinfo" open>
     <p id="lastupdated"></p>
@@ -27,6 +34,8 @@
       <li>Parent finder assumes you have dragons of all elements available</li>
       <li>Dragons in the parent finder don't always update if you move dragon cards to different sections/favourites; just refresh the page or toggle the filters on/off</li>
       <li>Dragons that require additional things like time of day/rift elements don't have an indicator in the multi-parent finder yet; double check if you need.</li>
+      <li>Parent Finder needs better sorting options</li>
+      <li>Cave buttons don't work</li>
     </ul>
     
   </details>
