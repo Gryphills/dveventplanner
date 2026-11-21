@@ -877,7 +877,8 @@ body {
       height: 40px;
     }
   }
-  .possibletarget::after {
+}
+.breednight.possibletarget::after {
       content: ' ';
       background-image: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
       background-size: contain;
@@ -887,8 +888,7 @@ body {
       position: absolute;
       top:-4px;
       left: -4px;
-  }
-}
+ }
 .breedday {
   .breedinginfo {
     h4::after {
@@ -903,7 +903,8 @@ body {
       height: 40px;
     }
   }
-  .possibletarget::after {
+}
+.breedday.possibletarget::after {
       content: ' ';
       background-image: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
       background-size: contain;
@@ -913,7 +914,6 @@ body {
       position: absolute;
       top:-4px;
       left: -4px;
-  }
 }
 .weatherblossoms {
   .breedinginfo {
