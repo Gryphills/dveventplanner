@@ -14,6 +14,8 @@ let pairsForDragons = {}
 let availableDragonNames = []
 let lastUpdate = 'unknown!'
 
+let hashHistory = []
+
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
                 if (allDragonData[dragonName].limited == "" || allDragonData[dragonName].limited == "A" || allDragonData[dragonName].limited == "N") {
@@ -251,6 +253,13 @@ function addSortButtons() {
         //document.head.appendChild(styleEl);
 }
 
+
+
+window.onhashchange = hashChanged() {
+        console.log('hash shanged! ', window.location.href)
+ //blah blah blah
+}
+
 function jumpToDragon(dragonName, clickedEl = undefined) {
         /*if (clickedEl) {
                 let back = clickedEl.closest('dragonCard')
@@ -263,6 +272,9 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
                 
         }*/
         //console.log(dragonName.id)
+        let currentDragonName = clickedEl.closest('.dragonCard').id
+        hashHistory.push(currentDragonName)
+        
         let inDiv = dragonarium[dragonName].status;
         document.getElementById(`tabbutton-${inDiv}`).click()
         while (!document.getElementById(`tabbutton-${inDiv}`).classList.contains('open')) {
@@ -271,6 +283,7 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         console.log(document.getElementById(`tabbutton-${inDiv}`), ' should be open now! ')
         window.location.href = window.location.href.split('#')[0] + '#' + dragonName.replaceAll(' ', '-')
         //document.getElementById(inDiv + 'Div')
+        console.log('hashhistory = ', hashHistory)
 }
 
 //NEW
