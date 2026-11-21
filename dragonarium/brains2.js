@@ -981,7 +981,7 @@ function seeOtherPossible(htmEl, elementAdded) {
                 comboOutput.push(added.dataset.el)
         }
         
-        if (data.combo.requirements.includes('R Rift') {
+        if (data.combo.requirements.includes('R Rift')) {
                 cave = 'rift'
         }
 
