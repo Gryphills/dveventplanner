@@ -2736,11 +2736,14 @@ function getSettings() {
                         }
                 }
                 if (defaultSettings.wantTab != retrievedSettings.wantTab) {
-                        let buttons = document.getElementById('wantTab').firstElementChild;
+                        let tabb = document.getElementById('wantTab');
                         for (const setting of Object.keys(defaultSettings.wantTab)) {
                                 
                                 if (defaultSettings.wantTab[setting] != retrievedSettings.wantTab[setting]) {
-                                        buttons.querySelector('.' + setting + 'Button').click()
+                                        console.log(setting, " has default of ", defaultSettings.wantTab[setting], " ; retrieved ", retrievedSettings.wantTab[setting])
+                                        let btut = tabb.querySelector('.' + setting + 'Button')
+                                        console.log(btut)
+                                                btut.click()
                                 }
                                 
                         }
