@@ -1066,8 +1066,8 @@ function seeOtherPossible(htmEl, elementAdded) {
                                         console.log(valid, doublecombocheck, data.combo.requirements)
                                         if (valid) {
                                                 let specialguyimg = allDragonImgs[guy].Adult
-                                                if (!imgsrc) {
-                                                        imgsrc = allDragonImgs[guy][Object.keys(allDragonImgs[guy])[0]]
+                                                if (!specialguyimg) {
+                                                        specialguyimg = allDragonImgs[guy][Object.keys(allDragonImgs[guy])[0]]
                                                         console.log('no adult.? ', allDragonImgs[guy], Object.keys(allDragonImgs[guy])[0])
                                                 }
                                                 otherguys += `<div class="otherpossibleguy"><img src="${specialguyimg}" loading="lazy">
