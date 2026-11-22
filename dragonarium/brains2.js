@@ -953,7 +953,7 @@ function buildDragonCard(name, data) {
                  if (elName == "AnAny") {
                         otherhtml += `<br>`
                  }
-                 else if (!data.combo.output.includes(elName) && elName != "CrCrystalline" && elName != "GeGemstone) {
+                 else if (!data.combo.output.includes(elName) && elName != "CrCrystalline" && elName != "GeGemstone") {
                         otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[elName.substring(2)]}" data-el="${elName}" onclick="seeOtherPossible(this)">`
                  }
                  if (elName == "OlOlympus") {
