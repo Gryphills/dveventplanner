@@ -1064,7 +1064,7 @@ function seeOtherPossible(htmEl, elementAdded) {
                                 }
                                 if (specialB) {
                                         doublecombocheck.push(specialB)
-                                        doublecombocheck.push(allDragonData[specialB].elements)
+                                        doublecombocheck.concat(allDragonData[specialB].elements)
                                         let valid = true
                                         for (const reqqq of data.combo.requirements) {
                                                 if (!doublecombocheck.includes(reqqq)) {
