@@ -6,7 +6,12 @@ body {
   font-family: Tahoma, Verdana, sans-serif;
 }
 
-
+.eventprice {
+  font-weight: bold;
+}
+.eventprice::before {
+  content: '🫐'
+}
 
 #calculateparentsbutton {
   padding: 10px;
