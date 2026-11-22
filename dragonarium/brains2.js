@@ -885,7 +885,7 @@ function buildDragonCard(name, data) {
     cardhtml += `<div style='max-height:22px;height:fit-content;display:flex; justify-content:center;'>${elements}</div> `
 
         if (data.eventprice) {
-                cardhtml += `div class="eventprice"><p>${data.eventprice}</p></div>
+                cardhtml += `div class="eventprice"><p>${data.eventprice}</p></div>`
         }
             
            cardhtml +=  `<div class="breedinginfo">`
