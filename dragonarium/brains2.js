@@ -1072,15 +1072,16 @@ function seeOtherPossible(htmEl, elementAdded) {
                                                         break;
                                                 }
                                         }
-                                        console.log(valid, doublecombocheck, data.combo.requirements)
+                                        console.log(dragonName, ' needs ',data.combo.requirements, '; check is ', valid, '\n', doublecombocheck, )
+                                        
                                         if (valid) {
                                                 let specialguyimg = allDragonImgs[guy].Adult
                                                 if (!specialguyimg) {
                                                         specialguyimg = allDragonImgs[guy][Object.keys(allDragonImgs[guy])[0]]
                                                         console.log('no adult.? ', allDragonImgs[guy], Object.keys(allDragonImgs[guy])[0])
                                                 }
-                                                otherguys += `<div class="otherpossibleguy"><img src="${specialguyimg}" loading="lazy">
-                                                <h5>${guy}<br>(combo is ${specialA.name}+${specialB.name})</h5></div>`
+                                                //otherguys += `<div class="otherpossibleguy"><img src="${specialguyimg}" loading="lazy">
+                                                //<h5>${guy}<br>(combo is ${specialA.name}+${specialB.name})</h5></div>`
 
                                         }
                                 }
