@@ -15,6 +15,7 @@ let availableDragonNames = []
 let lastUpdate = 'unknown!'
 
 let hashHistory = []
+let singleSpecialGuys = []
 
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
@@ -1026,6 +1027,55 @@ function seeOtherPossible(htmEl, elementAdded) {
                                 <h5>${guy}</h5></div>`
                 }
         }
+
+        if (singleSpecialGuys.includes(dragonName)) {
+                let specialA = ''
+                for (const req of data.combo.requirements) {
+                        if (!elementChart.basics.includes(req)) {
+                                specialA = req
+                                break;
+                        }
+                }
+                if (specialA) {
+                        for (const guy of singleSpecialGuys) {
+                                let doublecombocheck = [].concat(allDragonData[specialA].elements)
+                                doublecombocheck.push(specialA)
+                                let specialB = ''
+                                for (const req of allDragonData[guy].combo.requirements) {
+                                        if (!elementChart.basics.includes(req)) {
+                                                specialB = req
+                                                break;
+                                        }
+                                }
+                                if (specialB) {
+                                        doublecombocheck.push(specialB)
+                                        doublecombocheck.push(allDragonData[specialB].elements)
+                                        let valid = true
+                                        for (const reqqq of data.combo.requirements) {
+                                                if (!doublecombocheck.includes(reqqq)) {
+                                                        valid = false
+                                                        break;
+                                                }
+                                        }
+                                        console.log(valid, doublecombocheck, data.combo.requirements)
+                                        if (valid) {
+                                                let specialguyimg = allDragonImgs[guy].Adult
+                                                if (!imgsrc) {
+                                                        imgsrc = allDragonImgs[guy][Object.keys(allDragonImgs[guy])[0]]
+                                                        console.log('no adult.? ', allDragonImgs[guy], Object.keys(allDragonImgs[guy])[0])
+                                                }
+                                                otherguys += `<div class="otherpossibleguy"><img src="${specialguyimg}" loading="lazy">
+                                                <h5>${guy}<br>(combo is ${specialA.name}+${specialB.name})</h5></div>`
+
+                                        }
+                                }
+                                
+                        }
+                }
+        } //else if (!htmEl.closest('.dragonCard').classList.includes('twospecialguys')) {
+          //      for (const guy of singleSpecialGuys) {
+        //}
+        
         possiblediv.innerHTML = otherguys 
 }
 
@@ -1427,6 +1477,7 @@ function createTargetCards() {
           } else if (specialguycount == 1) {
               cardEl.classList.add('onespecialguy')
               document.querySelector('#'+dragonName).classList.add('onespecialguy')
+              singleSpecialGuys.push(dragonName)
           }
       }
       if (allDragonData[dragonName].conditions.includes('Night')) {
