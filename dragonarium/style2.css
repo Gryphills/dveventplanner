@@ -339,7 +339,7 @@ body {
     line-height: 34px;
 }
 
-.biggold::before {
+.highgold::before {
     content: '';
     position: absolute;
     top:35px;
