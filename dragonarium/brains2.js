@@ -284,9 +284,9 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         hashHistory.push(dragonName)
         let cardEl = document.getElementById(dragonName)
 
-        if (cardEl.classList.toString().includes('filtered')) {
+        if (cardEl.classList.toString().includes('filter')) {
                 for (const classname of cardEl.classList) {
-                        if (classname.includes('filtered')) {
+                        if (classname.includes('filter')) {
                                 cardEl.classList.remove(classname)
                         }
                 }
