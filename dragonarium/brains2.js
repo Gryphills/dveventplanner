@@ -845,15 +845,18 @@ function buildDragonCard(name, data) {
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" >🗡<div class="tooltip">Shadow Realm</div></div>
         <div class="minibutton rifttrait" onclick="riftTraitButton(this)" data-toggle=0><div class="tooltip">Rift Version Acquired</div></div>
     </div>`
+        
     cardhtml +=`<div class="leftminiicons">`
+        /*
             if (data.limited == "Y") {
                 cardhtml +=`<div class='leftmini unavail'>⧗<div class="tooltip">Not Currently Available</div></div>`
             } else if (data.limited == "A") {
                 cardhtml +=`<div class='leftmini avail'>⧗<div class="tooltip">Currently Available Limited!</div></div>`
-            }
+            }*/
             if (Number(data.gold) > 50) {
-                cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/X7JBNYbL/Coin-template.webp'><div class="tooltip">Top 10% DC earner</div></div>`
+                cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/X7JBNYbL/Coin-template.webp'> <div class="tooltip">Top 10% DC earner</div></div>`
             }
+        
     cardhtml +=`</div>`
     
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
