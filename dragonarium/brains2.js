@@ -2785,7 +2785,9 @@ function calculateParentsPressed() {
           tempTextEl.textContent = "Calculating Pairs, please wait a moment..."
           possiblepairdiv.appendChild(tempTextEl)
           document.getElementById('mpfloading').classList.remove('hidden')
-          requestAnimationFrame(updateTargetSearch)
+
+        setTimeout(updateTargetSearch, 0.2)
+          //requestAnimationFrame(updateTargetSearch)
 }
 
 function exportdatabuttonClicked(button) {
