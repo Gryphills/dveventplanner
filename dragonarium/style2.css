@@ -339,7 +339,25 @@ body {
     line-height: 34px;
 }
 
-.highgold::before {
+.leftminiicons {
+  position: absolute;
+  left: -20px;
+  z-index: 1;
+  top: -15px;
+  height: 100%;
+  .leftmini {
+    width:40px;
+    height:40px;
+  }
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+  .minibutton {
+    cursor: default;
+  }
+}
+/*.highgold::before {
     content: '';
     position: absolute;
     top:35px;
@@ -348,7 +366,7 @@ body {
     background-size: contain;
     width:40px;
     height:40px;
-}
+}*/
 
 .multi {
   /*position: absolute;
