@@ -8,8 +8,15 @@ body {
 
 .eventprice {
   font-weight: bold;
+  padding-top: 8px
   p::before {
     content: '🫐'
+  }
+  p{ 
+    border-radius: 6px;
+    padding: 8px;
+    font-size: larger;
+    background-color: #fbf8f380;
   }
 }
 
