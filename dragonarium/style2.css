@@ -8,9 +8,9 @@ body {
 
 .eventprice {
   font-weight: bold;
-  padding-top: 8px
+  padding-top: 8px;
   p::before {
-    content: '🫐'
+    content: '🫐';
   }
   p{ 
     border-radius: 6px;
@@ -19,6 +19,7 @@ body {
     background-color: #fbf8f380;
   }
 }
+.eventprice {
 
 #calculateparentsbutton {
   padding: 10px;
