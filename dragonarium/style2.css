@@ -996,6 +996,7 @@ body {
     padding-bottom:6px;
     display:flex;
     flex-wrap:wrap;
+    justify-content:center;
   }
 }
 
