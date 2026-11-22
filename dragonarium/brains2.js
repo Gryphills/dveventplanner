@@ -951,13 +951,13 @@ function buildDragonCard(name, data) {
          for (const eel of elementChart.basics) {
                  //let elName = chartRef[eel]
                  if (eel == "AnAny") {
-                        otherhtml += `<br>`
+                        otherhtml += `</div><div class="elementsort">`
                  }
                  else if (!data.combo.output.includes(eel) && eel != "CrCrystalline" && eel != "GeGemstone") {
                         otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[eel.substring(2)]}" data-el="${eel}" onclick="seeOtherPossible(this)">`
                  }
                  if (eel == "OlOlympus") {
-                        otherhtml += `<br>`
+                        otherhtml += `</div><div class="elementsort">`
                  }
          }
          otherhtml += `</div>
