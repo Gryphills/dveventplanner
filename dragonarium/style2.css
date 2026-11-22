@@ -1006,6 +1006,7 @@ body {
   margin: 2px;
   justify-content: center;
   max-width: 90px;
+  height: 110px;
   img {
     vertical-align: center;
     max-width: 100px;
