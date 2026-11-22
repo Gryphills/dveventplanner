@@ -1042,7 +1042,7 @@ function seeOtherPossible(htmEl, elementAdded) {
                                 <h5>${guy}</h5></div>`
                 }
         }
-
+/*
         if (singleSpecialGuys.includes(dragonName)) {
                 let specialA = ''
                 for (const req of data.combo.requirements) {
@@ -1090,7 +1090,7 @@ function seeOtherPossible(htmEl, elementAdded) {
                 }
         } //else if (!htmEl.closest('.dragonCard').classList.includes('twospecialguys')) {
           //      for (const guy of singleSpecialGuys) {
-        //}
+        //}*/
         if (otherguys) {
                 possiblediv.innerHTML = otherguys 
         } else {
