@@ -943,7 +943,7 @@ function buildDragonCard(name, data) {
         }
       }
       if (data.combo.requirements) {
-         let otherhtml = `<details class="otherpossible" onclick = "seeOtherPossible(this)">
+         let otherhtml = `<details class="otherpossible" style="min-width: 0px;" onclick = "seeOtherPossible(this)">
          <summary>Other Dragons from this Combo:</summary>
          <div class="addelementstomix">
                  <p>Add additional elements to results:</p>
