@@ -1091,8 +1091,11 @@ function seeOtherPossible(htmEl, elementAdded) {
         } //else if (!htmEl.closest('.dragonCard').classList.includes('twospecialguys')) {
           //      for (const guy of singleSpecialGuys) {
         //}
-        
-        possiblediv.innerHTML = otherguys 
+        if (otherguys) {
+                possiblediv.innerHTML = otherguys 
+        } else {
+                possiblediv.innerHTML = `No other new dragons found in results!`
+        }
 }
 
 
