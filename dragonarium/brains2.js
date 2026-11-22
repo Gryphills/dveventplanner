@@ -2197,7 +2197,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 pairObj.oddsOfCool = oddsOfCool
                 //pairObj = applyWeighting(settingsWeights, pairObj, targets)
                 //console.log(pairObj)
-                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
+                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "newOdds")
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                   
           }
