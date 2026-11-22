@@ -8,9 +8,9 @@ body {
 
 .eventprice {
   font-weight: bold;
-}
-.eventprice::before {
-  content: '🫐'
+  p::before {
+    content: '🫐'
+  }
 }
 
 #calculateparentsbutton {
