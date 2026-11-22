@@ -879,7 +879,13 @@ function buildDragonCard(name, data) {
     } else {
       cardhtml += `<div class="itemimage" style="max-width:50px;max-height:50px;"></div>` 
     }
-    cardhtml += `<div style='max-height:22px;height:fit-content;display:flex; justify-content:center;'>${elements}</div>  <div class="breedinginfo">`
+    cardhtml += `<div style='max-height:22px;height:fit-content;display:flex; justify-content:center;'>${elements}</div> `
+
+        if (data.eventprice) {
+                cardhtml += `div class="eventprice"><p>${data.eventprice}</p></div>
+        }
+            
+           cardhtml +=  `<div class="breedinginfo">`
 
     let skipThing = false;
     if (data.combo['special']) {
