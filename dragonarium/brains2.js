@@ -784,7 +784,7 @@ function riftTraitButton(el) {
 }
 
 
-
+let test = 0
 function buildDragonCard(name, data) {
   //console.log(name, data)
   let elements = ``
@@ -989,7 +989,10 @@ function buildDragonCard(name, data) {
       cardhtml +=   `</div>
       </div>`
     }
-    
+    if (test == 0) {
+            test = 1;
+            console.log(cardhtml)
+    }
     let cardDiv = document.createElement('div');
     cardDiv.innerHTML = cardhtml;
     let cardEl = cardDiv.children[0]
