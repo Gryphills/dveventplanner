@@ -800,6 +800,9 @@ function buildDragonCard(name, data) {
     } else {
       cardhtml += ` perm`
     }
+    if (Number(data.gold) > 50) {
+        cardhtml += ` highgold `
+    }
     /*if (dragonarium[name].rifted == "1") {
         cardhtml += ` rifted `
     }*/
