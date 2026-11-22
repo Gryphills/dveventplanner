@@ -6,6 +6,11 @@ body {
   font-family: Tahoma, Verdana, sans-serif;
 }
 
+#lastupdated {
+  font-weight: bold;
+  text-align:center;
+}
+
 .eventprice {
   font-weight: bold;
   padding-top: 8px;
