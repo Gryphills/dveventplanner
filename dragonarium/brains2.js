@@ -948,10 +948,16 @@ function buildDragonCard(name, data) {
          <div class="addelementstomix">
                  <p>Add additional elements to results:</p>
                  <div class="elementsort">`
-         for (const eel of elementChart.prims) {
-                 let elName = chartRef[eel]
-                 if (!data.combo.output.includes(elName)) {
+         for (const elName of elementChart.basics) {
+                 //let elName = chartRef[eel]
+                 if (elName == "AnAny") {
+                        otherhtml += `<br>`
+                 }
+                 else if (!data.combo.output.includes(elName) && elName != "CrCrystalline" && elName != "GeGemstone) {
                         otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[elName.substring(2)]}" data-el="${elName}" onclick="seeOtherPossible(this)">`
+                 }
+                 if (elName == "OlOlympus") {
+                        otherhtml += `<br>`
                  }
          }
          otherhtml += `</div>
