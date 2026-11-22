@@ -845,6 +845,16 @@ function buildDragonCard(name, data) {
         <div class="minibutton shadowc" data-toggle=0 onclick="shadowCard(this)" >🗡<div class="tooltip">Shadow Realm</div></div>
         <div class="minibutton rifttrait" onclick="riftTraitButton(this)" data-toggle=0><div class="tooltip">Rift Version Acquired</div></div>
     </div>`
+    cardhtml +=`<div class="leftminiicons">`
+            if (data.limited == "Y") {
+                cardhtml +=`<div class='leftmini unavail'>⧗<div class="tooltip">Not Currently Available</div>`
+            } else if (data.limited == "A") {
+                cardhtml +=`<div class='leftmini avail'>⧗<div class="tooltip">Currently Available Limited!</div>`
+            }
+            if (Number(data.gold) > 50) {
+                cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/X7JBNYbL/Coin-template.webp'><div class="tooltip">Top 10% DC earner</div>`
+            }
+    cardhtml +=`</div>`
     
     cardhtml +=`<h2 class="itemname">${name} Dragon</h2>`
     if (allDragonImgs[name]) {
@@ -1978,6 +1988,7 @@ function updateTargetSearch() {
   let pairsNeededForTargets = {}
   let pairCountTotal = 0
   let targets = []
+  //let bestPairForTarget = {}
 
   let validPairObj = {}
   let validPairs = []
@@ -1990,6 +2001,7 @@ function updateTargetSearch() {
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
+    //bestPairForTarget[dragonName] = {pair: 'none', odds: ''}
     pairsNeededForTargets[dragonName] = Number(settingsWeights.pairpertarget)
     pairCountTotal += Number(settingsWeights.pairpertarget) + 5
     if (target.classList.contains('twospecialguys')) {
@@ -2008,10 +2020,19 @@ function updateTargetSearch() {
   //now we haveall our required stuff, and all our targets. lets start with uh
   let haveDragonNodes = haveDiv.children;
   let haveDragonsToCheck = []
-  for (const child of haveDragonNodes) {
-          //if (!targets.includes(child.id)) {
-            haveDragonsToCheck.push(child.id);
-          //}
+  if (document.getElementById('includeallpairs').checked) {
+        for (const dn of allDragonNames) {
+                
+                if (allDragonData[dn].rarity != "Gemstone") {
+                    haveDragonsToCheck.push(dn);
+                }
+          }
+  } else {
+          for (const child of haveDragonNodes) {
+                  if (allDragonData[dn].rarity != "Gemstone") {
+                    haveDragonsToCheck.push(child.id);
+                  }
+          }
   }
   
   
@@ -2077,22 +2098,6 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 let sorted = [a, b].sort()
                 for (const guy of targets) {
                         let validPair = checkTargetReq(guy, pairingOutput)
-                        /*if (sorted.includes('Firefly') && sorted.includes('Chrysalis')) {
-                                console.log('in theory, this might be dottys pair...? ', sorted, guy, guysWithTwoSpecialGuys)
-                        }
-                        if (sorted.includes('Faux') && !stopp.includes('Faux')) {
-                                console.log('faux time!')
-                                stopp.push('Faux')
-                        }
-                        if (sorted.includes('Glowwing') && !stopp.includes('Glowwing')) {
-                                console.log('Glowwing time!')
-                                stopp.push('Glowwing')
-                        }
-                        if (sorted.includes('Chrysalis')) {
-                                console.log('Chrysalis time! ', sorted)
-                                //stopp.push('Chrysalis')
-                        }*/
-                        //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                         if (validPair) {
                                 if (guysWithTwoSpecialGuys.includes(guy)) {
                                         specialPair = true;
@@ -2131,7 +2136,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 if (specialPair) {
                         specialPairs.push(`${sorted[0]}//${sorted[1]}`)
                         validPairObj[`${sorted[0]}//${sorted[1]}`].specialPair = true
-                        console.log('marked as special pair!')
+                        //console.log('marked as special pair!')
                 }
         }
         
