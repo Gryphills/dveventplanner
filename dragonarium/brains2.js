@@ -1276,15 +1276,15 @@ function processCombo(comboData) {
       }
     }
     comboFin.output = outputNoDups;
-    /*if (comboFin.requirements.length != 1) {
-        comboFin.requirements = requirementNoDups;
-    }*/
-    
-    /*if (comboFin.requirements.length == requirementNoDups.length) {
+    //if (comboFin.requirements.length != 1) {
+      comboFin.requirements = requirementNoDups;
+    //} else {
         
-    } else {
-        console.log('lendth is not same:', comboFin.requirements, requirementNoDups)
-    }*/
+    //}
+    
+    //if (comboFin.requirements.length != requirementNoDups.length) {
+    //    console.log('lendth is not same:', comboFin.requirements, requirementNoDups)
+    //}
   }
         if (comboFin.requirements) {
                 if (comboFin.requirements == [ "MhMonolith" ]) {
