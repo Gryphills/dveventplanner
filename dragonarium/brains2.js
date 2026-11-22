@@ -948,15 +948,15 @@ function buildDragonCard(name, data) {
          <div class="addelementstomix">
                  <p>Add additional elements to results:</p>
                  <div class="elementsort">`
-         for (const elName of elementChart.basics) {
+         for (const eel of elementChart.basics) {
                  //let elName = chartRef[eel]
-                 if (elName == "AnAny") {
+                 if (eel == "AnAny") {
                         otherhtml += `<br>`
                  }
-                 else if (!data.combo.output.includes(elName) && elName != "CrCrystalline" && elName != "GeGemstone") {
-                        otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[elName.substring(2)]}" data-el="${elName}" onclick="seeOtherPossible(this)">`
+                 else if (!data.combo.output.includes(eel) && eel != "CrCrystalline" && eel != "GeGemstone") {
+                        otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[eel.substring(2)]}" data-el="${eel}" onclick="seeOtherPossible(this)">`
                  }
-                 if (elName == "OlOlympus") {
+                 if (eel == "OlOlympus") {
                         otherhtml += `<br>`
                  }
          }
@@ -1466,12 +1466,15 @@ function createTargetCards() {
 
       if (allDragonData[dragonName].combo.requirements) {
               let specialguycount = 0
-              
-          for (const required of allDragonData[dragonName].combo.requirements) {
-                if (!elementChart.basics.includes(required)) {
-                        specialguycount += 1
-                }
-          }
+              if (allDragonData[dragonName].combo.requirements[0] == allDragonData[dragonName].combo.requirements[1]) {
+                specialguycount = 2
+              } else {
+                  for (const required of allDragonData[dragonName].combo.requirements) {
+                        if (!elementChart.basics.includes(required)) {
+                                specialguycount += 1
+                        }
+                  }
+              }
           if (specialguycount > 1) {
               cardEl.classList.add('twospecialguys')
               let card = document.getElementById(dragonName)
