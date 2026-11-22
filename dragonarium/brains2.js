@@ -2035,7 +2035,7 @@ function updateTargetSearch() {
           }
   } else {
           for (const child of haveDragonNodes) {
-                  if (allDragonData[dn].rarity != "Gemstone") {
+                  if (allDragonData[child.id].rarity != "Gemstone") {
                     haveDragonsToCheck.push(child.id);
                   }
           }
@@ -2195,8 +2195,9 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         
                 }
                 pairObj.oddsOfCool = oddsOfCool
-                pairObj = applyWeighting(settingsWeights, pairObj, targets)
+                //pairObj = applyWeighting(settingsWeights, pairObj, targets)
                 //console.log(pairObj)
+                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                   
           }
