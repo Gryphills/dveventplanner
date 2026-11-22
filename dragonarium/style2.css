@@ -313,7 +313,7 @@ body {
 
 .limited.avail::before {
     content: '⧗';
-    position: relative;
+    position: absolute;
     top:-15px;
     left:-16px;
     background-color: #8355cc;
@@ -324,6 +324,7 @@ body {
     font-size: 35px;
     line-height: 34px;
 }
+
 .limited.unavail::before {
     content: '⧗';
     position: absolute;
@@ -334,8 +335,8 @@ body {
     border-radius: 8px;
     width:40px;
     height:40px;
-    text-size:40px;
-    line-height:40px;
+    font-size: 35px;
+    line-height: 34px;
 }
 
 .biggold::before {
