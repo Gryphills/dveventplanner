@@ -1973,7 +1973,7 @@ function updateTargetSearch() {
   /*if (targetCardDiv.childElementCount < 2) {
         tempTextEl.textContent = "Select more than one dragon!"
   }*/
-  //tempTextEl.textContent = "Calculating pairs, please wait a moment..."
+  tempTextEl.textContent = ""
   //possiblepairdiv.appendChild(tempTextEl)
   let pairsNeededForTargets = {}
   let pairCountTotal = 0
@@ -2235,7 +2235,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
            console.log('html added!', pairsNeededForTargets)
         //tempTextEl.textContent = "AAA?"//.remove();
   } else {
-        tempTextEl.textContent = "Having some bugs this afternoon, will fix shortly!" //"No pairs found that meet requirements :(!"
+        tempTextEl.textContent = "No pairs found that meet requirements :(!"
   }
         
    /*     
@@ -2777,13 +2777,13 @@ function calculateParentsPressed() {
           while (possiblepairdiv.firstElementChild) {
             possiblepairdiv.firstElementChild.remove()
           }
-          let tempTextEl = document.createElement('p')
-          tempTextEl.id = "temptextel"
+          //let tempTextEl = document.createElement('p')
+          //tempTextEl.id = "temptextel"
           /*if (targetCardDiv.childElementCount < 2) {
                 tempTextEl.textContent = "Select more than one dragon!"
           }*/
-          tempTextEl.textContent = "Calculating Pairs, please wait a moment..."
-          possiblepairdiv.appendChild(tempTextEl)
+          //tempTextEl.textContent = "Calculating Pairs, please wait a moment..."
+          //possiblepairdiv.appendChild(tempTextEl)
           document.getElementById('mpfloading').classList.remove('hidden')
 
         setTimeout(updateTargetSearch, 0.2)
