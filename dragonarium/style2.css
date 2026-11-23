@@ -1122,3 +1122,7 @@ body {
 .loading {
   color: #584e3f;
 }
+
+.availability::before {
+  content: "⧗";
+}
