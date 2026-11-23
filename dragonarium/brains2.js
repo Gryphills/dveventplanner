@@ -977,27 +977,9 @@ function buildDragonCard(name, data) {
       }
       if (data.combo.requirements) {
          let otherhtml = `<details class="otherpossible" style="min-width: 0px;" onclick = "seeOtherPossible(this)">
-         <summary>Other Dragons from this Combo:</summary>
-         <div class="addelementstomix">
-                 <p>Add additional elements to results:</p>
-                 <div class="elementsort">`
-         for (const eel of elementChart.basics) {
-                 //let elName = chartRef[eel]
-                 if (eel == "AnAny") {
-                        otherhtml += `</div><div class="elementsort">`
-                 }
-                 else if (!data.combo.output.includes(eel) && eel != "CrCrystalline" && eel != "GeGemstone") {
-                        otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[eel.substring(2)]}" data-el="${eel}" onclick="seeOtherPossible(this)">`
-                 }
-                 if (eel == "OlOlympus") {
-                        otherhtml += `</div><div class="elementsort">`
-                 }
-         }
-         otherhtml += `</div>
-         </div>
-         <p>*only shows dragons you don't own</p>
-         <div class="otherss">`
-         otherhtml += '</div></details>'
+         <summary>Other Dragons from this Combo:</summary>`
+
+         otherhtml += '</details>'
          cardhtml += otherhtml;
       }
       cardhtml +=   `</div>
@@ -1016,6 +998,29 @@ function buildDragonCard(name, data) {
 }
 
 function seeOtherPossible(htmEl, elementAdded) {
+        if (htmEl.classList.contains('otherpossible') && htmEl.childElementCount < 2) {
+                let otherhtml = `<div class="addelementstomix">
+                         <p>Add additional elements to results:</p>
+                         <div class="elementsort">`
+                        let data = allDragonData[htmEl.closest('.dragonCard').id
+                 for (const eel of elementChart.basics) {
+                         //let elName = chartRef[eel]
+                         if (eel == "AnAny") {
+                                otherhtml += `</div><div class="elementsort">`
+                         }
+                         else if (!data.combo.output.includes(eel) && eel != "CrCrystalline" && eel != "GeGemstone") {
+                                otherhtml += `<img loading="lazy" class="minielicon desat" src="${elementIcons[eel.substring(2)]}" data-el="${eel}" onclick="seeOtherPossible(this)">`
+                         }
+                         if (eel == "OlOlympus") {
+                                otherhtml += `</div><div class="elementsort">`
+                         }
+                 }
+                 otherhtml += `</div>
+                 </div>
+                 <p>*only shows dragons you don't own</p>
+                 <div class="otherss"> </div>`
+                 htmEl.innerHTML += otherhtml
+        }
         if (htmEl.open) {
                 console.log('open!')
                 return;
@@ -1058,7 +1063,7 @@ function seeOtherPossible(htmEl, elementAdded) {
         
         objPairStuff = getOutputsAndOdds(['justOutputs', 'awaaa'], comboOutput, objPairStuff, cave)
         console.log(comboOutput, objPairStuff)
-        for (const guy of objPairStuff.newGuys) {
+        for (const guy of Object.keys(objPairStuff.newGuys)) {
                 if (guy != dragonName) {
                         let imgsrc = allDragonImgs[guy].Adult
                         if (!imgsrc) {
