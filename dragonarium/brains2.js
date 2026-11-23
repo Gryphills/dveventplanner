@@ -2596,7 +2596,11 @@ function pairTemplate(pairObj) {
   htmlTemplate += `<p class="plus"> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
   htmlTemplate += `</div> <div class="result-targetbox"> <h4> Possible Target Results:</h4> <div class="possibletargets"> `
+  let newGuysMinusTargets = Object.keys(pairObj.newGuys)
   for (const validTarget of pairObj.targetsMet) {
+    if (newGuysMinusTargets.includes(validTarget)) {
+        newGuysMinusTargets.splice(newGuysMinusTargets.indexOf(validTarget), 1)
+    }
     //console.log(validTarget, allDragonData[validTarget].odds, pairObj.multiplierOdds, pairObj)
     let formatOdds = 0
     let targetData = allDragonData[validTarget]
@@ -2620,7 +2624,9 @@ function pairTemplate(pairObj) {
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
   htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p><h5 style="margin-bottom:0px;">Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p>`
-  if (Object.keys(pairObj.newGuys).length > 0) {
+  
+ 
+  if (newGuysMinusTargets.length > 0) {
           htmlTemplate += `<div class="otherss">`
           for (const newGuy of Object.keys(pairObj.newGuys)) {
                   console.log(newGuy, pairObj.newGuys[newGuy])
