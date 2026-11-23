@@ -2278,8 +2278,8 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 } else {
                         neededPair = 5
                 }
-                if (neededPair > 0 || top10 > 0) {
-                        top10 -= 1
+                if (neededPair > 0 || top4 > 0) {
+                        top4 -= 1
                         let htmlStuff = pairTemplate(pair)
                         innerHtmlStuff += htmlStuff
                         pairCountTotal -= 1;
