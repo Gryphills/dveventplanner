@@ -383,7 +383,6 @@ body {
   }
 }
 .leftmini:hover {
-  cursor: pointer;
   .tooltip {
     opacity: 1.0;
     transition: opacity 0.5s ease-in-out;
