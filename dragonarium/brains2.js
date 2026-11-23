@@ -16,7 +16,7 @@ let lastUpdate = 'unknown!'
 
 let hashHistory = []
 let singleSpecialGuys = []
-let sortedcheck = {"oddsOfCool": [], "newOdds": []}
+//let sortedcheck = {"oddsOfCool": [], "newOdds": []}
 
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
@@ -856,10 +856,10 @@ function buildDragonCard(name, data) {
             }*/
             
             if (data.limited == "Y") {
-                cardhtml +=`<div class='leftmini unavail'> Y <div class="tooltip">Not Currently Available</div></div>`
+                cardhtml +=`<div class='leftmini availability'><div class="tooltip">Not Currently Available</div></div>`
             }
             if (data.limited == "A") {
-                cardhtml +=`<div class='leftmini avail'> A <div class="tooltip">Currently Available</div></div>`
+                cardhtml +=`<div class='leftmini availability'><div class="tooltip">Currently Available</div></div>`
             }
             if (Number(data.gold) > 50) {
                 cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/X7JBNYbL/Coin-template.webp'> <div class="tooltip">Top 10% DC earner</div></div>`
@@ -2243,14 +2243,14 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 //pairObj = applyWeighting(settingsWeights, pairObj, targets)
                 //console.log(pairObj)
                 
-                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "newOdds")
+                //scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "newOdds")
+                scoredPairs = scoredPairs.sort(sortingPairObj)
                 
-                
-                scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
+                //scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                 
           }
           
-          console.log('after sorting: ', sortedcheck)
+          //console.log('after sorting: ', sortedcheck)
           validPairs = scoredPairs
   } //else {console.log('no valid pairs? tf?')}
 
@@ -2354,8 +2354,19 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
   
 }
 
+function sortingPairObj(a, b) {
+        if (b.oddsOfCool - a.oddsOfCool != 0) {
+             return b.oddsOfCool - a.oddsOfCool
+        } else {
+                if (b.newOdds - a.newOdds != 0) {
+                        return b.newOdds - a.newOdds
+                }
+                return b.targetsMet.length - a.targetsMet.length
+        }
+        
+}
 
-
+//@DEPRECATE
 function sortPairIntoArray(pairObj, array, property) {
   let propIsArray = false
   if (property.includes('Array')) {
@@ -2378,7 +2389,7 @@ function sortPairIntoArray(pairObj, array, property) {
           }
   }
   array.push(pairObj)
-  sortedcheck[property].push({cool: pairObj.oddsOfCool, new: pairObj.newOdds})
+  //sortedcheck[property].push({cool: pairObj.oddsOfCool, new: pairObj.newOdds})
   return array;
 }
 
