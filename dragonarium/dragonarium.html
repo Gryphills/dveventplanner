@@ -72,11 +72,11 @@ Download DragonVale:
             <div class="targetdragons multiparentcards">
 
               <div class="cavebuttons"> 
-                <img loading="lazy" class="caveselected" src="https://i.postimg.cc/0j6Cg2Wp/Breeding-Cave2015.webp" id="normalcavebutton">
-                <img loading="lazy" src="https://i.postimg.cc/J0yQw46Q/Enchanted-Breeding-Cave2015.webp" id="upgradedcavebutton">
-                <img loading="lazy" src="https://i.postimg.cc/1XgKx5CB/Cooperative-Breeding-Cave2015.webp" id="socialcavebutton">
-                <img loading="lazy" src="https://i.postimg.cc/wv4kbsVW/Rift-Breeding-Cave.webp" id="riftcavebutton">
-                <img loading="lazy" src="https://i.postimg.cc/hjZ037r2/Runic-Breeding-Cave.webp" id="runiccavebutton">
+                <img loading="lazy" class="caveselected" src="https://i.postimg.cc/0j6Cg2Wp/Breeding-Cave2015.webp" data-caveid="reg" id="normalcavebutton" onclick="setBreedingCave(this)">
+                <img loading="lazy" class="hidden" src="https://i.postimg.cc/J0yQw46Q/Enchanted-Breeding-Cave2015.webp" data-caveid="reg" id="upgradedcavebutton" onclick="setBreedingCave(this)">
+                <img loading="lazy" class="hidden" src="https://i.postimg.cc/1XgKx5CB/Cooperative-Breeding-Cave2015.webp" data-caveid="social" id="socialcavebutton" onclick="setBreedingCave(this)">
+                <img loading="lazy"  src="https://i.postimg.cc/wv4kbsVW/Rift-Breeding-Cave.webp" data-caveid="rift" id="riftcavebutton" onclick="setBreedingCave(this)">
+                <img loading="lazy" class="hidden" src="https://i.postimg.cc/hjZ037r2/Runic-Breeding-Cave.webp" data-caveid="runic" id="runiccavebutton" onclick="setBreedingCave(this)">
               </div>
               <h3 id="currentcavetitle">Regular Breeding Cave/Island<br>(above buttons do nothing rn, hold tight pls)</h3>
                 <p style="font-style:italic;">*Only dragons that you are able to breed (based off the dragons in your "Acquired" section, and what is currently available) will be visible here</p>
