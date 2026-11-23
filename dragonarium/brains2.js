@@ -1864,17 +1864,17 @@ function setBreedingCave(buttonEl) {
         
         let targetCardDiv = document.querySelector('.targetdragons')
         if (caveId == "rift") {
-                for (const norifttargetcard of Array.from(targetCardDiv.querySelector('.noriftallowed'))) {
+                for (const norifttargetcard of Array.from(targetCardDiv.querySelectorAll('.noriftallowed'))) {
                         norifttargetcard.classList.add('filternorift')
                 }
-                for (const riftexclusive of Array.from(targetCardDiv.querySelector('.Rift'))) {
+                for (const riftexclusive of Array.from(targetCardDiv.querySelectorAll('.Rift'))) {
                         riftexclusive.classList.remove('riftexclusion')
                 }
         } else {
-                for (const norifttargetcard of Array.from(targetCardDiv.querySelector('.filternorift'))) {
+                for (const norifttargetcard of Array.from(targetCardDiv.querySelectorAll('.filternorift'))) {
                         norifttargetcard.classList.remove('filternorift')
                 }
-                for (const riftexclusive of Array.from(targetCardDiv.querySelector('.Rift'))) {
+                for (const riftexclusive of Array.from(targetCardDiv.querySelectorAll('.Rift'))) {
                         riftexclusive.classList.add('riftexclusion')
                 }
         }
