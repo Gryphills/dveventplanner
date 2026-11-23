@@ -856,6 +856,9 @@ function buildDragonCard(name, data) {
             if (Number(data.gold) > 50) {
                 cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/X7JBNYbL/Coin-template.webp'> <div class="tooltip">Top 10% DC earner</div></div>`
             }
+            if (data.limited == "Y") {
+                cardhtml +=`<div class='leftmini'> X <div class="tooltip">Not currently Available</div></div>`
+            }
         
     cardhtml +=`</div>`
     
