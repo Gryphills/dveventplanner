@@ -2298,12 +2298,14 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 } else {
                         //console.log(`skipping ${pair.parentLeft}/${pair.parentRight} because no targets met needed more pairs. Remaining: `, pairsNeededForTargets)
                 }
+                
                 if (pairCountTotal == 0) {
                         console.log("count is now 0? breaking - ", pairsNeededForTargets)
                         break;
                 }
                 
         }
+           console.log(pairsNeededForTargets)
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
            console.log('html added!', pairsNeededForTargets)
         //tempTextEl.textContent = "AAA?"//.remove();
@@ -2444,8 +2446,10 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         } else {
                 riftassumed = false
         }
+        let newHybrids = []
         for (const dragonName of availableDragonNames) {
                 let dragonData = allDragonData[dragonName]
+                let thisGuyOdds = 0
                 if (!dragonData.conditions.includes("Evolve")) {
                         if (checkTargetReq(dragonName, pairingOutput, riftassumed)) {
                                 if (dragonarium[dragonName].status != 'have') {
@@ -2453,6 +2457,9 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 }
                                 if (dragonData.rarity == "Hybrid") {
                                         hybrids.push(dragonData)
+                                        if (dragonarium[dragonName].status != 'have') {
+                                                newHybrids.push(dragonName)
+                                        }
                                 } else {
                                         breeds.push(dragonData)
                                         if (dragonData.odds.base) {
@@ -2460,7 +2467,8 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                                         breedsOdds += Number(dragonData.odds.base)
                                                         //console.log('breeds base is ', dragonData.odds.base, ' so breedsOdds is now ', breedsOdds)
                                                         if (dragonarium[dragonName].status != 'have') {
-                                                                newOdds += Number(dragonData.odds.base)
+                                                                //if (dragonData.rarity == "Hybrid")
+                                                                newGuys[dragonName] = Number(dragonData.odds.base)
                                                         }
                                                 }
                                         }
@@ -2482,6 +2490,13 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 multiplierOdds = 0;
         }
         //let 
+
+        for (const newHybrid of newHybrids) {
+                newGuys[newHybrid] = hybridOdds
+        }
+        for (const guyy of Object.keys(newGuys)) {
+                newGuys[guyy] = newGuys[guyy] * multiplierOdds
+        }
         
         pairObj.hybridOdds = hybridOdds
         pairObj.multiplierOdds = multiplierOdds //(1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
@@ -2567,7 +2582,21 @@ function pairTemplate(pairObj) {
   }
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
-  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p><h5 style="margin-bottom:0px;">Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p></div></div>`
+  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p><h5 style="margin-bottom:0px;">Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p>`
+  if (Object.keys(pairObj.newGuys).length > 0) {
+          htmlTemplate += `<div class="otherss">`
+          for (const newGuy of Object.keys(pairObj.newGuys)) {
+                  let imgsrc = allDragonImgs[newGuy].Adult
+                  if (!imgsrc) {
+                        imgsrc = allDragonImgs[newGuy][Object.keys(allDragonImgs[newGuy])[0]]
+                  }
+                  htmlTemplate += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">
+                                <h5>${newGuy}</h5><h5>${Math.round(pairObj.newGuys[newGuy]*10000)/100}%</h5></div>`
+                
+          }
+          htmlTemplate += `</div>`
+        }
+  htmlTemplate += `</div></div>`
   return htmlTemplate;
 }
 
