@@ -2426,7 +2426,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let b = allDragonData[pairArray[1]]
         let hybrids = []
         let breeds = []
-        let newGuys = []
+        let newGuys = {}
         let newOdds = 0
         let breedsOdds = 0
         let clonePercentage = 0
@@ -2460,9 +2460,9 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 let thisGuyOdds = 0
                 if (!dragonData.conditions.includes("Evolve")) {
                         if (checkTargetReq(dragonName, pairingOutput, riftassumed)) {
-                                if (dragonarium[dragonName].status != 'have') {
-                                        newGuys.push(dragonName)
-                                }
+                                //if (dragonarium[dragonName].status != 'have') {
+                                //        newGuys.push(dragonName)
+                                //}
                                 if (dragonData.rarity == "Hybrid") {
                                         hybrids.push(dragonData)
                                         if (dragonarium[dragonName].status != 'have') {
