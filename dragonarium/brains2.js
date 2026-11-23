@@ -2535,9 +2535,12 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
 
         for (const newHybrid of newHybrids) {
                 newGuys[newHybrid] = hybridOdds
+                newOdds += hybridOdds
         }
         for (const guyy of Object.keys(newGuys)) {
-                newGuys[guyy] = newGuys[guyy] * multiplierOdds
+                let guyOdds = newGuys[guyy] * multiplierOdds
+                newGuys[guyy] = guyOdds
+                newOdds += guyOdds
         }
         
         pairObj.hybridOdds = hybridOdds
