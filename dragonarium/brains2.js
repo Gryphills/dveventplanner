@@ -2250,16 +2250,17 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         
                 }
                 pairObj.oddsOfCool = oddsOfCool
+                scoredPairs.push(pairObj)
                 //pairObj = applyWeighting(settingsWeights, pairObj, targets)
                 //console.log(pairObj)
                 
                 //scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "newOdds")
-                scoredPairs = scoredPairs.sort(sortingPairObj)
+                
                 
                 //scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
                 
           }
-          
+          scoredPairs = scoredPairs.sort(sortingPairObj)
           //console.log('after sorting: ', sortedcheck)
           validPairs = scoredPairs
   } //else {console.log('no valid pairs? tf?')}
