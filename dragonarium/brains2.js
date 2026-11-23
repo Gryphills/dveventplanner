@@ -17,6 +17,13 @@ let lastUpdate = 'unknown!'
 let hashHistory = []
 let singleSpecialGuys = []
 //let sortedcheck = {"oddsOfCool": [], "newOdds": []}
+let hasAllElements = false;
+let hasAllRiftElements = false;
+
+let playerHasElements {
+        normal: [],
+        rifted: []
+}
 
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
@@ -551,6 +558,17 @@ function haveCard(button) {
   if (Number(button.dataset.toggle) == 0) {
     button.dataset.toggle = 1;
     dragonarium[el.id].status = 'have';
+    if (!hasAllElements) {
+            for (const eeel of allDragonData[el.id].elements) {
+                if (!playerHasElements.normal.includes(eeel)) {
+                        playerHasElements.normal.push(eeel)
+                }
+            }
+            //playerHasElements.normal.concat(allDragonData[el.id].elements)
+            if (playerHasElements.normal.length == 28) {
+                hasAllElements = true;
+            }
+    }
     //updateTargetCard(el.id)
     updatePossibleTargets()
     if (el.classList.contains('favourite') && haveDiv.children.length > 0) {
@@ -768,6 +786,17 @@ function riftTraitButton(el) {
                 el.dataset.toggle = 1
                 el.closest('.dragonCard').classList.add('rifted')
                 el.classList.add('toggled')
+                if (!hasAllRiftElements) {
+                    for (const eeel of allDragonData[el.closest('.dragonCard').id].elements) {
+                        if (!playerHasElements.rift.includes(eeel)) {
+                                playerHasElements.rift.push(eeel)
+                        }
+                    }
+                    //playerHasElements.normal.concat(allDragonData[el.id].elements)
+                    if (playerHasElements.normal.length == 28) {
+                        hasAllElements = true;
+                    }
+                }
                 let havebutton = el.closest('.dragonCard').querySelector('.havec')
                         if (havebutton.dataset.toggle == "0") {
                                 havebutton.click()
@@ -2831,7 +2860,7 @@ function getPairingOutput(dragonLeftName, dragonRightName) {
 function getSettings() {
         let retrievedSettings = Object.assign({}, dragonarium.savedSettings)
         let defaultSettings = savedSettings;
-        console.log('retrieved ', retrievedSettings)
+        //console.log('retrieved ', retrievedSettings)
         if (!retrievedSettings.wantTab || !retrievedSettings.multiparents || !retrievedSettings.initTab || !retrievedSettings.haveTab || !retrievedSettings.shadowTab) {
                 
                 dragonarium.savedSettings = defaultSettings;
