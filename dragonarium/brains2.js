@@ -1783,6 +1783,9 @@ function updatePossibleTargets() {
                   child.classList.add('impossible')
                   impossible = true
                 }
+                if (dragonarium[req].rifted == "0") {
+                        child.classList.add('noriftallowed')
+                }
               }
             }
           } else {
@@ -1836,6 +1839,20 @@ function hideOwned(el) {
    }
 }
 */
+
+function setBreedingCave(buttonEl, caveId) {
+        let targetCardDiv = document.querySelector('.targetdragons')
+        if (caveId == "rift") {
+                for (const norifttargetcard of targetCardDiv.querySelector('.noriftallowed')) {
+                        norifttargetcard.classList.add('filternorift')
+                }
+        } else {
+                for (const norifttargetcard of targetCardDiv.querySelector('.filternorift')) {
+                        norifttargetcard.classList.remove('filternorift')
+                }
+        }
+}
+
 function updateTargetCard(dragonName, statusId, statusNum) {
   let targetCardDiv = document.querySelector('.targetdragons')
   let targetCard = targetCardDiv.querySelector(`.${dragonName}`)
@@ -1979,13 +1996,20 @@ function applyWeighting(settingsWeights, pairObj, targets) {
           */
 
 function updateTargetSearch() {
-
+  let caveId = "reg"
+  if (document.querySelector('#tabbutton-mpf').open) {
+        let caveId = document.getElementById('multiparents').querySelector('.caveselected').id
+          if (!caveId) {
+                caveId = "reg"
+          }
+  }
   let targetCardDiv = document.querySelector('.targets-selected');
   let possiblepairdiv = document.querySelector('.pairsholder')
   let settingsWeights = getPairingWeights()
   if (settingsWeights.pairpertarget < 1) {
      settingsWeights.pairpertarget = 1
   }
+  
   //while (possiblepairdiv.firstElementChild) {
   //  possiblepairdiv.firstElementChild.remove()
   //}
@@ -2032,7 +2056,6 @@ function updateTargetSearch() {
   let haveDragonsToCheck = []
   if (document.getElementById('includeallpairs').checked) {
         for (const dn of allDragonNames) {
-                
                 if (allDragonData[dn].rarity != "Gemstone") {
                     haveDragonsToCheck.push(dn);
                 }
@@ -2040,7 +2063,13 @@ function updateTargetSearch() {
   } else {
           for (const child of haveDragonNodes) {
                   if (allDragonData[child.id].rarity != "Gemstone") {
-                    haveDragonsToCheck.push(child.id);
+                          if (caveId == "rift") {
+                                if (Number(dragonarium[child.id].rifted) == 1) {
+                                    haveDragonsToCheck.push(child.id);
+                                }
+                          } else {
+                                haveDragonsToCheck.push(child.id);
+                          }
                   }
           }
   }
