@@ -16,6 +16,7 @@ let lastUpdate = 'unknown!'
 
 let hashHistory = []
 let singleSpecialGuys = []
+let sortedcheck = {"oddsOfCool": [], "newOdds": []}
 
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
@@ -2200,10 +2201,15 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 pairObj.oddsOfCool = oddsOfCool
                 //pairObj = applyWeighting(settingsWeights, pairObj, targets)
                 //console.log(pairObj)
+                
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "newOdds")
+                
+                
                 scoredPairs = sortPairIntoArray(pairObj, scoredPairs, "oddsOfCool")
-                  
+                
           }
+          
+          console.log('after sorting: ', sortedcheck)
           validPairs = scoredPairs
   } //else {console.log('no valid pairs? tf?')}
 
@@ -2307,6 +2313,8 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
   
 }
 
+
+
 function sortPairIntoArray(pairObj, array, property) {
   let propIsArray = false
   if (property.includes('Array')) {
@@ -2329,6 +2337,7 @@ function sortPairIntoArray(pairObj, array, property) {
           }
   }
   array.push(pairObj)
+  sortedcheck[property].push({cool: pairObj.oddsOfCool, new: pairObj,newOdds})
   return array;
 }
 
