@@ -1998,7 +1998,7 @@ function applyWeighting(settingsWeights, pairObj, targets) {
 function updateTargetSearch() {
   let caveId = "reg"
   if (document.querySelector('#tabbutton-mpf').open) {
-        let caveId = document.getElementById('multiparents').querySelector('.caveselected').id
+        let caveId = document.getElementById('multiparents').querySelector('.caveselected').dataset.caveid
           if (!caveId) {
                 caveId = "reg"
           }
