@@ -20,7 +20,7 @@ let singleSpecialGuys = []
 let hasAllElements = false;
 let hasAllRiftElements = false;
 
-let playerHasElements {
+let playerHasElements = {
         normal: [],
         rifted: []
 }
