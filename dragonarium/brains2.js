@@ -2071,6 +2071,7 @@ function updateTargetSearch() {
           }
   } else {
           for (const child of haveDragonNodes) {
+                  console.log(child)
                   if (allDragonData[child.id].rarity != "Gemstone") {
                           if (caveId == "rift") {
                                 if (Number(dragonarium[child.id].rifted) == 1) {
