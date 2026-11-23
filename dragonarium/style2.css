@@ -1064,14 +1064,13 @@ body {
 
 .otherpossible {
   padding-bottom:6px;
-  .otherss {
+}
+.otherss {
     padding-bottom:6px;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
   }
-}
-
 .otherpossibleguy {
   display: flex;
   flex-direction: column;
