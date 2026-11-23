@@ -1002,7 +1002,7 @@ function seeOtherPossible(htmEl, elementAdded) {
                 let otherhtml = `<div class="addelementstomix">
                          <p>Add additional elements to results:</p>
                          <div class="elementsort">`
-                        let data = allDragonData[htmEl.closest('.dragonCard').id
+                        let data = allDragonData[htmEl.closest('.dragonCard').id]
                  for (const eel of elementChart.basics) {
                          //let elName = chartRef[eel]
                          if (eel == "AnAny") {
