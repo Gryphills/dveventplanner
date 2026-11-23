@@ -2623,7 +2623,7 @@ function pairTemplate(pairObj) {
   if (Object.keys(pairObj.newGuys).length > 0) {
           htmlTemplate += `<div class="otherss">`
           for (const newGuy of Object.keys(pairObj.newGuys)) {
-                  console.log(newGuy, pairObj.newGuys(newGuy))
+                  console.log(newGuy, pairObj.newGuys[newGuy])
                   let imgsrc = allDragonImgs[newGuy].Adult
                   if (!imgsrc) {
                         imgsrc = allDragonImgs[newGuy][Object.keys(allDragonImgs[newGuy])[0]]
