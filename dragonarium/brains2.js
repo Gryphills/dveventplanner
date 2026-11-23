@@ -1484,6 +1484,9 @@ function createTargetCards() {
             for (const internalEl of allDragonData[dragonName].elements) {
                 elementsEls += `<img loading="lazy" src="${elementIcons[internalEl.substring(2)]}" class="minielicon">`;
                     elementsClasses += ' ' + internalEl.substring(2) + ' '
+                    if (internalEl == "R Rift") {
+                        elementsClasses += ' riftexclusion '
+                    }
             }
         
       //let breedInfo = document.querySelector(`#${dragonName}`).querySelector('h3').innerHTML <h3> ${breedInfo} </h3>
@@ -1850,14 +1853,21 @@ function setBreedingCave(buttonEl) {
                 radioo.classList.remove('caveselected')
         }
         buttonEl.classList.add('caveselected')
+        
         let targetCardDiv = document.querySelector('.targetdragons')
         if (caveId == "rift") {
                 for (const norifttargetcard of targetCardDiv.querySelector('.noriftallowed')) {
                         norifttargetcard.classList.add('filternorift')
                 }
+                for (const riftexclusive of targetCardDiv.querySelector('.Rift')) {
+                        riftexclusive.classList.remove('riftexclusion')
+                }
         } else {
                 for (const norifttargetcard of targetCardDiv.querySelector('.filternorift')) {
                         norifttargetcard.classList.remove('filternorift')
+                }
+                for (const riftexclusive of targetCardDiv.querySelector('.Rift')) {
+                        riftexclusive.classList.add('riftexclusion')
                 }
         }
 }
