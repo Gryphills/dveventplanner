@@ -22,7 +22,7 @@ let hasAllRiftElements = false;
 
 let playerHasElements = {
         normal: [],
-        rifted: []
+        rift: []
 }
 
 function sortAvailDragons() {
