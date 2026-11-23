@@ -864,6 +864,9 @@ function buildDragonCard(name, data) {
             if (Number(data.gold) > 50) {
                 cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/X7JBNYbL/Coin-template.webp'> <div class="tooltip">Top 10% DC earner</div></div>`
             }
+            if (data.rarity == "Gemstone") {
+                cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/jd5nqSb4/Gem-template.webp'> <div class="tooltip">Earns Gems</div></div>`
+            }
         
     cardhtml +=`</div>`
     
