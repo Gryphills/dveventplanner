@@ -2261,7 +2261,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
 
    if (validPairs.length > 0) {
         let innerHtmlStuff = ''
-        let top10 = 10
+        let top4 = 4
         console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
         for (const pair of validPairs) {
                 let neededPair = 0
