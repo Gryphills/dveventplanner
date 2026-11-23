@@ -2337,7 +2337,7 @@ function sortPairIntoArray(pairObj, array, property) {
           }
   }
   array.push(pairObj)
-  sortedcheck[property].push({cool: pairObj.oddsOfCool, new: pairObj,newOdds})
+  sortedcheck[property].push({cool: pairObj.oddsOfCool, new: pairObj.newOdds})
   return array;
 }
 
