@@ -856,10 +856,10 @@ function buildDragonCard(name, data) {
             }*/
             
             if (data.limited == "Y") {
-                cardhtml +=`<div class='leftmini unavail'>  <div class="tooltip">Not Currently Available</div></div>`
+                cardhtml +=`<div class='leftmini unavail'> &#10710; <div class="tooltip">Not Currently Available</div></div>`
             }
             if (data.limited == "A") {
-                cardhtml +=`<div class='leftmini avail'>  <div class="tooltip">Currently Available</div></div>`
+                cardhtml +=`<div class='leftmini avail'> &#10711; <div class="tooltip">Currently Available</div></div>`
             }
             if (Number(data.gold) > 50) {
                 cardhtml +=`<div class='leftmini'> <img loading="lazy" src='https://i.postimg.cc/X7JBNYbL/Coin-template.webp'> <div class="tooltip">Top 10% DC earner</div></div>`
