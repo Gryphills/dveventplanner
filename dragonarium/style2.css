@@ -222,12 +222,21 @@ body {
 .dragonCard.limited {
       background-color: #becfb6;
       border: 3px solid #557049;
+      .availability {
+        background-color: #442a5f;
+        color: #bcb8f5;
+      }
     }
 .dragonCard.unavail {
       background-color: #e3e3e3; 
       border: 3px solid rgb(162, 162, 162); 
       .breedinginfo {
           opacity: 0.7;
+      }
+      .availability {
+          background-color: lightgrey;
+          color: grey;
+          border-radius: 8px;
       }
     }
 .dragonCard.favourite {
@@ -805,6 +814,9 @@ body {
   display:none !important;
 }
 .filtertwospecialguys {
+  display:none !important;
+}
+.riftexclusion {
   display:none !important;
 }
 /*.filters-active {
