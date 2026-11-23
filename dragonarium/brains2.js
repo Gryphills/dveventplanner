@@ -1840,7 +1840,12 @@ function hideOwned(el) {
 }
 */
 
-function setBreedingCave(buttonEl, caveId) {
+function setBreedingCave(buttonEl) {
+        let caveId = buttonEl.dataset.caveid
+        for (const radioo of buttonEl.parentElement.children) {
+                radioo.classList.remove('caveselected')
+        }
+        buttonEl.classList.add('caveselected')
         let targetCardDiv = document.querySelector('.targetdragons')
         if (caveId == "rift") {
                 for (const norifttargetcard of targetCardDiv.querySelector('.noriftallowed')) {
