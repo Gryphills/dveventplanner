@@ -2643,7 +2643,7 @@ function pairTemplate(pairObj) {
                         imgsrc = allDragonImgs[newGuy][Object.keys(allDragonImgs[newGuy])[0]]
                   }
                   htmlTemplate += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">
-                                <h5 style="margin-bottom: 0px;">${newGuy}</h5><h5 style="margin-top:0px;>(${Math.round(pairObj.newGuys[newGuy]*10000)/100}%)</h5></div>`
+                                <h5 style="margin-bottom: 0px;">${newGuy}</h5> <h5 style="margin-top:0px;">(${Math.round(pairObj.newGuys[newGuy]*10000)/100}%)</h5></div>`
                 
           }
           htmlTemplate += `</div>`
