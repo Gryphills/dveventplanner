@@ -567,6 +567,7 @@ function haveCard(button) {
             //playerHasElements.normal.concat(allDragonData[el.id].elements)
             if (playerHasElements.normal.length == 28) {
                 hasAllElements = true;
+                    console.log('all els! ', hasAllElements)
             }
     }
     //updateTargetCard(el.id)
@@ -793,8 +794,9 @@ function riftTraitButton(el) {
                         }
                     }
                     //playerHasElements.normal.concat(allDragonData[el.id].elements)
-                    if (playerHasElements.normal.length == 28) {
+                    if (playerHasElements.rift.length == 28) {
                         hasAllElements = true;
+                            console.log('has all rift elements! ', playerHasElements.rift)
                     }
                 }
                 let havebutton = el.closest('.dragonCard').querySelector('.havec')
