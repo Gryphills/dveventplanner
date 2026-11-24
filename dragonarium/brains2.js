@@ -2655,10 +2655,12 @@ function pairTemplate(pairObj) {
   }
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
-  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p><h5 style="margin-bottom:0px;">Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p>`
+  htmlTemplate += `</div> <h4>Odds for any Target:</h4><p>${oddsOfCool}%</p>`
+          
   
  
   if (newGuysMinusTargets.length > 0) {
+          htmlTemplate += `<h5 style="margin-bottom:0px;">Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p>`
           htmlTemplate += `<div class="otherss">`
           for (const newGuy of Object.keys(pairObj.newGuys)) {
                   console.log(newGuy, pairObj.newGuys[newGuy])
@@ -2671,7 +2673,9 @@ function pairTemplate(pairObj) {
                 
           }
           htmlTemplate += `</div>`
-        }
+        } else {
+        htmlTemplate += `<h5 style="margin-bottom:0px;font-style:italic;">(No new dragons other than targets in results)</h5>`
+  }
   htmlTemplate += `</div></div>`
   return htmlTemplate;
 }
