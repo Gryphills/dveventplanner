@@ -1896,8 +1896,10 @@ function setBreedingCave(buttonEl) {
         }
         buttonEl.classList.add('caveselected')
         
+        
         let targetCardDiv = document.querySelector('.targetdragons')
         if (caveId == "rift") {
+                document.getElementById('currentcavetitle').textContent = "Rift Breeding Cave"
                 for (const norifttargetcard of Array.from(targetCardDiv.querySelectorAll('.noriftallowed'))) {
                         norifttargetcard.classList.add('filternorift')
                 }
@@ -1905,6 +1907,7 @@ function setBreedingCave(buttonEl) {
                         riftexclusive.classList.remove('riftexclusion')
                 }
         } else {
+                document.getElementById('currentcavetitle').textContent = "Regular Breeding Cave/Island"
                 for (const norifttargetcard of Array.from(targetCardDiv.querySelectorAll('.filternorift'))) {
                         norifttargetcard.classList.remove('filternorift')
                 }
