@@ -762,8 +762,9 @@ function clickInitButtons() {
 
 
 function cycleViews(imgEl) {
-  let imgsFront = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgfront')
-  let imgsBack = imgEl.parentElement.parentElement.parentElement.querySelector('.multiimgback')
+  let card = imgEl.closest('.dragonCard')
+  let imgsFront = card.querySelector('.multiimgfront')
+  let imgsBack = card.querySelector('.multiimgback')
   let imgArray = JSON.parse(imgsFront.dataset.imgarray)
   imgArray.push(imgArray.splice(0, 1)[0])
         imgsFront.dataset.imgarray = JSON.stringify(imgArray)
@@ -771,15 +772,15 @@ function cycleViews(imgEl) {
     if (imgArray.indexOf(img) == 0) {
       imgsFront.firstElementChild.src = img
     } else {
-      imgsBack.children[imgArray.indexOf(img) - 1].src = img
+      imgsBack.children[imgArray.indexOf(img) - 1].firstElementChild.src = img
     }
   }
-  let viewLabel = imgEl.parentElement.parentElement.parentElement.querySelector('.viewname')
+  let viewLabel = card.querySelector('.viewname')
   let type = imgArray[0].split('dult')[1].replace('.webp', '');
   if (!type || type.length < 2){
     viewLabel.textContent = "Day/Normal Form"
   } else {
-    viewLabel.textContent = type + " Form"
+    viewLabel.textContent = type.substring(1) + " Form"
   }
   
 }
@@ -1713,6 +1714,8 @@ function createTargetCards() {
   updatePossibleTargets()
 }
 
+/*
+//@DEPRECATE
 function slotElIntoTargetArray(cardEl, targetCardDiv) {
   if (targetCardDiv.children.length == 0) {
         targetCardDiv.appendChild(cardEl);
@@ -1807,8 +1810,8 @@ function slotElIntoTargetArray(cardEl, targetCardDiv) {
           }
         } else {
                 targetCardDiv.appendChild(cardEl);
-        }*/
-}
+        }
+}*/
 
 function updatePossibleTargets() {
   let possibleTargets = document.querySelector('#targetcards').children;
@@ -2071,16 +2074,13 @@ function applyWeighting(settingsWeights, pairObj, targets) {
           </div>
           */
 
-function highestNewOdds() {
-          let caveId = "reg"
-          if (document.querySelector('#tabbutton-mpf').open) {
-                let caveId = document.getElementById('multiparents').querySelector('.caveselected').dataset.caveid
-                  if (!caveId) {
-                        caveId = "reg"
-                  }
-          }
+function highestNewOdds(caveId = "reg") {
+        
           let haveDragonNodes = haveDiv.children;
           let haveDragonsToCheck = []
+
+          let allPairs = []
+          let riftPairs = []
           
           for (const child of haveDragonNodes) {
                   if (child.classList.contains('dragonCard')) {
@@ -2096,7 +2096,58 @@ function highestNewOdds() {
                           }
                   }
           }
-          
+          let bDragons = [].concat(haveDragonsToCheck)
+          for (const a of haveDragonsToCheck) {
+                let bcheck = 0
+                for (const b of bDragons) {
+                        bcheck += 1
+                        let pairingOutput = allDragonData[a].elements.concat(allDragonData[b].elements)
+                        pairingOutput.push(a)
+                        pairingOutput.push(b)
+                        let pairingOutputCleaned = []
+                        let sorted = [a, b].sort()
+                        for (const el of pairingOutput) {
+                          if (!pairingOutputCleaned.includes(el)) {
+                                pairingOutputCleaned.push(el)
+                          }
+                        }
+                        let objPair = {
+                                parentLeft: sorted[0], 
+                                parentRight : sorted[1],
+                                elOutput : pairingOutputCleaned
+                        }
+                        let results = getOutputsAndOdds(sorted, pairingOutputCleaned, objPair, "reg")
+                        if (Number(dragonarium[a].rifted) == 1) {
+                                riftPairs.push(results)
+                        }
+                        allPairs.push(results)
+                        /*if (Number(results.newOdds) > Number(bestOdds.odds)) {
+                                bestOdds.odds = Number(results.newOdds);
+                                bestOdds.pairObjs = [results]
+                        } else if (Number(results.newOdds) > Number(bestOdds.odds)) {
+                                bestOdds.pairObjs.push(results)
+                        }*/
+                }
+                bDragons.splice(bDragons.indexOf(a), 1)
+          }
+          let safety = 50
+          allPairs.sort(sortingNewOdds)
+          riftPairs.sort(sortingNewOdds)
+          let topRegPairs = [allPairs[0]]
+          let iterate = 1
+          while (allPairs[iterate].newOdds == topRegPairs[0].newOdds && safety > 0) {
+                topRegPairs.push(iteratePair)
+                iterate += 1
+                safety -= 1
+          }
+          let topRiftPairs = [riftPairs[0]]
+          iterate = 1
+          while (riftPairs[iterate].newOdds == topRiftPairs[0].newOdds && safety > 0) {
+                topRiftPairs.push(iteratePair)
+                iterate += 1
+                safety -= 1
+          }
+        console.log(topRegPairs, topRiftPairs)
 }
 
 
@@ -2492,6 +2543,12 @@ function sortingPairObj(a, b) {
                 return b.targetsMet.length - a.targetsMet.length
         }
         
+}
+
+function sortingNewOdds(a, b) {
+        if  (b.newOdds - a.newOdds != 0) {
+                return b.newOdds - a.newOdds
+        }
 }
 
 /*//@DEPRECATE
