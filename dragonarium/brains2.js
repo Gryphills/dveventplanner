@@ -2482,7 +2482,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 //}
                 
         }
-           console.log(pairsNeededForTargets, innerHtmlStuff)
+           //console.log(pairsNeededForTargets, innerHtmlStuff)
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
            console.log('html added!', pairsNeededForTargets)
         //tempTextEl.textContent = "AAA?"//.remove();
