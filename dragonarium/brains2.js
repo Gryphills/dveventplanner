@@ -3159,8 +3159,8 @@ function importdatabuttonClicked(button) {
                         let importData = JSON.parse(input.value)
                         let issues = false
                         for (const key of Object.keys(dragonarium)) {
-                                if (input[key]) {
-                                        newDragonarium[key] = input[key]
+                                if (importData[key]) {
+                                        newDragonarium[key] = importData[key]
                                         console.log('imported ', key, ' data!')
                                 } else {
                                         console.error('issue importing ', key, ' data :(!')
