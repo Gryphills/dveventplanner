@@ -2164,10 +2164,12 @@ function updateTargetSearch() {
                                         }
                                   } else {
                                         haveDragonsToCheck.push(child.id);
+                                        
                                   }
                           }
                   }
           }
+          console.log(caveId, haveDragonsToCheck.length)
   }
   
   
