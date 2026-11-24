@@ -2287,8 +2287,8 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
-                                if (bestTargetOdds[target].odds < (Number(targetData.odds.base) * Number(pairObj.multiplierOdds))) {
-                                        bestTargetOdds[target] = {odds: Number(targetData.odds.base) * Number(pairObj.multiplierOdds), pairObj: pairObj}
+                                if (bestTargetOdds[metTarget].odds < (Number(targetData.odds.base) * Number(pairObj.multiplierOdds))) {
+                                        bestTargetOdds[metTarget] = {odds: Number(targetData.odds.base) * Number(pairObj.multiplierOdds), pairObj: pairObj}
                                 }
                         } else {
                                 oddsOfCool += Number(pairObj.hybridOdds)
