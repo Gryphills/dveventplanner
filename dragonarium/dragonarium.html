@@ -11,19 +11,17 @@
   <div class='oopsie'>
     <p>Yuh oh! If you see this, the script isn't working properly,<br>which might mean this page is actively getting updated.<br>Try again in a minute or so!<br><br><br>(If this message is still here after a while, message me - I may not have realized oop)</p>
   </div>
-  <div  style="display:flex; width: 94%; flex-wrap:wrap; justify-content:center;display:none;">
-    <div>
-      <div class="topinfo button importdatabutton" onclick="importdatabuttonClicked(this)">Import Data</div>
-      <div class="importdatadiv hidden">
-        <p style="font-weight:bold;">Be warned, importing data here will overwrite the settings stored on this browser! Only do so if you are certain.</p>
+  <div style="display:grid; grid-template-columns: 50% 50%; grid-template-rows: auto auto; text-align:center;">
+      <div class="topinfo button importdatabutton" style="justify-self: right; margin-right:8px;" onclick="importdatabuttonClicked(this)">Import Data</div>
+      <div class=" topinfo button exportdatabutton" style="justify-self: left; margin-left:8px;" onclick="exportdatabuttonClicked(this)">Export/save Data</div>
+      <div class="importdatadiv hidden" style="justify-self: right;margin-right:8px;">
+        <p style="font-weight:bold;">BE WARNED, importing data here will overwrite the settings stored on this browser! <br>Only do so if you are certain.</p>
         <input id="importdatainput">
-        <div class="button importdatabuttonfinal" onclick="importdatabuttonClicked(this)">Import and Overwrite Data</div>
+        <div class="button importdatabuttonfinal"  onclick="importdatabuttonClicked(this)">Import and Overwrite Data</div>
       </div>
-    </div>
-    <div>
-      <div class=" topinfo button exportdatabutton" onclick="exportdatabuttonClicked(this)">Export/save Data</div><br>
-      <p id="exportnotif"></p>
-    </div>
+      <div style="justify-self: left; margin-left:8px;">
+        <p id="exportnotif"></p>
+      </div>
   </div>
   <br>
   <p class="topinfo" id="lastupdated"></p><br>
