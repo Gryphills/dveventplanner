@@ -193,7 +193,9 @@ let elementChart = {
   'R Rift', "AnAny",
   'ApApocalypse',  'AuAura',  'ChChrysalis',  'CrCrystalline',  'DrDream',  'GaGalactic',  'GeGemstone',  'HiHidden',  'MeMelody',  'MhMonolith',  
   'OlOlympus',  'OrOrnamental',  'RbRainbow',  'SeSeasonal',  'SnSnowflake',  'SuSun',  'MoMoon',  'SfSurface',  'TrTreasure',  'ZoZodiac'
-  ]
+  ],
+  subbedprims : ['Plant',  'Fire',  'Earth',  'Cold',  'Water',  'Lightning',  'Air',  'Metal',  'Light',  'Dark']
+          
 }
 
 let elementIcons = {
@@ -1514,11 +1516,14 @@ function createTargetCards() {
               console.log(':( no img for ', dragonName)
               continue;
       }
-        let elementsClasses = ''
+      let elementsClasses = ''
       let elementsEls = ``
             for (const internalEl of allDragonData[dragonName].elements) {
                 elementsEls += `<img loading="lazy" src="${elementIcons[internalEl.substring(2)]}" class="minielicon">`;
                     elementsClasses += ' ' + internalEl.substring(2) + ' '
+                    if (elementChart.subbedprims.includes(dragonName)) {
+                        elementsClasses += ' primarydragon '
+                    }
                     if (internalEl == "R Rift") {
                         elementsClasses += ' riftexclusion '
                         let primtest = dragonName.charAt(0) + ' ' + dragonName.replace(' Rift', '')
@@ -2241,6 +2246,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                                 if (guysWithTwoSpecialGuys.includes(guy)) {
                                         specialPair = true;
                                         console.log('FOUND SPECIAL PAIR FOR ', guy)
+                                        
                                 }
                               //console.log(specialGuys[0], 'and ', otherParentName, ' is a valid pair for ', dragonName)
                               
@@ -2323,7 +2329,9 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
                                 if (bestTargetOdds[metTarget].odds < (Number(targetData.odds.base) * Number(pairObj.multiplierOdds))) {
-                                        bestTargetOdds[metTarget] = {odds: Number(targetData.odds.base) * Number(pairObj.multiplierOdds), pairObj: pairObj}
+                                        bestTargetOdds[metTarget] = {odds: Number(targetData.odds.base) * Number(pairObj.multiplierOdds), pairObj: pairObj, soloNum: true}
+                                } else if (bestTargetOdds[metTarget].odds == (Number(targetData.odds.base) * Number(pairObj.multiplierOdds))) {
+                                        bestTargetOdds[metTarget].soloNum = false;
                                 }
                         } else {
                                 oddsOfCool += Number(pairObj.hybridOdds)
@@ -2357,14 +2365,15 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
         let innerHtmlStuff = ''
         let top4 = 4
         for (const targett of Object.keys(bestTargetOdds)){
-                
-                if (validPairs.includes(bestTargetOdds[targett].pairObj)) {
-                        console.log('found pair, altering!')
-                        bestTargetOdds[targett].pairObj.bestOddsFor = targett;
-                        validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pairObj), 1, bestTargetOdds[targett].pairObj)
-                        //validPairs.splice(validPairs.indexOf(pair), 1)
-                } else {
-                        console.log('couldnt find ',targett,  bestTargetOdds[targett])
+                if (bestTargetOdds[targett].soloNum) {
+                        if (validPairs.includes(bestTargetOdds[targett].pairObj)) {
+                                console.log('found pair, altering!')
+                                bestTargetOdds[targett].pairObj.bestOddsFor = targett;
+                                validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pairObj), 1, bestTargetOdds[targett].pairObj)
+                                //validPairs.splice(validPairs.indexOf(pair), 1)
+                        } else {
+                                console.log('couldnt find ',targett,  bestTargetOdds[targett])
+                        }
                 }
         }
         //console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
@@ -2476,7 +2485,7 @@ function sortingPairObj(a, b) {
         
 }
 
-//@DEPRECATE
+/*//@DEPRECATE
 function sortPairIntoArray(pairObj, array, property) {
   let propIsArray = false
   if (property.includes('Array')) {
@@ -2502,7 +2511,7 @@ function sortPairIntoArray(pairObj, array, property) {
   //sortedcheck[property].push({cool: pairObj.oddsOfCool, new: pairObj.newOdds})
   return array;
 }
-
+*/
 
 function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "reg") {
         //console.log('is this firing?', pairObj)
@@ -2520,16 +2529,19 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let breedsOdds = 0
         let clonePercentage = 0
         let riftassumed = true
+
+        let breedSeconds = 0
+        let breedcountforAverage = 0
+        
         if (pairArray[0] != "justOutputs") {
                 
-                
-        
                 if (a.odds[parentClone]) {
                         if (a.odds[parentClone][caveLocation]) {
                                 let getClone = Number(a.odds[parentClone][caveLocation])
                                 if (getClone != NaN) {
                                         clonePercentage += getClone
                                 }
+                                breedSeconds += (Number(a.incubation) * getClone)
                         }
                 }
                 if (b.odds[parentClone]) {
@@ -2538,6 +2550,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 if (getClone != NaN) {
                                         clonePercentage += getClone
                                 }
+                                breedSeconds += (Number(b.incubation) * getClone)
                         }
                 }
         } else {
@@ -2546,6 +2559,13 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let newHybrids = []
         for (const dragonName of availableDragonNames) {
                 let dragonData = allDragonData[dragonName]
+                if (caveLocation == "rift" && elementChart.subbedprims.includes(dragonName)) {
+                        continue;
+                } else if (caveLocation != "rift" && dragonData.elements.includes('R Rift') && riftassumed == false) {
+                        continue;
+                }
+                
+                
                 let thisGuyOdds = 0
                 if (!dragonData.conditions.includes("Evolve")) {
                         if (checkTargetReq(dragonName, pairingOutput, riftassumed)) {
@@ -2597,6 +2617,18 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 newGuys[guyy] = guyOdds
                 newOdds += guyOdds
         }
+
+        
+
+        for (const hybridd of hybrids) {
+                breedSeconds += Number(hybridd.incubation) * hybridOdds
+        }
+        for (const breeddd of breeds) {
+                breedSeconds += Number(breeddd.incubation) * multiplierOdds
+        }
+        let breedAverage = breedSeconds / 100
+
+        
         
         pairObj.hybridOdds = hybridOdds
         pairObj.multiplierOdds = multiplierOdds //(1 - Math.min((hybridOdds + Number(clonePercentage)), 0.99))/Number(totalCurrent)
@@ -2604,6 +2636,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         pairObj.hybrids = hybrids
         pairObj.newOdds = newOdds
         pairObj.newGuys = newGuys
+        pairObj.breedAverage = breedAverage
         //console.log(newGuys)
         //console.log(pairObj)
         return pairObj;
@@ -2656,7 +2689,7 @@ function pairTemplate(pairObj) {
  // console.log(pairObj) //WHY NO ODDS AAAAA    
   let htmlTemplate = `<div class="pairing `
         if (pairObj.bestOddsFor) {
-                htmlTemplate += ` bestodds"><h4>*Best Odds for ${pairObj.bestOddsFor}!</h4`
+                htmlTemplate += ` bestodds"><h4>*Best Odds for ${pairObj.bestOddsFor}!</h4>`
         } else {
                 htmlTemplate += `">`
         }
@@ -2699,8 +2732,8 @@ function pairTemplate(pairObj) {
   if (newGuysMinusTargets.length > 0) {
           htmlTemplate += `<h5 style="margin-bottom:0px;">Odds of getting a new dragon:</h5><p>${formatNewOdds}%</p>`
           htmlTemplate += `<div class="otherss">`
-          for (const newGuy of Object.keys(pairObj.newGuys)) {
-                  console.log(newGuy, pairObj.newGuys[newGuy])
+          for (const newGuy of newGuysMinusTargets) {
+                  //console.log(newGuy, pairObj.newGuys[newGuy])
                   let imgsrc = allDragonImgs[newGuy].Adult
                   if (!imgsrc) {
                         imgsrc = allDragonImgs[newGuy][Object.keys(allDragonImgs[newGuy])[0]]
@@ -3022,7 +3055,7 @@ function calculateParentsPressed() {
           //possiblepairdiv.appendChild(tempTextEl)
           document.getElementById('mpfloading').classList.remove('hidden')
 
-        setTimeout(updateTargetSearch, 0.2)
+        setTimeout(updateTargetSearch, 0.3)
           //requestAnimationFrame(updateTargetSearch)
 }
 
