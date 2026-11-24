@@ -1840,7 +1840,7 @@ function updatePossibleTargets() {
     let dragonReqs = allDragonData[dragonName].combo.requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
-                    if (!playerHasElements.normal.includes(req)) {
+                    if (!playerHasElements.normal.includes(req) && elementChart.basics.includes(req)) {
                         child.classList.add('impossible')
                         impossible = true
                     }
