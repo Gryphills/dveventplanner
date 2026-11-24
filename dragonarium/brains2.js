@@ -1529,7 +1529,7 @@ function createTargetCards() {
                     if (internalEl == "R Rift") {
                         elementsClasses += ' riftexclusion '
                         let primtest = dragonName.charAt(0) + ' ' + dragonName.replace(' Rift', '')
-                            console.log(primtest)
+                        //console.log(primtest)
                         if (elementChart.basics.includes(primtest)) {
                                 elementsClasses += ' riftprim '
                         }
