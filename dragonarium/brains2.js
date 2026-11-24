@@ -3145,12 +3145,16 @@ function exportdatabuttonClicked(button) {
               document.getElementById('exportnotif').textContent = "Failed to copy data :(! waddahell"
             },
         );
+        setTimeout(function() {
+                 document.getElementById('exportnotif').textContent = ' '
+        }, 10)
 }
+
 
 function importdatabuttonClicked(button) {
         if (button.classList.contains('importdatabuttonfinal')) {
                 let newDragonarium = {}
-                let input = document.querySelector('importdatainput')
+                let input = document.querySelector('#importdatainput')
                 if (input.value) {
                         let importData = JSON.parse(input.value)
                         let issues = false
