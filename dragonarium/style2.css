@@ -858,12 +858,13 @@ body {
         margin: 15px;
         align-items: center;
     }
-  .plus {
-    font-weight: bold;
-    align-content: center;
-    padding:10px;
-    font-size:larger;
-  }
+    
+    .plus {
+      font-weight: bold;
+      align-content: center;
+      padding:10px;
+      font-size:larger;
+    }
 }
 .parent {
   position:relative;
@@ -881,6 +882,14 @@ body {
   
 }
 
+.bestodds {
+  padding-top: 25px;
+  h3 {
+    position: absolute;
+    margin-top: -17px;
+  }
+}
+
 .result-targetbox {
   background-color: #cac5f0;
   color:#442a5f;
@@ -888,6 +897,7 @@ body {
   border-radius: 6px;
   margin:15px;
   padding: 10px;
+  min-width: 50%;
   h4 {
     margin: 1px;
   }
