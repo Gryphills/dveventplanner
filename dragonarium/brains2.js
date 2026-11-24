@@ -2770,7 +2770,7 @@ function pairTemplate(pairObj) {
  // console.log(pairObj) //WHY NO ODDS AAAAA    
   let htmlTemplate = `<div class="pairing `
         if (pairObj.bestOddsFor) {
-                htmlTemplate += ` bestodds"><h4>*Best Odds for ${pairObj.bestOddsFor}!</h4>`
+                htmlTemplate += ` bestodds"><h3>*Best Odds for ${pairObj.bestOddsFor}!</h3>`
         } else {
                 htmlTemplate += `">`
         }
