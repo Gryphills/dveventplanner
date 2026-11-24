@@ -1113,6 +1113,7 @@ body {
       margin: 1px;
       border-radius:6px;
       text-align:center;
+      height: min-content;
 }
 .button:hover {
       margin-left:3px;
