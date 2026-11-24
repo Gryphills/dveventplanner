@@ -1538,6 +1538,9 @@ function createTargetCards() {
                     if (elementChart.subbedprims.includes(dragonName)) {
                         elementsClasses += ' primarydragon '
                     }
+                    if (internalEl == "GaGalactic") {
+                        elementsClasses += ' noriftallowed '
+                    }
                     if (internalEl == "R Rift") {
                         elementsClasses += ' riftexclusion '
                         let primtest = dragonName.charAt(0) + ' ' + dragonName.replace(' Rift', '')
@@ -1846,7 +1849,7 @@ function updatePossibleTargets() {
                         child.classList.add('impossible')
                         impossible = true
                     }
-                    if (req != "R Rift" && !playerHasElements.rift.includes(req)) {
+                    if (req != "R Rift" && elementChart.basics.includes(req) && !playerHasElements.rift.includes(req)) {
                         child.classList.add('noriftallowed')
                     }
                     //if (safety > 0) {
@@ -1858,7 +1861,7 @@ function updatePossibleTargets() {
                   child.classList.add('impossible')
                   impossible = true
                 }
-                if (dragonarium[req].rifted == "0") {
+                if (dragonarium[req].rifted == "0" || dragonarium[req].rifted == 0 ) {
                         child.classList.add('noriftallowed')
                 }
               }
