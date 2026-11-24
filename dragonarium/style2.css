@@ -1131,14 +1131,21 @@ body {
 .importdatadiv {
   max-width: 500px;
   min-width: 40%;
+  justify-self: right;
+  text-align:center;
+  margin-top: 4px;
+  margin-right: 2px;
   .button {
     font-size: medium;
     font-weight: normal;
     width: fit-content;
+    margin: auto;
+    background-color: #442a5f;
+    color: #cac5f0;
   }
 }
 #importdatainput {
-  background-color: #cac5f0;
+  background-color: #f9f0e178;
   border: 2px solid #442a5f;
   color: #442a5f;
   padding: 10px;
