@@ -1122,8 +1122,9 @@ body {
 .button:click {
       background-color: #442a5f;
       color: #cac5f0;
-      margin:2px;
-      border: 6px solid #442a5f;
+      margin-left:3px;
+      margin-right:3px;
+      /*border: 6px solid #442a5f;*/
 }
 
 
