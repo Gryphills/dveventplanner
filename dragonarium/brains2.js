@@ -2434,6 +2434,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
         let innerHtmlStuff = ''
         let top4 = 4
         for (const targett of Object.keys(bestTargetOdds)){
+                
                 if (bestTargetOdds[targett].soloNum) {
                         if (validPairs.includes(bestTargetOdds[targett].pairObj)) {
                                 console.log('found pair, altering!')
@@ -2446,6 +2447,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 }
         }
         //console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
+        console.log(pairsNeededForTargets, validPairs.length)
         for (const pair of validPairs) {
                 
                 let neededPair = 0
@@ -2480,7 +2482,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 //}
                 
         }
-           console.log(pairsNeededForTargets)
+           console.log(pairsNeededForTargets, innerHtmlStuff)
         document.querySelector('.pairsholder').innerHTML = innerHtmlStuff
            console.log('html added!', pairsNeededForTargets)
         //tempTextEl.textContent = "AAA?"//.remove();
