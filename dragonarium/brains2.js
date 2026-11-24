@@ -2163,7 +2163,7 @@ function highestNewOdds(caveId = "reg") {
 
 function updateTargetSearch() {
   let caveId = "reg"
-  if (document.querySelector('#tabbutton-mpf').open) {
+  if (document.querySelector('#tabbutton-mpf').classList.contains("open")) {
           caveId = document.getElementById('multiparents').querySelector('.caveselected').dataset.caveid
           if (!caveId) {
                 caveId = "reg"
