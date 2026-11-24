@@ -3168,9 +3168,10 @@ function importdatabuttonClicked(button) {
                                 }
                         }
                         if (!issues) {
-                                console.log('saved data!')
+                                console.log('saved data with no issues!')
                                 //saveData()
                         }
+                        console.log('dragonarium is the same as imported? ', JSON.stringify(dragonarium) == JSON.stringify(newDragonarium))
                 }
         } else {
                 let divv = document.querySelector('.importdatadiv')
