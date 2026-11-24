@@ -820,6 +820,10 @@ body {
 .riftexclusion {
   display:none !important;
 }
+
+.filternorift{
+  display:none !important;
+}
 /*.filters-active {
   .dragonCard {
     display:none;
