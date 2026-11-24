@@ -569,7 +569,7 @@ function haveCard(button) {
             //playerHasElements.normal.concat(allDragonData[el.id].elements)
             if (playerHasElements.normal.length == 28) {
                 hasAllElements = true;
-                    console.log('all els! ', hasAllElements)
+                    console.log('all els! ', playerHasElements)
             }
     }
     //updateTargetCard(el.id)
@@ -1828,6 +1828,13 @@ function updatePossibleTargets() {
     let dragonReqs = allDragonData[dragonName].combo.requirements;
           if (dragonReqs) {
             for (const req of dragonReqs) {
+                    if (!playerHasElements.normal.includes(req)) {
+                        child.classList.add('impossible')
+                        impossible = true
+                    }
+                    if (req != "R Rift" && !playerHasElements.rift.includes(req)) {
+                        child.classList.add('noriftallowed')
+                    }
                     //if (safety > 0) {
                     //        console.log(`is ${req} an element or a dragon?`)
                     //        safety -= 1;
