@@ -2069,7 +2069,8 @@ function updateTargetSearch() {
   if (settingsWeights.pairpertarget < 1) {
      settingsWeights.pairpertarget = 1
   }
-  
+
+  let bestTargetOdds = {}
   //while (possiblepairdiv.firstElementChild) {
   //  possiblepairdiv.firstElementChild.remove()
   //}
@@ -2080,7 +2081,7 @@ function updateTargetSearch() {
   tempTextEl.textContent = ""
   //possiblepairdiv.appendChild(tempTextEl)
   let pairsNeededForTargets = {}
-  let pairCountTotal = 0
+  //let pairCountTotal = 0
   let targets = []
   //let bestPairForTarget = {}
 
@@ -2095,9 +2096,10 @@ function updateTargetSearch() {
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
+    bestTargetOdds[target] = {pairObj: undefined, odds: 0}
     //bestPairForTarget[dragonName] = {pair: 'none', odds: ''}
     pairsNeededForTargets[dragonName] = Number(settingsWeights.pairpertarget)
-    pairCountTotal += Number(settingsWeights.pairpertarget) + 5
+    //pairCountTotal += Number(settingsWeights.pairpertarget) + 5
     if (target.classList.contains('twospecialguys')) {
                 guysWithTwoSpecialGuys.push(dragonName)
                 pairsNeededForTargets[dragonName] = 1
@@ -2285,6 +2287,9 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
+                                if (bestTargetOdds[target].odds < (Number(targetData.odds.base) * Number(pairObj.multiplierOdds))) {
+                                        bestTargetOdds[target] = {odds: Number(targetData.odds.base) * Number(pairObj.multiplierOdds), pairObj: pairObj}
+                                }
                         } else {
                                 oddsOfCool += Number(pairObj.hybridOdds)
                         }
@@ -2316,15 +2321,29 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
    if (validPairs.length > 0) {
         let innerHtmlStuff = ''
         let top4 = 4
-        console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
+        for (const targett of Object.keys(bestTargetOdds)){
+                
+                if (validPairs.includes(bestTargetOdds[targett].pair)) {
+                        console.log('found pair, altering!')
+                        bestTargetOdds[targett].pair.bestOddsFor = targett;
+                        validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pair), 1, bestTargetOdds[targett].pair)
+                        //validPairs.splice(validPairs.indexOf(pair), 1)
+                }
+        }
+        //console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
         for (const pair of validPairs) {
+                
                 let neededPair = 0
                 if (!pair.specialPair) {
-                        for (const targ of pair.targetsMet) {
-                                //console.log(
-                                if (pairsNeededForTargets[targ] > 0) {
-                                        neededPair += 1;
-                                        pairsNeededForTargets[targ] =  pairsNeededForTargets[targ] - 1
+                        if (pair.bestOddsFor) {
+                                neededPair = 5
+                        } else {
+                                for (const targ of pair.targetsMet) {
+                                        //console.log(
+                                        if (pairsNeededForTargets[targ] > 0) {
+                                                neededPair += 1;
+                                                pairsNeededForTargets[targ] =  pairsNeededForTargets[targ] - 1
+                                        }
                                 }
                         }
                 } else {
@@ -2334,16 +2353,16 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         top4 -= 1
                         let htmlStuff = pairTemplate(pair)
                         innerHtmlStuff += htmlStuff
-                        pairCountTotal -= 1;
-                        console.log(`added ${pair.parentLeft}/${pair.parentRight}; ${pairCountTotal} pairs to go!`, pairsNeededForTargets)
+                        //pairCountTotal -= 1;
+                        //console.log(`added ${pair.parentLeft}/${pair.parentRight}; ${pairCountTotal} pairs to go!`, pairsNeededForTargets)
                 } else {
                         //console.log(`skipping ${pair.parentLeft}/${pair.parentRight} because no targets met needed more pairs. Remaining: `, pairsNeededForTargets)
                 }
                 
-                if (pairCountTotal == 0) {
-                        console.log("count is now 0? breaking - ", pairsNeededForTargets)
+                //if (pairCountTotal < 10) {
+                //        console.log("count is now 10? breaking - ", pairsNeededForTargets)
                         break;
-                }
+                //}
                 
         }
            console.log(pairsNeededForTargets)
@@ -2598,7 +2617,13 @@ function checkTargetReq(target, pairingElOutput, riftassumed = true) {
 
 function pairTemplate(pairObj) {
  // console.log(pairObj) //WHY NO ODDS AAAAA    
-  let htmlTemplate = `<div class="pairing"> <div class="pairparents">`
+  let htmlTemplate = `<div class="pairing `
+        if (pairObj.bestOddsFor) {
+                htmlTemplate += ` bestodds"><h4>*Best Odds for ${pairObj.bestOddsFor}!</h4`
+        } else {
+                htmlTemplate += `">`
+        }
+   htmlTemplate += `<div class="pairparents">`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
