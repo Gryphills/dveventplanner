@@ -2055,6 +2055,36 @@ function applyWeighting(settingsWeights, pairObj, targets) {
           </div>
           */
 
+function highestNewOdds() {
+          let caveId = "reg"
+          if (document.querySelector('#tabbutton-mpf').open) {
+                let caveId = document.getElementById('multiparents').querySelector('.caveselected').dataset.caveid
+                  if (!caveId) {
+                        caveId = "reg"
+                  }
+          }
+          let haveDragonNodes = haveDiv.children;
+          let haveDragonsToCheck = []
+          
+          for (const child of haveDragonNodes) {
+                  if (child.classList.contains('dragonCard')) {
+                  //console.log(child)
+                          if (allDragonData[child.id].rarity != "Gemstone") {
+                                  if (caveId == "rift") {
+                                        if (Number(dragonarium[child.id].rifted) == 1) {
+                                            haveDragonsToCheck.push(child.id);
+                                        }
+                                  } else {
+                                        haveDragonsToCheck.push(child.id);
+                                  }
+                          }
+                  }
+          }
+          
+}
+
+
+
 function updateTargetSearch() {
   let caveId = "reg"
   if (document.querySelector('#tabbutton-mpf').open) {
@@ -2071,6 +2101,7 @@ function updateTargetSearch() {
   }
 
   let bestTargetOdds = {}
+  let bestNewOdds = {}
   //while (possiblepairdiv.firstElementChild) {
   //  possiblepairdiv.firstElementChild.remove()
   //}
@@ -2096,7 +2127,7 @@ function updateTargetSearch() {
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
-    bestTargetOdds[target] = {pairObj: undefined, odds: 0}
+    bestTargetOdds[dragonName] = {pairObj: undefined, odds: 0}
     //bestPairForTarget[dragonName] = {pair: 'none', odds: ''}
     pairsNeededForTargets[dragonName] = Number(settingsWeights.pairpertarget)
     //pairCountTotal += Number(settingsWeights.pairpertarget) + 5
