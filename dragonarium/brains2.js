@@ -2354,11 +2354,13 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
         let top4 = 4
         for (const targett of Object.keys(bestTargetOdds)){
                 
-                if (validPairs.includes(bestTargetOdds[targett].pair)) {
+                if (validPairs.includes(bestTargetOdds[targett].pairObj)) {
                         console.log('found pair, altering!')
-                        bestTargetOdds[targett].pair.bestOddsFor = targett;
-                        validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pair), 1, bestTargetOdds[targett].pair)
+                        bestTargetOdds[targett].pairObj.bestOddsFor = targett;
+                        validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pairObj), 1, bestTargetOdds[targett].pairObj)
                         //validPairs.splice(validPairs.indexOf(pair), 1)
+                } else {
+                        console.log('couldnt find ',targett,  bestTargetOdds[targett])
                 }
         }
         //console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
@@ -2392,7 +2394,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 
                 //if (pairCountTotal < 10) {
                 //        console.log("count is now 10? breaking - ", pairsNeededForTargets)
-                        break;
+                        //break;
                 //}
                 
         }
