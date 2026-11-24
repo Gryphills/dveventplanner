@@ -1049,13 +1049,15 @@ function seeOtherPossible(htmEl, elementAdded) {
                  <p>*only shows dragons you don't own</p>
                  <div class="otherss"> </div>`
                  htmEl.innerHTML += otherhtml
+                 setTimeout(seeOtherPossible(htmEl, elementAdded), 0.1)
+                return;
         }
-        if (htmEl.open) {
+        /*if (htmEl.open) {
                 console.log('open!')
                 return;
         } else {
                 console.log('notpopne')
-        }
+        }*/
         
         let dragonName = htmEl.closest('.dragonCard').id
         let data = allDragonData[dragonName]
