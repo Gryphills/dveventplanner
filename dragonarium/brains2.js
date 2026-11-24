@@ -2605,8 +2605,8 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let clonePercentage = 0
         let riftassumed = true
 
-        let breedSeconds = 0
-        let breedcountforAverage = 0
+        let breedMinutes = 0
+        //let breedcountforAverage = 0
         
         if (pairArray[0] != "justOutputs") {
                 
@@ -2616,7 +2616,8 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 if (getClone != NaN) {
                                         clonePercentage += getClone
                                 }
-                                breedSeconds += (Number(a.incubation) * getClone)
+                                if (!a.incubation) {a.incubation = 0}
+                                breedMinutes += (Number(a.incubation) * getClone)
                         }
                 }
                 if (b.odds[parentClone]) {
@@ -2625,7 +2626,8 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 if (getClone != NaN) {
                                         clonePercentage += getClone
                                 }
-                                breedSeconds += (Number(b.incubation) * getClone)
+                                if (!b.incubation) {b.incubation = 0}
+                                breedMinutes += (Number(b.incubation) * getClone)
                         }
                 }
         } else {
@@ -2696,12 +2698,14 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         
 
         for (const hybridd of hybrids) {
-                breedSeconds += Number(hybridd.incubation) * hybridOdds
+                if (!hybridd.incubation) {hybridd.incubation = 0}
+                breedMinutes += Number(hybridd.incubation) * hybridOdds
         }
         for (const breeddd of breeds) {
-                breedSeconds += Number(breeddd.incubation) * multiplierOdds
+                if (!breeddd.incubation) {breeddd.incubation = 0}
+                breedMinutes += Number(breeddd.incubation) * multiplierOdds
         }
-        let breedAverage = breedSeconds / 100
+        let breedAverage = breedMinutes / 100
 
         
         
