@@ -2447,7 +2447,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 }
         }
         //console.log(pairCountTotal, ' total pairs I want, from ', validPairs.length, pairsNeededForTargets)
-        console.log(pairsNeededForTargets, validPairs.length)
+        //console.log(pairsNeededForTargets, validPairs.length)
         for (const pair of validPairs) {
                 
                 let neededPair = 0
