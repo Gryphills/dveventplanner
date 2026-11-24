@@ -1111,7 +1111,6 @@ body {
       cursor: pointer;
       min-width: 18%;
       margin: 1px;
-      cursor:pointer;
       border-radius:6px;
 }
 .button:hover {
@@ -1125,6 +1124,26 @@ body {
       margin-left:3px;
       margin-right:3px;
       /*border: 6px solid #442a5f;*/
+}
+
+.importdatadiv {
+  max-width: 500px;
+  min-width: 40%;
+  .button {
+    font-size: medium;
+    font-weight: normal;
+    width: fit-content;
+  }
+}
+#importdatainput {
+  background-color: #cac5f0;
+  border: 2px solid #442a5f;
+  color: #442a5f;
+  padding: 10px;
+  width: 80%;
+  margin: 1px;
+  border-radius: 6px;
+  margin-bottom: 20px;
 }
 
 
