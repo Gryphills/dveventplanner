@@ -2104,7 +2104,7 @@ function highestNewOdds() {
 function updateTargetSearch() {
   let caveId = "reg"
   if (document.querySelector('#tabbutton-mpf').open) {
-        let caveId = document.getElementById('multiparents').querySelector('.caveselected').dataset.caveid
+          caveId = document.getElementById('multiparents').querySelector('.caveselected').dataset.caveid
           if (!caveId) {
                 caveId = "reg"
           }
@@ -2185,7 +2185,7 @@ function updateTargetSearch() {
                           }
                   }
           }
-          console.log(caveId, haveDragonsToCheck.length)
+          console.log(caveId, ' cave: ', haveDragonsToCheck.length)
   }
   
   
