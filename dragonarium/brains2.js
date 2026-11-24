@@ -25,10 +25,31 @@ let playerHasElements = {
         rift: []
 }
 
+
+let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
+if (!eventObj) {
+        eventObj = {}
+}
+if (!eventObj.dragonarium) {
+  eventObj.dragonarium = {}
+}
+let dragonarium = eventObj.dragonarium
+
+function saveData() {
+  eventObj.dragonarium = dragonarium;
+  localStorage.setItem("dvEvents", JSON.stringify(eventObj));
+}
+
+
+
+
 function sortAvailDragons() {
         for (dragonName of allDragonNames) {
                 if (allDragonData[dragonName].limited == "" || allDragonData[dragonName].limited == "A" || allDragonData[dragonName].limited == "N") {
                     availableDragonNames.push(dragonName)
+                }
+                if (!dragonarium[dragonName]) {
+                        dragonarium[dragonName] = {fav : 0, rifted: "0", status: "init"}
                 }
         }
 }
@@ -399,19 +420,7 @@ function sortCardsByEl(el, elementName) {
 */
 
 
-let eventObj = JSON.parse(localStorage.getItem('dvEvents'));
-if (!eventObj) {
-        eventObj = {}
-}
-if (!eventObj.dragonarium) {
-  eventObj.dragonarium = {}
-}
-let dragonarium = eventObj.dragonarium
 
-function saveData() {
-  eventObj.dragonarium = dragonarium;
-  localStorage.setItem("dvEvents", JSON.stringify(eventObj));
-}
 
 
 function setbackup() {
@@ -3140,13 +3149,14 @@ function exportdatabuttonClicked(button) {
 
 function importdatabuttonClicked(button) {
         if (button.classList.contains('importdatabuttonfinal')) {
+                let newDragonarium = {}
                 let input = document.querySelector('importdatainput')
                 if (input.value) {
                         let importData = JSON.parse(input.value)
                         let issues = false
                         for (const key of Object.keys(dragonarium)) {
                                 if (input[key]) {
-                                        dragonarium[key] = input[key]
+                                        newDragonarium[key] = input[key]
                                         console.log('imported ', key, ' data!')
                                 } else {
                                         console.error('issue importing ', key, ' data :(!')
@@ -3154,7 +3164,8 @@ function importdatabuttonClicked(button) {
                                 }
                         }
                         if (!issues) {
-                                saveData()
+                                console.log('saved data!')
+                                //saveData()
                         }
                 }
         } else {
