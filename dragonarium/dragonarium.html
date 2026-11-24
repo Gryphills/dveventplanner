@@ -13,15 +13,17 @@
   </div>
   <div style="display:grid; grid-template-columns: 50% 50%; grid-template-rows: auto auto; text-align:center;">
       <div class="topinfo button importdatabutton" style="justify-self: right; margin-right:8px;" onclick="importdatabuttonClicked(this)">Import Data</div>
-      <div class=" topinfo button exportdatabutton" style="justify-self: left; margin-left:8px;" onclick="exportdatabuttonClicked(this)">Export/save Data</div>
+    <div style="justify-self: left; margin-left:8px;">
+        <div class=" topinfo button exportdatabutton" onclick="exportdatabuttonClicked(this)">Export/save Data</div>
+        <p style="margin-left:10px;" id="exportnotif"></p>
+      </div>
+      
       <div class="importdatadiv topinfo hidden">
         <p style="font-weight:bold;">BE WARNED!<br>Importing data here will overwrite the settings stored on this browser.<br>Only do so if you are certain!!1!</p>
-        <input id="importdatainput" value="Hi just testing rn this wont do anything but almost done">
+        <input id="importdatainput" value="Hi just testing rn, this wont do anything but almost done">
         <div class="button importdatabuttonfinal" disabled  onclick="importdatabuttonClicked(this)">Import and Overwrite Data</div>
       </div>
-      <div style="justify-self: left; margin-left:8px;">
-        <p id="exportnotif"></p>
-      </div>
+      
   </div>
   <br>
   <p class="topinfo" id="lastupdated"></p><br>
