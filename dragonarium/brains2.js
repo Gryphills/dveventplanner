@@ -1059,8 +1059,10 @@ function seeOtherPossible(htmEl, elementAdded) {
                  <p>*only shows dragons you don't own</p>
                  <div class="otherss"> </div>`
                  htmEl.innerHTML += otherhtml
+                 htmEl.open = "true"
+                console.log('opening for first time!')
                  setTimeout(seeOtherPossible(htmEl, elementAdded), 0.1)
-                return;
+                 return;
         }
         /*if (htmEl.open) {
                 console.log('open!')
@@ -1103,7 +1105,7 @@ function seeOtherPossible(htmEl, elementAdded) {
         let possiblediv = htmEl.querySelector('.otherss')
         
         objPairStuff = getOutputsAndOdds(['justOutputs', 'awaaa'], comboOutput, objPairStuff, cave)
-        console.log(comboOutput, objPairStuff)
+        //console.log(comboOutput, objPairStuff)
         for (const guy of Object.keys(objPairStuff.newGuys)) {
                 if (guy != dragonName) {
                         let imgsrc = allDragonImgs[guy].Adult
