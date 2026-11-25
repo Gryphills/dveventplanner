@@ -1007,7 +1007,7 @@ function buildDragonCard(name, data) {
     if (!skipThing) {
       cardhtml += `<h4>Breeding Info:</h4>`
       if (data.combo['special']) {
-        if (data.combo.special.includes('trait') {
+        if (data.combo.special.includes('trait')) {
                 cardhtml += `<h4 style="margin:5px">One Parent Must Have</h4><h3 style="margin:0px"><div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split(' trait')[0]} Trait</h3>`
         } else if (data.combo.special.includes('Rift align:')) {
                 cardhtml += `<h4 style="margin:5px">Rift Must Be <div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split('align: ')[1]} Aligned</h4>`
