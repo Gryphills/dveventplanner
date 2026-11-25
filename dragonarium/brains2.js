@@ -3322,13 +3322,13 @@ function getScriptUpdateDate() {
         
             repos.forEach((repo)=>{
               console.log(repo.name)
-              if (repo.name == desiredRepo)
+              if (repo.name == 'dveventplanner')
               {
                 var lastUpdated = new Date(repo.updated_at);
                 var day = lastUpdated.getUTCDate();
                 var month = lastUpdated.getUTCMonth();
                 var year = lastUpdated.getUTCFullYear();
-                $(dateTagClass).text(`Last updated: ${year}-${month}-${day}`);
+                document.getElementById('lastupdated').textContent += `Last updated: ${year}-${month}-${day}`
               }
             });
           }
@@ -3343,8 +3343,8 @@ document.addEventListener("DOMContentLoaded", function() {
     allDragonData = JSON.parse(document.getElementById('dragondata').textContent);
     lastUpdate = allDragonData.lastUpdate;
     delete allDragonData.lastUpdate;
-    document.getElementById('lastupdated').textContent = 'Dragon Info/Availability Last Updated: ' + lastUpdate;
-        
+    document.getElementById('lastupdated').textContent += 'Dragon Info/Availability Last Updated: ' + lastUpdate;
+    getScriptUpdateDate()
     allDragonNames = Object.getOwnPropertyNames(allDragonData);
     sortAvailDragons()
     allDragonImgs = JSON.parse(document.getElementById('dragonurls').textContent);
@@ -3368,6 +3368,6 @@ document.addEventListener("DOMContentLoaded", function() {
     searchListeners();
     getSettings();
     document.querySelector('.oopsie').style.display = 'none';
-    getScriptUpdateDate()
+    
 });
 
