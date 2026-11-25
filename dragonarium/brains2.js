@@ -989,13 +989,7 @@ function buildDragonCard(name, data) {
               if (allDragonData[evolveFrom]) {
                  cardhtml += `<h3>Evolve from
                          <div class="specific-breeding-req">
-                                 <a class="specific-breeding-req" href="#${evolveFrom}" onClick="jumpToDragon('${evolveFrom}', this)">${evolveFrom}</a>`
-                         cleanedReq += `<span class="internal-el-imgs">`
-                                for (const el of allDragonData[evolveFrom].elements) {
-                                        cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
-                                }
-                                 cleanedReq += `</span>
-                                 
+                                 <a class="specific-breeding-req" href="#${evolveFrom}" onClick="jumpToDragon('${evolveFrom}', this)">${evolveFrom}</a>
                                  </h3>`
               } else {
                  cardhtml += `<h3>${data.combo.special}</h3>`
