@@ -2895,13 +2895,13 @@ function pairTemplate(pairObj) {
                           if (allDragonImgs[newGuy].combo.special.includes('align')) {
                                 let alignment = allDragonImgs[newGuy].combo.special.split('align:')[1].trim();
                                 htmlTemplate +=`<div class="riftaligned-elimg">
-                                            <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                            <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                 <div class='tooltip'>Rift Must Be Aligned to ${alignment}</div>
                                             </div>
                                         </div>`
                           } else if (allDragonImgs[newGuy].combo.special.includes('trait')) {
                                 let alignment = allDragonImgs[newGuy].combo.special.split('trait')[0].trim();
-                                htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                    <div class='tooltip'>One Parent Must Have ${alignment} Rift Trait</div>
                                                 </div>`
                           }
@@ -2928,13 +2928,13 @@ function pairTemplate(pairObj) {
                           if (allDragonImgs[newGuy].combo.special.includes('align')) {
                                 let alignment = allDragonImgs[newGuy].combo.special.split('align:')[1].trim();
                                 htmlTemplate +=`<div class="riftaligned-elimg">
-                                            <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                            <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                 <div class='tooltip'>Rift Must Be Aligned to ${alignment}</div>
                                             </div>
                                         </div>`
                           } else if (allDragonImgs[newGuy].combo.special.includes('trait')) {
                                 let alignment = allDragonImgs[newGuy].combo.special.split('trait')[0].trim();
-                                htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                    <div class='tooltip'>One Parent Must Have ${alignment} Rift Trait</div>
                                                 </div>`
                           }
