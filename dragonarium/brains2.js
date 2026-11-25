@@ -2339,7 +2339,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                                                 targetsMet : [guy],
                                                 elOutput : pairingOutputCleaned
                                         }
-                                        let results = getOutputsAndOdds(sorted, pairingOutputCleaned, objPair, "reg")
+                                        let results = getOutputsAndOdds(sorted, pairingOutputCleaned, objPair, caveId)
                                         //console.log(`${sorted[0]}//${sorted[1]}: `, results)
                                         validPairObj[`${sorted[0]}//${sorted[1]}`] = results
                                                 //multiplierOdds: results.multiplierOdds,
