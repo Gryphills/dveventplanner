@@ -1677,6 +1677,10 @@ function createTargetCards() {
         cardEl.classList.add('owned');
         cardEl.classList.add('filterowned');
       }
+      if (Number(dragonarium[dragonName].rifted) == 1) {
+        cardEl.classList.add('riftowned');
+        cardEl.classList.add('filterriftowned');
+      }
       if (dragonarium[dragonName].status == 'shadow') {
         cardEl.classList.add('shadow');
         cardEl.classList.add('filtershadow');
@@ -2872,7 +2876,23 @@ function pairTemplate(pairObj) {
     if (allDragonData[validTarget].conditions != "") {
         additionalClasses = allDragonData[validTarget].conditions
     }
-    htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img loading="lazy" src="${allDragonImgs[validTarget].Adult}"><p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
+    htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img loading="lazy" src="${allDragonImgs[validTarget].Adult}">`
+            if (allDragonImgs[newGuy].combo.special) {
+                          if (allDragonImgs[newGuy].combo.special.includes('align')) {
+                                let alignment = allDragonImgs[newGuy].combo.special.split('align:')[1].trim();
+                                htmlTemplate +=`<div class="riftaligned-elimg">
+                                            <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                                <div class='tooltip'>Rift Must Be Aligned to ${alignment}</div>
+                                            </div>
+                                        </div>`
+                          } else if (allDragonImgs[newGuy].combo.special.includes('trait')) {
+                                let alignment = allDragonImgs[newGuy].combo.special.split('trait')[0].trim();
+                                htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                                   <div class='tooltip'>One Parent Must Have ${alignment} Rift Trait</div>
+                                                </div>`
+                          }
+                  }
+    htmlTemplate += `<p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
   let oddsOfCool = Math.round(Number(pairObj.oddsOfCool) * 100000) / 1000
@@ -2889,8 +2909,23 @@ function pairTemplate(pairObj) {
                   if (!imgsrc) {
                         imgsrc = allDragonImgs[newGuy][Object.keys(allDragonImgs[newGuy])[0]]
                   }
-                  htmlTemplate += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">
-                                <h5 style="margin-bottom: 0px;">${newGuy}</h5> <h5 style="margin-top:0px;">(${Math.round(pairObj.newGuys[newGuy]*10000)/100}%)</h5></div>`
+                  htmlTemplate += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">`
+                  if (allDragonImgs[newGuy].combo.special) {
+                          if (allDragonImgs[newGuy].combo.special.includes('align')) {
+                                let alignment = allDragonImgs[newGuy].combo.special.split('align:')[1].trim();
+                                htmlTemplate +=`<div class="riftaligned-elimg">
+                                            <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                                <div class='tooltip'>Rift Must Be Aligned to ${alignment}</div>
+                                            </div>
+                                        </div>`
+                          } else if (allDragonImgs[newGuy].combo.special.includes('trait')) {
+                                let alignment = allDragonImgs[newGuy].combo.special.split('trait')[0].trim();
+                                htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait'}');>
+                                                   <div class='tooltip'>One Parent Must Have ${alignment} Rift Trait</div>
+                                                </div>`
+                          }
+                  }
+                  htmlTemplate +=`<h5 style="margin-bottom: 0px;">${newGuy}</h5> <h5 style="margin-top:0px;">(${Math.round(pairObj.newGuys[newGuy]*10000)/100}%)</h5></div>`
                 
           }
           htmlTemplate += `</div>`
