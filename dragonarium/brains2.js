@@ -3174,13 +3174,15 @@ function importdatabuttonClicked(button) {
                                         newDragonarium[key] = importData[key]
                                         console.log('imported ', key, ' data!')
                                 } else {
-                                        console.error('issue importing ', key, ' data :(!')
+                                        console.error('issue importing ', key, importData[key])
                                         issues = true
                                 }
                         }
                         if (!issues) {
                                 console.log('saved data with no issues!')
                                 //saveData()
+                        } else {
+                                console.log(importData)
                         }
                         console.log('dragonarium is the same as imported? ', JSON.stringify(dragonarium) == JSON.stringify(newDragonarium))
                 }
