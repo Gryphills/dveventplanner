@@ -2386,7 +2386,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                   let pairObj = pair
                   if (!pairObj.multiplierOdds) {
                         let sorted = [pairObj.parentLeft, pairObj.parentRight].sort()
-                        pairObj = getOutputsAndOdds(sorted, pairObj.elOutput, pairObj, "reg")
+                        pairObj = getOutputsAndOdds(sorted, pairObj.elOutput, pairObj, caveId)
                   }
                 /*let outputEls = []
                 for (const el of allDragonData[pair.parentLeft].elements) {
@@ -2598,6 +2598,7 @@ function sortPairIntoArray(pairObj, array, property) {
 function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "reg") {
         //console.log('is this firing?', pairObj)
         let parentClone = "singleclone"
+        
         
         if (pairArray[0] == pairArray[1]) {
                 parentClone = "doubleclone"
