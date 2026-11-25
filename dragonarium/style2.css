@@ -362,6 +362,7 @@ body {
     border-radius: 8px;
     margin-bottom: 4px;
     position:relative;
+    margin-bottom: 4px;
     .tooltip {
       left: 55px;
     }
@@ -369,6 +370,7 @@ body {
   img {
     width: 100%;
     object-fit: contain;
+    height: 100%
   }
   .minibutton {
     cursor: default;
@@ -803,6 +805,9 @@ body {
   display:none !important;
 }
 .filterowned {
+  display:none !important;
+}
+.filterriftowned {
   display:none !important;
 }
 .filterunavail {
