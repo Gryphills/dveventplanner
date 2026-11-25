@@ -926,8 +926,14 @@ body {
       font-weight: bold;
       margin: 1px;
     }
+    h5 {
+      font-weight: bold;
+      margin: 1px;
+      font-size: medium;
+    }
   }
 }
+
 .oddsnumber {
   font-style: italic;
   font-weight: normal;
@@ -964,16 +970,18 @@ body {
     }
   }
 }
-.breednight.possibletarget::after {
-      content: ' ';
-      background-image: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
-      background-size: contain;
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      top:-4px;
-      left: -4px;
+
+.breednight.possibletarget{
+      h5::before {
+        content: ' ';
+        background-image: url("https://i.postimg.cc/VL60sk8G/night-icon.png");
+        background-size: contain;
+        display: inline-block;
+        position: relative;
+        vertical-align: center;
+        width: 30px;
+        height: 30px;
+    }
  }
 .breedday {
   .breedinginfo {
@@ -990,16 +998,17 @@ body {
     }
   }
 }
-.breedday.possibletarget::after {
-      content: ' ';
-      background-image: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
-      background-size: contain;
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      top:-4px;
-      left: -4px;
+.breedday.possibletarget {
+      h5::before {
+        content: ' ';
+        background-image: url("https://i.postimg.cc/J4nH7zLT/day-icon.png");
+        background-size: contain;
+        display: inline-block;
+        position: relative;
+        vertical-align: center;
+        width: 30px;
+        height: 30px;
+    }
 }
 .weatherblossoms {
   .breedinginfo {
@@ -1015,17 +1024,18 @@ body {
       height: 40px;
     }
   }
-  .possibletarget::after {
-      content: ' ';
-      background-image: url("https://i.postimg.cc/nzPcRSKq/Weather-Blossoms.png");
-      background-size: contain;
-      display: block;
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      top:-4px;
-      left: -4px;
-  }
+}
+.weatherblossoms.possibletarget {
+      h5::before {
+        content: ' ';
+        background-image: url("https://i.postimg.cc/nzPcRSKq/Weather-Blossoms.png");
+        background-size: contain;
+        display: inline-block;
+        position: relative;
+        vertical-align: center;
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .oopsie {
