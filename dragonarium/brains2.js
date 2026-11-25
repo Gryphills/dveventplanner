@@ -2229,19 +2229,20 @@ function highestNewOdds(caveId = "reg") {
           allPairs.sort(sortingNewOdds)
           riftPairs.sort(sortingNewOdds)
           let topRegPairs = [allPairs[0]]
+          let topRiftPairs = [riftPairs[0]]
           let iterate = 1
-          while (allPairs[iterate].newOdds == topRegPairs[0].newOdds && safety > 0) {
-                topRegPairs.push(iteratePair)
+          /*while (allPairs[iterate].newOdds == topRegPairs[0].newOdds && safety > 0) {
+                topRegPairs.push(allPairs[iterate])
                 iterate += 1
                 safety -= 1
           }
-          let topRiftPairs = [riftPairs[0]]
+          
           iterate = 1
           while (riftPairs[iterate].newOdds == topRiftPairs[0].newOdds && safety > 0) {
-                topRiftPairs.push(iteratePair)
+                topRiftPairs.push(allPairs[iterate])
                 iterate += 1
                 safety -= 1
-          }
+          }*/
         console.log(topRegPairs, topRiftPairs)
 }
 
