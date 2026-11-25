@@ -1039,11 +1039,13 @@ function buildDragonCard(name, data) {
                                         cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
                                 }
                                  cleanedReq += `</span>`
-                                if (data.combo.special.includes('trait)')) {
-                                        let traitName = data.combo.special.split(req + '(')[1].split(')')[0]
-                                        if (traitName) {
-                                                if (traitIcons[traitName]) {
-                                                        cleanedReq += `<div class="el-img" style="background-image:url('${traitIcons[traitName]}');"></div>`
+                                if (data.combo.special) {
+                                        if (data.combo.special.includes('trait)')) {
+                                                let traitName = data.combo.special.split(req + '(')[1].split(')')[0]
+                                                if (traitName) {
+                                                        if (traitIcons[traitName]) {
+                                                                cleanedReq += `<div class="el-img" style="background-image:url('${traitIcons[traitName]}');"></div>`
+                                                        }
                                                 }
                                         }
                                 }
