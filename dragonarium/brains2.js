@@ -1679,7 +1679,6 @@ function createTargetCards() {
       }
       if (Number(dragonarium[dragonName].rifted) == 1) {
         cardEl.classList.add('riftowned');
-        cardEl.classList.add('filterriftowned');
       }
       if (dragonarium[dragonName].status == 'shadow') {
         cardEl.classList.add('shadow');
@@ -2003,6 +2002,14 @@ function setBreedingCave(buttonEl) {
                 for (const riftexclusive of Array.from(targetCardDiv.querySelectorAll('.Rift'))) {
                         riftexclusive.classList.remove('riftexclusion')
                 }
+                if (Number(savedSettings.multiparents.hideOwned) == 1) {
+                        for (const ownedcard of Array.from(targetCardDiv.querySelectorAll('.filterowned'))) {
+                                ownedcard.classList.remove('filterowned')
+                                if (Number(dragonarium[ownedcard.dataset.dragonName].rifted) == 1) {
+                                        ownedcard.classList.add('filterriftowned')
+                                }
+                        }
+                }
         } else {
                 document.getElementById('currentcavetitle').textContent = "Regular Breeding Cave/Island"
                 for (const norifttargetcard of Array.from(targetCardDiv.querySelectorAll('.filternorift'))) {
@@ -2010,6 +2017,12 @@ function setBreedingCave(buttonEl) {
                 }
                 for (const riftexclusive of Array.from(targetCardDiv.querySelectorAll('.Rift'))) {
                         riftexclusive.classList.add('riftexclusion')
+                }
+                if (Number(savedSettings.multiparents.hideOwned) == 1) {
+                        for (const ownedcard of Array.from(targetCardDiv.querySelectorAll('.owned'))) {
+                                ownedcard.classList.remove('filterriftowned')
+                                ownedcard.classList.add('filterowned')
+                        }
                 }
         }
 }
