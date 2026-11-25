@@ -20,6 +20,8 @@ let singleSpecialGuys = []
 let hasAllElements = false;
 let hasAllRiftElements = false;
 
+let riftSpecialDragons = []
+
 let playerHasElements = {
         normal: [],
         rift: []
@@ -50,6 +52,9 @@ function sortAvailDragons() {
                 }
                 if (!dragonarium[dragonName]) {
                         dragonarium[dragonName] = {fav : 0, rifted: "0", status: "init"}
+                }
+                if (allDragonData[dragonName].elements.includes("R Rift")) {
+                        riftSpecialDragons.push(dragonName)
                 }
         }
 }
@@ -252,6 +257,18 @@ let elementIcons = {
         Zodiac:	        'https://i.postimg.cc/vZJ7VBSb/Icon-Zodiac.webp',
         Rift:	        'https://i.postimg.cc/3w0Cw3dH/Icon-Rift.webp'
 }
+let traitIcons = {
+  "planttrait" : '',
+  "firetrait" : '',
+  "earthtrait" : '',
+  "coldtrait" : '',
+  "watertrait" : '',
+  "lightningtrait" : '',
+  "airtrait" : '',
+  "metaltrait" : '',
+  "lighttrait" : '',
+  "darktrait" : ''
+}
 
 function addSortButtons() {
         //let elementIconArr = elIcons.split('\n')
@@ -332,6 +349,13 @@ function jumpToDragon(dragonName, clickedEl = undefined) {
         window.location.href = window.location.href.split('#')[0] + '#' + dragonName.replaceAll(' ', '-')
         //document.getElementById(inDiv + 'Div')
         console.log('hashhistory = ', hashHistory)
+}
+
+
+function addRiftSpecialties() {
+        for (const riftguy of riftSpecialDragons) {
+
+        }
 }
 
 //NEW
@@ -961,18 +985,40 @@ function buildDragonCard(name, data) {
     if (data.combo['special']) {
         data.combo.special = data.combo.special.charAt(0).toUpperCase() + data.combo.special.substring(1)
       if (data.combo['special'].includes('Evolve')) {
-        cardhtml += `${data.combo.special}`
+              let evolveFrom = data.combo.special.split('from ')[1]
+              if (allDragonData[evolveFrom]) {
+                 cardhtml += `<h3>Evolve from
+                         <div class="specific-breeding-req">
+                                 <a class="specific-breeding-req" href="#${evolveFrom}" onClick="jumpToDragon('${evolveFrom}', this)">${evolveFrom}</a>`
+                         cleanedReq += `<span class="internal-el-imgs">`
+                                for (const el of allDragonData[evolveFrom].elements) {
+                                        cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
+                                }
+                                 cleanedReq += `</span>
+                                 
+                                 </h3>`
+              } else {
+                 cardhtml += `<h3>${data.combo.special}</h3>`
+              }
         skipThing = true;
       }
+      
     } 
     if (!skipThing) {
       cardhtml += `<h4>Breeding Info:</h4>`
       if (data.combo['special']) {
-        cardhtml += `<h3>${data.combo.special}</h3>`
+        if (data.combo.special.includes('trait') {
+                cardhtml += `<h4 style="margin:5px">One Parent Must Have</h4><h3 style="margin:0px"><div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split(' trait')[0]} Trait</h3>`
+        } else if (data.combo.special.includes('Rift align:')) {
+                cardhtml += `<h4 style="margin:5px">Rift Must Be <div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split('align: ')[1]} Aligned</h4>`
+        }
+        else {
+                cardhtml += `<h3>${data.combo.special}</h3>`
+        }
       }
       if (data.rarity == "Galaxy" && data.name != "Rigel") {
         cardhtml += `<div class="el-img" style="background-image:url('${elementIcons.Galactic}');"></div>`
-        cardhtml += `Galaxy Dragon; Clone in Coop`;
+        cardhtml += `Galaxy Dragon; Clone in Coop only`;
         //skipThing = true;
       }
       if (data.combo['requirements'] && data.combo['requirements'].length > 0) {
@@ -993,6 +1039,14 @@ function buildDragonCard(name, data) {
                                         cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
                                 }
                                  cleanedReq += `</span>`
+                                if (data.combo.special.includes('trait)')) {
+                                        let traitName = data.combo.special.split(req + '(')[1].split(')')[0]
+                                        if (traitName) {
+                                                if (traitIcons[traitName]) {
+                                                        cleanedReq += `<div class="el-img" style="background-image:url('${traitIcons[traitName]}');"></div>`
+                                                }
+                                        }
+                                }
                             }
                         cleanedReq += `</div>`
                     }
@@ -1299,8 +1353,18 @@ function processCombo(comboData) {
     readyforSplits = false;
   } 
   else if (comboData.includes('(')) {
-    comboFin['special'] = comboData + `\n pls hold for better info on this guy!`;
-    readyforSplits = false;
+          if (comboData == 'Mirage(water)+Shadow(air)+rift') {
+                comboData = "Mirage + Shadow"
+                comboFin.requirements = ["Mirage", "(watertrait)", "Shadow", "(airtrait)", "R Rift"]
+                comboFin.output = [ "I Light", "D Dark", "Mirage", "Shadow" , "R Rift"]
+                comboFin.special = `Mirage(watertrait) + Shadow(airtrait) + <div class="el-img" style="background-image:url('https://i.postimg.cc/3w0Cw3dH/Icon-Rift.webp');"></div>Rift`
+                readyforSplits = false;
+                  
+          }
+          else {
+            comboFin['special'] = comboData + `\n pls hold for better info on this guy!`;
+            readyforSplits = false;
+          }
   } 
   
   if (readyforSplits) {
