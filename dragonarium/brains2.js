@@ -3170,11 +3170,11 @@ function importdatabuttonClicked(button) {
                         let importData = JSON.parse(input.value)
                         let issues = false
                         for (const key of Object.keys(dragonarium)) {
-                                if (importData[key]) {
-                                        newDragonarium[key] = importData[key]
+                                if (importData.dragonarium[key]) {
+                                        newDragonarium[key] = importData.dragonarium[key]
                                         console.log('imported ', key, ' data!')
                                 } else {
-                                        console.error('issue importing ', key, importData[key])
+                                        console.error('issue importing ', key, importData.dragonarium[key])
                                         issues = true
                                 }
                         }
@@ -3182,7 +3182,7 @@ function importdatabuttonClicked(button) {
                                 console.log('saved data with no issues!')
                                 //saveData()
                         } else {
-                                console.log(importData)
+                                console.log(newDragonarium)
                         }
                         console.log('dragonarium is the same as imported? ', JSON.stringify(dragonarium) == JSON.stringify(newDragonarium))
                 }
