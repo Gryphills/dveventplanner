@@ -3272,6 +3272,7 @@ function exportdatabuttonClicked(button) {
 }
 
 
+
 function importdatabuttonClicked(button) {
         if (button.classList.contains('importdatabuttonfinal')) {
                 let newDragonarium = {}
@@ -3290,11 +3291,10 @@ function importdatabuttonClicked(button) {
                         }
                         if (!issues) {
                                 console.log('saved data with no issues!')
-                                //saveData()
-                        } else {
-                                console.log(newDragonarium)
+                                saveData()
+                                //input.nextElementSibling.after(
                         }
-                        console.log('dragonarium is the same as imported? ', JSON.stringify(dragonarium) == JSON.stringify(newDragonarium))
+                        //console.log('dragonarium is the same as imported? ', JSON.stringify(dragonarium) == JSON.stringify(newDragonarium))
                 }
         } else {
                 let divv = document.querySelector('.importdatadiv')
