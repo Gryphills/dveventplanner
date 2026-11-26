@@ -3328,7 +3328,7 @@ function getScriptUpdateDate() {
                 var day = lastUpdated.getUTCDate();
                 var month = lastUpdated.getUTCMonth();
                 var year = lastUpdated.getUTCFullYear();
-                document.getElementById('lastupdated').textContent += `Last updated: ${year}-${month}-${day}`
+                //document.getElementById('lastupdated').textContent += `\n Script Last Updated: ${year}-${month}-${day}`
               }
             });
           }
