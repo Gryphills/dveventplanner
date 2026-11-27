@@ -3308,7 +3308,7 @@ function exportdatabuttonClicked(button) {
         );
         setTimeout(function() {
                  document.getElementById('exportnotif').textContent = ' '
-        }, 10)
+        }, 10000)
 }
 
 
