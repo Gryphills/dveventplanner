@@ -3339,7 +3339,7 @@ function importdatabuttonClicked(button) {
                                 document.getElementById('importnotif').textContent = 'Saved Data, please refresh your page!'
                                 //input.nextElementSibling.after(
                         } else {
-                                document.getElementById('importnotif').textContent = 'Had an issue with importing (please let me know, bc this shouldnt happen)"
+                                document.getElementById('importnotif').textContent = 'Had an issue with importing (please let me know, bc this shouldnt happen)'
                         }
                         //console.log('dragonarium is the same as imported? ', JSON.stringify(dragonarium) == JSON.stringify(newDragonarium))
                 }
