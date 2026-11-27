@@ -1024,12 +1024,12 @@ function buildDragonCard(name, data) {
                     if (elementChart.basics.includes(req)) {
                         cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>` + reqq.substring(2)
                     } else {
-                        if (req.includes('trait)') {
+                        if (req.includes('trait)')) {
                                 cleanedReq = cleanedReq.substring(0, cleanedReq.length - 3)
                                 cleanedReq += `<div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div></h3>`
                                 istrait = true
-                        }
-                        cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
+                        } else {
+                            cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
                             if (allDragonData[req]) {
                                 cleanedReq += `<span class="internal-el-imgs">`
                                 for (const el of allDragonData[req].elements) {
@@ -1047,7 +1047,9 @@ function buildDragonCard(name, data) {
                                         }
                                 }
                             }
-                        cleanedReq += `</div>`
+                        
+                            cleanedReq += `</div>`
+                        }
                     }
                     if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
                         cleanedReq += ' + '
