@@ -730,7 +730,7 @@ body {
     background-color: #442a5f;
     color:#cac5f0;
     border: 3px solid #cac5f0;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: space-between;
     /*padding-bottom: 8px;*/
