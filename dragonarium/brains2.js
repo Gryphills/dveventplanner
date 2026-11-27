@@ -2897,7 +2897,7 @@ function pairTemplate(pairObj) {
         }
   htmlTemplate += `<div class="pairparents">`
         let averageHours = Math.floor(pairObj.breedAverage / 60)
-        let averageMinutes = Math.round(pairObj.breedAverage - (averageHours*60)) * 60)
+        let averageMinutes = Math.round((pairObj.breedAverage - (averageHours*60)) * 60)
   htmlTemplate += `<p class="averagetime">Average Breed Times: ${averageHours}h${averageMinutes}m</p>`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
