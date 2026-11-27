@@ -118,7 +118,7 @@ const savedSettings = {
 }
 
 let dragonEls = {}
-let dragonsInElement = {}
+//let dragonsInElement = {}
 
 let chartRef = {
         P: 'P Plant',
@@ -2407,7 +2407,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 let specialPair = false
                 let sorted = [a, b].sort()
                 for (const guy of targets) {
-                        let validPair = checkTargetReq(guy, pairingOutput)
+                        let validPair = checkTargetReq(guy, pairArray, pairingOutput)
                         if (validPair) {
                                 if (guysWithTwoSpecialGuys.includes(guy)) {
                                         specialPair = true;
@@ -2759,7 +2759,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 
                 let thisGuyOdds = 0
                 if (!dragonData.conditions.includes("Evolve")) {
-                        if (checkTargetReq(dragonName, pairingOutput, riftassumed)) {
+                        if (checkTargetReq(dragonName, pairArray, pairingOutput, riftassumed)) {
                                 //if (dragonarium[dragonName].status != 'have') {
                                 //        newGuys.push(dragonName)
                                 //}
@@ -2879,31 +2879,53 @@ function checkEachTarget(targets, pairingElOutput) {
   return targetsMet;
 }*/
 
-function checkTargetReq(target, pairingElOutput, riftassumed = true) {
-  let targetRequirements = [].concat(allDragonData[target].combo.requirements);
-  let metReqs = [];
-        console.log('checking ', target, targetRequirements, pairingElOutput)
-  for (const req of targetRequirements) {
-    if (pairingElOutput.includes(req)) {
-      metReqs.push(req);
-      
-    } else if (riftassumed) {
-            if (req == "R Rift") {
-                    metReqs.push(req)
-            }
-            else if (req.includes('trait)')) {
-                     metReqs.push(req)
-            }
-    }
-    if (metReqs.length == targetRequirements.length) {
-        return true;
-    }
-  }
-        //console.log('checking ', target, metReqs, targetRequirements, pairingElOutput)
+function checkTargetReq(target, pairArray, pairingElOutput, riftassumed = true) {
+  if (target.includes('Snowflake ') || target.includes('Monolith ')) {
         
-  if (metReqs.length != targetRequirements.length) {
-    return false;
   }
+  else if (allDragonData[target].combo.requirements) {
+          let targetRequirements = [].concat(allDragonData[target].combo.requirements);
+          let metReqs = [];
+                console.log('checking ', target, targetRequirements, pairingElOutput)
+          for (const req of targetRequirements) {
+            if (pairingElOutput.includes(req)) {
+              metReqs.push(req);
+              
+            } else if (riftassumed) {
+                    if (req == "R Rift") {
+                            metReqs.push(req)
+                    }
+                    else if (req.includes('trait)')) {
+                             metReqs.push(req)
+                    }
+            }
+            if (metReqs.length == targetRequirements.length) {
+                return true;
+            }
+          }
+                //console.log('checking ', target, metReqs, targetRequirements, pairingElOutput)
+                
+          if (metReqs.length != targetRequirements.length) {
+            return false;
+          }
+  } else if (allDragonData[target].combo.special) {
+        if (allDragonData[target].combo.special.includes('+ elements')) {
+                let elementsNeeded = Number(allDragonData[target].combo.special.split('+')[0])
+                let bareElsHit = []
+                for (const el of pairingElOutput) {
+                        if ([].concat(elementChart.basics).splice(10, 22).includes(el)) {
+                                bareElsHit.push(el)
+                                if (bareElsHit.length > elementsNeeded) {
+                                        return true;
+                                }
+                        }
+                }
+        } else if (allDragonData[target].combo.special == 'Any 2 dragons') {
+                return true;
+        }
+        
+  }
+        
 }
 
 
@@ -3067,7 +3089,8 @@ function parentTemplate(parent) {
 ///////////// testing NEW
 
 
-
+//DEPRECATE? not using
+/*
 function sortDragonsIntoEls() {
         for (const basic of elementChart.basics) {
                 if (!dragonsInElement[basic]  && basic != "AnAny") {
@@ -3084,6 +3107,8 @@ function sortDragonsIntoEls() {
                 }
         }
 }
+
+
 
 function possiblePairsa(dragonName) {
   let specialGuys = [];
@@ -3126,7 +3151,7 @@ function possiblePairsa(dragonName) {
                             let pairingOutput = specialGuy.elements.concat(allDragonData[otherParentName].elements)
                             pairingOutput.push(otherParentName)
                             pairingOutput.push(specialGuys[0])
-                            let validPair = checkTargetReq(dragonName, pairingOutput)
+                            let validPair = checkTargetReq(dragonName, [otherParentName, specialGuys[0]], pairingOutput)
                             //console.log(`We need ${dragonName.combo.requirements}; Pairing of ${specialGuy.name} and ${otherParentName} gets ${pairingOutput} and therefore is ${validPair}`)
                             if (validPair) {
                                     let sorted = [specialGuys[0], otherParentName].sort()
@@ -3162,14 +3187,14 @@ function possiblePairsa(dragonName) {
                                 narrowedList.push(d);
                         }
                 }
-        }*/
+        } * /
 
     }
   }
 
   return validPairs      
 }
-
+*/
 
 /*
 function noSpecificDragonTargets(targetNames, haveDragonsToCheck) {
@@ -3206,6 +3231,9 @@ function noSpecificDragonTargets(targetNames, haveDragonsToCheck) {
         return allValid
 }*/
 
+
+//@DEPRECATE? OLD 
+/*
 function checkTargetReqa(target, pairingElOutput) {
   let targetRequirements = [].concat(allDragonData[target].combo.requirements);
   let metReqs = [];
@@ -3226,11 +3254,12 @@ function checkTargetReqa(target, pairingElOutput) {
     return false;
   //}
 }
-
+*/
 
 //////////////////end of testing new
 
-
+//ALSO DEPRECATE OLD?
+/*
 function getPairingOutput(dragonLeftName, dragonRightName) {
         let parentNames = [dragonLeftName, dragonRightName].sort()
         
@@ -3261,7 +3290,7 @@ function getPairingOutput(dragonLeftName, dragonRightName) {
                 }
         }
 }
-
+*/
 function getSettings() {
         let retrievedSettings = Object.assign({}, dragonarium.savedSettings)
         let defaultSettings = savedSettings;
@@ -3429,6 +3458,7 @@ function getScriptUpdateDate() {
                 var day = lastUpdated.getUTCDate();
                 var month = lastUpdated.getUTCMonth();
                 var year = lastUpdated.getUTCFullYear();
+                console.log('updated git: ', year, month, day)
                 //document.getElementById('lastupdated').textContent += `\n Script Last Updated: ${year}-${month}-${day}`
               }
             });
@@ -3451,7 +3481,7 @@ document.addEventListener("DOMContentLoaded", function() {
     allDragonImgs = JSON.parse(document.getElementById('dragonurls').textContent);
     
     processDragonData();
-    sortDragonsIntoEls()
+    //sortDragonsIntoEls()
     addCheckListeners();
     initDiv = document.querySelector('#initCards');
     wantDiv = document.querySelector('#wantCards');
