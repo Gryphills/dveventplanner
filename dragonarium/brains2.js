@@ -2879,7 +2879,7 @@ function checkTargetReq(target, pairingElOutput, riftassumed = true) {
             if (req == "R Rift") {
                     metReqs.push(req)
             }
-            else if (req.includes('trait)') {
+            else if (req.includes('trait)')) {
                      metReqs.push(req)
             }
     }
