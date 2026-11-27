@@ -2886,7 +2886,7 @@ function checkTargetReq(target, pairArray, pairingElOutput, riftassumed = true) 
   else if (allDragonData[target].combo.requirements) {
           let targetRequirements = [].concat(allDragonData[target].combo.requirements);
           let metReqs = [];
-                console.log('checking ', target, targetRequirements, pairingElOutput)
+                //console.log('checking ', target, targetRequirements, pairingElOutput)
           for (const req of targetRequirements) {
             if (pairingElOutput.includes(req)) {
               metReqs.push(req);
