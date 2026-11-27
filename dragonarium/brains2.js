@@ -1028,7 +1028,7 @@ function buildDragonCard(name, data) {
                     } else {
                         if (req.includes('trait)')) {
                                 cleanedReq = cleanedReq.substring(0, cleanedReq.length - 3)
-                                cleanedReq += `<div class="el-img" title="${data.combo.special.split(' trait')[0] + ' Trait}" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div></h3>`
+                                cleanedReq += `<div class="el-img" title="${data.combo.special.split(' trait')[0] + ' Trait'}" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div></h3>`
                                 istrait = true
                         } else {
                             cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
