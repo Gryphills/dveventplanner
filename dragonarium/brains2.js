@@ -258,16 +258,16 @@ let elementIcons = {
         Rift:	        'https://i.postimg.cc/3w0Cw3dH/Icon-Rift.webp'
 }
 let traitIcons = {
-  "planttrait" : '',
-  "firetrait" : '',
-  "earthtrait" : '',
-  "coldtrait" : '',
-  "watertrait" : '',
-  "lightningtrait" : '',
-  "airtrait" : '',
-  "metaltrait" : '',
-  "lighttrait" : '',
-  "darktrait" : ''
+  "planttrait" : 'https://i.postimg.cc/4x1Nj2HD/Plant-Rift-Alignment-Gold.webp',
+  "firetrait" : 'https://i.postimg.cc/MpYKg3f4/Fire-Rift-Alignment-Gold.webp',
+  "earthtrait" : 'https://i.postimg.cc/6ph5Fb4m/Earth-Rift-Alignment-Gold.webp',
+  "coldtrait" : 'https://i.postimg.cc/W17bxYqy/Cold-Rift-Alignment-Gold.webp',
+  "watertrait" : 'https://i.postimg.cc/9QBFsgw1/Water-Rift-Alignment-Gold.webp',
+  "lightningtrait" : 'https://i.postimg.cc/2Sx8g9L9/Lightning-Rift-Alignment-Gold.webp',
+  "airtrait" : 'https://i.postimg.cc/3xZJzf0n/Air-Rift-Alignment-Gold.webp',
+  "metaltrait" : 'https://i.postimg.cc/pLBX3c5s/Metal-Rift-Alignment-Gold.webp',
+  "lighttrait" : 'https://i.postimg.cc/K85vCp3f/Light-Rift-Alignment-Gold.webp',
+  "darktrait" : 'https://i.postimg.cc/kgyXLYRv/Dark-Rift-Alignment-Gold.webp'
 }
 
 function addSortButtons() {
@@ -1004,7 +1004,7 @@ function buildDragonCard(name, data) {
         if (data.combo.special.includes('trait')) {
                 cardhtml += `<h4 style="margin:5px">One Parent Must Have</h4><h3 style="margin:0px"><div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split(' trait')[0]} Trait</h3>`
         } else if (data.combo.special.includes('Rift align:')) {
-                cardhtml += `<h4 style="margin:5px">Rift Must Be <div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split('align: ')[1]} Aligned</h4>`
+                cardhtml += `<h4 style="margin:5px">Rift Must Be <div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split('lign:')[1]} Aligned</h4>`
         }
         else {
                 cardhtml += `<h3>${data.combo.special}</h3>`
@@ -1051,6 +1051,11 @@ function buildDragonCard(name, data) {
                     }
                     
                 }
+                /*if (data.combo.requirements.length == 1) {
+                        if (data.combo.requirements[0] == "MhMonolith") {
+                                data.combo.requirements.push("MhMonolith")
+
+                        }*/
                 if (data.combo.requirements.length == 1) {
                     cleanedReq += ' + Any Dragon'
                 }
@@ -1353,7 +1358,7 @@ function processCombo(comboData) {
                 comboData = "Mirage + Shadow"
                 comboFin.requirements = ["Mirage", "(watertrait)", "Shadow", "(airtrait)", "R Rift"]
                 comboFin.output = [ "I Light", "D Dark", "Mirage", "Shadow" , "R Rift"]
-                comboFin.special = `Mirage(watertrait) + Shadow(airtrait) + <div class="el-img" style="background-image:url('https://i.postimg.cc/3w0Cw3dH/Icon-Rift.webp');"></div>Rift`
+                comboFin.special = '' //`Mirage(watertrait) + Shadow(airtrait) + <div class="el-img" style="background-image:url('https://i.postimg.cc/3w0Cw3dH/Icon-Rift.webp');"></div>Rift`
                 readyforSplits = false;
                   
           }
@@ -1425,13 +1430,15 @@ function processCombo(comboData) {
     //}
   }
         if (comboFin.requirements) {
-                if (comboFin.requirements == [ "MhMonolith" ]) {
-                        comboFin.requirements = [ "MhMonolith", "MhMonolith" ]
-                } else if (comboFin.requirements == [ "SnSnowflake" ]) {
-                        comboFin.requirements = [ "SnSnowflake", "SnSnowflake" ]
-                } //else if (comboFin.requirements.length == 1) {
-                  //      comboFin.requirements.push('AnAny')
-                //}
+                if (comboFin.requirements.length == 1) {
+                        if (comboFin.requirements[0] == "MhMonolith") {
+                                comboFin.requirements = [ "MhMonolith", "MhMonolith" ]
+                        } else if (comboFin.requirements[0] == "SnSnowflake" ) {
+                                comboFin.requirements = [ "SnSnowflake", "SnSnowflake" ]
+                        } //else if (comboFin.requirements.length == 1) {
+                          //      comboFin.requirements.push('AnAny')
+                        //}
+                }
         }
   return comboFin;
 }
@@ -2884,7 +2891,8 @@ function pairTemplate(pairObj) {
         } else {
                 htmlTemplate += `">`
         }
-   htmlTemplate += `<div class="pairparents">`
+  htmlTemplate += `<div class="pairparents">`
+  htmlTemplate += `<p class="averagetime">Average Breed Times: ${pairObj.breedAverage}</p>`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
