@@ -3475,6 +3475,7 @@ function getScriptUpdateDate() {
               console.log(repo.name)
               if (repo.name == 'dveventplanner')
               {
+                console.log(repo)
                 var lastUpdated = new Date(repo.updated_at);
                 var day = lastUpdated.getUTCDate();
                 var month = lastUpdated.getUTCMonth();
