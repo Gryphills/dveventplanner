@@ -2696,6 +2696,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         }
         let a = allDragonData[pairArray[0]]
         let b = allDragonData[pairArray[1]]
+        let resultNames = []
         let hybrids = []
         let breeds = []
         let newGuys = {}
@@ -2749,8 +2750,10 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 let dragonData = allDragonData[dragonName]
                 if (caveLocation == "rift" && elementChart.subbedprims.includes(dragonName)) {
                         continue;
+                        console.log('THIS SHOULD NEVER FIRE!')
                 } else if (caveLocation != "rift" && dragonData.elements.includes('R Rift') && riftassumed == false) {
                         continue;
+                        console.log('THIS SHOULD NOT FIRE!')
                 }
                 
                 
@@ -2760,6 +2763,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 //if (dragonarium[dragonName].status != 'have') {
                                 //        newGuys.push(dragonName)
                                 //}
+                                
                                 if (dragonData.rarity == "Hybrid") {
                                         //if (dragonName != a && dragonName != b) {
                                                 hybrids.push(dragonData)
@@ -2817,6 +2821,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 newGuys[guyy] = guyOdds
                 newOdds += guyOdds
         }
+        for (
 
         
 
@@ -3002,7 +3007,7 @@ function pairTemplate(pairObj) {
         } else {
         htmlTemplate += `<h5 style="margin-bottom:0px;font-style:italic;">(No new dragons other than targets in results)</h5>`
   }
-  htmlTemplate += `<details class="otherpossibleowned" data.breeds="${JSON.stringify(pairObj.breeds)}" data.hybrids="${JSON.stringify(pairObj.hybrids)}" data.multiplier-odds="${pairObj.multiplierOdds}" data.hybrid-odds="${pairObj.hybridOdds}" onclick="getAllOtherResults(this)" data.combo-output="${JSON.stringify(pairObj.elOutput)}" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
+  htmlTemplate += `<details class="otherpossibleowned" data.breeds="${JSON.stringify(Object.keys(pairObj.breeds))}" data.hybrids="${JSON.stringify(Object.keys(pairObj.hybrids))}" data.multiplier-odds="${pairObj.multiplierOdds}" data.hybrid-odds="${pairObj.hybridOdds}" onclick="getAllOtherResults(this)" data.combo-output="${JSON.stringify(pairObj.elOutput)}" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
   htmlTemplate += `</div></div>`
   return htmlTemplate;
 }
