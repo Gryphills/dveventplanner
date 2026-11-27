@@ -2704,6 +2704,12 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 }
                                 if (!a.incubation) {a.incubation = {reg: 0, fast: 0}}
                                 breedMinutes += (Number(a.incubation.reg) * getClone)
+                                /*if (a.rarity == "Hybrid") {
+                                        hybrids.push(a.name)
+                                } else {
+                                        breeds.push(a.name)
+                                }*/
+                                
                         }
                 }
                 if (b.odds[parentClone]) {
@@ -2714,6 +2720,11 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 }
                                 if (!b.incubation) {b.incubation = {reg: 0, fast: 0}}
                                 breedMinutes += (Number(b.incubation.reg) * getClone)
+                                /*if (b.rarity == "Hybrid") {
+                                        hybrids.push(b.name)
+                                } else {
+                                        breeds.push(b.name)
+                                }*/
                         }
                 }
         } else {
@@ -2736,12 +2747,16 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 //        newGuys.push(dragonName)
                                 //}
                                 if (dragonData.rarity == "Hybrid") {
-                                        hybrids.push(dragonData)
+                                        //if (dragonName != a && dragonName != b) {
+                                                hybrids.push(dragonData)
+                                        //}
                                         if (dragonarium[dragonName].status != 'have') {
                                                 newHybrids.push(dragonName)
                                         }
                                 } else {
-                                        breeds.push(dragonData)
+                                        //if (dragonName != a && dragonName != b) {
+                                                breeds.push(dragonData)
+                                        //}
                                         if (dragonData.odds.base) {
                                                 if (Number(dragonData.odds.base) != NaN) {
                                                         breedsOdds += Number(dragonData.odds.base)
@@ -2791,8 +2806,19 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 if (!breeddd.incubation) {breeddd.incubation = {reg: 0, fast: 0}}
                 breedMinutes += Number(breeddd.incubation.reg) * multiplierOdds
         }
-        let breedAverage = breedMinutes / 100
-
+        if (a.rarity == "Hybrid") {
+                breedMinutes += a.incubation.reg * hybridOdds
+        } else {
+                breedMinutes += a.incubation.reg * multiplierOdds
+        }
+        if (b.rarity == "Hybrid") {
+                breedMinutes += b.incubation.reg * hybridOdds
+        } else {
+                breedMinutes += b.incubation.reg * multiplierOdds
+        }
+        
+        let breedAverage = breedMinutes // 100
+        console.log(breedAverage)
         
         
         pairObj.hybridOdds = hybridOdds
