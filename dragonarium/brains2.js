@@ -1026,10 +1026,19 @@ function buildDragonCard(name, data) {
                     if (elementChart.basics.includes(req)) {
                         cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>` + reqq.substring(2)
                     } else {
+                        //if (req.includes('trait)')) {
+                        //        cleanedReq = cleanedReq.substring(0, cleanedReq.length - 3)
+                        //        cleanedReq += `<div class="el-img" title="${data.combo.special.split(' trait')[0] + ' Trait'}" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div>`
+                        //        istrait = true
                         if (req.includes('trait)')) {
-                                cleanedReq = cleanedReq.substring(0, cleanedReq.length - 3)
-                                cleanedReq += `<div class="el-img" title="${data.combo.special.split(' trait')[0] + ' Trait'}" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div></h3>`
-                                istrait = true
+                        //if (data.combo.special.includes('trait)')) {
+                                let traitName = req.split('(')[1].split(')')[0]
+                                if (traitName) {
+                                        if (traitIcons[traitName]) {
+                                                cleanedReq += `<div class="el-img" title="${traitName.charAt(0).toUpperCase() + traitName.substring(1).replace('trait', ' Trait')}" style="background-image:url('${traitIcons[traitName]}');"></div>`
+                                        }
+                                }
+                        //}
                         } else {
                             cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
                             if (allDragonData[req]) {
@@ -1038,16 +1047,7 @@ function buildDragonCard(name, data) {
                                         cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
                                 }
                                  cleanedReq += `</span>`
-                                if (req.includes('trait)')) {
-                                        //if (data.combo.special.includes('trait)')) {
-                                                let traitName = req.split('(')[1].split(')')[0]
-                                                if (traitName) {
-                                                        if (traitIcons[traitName]) {
-                                                                cleanedReq += `<div class="el-img" title="${traitName.charAt(0).toUpperCase() + traitName.substring(1).replace('trait', ' Trait')}" style="background-image:url('${traitIcons[traitName]}');"></div>`
-                                                        }
-                                                }
-                                        //}
-                                }
+                                
                             }
                         
                             cleanedReq += `</div>`
