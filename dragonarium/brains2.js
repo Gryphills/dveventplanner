@@ -3051,7 +3051,7 @@ function pairTemplate(pairObj) {
         } else {
         htmlTemplate += `<h5 style="margin-bottom:0px;font-style:italic;">(No new dragons other than targets in results)</h5>`
   }
-  htmlTemplate += `<details class="otherpossibleowned" data.breeds="${JSON.stringify(Object.keys(pairObj.breeds))}" data.hybrids="${JSON.stringify(Object.keys(pairObj.hybrids))}" data.multiplier-odds="${pairObj.multiplierOdds}" data.hybrid-odds="${pairObj.hybridOdds}" onclick="getAllOtherResults(this)" data.combo-output="${JSON.stringify(pairObj.elOutput)}" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
+  htmlTemplate += `<details class="otherpossibleowned hidden" data.breeds="[]" data.hybrids="[]" data.multiplier-odds="${pairObj.multiplierOdds}" data.hybrid-odds="${pairObj.hybridOdds}" onclick="getAllOtherResults(this)" data.combo-output="${JSON.stringify(pairObj.elOutput)}" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
   htmlTemplate += `</div></div>`
   return htmlTemplate;
 }
@@ -3059,7 +3059,7 @@ function pairTemplate(pairObj) {
 function getAllOtherResults(detailsbox) {
         if (detailsbox.childElementCount < 3) {
                 let htmlStuff = ``
-                for (const breed of JSON.parse(detailsbox.dataset.breeds)) {
+                /*for (const breed of JSON.parse(detailsbox.dataset.breeds)) {
                         let imgsrc = allDragonImgs[breed].Adult
                           if (!imgsrc) {
                                 imgsrc = allDragonImgs[breed][Object.keys(allDragonImgs[breed])[0]]
@@ -3079,10 +3079,10 @@ function getAllOtherResults(detailsbox) {
                         } else {
                                 htmlTemplate +=`<h5 style="margin-bottom: 0px;">${breed}</h5> <h5 style="margin-top:0px;">(${Math.round(Number(dragData.odds.base) * Number(detailsbox.dataset.multiplierOdds)*10000) /100}%)</h5></div>`
                         }
-                }
+                }*/
                 
-                let div = detailsbox.querySelector('.otherpossibleownedholder')
-                div.innerHTML = htmlStuff
+                //let div = detailsbox.querySelector('.otherpossibleownedholder')
+                //div.innerHTML = htmlStuff
                 //let objPairStuff = getOutputsAndOdds(JSON.parse(detailsbox.dataset.parents), JSON.parse(detailsbox.dataset.comboOutput), objPairStuff, cave)
         }
 }
