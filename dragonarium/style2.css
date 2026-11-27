@@ -871,6 +871,12 @@ body {
         padding-bottom: 20px;
         margin: 15px;
         align-items: center;
+        position: relative;
+        .averagetime {
+          position: absolute;
+          top:0px;
+          font-style: italic;
+        }
     }
     
     .plus {
