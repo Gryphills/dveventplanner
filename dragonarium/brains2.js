@@ -3002,7 +3002,7 @@ function pairTemplate(pairObj) {
         } else {
         htmlTemplate += `<h5 style="margin-bottom:0px;font-style:italic;">(No new dragons other than targets in results)</h5>`
   }
-  htmlTemplate += `<details class="otherpossibleowned" data.breeds="${JSON.stringify(pairObj.breeds}" data.hybrids="${JSON.stringify(pairObj.hybrids}" data.multiplier-odds="${pairObj.multiplierOdds}" data.hybrid-odds="${pairObj.hybridOdds}" onclick="getAllOtherResults(this)" data.combo-output="${JSON.stringify(pairObj.elOutput)}" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
+  htmlTemplate += `<details class="otherpossibleowned" data.breeds="${JSON.stringify(pairObj.breeds)}" data.hybrids="${JSON.stringify(pairObj.hybrids)}" data.multiplier-odds="${pairObj.multiplierOdds}" data.hybrid-odds="${pairObj.hybridOdds}" onclick="getAllOtherResults(this)" data.combo-output="${JSON.stringify(pairObj.elOutput)}" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
   htmlTemplate += `</div></div>`
   return htmlTemplate;
 }
