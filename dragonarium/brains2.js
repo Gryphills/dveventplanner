@@ -2180,6 +2180,7 @@ function highestNewOdds(caveId = "reg") {
         
           let haveDragonNodes = haveDiv.children;
           let haveDragonsToCheck = []
+          let riftDragonsToCheck = []
 
           let allPairs = []
           let riftPairs = []
@@ -2190,7 +2191,7 @@ function highestNewOdds(caveId = "reg") {
                           if (allDragonData[child.id].rarity != "Gemstone") {
                                   if (caveId == "rift") {
                                         if (Number(dragonarium[child.id].rifted) == 1) {
-                                            haveDragonsToCheck.push(child.id);
+                                            riftDragonsToCheck.push(child.id);
                                         }
                                   } else {
                                         haveDragonsToCheck.push(child.id);
@@ -2235,8 +2236,8 @@ function highestNewOdds(caveId = "reg") {
           let safety = 50
           allPairs.sort(sortingNewOdds)
           riftPairs.sort(sortingNewOdds)
-          let topRegPairs = [allPairs[0]]
-          let topRiftPairs = [riftPairs[0]]
+          let topRegPairs = [allPairs[0], allPairs[1],allPairs[2],allPairs[3],allPairs[4]]
+          let topRiftPairs = [riftPairs[0], riftPairs[1],riftPairs[2],riftPairs[3],riftPairs[4]]
           let iterate = 1
           /*while (allPairs[iterate].newOdds == topRegPairs[0].newOdds && safety > 0) {
                 topRegPairs.push(allPairs[iterate])
@@ -2688,7 +2689,6 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         //console.log('is this firing?', pairObj)
         let parentClone = "singleclone"
         
-        
         if (pairArray[0] == pairArray[1]) {
                 parentClone = "doubleclone"
         }
@@ -2738,9 +2738,10 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                 }*/
                         }
                 }
-        } else {
                 riftassumed = false
-        }
+        } //else {
+                
+        //}
         let newHybrids = []
         for (const dragonName of availableDragonNames) {
                 let dragonData = allDragonData[dragonName]
@@ -2793,6 +2794,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         let leftforBreeds = 1 - totalblocked
         let multiplierOdds = leftforBreeds / totalCurrent
         if (multiplierOdds == NaN) {
+                console.log('NaN multiplier!', leftforBreeds, '/', totalCurrent,'/', multiplierOdds)
                 multiplierOdds = 0;
         }
         //let 
