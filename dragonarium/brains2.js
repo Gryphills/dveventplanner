@@ -1038,7 +1038,7 @@ function buildDragonCard(name, data) {
                                         cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
                                 }
                                  cleanedReq += `</span>`
-                                if (req.includes('trait)') {
+                                if (req.includes('trait)')) {
                                         //if (data.combo.special.includes('trait)')) {
                                                 let traitName = req.split('(')[1].split(')')[0]
                                                 if (traitName) {
@@ -2995,14 +2995,39 @@ function pairTemplate(pairObj) {
         } else {
         htmlTemplate += `<h5 style="margin-bottom:0px;font-style:italic;">(No new dragons other than targets in results)</h5>`
   }
-  htmlTemplate += `<details class="otherpossibleowned" onclick="getAllOtherResults(this)" data.combo-output="aaa" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
+  htmlTemplate += `<details class="otherpossibleowned" data.breeds="${JSON.stringify(pairObj.breeds}" data.hybrids="${JSON.stringify(pairObj.hybrids}" data.multiplier-odds="${pairObj.multiplierOdds}" data.hybrid-odds="${pairObj.hybridOdds}" onclick="getAllOtherResults(this)" data.combo-output="${JSON.stringify(pairObj.elOutput)}" data-parents="[${pairObj.parentLeft}, ${pairObj.parentRight}]"> <summary> See all other possible results: </summary> <div class="otherpossibleownedholder otherss"> </div> </details>`
   htmlTemplate += `</div></div>`
   return htmlTemplate;
 }
 
 function getAllOtherResults(detailsbox) {
         if (detailsbox.childElementCount < 3) {
-                let objPairStuff = getOutputsAndOdds(JSON.parse(detailsbox.dataset.parents), JSON.parse(detailsbox.dataset.comboOutput), objPairStuff, cave)
+                let htmlStuff = ``
+                for (const breed of JSON.parse(detailsbox.dataset.breeds)) {
+                        let imgsrc = allDragonImgs[breed].Adult
+                          if (!imgsrc) {
+                                imgsrc = allDragonImgs[breed][Object.keys(allDragonImgs[breed])[0]]
+                          }
+                          htmlTemplate += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">`
+                          let dragData = allDragonData[breed]
+                        if (JSON.parse(detailsbox.dataset.parents).includes(breed)) {
+                                let cloneOdds
+                                let cave = document.getElementById('multiparents').querySelector('.caveselected').dataset.caveid
+                                if (JSON.parse(detailsbox.dataset.parents)[0] != JSON.parse(detailsbox.dataset.parents)[1]) {
+                                        cloneOdds = dragData.odds.singleclone[cave]
+                                } else {
+                                        cloneOdds = dragData.odds.doubleclone[cave]
+                                }
+                                
+                                htmlTemplate +=`<h5 style="margin-bottom: 0px;">${breed}</h5> <h5 style="margin-top:0px;">(${Math.round((Number(dragData.odds.base) * Number(detailsbox.dataset.multiplierOdds) + cloneOdds)*10000) /100}%)</h5></div>`
+                        } else {
+                                htmlTemplate +=`<h5 style="margin-bottom: 0px;">${breed}</h5> <h5 style="margin-top:0px;">(${Math.round(Number(dragData.odds.base) * Number(detailsbox.dataset.multiplierOdds)*10000) /100}%)</h5></div>`
+                        }
+                }
+                
+                let div = detailsbox.querySelector('.otherpossibleownedholder')
+                div.innerHTML = htmlStuff
+                //let objPairStuff = getOutputsAndOdds(JSON.parse(detailsbox.dataset.parents), JSON.parse(detailsbox.dataset.comboOutput), objPairStuff, cave)
         }
 }
 
