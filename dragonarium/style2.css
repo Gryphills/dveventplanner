@@ -872,9 +872,10 @@ body {
         margin: 15px;
         align-items: center;
         position: relative;
+        margin-top: 35px;
         .averagetime {
           position: absolute;
-          top:0px;
+          top:-3px;
           font-style: italic;
         }
     }
