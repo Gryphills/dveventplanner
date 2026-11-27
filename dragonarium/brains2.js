@@ -2913,7 +2913,8 @@ function pairTemplate(pairObj) {
         additionalClasses = allDragonData[validTarget].conditions
     }
     htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img loading="lazy" src="${allDragonImgs[validTarget].Adult}">`
-            if (allDragonImgs[validTarget].combo.special) {
+            if (allDragonImgs[validTarget].combo) {
+                    if (allDragonImgs[validTarget].combo.special) {
                           if (allDragonImgs[validTarget].combo.special.includes('align')) {
                                 let alignment = allDragonImgs[validTarget].combo.special.split('align:')[1].trim();
                                 htmlTemplate +=`<div class="riftaligned-elimg">
@@ -2927,7 +2928,8 @@ function pairTemplate(pairObj) {
                                                    <div class='tooltip'>One Parent Must Have ${alignment} Rift Trait</div>
                                                 </div>`
                           }
-                  }
+                    }
+            }
     htmlTemplate += `<p>${validTarget}</p><p class="oddsnumber">(${formatOdds}%)</p></div>`
   }
   let formatNewOdds = Math.round(Number(pairObj.newOdds) * 100000) / 1000
