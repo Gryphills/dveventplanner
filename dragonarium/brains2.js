@@ -3336,7 +3336,7 @@ function importdatabuttonClicked(button) {
                         if (!issues) {
                                 console.log('saved data with no issues!')
                                 saveData()
-                                document.getElementById('importnotif').textContent = 'Saved Data, please refresh your page!"
+                                document.getElementById('importnotif').textContent = 'Saved Data, please refresh your page!'
                                 //input.nextElementSibling.after(
                         } else {
                                 document.getElementById('importnotif').textContent = 'Had an issue with importing (please let me know, bc this shouldnt happen)"
