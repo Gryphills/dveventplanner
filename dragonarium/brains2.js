@@ -1384,6 +1384,7 @@ function processCombo(comboData) {
 
     if (comboArr.length  == 2) {
             if (comboArr[0] == comboArr[1]) {
+                comboArr = [ chartRef[comboArr[0]], chartRef[comboArr[0]] ]
                 comboFin.output = comboArr;
                     //if (comboFin.requirements.length != 1) {
                 comboFin.requirements = comboArr;
