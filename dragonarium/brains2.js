@@ -1017,15 +1017,18 @@ function buildDragonCard(name, data) {
       }
       if (data.combo['requirements'] && data.combo['requirements'].length > 0) {
         let cleanedReq = ''
+        let istrait = false
               if ( data.combo.requirements[0] != data.combo.requirements[1]) {
                 for (const req of data.combo.requirements) {
                         let reqq = req
                     if (elementChart.basics.includes(req)) {
                         cleanedReq +=  `<div class="el-img" style="background-image:url('${elementIcons[req.substring(2)]}');"></div>` + reqq.substring(2)
-                    //} else if (req == "Any") {
-                        //cleanedReq +=  `req`
-                    
                     } else {
+                        if (req.includes('trait)') {
+                                cleanedReq = cleanedReq.substring(0, cleanedReq.length - 3)
+                                cleanedReq += `<div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div></h3>`
+                                istrait = true
+                        }
                         cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
                             if (allDragonData[req]) {
                                 cleanedReq += `<span class="internal-el-imgs">`
@@ -1049,7 +1052,6 @@ function buildDragonCard(name, data) {
                     if (data.combo.requirements.indexOf(req) != data.combo.requirements.length - 1) {
                         cleanedReq += ' + '
                     }
-                    
                 }
                 /*if (data.combo.requirements.length == 1) {
                         if (data.combo.requirements[0] == "MhMonolith") {
