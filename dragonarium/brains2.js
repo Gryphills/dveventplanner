@@ -2898,6 +2898,7 @@ function checkTargetReq(target, pairArray, pairingElOutput, riftassumed = true) 
           let targetRequirements = [].concat(allDragonData[target].combo.requirements);
           if (targetRequirements.length == 2) {
                 if (targetRequirements[0] == targetRequirements[1]) {
+                        console.log(pairArray[0])
                         if (allDragonData[pairArray[0]].elements.includes(targetRequirements[0]) && allDragonData[pairArray[1]].elements.includes(targetRequirements[0])) {
                                 return true;
                         }
