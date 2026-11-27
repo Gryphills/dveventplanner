@@ -2829,7 +2829,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         }*/
         
         let breedAverage = breedMinutes / (hybrids.length + breeds.length + 2) //100
-        console.log(breedAverage)
+        //console.log(breedAverage)
         
         
         pairObj.hybridOdds = hybridOdds
@@ -2896,7 +2896,9 @@ function pairTemplate(pairObj) {
                 htmlTemplate += `">`
         }
   htmlTemplate += `<div class="pairparents">`
-  htmlTemplate += `<p class="averagetime">Average Breed Times: ${pairObj.breedAverage}</p>`
+        let averageHours = Math.floor(pairObj.breedAverage / 60)
+        let averageMinutes = (pairObj.breedAverage - averageHours) * 60
+  htmlTemplate += `<p class="averagetime">Average Breed Times: ${averageHours}h${averageMinutes}m</p>`
   htmlTemplate += parentTemplate(pairObj.parentLeft);
   htmlTemplate += `<p class="plus"> + </p>`
   htmlTemplate += parentTemplate(pairObj.parentRight);
