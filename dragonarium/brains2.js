@@ -2407,7 +2407,7 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                 let specialPair = false
                 let sorted = [a, b].sort()
                 for (const guy of targets) {
-                        let validPair = checkTargetReq(guy, pairArray, pairingOutput)
+                        let validPair = checkTargetReq(guy, sorted, pairingOutput)
                         if (validPair) {
                                 if (guysWithTwoSpecialGuys.includes(guy)) {
                                         specialPair = true;
