@@ -1380,6 +1380,16 @@ function processCombo(comboData) {
     let specificReqInternalEls = []
     let comboArr = comboData.split('+')
     let chartRefArr = Object.getOwnPropertyNames(chartRef)
+    let dupsNeeded = false
+
+    if (comboArr.length  == 2) {
+            if (comboArr[0] == comboArr[1]) {
+                comboFin.output = comboArr;
+                    //if (comboFin.requirements.length != 1) {
+                comboFin.requirements = comboArr;
+                return comboFin;
+            }
+    }
     
     for (const data of comboArr) {
       datapoint = data.trim()
@@ -1435,17 +1445,19 @@ function processCombo(comboData) {
     //    console.log('lendth is not same:', comboFin.requirements, requirementNoDups)
     //}
   }
-        if (comboFin.requirements) {
+        /*if (comboFin.requirements) {
                 if (comboFin.requirements.length == 1) {
                         if (comboFin.requirements[0] == "MhMonolith") {
                                 comboFin.requirements = [ "MhMonolith", "MhMonolith" ]
                         } else if (comboFin.requirements[0] == "SnSnowflake" ) {
                                 comboFin.requirements = [ "SnSnowflake", "SnSnowflake" ]
+                        } else if (comboFin.requirements[0] == "OrOrnamental" ) {
+                                comboFin.requirements = [ "SnSnowflake", "SnSnowflake" ]
                         } //else if (comboFin.requirements.length == 1) {
                           //      comboFin.requirements.push('AnAny')
                         //}
                 }
-        }
+        }*/
   return comboFin;
 }
 
@@ -2880,11 +2892,20 @@ function checkEachTarget(targets, pairingElOutput) {
 }*/
 
 function checkTargetReq(target, pairArray, pairingElOutput, riftassumed = true) {
-  if (target.includes('Snowflake ') || target.includes('Monolith ')) {
-        
-  }
-  else if (allDragonData[target].combo.requirements) {
+
+  if (allDragonData[target].combo.requirements) {
+          
           let targetRequirements = [].concat(allDragonData[target].combo.requirements);
+          if (targetRequirements.length == 2) {
+                if (targetRequirements[0] == targetRequirements[1]) {
+                        if (allDragonData[pairArray[0]].elements.includes(targetRequirements[0]) && allDragonData[pairArray[1]].elements.includes(targetRequirements[0])) {
+                                return true;
+                        }
+                        else {
+                                return false;
+                        }
+                }
+          }
           let metReqs = [];
                 //console.log('checking ', target, targetRequirements, pairingElOutput)
           for (const req of targetRequirements) {
