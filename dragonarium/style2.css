@@ -160,7 +160,8 @@ body {
       padding:10px;
       cursor: pointer;
       margin: 1px;
-      height: 30px;
+      height: 25px;
+      line-height: 25px;
       /*height:50px;
       grid-row: 2 / span 1;*/
       display: flex;
