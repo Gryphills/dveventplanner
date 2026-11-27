@@ -2821,7 +2821,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 newGuys[guyy] = guyOdds
                 newOdds += guyOdds
         }
-        for (
+        //for (
 
         
 
