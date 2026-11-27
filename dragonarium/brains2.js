@@ -1002,9 +1002,11 @@ function buildDragonCard(name, data) {
       cardhtml += `<h4>Breeding Info:</h4>`
       if (data.combo['special']) {
         if (data.combo.special.includes('trait')) {
-                cardhtml += `<h4 style="margin:5px">One Parent Must Have</h4><h3 style="margin:0px"><div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split(' trait')[0]} Trait</h3>`
+                cardhtml += `<h4 style="margin:5px">One Parent Must Have</h4><h3 style="margin:0px"><div class="el-img riftbgicon" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div> ${data.combo.special.split(' trait')[0]} Trait</h3>`
         } else if (data.combo.special.includes('Rift align:')) {
-                cardhtml += `<h4 style="margin:5px">Rift Must Be <div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"></div>${data.combo.special.split('lign:')[1]} Aligned</h4>`
+                let elName = data.combo.special.split('lign:')[1]
+                elName = elName.charAt(0).toUpperCase() + elName.substring(1)
+                cardhtml += `<h4 style="margin:5px">Rift Must be <div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.split('lign:')[1].toLowerCase() + 'trait']}');"></div>${elName} Aligned</h4>`
         }
         else {
                 cardhtml += `<h3>${data.combo.special}</h3>`
@@ -1026,7 +1028,7 @@ function buildDragonCard(name, data) {
                     } else {
                         if (req.includes('trait)')) {
                                 cleanedReq = cleanedReq.substring(0, cleanedReq.length - 3)
-                                cleanedReq += `<div class="el-img" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div></h3>`
+                                cleanedReq += `<div class="el-img" title="${data.combo.special.split(' trait')[0] + ' Trait}" style="background-position: center; background-image:url('${traitIcons[data.combo.special.replace(' ', '').toLowerCase()]}');"><div class="tooltip">${data.combo.special.split(' trait')[0]} Trait</div></div></h3>`
                                 istrait = true
                         } else {
                             cleanedReq += `<div class="specific-breeding-req"><a class="specific-breeding-req" href="#${req}" onClick="jumpToDragon('${req}', this)">${req}</a>`
@@ -1036,15 +1038,15 @@ function buildDragonCard(name, data) {
                                         cleanedReq += `<div style="background-image:url('${elementIcons[el.substring(2)]}');"></div>`
                                 }
                                  cleanedReq += `</span>`
-                                if (data.combo.special) {
-                                        if (data.combo.special.includes('trait)')) {
-                                                let traitName = data.combo.special.split(req + '(')[1].split(')')[0]
+                                if (req.includes('trait)') {
+                                        //if (data.combo.special.includes('trait)')) {
+                                                let traitName = req.split('(')[1].split(')')[0]
                                                 if (traitName) {
                                                         if (traitIcons[traitName]) {
-                                                                cleanedReq += `<div class="el-img" style="background-image:url('${traitIcons[traitName]}');"></div>`
+                                                                cleanedReq += `<div class="el-img" title="${traitName.charAt(0).toUpperCase() + traitName.substring(1).replace('trait', ' Trait')}" style="background-image:url('${traitIcons[traitName]}');"></div>`
                                                         }
                                                 }
-                                        }
+                                        //}
                                 }
                             }
                         
@@ -2873,8 +2875,13 @@ function checkTargetReq(target, pairingElOutput, riftassumed = true) {
     if (pairingElOutput.includes(req)) {
       metReqs.push(req);
       
-    } else if (req == "R Rift" && riftassumed) {
-            metReqs.push(req)
+    } else if (riftassumed) {
+            if (req == "R Rift") {
+                    metReqs.push(req)
+            }
+            else if (req.includes('trait)') {
+                     metReqs.push(req)
+            }
     }
     if (metReqs.length == targetRequirements.length) {
         return true;
@@ -2929,17 +2936,17 @@ function pairTemplate(pairObj) {
         additionalClasses = allDragonData[validTarget].conditions
     }
     htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img loading="lazy" src="${allDragonImgs[validTarget].Adult}">`
-            if (allDragonImgs[validTarget].combo) {
-                    if (allDragonImgs[validTarget].combo.special) {
-                          if (allDragonImgs[validTarget].combo.special.includes('align')) {
-                                let alignment = allDragonImgs[validTarget].combo.special.split('align:')[1].trim();
+            if (allDragonData[validTarget].combo) {
+                    if (allDragonData[validTarget].combo.special) {
+                          if (allDragonData[validTarget].combo.special.includes('align')) {
+                                let alignment = allDragonData[validTarget].combo.special.split('align:')[1].trim();
                                 htmlTemplate +=`<div class="riftaligned-elimg">
                                             <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                 <div class='tooltip'>Rift Must Be Aligned to ${alignment}</div>
                                             </div>
                                         </div>`
-                          } else if (allDragonImgs[validTarget].combo.special.includes('trait')) {
-                                let alignment = allDragonImgs[validTarget].combo.special.split('trait')[0].trim();
+                          } else if (allDragonData[validTarget].combo.special.includes('trait')) {
+                                let alignment = allDragonData[validTarget].combo.special.split('trait')[0].trim();
                                 htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                    <div class='tooltip'>One Parent Must Have ${alignment} Rift Trait</div>
                                                 </div>`
@@ -2964,17 +2971,17 @@ function pairTemplate(pairObj) {
                         imgsrc = allDragonImgs[newGuy][Object.keys(allDragonImgs[newGuy])[0]]
                   }
                   htmlTemplate += `<div class="otherpossibleguy"><img src="${imgsrc}" loading="lazy">`
-                  if (allDragonImgs[newGuy].combo) {
-                          if (allDragonImgs[newGuy].combo.special) {
-                                  if (allDragonImgs[newGuy].combo.special.includes('align')) {
-                                        let alignment = allDragonImgs[newGuy].combo.special.split('align:')[1].trim();
+                  if (allDragonData[newGuy].combo) {
+                          if (allDragonData[newGuy].combo.special) {
+                                  if (allDragonData[newGuy].combo.special.includes('align')) {
+                                        let alignment = allDragonData[newGuy].combo.special.split('align:')[1].trim();
                                         htmlTemplate +=`<div class="riftaligned-elimg">
                                                     <div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                         <div class='tooltip'>Rift Must Be Aligned to ${alignment}</div>
                                                     </div>
                                                 </div>`
-                                  } else if (allDragonImgs[newGuy].combo.special.includes('trait')) {
-                                        let alignment = allDragonImgs[newGuy].combo.special.split('trait')[0].trim();
+                                  } else if (allDragonData[newGuy].combo.special.includes('trait')) {
+                                        let alignment = allDragonData[newGuy].combo.special.split('trait')[0].trim();
                                         htmlTemplate +=`<div class='el-img' style='background-image:url('${traitIcons[alignment.toLowerCase() + 'trait']}');>
                                                            <div class='tooltip'>One Parent Must Have ${alignment} Rift Trait</div>
                                                         </div>`
