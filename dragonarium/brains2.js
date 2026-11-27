@@ -2773,11 +2773,18 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                                         //}
                                         if (dragonData.odds.base) {
                                                 if (Number(dragonData.odds.base) != NaN) {
-                                                        breedsOdds += Number(dragonData.odds.base)
+                                                        
                                                         //console.log('breeds base is ', dragonData.odds.base, ' so breedsOdds is now ', breedsOdds)
                                                         if (dragonarium[dragonName].status != 'have') {
                                                                 //if (dragonData.rarity == "Hybrid")
                                                                 newGuys[dragonName] = Number(dragonData.odds.base)
+                                                                breedsOdds += Number(dragonData.odds.base)
+                                                        } else {
+                                                           if (dragonData.odds.second) {
+                                                                breedsOdds += Number(dragonData.odds.second)
+                                                           } else {
+                                                                breedsOdds += Number(dragonData.odds.base)
+                                                           }
                                                         }
                                                 }
                                         }
