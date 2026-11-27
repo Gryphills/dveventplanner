@@ -875,7 +875,7 @@ body {
         margin-top: 35px;
         .averagetime {
           position: absolute;
-          top:-3px;
+          top:-30px;
           font-style: italic;
         }
     }
