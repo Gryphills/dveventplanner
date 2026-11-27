@@ -2806,7 +2806,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 if (!breeddd.incubation) {breeddd.incubation = {reg: 0, fast: 0}}
                 breedMinutes += Number(breeddd.incubation.reg) * multiplierOdds
         }
-        if (a.rarity == "Hybrid") {
+        /*if (a.rarity == "Hybrid") {
                 breedMinutes += a.incubation.reg * hybridOdds
         } else {
                 breedMinutes += a.incubation.reg * multiplierOdds
@@ -2815,9 +2815,9 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 breedMinutes += b.incubation.reg * hybridOdds
         } else {
                 breedMinutes += b.incubation.reg * multiplierOdds
-        }
+        }*/
         
-        let breedAverage = breedMinutes // 100
+        let breedAverage = breedMinutes / (hybrids.length + breeds.length + 2) //100
         console.log(breedAverage)
         
         
