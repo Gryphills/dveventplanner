@@ -2508,8 +2508,9 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
                         if (targetData.rarity != "Hybrid") {
                                 oddsOfCool += Number(targetData.odds.base) * Number(pairObj.multiplierOdds)
                                 if (bestTargetOdds[metTarget].odds < (Number(targetData.odds.base) * Number(pairObj.multiplierOdds))) {
-                                        bestTargetOdds[metTarget] = {odds: Number(targetData.odds.base) * Number(pairObj.multiplierOdds), pairObj: pairObj, soloNum: true}
+                                        bestTargetOdds[metTarget] = {odds: Number(targetData.odds.base) * Number(pairObj.multiplierOdds), pairObjs: [pairObj], soloNum: true}
                                 } else if (bestTargetOdds[metTarget].odds == (Number(targetData.odds.base) * Number(pairObj.multiplierOdds))) {
+                                        bestTargetOdds[metTarget].pairObjs.push(pairObj)
                                         bestTargetOdds[metTarget].soloNum = false;
                                 }
                         } else {
@@ -2546,13 +2547,25 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
         for (const targett of Object.keys(bestTargetOdds)){
                 
                 if (bestTargetOdds[targett].soloNum) {
-                        if (validPairs.includes(bestTargetOdds[targett].pairObj)) {
-                                console.log('found pair, altering!')
-                                bestTargetOdds[targett].pairObj.bestOddsFor = targett;
-                                validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pairObj), 1, bestTargetOdds[targett].pairObj)
+                        if (validPairs.includes(bestTargetOdds[targett].pairObj[0])) {
+                                //console.log('found pair, altering!')
+                                bestTargetOdds[targett].pairObj[0].bestOddsFor = targett;
+                                validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pairObj[0]), 1, bestTargetOdds[targett].pairObj[0])
                                 //validPairs.splice(validPairs.indexOf(pair), 1)
                         } else {
                                 console.log('couldnt find ',targett,  bestTargetOdds[targett])
+                        }
+                } else {
+                        for (const pairrrr of bestTargetOdds[targett].pairObj) {
+                                if (validPairs.includes(pairrrr)) {
+                                        console.log('found pair, altering!')
+                                        let idxValid = validPairs.indexOf(pairrrr)
+                                        pairrrr.goodOddsFor = targett;
+                                        validPairs.splice(idxValid, 1, pairrrr)
+                                        //validPairs.splice(validPairs.indexOf(pair), 1)
+                                } else {
+                                        console.log('couldnt find ', targett,  pairrrr)
+                                }
                         }
                 }
         }
@@ -2869,7 +2882,7 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
         pairObj.newGuys = newGuys
         pairObj.breedAverage = breedAverage
         //console.log(newGuys)
-        //console.log(pairObj)
+        console.log(pairObj)
         return pairObj;
         
 
@@ -2991,6 +3004,9 @@ function pairTemplate(pairObj) {
     //console.log(targetData.odds, pairObj)
     if (allDragonData[validTarget].conditions != "") {
         additionalClasses = allDragonData[validTarget].conditions
+    }
+    if (pairObj.goodOddsFor) {
+        
     }
     htmlTemplate += `<div class="possibletarget ${additionalClasses}"><img loading="lazy" src="${allDragonImgs[validTarget].Adult}">`
             if (allDragonData[validTarget].combo) {
