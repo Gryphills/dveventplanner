@@ -2780,7 +2780,11 @@ function getOutputsAndOdds(pairArray, pairingOutput, pairObj, caveLocation = "re
                 } else if (caveLocation != "rift" && dragonData.elements.includes('R Rift') && riftassumed == false) {
                         continue;
                         console.log('THIS SHOULD NOT FIRE!')
-                }
+                } /*else if (dragonData.combo) {
+                        if (dragonData.combo.special) {
+                                if (dragonData.combo.special.includes('+ elements') || 
+                        }
+                }*/
                 
                 
                 let thisGuyOdds = 0
@@ -2952,10 +2956,12 @@ function checkTargetReq(target, pairArray, pairingElOutput, riftassumed = true) 
                         if ([].concat(elementChart.basics).splice(10, 22).includes(el)) {
                                 bareElsHit.push(el)
                                 if (bareElsHit.length > elementsNeeded) {
+                                        console.log('met req of ', elementsNeeded, '+ elements!')
                                         return true;
                                 }
                         }
                 }
+                console.log(bareElsHit , ' couldnt meet ', elementsNeeded, allDragonData[target].combo.special)
         } else if (allDragonData[target].combo.special == 'Any 2 dragons') {
                 return true;
         }
