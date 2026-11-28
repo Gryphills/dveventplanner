@@ -2313,7 +2313,7 @@ function updateTargetSearch() {
   for (const target of Array.from(targetCardDiv.children)) {
     let dragonName = target.dataset.dragonName
     targets.push(dragonName);
-    bestTargetOdds[dragonName] = {pairObj: undefined, odds: 0}
+    bestTargetOdds[dragonName] = {pairObjs: [], odds: 0}
     //bestPairForTarget[dragonName] = {pair: 'none', odds: ''}
     pairsNeededForTargets[dragonName] = Number(settingsWeights.pairpertarget)
     //pairCountTotal += Number(settingsWeights.pairpertarget) + 5
@@ -2547,16 +2547,16 @@ if (guysWithTwoSpecialGuys.length < targets.length) {
         for (const targett of Object.keys(bestTargetOdds)){
                 
                 if (bestTargetOdds[targett].soloNum) {
-                        if (validPairs.includes(bestTargetOdds[targett].pairObj[0])) {
+                        if (validPairs.includes(bestTargetOdds[targett].pairObjs[0])) {
                                 //console.log('found pair, altering!')
-                                bestTargetOdds[targett].pairObj[0].bestOddsFor = targett;
-                                validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pairObj[0]), 1, bestTargetOdds[targett].pairObj[0])
+                                bestTargetOdds[targett].pairObjs[0].bestOddsFor = targett;
+                                validPairs.splice(validPairs.indexOf(bestTargetOdds[targett].pairObjs[0]), 1, bestTargetOdds[targett].pairObjs[0])
                                 //validPairs.splice(validPairs.indexOf(pair), 1)
                         } else {
                                 console.log('couldnt find ',targett,  bestTargetOdds[targett])
                         }
                 } else {
-                        for (const pairrrr of bestTargetOdds[targett].pairObj) {
+                        for (const pairrrr of bestTargetOdds[targett].pairObjs) {
                                 if (validPairs.includes(pairrrr)) {
                                         console.log('found pair, altering!')
                                         let idxValid = validPairs.indexOf(pairrrr)
