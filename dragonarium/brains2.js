@@ -3481,7 +3481,11 @@ function importdatabuttonClicked(button) {
 function getScriptUpdateDate() {
         const desiredRepo = "gryphills.github.io";
         const dateTagClass = ".date";
-        
+        const options = {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric"
+        };
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function()
         {
@@ -3494,12 +3498,12 @@ function getScriptUpdateDate() {
               if (repo.name == 'dveventplanner')
               {
                 console.log(repo)
-                var lastUpdated = new Date(repo.updated_at);
-                var day = lastUpdated.getUTCDate();
-                var month = lastUpdated.getUTCMonth();
-                var year = lastUpdated.getUTCFullYear();
-                console.log('updated git: ', year, month, day)
-                //document.getElementById('lastupdated').textContent += `\n Script Last Updated: ${year}-${month}-${day}`
+                var lastPushed = new Date(repo.pushed_at);
+                //var day = lastUpdated.getUTCDate();
+                //var month = lastUpdated.getUTCMonth();
+                //var year = lastUpdated.getUTCFullYear();
+                //console.log('updated git: ', year, month, day)
+                document.getElementById('lastupdated').textContent += `\n Script Last Updated: ${new Intl.DateTimeFormat("en-US", options).format(lastPushed)}`
               }
             });
           }
